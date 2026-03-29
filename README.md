@@ -1,4 +1,4 @@
-# Social Democracy: An Alternate History
+# Merkopian Democracy: An Alternate History
 
 ## Included Libraries
 
