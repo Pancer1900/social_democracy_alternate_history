@@ -1,1 +1,13 @@
+title: 1222
+subtitle: A new year
+on-arrival: {!
+// see post_event.scene.dry for changes.
+Q.economic_growth += 4;
 
+!}
+tags: event
+view-if: year = 1929 and month = 2
+priority: 2
+max-visits: 1
+
+A new year begins. Test
