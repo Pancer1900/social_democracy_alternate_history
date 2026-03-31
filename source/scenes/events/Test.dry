@@ -1,13 +1,13 @@
-title: 1222
+title: 1929
 subtitle: A new year
 on-arrival: {!
 // see post_event.scene.dry for changes.
-Q.economic_growth += 4; kpd_relation += 40;
+Q.economic_growth -= 4;
 
 !}
 tags: event
-view-if: year = 1929 and month = 2
+view-if: year = 1929 and month = 1
 priority: 2
 max-visits: 1
 
-A new year begins. Test
+A new year begins. The economy appears to be slackening
