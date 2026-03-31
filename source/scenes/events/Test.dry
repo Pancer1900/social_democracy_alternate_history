@@ -2,7 +2,7 @@ title: 1222
 subtitle: A new year
 on-arrival: {!
 // see post_event.scene.dry for changes.
-Q.economic_growth += 4;
+Q.economic_growth += 4; kpd_relation += 40;
 
 !}
 tags: event
