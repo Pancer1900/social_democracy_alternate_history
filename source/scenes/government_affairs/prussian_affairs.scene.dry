@@ -25,6 +25,7 @@ We can enact policies in Prussia.
 - @negotiate_concordat: Negotiate a concordat with the Vatican.
 - @sign_concordat: Sign a concordat with the Vatican.
 - @sign_KPD: Sign a trety with the KPD.
+- @sign_test: Sign a trety with the Test.
 - @root: No new policies are needed.
 - @easy_discard
 - @cancel_advisor_action
@@ -101,3 +102,8 @@ We have signed a Concordat between the Free State of Prussia and the Roman Catho
 on-arrival: prussian_police_strength += 20; kpd_relation += 40
 
 We are making progress towards negotiating a concordat between Prussia and the KPD.
+
+@sign_test
+on-arrival: test_variable += 0
+
+We are making progress towards negotiating a test
