@@ -104,6 +104,6 @@ on-arrival: prussian_police_strength += 20; kpd_relation += 40
 We are making progress towards negotiating a concordat between Prussia and the KPD.
 
 @sign_test
-on-arrival: test_variable += 0
+on-arrival: test_variable += 1
 
 We are making progress towards negotiating a test
