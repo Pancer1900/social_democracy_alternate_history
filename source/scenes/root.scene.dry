@@ -575,6 +575,11 @@ Q.schumacher_advisor = 0; // Kurt Schumacher (post-1930)
 Q.hirschfeld_advisor = 0; // Magnus Hirschfeld
 Q.radbruch_advisor = 0; // Gustav Radbruch
 Q.stampfer_advisor = 0; // Friedrich Stampfer
+
+// Merkopian Shit 
+Q.test_variable = 0
+Q.test_variable_timer = 0
+
 !}
 set-bg: img/map_2.jpg
 new-page: true
