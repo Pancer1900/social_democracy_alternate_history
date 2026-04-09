@@ -15,9 +15,6 @@ A new year begins. The economy appears to be slackening; unemployment is increas
 - @nothing_to_test: There is nothing we can do.
 
 @nothing_to_test
-
-@nothing_to_do
-view-if: spd_in_government = 1
 on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3
 
 There is, essentially, nothing we can do.
