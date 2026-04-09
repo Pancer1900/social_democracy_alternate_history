@@ -1,13 +1,23 @@
-title: 1929
+title: New test
 subtitle: A new year
 on-arrival: {!
 // see post_event.scene.dry for changes.
-Q.economic_growth -= 4; resources += 2;
+Q.resources += 2;
 
 !}
 tags: event
-view-if: year = 1929 and month = 1
+view-if: test_variable = 1 and test_variable_timer = 0
 priority: 2
 max-visits: 1
 
 A new year begins. The economy appears to be slackening; unemployment is increasing throughout the republic, although for the most part, people are still doing well.
+
+- @nothing_to_do: There is nothing we can do.
+
+@nothing_to_do
+
+@nothing_to_do
+view-if: spd_in_government = 1
+on-arrival: welfare -= 1; workers_spd -= 3; unemployed_spd -= 3; pro_republic -= 3
+
+There is, essentially, nothing we can do.
