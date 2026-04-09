@@ -6,7 +6,7 @@ Q.resources += 2;
 
 !}
 tags: event
-view-if: test_variable = 1 and test_variable_timer = 0
+view-if: test_variable = 1
 priority: 2
 max-visits: 1
 
