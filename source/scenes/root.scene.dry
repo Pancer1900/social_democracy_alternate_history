@@ -272,7 +272,7 @@ Q.peasants_ddp= 5;
 Q.peasants_dvp = 15;
 Q.peasants_dnvp = 45;
 Q.peasants_nsdap = 5;
-Q.peasants  _other = 10;
+Q.peasants_other = 10;
 
 Q.rural_spd = 10;
 Q.rural_kpd = 0;
