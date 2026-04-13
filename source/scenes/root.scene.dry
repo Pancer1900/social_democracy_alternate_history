@@ -335,7 +335,7 @@ Q.sapd_r = 0;
 Q.old_sapd_r = 0;
 
 // for changing the DDP's name to the DStP
-Q.ddp_name = "DDP";
+Q.ddp_name = "FVP";
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
@@ -519,7 +519,7 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1928;
+Q.next_election_year = 1266;
 Q.next_election_month = 5;
 Q.next_election_time = 5;
 // government affairs timers
