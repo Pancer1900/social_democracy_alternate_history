@@ -231,7 +231,7 @@ Q.unemployed_qol = 100;
 Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics', 'peasants'];
+Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics', 'peasants', 'minorieties'];
 Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'ppu'];
 
 // TODO: add 'sapd' later on
@@ -302,6 +302,16 @@ Q.unemployed_dnvp = 5;
 Q.unemployed_nsdap = 15;
 Q.unemployed_other = 9;
 Q.unemployed_ppu = 0;
+
+Q.minorieties_spd = 25;
+Q.minorieties_kpd = 55;
+Q.minorieties_z = 1;
+Q.minorieties_ddp = 0;
+Q.minorieties_dvp = 0;
+Q.minorieties_dnvp = 5;
+Q.minorieties_nsdap = 15;
+Q.minorieties_other = 9;
+Q.minorieties_ppu = 0;
 
 Q.catholics_spd = 15;
 Q.catholics_kpd = 2;
