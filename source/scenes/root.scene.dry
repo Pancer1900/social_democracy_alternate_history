@@ -21,7 +21,7 @@ on-arrival: {!
 Q.started = 1;
 // time elapsed (in months)
 Q.time = 1;
-Q.year = 1928;
+Q.year = 1266;
 Q.month = 1;
 // how many actions have been taken this month?
 Q.month_actions = 0;
@@ -109,6 +109,7 @@ Q.z_relation = 50;
 Q.kpd_relation = 25;
 Q.ddp_relation = 60;
 Q.dvp_relation = 35;
+Q.ppu_relation = 35;
 // DNVP and NSDAP are invariably hostile
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
@@ -199,11 +200,11 @@ Q.capital_strike_progress = 0;
 Q.budget = 4;
 
 // Proportion of different social groups
-Q.workers = 38; // industry and trade
-Q.old_middle = 15; // "old mittelstand"
+Q.workers = 39; // industry and trade
+Q.old_middle = 16; // "old mittelstand"
 Q.new_middle = 17; // "new mittelstand"
 Q.rural = 11; // agriculture and forestry employment
-Q.peasants = 19;
+Q.peasants = 17;
 Q.unemployed = 8.6;
 Q.catholics = 30;
 
@@ -230,8 +231,8 @@ Q.unemployed_qol = 100;
 Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
-Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics','peasants'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
+Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics', 'peasants'];
+Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'ppu'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
@@ -311,16 +312,18 @@ Q.catholics_other = 12;
 Q.spd_r = 27;
 Q.kpd_r = 0;
 Q.z_r = 17;
+Q.ppu_r = 4;
 Q.ddp_r = 7;
 Q.dvp_r = 21;
 Q.dnvp_r = 16;
 Q.nsdap_r = 4;
-Q.other_r = 8;
+Q.other_r = 4;
 
 // diff from prev
 Q.old_spd_r = 26;
 Q.old_kpd_r = 9;
 Q.old_z_r = 17;
+Q.old_ppu_r = 4;
 Q.old_ddp_r = 6;
 Q.old_dvp_r = 10;
 Q.old_dnvp_r = 20;
