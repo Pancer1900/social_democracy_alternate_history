@@ -106,6 +106,9 @@ Q.moderate_plan_adopted = 0;
 
 // inter-party relations
 Q.z_relation = 50;
+Q.asum_relation = 50;
+Q.blpm_relation = 50;
+Q.gnvp_relation = 50;
 Q.kpd_relation = 25;
 Q.ddp_relation = 60;
 Q.dvp_relation = 35;
@@ -244,18 +247,16 @@ Q.blpm_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 60;
-Q.workers_kpd = 20;
+Q.workers_spd = 70;
 Q.workers_z = 5;
-Q.workers_ddp = 0;
-Q.workers_dvp = 0;
+Q.workers_ddp = 5;
+Q.workers_dvp = 5;
 Q.workers_dnvp = 5;
 Q.workers_nsdap = 0;
 Q.workers_other = 5;
 Q.workers_ppu = 5;
 
 Q.old_middle_spd = 5;
-Q.old_middle_kpd = 0;
 Q.old_middle_z = 5;
 Q.old_middle_ddp= 10;
 Q.old_middle_dvp = 25;
@@ -265,7 +266,6 @@ Q.old_middle_other = 5;
 Q.old_middle_ppu = 5;
 
 Q.new_middle_spd = 5;
-Q.new_middle_kpd = 1;
 Q.new_middle_z = 10;
 Q.new_middle_ddp= 25;
 Q.new_middle_dvp = 25;
@@ -275,54 +275,49 @@ Q.new_middle_other = 10;
 Q.new_middle_ppu = 5;
 
 Q.peasants_spd = 10;
-Q.peasants_kpd = 0;
-Q.peasants_z = 5;
+Q.peasants_z = 15;
 Q.peasants_ddp= 5;
-Q.peasants_dvp = 15;
-Q.peasants_dnvp = 45;
+Q.peasants_dvp = 25;
+Q.peasants_dnvp = 25;
 Q.peasants_nsdap = 5;
 Q.peasants_other = 5;
 Q.peasants_ppu = 5;
 
-Q.rural_spd = 10;
-Q.rural_kpd = 0;
-Q.rural_z = 5;
+Q.rural_spd = 20;
+Q.rural_z = 10;
 Q.rural_ddp= 5;
-Q.rural_dvp = 15;
-Q.rural_dnvp = 45;
+Q.rural_dvp = 25;
+Q.rural_dnvp = 20;
 Q.rural_nsdap = 5;
 Q.rural_other = 5;
 Q.rural_ppu = 5;
 
-Q.unemployed_spd = 25;
-Q.unemployed_kpd = 55;
-Q.unemployed_z = 1;
-Q.unemployed_ddp = 0;
-Q.unemployed_dvp = 0;
+Q.unemployed_spd = 50;
+Q.unemployed_z = 10;
+Q.unemployed_ddp = 5;
+Q.unemployed_dvp = 5;
 Q.unemployed_dnvp = 5;
 Q.unemployed_nsdap = 15;
-Q.unemployed_other = 9;
+Q.unemployed_other = 10;
 Q.unemployed_ppu = 0;
 
 Q.minorieties_spd = 25;
-Q.minorieties_kpd = 55;
 Q.minorieties_z = 1;
 Q.minorieties_ddp = 0;
 Q.minorieties_dvp = 0;
 Q.minorieties_dnvp = 5;
 Q.minorieties_nsdap = 15;
 Q.minorieties_other = 9;
-Q.minorieties_ppu = 0;
+Q.minorieties_ppu = 55;
 
 Q.catholics_spd = 15;
-Q.catholics_kpd = 2;
-Q.catholics_z = 50;
+Q.catholics_z = 10;
 Q.catholics_ddp = 0;
 Q.catholics_dvp = 5;
 Q.catholics_dnvp = 5;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 12;
-Q.catholics_ppu = 0;
+Q.catholics_ppu = 43;
 
 // Current Reichstag composition
 // % of Reichstag in Jan 1928
@@ -380,6 +375,7 @@ Q.president = "Hindenburg";
 Q.chancellor = "Marx";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
+Q.ppu_in_government = 0;
 Q.z_in_government = 1;
 Q.ddp_in_government = 0;
 Q.dvp_in_government = 1;
