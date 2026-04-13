@@ -205,8 +205,9 @@ Q.old_middle = 16; // "old mittelstand"
 Q.new_middle = 17; // "new mittelstand"
 Q.rural = 11; // agriculture and forestry employment
 Q.peasants = 17;
-Q.unemployed = 8.6;
-Q.catholics = 30;
+Q.unemployed = 7.5;
+Q.catholics = 25;
+Q.minorieties = 12;
 
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
