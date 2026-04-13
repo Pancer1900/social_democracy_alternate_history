@@ -236,6 +236,10 @@ Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
+Q.gnvp_formed = 0;
+Q.asum_formed = 0;
+Q.blpm_formed = 0;
+
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
@@ -333,6 +337,12 @@ Q.old_other_r = 9;
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+Q.gnvp_r = 0;
+Q.old_gnvp_r = 0;
+Q.asum_r = 0;
+Q.old_asum_r = 0;
+Q.blpm_r = 0;
+Q.old_blpm_r = 0;
 
 // for changing the DDP's name to the DStP
 Q.ddp_name = "FVP";
