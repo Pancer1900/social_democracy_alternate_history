@@ -15,6 +15,7 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @new_middle: The "new middle class" of government employees and white-collar workers.
 - @old_middle: The "old middle class" of small independent businessmen and artisans.
 - @rural: Rural workers and small farmers, who have felt neglected by us in the past.
+- @peasants : Peasants
 - @unemployed: The unemployed.
 - @catholics: Catholics, who typically support the Center Party.
 - @root: We either don't want to or cannot campaign right now.
@@ -49,6 +50,14 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2
+
+We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+
+@rural
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: peasants_spd += 5*(1-dissent)
 
 We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
 
