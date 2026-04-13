@@ -165,7 +165,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-SPD: [+ spd_votes +]%
+[? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ spd_votes +]%
 
 [? if sapd_formed: SAPD: [+ sapd_votes +]% ?]
 
@@ -173,9 +173,11 @@ GDVU: [+ z_votes +]%
 
 KPD: [+ kpd_votes +]%
 
+PPU+: [+ ppu_votes +]%
+
 [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
 
-LDP: [+ dvp_votes +]%
+[? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ dvp_votes +]%
 
 MNVP: [+ dnvp_votes +]%
 
@@ -197,6 +199,8 @@ Peasants: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ pe
 
 Unemployed: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, KPD: [+ unemployed_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%, DNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]% [? if sapd_formed: SAPD: [+ unemployed_sapd_display +]% ?]
 
-Catholics: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+Gecherdists: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, KPD: [+ catholics_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; DNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: SAPD: [+ catholics_sapd_display +]% ?]
+
+Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ minorieties_spd_display +]%, Z: [+ minorieties_z_display +]%, KPD: [+ minorieties_kpd_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ minorieties_ddp_display +]%, DVP: [+ minorieties_dvp_display +]%; DNVP: [+ minorieties_dnvp_display +]%, NSDAP: [+ minorieties_nsdap_display +]%, Others: [+ minorieties_other_display +]% [? if sapd_formed: SAPD: [+ minorieties_sapd_display +]% ?]
 
 Support for the Republic: [+ pro_republic_disp +]%
