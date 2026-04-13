@@ -85,14 +85,6 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Communist Party of Germany">PPU</span>!}: [+ ppu_relation : relationships +]
 
-// [? if sapd_formed {!<span class="tooltip-text" title="Communist Party of Germany">KPD</span>!}: [+ kpd_relation : relationships +] ]
-
-// [? if asum_formed {!<span class="tooltip-text" title="Communist Party of Germany">ASUM</span>!}: [+ asum_relation : relationships +] ]
-
-// [? if gnvp_formed {!<span class="tooltip-text" title="Communist Party of Germany">GNVP</span>!}: [+ gnvp_relation : relationships +] ]
-
-// [? if blpm_formed {!<span class="tooltip-text" title="Communist Party of Germany">BLPM</span>!}: [+ blpm_relation : relationships +] ]
-
 {!<span class="tooltip-text" title="German National People's Party">MNVP</span>!}: [+ dnvp_relation : relationships +]
 
 {!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_relation : relationships +]
