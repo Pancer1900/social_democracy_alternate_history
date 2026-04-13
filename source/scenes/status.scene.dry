@@ -90,7 +90,11 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Internal Factions of the SPD
 
+{!<span class="tooltip-text" title="Revolutionaries want to crush the Burgoise state as fast as possible and they serve as a push for revolution.">Revolutionaries</span>!} strength: [+ revolutionaries_strength : strength +], dissent: [+ revolutionaries_dissent : dissent +]
+
 {!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +]
+
+{!<span class="tooltip-text" title="Agrarians are the rular base of the party and improving the lives of the peasants and farmers are their main goal.">Agrarinas</span>!} strength: [+ agrarnians_strength : strength +], dissent: [+ agrarnians_dissent : dissent +]
 
 {!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +]
 
