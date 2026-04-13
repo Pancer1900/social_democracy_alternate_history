@@ -7,6 +7,7 @@ set-jump: post_election
 - @1932: 1932 (July) historical scenario
 
 @1928
+on-arrival: {!
 Q.workers = 39; // industry and trade
 Q.old_middle = 16; // "old mittelstand"
 Q.new_middle = 17; // "new mittelstand"
