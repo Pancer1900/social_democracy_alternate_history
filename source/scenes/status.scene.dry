@@ -161,29 +161,29 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-[? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ spd_votes +]%
+[? if sapd_formed: <span style="color: #9B0000;">**KPM**</span>: [+ sapd_votes +]% ?]
 
-[? if sapd_formed: KPM: [+ sapd_votes +]% ?]
+[? if asum_formed: <span style="color: #9B0000;">**ASUM**</span>: [+ asum_votes +]% ?]
 
-[? if asum_formed: ASUM: [+ asum_votes +]% ?]
+[? if not spd_name != 0: <span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]%
 
-GDVU: [+ z_votes +]%
+[? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% 
 
-[? if blpm_formed: BLPM: [+ blpm_votes +]% ?]
+<span style="color: #c00000;">**GDSU**</span>: [+ z_votes +]%
 
-PPU+: [+ ppu_votes +]%
+[? if blpm_formed: <span style="color: #c00000;">**GNVP**</span>: [+ blpm_votes +]% ?]
 
-[? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ ddp_votes +]%
+<span style="color: #c00000;">**PPU+**</span>: [+ ppu_votes +]%
 
-[? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ dvp_votes +]%
+[? if dvp_name != 0: <span style="color: #C0A054;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
 
-[? if gnvp_formed: GNVP: [+ gnvp_votes +]% ?]
+[? if gdvn_formed: <span style="color: #c00000;">**GNVP**</span>: [+ gnvp_votes +]% ?]
 
-MNVP: [+ dnvp_votes +]%
+<span style="color: #c00000;">**MNVP**</span>: [+ dnvp_votes +]%
 
-NSDAP: [+ nsdap_votes +]%
+<span style="color: #c00000;">**others**</span>: [+ other_votes +]%
 
-Others: [+ other_votes +]%
+<span style="color: #c00000;">**NSDAP**</span>: [+ nsdap_votes +]%
 
 **Detailed results for each demographic**
 
@@ -199,8 +199,8 @@ Peasants: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ pe
 
 Unemployed: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ unemployed_spd_display +]%, Z: [+ unemployed_z_display +]%, PPU+: [+ unemployed_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%, MNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]%, [? if sapd_formed: KPM: [+ unemployed_sapd_display +]% ?] [? if gnvp_formed: GNVP: [+ unemployed_gnvp_display +]% ?] [? if asum_formed: ASUM: [+ unemployed_asum_display +]% ?] [? if blpm_formed: BLPM: [+ unemployed_blpm_display +]% ?]
 
-Gecherdists: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, PPU+: [+ catholics_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; MNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: KPM: [+ catholics_sapd_display +]% ?], [? if gnvp_formed: GNVP: [+ catholics_gnvp_display +]% ?] [? if asum_formed: ASUM: [+ catholics_asum_display +]% ?] [? if blpm_formed: BLPM: [+ catholics_dnef_display +]%, ?] 
+Gecherdists: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ catholics_spd_display +]%, Z: [+ catholics_z_display +]%, PPU+: [+ catholics_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, DVP: [+ catholics_dvp_display +]%; MNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: KPM: [+ catholics_sapd_display +]% ?], [? if gnvp_formed: GNVP: [+ catholics_gnvp_display +]% ?] [? if asum_formed: ASUM: [+ catholics_asum_display +]% ?] [? if blpm_formed: BLPM: [+ catholics_blpm_display +]%, ?] 
 
-Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ minorieties_spd_display +]%, Z: [+ minorieties_z_display +]%, PPU+: [+ minorieties_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ minorieties_ddp_display +]%, DVP: [+ minorieties_dvp_display +]%; MNVP: [+ minorieties_dnvp_display +]%, NSDAP: [+ minorieties_nsdap_display +]%, Others: [+ minorieties_other_display +]%, [? if sapd_formed: KPM: [+ minorieties_sapd_display +]% ?] [? if gnvp_formed: GNVP: [+ minorieties_gnvp_display +]% ?] [? if asum_formed: ASUM: [+ minorieties_asum_display +]% ?] [? if blpm_formed: BLPM: [+ minorieties_dnef_display +]%, ?]
+Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ minorieties_spd_display +]%, Z: [+ minorieties_z_display +]%, PPU+: [+ minorieties_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ minorieties_ddp_display +]%, DVP: [+ minorieties_dvp_display +]%; MNVP: [+ minorieties_dnvp_display +]%, NSDAP: [+ minorieties_nsdap_display +]%, Others: [+ minorieties_other_display +]%, [? if sapd_formed: KPM: [+ minorieties_sapd_display +]% ?] [? if gnvp_formed: GNVP: [+ minorieties_gnvp_display +]% ?] [? if asum_formed: ASUM: [+ minorieties_asum_display +]% ?] [? if blpm_formed: BLPM: [+ minorieties_blpm_display +]%, ?]
 
 Support for the Republic: [+ pro_republic_disp +]%
