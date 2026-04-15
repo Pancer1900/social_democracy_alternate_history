@@ -165,9 +165,9 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if asum_formed: <span style="color: #9B0000;">**ASUM**</span>: [+ asum_votes +]% ?]
 
-[? if not spd_name != 0: <span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]%
+[? if not spd_name != 0: <span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]% ?]
 
-[? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% 
+[? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% ?]
 
 <span style="color: #c00000;">**GDSU**</span>: [+ z_votes +]%
 
@@ -175,7 +175,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 <span style="color: #c00000;">**PPU+**</span>: [+ ppu_votes +]%
 
-[? if dvp_name != 0: <span style="color: #C0A054;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]%
+[? if dvp_name != 0: <span style="color: #C0A054;">**[+ dvp_name +]**</span>?]: [+ dvp_votes +]% ?]
 
 [? if gdvn_formed: <span style="color: #c00000;">**GNVP**</span>: [+ gnvp_votes +]% ?]
 
