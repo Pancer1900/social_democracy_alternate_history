@@ -357,6 +357,7 @@ Q.blpm_r = 0;
 Q.old_blpm_r = 0;
 
 // for changing the DDP's name to the DStP
+Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
 Q.dvp_name = "LPD";
 Q.spd_name = "VDSMP";
