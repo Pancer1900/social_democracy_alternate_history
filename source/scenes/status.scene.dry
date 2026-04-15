@@ -165,7 +165,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if asum_formed: <span style="color: #9B0000;">**ASUM**</span>: [+ asum_votes +]% ?]
 
-[? if not spd_name != 0: <span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]% ?]
+[? if spd_name != 0: <span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]% ?]
 
 [? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]% ?]
 
