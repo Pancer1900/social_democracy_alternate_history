@@ -167,7 +167,7 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 [? if not spd_name != 0: <span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]% ?]
 
-[? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?]: [+ ddp_votes +]% ?]
+[? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>?: [+ ddp_votes +]% ?]
 
 <span style="color: #c00000;">**GDSU**</span>: [+ z_votes +]%
 
