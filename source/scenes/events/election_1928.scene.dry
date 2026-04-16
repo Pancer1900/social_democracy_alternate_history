@@ -238,7 +238,7 @@ data = data.concat([
         "seats": Math.round(Q.z_r*5),
     },
     {
-        "id": "ppu",
+        "id": "bvp",
         "legend": "PPU",
         "name": "PPU",
         "seats": Math.round(Q.ppu_r*5),
@@ -308,7 +308,7 @@ go-to: coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#a0a0a0'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div> !} DNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#3f7bc1'> </div> !} MNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#954B00'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
 {!</table>!}
@@ -349,7 +349,7 @@ There are some potential coalition arrangements.
 
 @liberal_coalition
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: [+ dpp_name +] + GDSU + [+ dvp_name +] + PPU+ ([+ liberal_coalition +]%)
+subtitle: [+ ddp_name +] + GDSU + [+ dvp_name +] + PPU+ ([+ liberal_coalition +]%)
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: liberal_coalition >= 50
 choose-if: year < 1929
@@ -380,7 +380,7 @@ Even though the DNVP is very reluctant to participate in such a coalition, they 
 
 @wide_liberal_coalition
 title: Refuse to form a government, so that a right-wing coalition may be formed.
-subtitle: [+ dpp_name +] + GDSU + [+ dvp_name +] + PPU+ + others ([+ liberal_coalition +]%)
+subtitle: [+ ddp_name +] + GDSU + [+ dvp_name +] + PPU+ + others ([+ wide_liberal_coalition +]%)
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: liberal_coalition >= 50
 choose-if: year < 1929
