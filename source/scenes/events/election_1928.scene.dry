@@ -122,6 +122,7 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
 
 // coalitions
 Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r - 3;
+Q.liberal_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r;
 Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
 Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
 Q.center_right_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.other_r + Q.dnvp_r;
@@ -235,6 +236,12 @@ data = data.concat([
         "seats": Math.round((Q.z_r - 3)*5),
     },
     {
+        "id": "ppu",
+        "legend": "PPU+",
+        "name": "PPU+",
+        "seats": Math.round(Q.ppu_r*5),
+    },
+    {
         "id": "dvp",
         "legend": Q.dvp_name,
         "name": Q.dvp_name,
@@ -313,6 +320,8 @@ Grand Coalition (SPD + Z + BVP + [+ ddp_name +] + DVP): [+ grand_coalition +]%
 Bourgeois Coalition (Z + BVP + [+ ddp_name +] + DVP + Others): [+ bourgeois_coalition +]%
 
 Right-wing Coalition (Z + BVP + DVP + Others + DNVP): [+ right_coalition +]%
+
+Liberal Coalition ([+ dvp_name +] + GDSU + [+ ddp_name +] + PPU+): [+ liberal_coalition +]%
 
 [? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
 
