@@ -247,10 +247,10 @@ Q.blpm_formed = 0;
 
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
-Q.workers_spd = 70;
-Q.workers_z = 5;
-Q.workers_ddp = 5;
-Q.workers_dvp = 5;
+Q.workers_spd = 60;
+Q.workers_z = 10;
+Q.workers_ddp = 8;
+Q.workers_dvp = 7;
 Q.workers_dnvp = 5;
 Q.workers_nsdap = 0;
 Q.workers_other = 5;
@@ -259,32 +259,32 @@ Q.workers_ppu = 5;
 Q.old_middle_spd = 5;
 Q.old_middle_z = 5;
 Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 25;
+Q.old_middle_dvp = 35;
 Q.old_middle_dnvp = 25;
-Q.old_middle_nsdap = 10;
+Q.old_middle_nsdap = 5;
 Q.old_middle_other = 5;
-Q.old_middle_ppu = 5;
+Q.old_middle_ppu = 0;
 
 Q.new_middle_spd = 5;
 Q.new_middle_z = 10;
 Q.new_middle_ddp= 25;
-Q.new_middle_dvp = 25;
-Q.new_middle_dnvp = 10;
+Q.new_middle_dvp = 30;
+Q.new_middle_dnvp = 13;
 Q.new_middle_nsdap = 5;
-Q.new_middle_other = 10;
-Q.new_middle_ppu = 5;
+Q.new_middle_other = 5;
+Q.new_middle_ppu = 2;
 
-Q.peasants_spd = 10;
-Q.peasants_z = 15;
-Q.peasants_ddp= 5;
-Q.peasants_dvp = 25;
-Q.peasants_dnvp = 25;
+Q.peasants_spd = 20;
+Q.peasants_z = 17;
+Q.peasants_ddp= 3;
+Q.peasants_dvp = 20;
+Q.peasants_dnvp = 20;
 Q.peasants_nsdap = 5;
-Q.peasants_other = 5;
-Q.peasants_ppu = 5;
+Q.peasants_other = 8;
+Q.peasants_ppu = 2;
 
-Q.rural_spd = 20;
-Q.rural_z = 10;
+Q.rural_spd = 15;
+Q.rural_z = 15;
 Q.rural_ddp= 5;
 Q.rural_dvp = 25;
 Q.rural_dnvp = 20;
@@ -310,14 +310,14 @@ Q.minorieties_nsdap = 15;
 Q.minorieties_other = 9;
 Q.minorieties_ppu = 55;
 
-Q.catholics_spd = 15;
-Q.catholics_z = 10;
+Q.catholics_spd = 10;
+Q.catholics_z = 30;
 Q.catholics_ddp = 0;
-Q.catholics_dvp = 5;
-Q.catholics_dnvp = 5;
+Q.catholics_dvp = 15;
+Q.catholics_dnvp = 15;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 12;
-Q.catholics_ppu = 43;
+Q.catholics_ppu = 13;
 
 // Current Reichstag composition
 // % of Reichstag in Jan 1928
