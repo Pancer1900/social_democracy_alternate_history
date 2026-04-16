@@ -390,7 +390,7 @@ There are enough votes for a right-wing coalition of the Center (+ BVP), DVP, DN
 - @wide_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
 - @grand_coalition: Actually, we wish to form a grand coalition after all.
 
-@no_right_coalition
+@no_wide_coalition
 go-to: no_majority
 
 However, the DNVP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the Center Party. Thus, there is no clear path towards a Reichstag majority.
