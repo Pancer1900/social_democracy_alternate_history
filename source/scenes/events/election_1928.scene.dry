@@ -123,7 +123,7 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
 // coalitions
 Q.weimar_coalition = Q.spd_r + Q.ddp_r + Q.z_r;
 Q.progressive_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.blpm_r + Q.ppu_r;
-Q.liberal_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r;
+Q.liberal_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r; 
 Q.wide_liberal_coalition = Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r + Q.other_r;
 Q.grand_coalition = Q.spd_r + Q.ddp_r + Q.z_r + Q.dvp_r;
 Q.bourgeois_coalition = Q.ddp_r + Q.z_r + Q.dvp_r + Q.other_r;
