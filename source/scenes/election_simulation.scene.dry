@@ -263,10 +263,10 @@ on-arrival: {!
 // set congress proportion to votes
 Q.spd_r = Q.spd_votes;
 Q.z_r = Q.z_votes;
-Q.kpd_r = Q.kpd_votes;
+Q.ppu_r = Q.ppu_votes;
 Q.ddp_r = Q.ddp_votes;
 Q.dvp_r = Q.dvp_votes;
-Q.dnvp_r = Q.dnvp_votes;
+Q.dnvp_r = Q.dnvp_votes;;
 Q.nsdap_r = Q.nsdap_votes;
 Q.other_r = Q.other_votes;
 
@@ -305,7 +305,7 @@ SPD: [+ spd_r +]
 Z + BVP: [+ z_r +]
 
 # 1928: 10, 1930: 13
-KPD: [+ kpd_r +]
+PPU+: [+ ppu_r +]
 
 # 1928: 5, 1930: 4 (as DstP)
 DDP: [+ ddp_r +]
