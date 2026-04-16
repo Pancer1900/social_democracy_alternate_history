@@ -213,8 +213,8 @@ data = [
 if (Q.sapd_formed && Q.sapd_r) {
     data.push({
             "id": "sapd",
-            "legend": "SAPD",
-            "name": "SAPD",
+            "legend": "KPM",
+            "name": "KPM",
             "seats": Math.round(Q.sapd_r*5),
             });
 }
@@ -356,21 +356,21 @@ choose-if: year < 1929
 
 There are enough votes for a right-wing coalition of the Center (+ BVP), DVP, DNVP, and minor conservative parties. [? if largest_party == "SPD": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
-- @right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
+- @liberal_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
 - @grand_coalition: Actually, we wish to form a grand coalition after all.
 
-@no_right_coalition
+@no_liberal_coalition
 go-to: no_majority
 
 However, the DNVP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the Center Party. Thus, there is no clear path towards a Reichstag majority.
 
-@right_coalition_sure
+@liberal_coalition_sure
 subtitle: This will be extremely unpopular within our party.
 on-arrival: pro_republic -= 5; center_dissent += 15; left_dissent += 10; labor_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5
-go-to: right_coalition_2
+go-to: liberal_coalition_2
 
 
-@right_coalition_2
+@liberal_coalition_2
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: right_coalition >= 50
 choose-if: year < 1929
@@ -387,7 +387,7 @@ choose-if: year < 1929
 
 There are enough votes for a right-wing coalition of the Center (+ BVP), DVP, DNVP, and minor conservative parties. [? if largest_party == "SPD": However, this will be seen as abdicating responsibility for government, as we are the largest party. ?]
 
-- @right_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
+- @wide_coalition_sure: Yes, we will abdicate our responsibility for government formation, and let a right-wing coalition take power.
 - @grand_coalition: Actually, we wish to form a grand coalition after all.
 
 @no_right_coalition
@@ -395,13 +395,13 @@ go-to: no_majority
 
 However, the DNVP and its leader Hugenberg is refusing to partake in a coalition with the "November criminals" in the Center Party. Thus, there is no clear path towards a Reichstag majority.
 
-@right_coalition_sure
+@wide_coalition_sure
 subtitle: This will be extremely unpopular within our party.
 on-arrival: pro_republic -= 5; center_dissent += 15; left_dissent += 10; labor_dissent += 25; reformist_dissent += 25; neorevisionist_dissent += 15; z_relation -= 5; ddp_relation -= 5; dvp_relation -= 5
-go-to: right_coalition_2
+go-to: wide_coalition_2
 
 
-@right_coalition_2
+@wide_coalition_2
 unavailable-subtitle: The DNVP is not interested in a coalition with the Center.
 view-if: right_coalition >= 50
 choose-if: year < 1929
