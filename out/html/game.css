@@ -541,33 +541,33 @@ table {
     fill: #8B0000;
 }
 .seat.spd {
-    fill: #E3000F;
+    fill: #dd0000;
     stroke: var(--border-color);
     stroke-width: 1.5px;
 }
 .seat.ddp {
-    fill: #DCCA4A;
+    fill: #ddd500;
 }
 .seat.z {
-    fill: #000;
+    fill: #48b94a;
 }
 .seat.bvp {
-    fill: #69A2BE;
+    fill: #4a9fde;
 }
 .seat.dvp {
-    fill: #D5AC27;
+    fill: #fbffd5;
 }
 .seat.other {
-    fill: #909090;
+    fill: #dddddd;
 }
 .seat.dnvp {
     fill: #3F7BC1;
 }
 .seat.nsdap {
-    fill: #954B00;
+    fill: #706a65;
 }
 .seat.sapd {
-    fill: #C40000;
+    fill: #940000;
 }
 
 .tooltip-text {
