@@ -38,14 +38,14 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 Reichstag composition:
 
 # 1928: 30, 1930: 25, 1932: 22
-{!<span class="tooltip-text" title="Social Democratic Party of Germany">VDSPM</span>!}: [+ spd_r +]%
+{!<span class="tooltip-text" title="Social Democratic Party of Germany">[+ spd_name +]</span>!}: [+ spd_r +]%
 [? if sapd_formed and sapd_r > 0: SAPD: [+ sapd_r +]% ?]
 # 1928: 15, 1930: 15, 1932: 
 {!<span class="tooltip-text" title="Center Party + Bavarian People's Party">GDVU</span>!}: [+ z_r +]%
 # 1928: 5, 1930: 4 (as DstP)
 {!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: FVP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_r +]%
 # 1928: 9, 1930: 5
-{!<span class="tooltip-text" title="German People's Party">LDP</span>!}: [+ dvp_r +]%
+{!<span class="tooltip-text" title="German People's Party">[+ dvp_name +]</span>!}: [+ dvp_r +]%
 # 1928: 14, 1930: 7
 {!<span class="tooltip-text" title="German People's Party">PPU+</span>!}: [+ ppu_r +]%
 # 1928: 14, 1930: 7
@@ -87,7 +87,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_relation : relationships +]
 
-= Internal Factions of the SPD
+= Internal Factions of the [+ spd_name +]
 
 {!<span class="tooltip-text" title="Revolutionaries want to crush the Burgoise state as fast as possible and they serve as a push for revolution.">Revolutionaries</span>!} strength: [+ revolutionaries_strength : strength +], dissent: [+ revolutionaries_dissent : dissent +]
 
