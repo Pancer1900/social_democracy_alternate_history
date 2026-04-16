@@ -292,32 +292,32 @@ Q.rural_nsdap = 5;
 Q.rural_other = 5;
 Q.rural_ppu = 5;
 
-Q.unemployed_spd = 50;
+Q.unemployed_spd = 40;
 Q.unemployed_z = 10;
-Q.unemployed_ddp = 5;
-Q.unemployed_dvp = 5;
+Q.unemployed_ddp = 15;
+Q.unemployed_dvp = 10;
 Q.unemployed_dnvp = 5;
-Q.unemployed_nsdap = 15;
-Q.unemployed_other = 10;
+Q.unemployed_nsdap = 10;
+Q.unemployed_other = 5;
 Q.unemployed_ppu = 0;
 
-Q.minorieties_spd = 25;
+Q.minorieties_spd = 20;
 Q.minorieties_z = 1;
-Q.minorieties_ddp = 0;
-Q.minorieties_dvp = 0;
+Q.minorieties_ddp = 10;
+Q.minorieties_dvp = 10;
 Q.minorieties_dnvp = 5;
-Q.minorieties_nsdap = 15;
+Q.minorieties_nsdap = 0;
 Q.minorieties_other = 9;
 Q.minorieties_ppu = 55;
 
 Q.catholics_spd = 10;
 Q.catholics_z = 30;
-Q.catholics_ddp = 0;
+Q.catholics_ddp = 8;
 Q.catholics_dvp = 15;
 Q.catholics_dnvp = 15;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 12;
-Q.catholics_ppu = 13;
+Q.catholics_ppu = 5;
 
 // Current Reichstag composition
 // % of Reichstag in Jan 1928
