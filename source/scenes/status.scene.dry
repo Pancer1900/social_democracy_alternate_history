@@ -165,29 +165,29 @@ Q.socialism_disp = Math.round(Q.socialism);
 
 (if the election were to be held now):
 
-[? if sapd_formed: <span style="color: #9B0000;">**KPM**</span>: [+ sapd_votes +]% ?]
+[? if sapd_formed: <span style="color: #940000;">**KPM**</span>: [+ sapd_votes +]% ?]
 
 [? if asum_formed: <span style="color: #9B0000;">**ASUM**</span>: [+ asum_votes +]% ?]
 
-[? if spd_name != 0: <span style="color: #c00000;">**[+ spd_name +]**</span>: [+ spd_votes +]% ?]
+[? if spd_name != 0: <span style="color: #dc0100;">**[+ spd_name +]**</span>: [+ spd_votes +]% ?]
 
-[? if ddp_name != 0: <span style="color: #D3C24D;">**[+ ddp_name +]**</span>: [+ ddp_votes +]% ?]
+[? if ddp_name != 0: <span style="color: #ddd500;">**[+ ddp_name +]**</span>: [+ ddp_votes +]% ?]
 
-<span style="color: #c00000;">**GDSU**</span>: [+ z_votes +]%
+<span style="color: #48ba48;">**GDSU**</span>: [+ z_votes +]%
 
-[? if blpm_formed: <span style="color: #c00000;">**GNVP**</span>: [+ blpm_votes +]% ?]
+[? if blpm_formed: <span style="color: #00e8ff;">**BLPM**</span>: [+ blpm_votes +]% ?]
 
-<span style="color: #c00000;">**PPU+**</span>: [+ ppu_votes +]%
+<span style="color: #4b9fde;">**PPU+**</span>: [+ ppu_votes +]%
 
-[? if dvp_name != 0: <span style="color: #C0A054;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
+[? if dvp_name != 0: <span style="color: #fbffd5;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
 
-[? if gdvn_formed: <span style="color: #c00000;">**GNVP**</span>: [+ gnvp_votes +]% ?]
+[? if gdvn_formed: <span style="color: #774ae2;">**GNVP**</span>: [+ gnvp_votes +]% ?]
 
-<span style="color: #c00000;">**others**</span>: [+ other_votes +]%
+<span style="color: #dddddd;">**others**</span>: [+ other_votes +]%
 
-<span style="color: #c00000;">**MNVP**</span>: [+ dnvp_votes +]%
+<span style="color: #1027dc;">**MNVP**</span>: [+ dnvp_votes +]%
 
-<span style="color: #c00000;">**NSDAP**</span>: [+ nsdap_votes +]%
+<span style="color: #706a65;">**NSDAP**</span>: [+ nsdap_votes +]%
 
 **Detailed results for each demographic**
 
