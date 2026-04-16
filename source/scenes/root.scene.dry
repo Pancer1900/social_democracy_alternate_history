@@ -236,7 +236,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics', 'peasants', 'minorieties'];
-Q.parties = ['spd', 'kpd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'ppu'];
+Q.parties = ['spd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'ppu'];
 
 // TODO: add 'sapd' later on
 Q.sapd_formed = 0;
@@ -360,7 +360,6 @@ Q.old_blpm_r = 0;
 Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
 Q.dvp_name = "LPD";
-Q.spd_name = "VDSMP";
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
