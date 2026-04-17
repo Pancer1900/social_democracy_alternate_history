@@ -37,33 +37,33 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 Reichstag composition:
 
-[? if sapd_formed and sapd_r > 0: KPM: [+ sapd_r +]% ?]
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="vdspm" style="color: #940000;">**KPM**</span>: [+ sapd_r +]% ?]
 
-[? if asum_formed and asum_r > 0: KPM: [+ asum_r +]% ?]
+[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="vdspm" style="color: #dd5b00;">**ASUM**</span>: [+ asum_r +]% ?]
 
-[? if not sapd_formed != 0 and asum_formed = 0 : <span class="tooltip-text" title="vdspm" style="color: #dc0200;">**DSPM**</span>: [+ spd_r +]% ?]
+[? if sapd_formed != 0 and asum_formed = 0 : <span class="tooltip-text" title="vdspm" style="color: #dc0200;">**DSPM**</span>: [+ spd_r +]% ?]
 
-[? if not sapd_formed != 0 and asum_formed != 0 : <span class="tooltip-text" title="vdspm" style="color: #dc0200;">**SPM**</span>: [+ spd_r +]% ?]
+[? if sapd_formed != 0 and asum_formed != 0 : <span class="tooltip-text" title="vdspm" style="color: #dc0200;">**SPM**</span>: [+ spd_r +]% ?]
 
-[? if not sapd_formed = 0 : <span class="tooltip-text" title="vdspm" style="color: #dc0200;">**VDSPM**</span>: [+ spd_r +]% ?]
+[? if sapd_formed = 0 : <span class="tooltip-text" title="vdspm" style="color: #dc0200;">**VDSPM**</span>: [+ spd_r +]% ?]
 
-{!<span class="tooltip-text" title="Center Party + Bavarian People's Party">GDVU</span>!}: [+ z_r +]%
+{!<span class="tooltip-text" title="Center Party + Bavarian People's Party" style="color: #48b94a;">**GDVU**</span>!}: [+ z_r +]%
 
-{!<span class="tooltip-text" title="German Democratic Party">!}[? if not ddp_name: FVP?][? if ddp_name != 0 : [+ ddp_name +]?]{!</span>!}: [+ ddp_r +]%
+{!<span class="tooltip-text" title="Center Party + Bavarian People's Party" style="color: #ddd500;">**FVP**</span>!}: [+ ddp_r +]%
 
-[? if blpm_formed and gnvp_r > 0: BLPM: [+ blpm_r +]% ?]
+[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="vdspm" style="color: #00e8ff;">**BLPM**</span>: [+ blpm_r +]% ?]
 
-{!<span class="tooltip-text" title="German People's Party">PPU+</span>!}: [+ ppu_r +]%
+{!<span class="tooltip-text" title="German People's Party" style="color: #4a9fde;">**PPU+**</span>!}: [+ ppu_r +]%
 
-{!<span class="tooltip-text" title="German People's Party">**[+ dvp_name +]**</span>!}: [+ dvp_r +]%
+{!<span class="tooltip-text" title="German People's Party" style="color: #caa58b;">**LDP**</span>!}: [+ dvp_r +]%
 
 Others: [+ other_r +]%
 
-[? if gnvp_formed and gnvp_r > 0: GNVP: [+ gnvp_r +]% ?]
+[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="vdspm" style="color: #774ae2;">**GNVP**</span>: [+ gnvp_r +]% ?]
 
-{!<span class="tooltip-text" title="German National People's Party">MNVP</span>!}: [+ dnvp_r +]%
+{!<span class="tooltip-text" title="German National People's Party" style="color: #3F7BC1;">**MNVP**</span>!}: [+ dnvp_r +]%
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)">NSDAP</span>!}: [+ nsdap_r +]%
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">**NSDAP**</span>!}: [+ nsdap_r +]%
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
