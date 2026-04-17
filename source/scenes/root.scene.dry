@@ -106,6 +106,7 @@ Q.moderate_plan_adopted = 0;
 
 // inter-party relations
 Q.z_relation = 50;
+Q.sapd_relation = 50;
 Q.asum_relation = 50;
 Q.blpm_relation = 50;
 Q.gnvp_relation = 50;
@@ -360,6 +361,18 @@ Q.old_blpm_r = 0;
 Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
 Q.dvp_name = "LPD";
+
+// party leadership
+Q.sapd_leader = "x";
+Q.asum_leader = "x";
+Q.ddp_leader = "x";
+Q.z_leader = "x";
+Q.dvp_leader = "x";
+Q.dnvp_leader = "x";
+Q.nsdap_leader = "x";
+Q.ppu_leader = "x";
+Q.gnvp_leader = "x";
+Q.blpm_leader = "x";
 
 // array of objects of the form {date: Date(), spd: 10, kpd: 12, ...} for each election
 Q.election_records = [];
