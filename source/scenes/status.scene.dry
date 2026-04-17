@@ -37,9 +37,9 @@ Chancellor: [+ chancellor +] ([+ chancellor_party +])
 
 Reichstag composition:
 
-[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">**KPM**</span>: [+ sapd_r +]% ?]
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">KPM</span>: [+ sapd_r +]% ?]
 
-[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">**ASUM**</span>: [+ asum_r +]% ?]
+[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">ASUM</span>: [+ asum_r +]% ?]
 
 [? if sapd_formed != 0 and asum_formed = 0 : <span class="tooltip-text" title="Democratic Socialist Party of Merkopia" style="color: #dc0200;">**DSPM**</span>: [+ spd_r +]% ?]
 
@@ -47,23 +47,23 @@ Reichstag composition:
 
 [? if sapd_formed = 0 : <span class="tooltip-text" title="United Democratic Socialist Party of Merkopia" style="color: #dc0200;">**VDSPM**</span>: [+ spd_r +]% ?]
 
-{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">**GDSU**</span>!}: [+ z_r +]%
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_r +]%
 
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">**FVP**</span>!}: [+ ddp_r +]%
+{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_r +]%
 
-[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">**BLPM**</span>: [+ blpm_r +]% ?]
+[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_r +]% ?]
 
-{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">**PPU+**</span>!}: [+ ppu_r +]%
+{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_r +]%
 
-{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">**LDP**</span>!}: [+ dvp_r +]%
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_r +]%
 
 Others: [+ other_r +]%
 
-[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">**GNVP**</span>: [+ gnvp_r +]% ?]
+[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_r +]% ?]
 
-{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">**MNVP**</span>!}: [+ dnvp_r +]%
+{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">MNVP</span>!}: [+ dnvp_r +]%
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">**NSDAP**</span>!}: [+ nsdap_r +]%
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">NSDAP</span>!}: [+ nsdap_r +]%
 
 [? if spd_in_government = 1 : Budget: [+ budget +] ?]
 
@@ -85,25 +85,47 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Inter-party Relations
 
-[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">**KPM**</span>: [+ sapd_r +]% ?]
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">KPM</span>: [+ sapd_relation : relationships +] ?]
 
-[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">**ASUM**</span>: [+ asum_r +]% ?]
+[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">ASUM</span>: [+ asum_relation : relationships +] ?]
 
-{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">**GDSU**</span>!}: [+ z_relation : relationships +]
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_relation : relationships +]
 
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">**FVP**</span>!}: [+ ddp_relation : relationships +]
 
-[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">**BLPM**</span>: [+ blpm_relation : relationships +] ?]
+[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_relation : relationships +] ?]
 
-{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">**PPU+**</span>!}: [+ ppu_relation : relationships +]
+{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_relation : relationships +]
 
-{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">**LDP**</span>!}: [+ dvp_relation : relationships +]
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_relation : relationships +]
 
-[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">**GNVP**</span>: [+ gnvp_relation : relationships +] ?]
+[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_relation : relationships +] ?]
 
-{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">**MNVP**</span>!}: [+ dnvp_relation : relationships +]
+{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">MNVP</span>!}: [+ dnvp_relation : relationships +]
 
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">**NSDAP**</span>!}: [+ nsdap_relation : relationships +]
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">NSDAP</span>!}: [+ nsdap_relation : relationships +]
+
+= Party Leadership 
+
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">KPM</span>: [+ sapd_leader +] ?]
+
+[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">ASUM</span>: [+ asum_leader +] ?]
+
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_leader +]
+
+{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">**FVP**</span>!}: [+ ddp_leader +]
+
+[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_leader +] ?]
+
+{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_leader +]
+
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_leader +]
+
+[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_leader +] ?]
+
+{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">MNVP</span>!}: [+ dnvp_leader +]
+
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">NSDAP</span>!}: [+ nsdap_leader +]
 
 = Internal Factions of the [+ spd_name +]
 
