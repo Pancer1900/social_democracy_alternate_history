@@ -91,7 +91,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_relation : relationships +]
 
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">**FVP**</span>!}: [+ ddp_relation : relationships +]
+{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_relation : relationships +]
 
 [? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_relation : relationships +] ?]
 
@@ -113,7 +113,7 @@ Economic growth: [+ economic_growth_2 +]%
 
 {!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_leader +]
 
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">**FVP**</span>!}: [+ ddp_leader +]
+{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_leader +]
 
 [? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_leader +] ?]
 
