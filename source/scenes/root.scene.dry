@@ -257,8 +257,8 @@ Q.workers_nsdap = 0;
 Q.workers_other = 5;
 Q.workers_ppu = 5;
 
-Q.old_middle_spd = 5;
-Q.old_middle_z = 5;
+Q.old_middle_spd = 0;
+Q.old_middle_z = 10;
 Q.old_middle_ddp= 10;
 Q.old_middle_dvp = 35;
 Q.old_middle_dnvp = 25;
@@ -311,14 +311,14 @@ Q.minorieties_nsdap = 0;
 Q.minorieties_other = 9;
 Q.minorieties_ppu = 55;
 
-Q.catholics_spd = 10;
-Q.catholics_z = 30;
+Q.catholics_spd = 5;
+Q.catholics_z = 50;
 Q.catholics_ddp = 8;
 Q.catholics_dvp = 15;
 Q.catholics_dnvp = 15;
 Q.catholics_nsdap = 0;
-Q.catholics_other = 12;
-Q.catholics_ppu = 5;
+Q.catholics_other = 2;
+Q.catholics_ppu = 0;
 
 // Current Reichstag composition
 // % of Reichstag in Jan 1928
@@ -369,8 +369,8 @@ Q.ddp_leader = "x";
 Q.z_leader = "x";
 Q.dvp_leader = "x";
 Q.dnvp_leader = "x";
-Q.nsdap_leader = "x";
-Q.ppu_leader = "x";
+Q.nsdap_leader = "Liedar Floht";
+Q.ppu_leader = "Julian Felei";
 Q.gnvp_leader = "x";
 Q.blpm_leader = "x";
 
