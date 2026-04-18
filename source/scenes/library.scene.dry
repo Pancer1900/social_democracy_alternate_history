@@ -9,7 +9,8 @@ Herein contains relevant information about the government and politics of the Me
 
 @menu
 
-- @government: Merkopian system of government
+- @ideologies: *Vital elements of the worldbuliding*
+- @government: Merkopian system of government and the most important info about the goverment
 - @weimar_timeline: Timeline of the Merkopian Federation before 1266
 - @curr_gov: Current government details
 - @demographics: Demographics
@@ -23,13 +24,18 @@ Herein contains relevant information about the government and politics of the Me
 @government
 go-to: menu
 
-The Federation of Merkopia, called by some of our detractors as the "Weimar Republic", is a parliamentary republic with a somewhat weak president and a strong parliament, called the Reichstag. The Reichstag is responsible for governing, while the President has a largely ceremonial role but also has some important governing responsibilities.
+The Federation of Merkopia, called by some of our detractors as the "Merkopian Republic", is a parliamentary republic with a somewhat weak president and a strong parliament, called the Rejoinsket. The Rejoinsket is responsible for governing, while the President has a largely ceremonial role but also has some important governing responsibilities.
 
-The Reichstag is elected based on a proportional representation system, giving parties seats roughly proportional to their vote share in each electoral district. The Reichstag then elects the Chancellor and the cabinet by a majority vote, who are responsible for government. A majority vote-of-no-confidence can remove the current government.
+The Rejoinsket is elected based on a proportional representation system, giving parties seats roughly proportional to their vote share in each electoral district. The Rejoinsket then elects the Chancellor and the cabinet by a majority vote, who are responsible for government. A majority vote-of-no-confidence can remove the current government.
 
 The President is elected by a national direct vote, in two rounds. The second round is used if the first round does not result in a majority for one candidate; the candidate who receives a plurality in the second round becomes president (there is no obligation for weaker candidates to drop out). The role of the president is mostly to represent Germany, but he also has some crucial governing powers. The president and chancellor can together use emergency decrees to govern, bypassing the Reichstag. The president can also appoint or remove a chancellor when a parliamentary majority is unable to be established, and can thus influence the formation of a government.
 
-Germany is divided into a number of states, each of which have their own governments with some responsibilities. By far the largest and most important state is Prussia.
+Merkopia is divided into a number of states, each of which have their own governments with some responsibilities. By far the largest and most important state is Merkia.
+
+@ideologies
+go-to: menu
+
+
 
 @weimar_timeline
 go-to: menu
