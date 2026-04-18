@@ -211,16 +211,20 @@ on-display: {!
 data = [];
 data = data.concat([
     if (Q.sapd_r && Q.sapd_formed) {
-            "id": "sapd",
-            "legend": "KPM",
-            "name": "KPM",
-            "seats": Math.round(Q.sapd_r * Q.reichstag_size),
+          data.push({
+        "id": "sapd",
+        "legend": "KPM",
+        "name": "KPM",
+        "seats": Math.round(Q.sapd_r*5),
+    });
     }
     if (Q.asum_r && Q.asum_formed) {
-            "id": "asum",
-            "legend": "ASUM",
-            "name": "ASUM",
-            "seats": Math.round(Q.sapd_r * Q.reichstag_size),
+            data.push({
+        "id": "asum",
+        "legend": "ASUM",
+        "name": "ASUM",
+        "seats": Math.round(Q.asum_r*5),
+    });
     }
     {
         "id": "spd",
@@ -241,10 +245,12 @@ data = data.concat([
         "seats": Math.round(Q.z_r*5),
     },
     if (Q.blpm_r && Q.blpm_formed) {
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.sapd_r * Q.reichstag_size),
+            data.push({
+        "id": "blpm",
+        "legend": "BLPM",
+        "name": "BLPM",
+        "seats": Math.round(Q.blpm_r*5),
+    });
     }
     {
         "id": "bvp",
@@ -265,10 +271,12 @@ data = data.concat([
         "seats": Math.round(Q.other_r*5),
     },
     if (Q.gnvp_r && Q.gnvp_formed) {
-            "id": "gnvp",
-            "legend": "GNVP",
-            "name": "GNVP",
-            "seats": Math.round(Q.sapd_r * Q.reichstag_size),
+            data.push({
+        "id": "gnvp",
+        "legend": "GNVP",
+        "name": "GNVP",
+        "seats": Math.round(Q.gnvp_r*5),
+    });
     }
     {
         "id": "dnvp",
