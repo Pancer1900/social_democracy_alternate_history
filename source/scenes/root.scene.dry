@@ -364,7 +364,7 @@ Q.dvp_name = "LPD";
 
 // party leadership
 Q.sapd_leader = "x";
-Q.asum_leader = "x";
+Q.asum_leader = "Otto Vanmann";
 Q.ddp_leader = "x";
 Q.z_leader = "Fredrich Jon";
 Q.dvp_leader = "x";
