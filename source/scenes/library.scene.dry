@@ -170,7 +170,7 @@ go-to: menu
 
 <span style="color: #4b9fde;">**PPU+**</span>: [+ ppu_votes +]%
 
-[? if dvp_name != 0: <span style="color: #fbffd5;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
+[? if dvp_name != 0: <span style="color: #caa58b;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
 
 [? if gdvn_formed: <span style="color: #774ae2;">**GNVP**</span>: [+ gnvp_votes +]% ?]
 
@@ -201,25 +201,25 @@ Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ 
 @parties
 go-to: menu
 
-**SPM** - (VDSPM) *Sozialdemokratische Partei Merkopia* (Socialdemocratic Party of Merkopia) - They are the main element of VDSPM, they are the most parlimentary part of the VDSPM. Historicly they were the main left party (because SAPM was banned under the empire). They are most simply described as democratic socialists and refomists or centre. 
+<span style="color: #dc0200;">**SMP**</span> - (VDSPM) *Sozialdemokratische Partei Merkopia* (Socialdemocratic Party of Merkopia) - They are the main element of VDSPM, they are the most parlimentary part of the VDSPM. Historicly they were the main left party (because SAPM was banned under the empire). They are most simply described as democratic socialists and refomists or centre. 
 
-**SAPM** - (VDSPM) *Sozialistische Arbeiterpartei Merkopia* (Socialist Worker's Party of Merkopia) - They are the revolutionary element of VDSPM. They were the driving force behind the 57' revolution. They are the left wing of the VDSPM, they are pure socialists and communits.
+<span style="color: #940000;">**SAPM**</span> - (VDSPM) *Sozialistische Arbeiterpartei Merkopia* (Socialist Worker's Party of Merkopia) - They are the revolutionary element of VDSPM. They were the driving force behind the 57' revolution. They are the left wing of the VDSPM, they are pure socialists and communits.
 
-**ASUM** - (VDSPM) *Agrarsoziale Union Merkopia* (Agricultural Social Union of Merkopia) - They are the agrarian element of VDSPM, charismatic Otto Vanmann leads this party. Their main focus is land colectivisation and improving the lives of the peasnats and farmers.
+<span style="color: #dd5b00;">**ASUM**</span> - (VDSPM) *Agrarsoziale Union Merkopia* (Agricultural Social Union of Merkopia) - They are the agrarian element of VDSPM, charismatic Otto Vanmann leads this party. Their main focus is land colectivisation and improving the lives of the peasnats and farmers.
 
-[? if sapd_formed: KPM - *Kommunistische Partei Merkopia* (Communist Party of Merkopia) - Party created from mostly SAPM, much more radical than VDSPM. Their main goal is violent overthrow of the govermnet ?]
+[? if sapd_formed: <span style="color: #ddd500;">**KPM**</span> - *Kommunistische Partei Merkopia* (Communist Party of Merkopia) - Party created from mostly SAPM, much more radical than VDSPM. Their main goal is violent overthrow of the govermnet ?]
 
 [? if sapd_formed: Current relations: [+ sapd_relation : relationships +] ?]
 
-**GDSU** - *Gecherdist Demokratische Soclaiunion* (Gecherdists Democratic Social Party) - a center-left to center-right Catholic party that supports the Federation, and has historically supported many of our labor, welfare, and anti-militarist priorities. It was lead by Karl Yeager for the longest time and he achived their greatest succes uniting the common people under the banner of the Gecherdist party which supports the separtaion of powers bettwen church and state. In 1265 Jeager retired and now his sucessor Fredrich Jon leads the party. 
+<span style="color: #48b94a;">**GDSU**</span> - *Gecherdist Demokratische Soclaiunion* (Gecherdists Democratic Social Party) - a center-left to center-right Catholic party that supports the Federation, and has historically supported many of our labor, welfare, and anti-militarist priorities. It was lead by Karl Yeager for the longest time and he achived their greatest succes uniting the common people under the banner of the Gecherdist party which supports the separtaion of powers bettwen church and state. In 1265 Jeager retired and now his sucessor Fredrich Jon leads the party. 
 
 Current relations: [+ z_relation : relationships +]
 
-**FVP** - *Fortschrittliche Volkspartei* (Progressive People's Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They created the Zeltbrin Coalition, but the revolution of 57' and the creation of LDP they have driffed away form us, we may yet rebuild relations with them. They are progressive socialy and economicy social-liberal.
+<span style="color: #ddd500;">**FVP**</span> - *Fortschrittliche Volkspartei* (Progressive People's Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They created the Zeltbrin Coalition, but the revolution of 57' and the creation of LDP they have driffed away form us, we may yet rebuild relations with them. They are progressive socialy and economicy social-liberal.
 
 Current relations: [+ ddp_relation : relationships +]
 
-[? if blpm_formed: BLPM - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a splinter party of LDP, they are more close to the old DPM?]
+[? if blpm_formed: <span style="color: #00e8ff;">**BLPM**</span> - Sozialistische Arbeiterpartei Deutschlands (Socialist Worker's Party of Germany) - a splinter party of LDP, they are more close to the old DPM?]
 
 [? if blpm_formed: Current relations: [+ blpm_relation : relationships +] ?]
 
@@ -227,7 +227,7 @@ Current relations: [+ ddp_relation : relationships +]
 
 Current relations: [+ ppu_relation : relationships +]
 
-<span style="color: #fbffd5;">**[+ dvp_name +]**</span> - *Liberaldemokratische Partei* (Liberal-Democratic Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. They were created in 1257 by the merger of NLP (Naitional Liberal Party) and DPM (Democratic Party of Mekropia), after the merger they truned more right and became a stonch opposition to any kind of socilaist governance, but the future may tell if they prefer the far right or the center-left.
+<span style="color: #caa58b;">**[+ dvp_name +]**</span> - *Liberaldemokratische Partei* (Liberal-Democratic Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. They were created in 1257 by the merger of NLP (Naitional Liberal Party) and DPM (Democratic Party of Mekropia), after the merger they truned more right and became a stonch opposition to any kind of socilaist governance, but the future may tell if they prefer the far right or the center-left.
 
 Current relations: [+ dvp_relation : relationships +]
 
@@ -289,9 +289,8 @@ Loyalty: [+ reichswehr_loyalty : loyalty +]
 
 Loyalty: [+ prussian_police_loyalty : loyalty +]
 
-
-
 @factions
+go-to: menu
 
 **Internal factions of the VDSPM**
 
