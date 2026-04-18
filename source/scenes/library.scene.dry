@@ -74,6 +74,7 @@ Reichstag composition:
 {!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_r +]%
 
 {!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_r +]%
+
 Others: [+ other_r +]%
 
 [? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_r +]% ?]
