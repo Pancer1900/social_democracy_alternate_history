@@ -215,7 +215,7 @@ go-to: menu
 
 Current relations: [+ z_relation : relationships +]
 
-**FVP** - *Fortschrittliche Volkspartei* (GProgressive People's Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They created the Zeltbrin Coalition, but the revolution of 57' and the creation of LDP they have driffed away form us, we may yet rebuild relations with them. They are progressive socialy and economicy social-liberal.
+**FVP** - *Fortschrittliche Volkspartei* (Progressive People's Party) - a center-left liberal party, popular among the intelligensia and educated middle class. They created the Zeltbrin Coalition, but the revolution of 57' and the creation of LDP they have driffed away form us, we may yet rebuild relations with them. They are progressive socialy and economicy social-liberal.
 
 Current relations: [+ ddp_relation : relationships +]
 
@@ -223,19 +223,23 @@ Current relations: [+ ddp_relation : relationships +]
 
 [? if blpm_formed: Current relations: [+ blpm_relation : relationships +] ?]
 
-**LDP** - *Liberaldemokratische Partei* (Liberal-Democratic Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. They were created in 1257 by the merger of NLP (Naitional Liberal Party) and DPM (Democratic Party of Mekropia), after the merger they truned more right and became a stonch opposition to any kind of socilaist governance, but the future may tell if they prefer the far right or the center-left.
+<span style="color: #4b9fde;">**PPU+**</span> - *Fortschrittliche Volkspartei* (Perclian People's Union) - a center-left liberal party, popular among the intelligensia and educated middle class. They created the Zeltbrin Coalition, but the revolution of 57' and the creation of LDP they have driffed away form us, we may yet rebuild relations with them. They are progressive socialy and economicy social-liberal.
+
+Current relations: [+ ppu_relation : relationships +]
+
+<span style="color: #fbffd5;">**[+ dvp_name +]**</span> - *Liberaldemokratische Partei* (Liberal-Democratic Party) - a conservative-liberal party, supported by the middle classes and bourgeoisie. They were created in 1257 by the merger of NLP (Naitional Liberal Party) and DPM (Democratic Party of Mekropia), after the merger they truned more right and became a stonch opposition to any kind of socilaist governance, but the future may tell if they prefer the far right or the center-left.
 
 Current relations: [+ dvp_relation : relationships +]
 
-[? if gnvp_formed: GNVP - *Gecherdist National Volkpartei* (Gecherdist National People's Party) - a splinter party of GDSU made up of pure religous traditionalst, whom are strongly opposed to the left wing, both economicy and socialy  ?]
+[? if gnvp_formed: <span style="color: #774ae2;">**GNVP**</span> - *Gecherdist National Volkpartei* (Gecherdist National People's Party) - a splinter party of GDSU made up of pure religous traditionalst, whom are strongly opposed to the left wing, both economicy and socialy  ?]
 
 [? if gnvp_formed: Current relations: [+ gnvp_relation : relationships +] ?]
 
-**MNVP** - *Merkopenationale Volkspartei* (Merkopian National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative burgoise.
+<span style="color: #1027dc;">**MNVP**</span> - *Merkopenationale Volkspartei* (Merkopian National People's Party) - a right-wing nationalist-conservative party, with authoritarian, monarchist, and racist elements. It is supported by the former aristocracy, rural landowners, and conservative burgoise.
 
 Current relations: [+ dnvp_relation : relationships +]
 
-**NSDAP** - *Nationalsozialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or Nazis) - a far-right nationalist and antisemitic party. Led by Lieder Floht, who took over the party in 1264 and began reforming it into a new alternative for Merkopia, calling not for a restoration of the Empire but of a "new state" with elements of national syndicalism and radical right nationalism and revanchism.  
+<span style="color: #706a65;">**NSDAP**</span> - *Nationalsozialistische Deutsche Arbeiterpartei* - (National Socialist German Worker's Party, or Nazis) - a far-right nationalist and antisemitic party. Led by Lieder Floht, who took over the party in 1264 and began reforming it into a new alternative for Merkopia, calling not for a restoration of the Empire but of a "new state" with elements of national syndicalism and radical right nationalism and revanchism.  
 
 Current relations: [+ nsdap_relation : relationships +]
 
@@ -340,8 +344,6 @@ Mosty from SPM, they want to puirsue the path of democratic sociaism and are pus
 Strength: [+ reformist_strength : strength +]
 
 Dissent: [+ reformist_dissent : dissent +]
-
-go-to: menu
 
 @figures
 title: Figures and Charts
