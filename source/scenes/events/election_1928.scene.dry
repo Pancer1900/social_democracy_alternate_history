@@ -209,23 +209,23 @@ Q.election_records.push(election_result);
 on-departure: nazi_urgency = 1 if (nazi_urgency == 0 and nsdap_r >= 15)
 on-display: {!
 data = [];
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_r*5),
+            });
+}
+if (Q.asum_formed && Q.asum_r) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_r*5),
+            });
+}
 data = data.concat([
-    if (Q.sapd_r && Q.sapd_formed) {
-          data.push({
-        "id": "sapd",
-        "legend": "KPM",
-        "name": "KPM",
-        "seats": Math.round(Q.sapd_r*5),
-    });
-    }
-    if (Q.asum_r && Q.asum_formed) {
-            data.push({
-        "id": "asum",
-        "legend": "ASUM",
-        "name": "ASUM",
-        "seats": Math.round(Q.asum_r*5),
-    });
-    }
     {
         "id": "spd",
         "legend": Q.spd_name,
@@ -244,14 +244,16 @@ data = data.concat([
         "name": "GDSU",
         "seats": Math.round(Q.z_r*5),
     },
-    if (Q.blpm_r && Q.blpm_formed) {
-            data.push({
-        "id": "blpm",
-        "legend": "BLPM",
-        "name": "BLPM",
-        "seats": Math.round(Q.blpm_r*5),
-    });
-    }
+    ]);
+if (Q.blpm_formed && Q.blpm_r) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_r*5),
+            });
+}
+data = data.concat([
     {
         "id": "bvp",
         "legend": "PPU",
@@ -270,14 +272,16 @@ data = data.concat([
         "name": "Other",
         "seats": Math.round(Q.other_r*5),
     },
-    if (Q.gnvp_r && Q.gnvp_formed) {
-            data.push({
-        "id": "gnvp",
-        "legend": "GNVP",
-        "name": "GNVP",
-        "seats": Math.round(Q.gnvp_r*5),
-    });
-    }
+]);
+if (Q.gnvp_formed && Q.gnvp_r) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_r*5),
+            });
+}
+data = data.concat([
     {
         "id": "dnvp",
         "legend": "MNVP",
