@@ -1,13 +1,13 @@
 title: Anna Ferenn
 is-pinned-card: true
 tags: advisor, revolutionary
-card-image: img/portraits/ottovanmann.png
-view-if: ferenn_advisor = 1
+card-image: img/portraits/annaferen.png
+view-if: ferren_advisor = 1
 new-page: true 
 
 = Anna Ferenn
 
-Aufhäuser is a leader of the AfA-Bund, the federation of socialist white-collar trade unions.
+Anna Ferenn
 
 - @white_collar
 - @union_unity
