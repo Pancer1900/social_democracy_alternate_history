@@ -4,12 +4,12 @@ go-to: flavors
 @flavors
 new-page: true
 
-= Dynamic Social Democracy
+= Merkopian Social Democracy
 
 I know you don't want to read allat, but please do, reading will make everything make sense.
 
-- @infotext: Dynamic Social Democracy (Highly recommended for new players)
-- @faq: Frequently Asked Questions
+- @infotext: **What even is <span style="color: #d52f30;">Mer</span><span style="color: #d5d5d5;">kop</span><span style="color: #ffd31e;">ia</span>?**
+- @faq: Asked Questions (Tips)
 - @paths: What are all the paths?
 - @changelog: Changelog + Future Updates!
 - @discord: Discord
