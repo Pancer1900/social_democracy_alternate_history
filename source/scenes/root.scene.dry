@@ -58,9 +58,9 @@ Q.dissent_percent = 5;
 Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist','revolutionaries','agrarnians'];
 // should this be normalized to 100%?
 Q.left_strength = 23;
-Q.left_dissent = 20;
+Q.left_dissent = 15;
 Q.revolutionaries_strength = 15;
-Q.revolutionaries_dissent = 20;
+Q.revolutionaries_dissent = 25;
 Q.agrarnians_strength = 15;
 Q.agrarnians_dissent = 20;
 Q.center_strength = 35;
@@ -191,7 +191,7 @@ Q.nationalism = 60;
 // socialism vs capitalism
 Q.socialism = 40;
 // pro-republic vs anti-republic
-Q.pro_republic = 59;
+Q.pro_republic = 60;
 
 Q.emergency_rule = 0;
 
@@ -219,8 +219,8 @@ Q.budget = 4;
 Q.workers = 39; // industry and trade
 Q.old_middle = 16; // "old mittelstand"
 Q.new_middle = 17; // "new mittelstand"
-Q.rural = 11; // agriculture and forestry employment
-Q.peasants = 17;
+Q.rural = 13; // agriculture and forestry employment
+Q.peasants = 15;
 Q.unemployed = 7.5;
 Q.catholics = 25;
 Q.minorieties = 12;
