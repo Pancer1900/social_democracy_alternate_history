@@ -6,22 +6,25 @@ go-to: post_event if started = 1; start_menu if started = 0
 new-page: true
 go-to: start_menu_2
 
-= Social Democracy: An Alternate History
+= **<span style="color: #d52f30;">Mer</span><span style="color: #d5d5d5;">kop</span><span style="color: #ffd31e;">ian</span> Democracy: An Alternate History**
 
 @start_menu_2
 
-- @start: Start game
-- @modinfo.infotext: Mod Info - Last Updated 2026/--/--
-- @election_simulation: Election simulation
+- @start_1: Start game
+- @modinfo: Mod Info - Last Updated 2026/--/--
 - @credits: Credits
 - @game_over.achievements
+
+@start_1
+on-arrival: player_beg = 1 if not achievement_game_completed
+go-to: start if achievement_game_completed; pls_player if not achievement_game_completed
+
 
 @pls_player
 
 Read.
 
 - @modinfo.infotext: Mod Info - Last Updated 2026/--/--
-
 
 @start
 on-arrival: {!
