@@ -123,7 +123,7 @@ Q.asum_relation = 50;
 Q.blpm_relation = 50;
 Q.kpd_relation = 25;
 Q.ddp_relation = 45;
-Q.dvp_relation = 20;
+Q.dvp_relation = 25;
 Q.ppu_relation = 35;
 // DNVP and NSDAP are invariably hostile
 Q.gnvp_relation = 10;
@@ -670,17 +670,12 @@ This is a game of alternate history, a <span style="color: #d52f30;">Mer</span><
 
 For more information on the politics and government of the Merkopian Federation, see the "Library" page on the top left. If this is your first time playing the game, it is strongly recommended that you read at least some of this information. 
 
-- @1928_easy: Begin (easy difficulty)
+- @1928_easy: Begin (easy difficulty) *Sunshine and lollipops*
 - @1928_main: Begin (normal difficulty) *Prefered Way to play the game*
-- @1928_hard: Begin (hard difficulty)
-- @1928_historical: Begin (historical mode)
+- @1928_historical: Begin (historical mode) *Hard Mode*
 
 @1928_easy
-on-arrival: difficulty = -1; resources = 4; dues = 3; rb_strength = 2500; kpd_relation = 29; z_relation = 54; dvp_relation = 49; budget = 5;
-go-to: 1928_main
-
-@1928_hard
-on-arrival: difficulty = 1; resources = 0; dues = 1; rb_strength = 1000; reformist_dissent = 25; left_dissent = 30; labor_dissent = 25; center_dissent = 25; z_relation = 41; kpd_relation = 16; dvp_relation = 31; budget = 3;
+on-arrival: difficulty = -1; resources = 4; dues = 4; z_relation = 45; dvp_relation = 40; budget = 5;
 go-to: 1928_main
 
 @1928_historical
@@ -688,16 +683,17 @@ subtitle: Saving, loading, and polls will be disabled. [? if not achievement_gam
 on-arrival: {!
 Q.difficulty = 2;
 Q.historical_mode = 1;
-Q.resources = 2;
-Q.dues = 1;
-Q.rb_strength = 2000;
+Q.resources = 3;
+Q.dues = 2;
 Q.reformist_dissent = 25;
+Q.agrarnians_dissent = 25;
+Q.revolutionaries_dissent = 35;
 Q.left_dissent = 30;
 Q.labor_dissent = 25;
 Q.center_dissent = 25;
-Q.z_relation = 41;
-Q.kpd_relation = 16;
-Q.dvp_relation = 31;
+Q.dpp_relation = 35;
+Q.z_relation = 35;
+Q.dvp_relation = 20;
 Q.budget = 2;
 this.state.disableSaves = true;
 !}
@@ -706,6 +702,6 @@ go-to: 1928_main
 @1928_main
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
 new-page: true
-go-to: main if difficulty >= 0; main.main_easy if difficulty < 0
+go-to: main if difficulty >= 1; main.main_easy if difficulty < 1
 
 
