@@ -8,7 +8,7 @@ if (Q.month_actions > 0) {
 // return card to hand
 var card = this.state.lastPlayedCard;
 card.image = card.cardImage;
-if (Q.difficulty >= 0) {
+if (Q.difficulty >= 1) {
     this.state.currentHands['main'].push(card);
 } else {
     this.state.currentHands['main.main_easy'].push(card);
