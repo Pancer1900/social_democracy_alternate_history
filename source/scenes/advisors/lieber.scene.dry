@@ -2,7 +2,7 @@ title: Hans Lieber
 is-pinned-card: true
 tags: advisor, revolutionary
 card-image: img/portraits/ottovanmann.png
-view-if: aufhauser_advisor = 1
+view-if: lieber_advisor = 1
 new-page: true 
 
 = Hans Lieber
