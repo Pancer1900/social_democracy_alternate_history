@@ -57,17 +57,17 @@ Q.dissent_percent = 5;
 // factions
 Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist','revolutionaries','agrarnians'];
 // should this be normalized to 100%?
-Q.left_strength = 15;
+Q.left_strength = 23;
 Q.left_dissent = 20;
 Q.revolutionaries_strength = 15;
 Q.revolutionaries_dissent = 20;
 Q.agrarnians_strength = 15;
 Q.agrarnians_dissent = 20;
-Q.center_strength = 30;
-Q.center_dissent = 0;
-Q.labor_strength = 25;
-Q.labor_dissent = 5;
-Q.reformist_strength = 25;
+Q.center_strength = 35;
+Q.center_dissent = 15;
+Q.labor_strength = 15;
+Q.labor_dissent = 15;
+Q.reformist_strength = 32;
 Q.reformist_dissent = 5;
 Q.neorevisionist_strength = 5;
 Q.neorevisionist_dissent = 10;
@@ -76,6 +76,8 @@ Q.neorevisionist_dissent = 10;
 Q.unions_independent = 0;
 Q.centrists_resign = 0;
 Q.left_split = 0;
+Q.agrarnians_split = 0;
+Q.revolutionaries_split = 0;
 Q.reformists_resigned = 0;
 
 // have we discovered neorevisionism?
@@ -116,6 +118,7 @@ Q.moderate_plan_adopted = 0;
 // inter-party relations
 Q.z_relation = 40;
 Q.sapd_relation = 50;
+Q.spm_relation = 50;
 Q.asum_relation = 50;
 Q.blpm_relation = 50;
 Q.kpd_relation = 25;
@@ -373,13 +376,14 @@ Q.dvp_name = "LPD";
 
 // party leadership
 Q.sapd_leader = "x";
+Q.spm_leader = "x";
 Q.asum_leader = "Otto Vanmann";
 Q.ddp_leader = "x";
 Q.z_leader = "Fredrich Jon";
 Q.dvp_leader = "x";
 Q.dnvp_leader = "x";
 Q.nsdap_leader = "Liedar Floht";
-Q.ppu_leader = "Julian Felei";
+Q.ppu_leader = "Julian Fefei";
 Q.gnvp_leader = "x";
 Q.blpm_leader = "x";
 
@@ -405,6 +409,8 @@ Q.dnvp_in_government = 1;
 Q.kpd_in_government = 0;
 Q.nsdap_in_government = 0;
 
+Q.in_liberal_coalition = 0;
+// Liberal coalition
 Q.in_right_coalition = 0;
 // Weimar coalition = SPD + Z + DDP
 Q.in_weimar_coalition = 0;
@@ -517,7 +523,7 @@ Q.spd_no_confidence = 0;
 Q.no_confidence_against_spd = 0;
 
 // Advisors/Leaders
-Q.n_advisors = 3;
+Q.n_advisors = 5;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
@@ -603,6 +609,10 @@ Q.muller_dead = 0;
 // okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
 Q.hilferding_advisor = 1; // Rudolf Hilferding
+
+// Revolutionary advisors
+Q.ferren_advisor = 1; // Anna Ferren
+Q.lieber_advisor = 1; // Hans Lieber
 
 // Agrarian advisors
 Q.vanmann_advisor = 1; // Otto Vanmann
@@ -696,6 +706,6 @@ go-to: 1928_main
 @1928_main
 audio: shuffle music/1928_1930/FruhlingsliedMendelssohn.mp3 music/1928_1930/AUF_HOHEN_BERGEN_noise_reduced.mp3 music/1928_1930/MarekWeber.mp3 music/1928_1930/BAUERNKAPELLE.mp3 music/1928_1933/DERLINDENBAUM_normalized.mp3 music/1928_1933/ZurSonne_zurFreiheit.mp3 music/1928_1933/arbeiter_marseille.mp3 music/1928_1933/Wann_wir_schreiten_Seit_an_Seit.mp3 music/1930_1933/Internationale-de_normalized.ogg music/1928_1930/LiedDerPompadour.mp3 music/1928_1933/SozialistenMarsch.mp3
 new-page: true
-go-to: main if difficulty >= 1; main.main_easy if difficulty < 0
+go-to: main if difficulty >= 1; main.main_easy if difficulty < 1
 
 
