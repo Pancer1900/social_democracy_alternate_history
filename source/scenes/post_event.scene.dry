@@ -101,7 +101,7 @@ if (Q.dissent < 0) {
 }
 
 // 1. update dates
-if (Q.month_actions >= 1) {
+if (Q.month_actions >= 2) {
     Q.time += 1;
     Q.month_actions = 0;
     Q.month += 1;
