@@ -28,6 +28,8 @@ Merkopia is a federal republic, located in central Vacria (continent name)
 
 face-image: img/Vacr-Mer-map.png
 
+'<img src="img/Mer_flag.png">'
+
 - @flavors: Back
 
 @faq
