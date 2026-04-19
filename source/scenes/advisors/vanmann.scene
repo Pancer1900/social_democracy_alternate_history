@@ -1,6 +1,6 @@
 title: Otto Vanmann
 is-pinned-card: true
-tags: advisor, agrarian
+tags: advisor, agrarnians
 card-image: img/portraits/ottovanmann.png
 view-if: vanmann_advisor = 1
 new-page: true 
