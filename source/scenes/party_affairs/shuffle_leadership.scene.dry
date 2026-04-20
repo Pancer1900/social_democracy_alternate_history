@@ -21,7 +21,7 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 @rm_main
 title: Remove advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor 
+tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, nonfactional_advisor, rev_advisor, agr_advisor  
 frequency: 1
 
 - #remove_advisor
@@ -32,6 +32,18 @@ title: Stop changing advisors.
 go-to: root
 tags: remove_advisor
 
+#rev
+
+#center
+
+@remove_jomann
+title: Remove Hilferding
+view-if: jomann_advisor = 1
+on-arrival: jomann_advisor = 0; center_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Jomann has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_hilferding
 title: Remove Hilferding
@@ -196,39 +208,6 @@ go-to: rm_main
 
 Siemsen has been removed as an advisor. The Leftist faction disapproves.
 
-
-
-
-# neorevisionists
-
-@remove_mierendorff
-title: Remove Mierendorff
-view-if: mierendorff_advisor = 1
-tags: remove_advisor
-on-arrival: mierendorff_advisor = 0; neorevisionist_dissent += 5; n_advisors -= 1
-go-to: rm_main
-
-Mierendorff has been removed as an advisor. The Neorevisionist faction disapproves.
-
-@remove_leber
-title: Remove Leber
-view-if: leber_advisor = 1
-tags: remove_advisor
-on-arrival: leber_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
-go-to: rm_main
-
-Leber has been removed as an advisor. The Neorevisionist faction disapproves.
-
-@remove_schumacher
-title: Remove Schumacher
-view-if: schumacher_advisor = 1
-tags: remove_advisor
-on-arrival: schumacher_advisor = 0; neorevisionist_dissent += 3; n_advisors -= 1
-go-to: rm_main
-
-Schumacher has been removed as an advisor. The Neorevisionist faction disapproves.
-
-
 ## nonfactional
 
 # tbh I'm not sure if Baade should be a reformist or nonfactional. same for stampfer. they were vaguely reformist-aligned but had pretty different ideas from the other reformists here. so they're non-factional.
@@ -286,15 +265,16 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, neorev_advisor, nonfactional_advisor
+tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, nonfactional_advisor
 frequency: 1
 
 
 - @centrist: Add Centrists
+- @rev: Add Revolutionareis 
+- @agr: Add Agrarians 
 - @left: Add Leftists
 - @reformist: Add Reformists
 - @labor: Add Labor
-- @neorev: Add Neorevisionists
 - @nonfactional: Add non-factional advisors
 - @rm_main: Remove advisors instead.
 - @remove_none: Stop changing advisors.
@@ -318,11 +298,6 @@ view-if: n_advisors < 3
 view-if: n_advisors < 3
 
 - #labor_advisor
-
-@neorev
-view-if: neorevisionism > 0 and n_advisors < 3
-
-- #neorev_advisor
 
 @nonfactional
 view-if: n_advisors < 3
@@ -544,45 +519,6 @@ on-arrival: woytinsky_advisor = 1; n_advisors += 1; labor_strength += 3
 go-to: advisor_menu
 
 Wladimir Woytinsky is now an advisor.
-
-
-# neorevisionist leaders
-
-@add_mierendorff
-title: Carlo Mierendorff
-subtitle: Carlo Mierendorff is one of the youngest members of the Reichstag, and the originator of the "Neo-Revisionist" movement. He is an anti-Nazi strategist. {!<br><br>!}[? if difficulty < 0 : Actions - Build the Iron Front, Warning About the Nazis ?]
-is-card: true
-card-image: img/portraits/MierendorffCarlo.jpg
-view-if: mierendorff_advisor = 0 and n_advisors < 3
-on-arrival: mierendorff_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
-go-to: advisor_menu
-tags: neorev_advisor
-
-Carlo Mierendorff is now an advisor.
-
-@add_schumacher
-title: Kurt Schumacher
-subtitle: Kurt Schumacher is a Great War veteran and energetic speaker for the social-democratic cause, and favors reformist policies. {!<br><br>!}[? if difficulty < 0 : Actions - Emergency Fundraising, Building the Reichsbanner, Addressing the Economic Crisis ?]
-is-card: true
-card-image: img/portraits/SchumacherKurt.jpg
-tags: neorev_advisor
-view-if: schumacher_advisor = 0 and n_advisors < 3
-on-arrival: schumacher_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
-go-to: advisor_menu
-
-Kurt Schumacher is now an advisor.
-
-@add_leber
-title: Julius Leber
-subtitle: Julius Leber is a former Reichswehr officer who resigned in opposition to the Kapp coup attempt. {!<br><br>!}[? if difficulty < 0 : Actions - Rally for Democracy, Military Affairs, Building a People's Party ?]
-is-card: true
-card-image: img/portraits/LeberJulius.jpg
-view-if: leber_advisor = 0 and n_advisors < 3
-on-arrival: leber_advisor = 1; n_advisors += 1; neorevisionist_strength += 5
-go-to: advisor_menu
-tags: neorev_advisor
-
-Julius Leber is now an advisor.
 
 # Nonfactional advisors
 
