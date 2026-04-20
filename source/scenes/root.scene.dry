@@ -252,6 +252,7 @@ Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'cath
 Q.parties = ['spd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'ppu'];
 
 // TODO: add 'sapd' later on
+Q.spm_formed = 0;
 Q.sapd_formed = 0;
 Q.gnvp_formed = 0;
 Q.asum_formed = 0;
@@ -375,13 +376,13 @@ Q.ddp_name = "FVP";
 Q.dvp_name = "LPD";
 
 // party leadership
-Q.sapd_leader = "x";
-Q.spm_leader = "x";
+Q.sapd_leader = "Hans Lieber";
+Q.spm_leader = "Henrich Alder";
 Q.asum_leader = "Otto Vanmann";
-Q.ddp_leader = "x";
+Q.ddp_leader = "Wilhelm Lever";
 Q.z_leader = "Fredrich Jon";
 Q.dvp_leader = "Hans Neumann";
-Q.dnvp_leader = "x";
+Q.dnvp_leader = "Alfred Heufreg";
 Q.nsdap_leader = "Liedar Floht";
 Q.ppu_leader = "Julian Fefei";
 Q.gnvp_leader = "x";
