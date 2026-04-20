@@ -633,13 +633,13 @@ Q.sverin_advisor = 0; //
 Q.offund_advisor = 0; //
 
 // left advisors
-Q.visselfeld_advisor = 0; //
+Q.visselfeld_advisor = 1; //
 Q.zorberg_advisor = 0; //
 Q.schmit_advisor = 0; //
 
 // centre advisors
 Q.meller_advisor = 1; // Wilhelm Meller - LEADER
-Q.jomann_advisor = 0; // 
+Q.jomann_advisor = 1; // 
 Q.redish_advisor = 0; //
 Q.serindorf_advisor = 0; //
 
@@ -708,7 +708,7 @@ Q.dpp_relation = 35;
 Q.z_relation = 35;
 Q.dvp_relation = 20;
 Q.budget = 2;
-Q.n_advisors = 3;
+Q.n_advisors = 4;
 
 this.state.disableSaves = true;
 !}
