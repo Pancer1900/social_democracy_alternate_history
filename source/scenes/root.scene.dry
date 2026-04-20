@@ -604,7 +604,7 @@ Q.march_on_berlin_timer = 0;
 
 // all the initial advisors are centrists. BASE GAME
 Q.wels_advisor = 0; // Otto Wels
-Q.muller_advisor = 0; // Hermann Müller
+Q.muller_advisor = 1; // Hermann Müller
 Q.muller_dead = 0;
 Q.crispien_advisor = 0; // Arthur Crispien
 Q.hilferding_advisor = 0; // Rudolf Hilferding
@@ -639,7 +639,7 @@ Q.schmit_advisor = 0; //
 
 // centre advisors
 Q.meller_advisor = 1; // Wilhelm Meller - LEADER
-Q.jomann_advisor = 1; // 
+Q.jomann_advisor = 0; // 
 Q.redish_advisor = 0; //
 Q.serindorf_advisor = 0; //
 
