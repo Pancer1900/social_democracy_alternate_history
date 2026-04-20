@@ -265,13 +265,11 @@ go-to: advisor_menu
 
 @advisor_menu
 title: Add other advisors.
-tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, nonfactional_advisor
+tags: center_advisor, left_advisor, reformist_advisor, labor_advisor, nonfactional_advisor, revolutionaries_advisor, agrarnians_advisor 
 frequency: 1
 
 
 - @centrist: Add Centrists
-- @rev: Add Revolutionareis 
-- @agr: Add Agrarians 
 - @left: Add Leftists
 - @reformist: Add Reformists
 - @labor: Add Labor
