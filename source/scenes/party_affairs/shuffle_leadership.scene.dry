@@ -457,15 +457,52 @@ title: Anna Ferenn
 subtitle: Anna Ferenn is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
 is-card: true
 card-image: img/portraits/HilferdingRudolf.jpg
-tags: center_advisor
+tags: revolutionaries_advisor
 view-if: ferenn_advisor = 0 and n_advisors < 5 and revolutionaries_split = 0
 on-arrival: ferenn_advisor = 1; n_advisors += 1
 go-to: advisor_menu
 
 Anna Ferenn is now an advisor.
 
-#centrist
+@add_miarek
+title: Karol Miarek
+subtitle: Karol Miarek is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: revolutionaries_advisor
+view-if: miarek_advisor = 0 and n_advisors < 5 and revolutionaries_split = 0
+on-arrival: miarek_advisor = 1; n_advisors += 1
+go-to: advisor_menu
 
+Karol Miarek is now an advisor.
+
+#agrarnians
+
+@add_sverin
+title: Constantin Sverin
+subtitle: Constantin Sverin is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: agrarnians_advisor
+view-if: sverin_advisor = 0 and n_advisors < 5 and agrarnians_split = 0
+on-arrival: sverin_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Constantin Sverin is now an advisor.
+
+@add_offund
+title: Helga Offund
+subtitle: Helga Offund is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: agrarnians_advisor
+view-if: offund_advisor = 0 and n_advisors < 5 and agrarnians_split = 0
+on-arrival: offund_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Helga Offund is now an advisor.
+
+#centrist
 
 @add_hilferding
 title: Rudolf Hilferding
