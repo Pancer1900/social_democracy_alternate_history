@@ -2,7 +2,7 @@ title: Henrich Alder
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/ottovanmann.png
-view-if: lieber_advisor = 1
+view-if: alder_advisor = 1
 new-page: true 
 
 = Henrich Alder
