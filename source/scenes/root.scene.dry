@@ -602,49 +602,56 @@ Q.kpd_ultimatum_timer = 0;
 Q.march_on_berlin_timer = 0;
 
 
-// all the initial advisors are centrists.
+// all the initial advisors are centrists. BASE GAME
 Q.wels_advisor = 0; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
+Q.muller_advisor = 0; // Hermann Müller
 Q.muller_dead = 0;
-// okay I know Arthur Crispien was a leader irl but i couldn't find much interesting about him...
 Q.crispien_advisor = 0; // Arthur Crispien
-Q.hilferding_advisor = 1; // Rudolf Hilferding
-
-// Revolutionary advisors
-Q.ferren_advisor = 1; // Anna Ferren
-Q.lieber_advisor = 1; // Hans Lieber
-Q.mher_advisor = 0; // 
-Q.jelgen_advisor = 0; // 
-
-// Agrarian advisors
-Q.vanmann_advisor = 1; // Otto Vanmann
-
-// left advisors
+Q.hilferding_advisor = 0; // Rudolf Hilferding
 Q.sender_advisor = 0; // Toni Sender
 Q.levi_advisor = 0; // Paul Levi
 Q.levi_dead = 0;
 Q.rosenfeld_advisor = 0; // Kurt Rosenfeld
 Q.seydewitz_advisor = 0; // Max Seydewitz
-
-// centrist alternate advisors
-Q.pfulf_advisor = 0; // Antonie Pfülf
-Q.breitscheid_advisor = 0; // Rudolf Breitscheid
-
-// Reformist advisors
 Q.severing_advisor = 0; // Carl Severing
 Q.braun_advisor = 0; // Otto Braun
 Q.juchacz_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade
+Q.leipart_advisor = 0; // Theodor Leipart
+Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
+Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
+Q.wissell_advisor = 0; // Rudolf Wissell
 
+// Revolutionary advisors
+Q.ferren_advisor = 0; // Anna Ferren
+Q.lieber_advisor = 1; // Hans Lieber - LEADER
+Q.miarek_advisor = 0; // 
+
+// Agrarian advisors
+Q.vanmann_advisor = 1; // Otto Vanmann -LEADER
+Q.sverin_advisor = 0; //
+Q.offund_advisor = 0; //
+
+// left advisors
+Q.visselfeld_advisor = 0; //
+Q.zorberg_advisor = 0; //
+Q.schmit_advisor = 0; //
+
+// centre advisors
+Q.meller_advisor = 1; // Wilhelm Meller - LEADER
+Q.jomann_advisor = 0; // 
+Q.redish_advisor = 0; //
+Q.serindorf_advisor = 0; //
+
+// Reformist advisors
 Q.alder_advisor = 0; // 
 Q.valire_advisor = 0; // 
 Q.bherwald_advisor = 0; // 
 
 // Labor advisors
-Q.leipart_advisor = 0; // Theodor Leipart
-Q.aufhauser_advisor = 0; // Siegfried Aufhäuser
-Q.woytinsky_advisor = 0; // Wladimir Woytinsky (post-1930)
-Q.wissell_advisor = 0; // Rudolf Wissell
+Q.mher_advisor = 0; //
+Q.jelgen_advisor = 0; // 
+Q.heufer_advisor = 0; // 
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
