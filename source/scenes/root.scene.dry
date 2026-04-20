@@ -613,6 +613,8 @@ Q.hilferding_advisor = 1; // Rudolf Hilferding
 // Revolutionary advisors
 Q.ferren_advisor = 1; // Anna Ferren
 Q.lieber_advisor = 1; // Hans Lieber
+Q.mher_advisor = 0; // 
+Q.jelgen_advisor = 0; // 
 
 // Agrarian advisors
 Q.vanmann_advisor = 1; // Otto Vanmann
@@ -633,6 +635,10 @@ Q.severing_advisor = 0; // Carl Severing
 Q.braun_advisor = 0; // Otto Braun
 Q.juchacz_advisor = 0; // Marie Juchacz
 Q.baade_advisor = 0; // Fritz Baade
+
+Q.alder_advisor = 0; // 
+Q.valire_advisor = 0; // 
+Q.bherwald_advisor = 0; // 
 
 // Labor advisors
 Q.leipart_advisor = 0; // Theodor Leipart
