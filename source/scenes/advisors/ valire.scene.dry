@@ -2,7 +2,7 @@ title: Sophie Valire
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/ottovanmann.png
-view-if: lieber_advisor = 1
+view-if: valire_advisor = 1
 new-page: true 
 
 = Sophie Valire
