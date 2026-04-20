@@ -32,7 +32,45 @@ title: Stop changing advisors.
 go-to: root
 tags: remove_advisor
 
-#rev
+#revolutionaries
+
+@remove_ferenn
+title: Remove Ferenn
+view-if: ferenn_advisor = 1
+on-arrival: ferenn_advisor = 0; revolutionaries_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Ferenn has been removed as an advisor. The Revolutionary faction disapproves.
+
+@remove_miarek
+title: Remove Miarek
+view-if: miarek_advisor = 1
+on-arrival: miarek_advisor = 0; revolutionaries_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Miarek has been removed as an advisor. The Revolutionary faction disapproves.
+
+#agrarnians
+
+@remove_sverin
+title: Remove Sverin
+view-if: sverin_advisor = 1
+on-arrival: sverin_advisor = 0; agrarnians_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Sverin has been removed as an advisor. The Agrarnian faction disapproves.
+
+@remove_offund
+title: Remove Offund
+view-if: offund_advisor = 1
+on-arrival: offund_advisor = 0; agrarnians_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Offund has been removed as an advisor. The Agrarnian faction disapproves.
 
 #center
 
@@ -45,14 +83,23 @@ go-to: rm_main
 
 Jomann has been removed as an advisor. The Centrist faction disapproves.
 
-@remove_visselfeld
-title: Remove Visselfeld
-view-if: visselfeld_advisor = 1
+@remove_redish
+title: Remove Redish
+view-if: redish_advisor = 1
+on-arrival: redish_advisor = 0; center_dissent += 5; n_advisors -= 1
 tags: remove_advisor
-on-arrival: visselfeld_advisor = 0; center_dissent += 5; n_advisors -= 1
 go-to: rm_main
 
-Visselfeld has been removed as an advisor. The Centrist faction disapproves.
+Redish has been removed as an advisor. The Centrist faction disapproves.
+
+@remove_serindorf
+title: Remove Serindorf
+view-if: serindorf_advisor = 1
+on-arrival: serindorf_advisor = 0; center_dissent += 5; n_advisors -= 1
+tags: remove_advisor
+go-to: rm_main
+
+Serindorf has been removed as an advisor. The Centrist faction disapproves.
 
 @remove_hilferding
 title: Remove Hilferding
@@ -93,6 +140,32 @@ Breitscheid has been removed as an advisor. The Centrist faction disapproves.
 
 # reformists
 
+@remove_bherwald
+title: Remove Bherwald
+view-if: bherwald_advisor = 1
+tags: remove_advisor
+on-arrival: bherwald_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Bherwald has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_valire
+title: Remove Valire
+view-if: valire_advisor = 1
+tags: remove_advisor
+on-arrival: valire_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Severing has been removed as an advisor. The Reformist faction disapproves.
+
+@remove_alder
+title: Remove Alder
+view-if: alder_advisor = 1
+tags: remove_advisor
+on-arrival: alder_advisor = 0; reformist_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Alder has been removed as an advisor. The Reformist faction disapproves.
 
 @remove_severing
 title: Remove Severing
@@ -133,6 +206,33 @@ Pfülf has been removed as an advisor. The Reformist faction disapproves.
 
 # labor
 
+@remove_jelegen
+title: Remove Jelegen
+view-if: jelegen_advisor = 1
+tags: remove_advisor
+on-arrival: jelegen_advisor = 0; labor_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Jelegen has been removed as an advisor. The Labor faction disapproves.
+
+@remove_mher
+title: Remove Mher
+view-if: mher_advisor = 1
+tags: remove_advisor
+on-arrival: mher_advisor = 0; labor_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Mher has been removed as an advisor. The Labor faction disapproves.
+
+@remove_heufer
+title: Remove Heufer
+view-if: heufer_advisor = 1
+tags: remove_advisor
+on-arrival: heufer_advisor = 0; labor_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Heufer has been removed as an advisor. The Labor faction disapproves.
+
 @remove_leipart
 title: Remove Leipart
 view-if: leipart_advisor = 1
@@ -171,6 +271,33 @@ go-to: rm_main
 Woytinsky has been removed as an advisor. The Labor faction disapproves.
 
 # left
+
+@remove_zorberg
+title: Remove Zorberg
+view-if: zorberg_advisor = 1
+tags: remove_advisor
+on-arrival: zorberg_advisor = 0; left_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Zorberg has been removed as an advisor. The Left faction disapproves.
+
+@remove_schmit
+title: Remove Schmit
+view-if: schmit_advisor = 1
+tags: remove_advisor
+on-arrival: schmit_advisor = 0; left_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Schmit has been removed as an advisor. The Left faction disapproves.
+
+@remove_visselfeld
+title: Remove Visselfeld
+view-if: visselfeld_advisor = 1
+tags: remove_advisor
+on-arrival: visselfeld_advisor = 0; left_dissent += 5; n_advisors -= 1
+go-to: rm_main
+
+Visselfeld has been removed as an advisor. The Left faction disapproves.
 
 @remove_levi
 title: Remove Levi
@@ -280,6 +407,8 @@ frequency: 1
 
 - @centrist: Add Centrists
 - @left: Add Leftists
+- @revolutionaries: Add Revolutionaries
+- @agrarnians: Add Agrarnians
 - @reformist: Add Reformists
 - @labor: Add Labor
 - @nonfactional: Add non-factional advisors
@@ -287,29 +416,56 @@ frequency: 1
 - @remove_none: Stop changing advisors.
 
 @centrist
-view-if: n_advisors < 3
+view-if: n_advisors < 5
 
 - #center_advisor
 
 @reformist
-view-if: n_advisors < 3
+view-if: n_advisors < 5
 
 - #reformist_advisor
 
 @left
-view-if: n_advisors < 3
+view-if: n_advisors < 5
 
 - #left_advisor
 
+@revolutionaries
+view-if: n_advisors < 5
+
+- #revolutionaries_advisor
+
+@agrarnians
+view-if: n_advisors < 5
+
+- #agrarnians_advisor
+
 @labor
-view-if: n_advisors < 3
+view-if: n_advisors < 5
 
 - #labor_advisor
 
 @nonfactional
-view-if: n_advisors < 3
+view-if: n_advisors < 5
 
 - #nonfactional_advisor
+
+#revolutionaries
+
+@add_ferenn
+title: Anna Ferenn
+subtitle: Anna Ferenn is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: center_advisor
+view-if: ferenn_advisor = 0 and n_advisors < 5 and revolutionaries_split = 0
+on-arrival: ferenn_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Anna Ferenn is now an advisor.
+
+#centrist
+
 
 @add_hilferding
 title: Rudolf Hilferding
