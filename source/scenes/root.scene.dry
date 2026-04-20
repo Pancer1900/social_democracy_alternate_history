@@ -119,6 +119,7 @@ Q.moderate_plan_adopted = 0;
 Q.z_relation = 35;
 Q.sapd_relation = 50;
 Q.spm_relation = 50;
+Q.spm_relation = 50;
 Q.asum_relation = 50;
 Q.blpm_relation = 50;
 Q.kpd_relation = 25;
