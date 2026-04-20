@@ -504,6 +504,42 @@ Helga Offund is now an advisor.
 
 #centrist
 
+@add_jomann
+title: Joseph Jomann
+subtitle: Joseph Jomann is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: center_advisor
+view-if: jomann_advisor = 0 and n_advisors < 5 and centrists_resign = 0
+on-arrival: jomann_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Joseph Jomann is now an advisor.
+
+@add_redish
+title: Frans Redish
+subtitle: Frans Redish is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: center_advisor
+view-if: redish_advisor = 0 and n_advisors < 5 and centrists_resign = 0
+on-arrival: redish_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Frans Redish is now an advisor.
+
+@add_serindorf
+title: Wilhelm Serindorf
+subtitle: Wilhelm Serindorf is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: center_advisor
+view-if: serindorf_advisor = 0 and n_advisors < 5 and centrists_resign = 0
+on-arrival: serindorf_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Wilhelm Serindorf is now an advisor.
+
 @add_hilferding
 title: Rudolf Hilferding
 subtitle: Rudolf Hilferding is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
@@ -554,6 +590,41 @@ Rudolf Breitscheid is now an advisor.
 
 # reformist
 
+@add_bherwald
+title: Olaf Bherwald
+subtitle: Olaf Bherwald is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: reformist_advisor
+view-if: bherwald_advisor = 0 and n_advisors < 5 and reformists_resigned = 0
+on-arrival: bherwald_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Olaf Bherwald is now an advisor.
+
+@add_alder
+title: Henrich Alder
+subtitle: Henrich Alder is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: reformist_advisor
+view-if: alder_advisor = 0 and n_advisors < 5 and reformists_resigned = 0
+on-arrival: alder_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Henrich Alder is now an advisor.
+
+@add_valire
+title: Sophie Valire
+subtitle: Sophie Valire is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: reformist_advisor
+view-if: valire_advisor = 0 and n_advisors < 5 and reformists_resigned = 0
+on-arrival: valire_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Sophie Valire is now an advisor.
 
 @add_severing
 title: Carl Severing
@@ -606,6 +677,42 @@ Antonie Pfülf is now an advisor.
 
 
 # left
+
+@add_visselfeld
+title: Fredrich Visselfeld
+subtitle: Fredrich Visselfeld is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: left_advisor
+view-if: visselfeld_advisor = 0 and n_advisors < 5 and left_split = 0
+on-arrival: visselfeld_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Fredrich Visselfeld is now an advisor.
+
+@add_zorberg
+title: Karl Zorberg
+subtitle: Karl Zorberg is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: left_advisor
+view-if: zorberg_advisor = 0 and n_advisors < 5 and left_split = 0
+on-arrival: zorberg_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Karl Zorberg is now an advisor.
+
+@add_schmit
+title: Guztav Schmit
+subtitle: Guztav Schmit is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: left_advisor
+view-if: schmit_advisor = 0 and n_advisors < 5 and left_split = 0
+on-arrival: schmit_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Guztav Schmit is now an advisor.
 
 @add_levi
 title: Paul Levi
@@ -670,6 +777,42 @@ Anna Siemsen is now an advisor.
 
 
 # labor
+
+@add_heufer
+title: August Heufer
+subtitle: August Heufer is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: labor_advisor
+view-if: heufer_advisor = 0 and n_advisors < 5 and left_split = 0
+on-arrival: heufer_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+August Heufer is now an advisor.
+
+@add_mher
+title: Ernst Mher
+subtitle: Ernst Mher is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: labor_advisor
+view-if: mher_advisor = 0 and n_advisors < 5 and left_split = 0
+on-arrival: mher_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Ernst Mher is now an advisor.
+
+@add_jelegen
+title: Ludwig Jelegen
+subtitle: Ludwig Jelegent is an economist and one of our chief Marxist theoreticians. {!<br><br>!}[? if difficulty < 0 : Actions - Against Right and Left, Defending Toleration, Fiscal Policy, Economic Democracy ?]
+is-card: true
+card-image: img/portraits/HilferdingRudolf.jpg
+tags: labor_advisor
+view-if: jelegen_advisor = 0 and n_advisors < 5 and left_split = 0
+on-arrival: jelegen_advisor = 1; n_advisors += 1
+go-to: advisor_menu
+
+Ludwig Jelegen is now an advisor.
 
 @add_leipart
 title: Theodor Leipart
