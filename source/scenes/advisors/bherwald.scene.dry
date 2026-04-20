@@ -2,7 +2,7 @@ title: Olaf Bherwald
 is-pinned-card: true
 tags: advisor, reformist
 card-image: img/portraits/ottovanmann.png
-view-if: lieber_advisor = 1
+view-if: bherwald_advisor = 1
 new-page: true 
 
 = Olaf Bherwald 
