@@ -119,7 +119,27 @@ Q.organisation_workers = 10;
 Q.organisation_rural = 10;
 Q.organisation_middle = 10;
 
+// internal party politic 
+
+Q.ldp_reform = 0;
+Q.ldp_right = 0;
+Q.ldp_left = 0;
+Q.ldp_ideology = 0; // +++ its more left wing --- is more right wing 
+
+Q.gdsu_right = 0;
+Q.gdsu_left = 0;
+Q.gdsu_ideology = 0; // +++ its more left wing --- is more right wing 
+
+Q.fvp_path = 0; // 0 - centre, 1 -  left, 2 - right
+
+Q.fvp_modifer = 10;
+Q.ldp_modifer = 10;
+Q.gdsu_modifer = 10;
+
 // inter-party relations
+
+Q.liberal_reconciliation = 0;
+
 Q.z_relation = 35;
 Q.sapd_relation = 50;
 Q.spm_relation = 50;
@@ -192,10 +212,9 @@ Q.reichswehr_loyalty = 0.2;
 // popular opinion
 // national ideology - on a binary scale
 // nationalism vs internationalism or pacifism or non-nationalism
-Q.nationalism = 60;
-// socialism vs capitalism
-Q.socialism = 40;
-// pro-republic vs anti-republic
+
+Q.nationalism = 60; // socialism vs capitalism
+Q.socialism = 40; // pro-republic vs anti-republic
 Q.pro_republic = 60;
 
 Q.emergency_rule = 0;
