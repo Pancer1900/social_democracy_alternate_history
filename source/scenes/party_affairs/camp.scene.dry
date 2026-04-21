@@ -52,7 +52,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: rural_spd += 6*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); rural_spd += 1 if united_front_theory = 1; rural_spd += 1 if united_front_theory = 2; rural_spd -= 2 if socialism <= 50; rural_spd -= 2 if nationalism >= 50; rural_spd += 2 if agrarnians_strength >= 40; resources -= 1;
 
-We have increased our campaigning among farmers. [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if (socialism <= 50 || nationalism >= 50) || socialism <= 50 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
+We have increased our campaigning among farmers. [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if socialism <= 50 || nationalism >= 50 || socialism <= 50 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
 
 
 @peasants 
@@ -61,7 +61,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: peasants_spd += 6*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); peasants_spd += 1 if united_front_theory = 1; peasants_spd += 1 if united_front_theory = 2; if socialism <= 50 peasants_spd -= 2; if nationalism >= 50 peasants_spd -= 2; if agrarnians_strength >= 40 peasants_spd += 3; resources -= 1;
 
-We have increased our campaigning among the peasants. [? if agrarnians_strength >= 40: The strenth of the argrarian faction makes campaining among peasants much easier ?] [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if (socialism <= 50 || nationalism >= 50) || socialism <= 50 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
+We have increased our campaigning among the peasants. [? if agrarnians_strength >= 40: The strenth of the argrarian faction makes campaining among peasants much easier ?] [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if socialism <= 50 || nationalism >= 50 || socialism <= 50 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
 
 @unemployed
 subtitle: -1 resources
