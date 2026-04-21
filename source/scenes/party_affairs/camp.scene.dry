@@ -14,10 +14,11 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 - @workers: The urban working class, our traditional support base.
 - @new_middle: The "new middle class" of government employees and white-collar workers.
 - @old_middle: The "old middle class" of small independent businessmen and artisans.
-- @rural: Rural workers and small farmers, who have felt neglected by us in the past.
-- @peasants : Peasants
+- @rural: Rural workers and small farmers
+- @peasants : The landless peasants and poor farmers [? if Q.agrarnians_split = 0: thanks to the agrarian fraction campaining among the peasnts is going to vastly expand our voter base. ?]
 - @unemployed: The unemployed.
-- @catholics: Catholics, who typically support the Center Party.
+- @minorities: The minorities of the federation.
+- @catholics: Gecherdists, who typically support the GDSU.
 - @root: We either don't want to or cannot campaign right now.
 - @easy_discard
 
@@ -25,55 +26,63 @@ Whether or not we are in an electoral campaign, the party is always trying to br
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 6*(1-dissent); workers_spd -= 2 if unemployed >= 15; workers_spd -= 2 if unemployed >= 25; workers_spd += 6*(1-dissent) if wtb_adopted = 1; resources -= 1; workers_spd += 3*(1-dissent) if nationalization_progress >= 1;
+on-arrival: workers_spd += 6*(1-dissent)*(organisation_workers/10); workers_spd -= 2 if unemployed >= 15; workers_spd -= 2 if unemployed >= 25; resources -= 1;
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract workers. ?]
+We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?]
 
 @new_middle
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_spd += 6*(1-dissent); new_middle_spd -= 4 if socialism <= 49 and peoples_party == 0; resources -= 1; peoples_party_support += 1;
+on-arrival: new_middle_spd += 6*(1-dissent)*(organisation_middle/10); new_middle_spd -= 3 if socialism <= 50; resources -= 1; new_middle_spd +=3 if united_front_theory = 2;
 
-We have increased our campaigning among the new middle class. [? if socialism <= 49 and peoples_party == 0: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have increased our campaigning among the new middle class. [? if united_front_theory = 2: Our adoption of the United Front Theory including the lower middle class makes them open to the socialist capmpaining ?] [? if socialism <= 50: The popular antipathy towards socialism among this group makes our campaign more difficult. ?]
 
 @old_middle
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: old_middle_spd += 5*(1-dissent); resources -= 1; old_middle_spd -= 3 if nationalism >= 51 and peoples_party == 0; peoples_party_support += 1
+on-arrival: old_middle_spd += 6*(1-dissent)*(organisation_middle/10); resources -= 1; old_middle_spd -= 2 if nationalism >= 50; old_middle_spd -= 2 if socialism <= 50; resources -= 1; old_middle_spd +=3 if united_front_theory = 2;
 
-We have increased our campaigning among the old middle class. [? if nationalism >= 51 and peoples_party == 0: The high levels of nationalism among this group make our campaign more difficult. ?] [? if peoples_party > 0: As a people's party, we have an easier time increasing support among the middle class than before. ?]
+We have increased our campaigning among the old middle class. [? if united_front_theory = 2: Our adoption of the United Front Theory including the lower middle class makes them open to the socialist capmpaining ?] [? if socialism <= 50: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if nationalism >= 50: The high levels of nationalism among this group makes our campaign more difficult. ?]
 
 @rural
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: rural_spd += 5*(1-dissent); rural_spd -= 3*(1-dissent) if peoples_party == 0; resources -= 1; peoples_party_support += 1; rural_spd += 3*(1-dissent) if rural_policy >= 2
+on-arrival: rural_spd += 6*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); rural_spd += 1 if united_front_theory = 1; rural_spd += 1 if united_front_theory = 2; if socialism <= 50 rural_spd -= 2; if nationalism >= 50 rural_spd -= 2; if agrarnians_strength >= 40 rural_spd += 2;
 
-We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+We have increased our campaigning among farmers. [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if (socialism <= 50 || nationalism >= 50) || socialism <= 50 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
+
 
 @peasants 
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: peasants_spd += 5*(1-dissent)
+on-arrival: peasants_spd += 6*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); peasants_spd += 1 if united_front_theory = 1; peasants_spd += 1 if united_front_theory = 2; if socialism <= 50 peasants_spd -= 2; if nationalism >= 50 peasants_spd -= 2; if agrarnians_strength >= 40 peasants_spd += 3;
 
-We have increased our campaigning among farmers. [? if peoples_party == 0: We have not historically campaigned much among the farmers, and they do not trust us. ?][? if peoples_party > 0: As a people's party, we have an easier time increasing support among farmers than before. ?][? if rural_policy >= 2 : Our rural policies have made it easier for us to build support among farmers. ?]
+We have increased our campaigning among the peasants. [? if agrarnians_strength >= 40: The strenth of the argrarian faction makes campaining among peasants much easier ?] [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if (socialism <= 50 || nationalism >= 50) || socialism <= 50 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
 
 @unemployed
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd += 6*(1-dissent) if wtb_adopted = 1; unemployed_spd += 3*(1-dissent) if welfare >= 2;
+on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd += 3*(1-dissent) if welfare >= 2;
 
-We have increased our campaigning among the unemployed. [? if welfare < 0: The welfare cuts and resultant poverty make our campaign more difficult, since we are associated with the government that enacted these cuts, and our campaign may even backfire. ?][? if wtb_adopted = 1 : Adopting the WTB plan gives us a new rallying point around which to attract support from the unemployed. ?]
+We have increased our campaigning among the unemployed.
 
 @catholics
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-view-if: peoples_party == 1
-on-arrival: catholics_spd += 6*(1-dissent); resources -= 1
+on-arrival: catholics_spd += 6*(1-dissent); resources -= 1;
 
-We have increased our campaigning among Catholics.
+We have increased our campaigning among Gecherdists.
+
+@minorities
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: minorieties_spd += 6*(1-dissent); resources -= 1;
+
+We have increased our campaigning among the various minorites of the Federation.
