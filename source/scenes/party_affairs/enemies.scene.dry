@@ -13,34 +13,36 @@ In our media and campaign materials, who should we consider as our main opponent
 
 [? if enemies != 0 : Previously, we had considered the [+ enemies +] as our prior enemies. Is a change of direction necessary? ?]
 
-- @anti_dem: The anti-democratic parties of the far right and left - the KPD, NSDAP, and DNVP.
-- @far_right: The far right - the NSDAP and DNVP.
+- @far_right: The far right - the NSDAP and MNVP.
 - @nsdap: The NSDAP alone.
-- @kpd: The KPD.
-- @bourgeois: The bourgeois parties - the Center, DDP and DVP.
+- @bourgeois: The bourgeois parties - LDP, FVP and GDSU.
+- @right: The broad right wing - LDP and the parties right of them.
+- @everyone: Everyone who is a pesky reactionary!
 - @easy_discard
 
-@anti_dem
-on-arrival: enemies = "anti-democratic parties"; center_strength += 5; reformist_strength += 5; left_dissent += 5; workers_kpd -= 2; workers_nsdap -= 2; workers_dnvp -= 2; kpd_relation -= 10
-
-Attacking the far right and left is popular among all but the left wing of our party, who would prefer to be fighting the bourgeois parties. This might also hamper our ability to reconcile with the KPD in the future.
+@everyone
 
 @far_right
-on-arrival: enemies = "far right"; left_strength += 5; left_dissent -= 5; workers_nsdap -= 3; workers_dnvp -= 3;
+on-arrival: enemies = "far right"; reformist_strength += 5; revolutionaries_strength -= 3; left_strength -= 2; reformist_dissent -= 5; revolutionaries_dissent += 6; left_dissent += 4; workers_nsdap -= 3; rural_dnvp -= 3; rural_nsdap -= 1; workers_dnvp -= 1; peasants_nsdap -= 1; peasants_dnvp -= 1;
 
-Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous, while the right is critical of our lack of response to the KPD. Our bourgeois coalition partners are also skeptical of our lack of commitment to anti-communism.
+Attacking the far right is popular among the entire party, although the left considers the bourgeois parties to be just as dangerous. Progresive partes are supportive of our commitment to combatting the right, while the wider Bourgeois is suprised by our light rethoric.
 
 @nsdap
-on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4;
+on-arrival: enemies = "NSDAP"; neorevisionist_strength += 5; reformist_strength += 5; nazi_urgency += 1; workers_nsdap -= 4; rural_nsdap -= 1; peasants_nsdap -= 1;
 
 [? if nazi_urgency == 0 or nsdap_r < 10 : The NSDAP is a tiny party right now, with more bark than bite. Many in our party are questioning our choices. ?][? if nazi_urgency > 0 and nsdap_r >= 10 : The Nazis are the most urgent problem for us to deal with. ?]
 
-@kpd
-on-arrival: enemies = "KPD"; reformist_strength += 5; left_dissent += 8; reformist_dissent -= 5; kpd_relation -= 15; dvp_relation += 5; z_relation += 5; workers_kpd -= 4;
-
-Attacking the KPD is supported by all but the most left-wing socialists, and wins us some measure of approval among the bourgeois parties. However, If we are to reconcile with the KPD, this may not be the best choice.
-
 @bourgeois
-on-arrival: enemies = "bourgeois parties"; left_strength += 8; left_dissent -= 5; dvp_relation -= 5; z_relation -= 5; kpd_relation += 5; reformist_dissent += 8; workers_z -= 3; coalition_dissent += 1
+on-arrival: enemies = "bourgeois parties"; left_strength += 4; left_dissent -= 2; revolutionaries_strength += 8; revolutionaries_dissent -= 10; dvp_relation -= 6; ddp_relation -= 5; z_relation -= 5; reformist_dissent += 8; workers_z -= 2; workers_dvp -= 3; workers_ddp -= 2;
 
 Our anti-bourgeois rhetoric is popular among the left, but may make it harder to build the coalitions that are necessary for government in the future.
+
+@right
+on-arrival: enemies = "right"; centre_strength += 4; reformist_strength += 6; centre_dissent -= 6; reformist_dissent -= 8; left_dissent -= 3; dvp_relation -= 4; ppu_relation -= 3; reformist_dissent += 8; workers_dnvp -= 2; workers_dvp -= 3; workers_others -= 1; rural_dnvp -= 3;
+
+Attackin the broad right is the most popular aproach accepted by the most of the party. It doesn't stop our reconciliation with the center-left liberals and somhow apeases the left.
+
+@everyone
+on-arrival: enemies = "everyone"; liberal_reconciliation -= 1; revolutionaries_strength += 6; centre_strength -= 2; left_strength += 4; centre_dissent += 6; revolutionaries_dissent -= 8; left_dissent -= 6; reformist_strength -= 6; reformist_dissent += 8; dvp_relation -= 7; ppu_relation -= 5;  ddp_relation -= 7; z_relation -= 7; workers_dnvp -= 2; workers_dvp -= 3; workers_others -= 1; rural_dnvp -= 1; rural_dvp -= 1; rural_z -= 1; peasants_dnvp -= 1; peasants_dvp -= 1; peasants_z -= 1; workers_z -= 2; workers_ddp -= 2;
+
+Our anti-everyone rethoric is popular among the left wing, but it alienates everyone and makes reconciliation with the liberal parties nearly impossible. 
