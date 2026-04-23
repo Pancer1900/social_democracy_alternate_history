@@ -6,112 +6,80 @@ is-card: true
 on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
 card-image: img/weimar_coalition_2.jpg
 max-visits: 12
-#subtitle: Building relations with the other political parties of Germany.
+#subtitle: Building relations with the other political parties of Merkopia.
 
 = Inter-Party Relationships
 
 The SPD cannot govern by itself yet. Because we do not have an electoral majority, we need the support of other parties. Recently, our governments have consisted of the Weimar Coalition of the SPD, Center, and Democratic parties. We can reach out and build additional connections with these parties, or perhaps we can stand alone.
 
-- @liberals: Strengthen our bonds with the left-liberal German Democratic Party and conservative-liberal German People's Party.
-- @center: Strengthen our bonds with the Catholic Center Party.
-- @kpd: Work towards repairing relationships with the Communist Party.
-- @spd_alone: The SPD can stand alone for now.
+- @liberals: Strengthen our bonds with the left-liberal <span style="color: #ddd500;">Progresive Peope's Party</span>.
+- @center: Strengthen our bonds with the <span style="color: #48b94a;">Gecherdist Democratic Social Union</span>.
+- @liberal_ldp: Maybe we can try to reconcliate with the <span style="color: #caa58b;">Liberal-Democrats</span>? 
+- @kpd: Work towards repairing relationships with our splinter parties.
+- @spd_alone: The VDSPM can stand alone for now.
 - @easy_discard
 
 
 @kpd
 subtitle: -1 resources
+view-if: sapd_formed = 1 or asum_formed = 1 or spm_formed = 1
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_inter_party_seen += 1
-go-to: kpd_blutmai if blutmai = 1; kpd_1 if blutmai = 0 and kpd_coalition_success = 0 and (kpd_relation < 40 or kpd_rectified_history = 1); kpd_rectification_of_history if kpd_relation >= 40 and kpd_rectified_history = 0; kpd_2 if kpd_coalition_success = 1 and kpd_rectified_history = 1
+on-arrival: resources -= 1; spm_relations += 5; sapd_relations += 5; asum_relations += 5
 
-@kpd_1
-on-arrival: kpd_relation += 6*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 2; dvp_relation -= 3
-
-The communists are suspicious of our overtures, especially the Stalinist leadership, who persist in calling us "social fascists". However, connections are made at the grassroots and local levels.
-
-@kpd_rectification_of_history
-
-One stumbling block for our relations with the KPD is our history of conflict, dating back to 1918 and 1919. The KPD is especially contemptuous of Gustav Noske, the SPD "bloodhound" who reportedly ordered the violent suppression of the Spartacist uprising and other KPD revolts. They also blame us for the deaths of Rosa Luxemburg and Karl Liebknecht, two SPD-turned-KPD leaders who were killed during the suppression of the uprising.
-
-For further improvements in KPD relations, it might be necessary to expel Noske, and hold some sort of commemoration for Luxemburg and Liebknecht.
-
-- @yes_history: Yes, we must apologize for our past actions.
-- @no_history: No, we have no need to apologize.
-
-@yes_history
-on-arrival: reformist_dissent += 12; reformist_strength -= 2; neorevisionist_dissent += 5; left_dissent -= 6; left_strength += 5; kpd_rectified_history = 1; z_relation -= 6; dvp_relation -= 6; ddp_relation -= 4; kpd_relation += 8*(1-dissent); coalition_dissent += 1
-
-As part of normalizing relations with the KPD, we have to acknowledge the wrongdoings of our past. We have expelled Noske, and have held public commemorations for those killed by troops during the uprisings.
-
-This leads to tensions with the moderates and reformists within our party, and criticism from the conservative and liberal parties.
-
-@no_history
-on-arrival: kpd_relation -= 3
-
-We have no need to apologize for the actions of Ebert and Noske; it is the Communists' fault for launching a violent insurrection.
-
-
-@kpd_2
-on-arrival: kpd_relation += 8*(1 - dissent); communist_coalition += 1 if kpd_inter_party_seen <= 1; reformist_dissent += 2; z_relation -= 3; dvp_relation -= 3
-
-After the success of the coalition government with the KPD, they are much more amenable to us.
-
-@kpd_blutmai
-on-arrival: kpd_relation += 3*(1 - dissent); reformist_dissent += 1
-
-After the events of Blütmai, reconciling with the Communists is difficult, if not impossible. Nevertheless, we must try.
+We try to repair the relations between the bulk of the party and their splinters 
 
 @center
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; z_relation += 2 if z_party_leader == "Joos"
-go-to: center_op if z_in_government = 1 and spd_in_government = 0 and chancellor != "Brüning"; center_coalition if spd_in_government = 1 and z_in_government = 1; center_bruning if chancellor = "Brüning"
+on-arrival: resources -= 1; liberal_reconciliation += 1
+go-to: center_reform if gdsu_ideology < 0; center_coalition if gdsu_ideology > 0; center_op if gdsu_ideology = 0
 
 @center_op
-on-arrival: z_relation += 5*(1 - dissent)
+on-arrival: z_relation += 5*(1 - dissent)*(gdsu_modifer/10)
 
-We are currently in opposition to the Center-led government, but that does not preclude the general building of feelings of good will.
+GDSU was one of the founding partes of the Federation and they are commited to democrasy, as well as many social policies, that makes them a potential ally of us. 
 
 @center_coalition
-on-arrival: z_relation += 8*(1 - dissent)
+on-arrival: z_relation += 6*(1 - dissent)*(gdsu_modifer/10)
 
-We are currently coalition partners with them, so improving relations comes naturally.
+The left wing leadership of the GDSU suports some form of cooperation with us, so goodwill between our partes can grow.
 
-@center_bruning
-on-arrival: z_relation += 5*(1 - dissent)
+@center_reform
+on-arrival: z_relation += 4*(1 - dissent)*(gdsu_modifer/10)
 
-The Brüning semi-autocratic regime makes building friendly relations difficult, but not impossible.
+Even with the right governing the GDSU it doesn't mean we cannot try to get them to cooperate with us.
 
 @liberals
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; ddp_relation += 5*(1 - dissent)
-go-to: dvp_stresemann if stresemann_dead = 0; dvp_loss if stresemann_dead = 1 and year <= 1930; dvp_moribund if year > 1930
+on-arrival: resources -= 1; liberal_reconciliation += 1; ddp_relation += 6*(1 - dissent)*(fvp_modifer/10)
 
-The [+ ddp_name +] has been one of our closest allies through the course of the Republic.
+The FVP has been one of the only parties that tried to cooperate with us throughout the years, they may prove to be a valube ally. 
 
-@dvp_stresemann
-on-arrival: dvp_relation += 8*(1 - dissent)
+@liberal_ldp
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; liberal_reconciliation += 2; dvp_relation += 2 if liberal_reconciliation > 9
+go-to: ldp_reforma if ldp_reform = 1; ldp_coalition if blpm_formed = 1; lpd_op if ldp_reform = 0 and blpm_formed = 0;
 
-Gustav Stresemann, the leader of the DVP is the best foreign policy leaders of the republic, and while he has previously expressed monarchist tendencies, he has been friendly towards us.
+@lpd_op
+on-arrival: dvp_relation += 5*(1 - dissent)*(ldp_modifer/10)
 
-@dvp_loss
-on-arrival: dvp_relation += 5*(1 - dissent)
+LDP has been a vocal oposition against socialists in the Rejonsket, but we may change their mind.
 
-With the death of Gustav Stresemann, the DVP is much less likely to be accommodating of us. In addition, the liberal parties are electorally in decline, so perhaps our efforts are best spent elsewhere.
+@lpd_coalition
+on-arrival: blpm_relation += 6*(1 - dissent); dvp_relation += 3*(1 - dissent)
 
-However, given the influence of the DVP among the other right-leaning parties [? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+The newly created BLPM is much more open to cooperation with us, so improving relations comes naturally.
 
-@dvp_moribund
-on-arrival: dvp_relation += 5*(1 - dissent)
+@lpd_reforma
+on-arrival: dvp_relation += 5*(1 - dissent)*(ldp_modifer/10)
 
-The liberal parties (both the [+ ddp_name +] and DVP) are electorally moribund, so perhaps our efforts are best spent elsewhere.
-
-However, given the influence of the DVP among the other right-leaning parties[? if president == "Hindenburg": and with President Hindenburg ?], it can still be helpful to influence them.
+Even thou LDP is still a majority center-right party, after the reforms it is now a bit more open to cooperation with us.
 
 @spd_alone
 
