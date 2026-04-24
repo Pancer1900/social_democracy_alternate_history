@@ -40,7 +40,7 @@ if (Q.ideology && Q.ideology != "front") {
 go-to: changed if changed = 1
 on-departure: ideology = "front"; left_strength += 4; revolutionaries_strength += 4; agrarnians_strength += 8; left_dissent -= 3; revolutionaries_dissent -= 3; agrarnians_dissent -= 8; dvp_relation -= 3; z_relation -= 2
 
-The radical left of the party supports a course of class struggle, and potentially a reconcilliation with the Communists.
+The agararian wing wants to unite the laborers and farmers of the land and create a united front agains the Burgoise and the old Aristocrasy 
 
 @centrist
 on-arrival: {!
