@@ -1,10 +1,9 @@
 title: Campaigning
 new-page: true
-on-arrival: month_actions += 1
 max-visits: 36
 is-card: true
 view-if: campaining_timer <= 0
-on-arrival: month_actions += 1; campaining_timer += 6;
+on-arrival: month_actions += 1; campaining_timer += 6
 card-image: img/poster-of-the-kpd-1919-C45HWA.jpg
 frequency: 100
 tags: party_affairs
