@@ -74,17 +74,6 @@ on-arrival: dvp_relation += 5*(1 - dissent)*(ldp_modifer/10)
 
 Even thou LDP is still a majority center-right party, after the reforms it is now a bit more open to cooperation with us.
 
-@liberals_3
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; liberal_reconciliation += 1; ddp_relation += 6*(1 - dissent)*(fvp_modifer/10)
-go-to: fvp_relation
-
-@fvp_relation
-
-The FVP has been one of the only parties that tried to cooperate with us throughout the years, they may prove to be a valube ally. 
-
 @spd_alone
 
 Whether it is because we *cannot* or *will not*, we do not make ties with other parties at this moment.
