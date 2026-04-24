@@ -14,7 +14,7 @@ The SPD cannot govern by itself yet. Because we do not have an electoral majorit
 
 - @liberals: Strengthen our bonds with the left-liberal <span style="color: #ddd500;">Progresive Peope's Party</span>.
 - @center: Strengthen our bonds with the <span style="color: #48b94a;">Gecherdist Democratic Social Union</span>.
-- @liberal_ldp: Maybe we can try to reconcliate with the <span style="color: #caa58b;">Liberal-Democrats</span>? 
+- @liberal_wide: Maybe we can try to reconcliate with the <span style="color: #caa58b;">Liberal-Democrats</span>? 
 - @kpd: Work towards repairing relationships with our splinter parties.
 - @spd_alone: The VDSPM can stand alone for now.
 - @easy_discard
@@ -65,7 +65,7 @@ go-to: fvp_relation
 The FVP has been one of the only parties that tried to cooperate with us throughout the years, they may prove to be a valube ally. 
 
 
-@liberal_ldp
+@liberal_wide
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
