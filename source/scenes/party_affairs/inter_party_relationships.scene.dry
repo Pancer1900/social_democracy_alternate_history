@@ -55,23 +55,23 @@ Even with the right governing the GDSU it doesn't mean we cannot try to get them
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; liberal_reconciliation += 1
-go-to: center_reforma if gdsu_ideology < 0; center_coalitiona if gdsu_ideology > 0; center_opo if gdsu_ideology = 0
+on-arrival: resources -= 1; liberal_reconciliation += 2; dvp_relation += 2 if liberal_reconciliation > 9
+go-to: lpd_reforma if ldp_reform = 1; ldp_coalition if blpm_formed = 1; lpd_op if ldp_reform = 0 and blpm_formed = 0
 
-@center_opo
-on-arrival: z_relation += 5*(1 - dissent)*(gdsu_modifer/10)
+@lpd_op
+on-arrival: dvp_relation += 5*(1 - dissent)*(ldp_modifer/10)
 
-GDSU was one of the founding partes of the Federation and they are commited to democrasy, as well as many social policies, that makes them a potential ally of us. 
+LDP has been a vocal oposition against socialists in the Rejonsket, but we may change their mind.
 
-@center_coalitiona
-on-arrival: z_relation += 6*(1 - dissent)*(gdsu_modifer/10)
+@ldp_coalition
+on-arrival: blpm_relation += 6*(1 - dissent); dvp_relation += 3*(1 - dissent)
 
-The left wing leadership of the GDSU suports some form of cooperation with us, so goodwill between our partes can grow.
+The newly created BLPM is much more open to cooperation with us, so improving relations comes naturally.
 
-@center_reforma
-on-arrival: z_relation += 4*(1 - dissent)*(gdsu_modifer/10)
+@lpd_reforma
+on-arrival: dvp_relation += 5*(1 - dissent)*(ldp_modifer/10)
 
-Even with the right governing the GDSU it doesn't mean we cannot try to get them to cooperate with us.
+Even thou LDP is still a majority center-right party, after the reforms it is now a bit more open to cooperation with us.
 
 @liberals
 subtitle: -1 resources
