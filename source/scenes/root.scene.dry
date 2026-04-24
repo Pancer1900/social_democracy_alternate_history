@@ -143,10 +143,8 @@ Q.liberal_reconciliation = 0;
 Q.z_relation = 35;
 Q.sapd_relation = 50;
 Q.spm_relation = 50;
-Q.spm_relation = 50;
 Q.asum_relation = 50;
 Q.blpm_relation = 50;
-Q.kpd_relation = 25;
 Q.ddp_relation = 45;
 Q.dvp_relation = 25;
 Q.ppu_relation = 35;
@@ -387,6 +385,8 @@ Q.old_other_r = 4;
 // sapd isn't formed yet, but it may be formed
 Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+Q.spm_r = 0;
+Q.old_spm_r = 0;
 Q.gnvp_r = 0;
 Q.old_gnvp_r = 0;
 Q.asum_r = 0;
@@ -426,11 +426,11 @@ Q.president = "Hindenburg";
 Q.chancellor = "Marx";
 Q.chancellor_party = 'Z';
 Q.spd_in_government = 0;
-Q.ppu_in_government = 0;
+Q.ppu_in_government = 1;
 Q.z_in_government = 1;
-Q.ddp_in_government = 0;
+Q.ddp_in_government = 1;
 Q.dvp_in_government = 1;
-Q.dnvp_in_government = 1;
+Q.dnvp_in_government = 0;
 Q.sapd_in_government = 0;
 Q.spm_in_government = 0;
 Q.asum_in_government = 0;
@@ -505,6 +505,8 @@ Q.wtb_implemented = 0;
 // Relations with the countries
 Q.south_relation = 10;
 Q.arconia_relation = 10;
+Q.tracosia_relation = 10;
+Q.crevia_relation = 10;
 Q.west_relation = 10;
 Q.vyliria_relation = 10;
 Q.pekoria_relation = 10;
@@ -547,7 +549,7 @@ Q.n_advisors = 5;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program',
+Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
@@ -592,9 +594,9 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1266;
-Q.next_election_month = 5;
-Q.next_election_time = 5;
+Q.next_election_year = 1268;
+Q.next_election_month = 3;
+Q.next_election_time = 25;
 // government affairs timers
 Q.agricultural_policy_timer = 0;
 Q.domestic_enemies_timer = 0;
@@ -624,7 +626,7 @@ Q.march_on_berlin_timer = 0;
 
 // all the initial advisors are centrists. BASE GAME
 Q.wels_advisor = 0; // Otto Wels
-Q.muller_advisor = 1; // Hermann Müller
+Q.muller_advisor = 0; // Hermann Müller
 Q.muller_dead = 0;
 Q.crispien_advisor = 0; // Arthur Crispien
 Q.hilferding_advisor = 0; // Rudolf Hilferding
@@ -653,7 +655,7 @@ Q.sverin_advisor = 0; //
 Q.offund_advisor = 0; //
 
 // left advisors
-Q.visselfeld_advisor = 1; //
+Q.visselfeld_advisor = 0; //
 Q.zorberg_advisor = 0; //
 Q.schmit_advisor = 0; //
 
@@ -661,10 +663,10 @@ Q.schmit_advisor = 0; //
 Q.meller_advisor = 1; // Wilhelm Meller - LEADER
 Q.jomann_advisor = 0; // 
 Q.redish_advisor = 0; //
-Q.serindorf_advisor = 0; //
+Q.serindorf_advisor = 1; //
 
 // Reformist advisors
-Q.alder_advisor = 0; // 
+Q.alder_advisor = 1; // 
 Q.valire_advisor = 0; // 
 Q.bherwald_advisor = 0; // 
 
