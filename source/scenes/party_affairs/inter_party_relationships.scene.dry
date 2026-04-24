@@ -65,7 +65,7 @@ go-to: fvp_relation
 The FVP has been one of the only parties that tried to cooperate with us throughout the years, they may prove to be a valube ally. 
 
 
-@liberal_wide
+@center
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
