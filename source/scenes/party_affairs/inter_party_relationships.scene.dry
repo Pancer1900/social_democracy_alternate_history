@@ -13,6 +13,7 @@ max-visits: 20
 The VDSPM cannot govern by itself (but maybe we could) so creating bonds or reconcling with the liberal parties could be possible
 
 - @liberals: Strengthen our bonds with the left-liberal <span style="color: #ddd500;">Progresive Peope's Party</span>.
+- @liberals_3: Strengthen our bonds with the left-liberal <span style="color: #ddd500;">Progresive Peope's Party</span>.
 - @center: Strengthen our bonds with the <span style="color: #48b94a;">Gecherdist Democratic Social Union</span>.
 - @liberals_2: Maybe we can try to reconcliate with the <span style="color: #caa58b;">Liberal-Democrats</span>?
 - @kpd: Work towards repairing relationships with our splinter parties.
@@ -73,7 +74,7 @@ on-arrival: dvp_relation += 5*(1 - dissent)*(ldp_modifer/10)
 
 Even thou LDP is still a majority center-right party, after the reforms it is now a bit more open to cooperation with us.
 
-@liberals
+@liberals_3
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
