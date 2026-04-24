@@ -1,11 +1,11 @@
 title: Inter-Party Relationships
 new-page: true
-view-if: year <= 1932 and inter_party_relationships_timer <= 0
+view-if: inter_party_relationships_timer <= 0
 tags: party_affairs
 is-card: true
 on-arrival: month_actions += 1; inter_party_relationships_timer = 6;
 card-image: img/weimar_coalition_2.jpg
-max-visits: 12
+max-visits: 20
 #subtitle: Building relations with the other political parties of Merkopia.
 
 = Inter-Party Relationships
@@ -58,6 +58,9 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; liberal_reconciliation += 1; ddp_relation += 6*(1 - dissent)*(fvp_modifer/10)
+go-to: fvp_relation
+
+@fvp_relation
 
 The FVP has been one of the only parties that tried to cooperate with us throughout the years, they may prove to be a valube ally. 
 
@@ -67,14 +70,14 @@ subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; liberal_reconciliation += 2; dvp_relation += 2 if liberal_reconciliation > 9
-go-to: ldp_reforma if ldp_reform = 1; ldp_coalition if blpm_formed = 1; lpd_op if ldp_reform = 0 and blpm_formed = 0;
+go-to: lpd_reforma if ldp_reform = 1; ldp_coalition if blpm_formed = 1; lpd_op if ldp_reform = 0 and blpm_formed = 0;
 
 @lpd_op
 on-arrival: dvp_relation += 5*(1 - dissent)*(ldp_modifer/10)
 
 LDP has been a vocal oposition against socialists in the Rejonsket, but we may change their mind.
 
-@lpd_coalition
+@ldp_coalition
 on-arrival: blpm_relation += 6*(1 - dissent); dvp_relation += 3*(1 - dissent)
 
 The newly created BLPM is much more open to cooperation with us, so improving relations comes naturally.
