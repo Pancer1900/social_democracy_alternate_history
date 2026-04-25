@@ -5,21 +5,24 @@ tags: party_affairs
 view-if: international_relations_timer <= 0
 on-arrival: month_actions += 1; international_relations_timer += 12;
 card-image: img/international.jpg
-max-visits: 4
+max-visits: 6
 #subtitle: Building ties with our fraternal socialist parties.
 
-At the Labor and Socialist International, we can forge contacts with our fraternal socialist parties in Europe and across the world.
+At the Socialist International Union, we can forge contacts with our fraternal socialist parties in Vaciria and across the world.
 
-- @fr_uk: Build relationships with the French SFIO and British Labour Party to move their governments in Germany's favor.
-- @austria: Learn organization and street fighting from the Austrian SDAPÖ.
-- @scandi: Learn the path of economics and reform from the Scandinavian social democrats.
-- @comintern: Forget the second international - embed a spy in the Comintern's conference.
-- @america: Contact the Socialist party of America.
+- @vyl: Vyl
+- @vyl_2: vyl2
+- @vyl_3: vyl3
+- @kell: kell
+- @kell_2: kell2
+- @arc: arc
+- @tra: tra
+- @pek: pek
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
 
-@fr_uk
+@arc
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
@@ -27,7 +30,7 @@ on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifis
 
 The socialists of France and Britain can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
 
-@austria
+@tra
 subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - We will also help the Austrians oppose their dictatorship. ?]
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
@@ -38,8 +41,8 @@ Our Reichsbanner can learn much in paramilitary organization and training from t
 
 [? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian Social Democratic Worker's Party build up their resources in preparation for a future struggle, legally and illegally. ?]
 
-
-@scandi
+@kell_2
+view-if: international_relations_timer <= 0
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
@@ -47,15 +50,54 @@ on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_
 
 The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
 
-@comintern
+
+@kell
+view-if: international_relations_timer <= 0
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kpd_relation += 5*(1-dissent); communist_coalition += 1 if comintern_seen == 0; comintern_seen += 1
+on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
 
-The Stalinists of the KPD insists on calling us "social fascists", suggesting that we social democrats are as bad or worse than actual fascists. Needless to say, this is not good for our relationship with the Communists. By observing the Comintern, we can better understand the KPD, enabling us to potentially improve relations, or counter the KPD if it may come to that.
+The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
 
-@america
+@vyl
+subtitle: -1 resources
+view-if: vyl_rev = 0
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; vyl_rev_strenth += 1; organisation_workers += 1; labor_strength += 4; center_strength += 2
+
+Vyliarians are the masters at organising and most of their proletarians are awaken, we shall learn their ways of proper organisation.
+
+@vyl_2
+subtitle: -1 resources
+view-if: vyl_rev = 1 and vyl_suc = 0
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; vyl_rev_strenth += 2; revolutionaries_strength += 8; left_strength += 4; vyliria_relation += 1; radicalization += 1; liberal_reconciliation -= 1
+
+We are helping the revolutionaries in Vyliria, our left factions are appeased and strenthend, maybe the revolution can succed?  
+
+@vyl_3
+subtitle: -1 resources
+view-if: vyl_suc = 1
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: resources -= 1; vyliria_relation += 1
+
+Now that the Vylirian revoulutionaries are victorus we can use our intnational contacts to our advatage 
+
+- @rev_support
+- @relations
+- @wide_support 
+
+@rev_support
+
+@relations
+
+@wide_support
+
+@pek
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
