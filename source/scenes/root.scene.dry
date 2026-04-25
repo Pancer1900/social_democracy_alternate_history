@@ -119,6 +119,8 @@ Q.organisation_workers = 10;
 Q.organisation_rural = 8;
 Q.organisation_middle = 6;
 
+Q.revolutionary_preparations = 0;
+
 // internal party politic 
 
 Q.ldp_reform = 0;
@@ -505,6 +507,7 @@ Q.wtb_implemented = 0;
 
 // Relations with the countries
 
+Q.kelland_relation = 10;
 Q.south_relation = 10;
 Q.arconia_relation = 10;
 Q.tracosia_relation = 10;
@@ -517,6 +520,7 @@ Q.vyl_rev_strenth = 0;
 Q.vyl_rev = 0;
 Q.vyl_suc = 0;
 Q.kell_coup = 0;
+Q.kell_strenth = 0;
 
 Q.rearmament_exposed = 0;
 // reparations vs baseline: young plan is -1.
