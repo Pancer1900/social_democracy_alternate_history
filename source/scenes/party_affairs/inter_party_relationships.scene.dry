@@ -33,7 +33,7 @@ We try to repair the relations between the bulk of the party and their splinters
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; liberal_reconciliation += 1
+on-arrival: resources -= 1; liberal_reconciliation += 1; gdsu_left += 1
 go-to: center_reform if gdsu_ideology < 0; center_coalition if gdsu_ideology > 0; center_op if gdsu_ideology = 0
 
 @center_op
@@ -55,7 +55,7 @@ Even with the right governing the GDSU it doesn't mean we cannot try to get them
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; liberal_reconciliation += 2; dvp_relation += 2 if liberal_reconciliation > 9
+on-arrival: resources -= 1; liberal_reconciliation += 2; ldp_left += 1; dvp_relation += 2 if liberal_reconciliation > 9
 go-to: lpd_reforma if ldp_reform = 1; ldp_coalition if blpm_formed = 1; lpd_op if ldp_reform = 0 and blpm_formed = 0
 
 @lpd_op
