@@ -116,8 +116,8 @@ Q.moderate_plan_adopted = 0;
 // organizations
 
 Q.organisation_workers = 10;
-Q.organisation_rural = 10;
-Q.organisation_middle = 10;
+Q.organisation_rural = 8;
+Q.organisation_middle = 6;
 
 // internal party politic 
 
@@ -491,6 +491,7 @@ Q.unemployment_insurance_seen = 0;
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
 
+
 // have we reformed these institutions to be more democratic?
 Q.judicial_reform = 0;
 Q.bureaucratic_reform = 0;
@@ -503,6 +504,7 @@ Q.works_program = 0;
 Q.wtb_implemented = 0;
 
 // Relations with the countries
+
 Q.south_relation = 10;
 Q.arconia_relation = 10;
 Q.tracosia_relation = 10;
@@ -510,6 +512,11 @@ Q.crevia_relation = 10;
 Q.west_relation = 10;
 Q.vyliria_relation = 10;
 Q.pekoria_relation = 10;
+
+Q.vyl_rev_strenth = 0;
+Q.vyl_rev = 0;
+Q.vyl_suc = 0;
+Q.kell_coup = 0;
 
 Q.rearmament_exposed = 0;
 // reparations vs baseline: young plan is -1.
