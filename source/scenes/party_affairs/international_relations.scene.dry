@@ -26,39 +26,36 @@ At the Socialist International Union, we can forge contacts with our fraternal s
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; west_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1
+on-arrival: resources -= 1; arconia_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1
 
-The socialists of France and Britain can influence their governments to be friendlier towards Germany. Hopefully they will reduce our reparations burden.
+The socialists of Arconia can be vital middleman in our negotiantions with Arconia about the Lurek's status and possible further Vacirian Integration 
 
 @tra
-subtitle: -1 resources [? if austrian_parliament_seen and not austrian_civil_war_seen: - We will also help the Austrians oppose their dictatorship. ?]
+subtitle: -1 resources 
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
-on-arrival: left_strength += 5; radicalization += 1; rb_militancy += 0.03; resources -= 1; austria_relation += 1; sdapo_strength += 1 if austrian_parliament_seen = 1
+on-arrival: left_strength += 5; radicalization += 1; resources -= 1; tracosia_relation += 1; agrarnians_strength += 4
 
-Our Reichsbanner can learn much in paramilitary organization and training from the Austrian Republikanischer Schutzbund (Republican Protection Units), the paramilitary branch of the Austrian social democrats.
-
-[? if austrian_parliament_seen and not austrian_civil_war_seen: We are also helping the Austrian Social Democratic Worker's Party build up their resources in preparation for a future struggle, legally and illegally. ?]
+Our paramilitaries can leran much from the Tracossian socialists and their firce People's Guards, and how to unite the common person againts the Burgoise and the Aristocrat  
 
 @kell_2
-view-if: international_relations_timer <= 0
+view-if: kell_coup = 1
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
+on-arrival: resources -= 1; kell_strenth += 2; revolutionaries_strength += 4; left_strength += 2; kelland_relation += 1; radicalization += 1; liberal_reconciliation -= 1
 
-The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
-
+We supprt the efforts of the resistance to the Levion Regime and we hope for a return of democrasy in Kelland 
 
 @kell
-view-if: international_relations_timer <= 0
+view-if: kell_coup = 0
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1
+on-arrival: reformist_strength += 8; wtb_support += 1; resources -= 1; moderate_plan_support += 1; kelland_relation += 1
 
-The programs of the Nordic socialists involve active government intervention in the economy. We can learn from their economic strategies, and how they moved beyond their working-class base to attract a broader set of constituents.
+Our south-west neighour has expericed rule by a coalition goverment consisting of socialists and they can teach us how to properly work in a parlimatray system and how to compromise socilalism and parlimetarism
 
 @vyl
 subtitle: -1 resources
@@ -87,15 +84,18 @@ on-arrival: resources -= 1; vyliria_relation += 1
 
 Now that the Vylirian revoulutionaries are victorus we can use our intnational contacts to our advatage 
 
-- @rev_support
-- @relations
-- @wide_support 
+- @rev_support: We will use our contacts with the new republic to support our revolutionary effort.
+- @relations: We can improve relations with the republic so a frendly relationship can be build between our countries.
+- @wide_support: We will use our contacts with the new republic to support our party and recive aid from them
 
 @rev_support
+on-arrival: revolutionaries_strength += 8; left_strength += 4; radicalization += 1; revolutionary_preparations += 1
 
 @relations
+on-arrival: vyliria_relation += 2
 
 @wide_support
+on-arrival: centre_strength += 4; left_strength += 2; labour_strength += 4; organisation_workers += 1; resources += 1
 
 @pek
 subtitle: -1 resources
@@ -103,7 +103,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1
 
-The Socialist Party of America is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+The Socialist Party of Perkoria is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
 
 @reduce
 
