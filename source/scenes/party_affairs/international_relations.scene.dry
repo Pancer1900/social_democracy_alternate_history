@@ -10,14 +10,14 @@ max-visits: 6
 
 At the Socialist International Union, we can forge contacts with our fraternal socialist parties in Vaciria and across the world.
 
-- @vyl: Vyl
-- @vyl_2: vyl2
-- @vyl_3: vyl3
-- @kell: kell
-- @kell_2: kell2
-- @arc: arc
-- @tra: tra
-- @pek: pek
+- @vyl: United Socialist Party of Vyliria is the biggest in the world and one of the most organised, we have much to learn from them.
+- @vyl_2: Vyliria is now fighting for their liberation and we will help them.
+- @vyl_3: Now that the Socialist have triumphed in Vyliria we can use our relations to our advantage.
+- @kell: Kelland has been ruled by a Socialist - Liberal coalition and we might learn something from their cooperation with the liberals.
+- @kell_2: After the Levion coup we will support the undergrund resistance and fight for a better Kelland 
+- @arc: Arconish Socialist party, might help us with better relations with Arconia.
+- @tra: Tracossian Socialists are firce fighters and we have a lot to learn form them.
+- @pek: Contact the Pekorian Socialits form around the globe. 
 - @return: We do not need international contacts at the moment.
 - @easy_discard
 - @cancel_advisor_action
@@ -26,7 +26,7 @@ At the Socialist International Union, we can forge contacts with our fraternal s
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; arconia_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1
+on-arrival: resources -= 1; arconia_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1; centre_strength += 2
 
 The socialists of Arconia can be vital middleman in our negotiantions with Arconia about the Lurek's status and possible further Vacirian Integration 
 
@@ -64,7 +64,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; vyl_rev_strenth += 1; organisation_workers += 1; labor_strength += 4; center_strength += 2
 
-Vyliarians are the masters at organising and most of their proletarians are awaken, we shall learn their ways of proper organisation.
+Vyliarians are the masters at organising their proletarians, we shall learn their ways of proper organisation and support our Socialist brothers 
 
 @vyl_2
 subtitle: -1 resources
