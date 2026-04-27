@@ -115,10 +115,13 @@ Q.moderate_plan_adopted = 0;
 
 // organizations
 
-Q.organisation_workers = 10;
-Q.organisation_rural = 8;
-Q.organisation_middle = 6;
+Q.organisation_workers = 20;
+Q.organisation_rural = 16;
+Q.organisation_middle = 11;
 
+// Mod - Party Affairs 
+
+Q.expand_media = 0;
 Q.revolutionary_preparations = 0;
 
 // internal party politic 
@@ -213,9 +216,9 @@ Q.reichswehr_loyalty = 0.2;
 // national ideology - on a binary scale
 // nationalism vs internationalism or pacifism or non-nationalism
 
-Q.nationalism = 60; // socialism vs capitalism
-Q.socialism = 40; // pro-republic vs anti-republic
-Q.pro_republic = 60;
+Q.nationalism = 68; // socialism vs capitalism
+Q.socialism = 35; // pro-republic vs anti-republic
+Q.pro_republic = 64;
 
 Q.emergency_rule = 0;
 
@@ -560,7 +563,7 @@ Q.n_advisors = 5;
 // timer - this decrements by 1 every turn, and is set to 5 whenever an advisor action is used, so that you can only use one advisor action every 5 months.
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
-Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining',
+Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining', 'organisation', 'org_rally',
             'fundraising', 'ideology',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
