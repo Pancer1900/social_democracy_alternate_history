@@ -56,11 +56,11 @@ on-arrival: resources -= 1
 - @expand_wide
 
 @rural
-title: The purpose of our media is to elect more Socialists.
-subtitle: Our newspapers will focus on the electoral campaign.
-on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
+title: We should expand our media in the poorer and more rular areas of the country
+subtitle: This is supported by the Agrarian faction.
+on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent); agrarnians_strength += 5; revolutionaries_dissent -=8
 
-Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
+Our media is now reaching the rural areas better and this will allow us to better campain among this social group and it makes rural organising 
 
 @educational
 title: The purpose of our media is to elect more Socialists.
