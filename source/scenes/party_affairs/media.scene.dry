@@ -3,7 +3,7 @@ new-page: true
 is-card: true
 tags: party_affairs
 view-if: media_timer <= 0
-on-arrival: month_actions += 1; media_timer += 6;
+on-arrival: month_actions += 1; media_timer += 7;
 card-image: img/sangerbund.jpg
 #subtitle: Setting the direction for our newspapers and radio.
 
@@ -18,7 +18,7 @@ The Party has many media outlets across the whole country, we could use the them
 - @radio
 - @radio_2
 - @radio_3
-- @radio_4
+- @mass_campain
 - @return: We should not do anything with media at the moment.
 - @easy_discard
 - @cancel_advisor_action
@@ -33,7 +33,7 @@ Our commercialized newspapers are able to bring in more funds. However, the left
 @campaign
 title: The purpose of our media is to elect more Socialists.
 subtitle: Our newspapers will focus on the electoral campaign.
-on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
+on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1 - dissent);
 
 Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
 
@@ -49,7 +49,7 @@ title: We will work towards expanding our media's appeal and viwer base.
 subtitle: We can apeal to rural communites or further our support across the workers (-1 resources)
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1
+on-arrival: resources -= 1; expand_media += 1
 
 - @rural
 - @educational
@@ -57,59 +57,55 @@ on-arrival: resources -= 1
 
 @rural
 title: We should expand our media in the poorer and more rular areas of the country
-subtitle: This is supported by the Agrarian faction.
-on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent); agrarnians_strength += 5; revolutionaries_dissent -=8
+on-arrival: peasants_spd += 2; rural_spd += 2; agrarnians_strength += 5; agrarnians_dissent -= 8; organisation_rural += 1; campaign_media += 1
 
-Our media is now reaching the rural areas better and this will allow us to better campain among this social group and it makes rural organising 
+Our media is now reaching the rural areas better and this will allow us to better campain among this social group and it makes rural organising easier.
 
 @educational
-title: The purpose of our media is to elect more Socialists.
-subtitle: Our newspapers will focus on the electoral campaign.
-on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
+title: The purpose of our media is to educate the workers and make them into true socialists 
+on-arrival: workers_spd += 5*(1 - dissent); socialism += 2; left_dissent -= 4; revolutionaries_dissent -= 2; center_dissent -= 4; left_strength += 4; campaign_media += 1
 
-Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
+Our media campaignis is focusing on Socialist propaganda, this widens our support across the workers and makes them more favorable towards socialism.
 
 @expand_wide
-title: The purpose of our media is to elect more Socialists.
-subtitle: Our newspapers will focus on the electoral campaign.
-on-arrival: campaign_media += 1; workers_spd += 4*(1 - dissent); unemployed_spd += 2*(1-dissent);
+title: We should expand our media acoross the wider urban society, possibly reaching the middle class
+on-arrival: campaign_media += 1; workers_spd += 1*(1 - dissent); new_middle_spd += 3*(1 - dissent); old_middle_spd += 2*(1 - dissent); new_middle_spd += 1 if commercialized_media >= 1; new_middle_spd += 1 if united_front_theory = 2; socialism += 1; reformist_dissent -= 2; reformist_strength += 2
 
-Our campaign media is mostly reaching the workers who are already saturated with Socialist propaganda, but it must be doing *something*, or at least that is what we hope.
+Our media effors are giving some efect, but the middle class remains mostly closed to socialist ideas. [? if commercialized_media >= 1: Our more comertialised media allows to better conect with the middle class. ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the lower middle class makes them open to the socialist capmpaining ?]
 
 @radio
 title: Why not fund a radio station?
-subtitle: -2 resources
+subtitle: Funding a radio station may not be as effective as we think becouse of low ownership of radios (-2 resources)
 choose-if: resources >= 2
 unavailable-subtitle: Not enough resources.
-view-if: radio = 0
-on-arrival: radio += 1; resources -= 2; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 2*(1 - dissent); labor_dissent += 5; socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent) if pacifism > 1; pro_republic += 3*(1-dissent) if democratization > 1
+view-if: radio = 0 and year >= 1267
+on-arrival: radio += 1; resources -= 2; new_middle_spd += 3.5*(1 - dissent); old_middle_spd += 2.5*(1 - dissent); workers_spd += 1; socialism += 3*(1 - dissent);  nationalism -= 3*(nationalism/(nationalism + 1)) if pacifism > 1; pro_republic += 3*(democratization/(democratization + 1)) if democratization > 1
 
-Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of socialism along with music and other popular content. Since most proletarians cannot afford family radios right now, we are reaching the middle class, a fact of which our labor comrades are painfully aware.
+Our new radio station allows us to connect to people in a more intimate setting than before, spreading the message of socialism along with music and other popular content. Since most proletarians and rural folk cannot afford family radios right now, we are reaching the middle class
 
 @radio_2
 title: We must keep on building up our radio network.
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-view-if: radio > 0 and radio <= 3
-on-arrival: radio += 1; resources -= 1; new_middle_spd += 5*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 3*(1 - dissent); socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)*(democratization-2) if democratization > 2
+view-if: radio > 0 and radio <= 4 and year >= 1268
+on-arrival: radio += 1; resources -= 1; new_middle_spd += 3.5*(1 - dissent); old_middle_spd += 2.5*(1 - dissent); workers_spd += 1.5*(1 - dissent); socialism += 3*(1 - dissent); nationalism -= 3*(nationalism/(nationalism + 1)) if pacifism > 1; pro_republic += 3*(democratization/(democratization + 1)) if democratization > 1
 
 Our new radio network has a mix of popular and political programming, and is proving a success.
 
 @radio_3
 title: We must keep on building up our radio network.
 subtitle: It is now financially self-sufficient, and does not require any more resources.
-view-if: radio > 3 and radio <= 5 and year <= 1931
-on-arrival: radio += 1; new_middle_spd += 5*(1 - dissent); old_middle_spd += 4*(1 - dissent); workers_spd += 4*(1 - dissent); rural_spd += 3*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 3*(1 - dissent); nationalism -= 3*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 3*(1-dissent)*(democratization-2) if democratization > 2
+view-if: radio > 4
+on-arrival: radio += 1; new_middle_spd += 4*(1 - dissent); old_middle_spd += 3*(1 - dissent); workers_spd += 2*(1 - dissent); rural_spd += 1; socialism += 3*(1 - dissent); nationalism -= 3*(nationalism/(nationalism + 1)) if pacifism > 1; pro_republic += 3*(democratization/(democratization + 1)) if democratization > 1
 
 Our radio network has become a successful tool for spreading our message.
 
-@radio_4
-title: We should keep on supporting our radio network.
-subtitle: As radio becomes more common, the novelty is beginning to wear off, and radio is becoming saturated in society. -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-view-if: radio > 3 and (radio >= 6 or year >= 1932) and radio <= 9
-on-arrival: radio += 1; resources -= 1; new_middle_spd += 3*(1 - dissent); old_middle_spd += 2*(1 - dissent); workers_spd += 3*(1 - dissent); rural_spd += 2*(1 - dissent); unemployed_spd += 2*(1-dissent); socialism += 2*(1 - dissent); nationalism -= 2*(1 - dissent)*(pacifism-2) if pacifism > 2; pro_republic += 2*(1-dissent)*(democratization-2) if democratization > 2
-
-We are continuing to invest in our radio stations. Both commercial and political radio are becoming more prevalent, making it harder to spread our message amidst the competition.
+@mass_campain 
+title: We can try to launch a massive media campain across all media chanels
+subtitle: This will be ambitious and expenisve but will have significant results(-3 resources)
+choose-if: resources >= 3 and (radio + expand_media) > 4
+unavailable-subtitle: We must expand the media/radio further. Or not enough resources.
+view-if: radio > 1 and expand_media > 0 
+on-arrival: resources -= 3; new_middle_spd += 6*(1 - dissent); old_middle_spd += 4*(1 - dissent); workers_spd += 8*(1 - dissent); socialism += 5*(1 - dissent); peasants_spd += 4*(1 - dissent); rural_spd += 4*(1 - dissent); pro_republic += 5*(democratization/(democratization + 1)) if democratization > 1; nationalism -= 3*(nationalism/(nationalism + 1)) if pacifism > 1
+Our new radio network has a mix of popular and political programming, and is proving a success.
