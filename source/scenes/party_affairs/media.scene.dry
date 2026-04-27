@@ -57,7 +57,7 @@ on-arrival: resources -= 1; expand_media += 1
 
 @rural
 title: We should expand our media in the poorer and more rular areas of the country
-on-arrival: peasants_spd += 2; rural_spd += 2; agrarnians_strength += 5; agrarnians_dissent -= 8; organisation_rural += 1; campaign_media += 1
+on-arrival: peasants_spd += 2; rural_spd += 2; agrarnians_strength += 5; agrarnians_dissent -= 8; organisation_rural += 1; campaign_media += 1; socialism += 1
 
 Our media is now reaching the rural areas better and this will allow us to better campain among this social group and it makes rural organising easier.
 
@@ -69,7 +69,7 @@ Our media campaignis is focusing on Socialist propaganda, this widens our suppor
 
 @expand_wide
 title: We should expand our media acoross the wider urban society, possibly reaching the middle class
-on-arrival: campaign_media += 1; workers_spd += 1*(1 - dissent); new_middle_spd += 3*(1 - dissent); old_middle_spd += 2*(1 - dissent); new_middle_spd += 1 if commercialized_media >= 1; new_middle_spd += 1 if united_front_theory = 2; socialism += 1; reformist_dissent -= 2; reformist_strength += 2
+on-arrival: campaign_media += 1; workers_spd += 1.5*(1 - dissent); new_middle_spd += 3.5*(1 - dissent); old_middle_spd += 2*(1 - dissent); new_middle_spd += 1.5 if commercialized_media >= 1; new_middle_spd += 1.5 if united_front_theory = 2; socialism += 1; reformist_dissent -= 2; reformist_strength += 2; organisation_middle += 1
 
 Our media effors are giving some efect, but the middle class remains mostly closed to socialist ideas. [? if commercialized_media >= 1: Our more comertialised media allows to better conect with the middle class. ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the lower middle class makes them open to the socialist capmpaining ?]
 
