@@ -108,4 +108,5 @@ choose-if: resources >= 3 and (radio + expand_media) > 4
 unavailable-subtitle: We must expand the media/radio further. Or not enough resources.
 view-if: radio > 1 and expand_media > 0 
 on-arrival: resources -= 3; new_middle_spd += 6*(1 - dissent); old_middle_spd += 4*(1 - dissent); workers_spd += 8*(1 - dissent); socialism += 5*(1 - dissent); peasants_spd += 4*(1 - dissent); rural_spd += 4*(1 - dissent); pro_republic += 5*(democratization/(democratization + 1)) if democratization > 1; nationalism -= 3*(nationalism/(nationalism + 1)) if pacifism > 1
-Our new radio network has a mix of popular and political programming, and is proving a success.
+
+Our mass campain is expanding our electorate across all social groups and massivly expands our electorate.
