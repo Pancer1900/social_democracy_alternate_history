@@ -57,6 +57,7 @@ Expanding the rular party aparatus allows us to better connect with the farmers 
 
 @meeting
 on-arrival: workers_spd += 2; peasants_spd += 1; rural_spd += 1
+
 Our meetings allow us to better connect with the grassroots of the country and reach wider audiences
 
 @youth
