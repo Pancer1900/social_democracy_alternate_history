@@ -254,3 +254,71 @@ Gecherdists: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+
 Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ minorieties_spd_display +]%, Z: [+ minorieties_z_display +]%, PPU+: [+ minorieties_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ minorieties_ddp_display +]%, DVP: [+ minorieties_dvp_display +]%; MNVP: [+ minorieties_dnvp_display +]%, NSDAP: [+ minorieties_nsdap_display +]%, Others: [+ minorieties_other_display +]%, [? if sapd_formed: KPM: [+ minorieties_sapd_display +]%, ?] [? if gnvp_formed: GNVP: [+ minorieties_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ minorieties_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ minorieties_blpm_display +]%, ?] [? if spm_formed: SPM: [+ minorieties_spm_display +]%, ?]
 
 Support for the Republic: [+ pro_republic_disp +]%
+
+
+@politics_internal
+
+= Inter-party Relations
+
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">KPM</span>: [+ sapd_relation : relationships +] ?]
+
+[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">ASUM</span>: [+ asum_relation : relationships +] ?]
+
+[? if spm_formed and spm_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #ff1919;">SPM</span>: [+ spm_relation : relationships +] ?]
+
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_relation : relationships +]
+
+{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_relation : relationships +]
+
+[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_relation : relationships +] ?]
+
+{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_relation : relationships +]
+
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_relation : relationships +]
+
+[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_relation : relationships +] ?]
+
+{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">MNVP</span>!}: [+ dnvp_relation : relationships +]
+
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">NSDAP</span>!}: [+ nsdap_relation : relationships +]
+
+= Party Leadership 
+
+[? if sapd_formed and sapd_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">KPM</span>: [+ sapd_leader +] ?]
+
+[? if asum_formed and asum_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">ASUM</span>: [+ asum_leader +] ?]
+
+[? if spm_formed and spm_r > 0: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #ff1919;">SPM</span>: [+ spm_leader +] ?]
+
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_leader +]
+
+{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_leader +]
+
+[? if blpm_formed and gnvp_r > 0: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_leader +] ?]
+
+{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_leader +]
+
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_leader +]
+
+[? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_leader +] ?]
+
+{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">MNVP</span>!}: [+ dnvp_leader +]
+
+{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">NSDAP</span>!}: [+ nsdap_leader +]
+
+= Internal Factions of the [+ spd_name +]
+
+[? if revolutionaries_split = 0: {!<span class="tooltip-text" title="Revolutionaries want to crush the Burgoise state as fast as possible and they serve as a push for revolution.">Revolutionaries</span>!} strength: [+ revolutionaries_strength : strength +], dissent: [+ revolutionaries_dissent : dissent +] ?]
+
+[? if left_split = 0: {!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +] ?]
+
+[? if agrarnians_split = 0: {!<span class="tooltip-text" title="Agrarians are the rular base of the party and improving the lives of the peasants and farmers are their main goal.">Agrarinas</span>!} strength: [+ agrarnians_strength : strength +], dissent: [+ agrarnians_dissent : dissent +] ?]
+
+[? if centrists_resign = 0: {!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
+
+[? if unions_independent = 0: {!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
+
+[? if reformists_resigned = 0: {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
+
+
+
