@@ -243,6 +243,19 @@ blockquote + blockquote.attribution {
     background-color: var(--tab-hover-color);
 }
 
+#politics_forein_tab {
+  width: 49%;
+}
+#politics_internal_tab {
+  width: 49%;
+}
+
+.tab_button.active {
+    background-color: var(--content-bg-color);
+}
+.tab_button:hover {
+    background-color: var(--tab-hover-color);
+}
 
 .overlay {
     background: rgba(0,0,0,0.7);
