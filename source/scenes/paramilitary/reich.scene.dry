@@ -1,7 +1,7 @@
 title: reich
 new-page: true
 is-card: true
-tags: party_affairs
+tags: paramilitary
 view-if: reichsbanner_timer <= 0
 card-image: img/reichsbanner.jpg
 on-arrival: month_actions += 1
