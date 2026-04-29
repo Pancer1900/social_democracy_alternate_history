@@ -123,15 +123,23 @@ Q.organisation_middle = 11;
 
 Q.expand_media = 0;
 Q.revolutionary_preparations = 0;
+Q.united_front_theory = 0;
+
+// party_policy - congresses 
+
+Q.party_policy_main = 0;
+Q.party_policy_rev = 0;
+Q.party_policy_coalition = 0;
+Q.party_policy_rev = 0;
 
 // internal party politic 
 
 Q.ldp_reform = 0;
-Q.ldp_right = 0;
+Q.ldp_right = 3;
 Q.ldp_left = 0;
 Q.ldp_ideology = 0; // +++ its more left wing --- is more right wing 
 
-Q.gdsu_right = 0;
+Q.gdsu_right = 2;
 Q.gdsu_left = 0;
 Q.gdsu_ideology = 0; // +++ its more left wing --- is more right wing 
 
@@ -289,10 +297,10 @@ Q.blpm_formed = 0;
 // Support for party by social group
 // they don't have to sum to 100 since the electoral calculations will be normalized.
 Q.workers_spd = 60;
-Q.workers_z = 10;
+Q.workers_z = 8;
 Q.workers_ddp = 7;
 Q.workers_dvp = 13;
-Q.workers_dnvp = 6;
+Q.workers_dnvp = 8;
 Q.workers_nsdap = 0;
 Q.workers_other = 3;
 Q.workers_ppu = 1;
@@ -335,9 +343,9 @@ Q.rural_ppu = 1;
 
 Q.unemployed_spd = 35;
 Q.unemployed_z = 10;
-Q.unemployed_ddp = 15;
+Q.unemployed_ddp = 10;
 Q.unemployed_dvp = 10;
-Q.unemployed_dnvp = 10;
+Q.unemployed_dnvp = 15;
 Q.unemployed_nsdap = 10;
 Q.unemployed_other = 5;
 Q.unemployed_ppu = 0;
@@ -346,16 +354,16 @@ Q.minorieties_spd = 15;
 Q.minorieties_z = 1;
 Q.minorieties_ddp = 10;
 Q.minorieties_dvp = 15;
-Q.minorieties_dnvp = 5;
+Q.minorieties_dnvp = 2;
 Q.minorieties_nsdap = 0;
-Q.minorieties_other = 9;
+Q.minorieties_other = 12;
 Q.minorieties_ppu = 55;
 
-Q.catholics_spd = 5;
-Q.catholics_z = 52;
+Q.catholics_spd = 2;
+Q.catholics_z = 50;
 Q.catholics_ddp = 6;
-Q.catholics_dvp = 15;
-Q.catholics_dnvp = 15;
+Q.catholics_dvp = 10;
+Q.catholics_dnvp = 25;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 2;
 Q.catholics_ppu = 0;
