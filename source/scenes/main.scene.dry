@@ -41,6 +41,7 @@ max-cards: 5
 
 - @party
 - @govt
+- @paramilitary
 - #advisor
 - @shuffle_leadership_pinned
 
@@ -51,6 +52,13 @@ card-image: img/Vorwaerts_nr_1.png
 is-deck: true
 
 - #party_affairs
+
+@paramilitary
+title: Paramilitary Affairs
+card-image: img/Vorwaerts_nr_1.png
+is-deck: true
+
+- #paramilitary
 
 @govt
 title: Government Affairs
