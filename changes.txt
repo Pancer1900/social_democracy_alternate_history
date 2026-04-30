@@ -1,5 +1,101 @@
 v0.5:
 
+#include <iostream>
+
+using namespace std;
+
+void SetColor(int textColor)
+{
+    cout << "\033[" << textColor << "m";
+}
+
+// Function to reset the console color
+void ResetColor() { cout << "\033[0m"; }
+
+
+int main()
+{
+    cout << "Hello world!" << endl;
+
+    cout << "   - totalnie nie pokemon -   " << endl;
+
+    int x, y, status_tab[10][10], i, k;
+
+    SetColor(94);
+    cout
+        << "pokemon."
+        << endl;
+
+    // Reset to default colors
+    ResetColor();
+    cout << "niepokemon." << endl;
+
+        for(y=0; y<5; y++)
+        {
+            for(x=0; x<5; x++)
+            {
+                status_tab[x][y] = 2;
+            }
+        }
+
+        status_tab[2][3] = 3;
+        status_tab[2][2] = 1;
+
+        for(y=0; y<5; y++)
+        {
+            cout << "  -----  -----  -----  -----  -----  "<< endl;
+            cout << "  |   |  |   |  |   |  |   |  |   |  "<< endl;
+            cout << " ";
+            for(x=0; x<5; x++)
+        {
+            cout << " | ";
+
+            switch(status_tab[x][y])
+            {
+            case 1:
+            {
+                cout<<"@";
+            break;
+            }
+            case 2:
+            {
+                cout<<"?";
+            break;
+            }
+            case 3:
+            {
+                SetColor(31);
+                cout<< "!";
+                ResetColor();
+            break;
+            }
+            case 4:
+            {
+                cout<<"#";
+            break;
+            }
+            case 5:
+            {
+                cout<<" ";
+            break;
+            }
+
+            }
+
+            cout<<" | ";
+
+        }
+
+            cout<<endl;
+            cout << "  |   |  |   |  |   |  |   |  |   | "<< endl;
+            cout << "  -----  -----  -----  -----  ----- "<< endl;
+
+        }
+
+
+    return 0;
+}
+
 
 v0.6:
 
