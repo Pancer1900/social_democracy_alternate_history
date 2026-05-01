@@ -1,0 +1,6 @@
+
+(..5) hostile
+(5..8) cold
+(8..12) neutral
+(12..16) warm
+(16..25) friendly
