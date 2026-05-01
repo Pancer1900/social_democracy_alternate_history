@@ -322,7 +322,7 @@ Support for the Republic: [+ pro_republic_disp +]%
 
 @politics_forein
 
-= International Relations
+= Foreign Relations
 
 Relations with <span style="color: #ffa300;">Vyliria</span>: [+ vyliria_relation : int_relationships +]
 
@@ -334,25 +334,38 @@ Relations with <span style="color: #89cbaf;">Crevia</span>: [+ crevia_relation :
 
 Relations with <span style="color: #d7d462;">Kelland</span>: [+ kelland_relation : int_relationships +]
 
+Relations with <span style="color: #6fb7ca;">Carberdia</span>: [+ carberdia_relation : int_relationships +]
+
 Relations with <span style="color: #40b3d7;">Pekoria</span>: [+ pekoria_relation : int_relationships +]
 
-Relations with <span style="color: #df997f;">West</span><span style="color: #f8ff7b;">ern Nei</span><span style="color: #9e4c2a;">ghbours</span>: [+ west_relation: int_relationships +]
+Relations with <span style="color: #df997f;">West</span><span style="color: #e5eb72;">ern Nei</span><span style="color: #9e4c2a;">ghbours</span>: [+ west_relation: int_relationships +]
 
-Relations with <span style="color: #a2d9a9;">Southern</span><span style="color: #d7d462;">Neighbours</span>: [+ south_relation : int_relationships +]
+Relations with <span style="color: #a2d9a9;">Southern</span> <span style="color: #d7d462;">Neighbours</span>: [+ south_relation : int_relationships +]
 
-= Internal Factions of the [+ spd_name +]
+Party Relations with <span style="color: #ffa300;">Vylirian</span><span style="color: #ff1919;">unied socialist party</span>: [+ vyliria_left_relation : int_relationships +]
 
-[? if revolutionaries_split = 0: {!<span class="tooltip-text" title="Revolutionaries want to crush the Burgoise state as fast as possible and they serve as a push for revolution.">Revolutionaries</span>!} strength: [+ revolutionaries_strength : strength +], dissent: [+ revolutionaries_dissent : dissent +] ?]
+= International situations
 
-[? if left_split = 0: {!<span class="tooltip-text" title="The Left is interested in radical, transformative policies and cooperation with the KPD.">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +] ?]
+[? if pek_thi_war = 1: Pekoria - Thrigal War: [+ pek_thi_war_sit +] ?]
 
-[? if agrarnians_split = 0: {!<span class="tooltip-text" title="Agrarians are the rular base of the party and improving the lives of the peasants and farmers are their main goal.">Agrarinas</span>!} strength: [+ agrarnians_strength : strength +], dissent: [+ agrarnians_dissent : dissent +] ?]
+[? if pek_banking_act = 1: Pekorian banking and debt crisis: [+ pek_banking +] ?]
 
-[? if centrists_resign = 0: {!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
+[? if zurukstan_rev = 1: Revoulution in Zurukstan: [+ zurukstan +] ?]
 
-[? if unions_independent = 0: {!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers.">Labor</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
+[? if purp_hand_carberde = 1: Situation with Carberdia on the Purple Hand: [+ purp_hand +] ?]
 
-[? if reformists_resigned = 0: {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
+[? if vyl_rev = 1: Remaining time of the Vylirian Civil War: [+ vyl_rev_sit +] ?]
 
+[? if vyl_rev = 1 and vyl_suc = 0: Remaining time of : [+ vyl_rev_sit +] ?]
 
+[? if arctien_crisis = 1: Situation and crisis in Arkten: [+ arctien_crisis_sit +] ?]
 
+[? if thi_rev = 1: Coup in Kelland and Levion Regime situation: [+ thi_rev_sit +] ?]
+
+[? if oil_crisis = 1: Status of the oil crisis affecting Merkopia: [+ oil_crisis_mer +] ?]
+
+[? if oil_crisis = 1: Status of the Global Oil Crisis: [+ oil_crisis_global +] ?]
+
+Status of the Global Economy: [+ global_eco +]
+
+Status of the Global Trade Networks: [+ global_trade +]
