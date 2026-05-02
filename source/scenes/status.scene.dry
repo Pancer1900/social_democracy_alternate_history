@@ -276,17 +276,17 @@ White collar workers and middle class: [+ organisation_middle : organisation +]
 
 Economic stabilty:
 
-Trade Securty:
+Trade Securty: [? if global_eco < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_eco < 0 and global_eco >= -0.1 : <span style="color: #e95448;">Mild Recession</span> ?][? if global_eco > 0 and global_eco <= 0.1 : <span style="color: #d2ce5e;">Slowing down</span> ?][? if global_eco > 0.1 and global_eco <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if global_eco > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
-Banking Status:
+Banking Status: 
 
-Investment:
+Investment: 
 
-Rural Economic Performance:
+Rural Economic Performance: 
 
-Industrial Output:
+Industrial Output: 
 
-Public Works Programs:
+Public Works Programs: 
 
 = Taxation
 
@@ -380,6 +380,6 @@ Party Relations with <span style="color: #ffa300;">Vylirian</span><span style="c
 
 [? if oil_crisis = 1: Status of the Global Oil Crisis: [? if oil_crisis_global <= 0 : <span style="color: #aad454;">Stabilised</span> ?][? if oil_crisis_global > 0 and oil_crisis_global <= 0.1 : <span style="color: #ffbf17;">Affecting</span> ?][? if oil_crisis_global > 0.1 and oil_crisis_global <= 0.2 : <span style="color: #e95448;">Severe</span> ?][? if oil_crisis_global > 0.3 : <span style="color: #bd0000;">Global Crisis</span> ?] ?]
 
-Status of the Global Economy: [? if global_eco < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_eco < 0 and global_eco <= -0.1 : <span style="color: #e95448;">Mild Recession</span> ?][? if global_eco > 0 and global_eco <= 0.1 : <span style="color: #d2ce5e;">Slowing down</span> ?][? if global_eco > 0.1 and global_eco <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if global_eco > 0.3 : <span style="color: #47d62c;">Growing</span> ?] ?]
+Status of the Global Economy: [? if global_eco < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_eco < 0 and global_eco >= -0.1 : <span style="color: #e95448;">Mild Recession</span> ?][? if global_eco > 0 and global_eco <= 0.1 : <span style="color: #d2ce5e;">Slowing down</span> ?][? if global_eco > 0.1 and global_eco <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if global_eco > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
-Status of the Global Trade Networks: [? if global_trade < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_trade < 0 and global_trade <= -0.1 : <span style="color: #e95448;">Obstructed</span> ?][? if global_trade > 0 and global_trade <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if global_trade > 0.1 : <span style="color: #aad454;">Developing</span> ?] ?]
+Status of the Global Trade Networks: [? if global_trade < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_trade < 0 and global_trade >= -0.1 : <span style="color: #e95448;">Obstructed</span> ?][? if global_trade > 0 and global_trade <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if global_trade > 0.1 : <span style="color: #aad454;">Developing</span> ?]
