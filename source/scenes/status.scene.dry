@@ -2,6 +2,9 @@ title: Status
 new-page: true
 is-special: true
 on-arrival: {!
+Q.pro_republic_disp = Math.round(Q.pro_republic);
+Q.nationalism_disp = Math.round(Q.nationalism);
+Q.socialism_disp = Math.round(Q.socialism);
 if (Q.unemployed) {
     Q.unemployed_2 = Q.unemployed.toFixed(1);
 }
@@ -84,12 +87,6 @@ Unemployment: [+ unemployed_2 +]%
 Economic growth: [+ economic_growth_2 +]%
 
 = Public Opinion
-
-on-arrival: {!
-Q.pro_republic_disp = Math.round(Q.pro_republic);
-Q.nationalism_disp = Math.round(Q.nationalism);
-Q.socialism_disp = Math.round(Q.socialism);
-!}
 
 Support for the Republic: [+ pro_republic_disp +]%
 
@@ -267,7 +264,7 @@ Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ 
 
 @politics_internal
 
-= Organisation and unionisation of various social groups
+= Organisation and unionisation of social groups
 
 Urban workers: [+ organisation_workers : organisation +]
 
@@ -279,17 +276,19 @@ White collar workers and middle class: [+ organisation_middle : organisation +]
 
 Economic stabilty:
 
-Trade securty:
+Trade Securty:
 
-Banking status:
+Banking Status:
 
 Investment:
 
-Rural economic performance:
+Rural Economic Performance:
 
-Industrial output:
+Industrial Output:
 
-= Taxation acorss diffrent social groups 
+Public Works Programs:
+
+= Taxation
 
 Upper Class:
 
@@ -301,11 +300,39 @@ Tariffs:
 
 = Rular affairs 
 
-Land Reform status:
+Land Reform Status:
 
-Rural cooperatives status:
+Rural Cooperatives Status: 
 
+Rural Unrest:
 
+= Labour Reforms
+
+Labour Unions Status: 
+
+Work Councils:
+
+Workplace Safety:
+
+Minimum Wage:
+
+Working Hours:
+
+Child Labour:
+
+Government Insurance Programs: 
+
+Labour Unrest:
+
+= Social Issues 
+
+Women's Rights:
+
+Gecherdist Church Status: 
+
+Minority Rights: 
+
+Percilian situation: 
 
 @politics_forein
 
