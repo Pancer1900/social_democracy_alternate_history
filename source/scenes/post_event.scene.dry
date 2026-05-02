@@ -15,9 +15,9 @@ for (var c of Q.classes) {
 Q.pro_republic = Math.round(Q.pro_republic);
 Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
-Q.radicalisation_disp = Math.round(Q.radicalisation_disp).toFixed(1);
+Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
 
-Q.radicalisation_disp = Q.radicalization + Q.nsdap_r + Q.spd_r*Q.revolutionaries_strength/120 + Q.labour_unrest/2 + Q.rural_unrest/2;
+Q.radicalisation_sum = Q.radicalization + Q.nsdap_r + Q.spd_r*Q.revolutionaries_strength/120 + Q.labour_unrest/2 + Q.rural_unrest/2;
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
