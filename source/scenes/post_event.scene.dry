@@ -15,7 +15,7 @@ for (var c of Q.classes) {
 Q.pro_republic = Math.round(Q.pro_republic);
 Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
-Q.radicalisation_disp = Math.round(Q.radicalisation_disp);
+Q.radicalisation_disp = Math.round(Q.radicalisation_disp).toFixed(1);
 
 Q.radicalisation_disp = Q.radicalization + Q.nsdap_r + Q.spd_r*Q.revolutionaries_strength/120 + Q.labour_unrest/2 + Q.rural_unrest/2;
 
@@ -56,9 +56,9 @@ for (var party of Q.parties) {
 }
 // 2. normalize support (fraction)
 for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
-    Q[party+'_votes_display'] = Math.round(Q[party+'_normalized']*100);
+    Q[party+'_normalized'] = (Q[party + '_support']/total_support).toFixed(1);
+    Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100).toFixed(1);
+    Q[party+'_votes_display'] = Math.round(Q[party+'_normalized']*100).toFixed(1);
 }
 
 
