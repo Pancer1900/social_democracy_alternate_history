@@ -23,6 +23,8 @@ if (Q.economic_growth) {
 
 = Status
 
+FOR TEST : [+ economic_change +]
+
 [+ month : month +] [+ year +]
 
 Resources available: [+ resources +]
