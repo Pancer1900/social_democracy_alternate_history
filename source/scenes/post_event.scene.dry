@@ -17,7 +17,7 @@ Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
 Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
 
-Q.radicalisation_sum = Q.radicalization + Q.nsdap_r + Q.spd_r*Q.revolutionaries_strength/120 + Q.labour_unrest/2 + Q.rural_unrest/2;
+Q.radicalisation_sum = Q.radicalization + Q.nsdap_r + Q.spd_r*Q.revolutionaries_strength/100 + Q.labour_unrest/2 + Q.rural_unrest/2;
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
@@ -131,6 +131,11 @@ if (Q.month_actions >= 1) {
                              'inflation': Q.inflation,
                              'unemployment': Q.unemployed});
     // change economic stats...
+
+// ECONOMY - FUCK ME 
+
+Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global + Q.global_eco + Q.global_trade;
+
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
     if (Q.budget <= 0 && Q.budget > -2 && Q.inflation < 2.5) {
