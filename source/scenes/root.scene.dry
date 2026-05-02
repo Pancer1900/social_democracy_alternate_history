@@ -88,7 +88,7 @@ Q.crisis_urgency = 0;
 // nazi_urgency indicates how seriously the SPD takes the nazis - scale from 0 to 10.
 Q.nazi_urgency = 0;
 // radicalization indicates how radical the SPD's rhetoric is - scale from 0 to 10.
-Q.radicalization = 0;
+Q.radicalization = 5;
 // Support for the WTB plan and proto-Keynesian works creation plans in general
 Q.wtb_support = 0;
 // Support for Pacifism within the SPD relative to 1928
@@ -530,7 +530,7 @@ Q.land_reform = 1;
 Q.land_reform_sta = 'Reform of 1259 - <span style="color: #787878;">Unadequete</span>';
 Q.rular_coop = 0;
 Q.work_council = 0;
-Q.labour_sta = 'Legal';
+Q.labour_sta = 2;
 Q.working_hours = 0;
 Q.work_safe = 0;
 Q.min_wage = 0;
@@ -770,6 +770,7 @@ Q.stampfer_advisor = 0; // Friedrich Stampfer
 Q.test_variable = 0;
 Q.test_variable_timer = 0;
 Q.use_decimals = 1;
+radicalisation_disp = 0;
 
 !}
 set-bg: img/map_2.jpg
