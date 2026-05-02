@@ -95,7 +95,7 @@ Support for the Socialism: [+ socialism_disp +]%
 
 Support for the Nationalism: [+ nationalism_disp +]%
 
-Radicalisation of the Nation: [+ radicalisation_disp +]%
+Radicalisation of the Nation: [+ radicalisation_disp.toFixed(1) +]%
 
 @politics
 
