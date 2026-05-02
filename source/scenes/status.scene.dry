@@ -300,39 +300,39 @@ Tariffs: [+ tariffs : tax +]
 
 = Rular affairs 
 
-Land Reform Status:
+Land Reform Status: [+ land_reform_sta +]
 
-Rural Cooperatives Status: 
+Rural Cooperatives Status: [? if rular_coop = 0 : <span style="color: #787878;">Nonexistent</span> ?][? if rular_coop = 1 : <span style="color: #d2ce5e;">Created</span> ?][? if rular_coop = 2 : <span style="color: #abd346;">Working</span> ?][? if rular_coop = 3 : <span style="color: #92e43f;">Strengthened</span> ?][? if rular_coop = 4 : <span style="color: #3cff0f;">Backbone of the rular economy</span> ?]
 
-Rural Unrest:
+Rural Unrest: [+ rural_unrest : unrest +]
 
 = Labour Reforms
 
-Labour Unions Status: 
+Labour Unions Status: [+ labour_sta +]
 
-Work Councils:
+Work Councils: [? if work_council = 0 : <span style="color: #787878;">Nonexistent</span> ?][? if work_council = 1 : <span style="color: #d2ce5e;">Influencial</span> ?][? if work_council = 2 : <span style="color: #abd346;">Empowered</span> ?][? if work_council = 3 : <span style="color: #92e43f;">Syndicalist</span> ?][? if work_council = 4 : <span style="color: #3cff0f;">Full Syndicalist Economy</span> ?]
 
-Workplace Safety:
+Workplace Safety: [? if work_safe = 0 : <span style="color: #ce2e25;">Dangerous</span> ?][? if work_safe = 1 : <span style="color: #ce5a25;">Regulated</span> ?][? if work_safe = 2 : <span style="color: #ceb025;">Safe</span> ?][? if work_safe >= 3 : <span style="color: #9ece25;">Monitored</span> ?]
 
-Minimum Wage:
+Minimum Wage: [? if min_wage = 0 : <span style="color: #ce2e25;">Nonexistent</span> ?][? if min_wage = 1 : <span style="color: #ce5a25;">Minimal</span> ?][? if min_wage = 2 : <span style="color: #ceb025;">Basic</span> ?][? if min_wage >= 3 : <span style="color: #9ece25;">Living</span> ?]
 
-Working Hours:
+Working Hours: [? if working_hours = 0 : <span style="color: #ce2e25;">Unlimited</span> ?][? if working_hours = 1 : <span style="color: #ce5a25;">80 Hour Weeks</span> ?][? if working_hours = 2 : <span style="color: #ceb025;">60 Hour Weeks</span> ?][? if working_hours >= 3 : <span style="color: #9ece25;">40 Hour Weeks</span> ?]
 
-Child Labour:
+Child Labour: [? if child_lab = 0 : <span style="color: #ce2e25;">Legal</span> ?][? if child_lab = 1 : <span style="color: #ce5a25;">Regulated</span> ?][? if child_lab = 2 : <span style="color: #ceb025;">Heavily Restricted</span> ?][? if child_lab >= 3 : <span style="color: #9ece25;">Illegal</span> ?]
 
-Government Insurance Programs: 
+Government Insurance Programs: [? if insurance = 0 : <span style="color: #ce2e25;">Not Funded</span> ?][? if insurance = 1 : <span style="color: #ce5a25;">Small Program</span> ?][? if insurance = 2 : <span style="color: #ceb025;">Moderate Program</span> ?][? if insurance >= 3 : <span style="color: #9ece25;">Full Insurance</span> ?]
 
-Labour Unrest:
+Labour Unrest: [+ labour_unrest : unrest +]
 
 = Social Issues 
 
-Women's Rights:
+Women's Rights: [? if womens_rights = 0 : <span style="color: #ce2e25;">Reactionary</span> ?][? if womens_rights = 1 : <span style="color: #ce5a25;">Regressive</span> ?][? if womens_rights = 2 : <span style="color: #ceb025;">Conservative</span> ?][? if womens_rights >= 3 : <span style="color: #9ece25;">Fair</span> ?]
 
-Gecherdist Church Status: 
+Gecherdist Church Status: [+ gech_sta +]
 
-Minority Rights: 
+Minority Rights: [? if minority = 0 : <span style="color: #ce2e25;">Suspended</span> ?][? if minority = 1 : <span style="color: #ce5a25;">Under Siege</span> ?][? if minority = 2 : <span style="color: #ceb025;">Guaranteed</span> ?][? if minority = 3 : <span style="color: #9ece25;">Constitution Guaranteed</span> ?][? if minority >= 4 : <span style="color: #9ece25;">Special Ministry</span> ?]
 
-Percilian situation: 
+Percilian situation: [+ perci_sta +]
 
 @politics_forein
 
