@@ -134,7 +134,7 @@ if (Q.month_actions >= 1) {
 
 // ECONOMY - FUCK ME 
 
-Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global + Q.global_eco + Q.global_trade;
+Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade;
 
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
@@ -153,6 +153,38 @@ Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.inves
             Q.inflation -= 0.1;
         }
     }
+
+    if (Q.economic_growth < 0 && Q.inflation >= 3) {
+            Q.inflation -= 0.1/12;
+        }
+        if (Q.economic_growth < 2 && Q.inflation >= 5) {
+            Q.inflation -= 0.1/12;
+        }
+        if (Q.economic_growth < 4 && Q.inflation >= 8) {
+            Q.inflation -= 0.1/12;
+        }
+        // unemployment means less growth, means less spending
+        if (Q.unemployment > 7 && Q.inflation >= 3) {
+            Q.inflation -= 0.1/12;
+        }
+        if (Q.unemployment > 10 && Q.inflation >= 5) {
+            Q.inflation -= 0.1/12;
+        }
+        if (Q.unemployment > 15 && Q.inflation >= 8) {
+            Q.inflation -= 0.1/12;
+        }
+        // assumes central bank isn't a complete idiot 
+        if (Q.inflation > 17) {
+            Q.inflation -= 0.2/6;
+        }
+        if (Q.inflation > 25) {
+            Q.inflation -= 0.2/6;
+        }
+        if (Q.inflation > 30) {
+            Q.inflation -= 0.2/6;
+        }
+
+
     // deflation is bad
     if (Q.inflation < -0.5 && Q.inflation > -5 && Q.unemployed < 15) {
         Q.unemployed += 0.2;
@@ -160,6 +192,7 @@ Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.inves
     if (Q.inflation <= -5 && Q.unemployed < 20) {
         Q.unemployed += 0.3;
     }
+
     // economic growth
     if (Q.economic_growth < -0.5 && Q.unemployed <= 18) {
         Q.unemployed += 0.1;
@@ -179,21 +212,38 @@ Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.inves
     if (Q.economic_growth >= 8 && Q.unemployed >= 3) {
         Q.unemployed -= 0.1;
     }
+
+    // economic growth v2
     if (Q.economic_growth >= 4 && Q.inflation >= 7.5) {
-        Q.economic_growth -= 0.1;
+        Q.economic_change -= 0.05;
     }
     if (Q.economic_growth >= -2.5 && Q.inflation <= -5) {
-        Q.economic_growth -= 0.1;
+        Q.economic_change -= 0.05;
     }
-    if (Q.economic_growth >= 7) {
-        Q.economic_growth -= 0.1;
+    if (Q.economic_growth >= 7) 
+    {
+        Q.economic_change -= 0.05;
     }
-    if (Q.economic_growth >= 10) {
-        Q.economic_growth -= 0.2;
+
+// economic growth v3
+    if (Q.stability < 0 ) 
+    {
+        Q.investment = Q.investment + Q.investment*Q.stability/2;
     }
-    if (Q.economic_growth >= 12) {
-        Q.economic_growth -= 0.3;
+    if (Q.bank_stability < 0 ) 
+    {
+        Q.stability = Q.stability + Q.stability*Q.bank_stability;
     }
+    if (Q.investment < 0 ) 
+    {
+        Q.industrial_out = Q.industrial_out + Q.investment*Q.industrial_out/3;
+    }
+
+// ECONOMY MAIN
+
+Q.economic_change = Q.economic_change - Q.economic_growth/7;
+
+Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////////// Education & Science support/economic changes
     if (Q.major_curriculum && Q.major_curriculum == "democratic") {
