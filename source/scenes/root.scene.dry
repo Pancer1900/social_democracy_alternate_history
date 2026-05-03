@@ -256,7 +256,7 @@ Q.old_middle = 16; // "old mittelstand"
 Q.new_middle = 17; // "new mittelstand"
 Q.rural = 13; // agriculture and forestry employment
 Q.peasants = 15;
-Q.unemployed = 7.5;
+Q.unemployed = 7;
 Q.catholics = 25;
 Q.minorieties = 12;
 
@@ -267,10 +267,10 @@ Q.income = 1600;
 // what about incomes for different classes? rural workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
-Q.inflation = 2.9;
+Q.inflation = 3.7;
 
 // economic growth - same source as above, Table 2 (preisbereinigt) - this is also the source for the yearly changes in the great depression.
-Q.economic_growth = 4.4; // MAIN ECONOMIC 
+Q.economic_growth = 7.1; // MAIN ECONOMIC 
 Q.stability = 0.15;
 Q.trade_stability = 0.1;
 Q.bank_stability = 0.2;
@@ -278,8 +278,9 @@ Q.investment = 0.2;
 Q.rural_eco = 0.05;
 Q.industrial_out = 0.15;
 Q.public_programe = 0;
+Q.depression = 0;
 
-Q.economic_change = 0;
+Q.economic_change = 0; // Dynamic Change
 
 
 // economic expansion timer
@@ -547,15 +548,15 @@ Q.rural_unrest = 25;
 
 // Relations with the countries
 
-Q.kelland_relation = 10;
-Q.south_relation = 10;
-Q.arconia_relation = 10;
-Q.tracosia_relation = 10;
+Q.kelland_relation = 12;
+Q.south_relation = 8;
+Q.arconia_relation = 7;
+Q.tracosia_relation = 8;
 Q.crevia_relation = 10;
-Q.west_relation = 10;
-Q.vyliria_relation = 10;
-Q.pekoria_relation = 10;
-Q.carberdia_relation = 10;
+Q.west_relation = 9;
+Q.vyliria_relation = 14;
+Q.pekoria_relation = 11;
+Q.carberdia_relation = 8;
 Q.vyliria_left_relation = 18;
 
 // Events 
