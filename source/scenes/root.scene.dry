@@ -55,7 +55,7 @@ Q.dissent = 0.05;
 Q.dissent_percent = 5;
 
 // factions
-Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist','revolutionaries','agrarnians'];
+Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist','revolutionaries','agrarnians',];
 // should this be normalized to 100%?
 Q.left_strength = 28;
 Q.left_dissent = 15;
@@ -75,6 +75,7 @@ Q.neorevisionist_dissent = 10;
 // secret events...
 Q.unions_independent = 0;
 Q.centrists_resign = 0;
+Q.sydicalists_split = 0;
 Q.left_split = 0;
 Q.agrarnians_split = 0;
 Q.revolutionaries_split = 0;
@@ -543,6 +544,8 @@ Q.gech_sta = 'Priviliged';
 Q.perci_sta = 'Stable';
 
 Q.labour_unrest = 10;
+Q.labor_opposition = 2; // opposition towards opressive governance
+
 Q.rural_unrest = 25;
 
 
@@ -755,6 +758,8 @@ Q.bherwald_advisor = 0; //
 Q.mher_advisor = 0; //
 Q.jelgen_advisor = 0; // 
 Q.heufer_advisor = 0; // 
+
+// Syndicalist advisors
 
 // Revisionist advisors
 Q.mierendorff_advisor = 0; // Carlo Mierendorf (post-1930)
