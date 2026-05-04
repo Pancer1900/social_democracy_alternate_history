@@ -634,7 +634,7 @@ Q.n_advisors = 5;
 // let's just put all of the timers here...
 // most party affairs and government affairs cards are on a timer.
 Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining', 'organisation', 'org_rally',
-            'fundraising', 'ideology',
+            'fundraising', 'ideology', 'gov_possition',
             'inter_party_relationships', 'international_relations',
             'iron_front', 'media', 'enemies',
             'party_organizations', 'rally', 'reichsbanner',
