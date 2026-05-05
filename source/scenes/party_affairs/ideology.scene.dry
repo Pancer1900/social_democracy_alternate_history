@@ -10,14 +10,15 @@ max-visits: 4
 
 = Questions of Ideology
 
-The <span style="color: #dc0200;">**VDSPM**</span> is torn between many different ideological currents. What should be our primary ideological guidance for now?
+The <span style="color: #dc0100;">**[+ spd_name +]**</span> is torn between many different ideological currents. What should be our primary ideological guidance for now?
 
-[? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?]
+[? if ideology != 0 : We have previously chosen a [+ ideology +] ideology. Changing it will likely have drawbacks. ?] 437dfa dee03a
 
 - @class_struggle: We should strenthen the <span style="color: #940000;">**SAPM**</span> voice in the party - Class struggle and preparing the proletariat for the revolution are our primary goals.
-- @peoples_front: The true strenth comes form the unity of the workers, peasants and farmes aginst the Burgoise and the Aristocrasy
-- @centrist: The Center [] of Wilhelm Serindorf remains the best way to resolve our internal contradictions and balancing out the extremes of our party.
-- @reform: Following Henrich Alder, we should work for ethical socialism, strengthen democracy, and expand the party's electorate.
+- @peoples_front: The true strenth comes form the unity of the workers, peasants and farmes aginst the Burgoise and the Aristocrasy.
+- @labor: The party's main goal should be to organise the workers and to work towards true class awakening.
+- @centrist: The Center <span style="color: #b30e0e;">Marxists</span> of Wilhelm Serindorf remains the best way to resolve our internal contradictions and balancing out the extremes of our party.
+- @reform: Following Henrich Alder, we should work for ethical <span style="color: #d61818;">socialism</span>, strengthen <span style="color: #437dfa;"democracy</span>, and expand the party's electorate.
 - @easy_discard
 
 @class_struggle
@@ -27,7 +28,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; revolutionaries_strength += 10; left_strength += 8; revolutionaries_dissent -= 5; left_dissent -= 5; z_relation -= 4; dvp_relation -= 5; ddp_relation -= 5; reformist_strength -= 5; reformist_dissent += 5
+on-departure: ideology = "left"; revolutionaries_strength += 10; left_strength += 8; revolutionaries_dissent -= 8; agrarnians_strength += 3; agrarnians_dissent -= 3; left_dissent -= 6; z_relation -= 4; dvp_relation -= 5; ddp_relation -= 5; reformist_strength -= 5; reformist_dissent += 6
 
 The radical left of the party supports a course of class struggle and preparing for revolution. They belive that the party should reject parlimetarism for a full commitment to revolutionary struggle.
 
@@ -38,9 +39,20 @@ if (Q.ideology && Q.ideology != "front") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "front"; left_strength += 4; revolutionaries_strength += 4; agrarnians_strength += 8; left_dissent -= 3; revolutionaries_dissent -= 3; agrarnians_dissent -= 8; dvp_relation -= 3; z_relation -= 2
+on-departure: ideology = "front"; left_strength += 4; revolutionaries_strength += 2; agrarnians_strength += 8; labor_strength += 4; left_dissent -= 3; revolutionaries_dissent -= 3; labor_dissent -= 5; agrarnians_dissent -= 8; reformist_dissent += 4; dvp_relation -= 3; z_relation -= 2
 
-The agararian wing wants to unite the laborers and farmers of the land and create a united front agains the Burgoise and the old Aristocrasy 
+The agararian wing wants to unite the laborers and farmers of the land and create a united front agains the Burgoise and the old Aristocrasy.
+
+@labor
+on-arrival: {!
+if (Q.ideology && Q.ideology != "left") {
+    Q.changed = 1;
+}
+!}
+go-to: changed if changed = 1
+on-departure: ideology = "labor"; labor_strength += 10; left_strength += 4; agrarnians_strength += 2; center_strength += 2; labor_dissent -= 8; left_dissent -= 2; center_dissent -= 4;
+
+The Labor faction of the party supports bulding class consciousness of the whole society, as well as compromising revolutionaries and reformists.
 
 @centrist
 on-arrival: {!
@@ -49,9 +61,9 @@ if (Q.ideology && Q.ideology != "centrist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "centrist"; center_strength += 10; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5
+on-departure: ideology = "centrist"; center_strength += 10; labor_strength += 3; center_dissent -= 10; left_dissent -= 5; reformist_dissent -= 5; labor_dissent -= 5;
 
-The Center [], represented by Serindorf and Meller, support a middle course of preparing for revolution while building up the consciousness of the working class.
+The Center <span style="color: #b30e0e;">Marxists</span>, represented by Serindorf and Meller, support a middle course of preparing for revolution while building up the consciousness of the working class.
 
 
 @reform
@@ -61,9 +73,9 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; reformist_dissent -= 5; z_relation += 5; dvp_relation += 5; revolutionaries_strength -= 5; revolutionaries_dissent += 5
+on-departure: ideology = "reformist"; reformist_strength += 10; reformist_dissent -= 8; z_relation += 5; dvp_relation += 5; revolutionaries_strength -= 6; revolutionaries_dissent += 8; left_strength -= 4; left_dissent += 6
 
-The reformist wing of the party seeks to preserve the Republic and the democratic system of government, and is most supportive of coalitions with the other pro-democracy parties.
+The reformist wing of the party seeks to preserve the <span style="color: #dee03a;"Federation</span> and the <span style="color: #437dfa;"democratic</span> system of government, and is most supportive of coalitions with the other pro-<span style="color: #437dfa;"democracy</span> parties.
 
 @changed
 on-arrival: left_dissent += 4; center_dissent += 4; labor_dissent += 4; reformist_dissent += 4; revolutionaries_dissent += 4; agrarnians_dissent += 4
