@@ -1,0 +1,41 @@
+title: Our Position Towards the Government 
+new-page: true
+max-visits: 36
+is-card: true
+view-if: spd_in_government = 0
+on-arrival: month_actions += 1; gov_possition_timer += 12
+card-image: img/goverment.jpg
+frequency: 100
+tags: govt_affairs
+
+= Our Position Towards the Government 
+
+As a opposition party we must make our position towards the govermnet clear. [? if in_liberal_coalition = 1: The Liberal Government since its existence has viewed us their main enemy ?][? if in_center_right_coalition = 1: The new Center-Right Government is even more hostile to us than the liberals before them ?][? if in_right_coalition = 1: The new Right Government is even more hostile to us than the liberals before them ?]. What should be our main stance towards them.
+
+- @workers: We should stand as the firmest oppostion to them, and attack them at every possible opporunity.
+- @new_middle: We should be pragmatic and maintain our strong opposition but do not close ourselves to possible reconciliation. 
+- @old_middle: Reconciation with the liberals should be our goal, but we must not apear weak and maintain our firm opposition.  
+- @defend: Death to the ractionary traitors! No compromise with the Nationalists Right Governmnent 
+- @root: We either don't want to or cannot campaign right now.
+- @easy_discard
+
+@workers
+on-arrival: dvp_relation -= 3; ppu_relation -= 2;  ddp_relation -= 3; z_relation -= 2; workers_dvp -= 1; rural_dvp -= 1; rural_z -= 1; peasants_dvp -= 1; peasants_z -= 1; workers_z -= 1; workers_ddp -= 1; new_middle_ddp -= 1; new_middle_dvp -= 1; revolutionaries_dissent -= 5; left_dissent -= 4; left_strength += 4; reformist_strength -= 4; reformist_dissent += 5;
+
+This is the popular approach of the party but it doesn't move us any closer to normalising relations with the liberal parties.
+
+@new_middle
+on-arrival: liberal_reconciliation += 1; ppu_relation += 1;  ddp_relation += 2; z_relation += 1; reformist_strength += 1; centre_strength += 2; reformist_dissent -= 5; revolutionaries_dissent += 4; centre_dissent -= 4; workers_dvp -= 1; rural_dvp -= 1; rural_z -= 1; peasants_z -= 1; workers_ddp -= 1;
+
+This is the pragmatic apprach supported by centre of the party, it allows us to continue our opposition activities but doesn't close us to possible reconcliation with the liberals.
+
+@old_middle
+on-arrival: liberal_reconciliation += 2; dvp_relation += 2; ppu_relation += 3;  ddp_relation += 5; z_relation += 3; revolutionaries_dissent += 8; left_dissent += 6; reformist_strength += 6; reformist_dissent -= 8; centre_dissent += 2
+
+This radical reconcliatory approach is supported by the reformist wing of the party, it can prove effective but the left wing of the party massivly dissaproves.
+
+@defend
+view-if: in_right_coalition = 1 || in_center_right_coalition = 1
+on-arrival: liberal_reconciliation -= 1; revolutionaries_strength += 6; centre_strength -= 2; left_strength += 4; centre_dissent += 3; revolutionaries_dissent -= 8; left_dissent -= 6; reformist_strength -= 6; reformist_dissent += 5; dvp_relation -= 6; ppu_relation -= 3;  ddp_relation -= 5; z_relation -= 5; workers_dnvp -= 2; workers_dvp -= 2; workers_others -= 1; rural_dnvp -= 1; rural_dvp -= 1; rural_z -= 1; peasants_dnvp -= 1; peasants_dvp -= 1; peasants_z -= 1; workers_z -= 1; workers_ddp -= 1;
+
+We do not compromise with the Burgoise-Right Government!
