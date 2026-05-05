@@ -35,7 +35,7 @@ on-arrival: liberal_reconciliation += 2; dvp_relation += 2; ppu_relation += 3;  
 This radical reconcliatory approach is supported by the reformist wing of the party, it can prove effective but the left wing of the party massivly dissaproves.
 
 @defend
-view-if: in_right_coalition = 1 || in_center_right_coalition = 1
+view-if: in_right_coalition = 1 or in_center_right_coalition = 1
 on-arrival: liberal_reconciliation -= 1; revolutionaries_strength += 6; centre_strength -= 2; left_strength += 4; centre_dissent += 3; revolutionaries_dissent -= 8; left_dissent -= 6; reformist_strength -= 6; reformist_dissent += 5; dvp_relation -= 6; ppu_relation -= 3;  ddp_relation -= 5; z_relation -= 5; workers_dnvp -= 2; workers_dvp -= 2; workers_others -= 1; rural_dnvp -= 1; rural_dvp -= 1; rural_z -= 1; peasants_dnvp -= 1; peasants_dvp -= 1; peasants_z -= 1; workers_z -= 1; workers_ddp -= 1;
 
 We do not compromise with the Burgoise-Right Government!
