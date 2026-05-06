@@ -1,89 +1,109 @@
-title: Campaigning
+title: Economic Crisis 
 new-page: true
 max-visits: 36
 is-card: true
-view-if: campaining_timer <= 0
-on-arrival: month_actions += 1; campaining_timer += 6
+view-if: crisis_program_timer <= 0 and economic_growth <= 0
+on-arrival: month_actions += 1; crisis_program_timer += 6
 card-image: img/poster-of-the-kpd-1919-C45HWA.jpg
 frequency: 100
 tags: party_affairs
 
-= Campaigning
+= Addressing the Economic Crisis
 
-Whether or not we are in an electoral campaign, the party is always trying to broaden its voter base. Who should we focus our campaign efforts on?
+[? if crisis_urgency <= 3: Economic crisies are nothing new in capitalists systems and this one is no diffrent. ?]
 
-- @workers: The urban working class, our traditional support base.
-- @new_middle: The "new middle class" of government employees and white-collar workers.
-- @old_middle: The "old middle class" of small independent businessmen and artisans.
-- @rural: Rural workers and small farmers
-- @peasants : The landless peasants and poor farmers
-- @unemployed: The unemployed.
-- @minorities: The minorities of the federation.
-- @catholics: Gecherdists, who typically support the GDSU.
-- @root: We either don't want to or cannot campaign right now.
-- @easy_discard
+[? if crisis_urgency <= 3: We do not have a concrete economic plan, what to do in this economic crisis but many prespectives on the problem show up. ?]
 
-@workers
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 7*(1-dissent)*(organisation_workers/20); workers_spd -= 2 if unemployed >= 15; workers_spd -= 2 if unemployed >= 25; resources -= 1;
+[? if crisis_urgency >= 3: There are currently 3 economic plans propsed by various party wings. ?]
 
-We have increased our campaigning among the workers. [? if unemployed >= 15: The high levels of unemployment make our campaign more difficult. ?]
+[? if crisis_urgency >= 3: The Left with the Revolutionaries propose a radical plan based on coordianted action by our paramilitraies and unions to occupy factories and create workers councils. This is a radical plan which allows us to immedtly strart acting and doesnt require any kind of government support. ?]
 
-@new_middle
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_spd += 6*(1-dissent)*(organisation_middle/20); new_middle_spd -= 2 if socialism <= 45; resources -= 1; new_middle_spd += 2 if united_front_theory = 2;
+[? if crisis_urgency >= 3: The Center wing of the party supported by various smaller gropus puts foward a compromise plan, which would include many parts of both the reformist and revolutionary plan. It would still include ex-parlimentary measures, but the bulk of it would rely on government support. ?]
 
-We have increased our campaigning among the new middle class. [? if united_front_theory = 2: Our adoption of the United Front Theory including the lower middle class makes them open to the socialist capmpaining ?] [? if socialism <= 45: The popular antipathy towards socialism among this group makes our campaign more difficult. ?]
-
-@old_middle
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: old_middle_spd += 6*(1-dissent)*(organisation_middle/20); resources -= 1; old_middle_spd -= 2 if nationalism >= 50; old_middle_spd -= 2 if socialism <= 45; resources -= 1; old_middle_spd +=3 if united_front_theory = 2;
-
-We have increased our campaigning among the old middle class. [? if united_front_theory = 2: Our adoption of the United Front Theory including the lower middle class makes them open to the socialist capmpaining ?] [? if socialism <= 45: The popular antipathy towards socialism among this group makes our campaign more difficult. ?] [? if nationalism >= 50: The high levels of nationalism among this group makes our campaign more difficult. ?]
-
-@rural
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: rural_spd += 6*(1-dissent)*(organisation_rural/20)*(1+(agrarnians_strength/100)); rural_spd += 1.5 if united_front_theory = 1; rural_spd += 1.5 if united_front_theory = 2; rural_spd -= 2 if socialism <= 40; rural_spd -= 2 if nationalism >= 50; rural_spd += 2.5 if agrarnians_strength >= 40; resources -= 1; agrarnians_strength += 2;
-
-We have increased our campaigning among farmers. [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if socialism <= 40 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
+[? if crisis_urgency >= 3: The reformist propose a plan of public works and job creation, while supporting worker counclis. This is the only plan that does not push foward a whole restructurisation of the economy and it can be supported by the liberals. ?]
 
 
-@peasants 
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: peasants_spd += 6*(1-dissent)*(organisation_rural/20)*(1+(agrarnians_strength/100)); peasants_spd += 1.5 if united_front_theory = 1; peasants_spd += 1.5 if united_front_theory = 2; peasants_spd -= 2 if socialism <= 40; peasants_spd -= 2 if nationalism >= 50; peasants_spd += 3.5 if agrarnians_strength >= 40; resources -= 1; agrarnians_strength += 2;
+- @campain_gov: This crisis in the vault of the corrupt government and ineffitinet system, we should overthrow it and bring actual change.
+- @campain_soc: We should use this crisis to point out the internal contradictions of capitalism and spread our message of <span style="color: #d61818;">Socialism</span>.
+- @campain_ref: We should approach the crisis pragmaticly and while citising the system, we should strive to heal the economy, not brake it even further.  
+- @support_left: Support the Left/Revoultionary plan.
+- @support_moderate: Support the Centrists plan.
+- @support_labor: Support the Reformist plan.
+- @defer: Defer making a decision until we have more information.
 
-We have increased our campaigning among the peasants. [? if agrarnians_strength >= 40: The strenth of the argrarian faction makes campaining among peasants much easier ?] [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if socialism <= 40 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
+@campain_gov
+subtitle: This is the Left/Revoultionary stance
+on-arrival: old_middle_spd -= 3; unemployed_spd += 2*(1-dissent); workers_spd += 3*(1-dissent)*(organisation_workers/20); revolutionaries_strength += 7; left_strength += 5; revolutionaries_dissent -= 7; left_dissent -= 5; reformist_dissent += 6; reformist_strength -= 4; nationalization_support += 1; ddp_relation -= 3; z_relation -= 4; dvp_relation -= 5; crisis_urgency += 1;
 
-@unemployed
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: unemployed_spd += 6*(1-dissent); resources -= 1; unemployed_spd -= 3 if welfare < 0; unemployed_spd += 3*(1-dissent) if welfare >= 2;
+Blaming the government and the burgoise is a popular campain rally and is supported by the Left and the Revolutionaries. 
 
-We have increased our campaigning among the unemployed.
+@campain_soc
+subtitle: This is the Centrists stance
+on-arrival: workers_spd += 1.5*(1-dissent)*(organisation_workers/20); center_strength += 5; center_dissent -= 5; moderate_plan_support += 1; crisis_urgency += 1; left_dissent -= 2; reformist_dissent -= 2; socialism += 2*(1 - dissent)*(1 - economic_growth/2);
 
-@catholics
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: catholics_spd += 6*(1-dissent); resources -= 1;
+This is the safest and historical course of our party. We critise the system while balancing our the revolutionary and reformist elements, while spreading the message of <span style="color: #d61818;">Socialism</span>.
 
-We have increased our campaigning among Gecherdists.
+@campain_ref 
+subtitle: This is the Reformists stance
+on-arrival: reformist_strength += 6; reformist_dissent -= 6; revolutionaries_dissent += 8; left_dissent += 6; revolutionaries_strength -= 6; left_strength -= 4; wtb_support += 1; crisis_urgency += 1; ddp_relation += 3; z_relation += 2;
 
-@minorities
-subtitle: -1 resources
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
-on-arrival: minorieties_spd += 6*(1-dissent); resources -= 1;
+Reformist faction views the crisis as a possible way to get into goverment and reconciliate with the left-liberals. This view havely alienates the left wing of the party. 
 
-We have increased our campaigning among the various minorites of the Federation.
+@support_labor
+subtitle: Call for increased public works and fiscal stimulus.
+unavailable-subtitle: The Reformist faction is not strong enough.
+view-if: crisis_urgency >= 3
+choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
+on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+go-to: plan_adopted if wtb_support >= 7; plan_support if wtb_support < 7
+
+@plan_support
+
+We support the reformist plan for the economy. Adopting this plan is going to be hard, as its is not very <span style="color: #d61818;">socialist</span>, but with hard work we may adopt it. Our support of the reformist havely alienates the left wing of the party. 
+
+We have not yet formally adopted the plan. More work needs to be done.
+
+@plan_adopted
+on-arrival: wtb_adopted = 1; labor_dissent -= 5; reformist_dissent -= 10; reformist_strength += 12; revolutionaries_strength -= 10; left_strength -= 8; revolutionaries_dissent += 15; left_dissent += 10; economic_plan = 1; ddp_relation += 6; z_relation += 4;
+
+With our hard work, we have finally convinced the majority of the party to adopt the reformist plan! [? if spd_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?][? if spd_in_government = 0 : We should emphasize the plan in our electoral propaganda. ?]
+
+@support_left
+subtitle: Call for armed takeover of the means of probuction. 
+unavailable-subtitle: The Left/Revoultionary faction is not strong enough.
+view-if: crisis_urgency >= 3
+choose-if: historical_mode == 0 or ((left_strength + revolutionaries_strength + labor_strength/2) >= reformist_strength + center_strength*0.8 )
+on-arrival: nationalization_support += 2; reformist_strength -= 8; revolutionaries_strength += 8; left_strength += 6; revolutionaries_dissent -= 10; left_dissent -= 8; reformist_dissent += 14; labor_dissent -= 6;
+go-to: support_left_progress if nationalization_support < 6; adopt_left if nationalization_support >= 6
+
+@support_left_progress
+
+We attempt to convince the party to support a Left/Revoultionary plan. Leftists argue that this policy is in accordance with our long-standing <span style="color: #d61818;">socialist</span> platform and that it allows immediate action by the unions, while reformists argue that the plan can find firm opposition form the government and possibly spiral out into a full blown revolution. 
+
+We have not yet formally adopted the plan. More work needs to be done.
+
+@adopt_left
+on-arrival: reformist_strength -= 8; revolutionaries_strength += 8; left_strength += 6; revolutionaries_dissent -= 10; left_dissent -= 8; reformist_dissent += 14; labor_dissent -= 6; nationalization_adopted = 1; coup_progress += 1; economic_plan = 3; ddp_relation -= 6; z_relation -= 8; dvp_relation -= 10; blpm_relation -= 10
+
+With our hard work, we have convinced the majority of the party to adopt the Left/Revoultionary economic plan! We can immediatly start massive factory takovers and finnaly move to achive <span style="color: #d61818;">Socialism</span>. Bourgeois opposition is likely to be fierce and will definitely lead to clashes with the law. [? if spd_in_government == 0 : If we become goverment we can coordinate those actions from above and reach <span style="color: #d61818;">socialism</span> even faster. ?]
+
+@support_moderate
+subtitle: Call for a mixed approach and balanced nationalisation, public works and supporting worker councils. 
+view-if: crisis_urgency >= 3
+on-arrival: moderate_plan_support += 2; left_dissent -= 4; center_dissent -= 8; labor_dissent -= 6; center_strength += 8;
+go-to: adopt_moderate if moderate_plan_support >= 5; support_moderate_progress if moderate_plan_support < 5
+
+@support_moderate_progress
+
+We attempt to convince the party to support a moderate program. Its a compromise or maybe the best of both worlds? 
+
+We have not yet adopted the plan. More work needs to be done.
+
+@adopt_moderate
+on-arrival: left_dissent -= 4; center_dissent -= 10; labor_dissent -= 4; center_strength += 10; moderate_plan_adopted = 1; economic_plan = 2; revolutionaries_dissent += 6; reformist_dissent += 6;
+
+With our hard work, we have convinced the majority of the party to adopt the moderate <span style="color: #d61818;">socialist</span> plan! We can start implementing the groundwokrs for the plan right away, but we need government support to implement it fully. [? if spd_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?]
+
+@defer
+
+We hold off on making a decision on economic policy, awaiting more information. Woytinsky and his supporters argue that inaction is a form of action of its own. 
