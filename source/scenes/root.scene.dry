@@ -114,7 +114,7 @@ Q.nationalization_adopted = 0;
 Q.moderate_plan_support = 0;
 Q.moderate_plan_adopted = 0;
 // econmic plan land reform 
-Q.plan_land = 0;
+Q.land_plan = 0;
 
 // organizations
 
