@@ -80,7 +80,7 @@ Mass rallies are a main feature of any kind of political life, but as <span styl
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); workers_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); left_strength += 5; left_dissent -= 5; revolutionaries_strength += 5; revolutionaries_dissent -= 5; reformist_strength -= 3; reformist_dissent += 3; old_middle_spd -= 3; new_middle_spd -= 2;
+on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += 1.5*(1-dissent); unemployed_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); workers_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); left_strength += 5; left_dissent -= 5; revolutionaries_strength += 5; revolutionaries_dissent -= 5; reformist_strength -= 3; reformist_dissent += 3; old_middle_spd -= 3; new_middle_spd -= 2; ddp_relation -= 3; z_relation -= 4; dvp_relation -= 5;
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. What is the secondary theme of this rally?
 
@@ -90,7 +90,7 @@ Our message of class struggle appeals to the left wing of the working class, whi
 - @fund: Fundrasing for the party.
 
 @welfare
-on-arrival: workers_spd += 4*(1-dissent)*(organisation_workers/20); unemployed_spd += 3*(1-dissent); new_middle_spd += 2*(1-dissent)*(organisation_middle/20); old_middle_spd += 1.5*(1-dissent)*(organisation_middle/20); center_strength += 6; reformist_dissent -= 3; center_dissent -= 4; left_dissent -= 2
+on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += 1.5*(1-dissent); new_middle_spd += 2*(1-dissent)*(organisation_middle/20); old_middle_spd += 1.5*(1-dissent)*(organisation_middle/20); socialism += 2*(1 - dissent); center_strength += 6; reformist_dissent -= 3; center_dissent -= 4; left_dissent -= 2
 
 The centrist is balancing out both extemes of the party and is effitient electorally across wide society. What is the secondary theme of this rally?
 
@@ -122,7 +122,7 @@ Our speakers defend the <span style="color: #dee03a;">republican</span> system a
 
 @wtb
 view-if: economic_plan > 0
-on-arrival: workers_spd += 6*(1-dissent); unemployed_spd += 4*(1-dissent); new_middle_spd += 3*(1-dissent); 
+on-arrival: workers_spd += 4*(1-dissent); unemployed_spd += 4*(1-dissent); new_middle_spd += 2*(1-dissent); 
 
 We support our economic plan and push foward our way to reslove this economic crisis. What is the secondary theme of this rally?
 
