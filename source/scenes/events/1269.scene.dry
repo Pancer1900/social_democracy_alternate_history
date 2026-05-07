@@ -1,0 +1,11 @@
+title: 1269
+subtitle: A new year 
+on-arrival: {!
+Q.budget += (Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8;
+!}
+tags: event
+view-if: year = 1269 and month = 1 
+priority: 2
+max-visits: 1
+
+A new year begins.
