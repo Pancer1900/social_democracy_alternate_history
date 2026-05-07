@@ -315,7 +315,7 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////// DYNAMIC CHANGES 
 
-    if (year == 1267 && month == 4) {
+    if (Q.year == 1267 && Q.month == 4) {
     Q.lib_dissident += 20;
     }
 
