@@ -73,9 +73,9 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; reformist_dissent -= 8; z_relation += 5*gdsu_modifer ; dvp_relation += 5*fvp_modifer ; revolutionaries_strength -= 6; revolutionaries_dissent += 8; left_strength -= 4; left_dissent += 6
+on-departure: ideology = "reformist"; reformist_strength += 10; reformist_dissent -= 8; z_relation += 2*gdsu_modifer ; ddp_relation += 2*fvp_modifer ; revolutionaries_strength -= 6; revolutionaries_dissent += 8; left_strength -= 4; left_dissent += 6
 
-The reformist wing of the party seeks to preserve the <span style="color: #dee03a;">Federation</span> and the <span style="color: #437dfa;">democratic</span> system of government, and is most supportive of coalitions with the other pro-<span style="color: #437dfa;"democracy</span> parties.
+The reformist wing of the party seeks to preserve the <span style="color: #dee03a;">Federation</span> and the <span style="color: #437dfa;">democratic</span> system of government, and is most supportive of coalitions with the other pro-<span style="color: #437dfa;">democracy</span> parties.
 
 @changed
 on-arrival: left_dissent += 4; center_dissent += 4; labor_dissent += 4; reformist_dissent += 4; revolutionaries_dissent += 4; agrarnians_dissent += 4
