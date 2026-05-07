@@ -313,6 +313,14 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
         Q.pro_republic -= 1;
     }
 
+// DYNAMIC CHANGES 
+
+if (year == 1267 and month == 4){
+Q.lib_dissident += 20
+}
+
+
+
     ///////////////////////////// change party support based on pro_republic
     // if pro_republic is less than the support of the Weimar coalition, reduce SPD support...
     if (Q.pro_republic < (Q.spd_votes + Q.ddp_votes + Q.z_votes - 3)) {
