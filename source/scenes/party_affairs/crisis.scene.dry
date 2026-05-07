@@ -33,7 +33,7 @@ tags: party_affairs
 
 @campain_gov
 subtitle: This is the Left/Revoultionary stance
-on-arrival: old_middle_spd -= 3; unemployed_spd += 2*(1-dissent); workers_spd += 3*(1-dissent)*(organisation_workers/20); revolutionaries_strength += 7; left_strength += 5; revolutionaries_dissent -= 7; left_dissent -= 5; reformist_dissent += 6; reformist_strength -= 4; nationalization_support += 1; ddp_relation -= 3; z_relation -= 4; dvp_relation -= 5; crisis_urgency += 1;
+on-arrival: old_middle_spd -= 3; unemployed_spd += 2*(1-dissent); workers_spd += 3*(1-dissent)*(organisation_workers/20); revolutionaries_strength += 7; left_strength += 5; revolutionaries_dissent -= 7; left_dissent -= 5; reformist_dissent += 6; reformist_strength -= 4; nationalization_support += 1; ddp_relation -= 3*fvp_modifer ; z_relation -= 4*gdsu_modifer ; dvp_relation -= 5*ldp_modifer ; crisis_urgency += 1;
 
 Blaming the government and the burgoise is a popular campain rally and is supported by the Left and the Revolutionaries. 
 
@@ -45,7 +45,7 @@ This is the safest and historical course of our party. We critise the system whi
 
 @campain_ref 
 subtitle: This is the Reformists stance
-on-arrival: reformist_strength += 6; reformist_dissent -= 6; revolutionaries_dissent += 8; left_dissent += 6; revolutionaries_strength -= 6; left_strength -= 4; wtb_support += 1; crisis_urgency += 1; ddp_relation += 3; z_relation += 2;
+on-arrival: reformist_strength += 6; reformist_dissent -= 6; revolutionaries_dissent += 8; left_dissent += 6; revolutionaries_strength -= 6; left_strength -= 4; wtb_support += 1; crisis_urgency += 1; ddp_relation += 3*fvp_modifer ; z_relation += 2*gdsu_modifer ;
 
 Reformist faction views the crisis as a possible way to get into goverment and reconciliate with the left-liberals. This view havely alienates the left wing of the party. 
 
@@ -64,7 +64,7 @@ We support the reformist plan for the economy. Adopting this plan is going to be
 We have not yet formally adopted the plan. More work needs to be done.
 
 @plan_adopted
-on-arrival: wtb_adopted = 1; labor_dissent -= 5; reformist_dissent -= 10; reformist_strength += 12; revolutionaries_strength -= 10; left_strength -= 8; revolutionaries_dissent += 15; left_dissent += 10; economic_plan = 1; ddp_relation += 6; z_relation += 4;
+on-arrival: wtb_adopted = 1; labor_dissent -= 5; reformist_dissent -= 10; reformist_strength += 12; revolutionaries_strength -= 10; left_strength -= 8; revolutionaries_dissent += 15; left_dissent += 10; economic_plan = 1; ddp_relation += 6*fvp_modifer ; z_relation += 4*gdsu_modifer ;
 
 With our hard work, we have finally convinced the majority of the party to adopt the reformist plan! [? if spd_in_government == 1 : We can begin implementing the plan as soon as possible, as long as we have the Economic or Finance ministries. ?][? if spd_in_government = 0 : We should emphasize the plan in our electoral propaganda. ?]
 
@@ -83,7 +83,7 @@ We attempt to convince the party to support a Left/Revoultionary plan. Leftists 
 We have not yet formally adopted the plan. More work needs to be done.
 
 @adopt_left
-on-arrival: reformist_strength -= 8; revolutionaries_strength += 8; left_strength += 6; revolutionaries_dissent -= 10; left_dissent -= 8; reformist_dissent += 14; labor_dissent -= 6; nationalization_adopted = 1; coup_progress += 1; economic_plan = 3; ddp_relation -= 6; z_relation -= 8; dvp_relation -= 10; blpm_relation -= 10
+on-arrival: reformist_strength -= 8; revolutionaries_strength += 8; left_strength += 6; revolutionaries_dissent -= 10; left_dissent -= 8; reformist_dissent += 14; labor_dissent -= 6; nationalization_adopted = 1; coup_progress += 1; economic_plan = 3; ddp_relation -= 6; z_relation -= 8*gdsu_modifer ; dvp_relation -= 10*ldp_modifer ; blpm_relation -= 10
 
 With our hard work, we have convinced the majority of the party to adopt the Left/Revoultionary economic plan! We can immediatly start massive factory takovers and finnaly move to achive <span style="color: #d61818;">Socialism</span>. Bourgeois opposition is likely to be fierce and will definitely lead to clashes with the law. [? if spd_in_government == 0 : If we become goverment we can coordinate those actions from above and reach <span style="color: #d61818;">socialism</span> even faster. ?]
 
