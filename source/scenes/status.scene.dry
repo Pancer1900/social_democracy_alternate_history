@@ -175,8 +175,8 @@ if (Q.rb_strength) {
 if (Q.rfb_strength) {
     Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
 }
-if (Q.dff_strength) {
-    Q.dff_strength_2 = Q.dff_strength.toFixed(1);
+if (Q.df_strength) {
+    Q.df_strength = Q.df_strength.toFixed(1);
 }
 if (Q.sh_strength) {
     Q.sh_strength_2 = Q.sh_strength.toFixed(1);
