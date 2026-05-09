@@ -176,7 +176,7 @@ if (Q.rfb_strength) {
     Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
 }
 if (Q.df_strength) {
-    Q.df_strength = Q.df_strength.toFixed(1);
+    Q.df_strength_2 = Q.df_strength.toFixed(1);
 }
 if (Q.sh_strength) {
     Q.sh_strength_2 = Q.sh_strength.toFixed(1);
@@ -198,7 +198,7 @@ if (Q.sa_strength) {
 
 <span class="tooltip-text" title="The *Demokratisch-Federales Volksbanner* is a Liberal/Democratic group associated organization for defending democracy, mostly affiliated with the FVP and the LDP." style="color: #bdc56c;">**DFVB**</span> Strength: [+ df_strength_2 +] thousand
 
-<span style="color: #bdc56c;">**DFVB**</span> Militarization: [+ df_strength_2 : militancy +]
+<span style="color: #bdc56c;">**DFVB**</span> Militarization: [+ df_militancy : militancy +]
 
 <span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the MNVP." style="color:#3F7BC1;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
