@@ -1,13 +1,61 @@
-title: reich
+title: Paramilitary Funding
 new-page: true
 is-card: true
 tags: paramilitary
 view-if: reichsbanner_timer <= 0
 card-image: img/reichsbanner.jpg
-on-arrival: month_actions += 1
+on-arrival: month_actions += 1; reichsbanner_timer += 7;
 max-visits: 6
 #subtitle: Paramilitary organizing in defense of the republic.
 
-= Reichsbanner
+= Paramilitary Funding
 
-The *Reichsbanner Schwarz-Rot-Gold* is a mass organization for the defense of the Republic against the extremists who threaten it. Some would call it a paramilitary, although currently it is hardly any sort of military. It is officially associated with the pro-democratic parties -the SPD, Center, and [+ ddp_name +], but by far the largest component is with the SPD.
+For better or for worse, both the party and the paramilitaries cannot exist without money. The question is: How should we divide up our funds?
+
+- @all_fund: Siphon all of our funds into the Red Guards.
+- @big_fund: Siphon large amounts into the Red Guards.
+- @small_fund: Siphon a small amount into the Red Guards.
+- @small_decrease: Siphon a small amount back into our coffers.
+- @big_decrease: Siphon a large amount back into our coffers.
+- @return: Maintain current funds.
+- @easy_discard
+- @cancel_advisor_action
+
+@all_fund
+subtitle: -[+ resources +] Party Resources, +[+ resources +] Paramilitary Resources - This will increase reformist dissent.
+view-if: resources > 2
+on-arrival: reformist_dissent += (resources - 2)*4; para_resources += resources; resources = 0;
+
+We pour all of our funds into the Paramilitaries. The reformist faction is understandably, upset by this.
+
+@big_fund
+subtitle: -2 Party Resources, +2 Paramilitary Resources
+choose-if: resources > 1
+unavailable-subtitle: [? if resources < 2 : We do not have enough to fund the Red Guards. ?]
+on-arrival: resources -= 2; para_resources += 2
+
+Large amounts of funds are sent over to the Paramilitaries.
+
+@small_fund
+choose-if: resources > 0
+unavailable-subtitle: [? if resources < 1 : We do not have enough to fund the Red Guards. ?]
+subtitle: -1 Party Resources, +1 Paramilitary Resources
+on-arrival: resources -= 1; para_resources += 1; month_actions -= 1;
+
+Small amounts of funds are sent over to the Paramilitaries.
+
+@big_decrease
+choose-if: para_resources > 1
+unavailable-subtitle: [? if para_resources < 2 : We do not have enough to support the party. ?]
+subtitle: +2 Party Resources, -2 Paramilitary Resources
+on-arrival: resources += 2; para_resources -= 2;
+
+Large amounts of funds are transferred back to the party coffers.
+
+@small_decrease
+choose-if: para_resources > 0
+unavailable-subtitle: [? if para_resources < 1 : We do not have enough to support the party. ?]
+subtitle: +1 Party Resources, -1 Paramilitary Resources
+on-arrival: resources += 1; para_resources -= 1; month_actions -= 1;
+
+Small amounts of funds are transferred back to the party coffers.
