@@ -1,0 +1,48 @@
+title: Democratic Social Front 
+new-page: true
+view-if: red_guard_timer <= 0 and sapd_formed = 0
+on-arrival: democratic_front_timer += 7; month_actions += 1; rg_militarisation_cost = 2;
+is-card: true
+card-image: img/rb_affairs.jpg
+tags: paramilitary
+max-visits: 20
+
+= Democratic Social Front 
+
+The Democratic Social Front our is a paramilitary mostly affiliated with the old SPM. They server various tasks such such main party defence, union support and prorotectetion, rally defece and organisation and many more. 
+
+Should we increse our funding to the Democratic Social Front?
+
+- @militant: Chanel more funds to support the Democratic Social Front.
+- @militant_2: Use our existing resources to support more training and recriutment for the Democratic Social Front.
+- @same: Keep the Democratic Social Front as it is.
+- @cut_rg: Cut funding for the Democratic Social Front.
+- @easy_discard
+
+@militant
+choose-if: para_resources >= rg_militarisation_cost
+unavailable-subtitle: Not enough paramilitary resources ([+ rg_militarisation_cost +] needed).
+subtitle: -[+ rg_militarisation_cost +] paramilitary resources
+on-arrival: para_resources -= rg_militarisation_cost; dsf_investment += 2; rb_strength += 15; rb_militancy += 0.01; center_strength += 2; center_dissent -= 2
+
+We continue funding the Democratic Social Front, who begin recruitment of more members and are able expand their operations. 
+
+
+@militant_2
+view-if: rg_investment >= 1
+on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+
+As we have already funded resources towards the Democratic Social Front, we can invest in building up their experince and support them further.
+
+
+@same
+
+The Democratic Social Front is already serving the purpose it needs to serve. There is no reason to change what already works.
+
+- @return: Continue...
+
+@cut_rg
+subtitle: +1 paramilitary resources
+on-arrival: para_resources += 1; rb_strength -= 20; rb_militancy -= 0.01; center_strength -= 2; center_dissent += 2; revolutionaries_strength += 2; reformist_dissent += 2;
+
+Cutting resources to the Democratic Social Front causes a drop in membership and a decline in efectivness of the organisation 
