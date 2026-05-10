@@ -3,7 +3,7 @@ new-page: true
 view-if: para_funding_timer <= 0
 on-arrival: para_funding_timer += 7; month_actions += 1
 is-card: true
-card-image: img/para_fund.jpg
+card-image: img/reichsbanner.jpg
 tags: paramilitary
 max-visits: 20
 
