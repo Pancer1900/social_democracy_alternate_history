@@ -188,15 +188,15 @@ if (Q.sa_strength) {
 
 = Paramilitaries
 
-<span class="tooltip-text" title="The RGF (*Rote Gardefront*) is a paramilitray/revolutionary group associated with the left wing of the socialist movemnet and the old SAPM" style="color: #8B0000;">**RGF**</span> Strength: [+ rfb_strength_2 +] thousand
+<span class="tooltip-text" title="The RGF (Rote Gardefront) is a paramilitray/revolutionary group associated with the left wing of the socialist movemnet and the old SAPM" style="color: #8B0000;">**RGF**</span> Strength: [+ rfb_strength_2 +] thousand
 
 <span style="color: #8B0000;">**RGF**</span> Militarization: [+ rfb_militancy : militancy +]
 
-<span class="tooltip-text" title="The *Demokratische Sozialfront* is a organization for democracy and socialism mostly affiliated with the old SPM." style="color: #c00000;">**DSF**</span> Strength: [+ rb_strength_2 +] thousand
+<span class="tooltip-text" title="The Demokratische Sozialfront is a organization for democracy and socialism mostly affiliated with the old SPM." style="color: #c00000;">**DSF**</span> Strength: [+ rb_strength_2 +] thousand
 
 <span style="color: #c00000;">**DSF**</span> Militarization: [+ rb_militancy : militancy +]
 
-<span class="tooltip-text" title="The *Demokratisch-Federales Volksbanner* is a Liberal/Democratic group associated organization for defending democracy, mostly affiliated with the FVP and the LDP." style="color: #bdc56c;">**DFVB**</span> Strength: [+ df_strength_2 +] thousand
+<span class="tooltip-text" title="The Demokratisch-Federales Volksbanner is a Liberal/Democratic group associated organization for defending democracy, mostly affiliated with the FVP and the LDP." style="color: #bdc56c;">**DFVB**</span> Strength: [+ df_strength_2 +] thousand
 
 <span style="color: #bdc56c;">**DFVB**</span> Militarization: [+ df_militancy : militancy +]
 
