@@ -1,0 +1,9 @@
+title: War in Pekoria!
+subtitle: United Provinces of Perkoria and Kingdom of Thirgal start a new war
+on-arrival: trade_stability -= 0.01; global_eco -= 0.02; pek_thi_war = 1; global_trade -= 0.1;
+tags: event
+view-if: year = 1266 and month = 2
+priority: 2
+max-visits: 1
+
+The war escalates
