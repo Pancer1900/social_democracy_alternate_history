@@ -1,0 +1,9 @@
+title: Pekorian - Thrigalian War escalates!
+subtitle: Republic of Cancion joins the war on the side of Thrigal
+on-arrival: economic_growth -= 0.2; investment -= 0.01; trade_stability -= 0.03; global_eco -= 0.02
+tags: event
+view-if: year = 1267 and month = 4
+priority: 2
+max-visits: 1
+
+The war escalates
