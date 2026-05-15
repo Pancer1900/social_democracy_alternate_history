@@ -582,7 +582,7 @@ Q.tracosia_relation = 8;
 Q.crevia_relation = 10;
 Q.west_relation = 9;
 Q.vyliria_relation = 14;
-Q.pekoria_relation = 11;
+Q.pekoria_relation = 13;
 Q.carberdia_relation = 8;
 Q.vyliria_left_relation = 18;
 
@@ -590,7 +590,7 @@ Q.vyliria_left_relation = 18;
 Q.vyl_rev = 0;
 Q.vyl_suc = 0;
 Q.kell_coup = 0;
-Q.pek_thi_war = 1;
+Q.pek_thi_war = 0;
 Q.pek_banking_act = 0;
 Q.zurukstan_rev = 0;
 Q.purp_hand_carberde = 0;
@@ -610,7 +610,7 @@ Q.pek_thi_war_sit = 'ongoing';
 Q.oil_crisis_mer = 0;
 Q.oil_crisis_global = 0;
 Q.global_eco = 0.15;
-Q.global_trade = -0.05;
+Q.global_trade = 0.05;
 
 // International modivers  
 Q.vyl_rev_strenth = 0;
