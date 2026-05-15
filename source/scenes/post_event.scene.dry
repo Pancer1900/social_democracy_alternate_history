@@ -238,7 +238,7 @@ Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.inves
 
 // ECONOMY MAIN
 
-Q.economic_change = Q.economic_change - Q.economic_growth/7;
+Q.economic_change = Q.economic_change - Q.economic_growth/6.5;
 
 Q.economic_growth = Q.economic_growth + Q.economic_change;
 
@@ -315,8 +315,52 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////// DYNAMIC CHANGES 
 
+//// Liberal 
+
     if (Q.year == 1267 && Q.month == 4) {
     Q.lib_dissident += 20;
+    }
+
+    if (Q.in_liberal_coalition == 1 && Q.ddp_relation > 60) {
+    Q.lib_dissident += 1;
+    }
+    if (Q.in_liberal_coalition == 1 && Q.z_relation > 60) {
+    Q.lib_dissident += 1;
+    }
+    if (Q.in_liberal_coalition == 1 && Q.dvp_relation > 54) {
+    Q.lib_dissidnet += 1;
+    }
+    if (Q.in_liberal_coalition == 1 && Q.economic_growth < 0) {
+    Q.lib_dissident += 1;
+    }
+
+
+//// Right
+
+    if (Q.in_center_right_coalition == 1 && Q.dvp_relation > 54) {
+    Q.right_dissidnet += 1;
+    }
+    if (Q.in_center_right_coalition == 1 && Q.z_relation > 54) {
+    Q.right_dissidnet += 1;
+    }
+    if (Q.in_center_right_coalition == 1 && Q.economic_growth < 0) {
+    Q.right_dissidnet += 1;
+    }
+
+//// VSDPM 
+
+    if (Q.in_weimar_coalition == 1 ) {
+    Q.coalition_modifer = 1/((z_relation + ddp_relation)/120*fvp_modifer*gdsu_modifer);
+    }
+    if (Q.in_weimar_coalition == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
+    Q.coalition_dissent += 1;
+    }
+
+    if (Q.in_popular_front == 1 ) {
+    Q.coalition_modifer = 1/((z_relation + ddp_relation + sapd_relation)/180*fvp_modifer*gdsu_modifer*kpm_modifier);
+    }
+    if (Q.in_popular_front == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
+    Q.coalition_dissent += 1;
     }
 
 
