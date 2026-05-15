@@ -153,6 +153,7 @@ Q.fvp_path = 0; // 0 - centre, 1 -  left, 2 - right
 Q.fvp_modifer = 1;
 Q.ldp_modifer = 1;
 Q.gdsu_modifer = 1;
+Q.kpm_modifier = 1;
 
 // inter-party relations
 
