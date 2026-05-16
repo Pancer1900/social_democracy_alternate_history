@@ -131,6 +131,7 @@ if (Q.month_actions >= 1) {
 
 // ECONOMY - FUCK ME 
 
+Q.tax = Math.round((Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8)
 Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade;
 
     // we're basically implicity drawing a Philips curve
