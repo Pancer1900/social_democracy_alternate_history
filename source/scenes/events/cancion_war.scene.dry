@@ -1,4 +1,4 @@
-title: <span style="color: #40b3d7;">United Provinces of Perkorian</span> - <span style="color: #578b50;">Thrigalian</span> War escalates!
+title: <span style="color: #40b3d7;">Perkorian</span> - <span style="color: #578b50;">Thrigalian</span> War escalates!
 subtitle: <span style="color: #173881;">Repub</span><span style="color: #3b883c;">lic of Ca</span><span style="color: #feba1d;">ncion</span> joins the war on the side of <span style="color: #578b50;">Thrigal</span>
 on-arrival: economic_growth -= 0.2; investment -= 0.01; trade_stability -= 0.03; global_eco -= 0.02
 tags: event
