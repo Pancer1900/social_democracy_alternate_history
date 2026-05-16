@@ -407,7 +407,6 @@ Q.catholics_ppu = 0;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.spd_r = 25.2;
-Q.kpd_r = 0;
 Q.z_r = 17.8;
 Q.ppu_r = 4.1;
 Q.ddp_r = 8.6;
@@ -482,8 +481,7 @@ Q.asum_in_government = 0;
 Q.nsdap_in_government = 0;
 
 Q.in_liberal_coalition = 1; // Liberal coalition = FVP + GDSU + LDP + PPU
-Q.in_center_right_coalition = 0; // Center-Right coalition = GDSU + LDP + PPU + others + MNVP
-Q.in_right_coalition = 0; // Right coalition = LDP + PPU + others + MNVP
+Q.in_right_coalition = 0; // Right coalition = LDP + PPU + others + MNVP ( COUNTS CENTER-RIGHT TOO)
 Q.in_weimar_coalition = 0; // Weimar coalition = VDSPM + FVP + GDSU
 Q.in_popular_front = 0; // Popular front = KPM + VDSPM + FVP + GDSU
 Q.in_progresive_coalition = 0; // Progresive coalition = KPM + VDSPM + FVP 
@@ -494,6 +492,7 @@ Q.in_left_front = 0; // left coalition = KPM + VDSPM
 Q.in_emergency_government = 0;
 Q.in_spd_majority = 0;
 Q.grand_coalition_failed = 0;
+Q.lib_failed = 0;
 Q.in_minority_government = 0;
 
 // if you're in a coalition, this is an incremental counter for how many times dissent has happened from the right.
@@ -540,6 +539,7 @@ Q.unemployment_insurance_seen = 0;
 // unemployment insurance event is seen if the unemployment level is at least 4 more than the threshold...
 Q.unemployment_insurance_threshold = 10;
 Q.blutmai = 0;
+Q.neuman_dead = 0;
 
 
 // have we reformed these institutions to be more democratic?
