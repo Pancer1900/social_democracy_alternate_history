@@ -1,6 +1,6 @@
 title: <span style="color: #40b3d7;">Perkorian</span> Economy and Banking stablisation act.
 subtitle: New protectionist policy of <span style="color: #40b3d7;">Perkoria</span>.
-on-arrival: economic_growth -= 0.4; investment -= 0.06; trade_stability -= 0.04; bank_stability -= 0.14; stability -= 0.02; global_eco -= 0.02; pek_banking_act = 1; coalition_dissent += 5*coalition_modifer ; lib_dissident += 5; right_dissidnet += 5; budget -= 2; pek_thi_war_sit = 'war in the pacific'; 
+on-arrival: economic_growth -= 0.4; investment -= 0.06; trade_stability -= 0.04; bank_stability -= 0.18; stability -= 0.02; global_eco -= 0.02; pek_banking_act = 1; coalition_dissent += 5*coalition_modifer ; lib_dissident += 5; right_dissidnet += 5; budget -= 2; pek_thi_war_sit = 'war in the pacific'; 
 tags: event
 view-if: year = 1266 and month = 8
 priority: 2
