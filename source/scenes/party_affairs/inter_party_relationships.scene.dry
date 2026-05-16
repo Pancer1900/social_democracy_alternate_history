@@ -86,7 +86,7 @@ Even thou <span style="color: #caa58b;">LDP</span> is still a majority center-ri
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; liberal_reconciliation += 1; ddp_relation += 6*(1 - dissent)*(fvp_modifer)
+on-arrival: resources -= 1; liberal_reconciliation += 1; ddp_relation += 6*(1 - dissent)*(fvp_modifer); fvp_ideology += 1
 
 The <span style="color: #ddd500;">FVP</span> has been one of the only parties that tried to cooperate with us throughout the years, they may prove to be a valube ally.
 
