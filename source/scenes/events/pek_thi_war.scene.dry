@@ -1,9 +1,20 @@
 title: War in Pekoria!
-subtitle: United Provinces of Perkoria and Kingdom of Thirgal start a new war
+subtitle: <span style="color: #40b3d7;">United Provinces of Perkoria</span> declares war on the <span style="color: #578b50;">Kingdom of Thrigal</span>
 on-arrival: trade_stability -= 0.01; global_eco -= 0.02; pek_thi_war = 1; global_trade -= 0.1;
 tags: event
 view-if: year = 1266 and month = 2
 priority: 2
 max-visits: 1
+face-image: img/pek_thr_war.png
 
-The war escalates
+Longlasting tentions bettwen <span style="color: #40b3d7;">Pekoria</span> and <span style="color: #578b50;">Thrigal</span> over the colony of Coloa have erupted into w full-scale war. 
+
+Coloa plays a vital role in far eastern trade and the biggest city on the east coast of Perkoria, for many years <span style="color: #40b3d7;">UPP</span> tried to aqire the city but to no avail.
+
+<span style="color: #40b3d7;">Pekoria</span> as our biggert trade partner holds a vital place in our economy, this war could put a massive strain on our economy.
+
+-@imp: Another pointless imperialist war...
+
+@imp
+
+Our government adopts a policy of neutrality but it nonetheless worsens our relations with both countries.
