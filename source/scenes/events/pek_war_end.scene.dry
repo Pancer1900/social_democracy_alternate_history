@@ -1,6 +1,6 @@
 title: <span style="color: #40b3d7;">Perkorian</span> - <span style="color: #578b50;">Thrigalian</span> War finnaly comes to an end.
 subtitle: <span style="color: #89cbaf;">Crevia</span> arbitrated and negotieated a peace treaty betttwen the waring states. 
-on-arrival: trade_stability += 0.02; global_eco += 0.02; global_trade += 0.05;
+on-arrival: trade_stability += 0.02; global_eco += 0.02; global_trade += 0.05; pek_thi_war = 0;
 tags: event
 view-if: year = 1267 and month = 9
 priority: 2
