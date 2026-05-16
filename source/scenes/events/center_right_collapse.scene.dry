@@ -1,0 +1,12 @@
+title: Collapse of the Center - Right coalition 
+new-page: true
+subtitle: The Center - Right coalition has collapsed...
+tags: event
+view-if: year >= 1267 and right_dissident >= 25 and in_center_right_coalition = 1
+max-visits: 1
+on-arrival: time_to_election = 2; spd_in_government = 0; in_liberal_coalition = 0; in_right_coalition = 0; in_grand_coalition = 0; spd_toleration = 0; pro_republic -= 1;
+call: set_next_election_time
+
+The Center - Right coalition has fallen.
+
+New elections have been set for [+ next_election_month : month +] [+ next_election_year +].
