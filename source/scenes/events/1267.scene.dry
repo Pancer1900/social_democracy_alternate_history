@@ -4,7 +4,7 @@ on-arrival: {!
 Q.unemployed += 1.8; 
 Q.inflation += 2.2;
 Q.economic_growth -= 0.4;
-Q.budget += (Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8;
+Q.budget += Q.tax;
 !}
 tags: event
 view-if: year = 1267 and month = 1 
