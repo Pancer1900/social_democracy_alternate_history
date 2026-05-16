@@ -1,9 +1,20 @@
-title: Pekorian - Thrigalian War escalates!
-subtitle: Republic of Cancion joins the war on the side of Thrigal
+title: <span style="color: #40b3d7;">United Provinces of Perkorian</span> - <span style="color: #578b50;">Thrigalian</span> War escalates!
+subtitle: <span style="color: #173881;">Repub</span><span style="color: #3b883c;">lic of Ca</span><span style="color: #feba1d;">ncion</span> joins the war on the side of <span style="color: #578b50;">Thrigal</span>
 on-arrival: economic_growth -= 0.2; investment -= 0.01; trade_stability -= 0.03; global_eco -= 0.02
 tags: event
 view-if: year = 1266 and month = 5
 priority: 2
 max-visits: 1
+face-image: img/cancion_war.jpg
 
-The war escalates
+<span style="color: #40b3d7;">Perkoria's</span> southern neighbour <span style="color: #173881;">Repub</span><span style="color: #3b883c;">lic of Ca</span><span style="color: #feba1d;">ncion</span> enters the war against them. 
+
+The countries share a history of rivaly and seeing a possibilty of strenthening of <span style="color: #40b3d7;">Perkoria</span> <span style="color: #173881;">Ca</span><span style="color: #3b883c;">nci</span><span style="color: #feba1d;">on</span> acted. 
+
+The war escalates...
+
+-@imp: This means bad news for us...
+
+@imp
+
+The escalating war means more economic hardship for <span style="color: #d52f30;">Mer</span><span style="color: #d5d5d5;">kop</span><span style="color: #ffd31e;">ia</span> and more deaths in imperialist wars...
