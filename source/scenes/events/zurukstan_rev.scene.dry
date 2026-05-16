@@ -1,0 +1,27 @@
+title: Revolution in Zurukstan!
+subtitle: <span style="color: #ffa300;">Vylirian</span> colony of Zurukstan is in flames.
+on-arrival: zurukstan_rev = 1; lib_dissident += 10;
+tags: event
+view-if: year = 1267 and month = 2
+priority: 2
+max-visits: 1
+face-image: img/zuruk_rev.png
+
+A violent revolution has engulfed the <span style="color: #ffa300;">Vylirian</span> colony of Zurukstan!
+  
+We posses a smaller but also signifacant possesion south of the <span style="color: #ffa300;">Vylirian</span> one, and the revolution can spread over to our colony.
+The liberal goverment will shurely be troubled with solving the situation. 
+
+This struggle for self-determiantion is crusial in our socialist rethoric and if the goverment will do something in Zurukstan we can use it to our advatage.
+  
+-@imp: Release a stament supporting the revolutionary stuggle and warn the goverment that if they intervene we will shurely obstruct them.
+-@ignore: Do not relese a official comment (at least yet).
+
+@imp
+on-arrival: minorieties_spd += 2; workers_spd += 1; vyliria_left_relation += 1; revolutionaries_strength += 3; revolutionaries_dissent -= 4; dvp_relation -= 4/ldp_modifer; z_relation -= 2/gdsu_modifer
+
+This shurely sends a message, but it also puts us directy agains the goverment. We dont have any influence in Zurukstan so we cant help them directly, but the treat of protests is surely somthing.
+
+@ignore
+
+We must see what this revolution can achive before throwing our suport behind them.
