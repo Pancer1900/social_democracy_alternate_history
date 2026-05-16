@@ -1,6 +1,6 @@
 title: Pekorian Economy and Banking stablisation akt.
 subtitle: New economic policy of Pekoria sharply stikes at us 
-on-arrival: economic_growth -= 0.4; investment -= 0.05; trade_stability -= 0.01; bank_stability -= 0.1; stability -= 0.02
+on-arrival: economic_growth -= 0.4; investment -= 0.05; trade_stability -= 0.04; bank_stability -= 0.1; stability -= 0.02; global_eco -= 0.04
 tags: event
 view-if: year = 1266 and month = 8
 priority: 2
