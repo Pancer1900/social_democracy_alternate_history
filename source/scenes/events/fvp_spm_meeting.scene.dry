@@ -1,0 +1,40 @@
+title: The meeting bettwen left-<span style="color: #ddd500;">FVP</span> and the<span style="color: #ff1919;">SPM</span>.
+subtitle: This could be the first steep in our reconcliation with the <span style="color: #ddd500;">FVP</span>.
+view-if: year = 1266 and month = 11
+max-visits: 1
+tags: event
+new-page: true
+face-image: img/fvp_meeting.jpg
+
+= The meeting bettwen left-<span style="color: #ddd500;">FVP</span> and the <span style="color: #ff1919;">SPM</span>
+
+Henrich Alder of our reformist wing and one of the prominent figures of the old <span style="color: #ff1919;">SPM</span> has organised a meeting with the representatives from the <span style="color: #ddd500;">FVP</span>.
+
+He argues that this meeting can serve as the first steep in our reconcliation with the <span style="color: #ddd500;">FVP</span> and other liberal parties. The left wing of our party condems his actions and call to abort any colaboration with the liberals, but the centrists and most of the party sees it as a good oppourtity for to at least reach out and try to cooperate with the <span style="color: #ddd500;">FVP</span>.
+
+What should be our official policy towards the meeting?  
+  
+- @parliment: Use this meeting to push for reconcliation and attempt to sway the <span style="color: #ddd500;">FVP</span> to **possibly** work closer with us. 
+- @statment: Support the initative of Alder, but remain pragmatic about the meeting.
+- @statment_2: Allow the meeting to take place but only under the <span style="color: #ff1919;">SPM</span> banner.
+- @off: No such meeting will take place! Call off this at once.
+
+@parliment
+on-arrival: ddp_relation += 6*fvp_modifer; dvp_relation += 2*ldp_modifer; revolutionaries_dissent += 7; left_dissent += 7; reformist_strength += 5; liberal_reconciliation += 2; fvp_ideology += 2;
+
+We use this meeting to improve our relations with the <span style="color: #ddd500;">FVP</span> and express our desire to reconcliate with the liberas, we even float the ideas of recreating the *Zeltbrin Coaltion*.
+
+@statment
+on-arrival: ddp_relation += 4*fvp_modifer; revolutionaries_dissent += 2; left_dissent += 2; reformist_strength += 3; fvp_ideology += 1;
+
+The meeting brings us closer with the <span style="color: #ddd500;">FVP</span>, but it may raise some voices at the left of our party.
+
+@statment_2
+on-arrival: ddp_relation += 2*fvp_modifer; center_dissent -= 3; center_strength += 3; reformist_strength += 3; reformist_dissent += 2; fvp_ideology += 1;
+
+The meeting goes through and brings us a bit closer to the <span style="color: #ddd500;">FVP</span>.
+
+@off
+on-arrival: ddp_relation -= 3*fvp_modifer; revolutionaries_dissent -= 5; left_dissent -= 5; revolutionaries_strength += 2; left_strength += 2; reformist_dissent += 8; center_dissent += 3; reformist_strength -= 4; 
+
+All bourgeoisie are our enemies and we shouln't try to reach out to them.
