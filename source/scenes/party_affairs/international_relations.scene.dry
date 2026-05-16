@@ -28,7 +28,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; arconia_relation += 1; reformist_strength += 5; pacifism += 1; moderate_plan_support += 1; centre_strength += 2
 
-The socialists of Arconia can be vital middleman in our negotiantions with Arconia about the Lurek's status and possible further Vacirian Integration 
+The socialists of <span style="color: #2cc0e9;">Arconia</span> can be vital middleman in our negotiantions with <span style="color: #2cc0e9;">Arconia</span> about the Lurek's status and possible further Vacirian Integration 
 
 @tra
 subtitle: -1 resources 
@@ -37,7 +37,7 @@ unavailable-subtitle: Not enough resources.
 audio: shuffle music/communist/workers_of_vienna_normalized.mp3
 on-arrival: left_strength += 5; radicalization += 1; resources -= 1; tracosia_relation += 1; agrarnians_strength += 4
 
-Our paramilitaries can leran much from the Tracossian socialists and their firce People's Guards, and how to unite the common person againts the Burgoise and the Aristocrat  
+Our paramilitaries can leran much from the <span style="color: #3cd68b;">Tracosian</span> socialists and their firce People's Guards, and how to unite the common person againts the Bourgeoisie and the Aristocrats
 
 @kell_2
 view-if: kell_coup = 1
@@ -46,7 +46,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; kell_strenth += 2; revolutionaries_strength += 4; left_strength += 2; kelland_relation += 1; radicalization += 1
 
-We supprt the efforts of the resistance to the Levion Regime and we hope for a return of democrasy in Kelland 
+We supprt the efforts of the resistance to the Levion Regime and we hope for a return of democracy in <span style="color: #d7d462;">Kelland</span> 
 
 @kell
 view-if: kell_coup = 0
@@ -64,7 +64,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; vyl_rev_strenth += 1; organisation_workers += 1; labor_strength += 4; center_strength += 2; vyliria_left_relation += 1;
 
-Vyliarians are the masters at organising their proletarians, we shall learn their ways of proper organisation and support our Socialist brothers 
+<span style="color: #ffa300;">Vylirians</span> are the masters at organising their proletarians, we shall learn their ways of proper organisation and support our Socialist brothers 
 
 @vyl_2
 subtitle: -1 resources
@@ -73,16 +73,16 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1; vyl_rev_strenth += 2; revolutionaries_strength += 8; left_strength += 4; vyliria_left_relation += 1; radicalization += 1; liberal_reconciliation -= 1
 
-We are helping the revolutionaries in Vyliria, our left factions are appeased and strenthend, maybe the revolution can succed?  
+We are helping the revolutionaries in <span style="color: #ffa300;">Vyliria</span>, our left factions are appeased and strenthend, maybe the revolution can succed?  
 
 @vyl_3
 subtitle: -1 resources
 view-if: vyl_suc = 1
-choose-if: resources >= 1
-unavailable-subtitle: Not enough resources.
+choose-if: resources >= 1 and vyliria_left_relation > 10
+unavailable-subtitle: [? if resources <= 0 : Not enough resources. ?][? if vyliria_left_relation < 10 : We have betrayed the revolution and the <span style="color: #ffa300;">Vylirians</span> will not help us?]
 on-arrival: resources -= 1; vyliria_left_relation += 1
 
-Now that the Vylirian revoulutionaries are victorus we can use our intnational contacts to our advatage 
+Now that the <span style="color: #ffa300;">Vylirian</span> revoulutionaries are victorus we can use our intnational contacts to our advatage 
 
 - @rev_support: We will use our contacts with the new republic to support our revolutionary effort.
 - @relations: We can improve relations with the republic so a frendly relationship can be build between our countries.
@@ -103,7 +103,7 @@ choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
 on-arrival: resources -= 1
 
-The Socialist Party of Perkoria is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
+The Socialist Party of <span style="color: #40b3d7;">Pekoria</span> is tiny and has limited support. There is not much we can do for them, and conversely, not much they can do for us.
 
 @reduce
 
