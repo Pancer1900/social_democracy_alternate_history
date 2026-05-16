@@ -1,7 +1,7 @@
 title: 1268
 subtitle: A new year 
 on-arrival: {!
-Q.budget += (Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8;
+Q.budget += Q.tax;
 !}
 tags: event
 view-if: year = 1268 and month = 1 
