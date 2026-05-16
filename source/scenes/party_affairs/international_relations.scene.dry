@@ -44,7 +44,7 @@ view-if: kell_coup = 1
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; kell_strenth += 2; revolutionaries_strength += 4; left_strength += 2; kelland_relation += 1; radicalization += 1; liberal_reconciliation -= 1
+on-arrival: resources -= 1; kell_strenth += 2; revolutionaries_strength += 4; left_strength += 2; kelland_relation += 1; radicalization += 1
 
 We supprt the efforts of the resistance to the Levion Regime and we hope for a return of democrasy in Kelland 
 
