@@ -42,7 +42,7 @@ The Democratic Social Front is already serving the purpose it needs to serve. Th
 - @militant_2: Use our existing resources to support more training and recriutment for the Democratic Social Front.
 - @same: Keep the Democratic Social Front as it is.
 - @cut_rg: Cut funding for the Democratic Social Front.
-- @main: reuturn to main
+- @affairs: reuturn to affairs
 
 @militant
 choose-if: para_resources >= rg_militarisation_cost
