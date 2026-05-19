@@ -3,7 +3,7 @@ new-page: true
 view-if: red_guard_affairs <= 0 and sapd_formed = 0
 on-arrival: red_guard_affairs += 7; month_actions += 1; rg_militarisation_cost = 2;
 is-card: true
-card-image: img/redfront.jpg
+card-image: img/rfb_affairs.jpg
 tags: paramilitary
 max-visits: 20
 go-to: rgf
@@ -14,9 +14,11 @@ go-to: rgf
 
 The Red Guard-Front our is a paramilitary organisation affiliated with the revolutionary wing of our party (old <span style="color: #940000;">**SAPM**</span>). They serve as the strongest revolutionary push for the country and play a vital role in revolutionary preparations and more drastc operations.
 
-- @rally: rally
-- @internal: internal
-- @operations: operations
+Current RGF investment [ + dsf_investment + ]
+
+- @rally: The RGF can organise a rally.
+- @internal: Tackle internal paramilitary politics
+- @operations: Direct the Operations of the RGF
 - @easy_discard
 
 @internal
