@@ -1,6 +1,6 @@
 title: DSF Affairs
 new-page: true
-view-if: democratic_front_affairs <= 0
+view-if: democratic_front_affairs <= 0 and sapd_formed = 0
 on-arrival: democratic_front_affairs += 6; month_actions += 1; rg_militarisation_cost = 2;
 is-card: true
 card-image: img/rb_affairs_2.jpg
@@ -8,15 +8,11 @@ tags: paramilitary
 max-visits: 20
 go-to: affairs
 
-= Democratic Social Front Affairs 
-
-The Democratic Social Front our is a paramilitary mostly affiliated with the old SPM. They server various tasks such such main party defence, union support and prorotectetion, rally defece and organisation and many more. 
-
-Should we increse our funding to the Democratic Social Front?
-
-Current DSF investment [ + dsf_investment + ]
-
 @affairs
+
+= Red Guard-Front
+
+The Red Guard-Front our is a paramilitary organisation affiliated with the revolutionary wing of our party (old <span style="color: #940000;">**SAPM**</span>). They serve as the strongest revolutionary push for the country and play a vital role in revolutionary preparations and more drastc operations.
 
 - @rally: rally
 - @internal: internal
@@ -25,8 +21,13 @@ Current DSF investment [ + dsf_investment + ]
 
 @rally
 
-The Democratic Social Front is already serving the purpose it needs to serve. There is no reason to change what already works.
+= Democratic Social Front Affairs 
 
+The Democratic Social Front our is a paramilitary mostly affiliated with the old SPM. They server various tasks such such main party defence, union support and prorotectetion, rally defece and organisation and many more. 
+
+Should we increse our funding to the Democratic Social Front?
+
+Current DSF investment [ + dsf_investment + ]
 
 @internal
 
