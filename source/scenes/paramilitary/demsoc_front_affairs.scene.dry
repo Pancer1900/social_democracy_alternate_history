@@ -30,8 +30,8 @@ Current DSF investment [ + dsf_investment + ]
 - @party: Rally for the party.
 - @recruitment: Rally for the DSF.
 - @republic: Rally to save and reform the federation.
-- @right: Rally against the Right
-- @revolution: Rally against the Right
+- @right: Rally against the Right.
+- @revolution: Rally for revolution.
 - @affairs: reuturn to affairs
 
 @party
@@ -95,12 +95,19 @@ The Democratic Social Front is already serving the purpose it needs to serve. Th
 
 = Democratic Social Front Rally
 
+- @train: Focus on trianing existing members. 
 - @military: Focus on funding more military equipment for the DSF. 
 - @military_rep: Fund more equipment to the DSF, but focus on less military needs.
-- @unions: The DSF should support and defend our unions. 
-- @rfg: Focus on incresing the cooperation with the RFG 
+- @unions: Use the DSF to support and defend our unions. 
+- @rfg: Focus on incresing the cooperation with the RFG.
 - @defend: Focus the DSF on protecting the party.
 - @fight: Order the DSF to use all thier force to attack the right. 
+
+@train
+on-arrival: rb_militancy += 0.02; dsf_investment -= 1; rb_strength += 8;
+
+We rally for the party
+
 
 @military
 on-arrival: rb_militancy += 0.02; dsf_investment -= 1; rb_strength += 8;
