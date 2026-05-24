@@ -1,0 +1,13 @@
+title: <span style="color: #b52f2f;">DSF</span> endorses <span style="color: #dee03a;">Republicanism</span>!
+subtitle: We have pushed the <span style="color: #b52f2f;">DSF</span> to abondon all anti-state military struggle.
+view-if: dsf_ideology <= 0
+max-visits: 1
+on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 8; left_dissent += 4; reformist_strength += 4; liberal_reconciliation += 1; ppu_relation += 3; ddp_relation += 3*fvp_modifer; z_relation += 3*gdsu_modifer; dvp_relation += 2*ldp_modifer; rb_militancy -= 0.15; sapd_relation -= 4*(1/kpm_modifier)
+tags: event
+new-page: true
+
+= <span style="color: #b52f2f;">DSF</span> turns <span style="color: #dee03a;">Republican</span>.
+
+New official <span style="color: #b52f2f;">DSF</span> policy is supporting the continous existence of the <span style="color: #dee03a;">Federation</span> and their primary task is now protecting the <span style="color: #dee03a;">Federation</span> against the far right.
+
+This is a sharp break with any revolutionary path of ours. Some of the more radical elemnts of our party may view it as a betrayal and the liberal parties will view this as us the <span style="color: #b52f2f;">DSF</span> gaining common sence and no longer view it as a immediate threat. 
