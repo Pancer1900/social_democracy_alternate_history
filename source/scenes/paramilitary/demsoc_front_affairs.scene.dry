@@ -1,6 +1,6 @@
 title: DSF Affairs
 new-page: true
-view-if: democratic_front_affairs <= 0;
+view-if: democratic_front_affairs <= 0
 on-arrival: democratic_front_affairs += 6; month_actions += 1; rg_militarisation_cost = 2; 
 is-card: true
 card-image: img/rb_affairs_2.jpg
@@ -29,39 +29,43 @@ subtitle: - 1 DSF resources
 = Democratic Social Front Rally
 
 - @right: Rally for defense against the fascists and the far-right.
-- @revolution: Rally for revolution against the bourgeois parties and the king.
+- @revolution: Rally for revolution against the bourgeois parties and the corrupt system.
 - @party: Rally for the party and for Socialism.
 - @recruitment: Rally to boost the recruitment and strenth of the DSF.
 - @republic: Rally for further republicanism and reformation of the Federation.
 - @affairs: reuturn to affairs
 
 @party
-on-arrival: dsf_investment -= 1; workers_spd += 3*(dsf_party/8); socialism += 1
+on-arrival: dsf_investment -= 1; workers_spd += 3.5*(dsf_party/8); socialism += 1; 
 
 <span style="color: #b52f2f;">DSF</span> rallies for the party, strengtening our support among the workers and spreading the message of socialism. 
 
 
 @recruitment
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+on-arrival: dsf_investment -= 1; rb_strength += 11; workers_spd += 1*(dsf_party/8);
 
-We rally for the party
+<span style="color: #b52f2f;">DSF</span> rallies the people to join their ranks and support our cause. 
 
 
 @republic
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+on-arrival: dsf_investment -= 1; workers_spd += 1.5*(dsf_party/8); dsf_ideology -= 1; workers_spd += 1*(dsf_party/8) if dsf_ideology <= 0; new_middle_spd += 2*(dsf_party/8) if dsf_ideology <= 0; old_middle_spd += 1.5*(dsf_party/8) if dsf_ideology <= 0; pro_republic += 1.5*(dsf_party/8) if dsf_ideology <= 0; pro_republic += 1; dsf_rfb_coop -= 1; reformist_strength += 3; reformist_dissent -= 3
 
-We rally for the party
+We rally for the <span style="color: #Federation;">dee03a</span> and for our republicanism. 
+
+[? if dsf_ideology <= 0: <span style="color: #b52f2f;">DSF</span> republican ideology massively helps us in spreading the republican message. ?]
 
 
 @right
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+on-arrival: dsf_investment -= 1; workers_dnvp -= 1; workers_nsdap -= 1; df_strength += 2; sh_strength -= 3; new_middle_dnvp -= 1; 
 
-We rally for the party
+We rally against the right, while it is less effective than attacking their paramilitaries directly, it dicurages people from joing them and works to our advantage.  
 
 @revolution
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+on-arrival: dsf_investment -= 1; rb_strength += 4 if dsf_ideology >= 10; revolutionaries_strength += 3; revolutionaries_dissent -= 3; reformist_dissent += 2; workers_spd += 1*(dsf_party/8); dsf_ideology += 1; workers_spd += 2*(dsf_party/8) if dsf_ideology >= 10; unemployed_spd += 2*(dsf_party/8) if dsf_ideology >= 10; radicalisation += 0.5;
 
-We rally for the party
+We rally against the burgoise and for the revolution. 
+
+[? if dsf_ideology >= 10: <span style="color: #b52f2f;">DSF</span> revolutionary ideology massively helps us in spreading this message. ?]
 
 
 @internal
@@ -74,27 +78,27 @@ We rally for the party
 - @affairs: reuturn to affairs
 
 @party_2
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+subtitle: Doing so will apease party offcials
+on-arrival: dsf_party += 1.5; center_dissent -= 6; reformist_dissent -= 4; left_dissent -= 2; dsf_ideology += 1 if (left_strength + revolutionaries_strength) > reformist_strength; dsf_ideology -= 1 if (left_strength + revolutionaries_strength) < (reformist_strength + center_strength/2);
 
-We rally for the party
+We push the <span style="color: #b52f2f;">DSF</span> closer to the party line and increse cooperation with the party.
 
 
 @republican
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 3; reformist_strength += 2; 
 
-We rally for the party
-
+We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #Republican;">dee03a</span> policy. 
 
 @rev
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+on-arrival: dsf_ideology += 2; reformist_dissent += 3; revolutionaries_dissent -= 4; revolutionaries_strength += 2; dsf_rfb_coop += 1;
 
-We rally for the party
+We push the <span style="color: #b52f2f;">DSF</span> to be more revolutionary and in turn cooperate closer with the <span style="color: #8B0000;">RGF</span>.
 
 @operations
 
-The Democratic Social Front is already serving the purpose it needs to serve. There is no reason to change what already works.
+= Democratic Social Front Operations
 
-= Democratic Social Front Rally
+The Democratic Social Front can do many tasks, what should we focus them this time?
 
 - @train: Focus on trianing existing members. 
 - @military: Focus on funding more military equipment for the DSF. 
@@ -105,19 +109,21 @@ The Democratic Social Front is already serving the purpose it needs to serve. Th
 - @fight: Order the DSF to use all thier force to attack the right. 
 
 @train
-on-arrival: rb_militancy += 0.02; dsf_investment -= 1; rb_strength += 8;
+on-arrival: rb_strength += 6; dsf_experce += 0.03;
 
-We rally for the party
+We train the existing members and focus on expanding the <span style="color: #b52f2f;">DSF</span> without any additional costs.
 
 
 @military
-on-arrival: rb_militancy += 0.02; dsf_investment -= 1; rb_strength += 8;
+subtitle: - 1 DSF resources
+on-arrival: rb_militancy += 0.02; dsf_investment -= 1; rb_strength += 8; dsf_experce += 0.02;
 
 We rally for the party
 
 
 @military_rep
-on-arrival: rb_militancy -= 0.01; dsf_investment -= 1; rb_strength += 22;
+subtitle: - 1 DSF resources
+on-arrival: rb_militancy -= 0.01; dsf_investment -= 1; rb_strength += 22; dsf_experce += 0.02;
 
 We rally for the party
 
