@@ -24,6 +24,8 @@ Current <span style="color: #b52f2f;">DSF</span> resources [ + dsf_investment + 
 - @easy_discard
 
 @rally
+choose-if: dsf_investment >= 1
+unavailable-subtitle: Not enough resources.
 subtitle: - 1 DSF resources
 
 = Democratic Social Front Rally
@@ -61,6 +63,8 @@ on-arrival: dsf_investment -= 1; workers_dnvp -= 1; workers_nsdap -= 1; df_stren
 We rally against the right, while it is less effective than attacking their paramilitaries directly, it dicurages people from joing them and works to our advantage.  
 
 @revolution
+choose-if: dsf_ideology >= 1
+unavailable-subtitle: We cannot support revolution if <span style="color: #b52f2f;">DSF</span> is republican.
 on-arrival: dsf_investment -= 1; rb_strength += 4 if dsf_ideology >= 10; revolutionaries_strength += 3; revolutionaries_dissent -= 3; reformist_dissent += 2; workers_spd += 1*(dsf_party/8); dsf_ideology += 1; workers_spd += 2*(dsf_party/8) if dsf_ideology >= 10; unemployed_spd += 2*(dsf_party/8) if dsf_ideology >= 10; radicalisation += 0.5;
 
 We rally against the burgoise and for the revolution. 
@@ -95,6 +99,8 @@ on-arrival: dsf_ideology += 2; reformist_dissent += 3; revolutionaries_dissent -
 We push the <span style="color: #b52f2f;">DSF</span> to be more revolutionary and in turn cooperate closer with the <span style="color: #8B0000;">RGF</span>.
 
 @operations
+choose-if: dsf_investment >= 1
+unavailable-subtitle: Not enough resources.
 
 = Democratic Social Front Operations
 
@@ -109,32 +115,32 @@ The Democratic Social Front can do many tasks, what should we focus them this ti
 - @fight: Order the DSF to use all thier force to attack the right. 
 
 @train
-on-arrival: rb_strength += 6; dsf_experce += 0.03;
+on-arrival: rb_strength += 6; dsf_experce += 0.1; dsf_investment -= 1;
 
 We train the existing members and focus on expanding the <span style="color: #b52f2f;">DSF</span> without any additional costs.
 
 
 @military
-subtitle: - 1 DSF resources
 on-arrival: rb_militancy += 0.02; dsf_investment -= 1; rb_strength += 8; dsf_experce += 0.02;
 
 We rally for the party
 
 
 @military_rep
-subtitle: - 1 DSF resources
 on-arrival: rb_militancy -= 0.01; dsf_investment -= 1; rb_strength += 22; dsf_experce += 0.02;
 
 We rally for the party
 
 
 @unions
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+on-arrival: dsf_investment -= 1; organisation_workers += 1; labor_strength += 3; labor_dissent -= 3; workers_spd += 2*(dsf_party/8);
 
 We rally for the party
 
 @rfg
-on-arrival: rb_militancy += 0.015; dsf_investment -= 1; rb_strength += 10;
+choose-if: dsf_ideology >= 1
+unavailable-subtitle: We cannot support revolutionart RGF if <span style="color: #b52f2f;">DSF</span> is republican.
+on-arrival: rb_militancy += 0.05*(dsf_rfb_coop/8); dsf_investment -= 1; rfb_strength += 3*(dsf_rfb_coop/8); dsf_rfb_coop += 1;
 
 We rally for the party
 
