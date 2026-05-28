@@ -1,68 +1,164 @@
 title: RGF Affiars 
 new-page: true
 view-if: red_guard_affairs <= 0 and sapd_formed = 0
-on-arrival: red_guard_affairs += 7; month_actions += 1; rg_militarisation_cost = 2;
+on-arrival: red_guard_affairs += 5; month_actions += 1; rg_militarisation_cost = 2;
 is-card: true
 card-image: img/rfb_affairs.jpg
 tags: paramilitary
 max-visits: 20
-go-to: rgf
+go-to: affairs
 
-@rgf
+@affairs
 
-= Red Guard-Front
+= Democratic Social Front Affairs 
 
-The Red Guard-Front our is a paramilitary organisation affiliated with the revolutionary wing of our party (old <span style="color: #940000;">**SAPM**</span>). They serve as the strongest revolutionary push for the country and play a vital role in revolutionary preparations and more drastc operations.
+Democratic Social Front plays a vital role for us. They are the closest to the party and serve as a vercitile arm of the party and can help us in many goals.
 
-Current RGF investment [ + dsf_investment + ]
+What should we do with the <span style="color: #b52f2f;">DSF</span>?
 
-- @rally: The RGF can organise a rally.
-- @internal: Tackle internal paramilitary politics
-- @operations: Direct the Operations of the RGF
+- @rally: The DSF can organise a rally.
+- @internal: Tackle internal paramilitary politics.
+- @operations: Direct the Operations of the DSF.
 - @easy_discard
+
+@rally
+choose-if: para_resources >= 1
+unavailable-subtitle: Not enough resources.
+subtitle: - 1 paramilitary resources
+
+= Democratic Social Front Rally
+
+- @right: Rally for defense against the fascists and the far-right.
+- @revolution: Rally for revolution against the bourgeois parties and the corrupt system.
+- @party: Rally for the party and for Socialism.
+- @recruitment: Rally to boost the recruitment and strenth of the DSF.
+- @republic: Rally for further republicanism and reformation of the Federation.
+- @affairs: reuturn to affairs
+
+@party
+on-arrival: para_resources -= 1; workers_spd += 3.5*(dsf_party/8); socialism += 1; unemployed_spd += 1.5*(dsf_party/8)
+
+<span style="color: #b52f2f;">DSF</span> rallies for the party, strengtening our support among the workers and spreading the message of socialism. 
+
+
+@recruitment
+on-arrival: para_resources -= 1; rb_strength += 11; workers_spd += 1.5*(dsf_party/8);
+
+<span style="color: #b52f2f;">DSF</span> rallies the people to join their ranks and support our cause. 
+
+
+@republic
+on-arrival: para_resources -= 1; workers_spd += 1.5*(dsf_party/8); dsf_ideology -= 1; workers_spd += 1*(dsf_party/8) if dsf_ideology <= 0; new_middle_spd += 2*(dsf_party/8) if dsf_ideology <= 0; old_middle_spd += 1.5*(dsf_party/8) if dsf_ideology <= 0; pro_republic += 1.5*(dsf_party/8) if dsf_ideology <= 0; pro_republic += 1; dsf_rfb_coop -= 1; reformist_strength += 3; reformist_dissent -= 3
+
+We rally for the <span style="color: #Federation;">dee03a</span> and for our republicanism. 
+
+[? if dsf_ideology <= 0: <span style="color: #b52f2f;">DSF</span> republican ideology massively helps us in spreading the republican message. ?]
+
+
+@right
+on-arrival: para_resources -= 1; workers_dnvp -= 1; workers_nsdap -= 1; df_strength += 2; sh_strength -= 3; new_middle_dnvp -= 1; 
+
+We rally against the right, while it is less effective than attacking their paramilitaries directly, it dicurages people from joing them and works to our advantage.  
+
+@revolution
+choose-if: dsf_ideology >= 1
+unavailable-subtitle: We cannot support revolution if <span style="color: #b52f2f;">DSF</span> is republican.
+on-arrival: para_resources -= 1; rb_strength += 4 if dsf_ideology >= 10; revolutionaries_strength += 3; revolutionaries_dissent -= 3; reformist_dissent += 2; workers_spd += 1*(dsf_party/8); dsf_ideology += 1; workers_spd += 2*(dsf_party/8) if dsf_ideology >= 10; unemployed_spd += 2*(dsf_party/8) if dsf_ideology >= 10; radicalisation += 0.5;
+
+We rally against the burgoise and for the revolution. 
+
+[? if dsf_ideology >= 10: <span style="color: #b52f2f;">DSF</span> revolutionary ideology massively helps us in spreading this message. ?]
+
 
 @internal
 
-We organise a internal
+= Democratic Social Front Internal politics
+
+- @party_2: Bring the DSF closer to the party policy.
+- @republican: Push the DSF towards being a more republican.
+- @rev: Push the DSF towards being a more revolutionary.
+- @affairs: reuturn to affairs
+
+@party_2
+subtitle: Doing so will apease party offcials
+on-arrival: dsf_party += 1; center_dissent -= 6; reformist_dissent -= 4; left_dissent -= 2; dsf_ideology += 1 if (left_strength + revolutionaries_strength) > reformist_strength; dsf_ideology -= 1 if (left_strength + revolutionaries_strength) < (reformist_strength + center_strength/2);
+
+We push the <span style="color: #b52f2f;">DSF</span> closer to the party line and increse cooperation with the party.
+
+
+@republican
+on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 3; reformist_strength += 2; rb_militancy -= 0.03;
+
+We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
+
+@rev
+on-arrival: dsf_ideology += 2; reformist_dissent += 3; revolutionaries_dissent -= 4; revolutionaries_strength += 2; dsf_rfb_coop += 1;
+
+We push the <span style="color: #b52f2f;">DSF</span> to be more revolutionary and in turn cooperate closer with the <span style="color: #8B0000;">RGF</span>.
 
 @operations
+choose-if: para_resources >= 1
+unavailable-subtitle: Not enough resources.
+subtitle: - 1 paramilitary resources
 
-We organise a operations
+= Democratic Social Front Operations
 
-@rally
+The Democratic Social Front can do many tasks, what should we focus them this time?
 
-We organise a rally
+- @train: Focus on trianing existing members. 
+- @military: Focus on funding more military equipment for the DSF. 
+- @military_rep: Fund more equipment to the DSF, but focus on less military needs.
+- @unions: Use the DSF to support and defend our unions. 
+- @rfg: Focus on incresing the cooperation with the RFG.
+- @defend: Focus the DSF on protecting the party.
+- @fight: Order the DSF to use all forces to attack the far right. 
 
-- @militant: Chanel more funds to support the Red Guards.
-- @militant_2: Use our existing resources to support more training for the Red Guards.
-- @same: Keep the Red Guards as it is.
-- @cut_rg: Cut funding for the Red Guards.
-- @easy_discard
+@train
+subtitle: this doesn't require additional resources
+on-arrival: rb_strength += 4; dsf_experce += 0.05
 
-@militant
-choose-if: para_resources >= rg_militarisation_cost
-unavailable-subtitle: Not enough paramilitary resources ([+ rg_militarisation_cost +] needed).
-subtitle: -[+ rg_militarisation_cost +] paramilitary resources
-on-arrival: para_resources -= rg_militarisation_cost; rfb_investment += 2; rfb_strength += 15; rfb_militancy += 0.05; revolutionaries_strength += 4; revolutionaries_dissent -= 6; reformist_dissent += 5; radicalisation += 1
-
-We continue funding the Red Guards, who begin recruitment of more members and are able to acquire more effective weaponry.
-
-
-@militant_2
-view-if: rg_investment >= 1
-on-arrival: rg_militancy += 0.02; rfb_investment -= 1; rfb_strength += 5;
-
-As we have already funded resources towards the Red Guards, we can invest in building up their experince and militancy.
+We train the existing members and focus on expanding the <span style="color: #b52f2f;">DSF</span> without any additional costs.
 
 
-@same
+@military
+on-arrival: rb_militancy += 0.03; para_resources -= 1; rb_strength += 6; dsf_experce += 0.02; dsf_ideology += 1; revolutionaries_dissent -= 2; revolutionaries_strength += 1;
 
-The Red Guards is already serving the purpose it needs to serve. There is no reason to change what already works.
+We fund more military equipment for the <span style="color: #b52f2f;">DSF</span>, this makes it better armed and prepared to face their enemies. 
 
-- @return: Continue...
+Buying more miliaty equipment pleases the left and pushes the <span style="color: #b52f2f;">DSF</span> closer to the <span style="color: #8B0000;">RGF</span>.
 
-@cut_rg
-subtitle: +1 paramilitary resources
-on-arrival: para_resources += 1; rfb_strength -= 10; rfb_militancy -= 0.05; revolutionaries_strength -= 4; revolutionaries_dissent += 6; radicalisation -= 1;
 
-Cutting resources to the Red Guards causes
+@military_rep
+on-arrival: rb_militancy -= 0.01; para_resources -= 1; rb_strength += 16; dsf_experce += 0.025; dsf_ideology -= 1;
+
+We fund more civilian equipment for the <span style="color: #b52f2f;">DSF</span>. 
+
+This allows the <span style="color: #b52f2f;">DSF</span> to expand and pushes it more towards <span style="color: #dee03a;">Republican</span> position.
+
+@unions
+on-arrival: para_resources -= 1; organisation_workers += 1; labor_strength += 3; labor_dissent -= 3; workers_spd += 2*(dsf_party/8); union_defence += 0.05; dsf_experce += 0.01;
+
+The <span style="color: #b52f2f;">DSF</span> helps unions organise and protects them if nececary, this not only expands our apeal among the workers but also eases tention with the labour faction.
+
+@rfg
+choose-if: dsf_ideology >= 1
+unavailable-subtitle: We cannot support revolutionary <span style="color: #8B0000;">RGF</span> if <span style="color: #b52f2f;">DSF</span> is republican.
+on-arrival: rb_militancy += 0.05*(dsf_rfb_coop/8); para_resources -= 1; rfb_strength += 3*(dsf_rfb_coop/8); dsf_rfb_coop += 1; revolutionaries_dissent -= 3; revolutionaries_strength += 2;
+
+Increase the cooperation bettwen the <span style="color: #8B0000;">RGF</span> and the <span style="color: #b52f2f;">DSF</span>, this strenthens both organisations. 
+
+@defend
+choose-if: streetfight >= 1
+unavailable-subtitle: The violence in the country is too low for full on military protection.
+on-arrival: para_resources -= 1; rb_strength -= 10; party_defence += 0.1; dsf_experce += 0.015;
+
+We use the <span style="color: #b52f2f;">DSF</span> to protect our party officials and our rallies. 
+
+@fight
+choose-if: streetfight >= 1 and rb_strength >= 80
+unavailable-subtitle: The violence in the country is too low for full on streetfighting. 
+on-arrival: rb_militancy -= 0.01; para_resources -= 1; rb_strength -= 15; dsf_experce += 0.03; sh_strength -= 10*rb_militancy; sa_strength -= 10*rb_militancy;
+
+The <span style="color: #b52f2f;">DSF</span> focuses on sabotage and disrupts the activity of the far right.
+
+This hinders their abilty to function but also takes a toll on the <span style="color: #b52f2f;">DSF</span>.
