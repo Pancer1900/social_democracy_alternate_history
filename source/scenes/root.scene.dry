@@ -212,10 +212,11 @@ Q.dsf_rfb_coop = 4;
 // RFB
 Q.rfb_strength = 75;
 Q.rfb_militancy = 0.5;
-Q.kpm_experce = 1;
-Q.rfb_agrarian = 0;
-Q.rfb_banned = 0;
-Q.rbf_party = 4;
+Q.rgf_experce = 1;
+Q.rgf_agrarian = 0;
+Q.rgf_agrarian_support = 0;
+Q.rgf_banned = 0;
+Q.rgf_party = 4;
 
 // DFF 
 Q.df_strength = 680;
@@ -281,9 +282,9 @@ Q.capital_strike_progress = 0;
 Q.budget = 4;
 
 // Proportion of different social groups
-Q.workers = 39; // industry and trade
-Q.old_middle = 16; // "old mittelstand"
-Q.new_middle = 17; // "new mittelstand"
+Q.workers = 41; // industry and trade
+Q.old_middle = 15; // "old mittelstand"
+Q.new_middle = 15; // "new mittelstand"
 Q.rural = 13; // agriculture and forestry employment
 Q.peasants = 15;
 Q.unemployed = 5.4;
@@ -490,9 +491,11 @@ Q.asum_in_government = 0;
 Q.nsdap_in_government = 0;
 
 Q.in_liberal_coalition = 1; // Liberal coalition = FVP + GDSU + LDP + PPU
-Q.in_right_coalition = 0; // Right coalition = LDP + PPU + others + MNVP ( COUNTS CENTER-RIGHT TOO)
+Q.in_right_coalition = 0; // Right coalition = LDP + PPU + others + MNVP
+Q.in_center_right_coalition = 0; // Right coalition = GDSu + LDP + PPU + others + MNVP
 Q.in_weimar_coalition = 0; // Weimar coalition = VDSPM + FVP + GDSU
 Q.in_popular_front = 0; // Popular front = KPM + VDSPM + FVP + GDSU
+Q.in_progresive_2_coalition = 0; // Progresive coalition = VDSPM + FVP 
 Q.in_progresive_coalition = 0; // Progresive coalition = KPM + VDSPM + FVP 
 Q.in_grand_coalition = 0; // Grand coalition = VDSPM + FVP + GDSU + LDP + PPU
 Q.in_left_front = 0; // left coalition = KPM + VDSPM
