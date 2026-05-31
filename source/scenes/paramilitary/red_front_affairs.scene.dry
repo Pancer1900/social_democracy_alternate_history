@@ -81,6 +81,14 @@ We push the <span style="color: #b52f2f;">DSF</span> closer to the party line an
 
 
 @rural
+view-if: rgf_agrarian = 0 and rgf_agrarian_support >= 1
+on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 3; reformist_strength += 2; rb_militancy -= 0.03;
+
+We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
+
+
+@rural_2
+view-if: rgf_agrarian = 1
 on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 3; reformist_strength += 2; rb_militancy -= 0.03;
 
 We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
@@ -103,36 +111,42 @@ The Democratic Social Front can do many tasks, what should we focus them this ti
 - @train: Focus on trianing existing members. 
 - @military: Focus on funding more military equipment for the RGF. 
 - @unions: Use the RGF to support and defend our unions. 
-- @defend: Focus the DSF on protecting the party.
-- @rev_2: Focus the DSF on protecting the party.
-- @rural_2: Work towards creating the Rural Red Guard.
-- @fight: Order the DSF to use all forces to attack the far right. 
+- @defend: Focus the RGF on protecting the party.
+- @rev_2: Preparing for revolution is our primary goal. 
+- @rural_3: Maybe we can create a Rural sub-organisation of the RGF.
+- @rural_4: We should work on expanding the Rural Red Guard.
+- @fight: Order the RGF to use all forces to attack the far right. 
 
 @train
 subtitle: this doesn't require additional resources
-on-arrival: rb_strength += 4; dsf_experce += 0.05
+on-arrival: rfb_strength += 2; rgf_experce += 0.05
 
-We train the existing members and focus on expanding the <span style="color: #b52f2f;">DSF</span> without any additional costs.
+We train the existing members and focus on expanding the <span style="color: #8B0000;">RGF</span> without any additional costs.
 
 
 @rev_2
-subtitle: this doesn't require additional resources
-on-arrival: rb_strength += 4; dsf_experce += 0.05
+on-arrival: rgf_experce += 0.02; revolutionary_preparations += 1*revolution_ready; para_resources -= 1; revolutionaries_dissent -= 4; revolutionaries_strength += 3;
 
-We train the existing members and focus on expanding the <span style="color: #b52f2f;">DSF</span> without any additional costs.
+We focus on preparing our revolutionary forces, improving their readyness and extending our information networks
 
 
 @military
-on-arrival: rb_militancy += 0.03; para_resources -= 1; rb_strength += 6; dsf_experce += 0.02; dsf_ideology += 1; revolutionaries_dissent -= 2; revolutionaries_strength += 1;
+on-arrival: rfb_militancy += 0.03; para_resources -= 1; rfb_strength += 3; rgf_experce += 0.02; revolutionaries_dissent -= 2; revolutionaries_strength += 1;
 
-We fund more military equipment for the <span style="color: #b52f2f;">DSF</span>, this makes it better armed and prepared to face their enemies. 
+We fund more military equipment for the <span style="color: #8B0000;">RGF</span>, this makes it better armed and prepared to face their enemies. 
 
-Buying more miliaty equipment pleases the left and pushes the <span style="color: #b52f2f;">DSF</span> closer to the <span style="color: #8B0000;">RGF</span>.
+@rural_3
+view-if: rgf_agrarian = 0
+on-arrival: rgf_agrarian_support += 3; para_resources -= 1; peasants_spd += 2*(rgf_party/8) if sapd_formed = 0; rural_spd += 1.5*(rgf_party/8) if sapd_formed = 0; peasants_spd += 1.5*(rgf_party/8) if sapd_formed = 1; rural_spd += 1*(rgf_party/8) if sapd_formed = 1; peasants_sapd += 2 if sapd_formed = 1; rural_sapd += 1.5 if sapd_formed = 1; revolutionaries_dissent -= 1; revolutionaries_strength += 1; agrarnians_strength += 2; agrarnians_dissent -= 3;
 
-@rural_2
-on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 3; reformist_strength += 2; rb_militancy -= 0.03;
+Maybe we can create a Rural sub-organisation of the RGF? This will extend our paramilitary wing to the countryside, apease the agrarians and gain us valuble rural support. 
 
-We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
+
+@rural_4
+view-if: rgf_agrarian = 1
+on-arrival: rfb_strength += 9; para_resources -= 1; peasants_spd += 4*(rgf_party/8) if sapd_formed = 0; rural_spd += 3*(rgf_party/8) if sapd_formed = 0; peasants_spd += 3*(rgf_party/8) if sapd_formed = 1; rural_spd += 2*(rgf_party/8) if sapd_formed = 1; peasants_sapd += 4 if sapd_formed = 1; rural_sapd += 3 if sapd_formed = 1; revolutionaries_dissent -= 1; revolutionaries_strength += 1; agrarnians_strength += 2; agrarnians_dissent -= 3;
+
+Expanding the Rural Red Guards massively helps us in 
 
 
 @unions
