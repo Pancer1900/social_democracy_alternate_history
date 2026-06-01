@@ -14,11 +14,11 @@ go-to: affairs
 
 Democratic Social Front plays a vital role for us. They are the closest to the party and serve as a vercitile arm of the party and can help us in many goals.
 
-What should we do with the <span style="color: #b52f2f;">DSF</span>?
+What should we do with the <span style="color: #8B0000;">RGF</span>?
 
 - @rally: The RGF can organise a rally.
 - @internal: Tackle internal paramilitary politics.
-- @operations: Direct the Operations of the DSF.
+- @operations: Direct the Operations of the RGF.
 - @easy_discard
 
 @rally
@@ -35,15 +35,15 @@ subtitle: - 1 paramilitary resources
 - @affairs: reuturn to affairs
 
 @party
-on-arrival: para_resources -= 1; workers_spd += 3.5*(rbf_party/8); socialism += 1; unemployed_spd += 1.5*(rbf_party/8)
+on-arrival: para_resources -= 1; workers_spd += 3.5*(rgf_party/8); socialism += 1.5; unemployed_spd += 1.5*(rgf_party/8)
 
-<span style="color: #b52f2f;">DSF</span> rallies for the party, strengtening our support among the workers and spreading the message of socialism. 
+<span style="color: #8B0000;">RGF</span> rallies for the party, strengtening our support among the workers and spreading the message of socialism. 
 
 
 @recruitment
-on-arrival: para_resources -= 1; rb_strength += 11; workers_spd += 1.5*(rbf_party/8);
+on-arrival: para_resources -= 1; rb_strength += 11; workers_spd += 1.5*(rgf_party/8);
 
-<span style="color: #b52f2f;">DSF</span> rallies the people to join their ranks and support our cause. 
+<span style="color: #8B0000;">RGF</span> rallies the people to join their ranks and support our cause. 
 
 @right
 view-if: in_right_coalition >= 1
@@ -52,7 +52,7 @@ on-arrival: para_resources -= 1; workers_dnvp -= 1; workers_nsdap -= 1; df_stren
 We rally against the right, while it is less effective than attacking their paramilitaries directly, it dicurages people from joing them and works to our advantage.  
 
 @revolution
-on-arrival: para_resources -= 1; rfb_strength += 4; revolutionaries_strength += 3; revolutionaries_dissent -= 3; reformist_dissent += 2; workers_spd += 4*(rbf_party/8); unemployed_spd += 4*(rbf_party/8); radicalisation += 0.5;
+on-arrival: para_resources -= 1; rfb_strength += 4; revolutionaries_strength += 3; revolutionaries_dissent -= 3; reformist_dissent += 2; workers_spd += 4*(rgf_party/8); unemployed_spd += 4*(rgf_party/8); radicalisation += 0.5;
 
 The RGF rallies for a violent socialist revolution against the burgoise and the state. 
 
@@ -68,36 +68,36 @@ The RGF rallies for a violent socialist revolution against the burgoise and the 
 
 @party_2
 subtitle: Doing so will apease party offcials
-on-arrival: rbf_party += 1; center_dissent -= 6; reformist_dissent -= 4; left_dissent -= 2; dsf_ideology += 1 if (left_strength + revolutionaries_strength) > reformist_strength; dsf_ideology -= 1 if (left_strength + revolutionaries_strength) < (reformist_strength + center_strength/2);
+on-arrival: rgf_party += 1; center_dissent -= 6; reformist_dissent -= 4; left_dissent -= 2; dsf_ideology += 1 if (left_strength + revolutionaries_strength) > reformist_strength; dsf_ideology -= 1 if (left_strength + revolutionaries_strength) < (reformist_strength + center_strength/2);
 
-We push the <span style="color: #b52f2f;">DSF</span> closer to the party line and increse cooperation with the party.
+We push the <span style="color: #8B0000;">RGF</span> closer to the party line and increse cooperation with the party.
 
 
 @assure
 subtitle: Doing so will apease party offcials
-on-arrival: rbf_party += 1; center_dissent -= 6; reformist_dissent -= 4; left_dissent -= 2; dsf_ideology += 1 if (left_strength + revolutionaries_strength) > reformist_strength; dsf_ideology -= 1 if (left_strength + revolutionaries_strength) < (reformist_strength + center_strength/2);
+on-arrival: rgf_party += 1; center_dissent -= 6; reformist_dissent -= 4; left_dissent -= 2; dsf_ideology += 1 if (left_strength + revolutionaries_strength) > reformist_strength; dsf_ideology -= 1 if (left_strength + revolutionaries_strength) < (reformist_strength + center_strength/2);
 
-We push the <span style="color: #b52f2f;">DSF</span> closer to the party line and increse cooperation with the party.
+We push the <span style="color: #8B0000;">RGF</span> closer to the party line and increse cooperation with the party.
 
 
 @rural
 view-if: rgf_agrarian = 0 and rgf_agrarian_support >= 1
 on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 3; reformist_strength += 2; rb_militancy -= 0.03;
 
-We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
+We push the <span style="color: #8B0000;">RGF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
 
 
 @rural_2
 view-if: rgf_agrarian = 1
 on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent += 3; reformist_strength += 2; rb_militancy -= 0.03;
 
-We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
+We push the <span style="color: #8B0000;">RGF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
 
 
 @rev
 on-arrival: dsf_ideology += 2; reformist_dissent += 3; revolutionaries_dissent -= 4; revolutionaries_strength += 2; dsf_rfb_coop += 1;
 
-We push the <span style="color: #b52f2f;">DSF</span> to be more revolutionary and in turn cooperate closer with the <span style="color: #8B0000;">RGF</span>.
+We push the <span style="color: #8B0000;">RGF</span> to be more revolutionary and in turn cooperate closer with the <span style="color: #8B0000;">RGF</span>.
 
 @operations
 choose-if: para_resources >= 1
@@ -150,17 +150,17 @@ Expanding the Rural Red Guards massively helps us in
 
 
 @unions
-on-arrival: para_resources -= 1; organisation_workers += 1; labor_strength += 3; labor_dissent -= 3; workers_spd += 2*(rbf_party/8); union_defence += 0.05; dsf_experce += 0.01;
+on-arrival: para_resources -= 1; organisation_workers += 1; labor_strength += 3; labor_dissent -= 3; workers_spd += 2*(rgf_party/8); union_defence += 0.05; dsf_experce += 0.01;
 
-The <span style="color: #b52f2f;">DSF</span> helps unions organise and protects them if nececary, this not only expands our apeal among the workers but also eases tention with the labour faction.
+The <span style="color: #8B0000;">RGF</span> helps unions organise and protects them if nececary, this not only expands our apeal among the workers but also eases tention with the labour faction.
 
 
 @rfg
 choose-if: dsf_ideology >= 1
-unavailable-subtitle: We cannot support revolutionary <span style="color: #8B0000;">RGF</span> if <span style="color: #b52f2f;">DSF</span> is republican.
+unavailable-subtitle: We cannot support revolutionary <span style="color: #8B0000;">RGF</span> if <span style="color: #8B0000;">RGF</span> is republican.
 on-arrival: rb_militancy += 0.05*(dsf_rfb_coop/8); para_resources -= 1; rfb_strength += 3*(dsf_rfb_coop/8); dsf_rfb_coop += 1; revolutionaries_dissent -= 3; revolutionaries_strength += 2;
 
-Increase the cooperation bettwen the <span style="color: #8B0000;">RGF</span> and the <span style="color: #b52f2f;">DSF</span>, this strenthens both organisations. 
+Increase the cooperation bettwen the <span style="color: #b52f2f;">DSF</span> and the <span style="color: #8B0000;">RGF</span>, this strenthens both organisations. 
 
 
 @defend
@@ -168,7 +168,7 @@ choose-if: streetfight >= 1
 unavailable-subtitle: The violence in the country is too low for full on military protection.
 on-arrival: para_resources -= 1; rb_strength -= 10; party_defence += 0.1; dsf_experce += 0.015;
 
-We use the <span style="color: #b52f2f;">DSF</span> to protect our party officials and our rallies. 
+We use the <span style="color: #8B0000;">RGF</span> to protect our party officials and our rallies. 
 
 
 @fight
@@ -176,6 +176,6 @@ choose-if: streetfight >= 1 and rb_strength >= 80
 unavailable-subtitle: The violence in the country is too low for full on streetfighting. 
 on-arrival: rb_militancy -= 0.01; para_resources -= 1; rb_strength -= 15; dsf_experce += 0.03; sh_strength -= 10*rb_militancy; sa_strength -= 10*rb_militancy;
 
-The <span style="color: #b52f2f;">DSF</span> focuses on sabotage and disrupts the activity of the far right.
+The <span style="color: #8B0000;">RGF</span> focuses on sabotage and disrupts the activity of the far right.
 
-This hinders their abilty to function but also takes a toll on the <span style="color: #b52f2f;">DSF</span>.
+This hinders their abilty to function but also takes a toll on the <span style="color: #8B0000;">RGF</span>.
