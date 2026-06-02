@@ -126,6 +126,7 @@ Q.organisation_middle = 11;
 // Mod - Party Affairs 
 
 Q.expand_media = 0;
+Q.rev_plus = 0;
 Q.revolutionary_preparations = 0;
 
 // party_policy - congresses 
