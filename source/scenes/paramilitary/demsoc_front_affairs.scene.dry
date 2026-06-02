@@ -63,7 +63,7 @@ We rally against the right, while it is less effective than attacking their para
 @revolution
 choose-if: dsf_ideology >= 1
 unavailable-subtitle: We cannot support revolution if <span style="color: #b52f2f;">DSF</span> is republican.
-on-arrival: para_resources -= 1; rb_strength += 4 if dsf_ideology >= 10; revolutionaries_strength += 3; revolutionaries_dissent -= 3; reformist_dissent += 2; workers_spd += 1*(dsf_party/8); dsf_ideology += 1; workers_spd += 2*(dsf_party/8) if dsf_ideology >= 10; unemployed_spd += 2*(dsf_party/8) if dsf_ideology >= 10; radicalisation += 0.5;
+on-arrival: para_resources -= 1; rb_strength += 4 if dsf_ideology >= 10; revolutionaries_strength += 3; revolutionaries_dissent -= 3; reformist_dissent += 2; workers_spd += 1*(dsf_party/8); dsf_ideology += 1; workers_spd += 2*(dsf_party/8) if dsf_ideology >= 10; unemployed_spd += 2*(dsf_party/8) if dsf_ideology >= 10; radicalisation += 0.5; sapd_relation += 2*kpm_modifier; labour_unrest += 1;
 
 We rally against the burgoise and for the revolution. 
 
@@ -92,7 +92,7 @@ on-arrival: dsf_ideology -= 2; reformist_dissent -= 4; revolutionaries_dissent +
 We push the <span style="color: #b52f2f;">DSF</span> to adopt a fully <span style="color: #dee03a;">Republican</span> policy. 
 
 @rev
-on-arrival: dsf_ideology += 2; reformist_dissent += 3; revolutionaries_dissent -= 4; revolutionaries_strength += 2; dsf_rfb_coop += 1;
+on-arrival: dsf_ideology += 2; reformist_dissent += 3; revolutionaries_dissent -= 4; revolutionaries_strength += 2; dsf_rfb_coop += 1; sapd_relation += 2*kpm_modifier;
 
 We push the <span style="color: #b52f2f;">DSF</span> to be more revolutionary and in turn cooperate closer with the <span style="color: #8B0000;">RGF</span>.
 
@@ -143,7 +143,7 @@ The <span style="color: #b52f2f;">DSF</span> helps unions organise and protects 
 @rfg
 choose-if: dsf_ideology >= 1 and (sapd_formed = 0 or kpm_ally = 1)
 unavailable-subtitle: We cannot support revolutionary <span style="color: #8B0000;">RGF</span> if <span style="color: #b52f2f;">DSF</span> is republican.
-on-arrival: rb_militancy += 0.05*(dsf_rfb_coop/8); para_resources -= 1; rfb_strength += 3*(dsf_rfb_coop/8); dsf_rfb_coop += 1; revolutionaries_dissent -= 3; revolutionaries_strength += 2;
+on-arrival: rb_militancy += 0.05*(dsf_rfb_coop/8); para_resources -= 1; rfb_strength += 3*(dsf_rfb_coop/8); dsf_rfb_coop += 1; revolutionaries_dissent -= 3; revolutionaries_strength += 2; sapd_relation += 1.5*kpm_modifier;
 
 Increase the cooperation bettwen the <span style="color: #8B0000;">RGF</span> and the <span style="color: #b52f2f;">DSF</span>, this strenthens both organisations. 
 
