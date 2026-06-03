@@ -171,7 +171,7 @@ We use the <span style="color: #8B0000;">RGF</span> to protect our party officia
 
 
 @fight
-choose-if: rfb_strength*Q.rgf_experce*Q.rfb_militancy >= 35
+choose-if: rfb_strength*rgf_experce*rfb_militancy >= 35
 unavailable-subtitle: The <span style="color: #8B0000;">RGF</span> is not strong enough to covertly strike at the recationaries. 
 on-arrival: rfb_militancy -= 0.02; para_resources -= 1; rfb_strength -= 8; rgf_experce += 0.02; sh_strength -= 8*rfb_militancy; sa_strength -= 8*rfb_militancy; df_strength -= 5*rfb_militancy;
 
