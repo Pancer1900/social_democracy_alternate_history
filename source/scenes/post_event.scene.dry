@@ -316,6 +316,10 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////// DYNAMIC CHANGES 
 
+Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
+
+Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.rfb_strength/100*Q.rgf_experce*Q.rfb_militancy*Q.dsf_rfb_coop/10);
+
 //// Liberal 
 
     if (Q.year == 1267 && Q.month == 5) {
