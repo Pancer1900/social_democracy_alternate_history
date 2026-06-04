@@ -17,7 +17,7 @@ Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
 Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
 
-Q.radicalisation_sum = Q.radicalization + Q.nsdap_r + Q.spd_r*Q.revolutionaries_strength/100 + Q.labour_unrest/2 + Q.rural_unrest/2;
+Q.radicalisation_sum = (Q.radicalization + Q.nsdap_votes + Q.spd_votes*Q.revolutionaries_strength/100 + Q.labour_unrest/3 + Q.rural_unrest/3 + dnvp_votes/2);
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
@@ -367,14 +367,28 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
     }
 
     if (Q.in_popular_front == 1 ) {
-    Q.coalition_modifer = 1/((Q.z_relation + Q.ddp_relation + Q.sapd_relation)/180*Q.fvp_modifer*Q.gdsu_modifer*Q.kpm_modifier);
+    Q.coalition_modifer = 1/((Q.z_relation + Q.ddp_relation + Q.sapd_relation)/200*Q.fvp_modifer*Q.gdsu_modifer*Q.kpm_modifier);
     }
     if (Q.in_popular_front == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
     Q.coalition_dissent += 1;
     }
 
+    if (Q.in_progresive_coalition == 1 ) {
+    Q.coalition_modifer = 1/((Q.ddp_relation + Q.sapd_relation)/125*Q.fvp_modifer*Q*Q.kpm_modifier);
+    }
+    if (Q.in_progresive_coalition == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
+    Q.coalition_dissent += 1;
+    }
+
+    if (Q.in_progresive_2_coalition == 1 ) {
+    Q.coalition_modifer = 1/(Q.ddp_relation/65*Q.fvp_modifer);
+    }
+    if (Q.in_progresive_2_coalition == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
+    Q.coalition_dissent += 1;
+    }
+
     if (Q.in_grand_coalition == 1 ) {
-    Q.coalition_modifer = 1/((Q.z_relation + Q.ddp_relation + Q.dvp_relation)/180*Q.fvp_modifer*Q.gdsu_modifer*Q.ldp_modifer*1.2);
+    Q.coalition_modifer = 1/((Q.z_relation + Q.ddp_relation + Q.dvp_relation)/200*Q.fvp_modifer*Q.gdsu_modifer*Q.ldp_modifer);
     }
     if (Q.in_grand_coalition == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
     Q.coalition_dissent += 1;
