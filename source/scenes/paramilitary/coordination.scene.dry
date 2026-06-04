@@ -11,7 +11,7 @@ max-visits: 20
 
 Cooperation bettwen the party, the unions and our parimilitaries plays a vital role in the political and military landscape of our situation. 
 
-[? if (sapd_formed = 0 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?]
+[? if (sapd_formed = 1 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?]
 
 How should we approach this issue?
 
@@ -27,7 +27,7 @@ How should we approach this issue?
 @rgf_dsf
 subtitle: -1 paramilitary resources
 choose-if: (sapd_formed = 0 or kpm_ally = 1) and para_resources >= 1
-unavailable-subtitle: [? if (sapd_formed = 0 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?] [? if para_resources < 1: We dont have enough funds. ?] 
+unavailable-subtitle: [? if (sapd_formed = 1 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?] [? if para_resources < 1: We dont have enough funds. ?] 
 on-arrival: para_resources -= 1; rb_strength += 2; dsf_experce += 0.01; rfb_strength += 1; rgf_experce += 0.01; dsf_rfb_coop += 2.5; revolutionaries_dissent -= 1; center_dissent -= 1; left_dissent -= 1; 
 
 We increse the cooperation bettwen the <span style="color: #8B0000;">RGF</span> and the <span style="color: #b52f2f;">DSF</span>. 
@@ -36,7 +36,7 @@ We increse the cooperation bettwen the <span style="color: #8B0000;">RGF</span> 
 view-if: rgf_agrarian = 1
 subtitle: -1 paramilitary resources
 choose-if: (sapd_formed = 0 or kpm_ally = 1) and para_resources >= 1
-unavailable-subtitle: [? if (sapd_formed = 0 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?] [? if para_resources < 1: We dont have enough funds. ?] 
+unavailable-subtitle: [? if (sapd_formed = 1 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?] [? if para_resources < 1: We dont have enough funds. ?] 
 on-arrival: para_resources -= 1; rb_strength += 7; rfb_strength += 5; dsf_rfb_coop += 1; peasants_spd += 1*(rgf_party/8) if sapd_formed = 0; rural_spd += 0.75*(rgf_party/8) if sapd_formed = 0; peasants_spd += 0.75*(rgf_party/8) if sapd_formed = 1; rural_spd += 0.5*(rgf_party/8) if sapd_formed = 1; peasants_sapd += 1 if sapd_formed = 1; rural_sapd += 0.75 if sapd_formed = 1; agrarnians_strength += 4; agrarnians_dissent -= 3;
 
 The <span style="color: #5f9403;">RPG</span> serves as a connector bettwen the our paramilitaries and funnels many new members form the countryside to our respective paramilitaries.
@@ -44,7 +44,7 @@ The <span style="color: #5f9403;">RPG</span> serves as a connector bettwen the o
 @rgf
 subtitle: -1 paramilitary resources
 choose-if: (sapd_formed = 0 or kpm_ally = 1) and para_resources >= 1
-unavailable-subtitle: [? if (sapd_formed = 0 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?] [? if para_resources < 1: We dont have enough funds. ?] 
+unavailable-subtitle: [? if (sapd_formed = 1 and kpm_ally = 0): Now that we broke off with the <span style="color: #940000;">KPM</span> the <span style="color: #8B0000;">RGF</span> refuses to cooperate with us. ?] [? if para_resources < 1: We dont have enough funds. ?] 
 on-arrival: para_resources -= 1; rgf_party += 2; center_dissent -= 3; left_dissent -= 3; revolutionaries_dissent -= 3; sapd_relation -= 2/kpm_modifier; 
 
 We push the <span style="color: #8B0000;">RGF</span> closer to the party line and increse its cooperation with the party.
