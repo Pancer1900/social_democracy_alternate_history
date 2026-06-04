@@ -317,34 +317,40 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
     //////////////////////////// DYNAMIC CHANGES 
 
 
-if (Q.unions_independent == 1) {
-    Q.labor_strength = -1;
-    Q.labor_dissent = -1;
+if (Q.unions_independent == 1) 
+    {
+    Q.labor_strength = 0;
+    Q.labor_dissent = 0;
     }
 
-if (Q.centrists_resign == 1) {
-    Q.center_strength = -1;
-    Q.center_dissent = -1;
+if (Q.centrists_resign == 1) 
+    {
+    Q.center_strength = 0;
+    Q.center_dissent = 0;
     }
 
-if (Q.left_split == 1) {
-    Q.left_strength = -1;
-    Q.left_dissent = -1;
+if (Q.left_split == 1) 
+    {
+    Q.left_strength = 0;
+    Q.left_dissent = 0;
     }
 
-if (Q.agrarnians_split == 1) {
-    Q.agrarnians_strength = -1;
-    Q.agrarnians_dissent = -1;
+if (Q.agrarnians_split == 1) 
+    {
+    Q.agrarnians_strength = 0;
+    Q.agrarnians_dissent = 0;
     }
 
-if (Q.revolutionaries_split == 1) {
-    Q.revolutionaries_strength = -1;
-    Q.revolutionaries_dissent = -1;
+if (Q.revolutionaries_split == 1) 
+    {
+    Q.revolutionaries_strength = 0;
+    Q.revolutionaries_dissent = 0;
     }
 
-if (Q.reformists_resigned == 1) {
-    Q.reformist_strength = -1;
-    Q.reformist_dissent = -1;
+if (Q.reformists_resigned == 1) 
+    {
+    Q.reformist_strength = 0;
+    Q.reformist_dissent = 0;
     }
 
 Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
