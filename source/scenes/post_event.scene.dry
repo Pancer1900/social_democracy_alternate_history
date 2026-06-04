@@ -17,7 +17,7 @@ Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
 Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
 
-Q.radicalisation_sum = Q.radicalization + Q.nsdap_votes + Q.spd_votes*Q.revolutionaries_strength/100 + Q.labour_unrest/3 + Q.rural_unrest/3 + dnvp_votes/2;
+Q.radicalisation_sum = (Q.radicalization + Q.nsdap_votes + Q.spd_votes*Q.revolutionaries_strength/100 + Q.labour_unrest/3 + Q.rural_unrest/3 + dnvp_votes/2);
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
@@ -133,7 +133,7 @@ if (Q.month_actions >= 1) {
 
 Q.tax = Math.round((Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8);
 
-Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade;
+Q.economic_change = (Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade);
 
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
