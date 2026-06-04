@@ -17,7 +17,7 @@ Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
 Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
 
-Q.radicalisation_sum = Q.radicalization + Q.nsdap_votes + Q.spd_votes*Q.revolutionaries_strength/100 + Q.labour_unrest/3 + Q.rural_unrest/3 + Q.sapd_votes + dnvp_votes/2 + gnvp_votes/2;
+Q.radicalisation_sum = Q.radicalization + Q.nsdap_votes + Q.spd_votes*Q.revolutionaries_strength/100 + Q.labour_unrest/3 + Q.rural_unrest/3 + dnvp_votes/2;
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
@@ -132,6 +132,7 @@ if (Q.month_actions >= 1) {
 // ECONOMY - FUCK ME 
 
 Q.tax = Math.round((Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8);
+
 Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade;
 
     // we're basically implicity drawing a Philips curve
@@ -316,39 +317,39 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////// DYNAMIC CHANGES 
 
-if (Q.unions_independent = 1) {
+if (Q.unions_independent >= 1) {
     Q.labor_strength = -1;
     Q.labor_dissent = -1;
     }
 
-if (Q.centrists_resign = 1) {
+if (Q.centrists_resign >= 1) {
     Q.center_strength = -1;
     Q.center_dissent = -1;
     }
 
-if (Q.left_split = 1) {
+if (Q.left_split >= 1) {
     Q.left_strength = -1;
     Q.left_dissent = -1;
     }
 
-if (Q.agrarnians_split = 1) {
+if (Q.agrarnians_split >= 1) {
     Q.agrarnians_strength = -1;
     Q.agrarnians_dissent = -1;
     }
 
-if (Q.revolutionaries_split = 1) {
+if (Q.revolutionaries_split >= 1) {
     Q.revolutionaries_strength = -1;
     Q.revolutionaries_dissent = -1;
     }
 
-if (Q.reformists_resigned = 1) {
+if (Q.reformists_resigned >= 1) {
     Q.reformist_strength = -1;
     Q.reformist_dissent = -1;
     }
 
-Q.revolution_ready = Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120;
+Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
 
-Q.paramililtary_strength = Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.rfb_strength/100*Q.rgf_experce*Q.rfb_militancy*Q.dsf_rfb_coop/10;
+Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.rfb_strength/100*Q.rgf_experce*Q.rfb_militancy*Q.dsf_rfb_coop/10);
 
 //// Liberal 
 
