@@ -12,7 +12,7 @@ go-to: affairs
 
 = Red Guard Front Affairs 
 
-Democratic Social Front plays a vital role for us. They are the closest to the party and serve as a vercitile arm of the party and can help us in many goals.
+The Red Guards are a invaluble force of the party and the working class. They serve as the most left-wing organisation and they are the strongest revolutionary force in the country.
 
 What should we do with the <span style="color: #8B0000;">RGF</span>?
 
@@ -95,7 +95,7 @@ on-arrival: rfb_strength += 4; rgf_experce += 0.02; peasants_spd += 1*(rgf_party
 We are expandign the <span style="color: #5f9403;">RPG </span>, building up their power and strenthening our posiotion in the countryside as well as brothening our support. 
 
 @rev
-on-arrival: reformist_dissent += 4; reformist_strength -= 1; revolutionaries_dissent -= 4; revolutionaries_strength += 3; rev_plus += 0.1; revolutionary_preparations += 0.5*revolution_ready;
+on-arrival: reformist_dissent += 4; reformist_strength -= 1; revolutionaries_dissent -= 4; revolutionaries_strength += 3; rev_plus += 0.1; revolutionary_preparations += 0.5*revolution_ready; sapd_relation += 3*kpm_modifier;
 
 We are focusing on our expanding our revolutionary potential and improving our methods of sabotage, organising and military work. 
 
