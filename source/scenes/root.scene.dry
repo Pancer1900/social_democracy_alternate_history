@@ -228,10 +228,16 @@ Q.df_banned = 0;
 Q.df_banned_prussia = 0;
 
 // Stalheim
-Q.sh_strength = 400;
+Q.sh_strength = 240;
 Q.sh_militancy = 0.5;
 Q.sh_banned = 0;
 Q.sh_banned_prussia = 0;
+
+// LVVK 
+Q.lv_strength = 310;
+Q.lv_militancy = 0.3;
+Q.lv_banned = 0;
+Q.lv_banned_prussia = 0;
 
 // SA
 Q.sa_strength = 40;
@@ -240,15 +246,15 @@ Q.sa_banned = 0;
 Q.sa_banned_prussia = 0;
 
 //State
-Q.interior_police_strength = 50;
-Q.interior_police_militancy = 1;
+Q.interior_police_strength = 40;
+Q.interior_police_militancy = 2;
 Q.interior_police_loyalty = 0.1;
 
 Q.prussian_police_strength = 140;
 Q.prussian_police_militancy = 1;
 Q.prussian_police_loyalty = 0.2;
 
-Q.reichswehr_strength = 100;
+Q.reichswehr_strength = 210;
 Q.reichswehr_militancy = 5;
 Q.reichswehr_loyalty = 0.1;
 
