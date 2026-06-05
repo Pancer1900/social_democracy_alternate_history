@@ -178,6 +178,9 @@ if (Q.rfb_strength) {
 if (Q.df_strength) {
     Q.df_strength_2 = Q.df_strength.toFixed(1);
 }
+if (Q.lv_strength) {
+    Q.lv_strength_2 = Q.lv_strength.toFixed(1);
+}
 if (Q.sh_strength) {
     Q.sh_strength_2 = Q.sh_strength.toFixed(1);
 }
@@ -200,23 +203,29 @@ if (Q.sa_strength) {
 
 <span style="color: #bdc56c;">**DFVB**</span> Militarization: [+ df_militancy : militancy +]
 
+<span class="tooltip-text" title="The *Ländliche Volks Verteidigungskräfte* is a rural traditionalist right-wing organization of associated with the ." style="color:#095c22;">**LVVK**</span> Strength: [+ lv_strength_2 +] thousand
+
+<span style="color: #095c22;">**LVVK**</span> Militarization: [+ sh_militancy : militancy +]
+
 <span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the MNVP." style="color:#3F7BC1;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
-<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
+<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ lv_militancy : militancy +]
 
 <span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #7e6f61;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
 
 <span style="color: #7e6f61;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
 
-= Official military/paramilitaries
+= State forces
 
 Reichswehr: [+ reichswehr_strength +] thousand troops.
 
-Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +]
+[? if spd_in_government : Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +] ?]
 
-Prussian police: [+ prussian_police_strength +] thousand members.
+Police: [+ prussian_police_strength +] thousand members.
 
-Prussian police loyalty: [+ prussian_police_loyalty : loyalty +]
+[? if spd_in_government : Police loyalty: [+ prussian_police_loyalty : loyalty +] ?]
+
+Interior police: [+ interior_police_strength +] thousand members.
 
 [? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
 
