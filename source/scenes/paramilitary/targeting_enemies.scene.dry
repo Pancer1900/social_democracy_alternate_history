@@ -1,7 +1,7 @@
 title: Targetting our enemies
 new-page: true
-view-if: target_enemies <= 0 
-on-arrival: target_enemies += 7; month_actions += 1; target = 1 if streetfight = 1; target = 0.5 if streetfight = 0; pacifism -= 1;
+view-if: target_enemies_timer <= 0 
+on-arrival: target_enemies_timer += 7; month_actions += 1; target = 1 if streetfight = 1; target = 0.5 if streetfight = 0; pacifism -= 1;
 is-card: true
 card-image: img/rev_prep.jpg
 tags: paramilitary
