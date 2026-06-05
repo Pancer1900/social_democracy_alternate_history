@@ -11,9 +11,9 @@ max-visits: 20
 
 For better or for worse, both the party and the paramilitaries cannot exist without money. The question is: How should we divide up our funds?
 
-- @all_fund: Siphon all of our funds into the Red Guards.
-- @big_fund: Siphon large amounts into the Red Guards.
-- @small_fund: Siphon a small amount into the Red Guards.
+- @all_fund: Siphon all of our funds into our paramilitaries.
+- @big_fund: Siphon large amounts into our paramilitaries.
+- @small_fund: Siphon a small amount into our paramilitaries.
 - @small_decrease: Siphon a small amount back into our coffers.
 - @big_decrease: Siphon a large amount back into our coffers.
 - @return: Maintain current funds.
