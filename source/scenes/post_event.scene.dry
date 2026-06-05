@@ -17,7 +17,6 @@ Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
 Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
 
-Q.radicalisation_sum = Q.radicalization + Q.nsdap_r + Q.spd_r*Q.revolutionaries_strength/100 + Q.labour_unrest/2 + Q.rural_unrest/2;
 
 if (Q.pro_republic < 0) {
     Q.pro_republic = 0;
@@ -316,6 +315,8 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////// DYNAMIC CHANGES 
 
+Q.radicalisation_sum = (Q.radicalization + Q.nsdap_votes + Q.dnvp_votes/2 + Q.gnvp_votes/2 + Q.sapd_votes + Q.spd_votes*(Q.revolutionaries_strength/100 + Q.left_strength/100) + Q.labour_unrest/3 + Q.rural_unrest/3);
+
 Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
 
 Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.rfb_strength/100*Q.rgf_experce*Q.rfb_militancy*Q.dsf_rfb_coop/10);
@@ -453,6 +454,8 @@ Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.r
         }
     }
 
+//// PARAMILITARY CHANGE 
+
     ////////////////////////// annual NSDAP support changes
 
         if (Q.unemployed > 14) {
@@ -475,6 +478,7 @@ Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.r
         Q.old_middle_dnvp += 4/12;
         Q.rural_dnvp += 6/12;
         Q.sh_strength += 15/12;
+        Q.lv_strength += 5/12;
         }
 
 
@@ -488,7 +492,8 @@ Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.r
         Q.rural_nsdap += 8/12;
         Q.unemployed_nsdap += 6/12;
         Q.sa_strength += 40/12;
-        Q.sh_strength += 60/12;
+        Q.sh_strength += 45/12;
+        Q.lv_strength += 15/12;
         } 
     else if (Q.year == 1268) 
         {
@@ -498,8 +503,9 @@ Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.r
         Q.peasants_nsdap += 6/12;
         Q.catholics_nsdap += 6/12;
         Q.unemployed_nsdap += 6/12;
-        Q.sa_strength += 80/12;
-        Q.sh_strength += 60/12;
+        Q.sa_strength += 60/12;
+        Q.sh_strength += 40/12;
+        Q.lv_strength += 30/12;
         } 
     else if (Q.year == 1269) {
         Q.new_middle_nsdap += 7/12;
@@ -508,9 +514,10 @@ Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.r
         Q.peasants_nsdap += 8/12;
         Q.catholics_nsdap += 8/12;
         Q.unemployed_nsdap += 6/12;
-        Q.sa_strength += 100/12;
+        Q.sa_strength += 80/12;
         Q.sa_militancy += 0.01;
-        Q.sh_strength += 70/12;
+        Q.sh_strength += 60/12;
+        Q.lv_strength += 40/12;
         } 
     else if (Q.year == 1270) {
         Q.new_middle_nsdap += 4/12;
@@ -522,6 +529,7 @@ Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.r
         Q.sa_strength += 50/12;
         Q.sa_militancy += 0.005;
         Q.sh_strength += 30/12;
+        Q.lv_strength += 20/12;
         }
      else if (Q.year >= 1272) {
         if (Q.return_to_normalcy) {
