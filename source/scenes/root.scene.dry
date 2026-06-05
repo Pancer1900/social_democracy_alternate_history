@@ -163,7 +163,7 @@ Q.kpm_modifier = 1;
 
 // inter-party relations
 
-Q.kpm_ally = 0;
+Q.kpm_ally = 1;
 Q.left_betray = 0;
 
 Q.liberal_reconciliation = 0;
