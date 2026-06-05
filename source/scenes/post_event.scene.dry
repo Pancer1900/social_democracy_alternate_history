@@ -316,6 +316,10 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////// DYNAMIC CHANGES 
 
+Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
+
+Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.rfb_strength/100*Q.rgf_experce*Q.rfb_militancy*Q.dsf_rfb_coop/10);
+
 //// Liberal 
 
     if (Q.year == 1267 && Q.month == 5) {
@@ -370,6 +374,20 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
     Q.coalition_modifer = 1/((Q.z_relation + Q.ddp_relation + Q.sapd_relation)/180*Q.fvp_modifer*Q.gdsu_modifer*Q.kpm_modifier);
     }
     if (Q.in_popular_front == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
+    Q.coalition_dissent += 1;
+    }
+
+    if (Q.in_progresive_coalition == 1 ) {
+    Q.coalition_modifer = 1/((Q.ddp_relation + Q.sapd_relation)/125*Q.fvp_modifer*Q*Q.kpm_modifier);
+    }
+    if (Q.in_progresive_coalition == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
+    Q.coalition_dissent += 1;
+    }
+
+    if (Q.in_progresive_2_coalition == 1 ) {
+    Q.coalition_modifer = 1/(Q.ddp_relation/65*Q.fvp_modifer);
+    }
+    if (Q.in_progresive_2_coalition == 1 && Q.economic_growth < 0 && Q.economic_plan == 0) {
     Q.coalition_dissent += 1;
     }
 
