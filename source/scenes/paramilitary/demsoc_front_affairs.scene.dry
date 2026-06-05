@@ -1,7 +1,7 @@
 title: DSF Affairs
 new-page: true
-view-if: democratic_front_affairs <= 0
-on-arrival: democratic_front_affairs += 5; month_actions += 1; rg_militarisation_cost = 2; 
+view-if: democratic_front_affairs_timer <= 0
+on-arrival: democratic_front_affairs_timer += 5; month_actions += 1; rg_militarisation_cost = 2; 
 is-card: true
 card-image: img/rb_affairs_2.jpg
 tags: paramilitary
