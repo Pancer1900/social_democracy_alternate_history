@@ -48,6 +48,7 @@ Our forces target the republican <span style="color: #bdc56c;">DFVB</span>, sabo
 choose-if: rgf_agrarian >= 1
 unavailable-subtitle: We dont have agrarian units to combat the <span style="color: #095c22;">LVVK</span>
 on-arrival: lv_strength -= 2*paramililtary_strength*(1/lv_militancy); lv_militancy -= lv_militancy*paramililtary_strength/25; rb_strength -= 4*paramililtary_strength*lv_militancy; rfb_strength -= 2*paramililtary_strength*lv_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; agrarnians_strength += 2; agrarnians_dissent -= 3; revolutionaries_strength += 2; revolutionaries_dissent -= 3; z_relation -= 2/gdsu_modifer; dvp_relation -= 2/ldp_modifer;
+
 Our <span style="color: #5f9403;">RPG</span> alonglise our other paramilitaries engages and saboatges the <span style="color: #095c22;">LVVK</span>, weakienig their grip over the coutryside. 
 
 @sh
