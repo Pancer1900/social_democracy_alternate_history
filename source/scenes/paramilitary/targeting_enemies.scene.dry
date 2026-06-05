@@ -31,7 +31,7 @@ On whom should we focus our fighting effort?
 @rgf
 subtitle: Are our old comrades realy our main enemy?
 view-if: rgf_fight = 1
-on-arrival: rfb_strength -= 2*paramililtary_strength*(1/rfb_militancy); rfb_militancy -= rfb_militancy*paramililtary_strength/25; rb_strength -= 4*paramililtary_strength; reformist_dissent -= 6; reformist_strength += 4; center_dissent += 8; left_dissent += 12; sapd_relation -= 10/kpm_modifier; ddp_relation += 5*fvp_modifer; z_relation += 4*gdsu_modifer; dvp_relation += 3*ldp_modifer;  
+on-arrival: rfb_strength -= 2*target*paramililtary_strength*(1/rfb_militancy); rfb_militancy -= rfb_militancy*target*paramililtary_strength/25; rb_strength -= 4*target*paramililtary_strength; reformist_dissent -= 6; reformist_strength += 4; center_dissent += 8; left_dissent += 12; sapd_relation -= 10/kpm_modifier; ddp_relation += 5*fvp_modifer; z_relation += 4*gdsu_modifer; dvp_relation += 3*ldp_modifer;  
 
 Our forces target the revolutionary <span style="color: #8B0000;">RGF</span>.
 
@@ -40,27 +40,27 @@ This is the end of leftist unity...
 @dff
 choose-if: df_fight >= 1
 unavailable-subtitle: We are not currently in a open conflict with the republican <span style="color: #bdc56c;">DFVB</span>.
-on-arrival: df_strength -= paramililtary_strength*(1/df_militancy); df_militancy -= df_militancy*paramililtary_strength/25; rb_strength -= 4*paramililtary_strength*df_militancy; rfb_strength -= 2*paramililtary_strength*df_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; radicalisation += 1; liberal_reconciliation -= 2; reformist_dissent += 10; reformist_strength -= 4; center_dissent += 4; left_strength += 4; left_dissent -= 6; revolutionaries_strength += 4; revolutionaries_dissent -= 8; ddp_relation -= 5/fvp_modifer; z_relation -= 5/gdsu_modifer; dvp_relation -= 5/ldp_modifer;
+on-arrival: df_strength -= target*paramililtary_strength*(1/df_militancy); df_militancy -= df_militancy*target*paramililtary_strength/25; rb_strength -= 4*target*paramililtary_strength*df_militancy; rfb_strength -= 2*target*paramililtary_strength*df_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; radicalisation += 1; liberal_reconciliation -= 2; reformist_dissent += 10; reformist_strength -= 4; center_dissent += 4; left_strength += 4; left_dissent -= 6; revolutionaries_strength += 4; revolutionaries_dissent -= 8; ddp_relation -= 5/fvp_modifer; z_relation -= 5/gdsu_modifer; dvp_relation -= 5/ldp_modifer;
 
 Our forces target the republican <span style="color: #bdc56c;">DFVB</span>, sabotaging and obstructing their rallys.
 
 @lv
 choose-if: rgf_agrarian >= 1
 unavailable-subtitle: We dont have agrarian units to combat the <span style="color: #095c22;">LVVK</span>
-on-arrival: lv_strength -= 2*paramililtary_strength*(1/lv_militancy); lv_militancy -= lv_militancy*paramililtary_strength/25; rb_strength -= 4*paramililtary_strength*lv_militancy; rfb_strength -= 2*paramililtary_strength*lv_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; agrarnians_strength += 2; agrarnians_dissent -= 3; revolutionaries_strength += 2; revolutionaries_dissent -= 3; z_relation -= 2/gdsu_modifer; dvp_relation -= 2/ldp_modifer;
+on-arrival: lv_strength -= 2*target*paramililtary_strength*(1/lv_militancy); lv_militancy -= lv_militancy*target*paramililtary_strength/25; rb_strength -= 4*target*paramililtary_strength*lv_militancy; rfb_strength -= 2*target*paramililtary_strength*lv_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; agrarnians_strength += 2; agrarnians_dissent -= 3; revolutionaries_strength += 2; revolutionaries_dissent -= 3; z_relation -= 2/gdsu_modifer; dvp_relation -= 2/ldp_modifer;
 
 Our <span style="color: #5f9403;">RPG</span> alonglise our other paramilitaries engages and saboatges the <span style="color: #095c22;">LVVK</span>, weakienig their grip over the coutryside. 
 
 @sh
 subtitle: They are our main enemy and the strongest reactionary force. 
-on-arrival: sh_strength -= 2*paramililtary_strength*(1/sh_militancy); sh_militancy -= sh_militancy*paramililtary_strength/25; rb_strength -= 4*paramililtary_strength*sh_militancy; rfb_strength -= 2*paramililtary_strength*sh_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; revolutionaries_strength += 2; revolutionaries_dissent -= 3; dvp_relation -= 2/ldp_modifer;
+on-arrival: sh_strength -= 2*target*paramililtary_strength*(1/sh_militancy); sh_militancy -= sh_militancy*target*paramililtary_strength/25; rb_strength -= 4*target*paramililtary_strength*sh_militancy; rfb_strength -= 2*target*paramililtary_strength*sh_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; revolutionaries_strength += 2; revolutionaries_dissent -= 3; dvp_relation -= 2/ldp_modifer;
 
 Our forces target and engage the reactionary <span style="color: #3F7BC1;">SH</span>, slowing their growth and combating their intimidation tactics. 
 
 @sa
 choose-if: nazi_urgency >= 3
 unavailable-subtitle: We dont concider the Nazis as a serious enought threat to target them.
-on-arrival: sa_strength -= 2*paramililtary_strength*(1/sa_militancy); sa_militancy -= sa_militancy*paramililtary_strength/25; rb_strength -= 4*paramililtary_strength*sa_militancy; rfb_strength -= 2*paramililtary_strength*sa_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; nazi_urgency += 1; revolutionaries_strength += 1; revolutionaries_dissent -= 2; ddp_relation += 3*fvp_modifer; 
+on-arrival: sa_strength -= 2*target*paramililtary_strength*(1/sa_militancy); sa_militancy -= sa_militancy*target*paramililtary_strength/25; rb_strength -= 4*target*paramililtary_strength*sa_militancy; rfb_strength -= 2*target*paramililtary_strength*sa_militancy*(8/(dsf_rfb_coop + 2)) if kpm_ally = 1; nazi_urgency += 1; revolutionaries_strength += 1; revolutionaries_dissent -= 2; ddp_relation += 3*fvp_modifer; 
 
 Our forces target and engage the Nazi <span style="color: #7e6f61;">SA</span>.
 
