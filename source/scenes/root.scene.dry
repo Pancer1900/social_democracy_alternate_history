@@ -469,7 +469,6 @@ Q.old_blpm_r = 0;
 // for changing the DDP's name to the DStP
 Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
-Q.gdsu_name = "GDSU";
 Q.dvp_name = "LPD";
 
 // party leadership
