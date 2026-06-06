@@ -130,7 +130,8 @@ if (Q.month_actions >= 1) {
 
 // ECONOMY - FUCK ME 
 
-Q.tax = Math.round((Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8)
+Q.tax = Math.round((Q.lower_tax_rates + Q.upper_tax_rates + Q.corporate + Q.tariffs)/8);
+
 Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.investment + Q.rural_eco + Q.industrial_out + Q.public_programe - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade;
 
     // we're basically implicity drawing a Philips curve
@@ -333,7 +334,7 @@ Q.paramililtary_strength = (Q.rb_strength/100*Q.dsf_experce*Q.rb_militancy + Q.r
     if (Q.in_liberal_coalition == 1 && Q.z_relation > 60) {
     Q.lib_dissident += 1;
     }
-    if (Q.in_liberal_coalition == 1 && Q.dvp_relation > 54) {
+    if (Q.in_liberal_coalition == 1 && Q.dvp_relation > 60) {
     Q.lib_dissidnet += 1;
     }
     if (Q.in_liberal_coalition == 1 && Q.economic_growth < 0) {
