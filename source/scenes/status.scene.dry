@@ -62,7 +62,7 @@ Reichstag composition:
 
 [? if spm_formed and spm_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #ff1919;">SPM</span>: [+ sapd_r +]% ?]
 
-{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">[+ gdsu_name +]</span>!}: [+ z_r +]%
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_r +]%
 
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_r +]%
 
