@@ -22,12 +22,12 @@ What should be our official responce to his death?
 - @everyone: Ignore this event and use it to undermine the position of the <span style="color: #48b94a;">GDSU</span>.
 
 @parliment
-on-arrival: new_middle_z += 1; workers_z += 1; peasants_z += 1; pro_republic += 1; rural_z += 1; catholics_z += 1; gdsu_left += 2; z_relation += 5*gdsu_modifer; ddp_relation += 2*fvp_modifer; dvp_relation += 2*ldp_modifer; revolutionaries_dissent += 6; left_dissent += 6; center_dissent += 2; reformist_strength += 5; liberal_reconciliation += 1;
+on-arrival: new_middle_z += 1; workers_z += 1; peasants_z += 1; pro_republic += 1; rural_z += 1; catholics_z += 1; gdsu_left += 2; z_relation += 5*gdsu_modifer; ddp_relation += 2*fvp_modifer; dvp_relation += 2*ldp_modifer; revolutionaries_dissent += 6; left_dissent += 6; center_dissent += 2; reformist_strength += 5; liberal_reconciliation += 1; lib_dissident += 3;
 
 Our delegation asks for a minute of silence during the next Caversket session. It is suprising seeing <span style="color: #d61818;">socialists</span> go this far to commemorate a religous man, this raises may eyebrows not only of the <span style="color: #48b94a;">GDSU</span>, but also our own party members. It may be a breakthrough in our relations with the <span style="color: #48b94a;">GDSU</span>.
 
 @statment
-on-arrival: workers_z += 1; rural_z += 1; catholics_z += 1; gdsu_left += 2; z_relation += 3*gdsu_modifer; revolutionaries_dissent += 2; left_dissent += 2; reformist_strength += 3; 
+on-arrival: workers_z += 1; rural_z += 1; catholics_z += 1; gdsu_left += 2; z_relation += 3*gdsu_modifer; revolutionaries_dissent += 2; left_dissent += 2; reformist_strength += 3; lib_dissident += 1;
 
 Our delegation shows thier greatest respects during the funeral of the passed father of the <span style="color: #dee03a;">Federation</span>. It may be a breakthrough in our relations with the <span style="color: #48b94a;">GDSU</span>.
 
