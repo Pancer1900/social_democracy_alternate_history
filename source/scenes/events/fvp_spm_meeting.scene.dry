@@ -20,12 +20,12 @@ What should be our official policy towards the meeting?
 - @off: No such meeting will take place! Call off this at once.
 
 @parliment
-on-arrival: ddp_relation += 6*fvp_modifer; dvp_relation += 2*ldp_modifer; revolutionaries_dissent += 7; left_dissent += 7; reformist_strength += 5; liberal_reconciliation += 2; fvp_ideology += 2;
+on-arrival: ddp_relation += 6*fvp_modifer; dvp_relation += 2*ldp_modifer; revolutionaries_dissent += 7; left_dissent += 7; reformist_strength += 5; liberal_reconciliation += 2; fvp_ideology += 2; lib_dissident += 2;
 
 We use this meeting to improve our relations with the <span style="color: #ddd500;">FVP</span> and express our desire to reconcliate with the liberas, we even float the ideas of recreating the *Zeltbrin Coaltion*.
 
 @statment
-on-arrival: ddp_relation += 4*fvp_modifer; revolutionaries_dissent += 2; left_dissent += 2; reformist_strength += 3; fvp_ideology += 1;
+on-arrival: ddp_relation += 4*fvp_modifer; revolutionaries_dissent += 2; left_dissent += 2; reformist_strength += 3; fvp_ideology += 1; lib_dissident += 1;
 
 The meeting brings us closer with the <span style="color: #ddd500;">FVP</span>, but it may raise some voices at the left of our party.
 
