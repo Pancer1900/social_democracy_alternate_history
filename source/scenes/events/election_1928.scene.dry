@@ -376,6 +376,7 @@ There are some potential coalition arrangements.
 - @spd_majority
 - @weimar_coalition
 - @grand_coalition
+- @grand_coalition_2
 - @new_grand_coalition
 - @unity_government
 - @far_right_coalition
@@ -1098,7 +1099,7 @@ Who should be the chancellor?
 
 # GRAND COALITIION
 
-@grand_coalition
+@grand_coalition_2
 title: We can form a Grand Coalition (BLPM).
 view-if: grand_coalition_2 >= 50 and liberal_reconciliation >= 10 and blpm_formed = 1
 choose-if: liberal_reconciliation >= 15 and z_relation >= 60 and blpm_relation >= 60 and sapd_formed = 1
