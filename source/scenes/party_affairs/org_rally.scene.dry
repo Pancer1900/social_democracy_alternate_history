@@ -43,6 +43,6 @@ Our calls for unity across social groups mostly agittates the farmers and peasan
 @defend
 view-if: labour_sta < 2
 subtitle: Now that the opressive state has shown its true colors we must stand strong with the unions!
-on-arrival: labor_strength += 4; organisation_workers += 1; labor_dissent -= 4; labor_opposition += 1; workers_spd += 2*(organisation_workers/20)*(1+(labor_strength/100))
+on-arrival: labor_strength += 4; organisation_workers += 1; labor_dissent -= 4; workers_spd += 2*(organisation_workers/20)*(1+(labor_strength/100)); union_defence += 0.05;
 
 We stand commited to defending the unions against the opressive state!
