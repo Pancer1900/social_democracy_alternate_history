@@ -6,6 +6,7 @@ Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
 Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
+Q.radicalisation_disp = Q.radicalisation_sum;
 if (Q.socialism) {
     Q.socialism_disp = Q.socialism_disp.toFixed(1);
 }
@@ -104,7 +105,7 @@ Support for the <span style="color: #d61818;">Socialism</span>: [+ socialism_dis
 
 Support for the <span style="color: #1e27c9;">Nationalism</span>: [+ nationalism_disp +]%
 
-Radicalisation of the People: [+ radicalisation_sum +]%
+Radicalisation of the People: [+ radicalisation_disp +]%
 
 @politics
 
