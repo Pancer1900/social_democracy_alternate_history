@@ -40,9 +40,9 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [? if president_party = 1: <span style="color: #940000;">[+ president +]</span> KPM ?][? if president_party = 9: <span style="color: #caa58b;">[+ president +]</span> LDP ?]
+President: [? if president_party = 1: <span style="color: #940000;">[+ president +] (*KPM*)</span> ?][? if president_party = 2: <span style="color: #dd5b00;">[+ president +] (*ASUM*)</span> ?][? if president_party = 3: <span style="color: #dc0200;">[+ president +] (*[+ spd_name +]*)</span> ?][? if president_party = 4: <span style="color: #ff1919;">[+ president +] (*SPM*)</span> ?][? if president_party = 5: <span style="color: #ddd500;">[+ president +] (*FVP*)</span> ?][? if president_party = 6: <span style="color: #48b94a;">[+ president +] (*[+ gdsu_name +]*)</span> ?][? if president_party = 7: <span style="color: #00e8ff;">[+ president +] (*BLPM*)</span> ?][? if president_party = 8: <span style="color: #4a9fde;">[+ president +] (*PPU*)</span> ?][? if president_party = 9: <span style="color: #caa58b;">[+ president +] (*[+ dvp_name +]*)</span> ?][? if president_party = 10: <span style="color: #808080;">[+ president +] (*I*)</span> ?][? if president_party = 11: <span style="color: #774ae2;">[+ president +] (*GNVP*)</span> ?][? if president_party = 12: <span style="color: #3F7BC1;">[+ president +] (*MNVP*)</span> ?][? if president_party = 2: <span style="color: #706a65;">[+ president +] (*MSP*)</span> ?]
 
-Chancellor: [+ chancellor +] 
+Chancellor: [? if chancellor_party = 1: <span style="color: #940000;">[+ chancellor +] (*KPM*)</span> ?][? if chancellor_party = 2: <span style="color: #dd5b00;">[+ chancellor +] (*ASUM*)</span> ?][? if chancellor_party = 3: <span style="color: #dc0200;">[+ chancellor +] (*[+ spd_name +]*)</span> ?][? if chancellor_party = 4: <span style="color: #ff1919;">[+ chancellor +] (*SPM*)</span> ?][? if chancellor_party = 5: <span style="color: #ddd500;">[+ chancellor +] (*FVP*)</span> ?][? if chancellor_party = 6: <span style="color: #48b94a;">[+ chancellor +] (*[+ gdsu_name +]*)</span> ?][? if chancellor_party = 7: <span style="color: #00e8ff;">[+ chancellor +] (*BLPM*)</span> ?][? if chancellor_party = 8: <span style="color: #4a9fde;">[+ chancellor +] (*PPU*)</span> ?][? if chancellor_party = 9: <span style="color: #caa58b;">[+ chancellor +] (*[+ dvp_name +]*)</span> ?][? if chancellor_party = 10: <span style="color: #808080;">[+ chancellor +] (*I*)</span> ?][? if chancellor_party = 11: <span style="color: #774ae2;">[+ chancellor +] (*GNVP*)</span> ?][? if chancellor_party = 12: <span style="color: #3F7BC1;">[+ chancellor +] (*MNVP*)</span> ?][? if chancellor_party = 2: <span style="color: #706a65;">[+ chancellor +] (*MSP*)</span> ?]
 
 Reichstag composition:
 
@@ -62,7 +62,7 @@ Reichstag composition:
 
 [? if spm_formed and spm_r > 0: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #ff1919;">SPM</span>: [+ sapd_r +]% ?]
 
-{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_r +]%
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">[+ gdsu_name +]</span>!}: [+ z_r +]%
 
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_r +]%
 
@@ -70,7 +70,7 @@ Reichstag composition:
 
 {!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_r +]%
 
-{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_r +]%
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">[+ dvp_name +]</span>!}: [+ dvp_r +]%
 
 Others: [+ other_r +]%
 
