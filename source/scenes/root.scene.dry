@@ -493,10 +493,14 @@ Q.economic_records = [];
 
 
 // State of the government
-Q.president = "Hindenburg";
+Q.president = "Heinz";
+Q.president_party = 9;
+// 1 - KPM, 2 - ASUM, 3 - VDSPM, 4 - SPM, 5 - FVP, 6 - GDSU, 7 - BLPM, 8 - PPU, 9 - LDP, 10 - I, 11 - GNVP, 12 - MNVP, 13 - MSP 
+
 // starting chancellor: Wilhelm Marx
-Q.chancellor = "Marx";
-Q.chancellor_party = 'Z';
+Q.chancellor = "Schmit";
+Q.chancellor_party = 9;
+
 Q.spd_in_government = 0;
 Q.ppu_in_government = 1;
 Q.z_in_government = 1;
@@ -510,12 +514,13 @@ Q.nsdap_in_government = 0;
 
 Q.in_liberal_coalition = 1; // Liberal coalition = FVP + GDSU + LDP + PPU
 Q.in_right_coalition = 0; // Right coalition = LDP + PPU + others + MNVP
-Q.in_center_right_coalition = 0; // Right coalition = GDSu + LDP + PPU + others + MNVP
+Q.in_center_right_coalition = 0; // Right coalition = GDSU + LDP + PPU + others + MNVP
 Q.in_weimar_coalition = 0; // Weimar coalition = VDSPM + FVP + GDSU
 Q.in_popular_front = 0; // Popular front = KPM + VDSPM + FVP + GDSU
 Q.in_progresive_2_coalition = 0; // Progresive coalition = VDSPM + FVP 
 Q.in_progresive_coalition = 0; // Progresive coalition = KPM + VDSPM + FVP 
-Q.in_grand_coalition = 0; // Grand coalition = VDSPM + FVP + GDSU + LDP + PPU
+Q.in_grand_coalition = 0; // Grand coalition = VDSPM + FVP + GDSU + LDP + PPU + BLPM
+Q.in_grand_coalition_2 = 0; // Grand coalition = VDSPM + FVP + GDSU + BLPM + PPU
 Q.in_left_front = 0; // left coalition = KPM + VDSPM
 
 // emergency government containing the SPD: only president Braun can do this.
@@ -601,7 +606,7 @@ Q.perci_sta = 'Stable';
 Q.labour_unrest = 10;
 Q.labor_opposition = 2; // opposition towards opressive governance
 
-Q.rural_unrest = 25;
+Q.rural_unrest = 20;
 
 
 // Relations with the countries
