@@ -126,7 +126,6 @@ if (Q.month_actions >= 1) {
     Q.economic_records.push({'date': new Date(Q.year, Q.month - 1),
                              'inflation': Q.inflation,
                              'unemployment': Q.unemployed});
-    }
     // change economic stats...
 
 // ECONOMY - FUCK ME 
