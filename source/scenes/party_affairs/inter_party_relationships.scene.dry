@@ -26,7 +26,7 @@ subtitle: -1 resources
 view-if: sapd_formed = 1 or asum_formed = 1 or spm_formed = 1
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: resources -= 1; spm_relations += 5; sapd_relations += 5; asum_relations += 5
+on-arrival: resources -= 1; spm_relations += 5; sapd_relations += 5*kpm_modifier; asum_relations += 5
 
 We try to repair the relations between the bulk of the party and their splinters 
 
