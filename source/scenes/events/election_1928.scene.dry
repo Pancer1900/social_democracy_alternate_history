@@ -122,10 +122,10 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
 
 
 // coalitions - VDSPM
-Q.left_coalition = (Q.spd_r + Q.sapd_r + Q.spm_r + Q.asum_r).toFixed(1).toFixed(1);
+Q.left_coalition = (Q.spd_r + Q.sapd_r + Q.spm_r + Q.asum_r).toFixed(1);
 Q.progressive_coalition = (Q.spd_r + Q.sapd_r + Q.spm_r + Q.asum_r + Q.ddp_r).toFixed(1);
 Q.popular_front_coalition = (Q.spd_r + Q.sapd_r + Q.spm_r + Q.asum_r + Q.z_r + Q.ddp_r).toFixed(1);
-Q.weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.spm_r).toFixed(1).toFixed(1);
+Q.weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.spm_r).toFixed(1);
 Q.zeltbrin_plus_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.blpm_r + Q.ppu_r + Q.spm_r).toFixed(1);
 Q.grand_coalition = (Q.spd_r + Q.spm_r + Q.ddp_r + Q.z_r + Q.ppu_r + Q.dvp_r + Q.blpm_r).toFixed(1);
 
@@ -265,7 +265,13 @@ data = data.concat([
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_r*5),
+        "seats": Math.round(Q.other_r*2),
+    },
+    {
+        "id": "ltp",
+        "legend": "ltp",
+        "name": "ltp",
+        "seats": Math.round(Q.other_r*3),
     },
 ]);
 if (Q.gnvp_formed && Q.gnvp_r) {
