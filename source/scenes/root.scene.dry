@@ -469,6 +469,7 @@ Q.old_blpm_r = 0;
 // for changing the DDP's name to the DStP
 Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
+Q.gdsu_name = "GDSU";
 Q.dvp_name = "LPD";
 
 // party leadership
@@ -497,7 +498,7 @@ Q.president = "Heinz";
 Q.president_party = 9;
 // 1 - KPM, 2 - ASUM, 3 - VDSPM, 4 - SPM, 5 - FVP, 6 - GDSU, 7 - BLPM, 8 - PPU, 9 - LDP, 10 - I, 11 - GNVP, 12 - MNVP, 13 - MSP 
 
-// starting chancellor: Wilhelm Marx
+// starting chancellor
 Q.chancellor = "Schmit";
 Q.chancellor_party = 9;
 
