@@ -124,10 +124,12 @@ if (Q.kpd_r >= Q.spd_r && Q.kpd_r >= Q.nsdap_r) {
 // coalitions - VDSPM
 Q.left_coalition = (Q.spd_r + Q.sapd_r + Q.spm_r + Q.asum_r).toFixed(1);
 Q.progressive_coalition = (Q.spd_r + Q.sapd_r + Q.spm_r + Q.asum_r + Q.ddp_r).toFixed(1);
+Q.progressive_coalition_2 = (Q.spd_r + Q.spm_r + Q.ddp_r).toFixed(1);
 Q.popular_front_coalition = (Q.spd_r + Q.sapd_r + Q.spm_r + Q.asum_r + Q.z_r + Q.ddp_r).toFixed(1);
 Q.weimar_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.spm_r).toFixed(1);
 Q.zeltbrin_plus_coalition = (Q.spd_r + Q.ddp_r + Q.z_r + Q.blpm_r + Q.ppu_r + Q.spm_r).toFixed(1);
 Q.grand_coalition = (Q.spd_r + Q.spm_r + Q.ddp_r + Q.z_r + Q.ppu_r + Q.dvp_r + Q.blpm_r).toFixed(1);
+Q.grand_coalition_2 = (Q.spd_r + Q.spm_r + Q.ddp_r + Q.z_r + Q.ppu_r + Q.blpm_r).toFixed(1);
 
 Q.liberal_coalition = (Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r + Q.blpm_r).toFixed(1); 
 Q.wide_liberal_coalition = (Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r + Q.other_r + Q.blpm_r).toFixed(1);
@@ -431,8 +433,10 @@ go-to: coalition_menu
 
 @wide_liberal_coalition
 title: The liberal coalition can be formed. 
+choose-if: wide_liberal_coalition*1.15 > center_right_coalition
+unavailable-subtitle: <span style="color: #caa58b;">LDP</span> prefers the Center-Right coalition over an unsable Liberal coalition
 subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> and others: [+ wide_liberal_coalition +]%
-view-if: wide_liberal_coalition >= 50 and liberal_coalition < 50 and wide_liberal_coalition*1.1 > center_right_coalition
+view-if: wide_liberal_coalition >= 50 and liberal_coalition < 50
 
 There are enough votes for a wide-liberal coalition of the <span style="color: #caa58b;">LDP</span>, <span style="color: #48b94a;">GDSU</span>, <span style="color: #ddd500;">FVP</span> and <span style="color: #4a9fde;">PPU</span> and other small supporting parties.
 
@@ -444,11 +448,8 @@ choose-if: fvp_path != 1
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @wide_liberal_fail
-on-arrival: lib_failed = 1;
+on-arrival: lib_failed += 1;
 view-if: fvp_path = 1
-
-Liberals cannot form a working cabinet...
-
 go-to: coalition_menu
 
 # CENTRE-RIGHT COALITION
@@ -464,7 +465,7 @@ There are enough votes for a center-right coalition of the <span style="color: #
 - @center_right_fail: Intrenal bickering bettwen the parties obstruct the creation of the goverment.
 
 @center_right_2
-choose-if: not(ldp_ideology + gdsu_ideology < 1)
+choose-if: (ldp_ideology + gdsu_ideology) <= 1
 go-to: center_right_3 if neuman_dead = 0; center_right_4 if neuman_dead = 1 and dvp_r > dnvp_r; center_right_5 if neuman_dead = 1 and dnvp_r > dvp_r
 
 @center_right_3
@@ -483,11 +484,8 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Igo"; chanc
 Olaf Igo of the independent becomes the new chancellor.
 
 @center_right_fail
-on-arrival: lib_failed = 1;
-view-if: (ldp_ideology + gdsu_ideology) < 1
-
-Center-Right cabinet cannot form...
-
+on-arrival: lib_failed += 1;
+view-if: (ldp_ideology + gdsu_ideology) >= 1
 go-to: coalition_menu
 
 # RIGHT COALITION
@@ -1077,11 +1075,14 @@ achievement: minderheitsregierung
 
 We have won the vote of no confidence, and are currently ruling under an SPD minority government. Now our task is to fix the country.
 
+# ZELTBRIN
 
 @weimar_coalition
-title: We can form a Weimar Coalition.
-subtitle: SPD + Z + [+ ddp_name +] [? if sapd_formed and kpd_relation >= 30 : + SAPD toleration ?] ([+ weimar_coalition +]%)
+title: We can form a Zeltbrin Coalition.
+subtitle: SPD + Z + [+ ddp_name +] ([+ weimar_coalition +]%)
 view-if: weimar_coalition >= 50
+choose-if: liberal_reconciliation >= 10 and z_relation >= 60
+unavailable-subtitle: [? if liberal_reconciliation >= 10 : We haven't reconciliatiatied with the Liberals enough ?] [? if z_relation < 60 : <span style="color: #48b94a;">GDSU</span> doesn't trust us enough to enter a government with us. ?] 
 on-arrival: leverage += 5; leverage += 5 if z_party_leader == "Joos"; in_weimar_coalition = 1; spd_in_government = 1; in_popular_front = 0; in_left_front = 0; foreign_minister_party = "Z"; interior_minister_party = "Z"; justice_minister_party = ddp_name; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = ddp_name; finance_minister_party = "Z"; agriculture_minister_party = "Z"; foreign_minister = "Wirth"; interior_minister = "Wirth"; justice_minister = "Koch-Weser"; labor_minister = "Stegerwald"; reichswehr_minister = "Groener"; economic_minister = "Dietrich"; finance_minister = "Köhler"; agriculture_minister = "Hermes";
 achievement: weimar_coalition
 
@@ -1091,24 +1092,27 @@ Who should be the chancellor?
 
 - @muller
 - @braun
-- @breitscheid_coalition_chancellor
 - @wels
 - @z_chancellor
 - @z_chancellor_wirth
 
-@breitscheid_coalition_chancellor
-title: Rudolf Breitscheid for Chancellor
-subtitle: Breitscheid is viewed as friendlier towards the left of the SPD.
-view-if: year >= 1930
-on-arrival: chancellor = "Breitscheid"; chancellor_party = "SPD";
-go-to: ministries
+# GRAND COALITIION
 
-Rudolf Breitscheid has been appointed chancellor.
+@grand_coalition
+title: We can form a Grand Coalition (BLPM).
+view-if: grand_coalition_2 >= 50 and liberal_reconciliation >= 10 and blpm_formed = 1
+choose-if: liberal_reconciliation >= 15 and z_relation >= 60 and blpm_relation >= 60 and sapd_formed = 1
+unavailable-subtitle: [? if liberal_reconciliation >= 15 : We haven't reconciliatiatied with the Liberals enough ?] [? if z_relation < 60 : <span style="color: #48b94a;">GDSU</span> doesn't trust us enough to enter a government with us. ?] [? if blpm_relation < 60 : <span style="color: #caa58b;">LDP</span> doesn't trust us enough to enter a government with us. ?] [? if sapd_formed = 1 : Liberals won't ever cooperate with the <span style="color: #b30e0e;">Communists</span> ?] 
+subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP ([+ grand_coalition_2 +]%)
+on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
+go-to: grand_coalition_spd_lead if (n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and ((n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
 
 
 @grand_coalition
 title: We can form a Grand Coalition.
-view-if: grand_coalition >= 50 and grand_coalition_failed == 0
+view-if: grand_coalition >= 50 and liberal_reconciliation >= 10
+choose-if: liberal_reconciliation >= 20 and z_relation >= 60 and dvp_relation >= 60 and sapd_formed = 1
+unavailable-subtitle: [? if liberal_reconciliation >= 20 : We haven't reconciliatiatied with the Liberals enough ?] [? if z_relation < 60 : <span style="color: #48b94a;">GDSU</span> doesn't trust us enough to enter a government with us. ?] [? if dvp_relation < 60 : <span style="color: #caa58b;">LDP</span> doesn't trust us enough to enter a government with us. ?] [? if sapd_formed = 1 : Liberals won't ever cooperate with the <span style="color: #b30e0e;">Communists</span> ?] 
 subtitle: SPD + Z + BVP + [+ ddp_name +] + DVP ([+ grand_coalition +]%)
 on-arrival: in_grand_coalition = 1; in_popular_front = 0; in_left_front = 0
 go-to: grand_coalition_spd_lead if (n_elections <= 1 and largest_party == "SPD") or (largest_party == "SPD" and spd_r >= 30) or president = "Braun"; grand_coalition_z_lead if president != "Braun" and ((n_elections > 1 and spd_r < 30) or (n_elections <= 1 and largest_party != "SPD"))
