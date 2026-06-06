@@ -9,6 +9,15 @@ Q.radicalisation_disp = Math.round(Q.radicalisation_sum);
 if (Q.radicalisation_sum) {
     Q.radicalisation_disp = Q.radicalisation_sum.toFixed(1);
 }
+if (Q.socialism) {
+    Q.radicalisation_disp = Q.socialism_disp.toFixed(1);
+}
+if (Q.nationalism) {
+    Q.radicalisation_disp = Q.nationalism_disp.toFixed(1);
+}
+if (Q.pro_republic) {
+    Q.radicalisation_disp = Q.pro_republic_disp.toFixed(1);
+}
 if (Q.unemployed) {
     Q.unemployed_2 = Q.unemployed.toFixed(1);
 }
@@ -29,12 +38,10 @@ Resources available: [+ resources +]
 
 Paramilitary Resources: [+ para_resources  +]
 
-[+ spd_name +] position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
-[? if in_weimar_coalition and spd_in_government: Weimar Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: SPD majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
+<span style="color: #dc0200;">[+ spd_name +]</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
+[? if in_weimar_coalition and spd_in_government: Zeltbrin Coalition ?][? if in_grand_coalition_2 and spd_in_government: Grand Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_progresive_2_coalition and spd_in_government: Progresive Coalition ?][? if in_progresive_coalition and spd_in_government: Progresive Coalition ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #dc0200;">[+ spd_name +]</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
 
-[? if spd_in_government and not in_spd_majority and not in_left_front : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
-
-[? if spd_in_government and (in_left_front or in_popular_front): KPD coalition dissent: [+ kpd_coalition_dissent : coalition_dissent +] ?]
+[? if spd_in_government and not in_spd_majority and not in_emergency_government : Coalition dissent: [+ coalition_dissent : coalition_dissent +] ?]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
@@ -94,13 +101,13 @@ Economic growth: [+ economic_growth_2 +]%
 
 = Public Opinion
 
-Support for the Republic: [+ pro_republic_disp +]%
+Support for the <span style="color: #dee03a;">Republic</span>: [+ pro_republic_disp +]%
 
-Support for the Socialism: [+ socialism_disp +]%
+Support for the <span style="color: #d61818;">Socialism</span>: [+ socialism_disp +]%
 
-Support for the Nationalism: [+ nationalism_disp +]%
+Support for the <span style="color: #1e27c9;">Nationalism</span>: [+ nationalism_disp +]%
 
-Radicalisation of the Nation: [+ radicalisation_disp +]%
+Radicalisation of the People: [+ radicalisation_disp +]%
 
 @politics
 
