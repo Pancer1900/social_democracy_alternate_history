@@ -573,6 +573,9 @@ table {
 .seat.other {
     fill: #dddddd;
 }
+.seat.ltp {
+    fill: #1b7035;
+}
 .seat.dnvp {
     fill: #3F7BC1;
 }
@@ -582,14 +585,11 @@ table {
 .seat.sapd {
     fill: #940000;
 }
-}
 .seat.asum {
     fill: #dd5b00;
 }
-}
 .seat.gnvp{
     fill: #774ae2;
-}
 }
 .seat.blpm {
     fill: #00e8ff;
