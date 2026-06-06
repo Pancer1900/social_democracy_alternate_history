@@ -40,9 +40,9 @@ Internal dissent: [+ dissent_percent : dissent +]
 
 = Government
 
-President: [+ president +]
+President: [? if president_party = 1: <span style="color: #940000;">[+ president +]</span> KPM ?][? if president_party = 9: <span style="color: #caa58b;">[+ president +]</span> LDP ?]
 
-Chancellor: [+ chancellor +] ([+ chancellor_party +])
+Chancellor: [+ chancellor +] 
 
 Reichstag composition:
 
