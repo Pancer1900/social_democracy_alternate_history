@@ -340,7 +340,7 @@ if (Q.agrarnians_split == 1 ) {
     Q.agrarnians_dissent == -1;
     }
 
-Q.radicalisation_sum = Q.radicalization + Q.nsdap_votes + Q.dnvp_votes/2 + Q.gnvp_votes/2 + Q.sapd_votes + Q.spd_votes*(Q.revolutionaries_strength/100 + Q.left_strength/100) + Q.labour_unrest/3 + Q.rural_unrest/3;
+Q.radicalisation_sum = Q.radicalization + (Q.nsdap_r + Q.dnvp_r/2 + Q.gnvp_r/2 + Q.sapd_r + Q.spd_r*(Q.revolutionaries_strength/100 + Q.left_strength/100) + Q.labour_unrest/3 + Q.rural_unrest/3);
 
 Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
 
