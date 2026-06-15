@@ -594,6 +594,24 @@ table {
 .seat.blpm {
     fill: #00e8ff;
 }
+.seat.agr {
+    fill: #dd5b00;
+}
+.seat.rev {
+    fill: #b50000;
+}
+.seat.lef {
+    fill: #940000;
+}
+.seat.cen {
+    fill: #ff1919;
+}
+.seat.lab {
+    fill: #c96b65;
+}
+.seat.ref {
+    fill: #dc0200;
+}
 
 .tooltip-text {
     text-decoration: underline;
