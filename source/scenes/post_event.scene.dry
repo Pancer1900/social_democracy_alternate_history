@@ -15,7 +15,6 @@ for (var c of Q.classes) {
 Q.pro_republic = Math.round(Q.pro_republic);
 Q.nationalism = Math.round(Q.nationalism);
 Q.socialism = Math.round(Q.socialism);
-Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
 
 
 if (Q.pro_republic < 0) {
@@ -316,10 +315,29 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
 
     //////////////////////////// DYNAMIC CHANGES 
 
-if (Q.unions_independent  == 1 ) {
+if (Q.unions_independent == 1 ) {
     Q.labor_strength == 1;
     Q.labor_dissent == -1;
+    }
 
+if (Q.left_split == 1 ) {
+    Q.left_strength == 1;
+    Q.left_dissent == -1;
+    }
+
+if (Q.revolutionaries_split == 1 ) {
+    Q.revolutionaries_strength == 1;
+    Q.revolutionaries_dissent == -1;
+    }
+
+if (Q.reformists_resigned == 1 ) {
+    Q.reformist_strength == 1;
+    Q.reformist_dissent == -1;
+    }
+
+if (Q.agrarnians_split == 1 ) {
+    Q.agrarnians_strength == 1;
+    Q.agrarnians_dissent == -1;
     }
 
 Q.radicalisation_sum = (Q.radicalization + Q.nsdap_votes + Q.dnvp_votes/2 + Q.gnvp_votes/2 + Q.sapd_votes + Q.spd_votes*(Q.revolutionaries_strength/100 + Q.left_strength/100) + Q.labour_unrest/3 + Q.rural_unrest/3);
