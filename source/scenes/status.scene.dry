@@ -211,11 +211,11 @@ if (Q.sa_strength) {
 
 <span class="tooltip-text" title="The *Ländliche Volks Verteidigungskräfte* is a rural traditionalist right-wing organization of associated with the ." style="color:#095c22;">**LVVK**</span> Strength: [+ lv_strength_2 +] thousand
 
-<span style="color: #095c22;">**LVVK**</span> Militarization: [+ sh_militancy : militancy +]
+<span style="color: #095c22;">**LVVK**</span> Militarization: [+ lv_militancy : militancy +]
 
 <span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the MNVP." style="color:#3F7BC1;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
 
-<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ lv_militancy : militancy +]
+<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
 
 <span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #7e6f61;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
 
