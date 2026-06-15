@@ -5,8 +5,7 @@ on-arrival: {!
 Q.pro_republic_disp = Math.round(Q.pro_republic);
 Q.nationalism_disp = Math.round(Q.nationalism);
 Q.socialism_disp = Math.round(Q.socialism);
-Q.radicalisation_sum = Math.round(Q.radicalisation_sum);
-Q.radicalisation_disp = Q.radicalisation_sum;
+
 if (Q.socialism) {
     Q.socialism_disp = Q.socialism_disp.toFixed(1);
 }
@@ -35,6 +34,8 @@ if (Q.economic_growth) {
 Resources available: [+ resources +]
 
 Paramilitary Resources: [+ para_resources  +]
+
+TEST [+ radicalisation_sum  +]
 
 <span style="color: #dc0200;">[+ spd_name +]</span> position: [? if spd_toleration : toleration ?][? if spd_in_government : in government - ?][? if spd_toleration == 0 and spd_in_government == 0 and spd_caretaker == 0 : opposition ?][? if spd_caretaker : caretaker government ?]
 [? if in_weimar_coalition and spd_in_government: Zeltbrin Coalition ?][? if in_grand_coalition_2 and spd_in_government: Grand Coalition ?][? if in_grand_coalition and spd_in_government: Grand Coalition ?][? if in_popular_front and spd_in_government: Popular Front ?][? if in_progresive_2_coalition and spd_in_government: Progresive Coalition ?][? if in_progresive_coalition and spd_in_government: Progresive Coalition ?][? if in_left_front and spd_in_government: Left Front ?][? if in_spd_majority and spd_in_government: <span style="color: #dc0200;">[+ spd_name +]</span> majority ?][? if in_minority_government and spd_in_government: minority government ?][? if in_emergency_government and spd_in_government: emergency government ?]
