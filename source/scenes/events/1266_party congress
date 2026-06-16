@@ -8,7 +8,7 @@ new-page: true
 
 = Congress
 
-The Caversket elections are to be held now.
+The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**</span>. 
 
 - @steats: May the delegates take their seats...
 
@@ -21,7 +21,6 @@ Q.agr_seats = Q.agrarnians_strength/Q.total_strength;
 Q.cen_seats = Q.center_strength/Q.total_strength;
 Q.lab_seats = Q.labor_strength/Q.total_strength;
 Q.ref_seats = Q.reformist_strength/Q.total_strength;
-
 
 !}
 on-display: {!
@@ -100,51 +99,17 @@ go-to: coalition_menu
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
+[? if revolutionaries_split == 0 : {!<tr><td><div class="box" style='background-color:#b50000'> </div> !}Revolutionatries: {!</td><td>!} [+ rev_seats +]% ?]
 
-[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_r +]% {!</td><td>!} [+ str_change_asum +] {!</td></tr>!} ?]
+[? if left_split == 0 : {!<tr><td><div class="box" style='background-color:#940000'> </div> !}Left: {!</td><td>!} [+ lef_seats +]% ?]
 
-{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
+[? if agrarnians_split == 0 : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}Agrarians: {!</td><td>!} [+ agr_seats +]% ?]
 
-{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
+[? if centrists_resign == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Center: {!</td><td>!} [+ cen_seats +]% ?]
 
-[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_r +]% {!</td><td>!} [+ str_change_blpm +] {!</td></tr>!} ?]
+[? if unions_independent == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Labour: {!</td><td>!} [+ lab_seats +]% ?]
 
-{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_r +]% {!</td><td>!} [+ str_change_ppu +] {!</td></tr>!}
+[? if reformists_resigned == 0 : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}Refrormist: {!</td><td>!} [+ ref_seats +]% ?]
 
-{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
- 
-{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
-
-[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_r +]% {!</td><td>!} [+ str_change_gnvp +] {!</td></tr>!} ?]
-
-{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
 {!</table>!}
-
-**Potential coalitions:**
-
-Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition +]%
-
-[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition +]% ?]
-
-[? if liberal_reconciliation >= 12: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition +]% ?]
-
-Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition +]%
-
-[? if liberal_coalition < 50 : Wide - Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + others): [+ wide_liberal_coalition +]% ?]
-
-Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span>  ?][? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span>  ?]): [+ center_right_coalition +]%
-
-Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span> ?]): [+ right_coalition +]%
-
-[? if nazi_urgency <= 1 and nsdap_r >= 15 : The rapid rise in NSDAP votes is extremely worrying. Many had believed that the party was moribund; now, some of us consider it to be the greatest threat to democracy in Germany. ?]
-
-[? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
-
-There are some potential coalition arrangements.
-
-@coalition_menu
