@@ -1,11 +1,12 @@
-title: IV Party Congress
-new-page: true
+title: IV Plenary Party Congress
+subtitle: Here we will decide the future of our party. 
 tags: event
-priority: 1
-view-if: year = 1266 and month = 4 
-face-image: img/Rothe_Wahlen_1903.jpg
+view-if: year = 1266 and month = 4
+priority: 2
+max-visits: 1
+new-page: true
 
-= Congress, [+ month : month +] [+ year +]
+= Congress
 
 The Caversket elections are to be held now.
 
