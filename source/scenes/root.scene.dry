@@ -82,6 +82,8 @@ Q.agrarnians_split = 0;
 Q.revolutionaries_split = 0;
 Q.reformists_resigned = 0;
 
+Q.ref_seats = 0;
+
 // have we discovered neorevisionism?
 Q.neorevisionism = 0;
 
