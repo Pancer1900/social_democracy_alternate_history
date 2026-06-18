@@ -1,7 +1,7 @@
 title: IV Plenary Party Congress
 subtitle: Here we will decide the future of our party. 
 tags: event
-view-if: year = 1266 and month = 4
+view-if: year = 1266 and month = 4 and pre_congress_seen = 1
 priority: 2
 max-visits: 1
 new-page: true
@@ -15,13 +15,12 @@ The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**<
 @steats
 on-arrival: {!
 
-Q.rev_seats = Q.revolutionaries_strength/Q.total_strength;
-Q.lef_seats = Q.left_strength/Q.total_strength;
-Q.agr_seats = Q.agrarnians_strength/Q.total_strength;
-Q.cen_seats = Q.center_strength/Q.total_strength;
-Q.lab_seats = Q.labor_strength/Q.total_strength;
-Q.ref_seats = Q.reformist_strength/Q.total_strength;
-Q.ref_seats = 2;
+Q.rev_seats = Q.revolutionaries_strength/total_strength;
+Q.lef_seats = Q.left_strength/total_strength;
+Q.agr_seats = Q.agrarnians_strength/total_strength;
+Q.cen_seats = Q.center_strength/total_strength;
+Q.lab_seats = Q.labor_strength/total_strength;
+Q.ref_seats = Q.reformist_strength/total_strength;
 
 !}
 on-display: {!
@@ -113,3 +112,9 @@ if (window && d3) {
 [? if reformists_resigned == 0 : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}Refrormist: {!</td><td>!} [+ ref_seats +]% ?]
 
 {!</table>!}
+
+-@congress: Let the Congress Begin
+
+@congress
+
+
