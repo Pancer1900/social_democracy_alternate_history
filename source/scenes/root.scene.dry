@@ -140,6 +140,7 @@ Q.party_policy_coalition = 1; // COALITIONS
 Q.united_front_theory = 0; // UNITED FRONT THEORY
 Q.party_policy_unions = 0; // UNIONS
 Q.party_policy_land = 0; // LAND REFROM 
+Q.pre_congress_seen = 0;
 
 Q.party_defence = 1;
 Q.union_defence = 1;
