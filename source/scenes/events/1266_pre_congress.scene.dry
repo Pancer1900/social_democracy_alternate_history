@@ -16,21 +16,75 @@ The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**<
 - @unions: Utilise our unions to influence the congress.
 - @nothing: We will do nothing and let the congress proceed.
 
+@unions
+on-arrival: revolutionaries_dissent += 2 ; labor_dissent -= 6 ;  reformist_dissent += 4 ; labor_strength += 6
+
+Union reprentatives join the party congress and incerse their faction strenght. 
+
+
+@paramilitary
+subtitle: -1 paramilitary resources
+choose-if: para_resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: para_resources -= 1; left_dissent -= 1; revolutionaries_dissent -= 1; agrarnians_dissent -= 1; center_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1;
+
+Our paramilitraies can strenthen or weaken their respected supported wing of our party. 
+
+  Which paramilitray should we support we support?
+  
+- @dsf: Utilise the DSF to support the moderate/reformist wing.
+- @rgf: Utilise the RGF to support the left/revolutionary wing.
+- @rpg: Utilise the RPG to support the agrarians.
+
+@rgf
+view-if: sapd_formed = 0 or kpm_ally = 1
+on-arrival: left_dissent -= 4; revolutionaries_strength += 3; left_strength += 5; revolutionaries_dissent -= 4; agrarnians_dissent -= 2; center_dissent += 3; reformist_dissent += 6; reformist_strength -= 4; rfb_strength += 4;
+
+The <span style="color: #8B0000;">RGF</span> endorces the left/revolutionary wing of the party. 
+
+@dsf
+on-arrival: left_dissent += 3; revolutionaries_strength -= 3; left_strength -= 3; revolutionaries_dissent += 3; center_dissent -= 3; reformist_dissent -= 4; center_strength += 3; reformist_strength += 4; rb_strength += 6;
+
+The <span style="color: #b52f2f;">DSF</span> endorces the moderate/reformist wing of the party. 
+
+@rpg
+view-if: rgf_agrarian = 1
+on-arrival: left_dissent -= 2; revolutionaries_dissent -= 2; agrarnians_dissent -= 4; reformist_dissent += 4; rb_strength += 2; rfb_strength += 2; agrarnians_strength += 8;
+
+The <span style="color: #5f9403;">RPG</span> supports the agrarians and makes their voice stronger throught the congress halls.
+  
+
 @reusorces
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: left_dissent -= 1; revolutionaries_dissent -= 1; agrarnians_dissent -= 1; center_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; party_corruption += 1;
+on-arrival: resources -= 1; left_dissent -= 1; revolutionaries_dissent -= 1; agrarnians_dissent -= 1; center_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; party_corruption += 1;
 
 Money helps smooth many things out but it can be a double edged sword...
 
   Which faction should we support we support?
   
-- @left: Funel the funds into the Left/Revolutionaries wing
-- @
-- @reform: Funel the funds into the Reformist wing wing
+- @left: Funel the funds into the Left/Revolutionaries wing.
+- @reform: Funel the funds into the Reformist wing wing.
+- @food: Fund better accomodation and food for the delegates.
+
+@left
+on-arrival: left_dissent -= 4; revolutionaries_strength += 4; left_strength += 6; revolutionaries_dissent -= 4; agrarnians_dissent -= 2; center_dissent += 4; reformist_dissent += 6; reformist_strength -= 6;
+
+We support the Left/Revolutionaries wing of our party with *some* *special* reusocrces. 
+
+@reform
+on-arrival: left_dissent += 5; revolutionaries_strength -= 3; left_strength -= 4; revolutionaries_dissent += 5; center_dissent -= 2; reformist_dissent -= 6; reformist_strength += 8;
+
+We support the Reformist wing of our party with *some* *special* reusocrces.
+
+@food
+subtitle: Everyone loves good food!
+on-arrival: left_dissent -= 3; revolutionaries_dissent -= 3; agrarnians_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; reformist_dissent -= 3;
+
+This is unprecendented in the party, spending money on ourselfs and not the people, but everyone loves good food. 
   
 @nothing
-on-arrival: left_dissent -= 3; revolutionaries_dissent -= 3; agrarnians_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; reformist_dissent -= 3;
+on-arrival: left_dissent -= 2; revolutionaries_dissent -= 2; agrarnians_dissent -= 2; center_dissent -= 2; labor_dissent -= 2; reformist_dissent -= 2;
 
 We do not try to influence the congress beforehand, it lowers the dissident a bit, but it wont secure our goals.
