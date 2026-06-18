@@ -1,0 +1,36 @@
+title: Last manouvers before the congress .
+subtitle: We can influnce the party factions before the congress. 
+tags: event
+view-if: year = 1266 and month = 4
+priority: 2
+max-visits: 1
+new-page: true
+on-arrival: pre_congress_seen = 1;
+
+= Congress
+
+The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**</span>. 
+
+- @paramilitary: Utilse our paramilitaries to influence the congress.
+- @reusorces: Utilise our reusorces to influence the factions.
+- @unions: Utilise our unions to influence the congress.
+- @nothing: We will do nothing and let the congress proceed.
+
+@reusorces
+subtitle: -1 resources
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: left_dissent -= 1; revolutionaries_dissent -= 1; agrarnians_dissent -= 1; center_dissent -= 1; labor_dissent -= 1; reformist_dissent -= 1; party_corruption += 1;
+
+Money helps smooth many things out but it can be a double edged sword...
+
+  Which faction should we support we support?
+  
+- @left: Funel the funds into the Left/Revolutionaries wing
+- @
+- @reform: Funel the funds into the Reformist wing wing
+  
+@nothing
+on-arrival: left_dissent -= 3; revolutionaries_dissent -= 3; agrarnians_dissent -= 3; center_dissent -= 3; labor_dissent -= 3; reformist_dissent -= 3;
+
+We do not try to influence the congress beforehand, it lowers the dissident a bit, but it wont secure our goals.
