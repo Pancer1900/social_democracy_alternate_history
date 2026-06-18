@@ -79,13 +79,19 @@ if (Q.unemployed <= 1) {
 var total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.neorevisionist_strength + Q.revolutionaries_strength + Q.agrarnians_strength;
 
 // normalize strength for the different factions
-Q.left_strength = 100*Q.left_strength/total_strength;
-Q.center_strength = 100*Q.center_strength/total_strength;
-Q.labor_strength = 100*Q.labor_strength/total_strength;
-Q.reformist_strength = 100*Q.reformist_strength/total_strength;
-Q.neorevisionist_strength = 100*Q.neorevisionist_strength/total_strength;
-Q.revolutionaries_strength = 100*Q.revolutionaries_strength/total_strength;
-Q.agrarnians_strength = 100*Q.agrarnians_strength/total_strength;
+Q.left_strength = 120*Q.left_strength/total_strength;
+Q.center_strength = 120*Q.center_strength/total_strength;
+Q.labor_strength = 120*Q.labor_strength/total_strength;
+Q.reformist_strength = 120*Q.reformist_strength/total_strength;
+Q.revolutionaries_strength = 120*Q.revolutionaries_strength/total_strength;
+Q.agrarnians_strength = 120*Q.agrarnians_strength/total_strength;
+
+Q.rev_seats = Q.revolutionaries_strength/total_strength;
+Q.lef_seats = Q.left_strength/total_strength;
+Q.agr_seats = Q.agrarnians_strength/total_strength;
+Q.cen_seats = Q.center_strength/total_strength;
+Q.lab_seats = Q.labor_strength/total_strength;
+Q.ref_seats = Q.reformist_strength/total_strength;
 
 var total_dissent = Q.left_strength*Q.left_dissent + Q.center_strength*Q.center_dissent + Q.labor_strength*Q.labor_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent + Q.agrarnians_strength*Q.agrarnians_dissent + Q.revolutionaries_strength*Q.revolutionaries_dissent;
 
@@ -340,7 +346,7 @@ if (Q.agrarnians_split == 1 ) {
     Q.agrarnians_dissent == -1;
     }
 
-Q.radicalisation_sum = Q.radicalization;
+Q.radicalisation_sum = Q.radicalization + Q.labour_unrest/3 + Q.rural_unrest/3;
 
 //// + (Q.nsdap_r + Q.dnvp_r/2 + Q.gnvp_r/2 + Q.sapd_r + Q.spd_r*(Q.revolutionaries_strength/100 + Q.left_strength/100) + Q.labour_unrest/3 + Q.rural_unrest/3);
 
