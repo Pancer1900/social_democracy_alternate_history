@@ -15,12 +15,12 @@ The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**<
 @steats
 on-arrival: {!
 
-Q.rev_seats = Q.revolutionaries_strength/total_strength;
-Q.lef_seats = Q.left_strength/total_strength;
-Q.agr_seats = Q.agrarnians_strength/total_strength;
-Q.cen_seats = Q.center_strength/total_strength;
-Q.lab_seats = Q.labor_strength/total_strength;
-Q.ref_seats = Q.reformist_strength/total_strength;
+Q.rev_seats = (Q.revolutionaries_strength/total_strength).toFixed(1);
+Q.lef_seats = (Q.left_strength/total_strength).toFixed(1);
+Q.agr_seats = (Q.agrarnians_strength/total_strength).toFixed(1);
+Q.cen_seats = (Q.center_strength/total_strength).toFixed(1);
+Q.lab_seats = (Q.labor_strength/total_strength).toFixed(1);
+Q.ref_seats = (Q.reformist_strength/total_strength).toFixed(1);
 
 !}
 on-display: {!
@@ -113,8 +113,17 @@ if (window && d3) {
 
 {!</table>!}
 
--@congress: Let the Congress Begin
+-@congress: Let the Congress Begin...
 
 @congress
+go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 60; congress_kpm if (revolutionaries_dissent + left_dissent) >= 60
 
+@congress_kpm
 
+possible desiosion to expell the KPM
+
+go-to: congress_begin
+
+@congress_begin
+
+congress start 
