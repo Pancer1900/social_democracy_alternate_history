@@ -86,12 +86,12 @@ Q.reformist_strength = 120*Q.reformist_strength/total_strength;
 Q.revolutionaries_strength = 120*Q.revolutionaries_strength/total_strength;
 Q.agrarnians_strength = 120*Q.agrarnians_strength/total_strength;
 
-Q.rev_seats = Q.revolutionaries_strength/total_strength;
-Q.lef_seats = Q.left_strength/total_strength;
-Q.agr_seats = Q.agrarnians_strength/total_strength;
-Q.cen_seats = Q.center_strength/total_strength;
-Q.lab_seats = Q.labor_strength/total_strength;
-Q.ref_seats = Q.reformist_strength/total_strength;
+Q.rev_seats = Q.revolutionaries_strength/total_strength*100;
+Q.lef_seats = Q.left_strength/total_strength*100;
+Q.agr_seats = Q.agrarnians_strength/total_strength*100;
+Q.cen_seats = Q.center_strength/total_strength*100;
+Q.lab_seats = Q.labor_strength/total_strength*100;
+Q.ref_seats = Q.reformist_strength/total_strength*100;
 
 var total_dissent = Q.left_strength*Q.left_dissent + Q.center_strength*Q.center_dissent + Q.labor_strength*Q.labor_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent + Q.agrarnians_strength*Q.agrarnians_dissent + Q.revolutionaries_strength*Q.revolutionaries_dissent;
 
