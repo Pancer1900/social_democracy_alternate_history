@@ -29,6 +29,8 @@ Q.cen_seats = (Q.cen_seats*100).toFixed(1);
 Q.lab_seats = (Q.lab_seats*100).toFixed(1);
 Q.ref_seats = (Q.ref_seats*100).toFixed(1);
 
+Q.rev_seats = 20;
+
 !}
 on-display: {!
 data = [];
