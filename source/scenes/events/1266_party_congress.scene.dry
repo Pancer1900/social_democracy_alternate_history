@@ -15,12 +15,12 @@ The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**<
 @steats
 on-arrival: {!
 
-Q.rev_seats = (Q.revolutionaries_strength/total_strength).toFixed(1);
-Q.lef_seats = (Q.left_strength/total_strength).toFixed(1);
-Q.agr_seats = (Q.agrarnians_strength/total_strength).toFixed(1);
-Q.cen_seats = (Q.center_strength/total_strength).toFixed(1);
-Q.lab_seats = (Q.labor_strength/total_strength).toFixed(1);
-Q.ref_seats = (Q.reformist_strength/total_strength).toFixed(1);
+Q.rev_seats = (Q.revolutionaries_strength/total_strength*100).toFixed(1);
+Q.lef_seats = (Q.left_strength/total_strength*100).toFixed(1);
+Q.agr_seats = (Q.agrarnians_strength/total_strength*100).toFixed(1);
+Q.cen_seats = (Q.center_strength/total_strength*100).toFixed(1);
+Q.lab_seats = (Q.labor_strength/total_strength*100).toFixed(1);
+Q.ref_seats = (Q.reformist_strength/total_strength*100).toFixed(1);
 
 !}
 on-display: {!
@@ -118,12 +118,118 @@ if (window && d3) {
 @congress
 go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 60; congress_kpm if (revolutionaries_dissent + left_dissent) >= 60
 
+// KPM 
+
 @congress_kpm
 
 possible desiosion to expell the KPM
 
-go-to: congress_begin
+-@expell_kpm: Expell the KPM 
+-@expell_no: do not expell
+
+@expell_kpm
+
+Expell KPM decisions 
+
+-@ally: Ally
+-@enemy: Enemy 
+
+@ally
+
+KPM ally 
+
+-@congress_begin: Continue to the congress
+
+@enemy
+
+KPM enemy 
+
+-@congress_begin: Continue to the congress
+
+@expell_no
+
+KPM expell no 
+
+-@congress_begin: Continue to the congress
+
+// SPM - split 
 
 @congress_begin
+go-to: congress_begin_2 if (reformist_dissent + center_dissent/2) < 60; congress_spm if (reformist_dissent + center_dissent/2) >= 60
 
-congress start 
+@congress_spm
+
+possible desiosion to expell the SPM
+
+-@expell_spm: Expell the SPM
+-@expell_no_spm: do not expell
+
+@expell_spm
+
+Expell SPM decisions 
+
+-@ally_spm: Ally
+-@enemy_spm: Enemy 
+
+@ally_spm
+
+SPM ally 
+
+-@congress_begin_2: Continue to the congress
+
+@enemy_spm
+
+SPM enemy 
+
+-@congress_begin_2: Continue to the congress
+
+@expell_no_spm
+
+KPM expell no 
+
+-@congress_begin_2: Continue to the congress
+
+// BEGIN - REFORM OR REVOLUTION 
+
+@congress_begin_2
+
+congress start
+
+= Main issue Reform or Revolution 
+
+-@full_rev: Full Rev
+-@part_rev: Part Rev
+-@part_ref: Part Ref
+-@full_ref: Full Ref
+
+@full_rev
+
+full Rev 
+
+-@revolution: Continue to the congress
+
+@part_rev
+
+part rev 
+
+-@revolution: Continue to the congress
+
+@part_ref
+
+part ref
+
+-@revolution: Continue to the congress
+
+@full_ref
+
+full ref
+
+-@coaltions: Continue to the congress
+
+// REVOLUTION 
+
+@revolution
+
+// COALITION
+
+@coaltions
