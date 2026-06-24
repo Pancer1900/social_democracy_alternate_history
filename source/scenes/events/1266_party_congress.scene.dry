@@ -15,12 +15,19 @@ The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**<
 @steats
 on-arrival: {!
 
-Q.rev_seats = (Q.revolutionaries_strength/total_strength*100).toFixed(1);
-Q.lef_seats = (Q.left_strength/total_strength*100).toFixed(1);
-Q.agr_seats = (Q.agrarnians_strength/total_strength*100).toFixed(1);
-Q.cen_seats = (Q.center_strength/total_strength*100).toFixed(1);
-Q.lab_seats = (Q.labor_strength/total_strength*100).toFixed(1);
-Q.ref_seats = (Q.reformist_strength/total_strength*100).toFixed(1);
+Q.rev_seats = (Q.revolutionaries_strength/total_strength)*100;
+Q.lef_seats = (Q.left_strength/total_strength)*100;
+Q.agr_seats = (Q.agrarnians_strength/total_strength)*100;
+Q.cen_seats = (Q.center_strength/total_strength)*100;
+Q.lab_seats = (Q.labor_strength/total_strength)*100;
+Q.ref_seats = (Q.reformist_strength/total_strength)*100;
+
+Q.rev_seats = (Q.rev_seats).toFixed(1);
+Q.lef_seats = (Q.lef_seats).toFixed(1);
+Q.agr_seats = (Q.agr_seats).toFixed(1);
+Q.cen_seats = (Q.cen_seats).toFixed(1);
+Q.lab_seats = (Q.lab_seats).toFixed(1);
+Q.ref_seats = (Q.ref_seats).toFixed(1);
 
 !}
 on-display: {!
