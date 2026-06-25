@@ -415,33 +415,33 @@ congress start
 
 = Issue of the Land policy
 
--@party: Unions should be suborinated to the party 
--@quo: The current policy of "ideological lead by the party and operational indepence of the union"
--@independent: The unions should be retain its relative independence form the party to most efficently expand their membership. 
--@syn: The party should be subordinated to the unions and to the direct will of the people. 
+-@land_3: Unions should be suborinated to the party 
+-@land_2: The current policy of "ideological lead by the party and operational indepence of the union"
+-@land_1: The unions should be retain its relative independence form the party to most efficently expand their membership. 
+-@land: The party should be subordinated to the unions and to the direct will of the people. 
 
-@party
+@land_3
 on-arrival: party_policy_land = 2;
 
 party
 
 -@the: Continue the congress
 
-@quo
+@land_2
 on-arrival: party_policy_land = 1;
 
 quo 
 
 -@the: Continue to the congress
 
-@independent
+@land_1
 on-arrival: party_policy_land = 0;
 
 independent
 
 -@the: Continue to the congress
 
-@syn
+@land
 on-arrival: party_policy_land = 3;
 
 syn
