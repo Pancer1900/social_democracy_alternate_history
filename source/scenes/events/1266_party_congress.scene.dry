@@ -456,18 +456,18 @@ congress start
 
 = Class Theory Queation 
 
--@party: Unions should be suborinated to the party 
--@quo: The current policy of "ideological lead by the party and operational indepence of the union"
+-@midlle: Unions should be suborinated to the party 
+-@rural: The current policy of "ideological lead by the party and operational indepence of the union"
 -@prolet: We shall remain the party of the urban proletariat in its primary.
 
-@party
+@midlle
 on-arrival: united_front_theory = 2;
 
 party
 
 -@para: Continue the congress
 
-@quo
+@rural
 on-arrival: united_front_theory = 1;
 
 quo 
