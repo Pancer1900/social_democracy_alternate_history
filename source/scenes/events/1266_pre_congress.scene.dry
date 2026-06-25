@@ -1,4 +1,4 @@
-title: Last manouvers before the congress .
+title: Last manouvers before the congress.
 subtitle: We can influnce the party factions before the congress. 
 tags: event
 view-if: year = 1266 and month = 4
@@ -9,7 +9,7 @@ on-arrival: pre_congress_seen = 1;
 
 = Congress
 
-The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**</span>. 
+The party congress is rapidly apporching and we can try to influence it to lean towards the part of the party that we prefer. 
 
 - @paramilitary: Utilse our paramilitaries to influence the congress.
 - @reusorces: Utilise our reusorces to influence the factions.
