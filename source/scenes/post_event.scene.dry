@@ -12,9 +12,9 @@ for (var c of Q.classes) {
     }
 }
 
-Q.pro_republic = (Q.pro_republic).toFixed(1);
-Q.nationalism = (Q.nationalism).toFixed(1);
-Q.socialism = (Q.socialism).toFixed(1);
+Q.pro_republic = (Q.pro_republic);
+Q.nationalism = (Q.nationalism);
+Q.socialism = (Q.socialism);
 
 
 if (Q.pro_republic < 0) {
@@ -86,12 +86,12 @@ Q.reformist_strength = 120*Q.reformist_strength/total_strength;
 Q.revolutionaries_strength = 120*Q.revolutionaries_strength/total_strength;
 Q.agrarnians_strength = 120*Q.agrarnians_strength/total_strength;
 
-Q.rev_seats = (Q.revolutionaries_strength/total_strength*100).toFixed(1);
-Q.lef_seats = (Q.left_strength/total_strength*100).toFixed(1);
-Q.agr_seats = (Q.agrarnians_strength/total_strength*100).toFixed(1);
-Q.cen_seats = (Q.center_strength/total_strength*100).toFixed(1);
-Q.lab_seats = (Q.labor_strength/total_strength*100).toFixed(1);
-Q.ref_seats = (Q.reformist_strength/total_strength*100).toFixed(1);
+Q.rev_seats = (Q.revolutionaries_strength/total_strength*100);
+Q.lef_seats = (Q.left_strength/total_strength*100);
+Q.agr_seats = (Q.agrarnians_strength/total_strength*100);
+Q.cen_seats = (Q.center_strength/total_strength*100);
+Q.lab_seats = (Q.labor_strength/total_strength*100);
+Q.ref_seats = (Q.reformist_strength/total_strength*100);
 
 var total_dissent = Q.left_strength*Q.left_dissent + Q.center_strength*Q.center_dissent + Q.labor_strength*Q.labor_dissent + Q.reformist_strength*Q.reformist_dissent + Q.neorevisionist_strength*Q.neorevisionist_dissent + Q.agrarnians_strength*Q.agrarnians_dissent + Q.revolutionaries_strength*Q.revolutionaries_dissent;
 
@@ -348,7 +348,7 @@ if (Q.agrarnians_split == 1 ) {
 
 //////// Q.radicalisation_sum = Q.radicalization + Q.labour_unrest/3 + Q.rural_unrest/3;
 
-////// Q.radicalisation_sum = (Q.radicalisation_sum).toFixed(1)
+////// Q.radicalisation_sum = (Q.radicalisation_sum)
 
 Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
 
