@@ -5,14 +5,6 @@ view-if: year = 1266 and month = 4 and pre_congress_seen = 1
 priority: 2
 max-visits: 1
 new-page: true
-
-= Congress
-
-The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**</span>. 
-
-- @steats: May the delegates take their seats...
-
-@steats
 on-arrival: {!
 
 Q.rev_seats = (Q.revolutionaries_strength/total_strength)*100;
@@ -30,6 +22,14 @@ Q.lab_seats = parseFloat((Q.lab_seats).toFixed(1));
 Q.ref_seats = parseFloat((Q.ref_seats).toFixed(1));
 
 !}
+
+= Congress
+
+The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**</span>. 
+
+- @steats: May the delegates take their seats...
+
+@steats
 on-display: {!
 data = [];
 if (Q.revolutionaries_split = 0) {
@@ -201,7 +201,7 @@ KPM expell no
 -@congress_begin_2: Continue to the congress
 
 
-# BEGIN - REFORM OR REVOLUTION 
+# BEGIN - REFORM OR REVOLUTION  --------------------------------------------------
 
 
 @congress_begin_2
@@ -216,37 +216,270 @@ congress start
 -@full_ref: Full Ref
 
 @full_rev
+on-arrival: party_policy_main = 3;
 
 full Rev 
 
 -@revolution: Continue to the congress
 
 @part_rev
+on-arrival: party_policy_main = 2;
 
 part rev 
 
 -@revolution: Continue to the congress
 
 @part_ref
+on-arrival: party_policy_main = 1;
 
 part ref
 
 -@revolution: Continue to the congress
 
 @full_ref
+on-arrival: party_policy_main = 0;
+
+full ref
+
+-@revolution: Continue to the congress
+
+# REVOLUTION --------------------------------------------------------------
+
+@revolution
+
+congress start
+
+= Issue of Revolution 
+
+-@immi: We should strive for the revolution as soon as possible!
+-@build: We must build up and wait for the good moment for our revolution, but dont start it now.
+-@down: Our revolutionary preparations should be toned down a bit in a list of party priorities, but we stand commited to the revolutionary struggle. 
+-@nutral: We do not condemn revolutionary action but nidher we do support it.
+-@condem: Condemn any revolutionary acions. 
+
+@immi
+on-arrival: party_policy_rev = 3;
+
+full Rev 
+
+-@coaltions: Continue the congress
+
+@build
+on-arrival: party_policy_rev = 2;
+
+part rev 
+
+-@coaltions: Continue to the congress
+
+@condem
+on-arrival: party_policy_rev = -1;
+
+part ref
+
+-@coaltions: Continue to the congress
+
+@down
+on-arrival: party_policy_rev = 1;
 
 full ref
 
 -@coaltions: Continue to the congress
 
-# REVOLUTION 
+@nutral
+on-arrival: party_policy_rev = 0;
 
-@revolution
+full ref
 
-allo
+-@coaltions: Continue to the congress
 
-# COALITION
+# COALITION ---------------------------------------------------
 
 @coaltions
 
-allo
+congress start
+
+= Issue of palimentary coalitions 
+
+-@soc_maj: We should strive to achieve a socialist majorty and do not compromise with the burgoise.
+-@zel: Our parlimetary efforts should strive to rebuild our links with the left wing liberals to potentilay enter a goverment with us, that would not require us to beray our ideas. 
+-@libe: We should be fully open to any and all coalitons, even if it means compomising our more radlical goals. 
+
+@soc_maj
+on-arrival: party_policy_coalition = 2;
+
+soc_maj
+
+-@union: Continue the congress
+
+@zel
+on-arrival: party_policy_coalition = 1;
+
+zel 
+
+-@union: Continue to the congress
+
+@libe
+on-arrival: party_policy_coalition = 0;
+
+libe
+
+-@union: Continue to the congress
+
+# UNIONS ---------------------------------------------
+
+@union
+
+congress start
+
+= Issue of trade unions
+
+-@party: Unions should be suborinated to the party.
+-@quo: The current policy of "ideological lead by the party and operational indepence of the union".
+-@independent: The unions should be retain its relative independence form the party to most efficently expand their membership. 
+-@syn: The party should be subordinated to the unions and to the direct will of the people. 
+
+@party
+on-arrival: party_policy_unions = 2;
+
+party
+
+-@para: Continue the congress
+
+@quo
+on-arrival: party_policy_unions = 1;
+
+quo 
+
+-@para: Continue to the congress
+
+@independent
+on-arrival: party_policy_unions = 0;
+
+independent
+
+-@para: Continue to the congress
+
+@syn
+on-arrival: party_policy_unions = 3;
+
+syn
+
+-@para: Continue to the congress
+
+# PARAMILTARIES ---------------------------------------------
+
+@para
+
+congress start
+
+= Issue of the Paramilitraies
+
+-@revolution_usage: Our Paramilitaries should work towards preparing the revolution.
+-@party_defevce: The primary duty of our forces should be to defend the party.
+-@fight_right: The paramilitaries should focus of fignting and egtting rid of the reactionary forces. 
+-@republic: Commit the paramiltaries to defend the Federation agains the threats from the reactionares. 
+
+@revolution_usage
+on-arrival: party_policy_paramilitary = 3;
+
+revolution_usage
+
+-@land: Continue the congress
+
+@party_defevce
+on-arrival: party_policy_paramilitary = 2;
+
+party_defevce 
+
+-@land: Continue to the congress
+
+@fight_right
+on-arrival: party_policy_paramilitary = 1;
+
+fight_right
+
+-@land: Continue to the congress
+
+@republic
+on-arrival: party_policy_paramilitary = 0;
+
+republic
+
+-@land: Continue to the congress
+
+# LAND ---------------------------------------------------------------------
+
+@land
+
+congress start
+
+= Issue of the Land policy
+
+-@party: Unions should be suborinated to the party 
+-@quo: The current policy of "ideological lead by the party and operational indepence of the union"
+-@independent: The unions should be retain its relative independence form the party to most efficently expand their membership. 
+-@syn: The party should be subordinated to the unions and to the direct will of the people. 
+
+@party
+on-arrival: party_policy_land = 2;
+
+party
+
+-@the: Continue the congress
+
+@quo
+on-arrival: party_policy_land = 1;
+
+quo 
+
+-@the: Continue to the congress
+
+@independent
+on-arrival: party_policy_land = 0;
+
+independent
+
+-@the: Continue to the congress
+
+@syn
+on-arrival: party_policy_land = 3;
+
+syn
+
+-@the: Continue to the congress
+
+# THEORY =---------------------------------------
+
+@the
+
+congress start
+
+= Class Theory Queation 
+
+-@party: Unions should be suborinated to the party 
+-@quo: The current policy of "ideological lead by the party and operational indepence of the union"
+-@prolet: We shall remain the party of the urban proletariat in its primary.
+
+@party
+on-arrival: united_front_theory = 2;
+
+party
+
+-@para: Continue the congress
+
+@quo
+on-arrival: united_front_theory = 1;
+
+quo 
+
+-@para: Continue to the congress
+
+@prolet
+on-arrival: united_front_theory = 0;
+
+independent
+
+-@para: Continue to the congress
+
+
+
