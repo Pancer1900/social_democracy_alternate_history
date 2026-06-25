@@ -12,9 +12,9 @@ for (var c of Q.classes) {
     }
 }
 
-Q.pro_republic = Math.round(Q.pro_republic);
-Q.nationalism = Math.round(Q.nationalism);
-Q.socialism = Math.round(Q.socialism);
+Q.pro_republic = (Q.pro_republic).toFixed(1);
+Q.nationalism = (Q.nationalism).toFixed(1);
+Q.socialism = (Q.socialism).toFixed(1);
 
 
 if (Q.pro_republic < 0) {
@@ -239,7 +239,7 @@ Q.economic_change = Q.stability + Q.trade_stability + Q.bank_stability + Q.inves
     }
     if (Q.investment < 0 ) 
     {
-        Q.industrial_out = Q.industrial_out + Q.investment*Q.industrial_out/3;
+        Q.industrial_out = Q.industrial_out + Q.investment*Q.industrial_out/4;
     }
 
 // ECONOMY MAIN
@@ -346,9 +346,7 @@ if (Q.agrarnians_split == 1 ) {
     Q.agrarnians_dissent == -1;
     }
 
-Q.radicalisation_sum = Q.radicalization + Q.labour_unrest/3 + Q.rural_unrest/3;
-
-//// + (Q.nsdap_r + Q.dnvp_r/2 + Q.gnvp_r/2 + Q.sapd_r + Q.spd_r*(Q.revolutionaries_strength/100 + Q.left_strength/100) + Q.labour_unrest/3 + Q.rural_unrest/3);
+Q.radicalisation_sum = (Q.radicalization + Q.labour_unrest/3 + Q.rural_unrest/3 + (Q.nsdap_r + Q.dnvp_r/2 + Q.gnvp_r/2 + Q.sapd_r + Q.spd_r*(Q.revolutionaries_strength/100 + Q.left_strength/100) + Q.labour_unrest/3 + Q.rural_unrest/3).toFixed(1);
 
 Q.revolution_ready = (Q.rev_plus + Q.rgf_experce*Q.rfb_militancy + Q.dsf_ideology*Q.dsf_experce*Q.rb_militancy*Q.dsf_rfb_coop/100 + Q.sapd_votes/100 + Q.revolutionaries_strength/120);
 
