@@ -418,7 +418,7 @@ congress start
 -@land_3: Unions should be suborinated to the party 
 -@land_2: The current policy of "ideological lead by the party and operational indepence of the union"
 -@land_1: The unions should be retain its relative independence form the party to most efficently expand their membership. 
--@land: The party should be subordinated to the unions and to the direct will of the people. 
+-@land_0: The party should be subordinated to the unions and to the direct will of the people. 
 
 @land_3
 on-arrival: party_policy_land = 2;
@@ -441,7 +441,7 @@ independent
 
 -@the: Continue to the congress
 
-@land
+@land_0
 on-arrival: party_policy_land = 3;
 
 syn
