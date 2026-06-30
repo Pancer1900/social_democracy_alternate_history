@@ -3,19 +3,18 @@ on-arrival: {!
 Q.sapd_formed = 1;
 Q.parties.push('sapd');
 
-Q.workers_sapd = 10;
-Q.workers_spd -= 3;
-Q.new_middle_sapd = 1;
+Q.workers_sapd = (Q.workers_spd*(revolutionaries_strength/100));
+Q.workers_sapd += 2;
+Q.workers_spd -= (Q.workers_spd*(revolutionaries_strength/120));
+Q.new_middle_sapd = 2;
+Q.peasants_sapd = 4;
 Q.old_middle_sapd = 0;
-Q.rural_sapd = 0;
-Q.unemployed_sapd = 2;
+Q.rural_sapd = 2;
+Q.unemployed_sapd = 4;
 Q.catholics_sapd = 0;
+Q.minorieties_sapd = 2;
 
-Q.workers_other -= 5;
-
-if (Q.unions_independent) {
-    Q.workers_sapd += 8;
-}
+Q.sapd_relation = 50;
 
 // update all records
 Q.sapd_r = 0;
