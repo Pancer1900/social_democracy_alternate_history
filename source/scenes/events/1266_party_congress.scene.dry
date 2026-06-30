@@ -14,7 +14,7 @@ Q.cen_seats = (Q.center_strength/total_strength)*100;
 Q.lab_seats = (Q.labor_strength/total_strength)*100;
 Q.ref_seats = (Q.reformist_strength/total_strength)*100;
 
-Q.rev_seats = parseFloat((Q.rev_seats*100).toFixed(1));
+Q.rev_seats = parseFloat((Q.rev_seats).toFixed(1));
 Q.lef_seats = parseFloat((Q.lef_seats).toFixed(1));
 Q.agr_seats = parseFloat((Q.agr_seats).toFixed(1));
 Q.cen_seats = parseFloat((Q.cen_seats).toFixed(1));
@@ -120,86 +120,7 @@ if (window && d3) {
 
 {!</table>!}
 
--@congress: Let the Congress Begin...
-
-@congress
-go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 60; congress_kpm if (revolutionaries_dissent + left_dissent) >= 60
-
-
-# KPM 
-
-
-@congress_kpm
-
-possible desiosion to expell the KPM
-
--@expell_kpm: Expell the KPM 
--@expell_no: do not expell
-
-@expell_kpm
-
-Expell KPM decisions 
-
--@ally: Ally
--@enemy: Enemy 
-
-@ally
-
-KPM ally 
-
--@congress_begin: Continue to the congress
-
-@enemy
-
-KPM enemy 
-
--@congress_begin: Continue to the congress
-
-@expell_no
-
-KPM expell no 
-
--@congress_begin: Continue to the congress
-
-
-# SPM - split 
-
-
-@congress_begin
-go-to: congress_begin_2 if (reformist_dissent + center_dissent/2) < 60; congress_spm if (reformist_dissent + center_dissent/2) >= 60
-
-@congress_spm
-
-possible desiosion to expell the SPM
-
--@expell_spm: Expell the SPM
--@expell_no_spm: do not expell
-
-@expell_spm
-
-Expell SPM decisions 
-
--@ally_spm: Ally
--@enemy_spm: Enemy 
-
-@ally_spm
-
-SPM ally 
-
--@congress_begin_2: Continue to the congress
-
-@enemy_spm
-
-SPM enemy 
-
--@congress_begin_2: Continue to the congress
-
-@expell_no_spm
-
-KPM expell no 
-
--@congress_begin_2: Continue to the congress
-
+-@congress_begin_2: Let the Congress Begin...
 
 # BEGIN - REFORM OR REVOLUTION  --------------------------------------------------
 
@@ -384,67 +305,26 @@ on-arrival: party_policy_paramilitary = 3;
 
 revolution_usage
 
--@land: Continue the congress
+-@the: Continue the congress
 
 @party_defevce
 on-arrival: party_policy_paramilitary = 2;
 
 party_defevce 
 
--@land: Continue to the congress
+-@the: Continue to the congress
 
 @fight_right
 on-arrival: party_policy_paramilitary = 1;
 
 fight_right
 
--@land: Continue to the congress
+-@the: Continue to the congress
 
 @republic
 on-arrival: party_policy_paramilitary = 0;
 
 republic
-
--@land: Continue to the congress
-
-# LAND ---------------------------------------------------------------------
-
-@land
-
-congress start
-
-= Issue of the Land policy
-
--@land_3: Unions should be suborinated to the party 
--@land_2: The current policy of "ideological lead by the party and operational indepence of the union"
--@land_1: The unions should be retain its relative independence form the party to most efficently expand their membership. 
--@land_0: The party should be subordinated to the unions and to the direct will of the people. 
-
-@land_3
-on-arrival: party_policy_land = 2;
-
-party
-
--@the: Continue the congress
-
-@land_2
-on-arrival: party_policy_land = 1;
-
-quo 
-
--@the: Continue to the congress
-
-@land_1
-on-arrival: party_policy_land = 0;
-
-independent
-
--@the: Continue to the congress
-
-@land_0
-on-arrival: party_policy_land = 3;
-
-syn
 
 -@the: Continue to the congress
 
@@ -456,30 +336,182 @@ congress start
 
 = Class Theory Queation 
 
--@midlle: Unions should be suborinated to the party 
--@rural: The current policy of "ideological lead by the party and operational indepence of the union"
--@prolet: We shall remain the party of the urban proletariat in its primary.
+-@rural: The peasnts and farmers are as much proletarian as a steelworker or bus driver and should be concidered as such by our party!
+-@prolet: We shall remain the party of the urban proletariat in its primacy.
+-@midlle: Maybe we can try to transform our party into a wider "people's party" represneting all social groups who arent burgoise?
 
 @midlle
 on-arrival: united_front_theory = 2;
 
-party
+midlle
 
--@para: Continue the congress
+-@land: Continue the congress
 
 @rural
 on-arrival: united_front_theory = 1;
 
-quo 
+rural 
 
--@para: Continue to the congress
+-@land: Continue to the congress
 
 @prolet
 on-arrival: united_front_theory = 0;
 
+prolet
+
+-@land: Continue to the congress
+
+# LAND ---------------------------------------------------------------------
+
+@land
+
+congress start
+
+= Issue of the Land policy and the rural Question. 
+
+-@land_0: The peasnts and farmers struggle should be on our forefront and their fight for emancipation is our goal!
+-@land_3: The party supports colectivation plans as a way to achive Socialism in the countryside. 
+-@land_2: Continue the current policy of supporting the rural struggle against the landowners, but do not focus on their issues.
+-@land_1: Rural affairs should not concern the party of the urban Proletariat.
+
+@land_3
+on-arrival: party_policy_land = 2;
+
+party
+
+-@congress: Continue the congress
+
+@land_2
+on-arrival: party_policy_land = 1;
+
+quo 
+
+-@congress: Continue to the congress
+
+@land_1
+on-arrival: party_policy_land = 0;
+
 independent
 
--@para: Continue to the congress
+-@congress: Continue to the congress
+
+@land_0
+on-arrival: party_policy_land = 3;
+
+syn
+
+-@congress: Continue to the congress
+
+@congress
+go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 60; congress_kpm if (revolutionaries_dissent + left_dissent) >= 60
 
 
+# KPM ------------------------------------
 
+
+@congress_kpm
+
+possible desiosion to expell the KPM
+
+-@expell_kpm: Expell the KPM 
+-@expell_no: do not expell
+
+@expell_kpm
+on-arrival: {!
+// set up the infrastructure
+Q.revolutionaries_split = 1;
+Q.sapd_formed = 1;
+Q.parties.push('sapd');
+
+Q.workers_sapd = (Q.workers_spd*(revolutionaries_strength/100));
+Q.workers_sapd += 2;
+Q.workers_spd -= (Q.workers_spd*(revolutionaries_strength/120));
+Q.new_middle_sapd = 2;
+Q.peasants_sapd = 4;
+Q.old_middle_sapd = 0;
+Q.rural_sapd = 2;
+Q.unemployed_sapd = 4;
+Q.catholics_sapd = 0;
+Q.minorieties_sapd = 2;
+
+Q.sapd_relation = 60;
+
+// update all records
+Q.sapd_r = 0;
+Q.old_sapd_r = 0;
+for (var record of Q.election_records) {
+    record['sapd'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['sapd'] = 0;
+}
+!}
+
+Expell KPM
+
+-@congress_begin: Continue to the congress
+
+@expell_no
+
+KPM expell no 
+
+-@congress_begin: Continue to the congress
+
+
+# SPM - split ---------------------------------------------------------
+
+
+@congress_begin
+go-to: congress_end if (reformist_dissent + center_dissent/2) < 60; congress_spm if (reformist_dissent + center_dissent/2) >= 60
+
+@congress_spm
+
+possible desiosion to expell the SPM
+
+-@expell_spm: Expell the SPM
+-@expell_no_spm: do not expell
+
+@expell_spm
+on-arrival: {!
+// set up the infrastructure
+Q.reformists_resigned = 1;
+Q.sapd_formed = 1;
+Q.parties.push('spm');
+
+Q.workers_spm = (Q.workers_spd*(reformist_strength/100));
+Q.workers_spm += 2;
+Q.workers_spd -= (Q.workers_spd*(reformist_strength/120));
+Q.new_middle_spm = (Q.new_middle_spd*(reformist_strength/100));
+Q.new_middle_spm += 2;
+Q.new_middle_spd -= (Q.new_middle_spd*(reformist_strength/120));
+Q.peasants_spm = 2;
+Q.old_middle_spm = 2;
+Q.rural_spm = 2;
+Q.unemployed_spm = 2;
+Q.catholics_spm = 0;
+Q.minorieties_spm = 1;
+
+// update all records
+Q.spm_r = 0;
+Q.old_spm_r = 0;
+for (var record of Q.election_records) {
+    record['spm'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['spm'] = 0;
+}
+!}
+
+Expell SPM decisions 
+
+@expell_no_spm
+
+KPM expell no 
+
+-@congress_begin_2: Continue to the congress
+
+# END ----------------------------------------------------------------
+
+@congress_end
+
+END OF THE CONGRESS
