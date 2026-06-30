@@ -179,35 +179,35 @@ congress start
 -@condem: Condemn any revolutionary acions. 
 
 @immi
-on-arrival: party_policy_rev = 3; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
+on-arrival: party_policy_rev = 3; revolutionaries_dissent -= 10; left_dissent -= 8; agrarnians_dissent -= 4; center_dissent += 4; labor_dissent += 4; reformist_dissent += 20; 
 
 full Rev 
 
 -@coaltions: Continue the congress
 
 @build
-on-arrival: party_policy_rev = 2; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
+on-arrival: party_policy_rev = 2; revolutionaries_dissent -= 8; left_dissent -= 6; agrarnians_dissent -= 2; reformist_dissent += 8; 
 
 part rev 
 
 -@coaltions: Continue to the congress
 
 @condem
-on-arrival: party_policy_rev = -1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
+on-arrival: party_policy_rev = -1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 6; center_dissent += 6; reformist_dissent -= 10; 
 
 part ref
 
 -@coaltions: Continue to the congress
 
 @down
-on-arrival: party_policy_rev = 1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
+on-arrival: party_policy_rev = 1; revolutionaries_dissent += 8; left_dissent += 5; agrarnians_dissent += 3; reformist_dissent -= 6; 
 
 full ref
 
 -@coaltions: Continue to the congress
 
 @nutral
-on-arrival: party_policy_rev = 0;
+on-arrival: party_policy_rev = 0; revolutionaries_dissent += 10; left_dissent += 7; agrarnians_dissent += 5; labor_dissent += 4; center_dissent += 4; reformist_dissent -= 8; 
 
 full ref
 
@@ -226,21 +226,21 @@ congress start
 -@libe: We should be fully open to any and all coalitons, even if it means compomising our more radlical goals. 
 
 @soc_maj
-on-arrival: party_policy_coalition = 2;
+on-arrival: party_policy_coalition = 2; revolutionaries_dissent += 10; left_dissent += 7; agrarnians_dissent += 5; labor_dissent += 4; center_dissent += 4; reformist_dissent -= 8;
 
 soc_maj
 
 -@union: Continue the congress
 
 @zel
-on-arrival: party_policy_coalition = 1;
+on-arrival: party_policy_coalition = 1; revolutionaries_dissent += 10; left_dissent += 7; agrarnians_dissent += 5; labor_dissent += 4; center_dissent += 4; reformist_dissent -= 8;
 
 zel 
 
 -@union: Continue to the congress
 
 @libe
-on-arrival: party_policy_coalition = 0;
+on-arrival: party_policy_coalition = 0; revolutionaries_dissent += 10; left_dissent += 7; agrarnians_dissent += 5; labor_dissent += 4; center_dissent += 4; reformist_dissent -= 8;
 
 libe
 
