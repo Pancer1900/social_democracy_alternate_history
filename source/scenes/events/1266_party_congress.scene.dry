@@ -521,16 +521,24 @@ KPM expell no
 on-arrival: {!
 
 if (Q.sapd_formed != 0 and Q.asum_formed = 0) 
-{Q.spd_name == 'DSPM'}
+{
+Q.spd_name = "DSPM";
+}
 
 if (Q.sapd_formed != 0 and Q.asum_formed != 0) 
-{Q.spd_name == 'SPM'}
+{
+Q.spd_name = "SPM";
+}
 
 if (Q.sapd_formed != 0 and Q.asum_formed != 0 and Q.spm_formed != 0) 
-{Q.spd_name == 'ISPM'}
+{
+Q.spd_name = "ISPM";
+}
 
 if (Q.spm_formed != 0 and Q.sapd_formed = 0) 
-{Q.spd_name == 'SRPM'}
+{
+Q.spd_name = "SRPM";
+}
 
 }!
 
