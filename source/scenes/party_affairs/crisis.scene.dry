@@ -4,7 +4,7 @@ max-visits: 36
 is-card: true
 view-if: crisis_program_timer <= 0 and economic_growth <= 0
 on-arrival: month_actions += 1; crisis_program_timer += 6
-card-image: img/poster-of-the-kpd-1919-C45HWA.jpg
+card-image: img/bankrun.jpg
 frequency: 100
 tags: party_affairs
 
