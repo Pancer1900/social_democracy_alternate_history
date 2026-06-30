@@ -131,34 +131,34 @@ congress start
 
 = Main issue Reform or Revolution 
 
--@full_rev: Full Rev
--@part_rev: Part Rev
--@part_ref: Part Ref
--@full_ref: Full Ref
+-@full_rev: The party is fully centered on Revolutionary action. 
+-@part_rev: We are focusing on revolutionary action, but we still remain commited to parlimentary means. 
+-@part_ref: We are focusing on parlimentary action, but we still remain commited to revolutionary means. 
+-@full_ref: The party is fully centered on Reformist and Parlimentary action.
 
 @full_rev
-on-arrival: party_policy_main = 3;
+on-arrival: party_policy_main = 3; revolutionaries_dissent -= 10; left_dissent -= 8; center_dissent += 4; labor_dissent += 8; reformist_dissent += 20; 
 
 full Rev 
 
 -@revolution: Continue to the congress
 
 @part_rev
-on-arrival: party_policy_main = 2;
+on-arrival: party_policy_main = 2; revolutionaries_dissent -= 4; left_dissent -= 2; agrarnians_dissent -= 2; labor_dissent += 6; reformist_dissent += 8; 
 
 part rev 
 
 -@revolution: Continue to the congress
 
 @part_ref
-on-arrival: party_policy_main = 1;
+on-arrival: party_policy_main = 1; revolutionaries_dissent += 6; left_dissent += 4; center_dissent -= 6; labor_dissent -= 4; reformist_dissent -= 4; 
 
 part ref
 
 -@revolution: Continue to the congress
 
 @full_ref
-on-arrival: party_policy_main = 0;
+on-arrival: party_policy_main = 0; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; center_dissent += 2; reformist_dissent -= 10; 
 
 full ref
 
@@ -179,28 +179,28 @@ congress start
 -@condem: Condemn any revolutionary acions. 
 
 @immi
-on-arrival: party_policy_rev = 3;
+on-arrival: party_policy_rev = 3; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
 
 full Rev 
 
 -@coaltions: Continue the congress
 
 @build
-on-arrival: party_policy_rev = 2;
+on-arrival: party_policy_rev = 2; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
 
 part rev 
 
 -@coaltions: Continue to the congress
 
 @condem
-on-arrival: party_policy_rev = -1;
+on-arrival: party_policy_rev = -1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
 
 part ref
 
 -@coaltions: Continue to the congress
 
 @down
-on-arrival: party_policy_rev = 1;
+on-arrival: party_policy_rev = 1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; labor_dissent -= 4; center_dissent += 2; reformist_dissent -= 10; 
 
 full ref
 
@@ -437,8 +437,10 @@ Q.minorieties_sapd = 2;
 Q.sapd_relation = 60;
 
 // update all records
-Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+
+Q.sapd_r = Math.round((Q.spd_r / 4 + 1) * 10) / 10;
+Q.spd_r = Math.round((Q.spd_r - Q.sapd_r) * 10) / 10;
 
 for (var record of Q.election_records) {
     record['sapd'] = 0;
@@ -496,7 +498,9 @@ Q.spm_relation = 60;
 
 // update all records
 Q.old_spm_r = 0;
-Q.spm_r = 0;
+
+Q.spm_r = Math.round((Q.spd_r / 4 + 1) * 10) / 10;
+Q.spd_r = Math.round((Q.spd_r - Q.spm_r) * 10) / 10;
 
 Q.old_spm_r = 0;
 for (var record of Q.election_records) {
@@ -540,6 +544,6 @@ if (Q.spm_formed != 0 && Q.sapd_formed = 0) {
 Q.spd_name = "SRPM";
 }
 
-}!
+!}
 
 END OF THE CONGRESS
