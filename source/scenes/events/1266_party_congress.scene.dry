@@ -14,12 +14,12 @@ Q.cen_seats = (Q.center_strength/total_strength)*100;
 Q.lab_seats = (Q.labor_strength/total_strength)*100;
 Q.ref_seats = (Q.reformist_strength/total_strength)*100;
 
-Q.rev_seats = parseFloat((Q.rev_seats).toFixed(1));
-Q.lef_seats = parseFloat((Q.lef_seats).toFixed(1));
-Q.agr_seats = parseFloat((Q.agr_seats).toFixed(1));
-Q.cen_seats = parseFloat((Q.cen_seats).toFixed(1));
-Q.lab_seats = parseFloat((Q.lab_seats).toFixed(1));
-Q.ref_seats = parseFloat((Q.ref_seats).toFixed(1));
+Q.rev_seats = parseFloat(Q.rev_seats.toFixed(1));
+Q.lef_seats = parseFloat(Q.lef_seats.toFixed(1));
+Q.agr_seats = parseFloat(Q.agr_seats.toFixed(1));
+Q.cen_seats = parseFloat(Q.cen_seats.toFixed(1));
+Q.lab_seats = parseFloat(Q.lab_seats.toFixed(1));
+Q.ref_seats = parseFloat(Q.ref_seats.toFixed(1));
 
 !}
 
