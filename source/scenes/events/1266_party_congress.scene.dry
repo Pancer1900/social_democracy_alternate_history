@@ -509,11 +509,13 @@ for (var record of Q.party_support_records) {
 
 Expell SPM decisions 
 
+-@congress_end: Continue to the congress
+
 @expell_no_spm
 
 KPM expell no 
 
--@congress_begin_2: Continue to the congress
+-@congress_end: Continue to the congress
 
 # END ----------------------------------------------------------------
 
