@@ -322,57 +322,57 @@ Q.economic_growth = Q.economic_growth + Q.economic_change;
     //////////////////////////// DYNAMIC CHANGES 
 
 if (Q.unions_independent == 1 ) {
-    Q.labor_strength == 1;
-    Q.labor_dissent == -1;
+    Q.labor_strength = 1;
+    Q.labor_dissent = 1;
     }
 
 if (Q.left_split == 1 ) {
-    Q.left_strength == 1;
-    Q.left_dissent == -1;
+    Q.left_strength = 1;
+    Q.left_dissent = 1;
     }
 
 if (Q.revolutionaries_split == 1 ) {
-    Q.revolutionaries_strength == 1;
-    Q.revolutionaries_dissent == -1;
+    Q.revolutionaries_strength = 1;
+    Q.revolutionaries_dissent = 1;
     }
 
 if (Q.reformists_resigned == 1 ) {
-    Q.reformist_strength == 1;
-    Q.reformist_dissent == -1;
+    Q.reformist_strength = 1;
+    Q.reformist_dissent = 1;
     }
 
 if (Q.agrarnians_split == 1 ) {
-    Q.agrarnians_strength == 1;
-    Q.agrarnians_dissent == -1;
+    Q.agrarnians_strength = 1;
+    Q.agrarnians_dissent = 1;
     }
 
 //passive
 
 if (Q.labor_strength < 0 && Q.unions_independent == 0 ) {
-    Q.labor_strength == 4;
+    Q.labor_strength = 4;
     }
 
 if (Q.left_strength < 0 && Q.left_split == 0 ) {
-    Q.left_strength == 4;
+    Q.left_strength = 4;
     }
 
 if (Q.revolutionaries_strength < 0 && Q.revolutionaries_split == 0 ) {
-    Q.revolutionaries_strength == 4;
+    Q.revolutionaries_strength = 4;
     }
 
 if (Q.reformist_strength < 0 && Q.reformists_resigned == 0 ) {
-    Q.reformist_strength == 4;
+    Q.reformist_strength = 4;
     }
 
 if (Q.agrarnians_strength < 0 && Q.agrarnians_split == 0 ) {
-    Q.agrarnians_strength == 4;
+    Q.agrarnians_strength = 4;
     }
 
 if (Q.center_strength < 0) {
-    Q.center_strength == 4;
+    Q.center_strength = 4;
     }
 
-//////// Q.radicalisation_sum = Q.radicalization + Q.labour_unrest/3 + Q.rural_unrest/3;
+Q.radicalisation_sum = Q.radicalization + Q.labour_unrest/3 + Q.rural_unrest/3;
 
 ////// Q.radicalisation_sum = (Q.radicalisation_sum)
 
