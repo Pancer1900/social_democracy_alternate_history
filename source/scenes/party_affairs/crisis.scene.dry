@@ -12,7 +12,7 @@ tags: party_affairs
 
 [? if crisis_urgency <= 3: Economic crisies are nothing new in capitalists systems and this one is no diffrent. ?]
 
-[? if crisis_urgency <= 3: We do not have a concrete economic plan, what to do in this economic crisis but many prespectives on the problem show up. ?]
+[? if crisis_urgency <= 3: We do not have a concrete economic plan, what to do in this economic crisis but many prespectives on the crisis show up. ?]
 
 [? if crisis_urgency >= 3: There are currently 3 economic plans propsed by various party wings. ?]
 
