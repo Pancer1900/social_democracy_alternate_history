@@ -1,0 +1,13 @@
+title: Revolutionary Split
+new-page: true 
+subtitle: The Revolutionaries disagreements with the party line has led to a split.
+tags: event
+view-if: revolutionaries_dissent >= 60 and year > 1267 and sapd_formed = 0
+on-arrival: revolutionaries_split = 1; 
+go-to: sapd_formed
+max-visits: 1
+
+= Revolutionaries members split
+
+Our policy choices have greatly offended the left, and many of their leaders have split to form a new party, the SAPD, or Socialist Worker's Party. They do not count a huge section of our membership, so this should be survivable.
+
