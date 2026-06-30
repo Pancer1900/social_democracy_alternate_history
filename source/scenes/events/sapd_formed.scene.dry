@@ -17,8 +17,13 @@ Q.minorieties_sapd = 2;
 Q.sapd_relation = 50;
 
 // update all records
-Q.sapd_r = 0;
+Q.sapd_r = (Q.spd_r*(revolutionaries_strength/total_strength));
 Q.old_sapd_r = 0;
+
+if (Q.sapd_r) {
+    Q.sapd_r = Q.sapd_r.toFixed(1);
+}
+
 for (var record of Q.election_records) {
     record['sapd'] = 0;
 }
