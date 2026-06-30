@@ -1,0 +1,28 @@
+on-arrival: {!
+// set up the infrastructure
+Q.sapd_formed = 1;
+Q.parties.push('spm');
+
+Q.workers_spm = (Q.workers_spd*(reformist_strength/100));
+Q.workers_spm += 2;
+Q.workers_spd -= (Q.workers_spd*(reformist_strength/120));
+Q.new_middle_spm = (Q.new_middle_spd*(reformist_strength/100));
+Q.new_middle_spm += 2;
+Q.new_middle_spd -= (Q.new_middle_spd*(reformist_strength/120));
+Q.peasants_spm = 2;
+Q.old_middle_spm = 2;
+Q.rural_spm = 2;
+Q.unemployed_spm = 2;
+Q.catholics_spm = 0;
+Q.minorieties_spm = 1;
+
+// update all records
+Q.spm_r = 0;
+Q.old_spm_r = 0;
+for (var record of Q.election_records) {
+    record['spm'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['spm'] = 0;
+}
+!}
