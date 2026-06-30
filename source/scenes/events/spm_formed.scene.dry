@@ -17,8 +17,13 @@ Q.catholics_spm = 0;
 Q.minorieties_spm = 1;
 
 // update all records
-Q.spm_r = 0;
 Q.old_spm_r = 0;
+
+Q.spm_r = (Q.spd_r*(reformist_strength/total_strength));
+
+if (Q.spm_r) {
+    Q.spm_r = Q.spm_r.toFixed(1);
+}
 for (var record of Q.election_records) {
     record['spm'] = 0;
 }
