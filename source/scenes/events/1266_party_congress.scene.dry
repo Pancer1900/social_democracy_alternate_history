@@ -437,12 +437,8 @@ Q.minorieties_sapd = 2;
 Q.sapd_relation = 60;
 
 // update all records
-Q.sapd_r = (Q.spd_r*(revolutionaries_strength/total_strength));
+Q.sapd_r = 0;
 Q.old_sapd_r = 0;
-
-if (Q.sapd_r) {
-    Q.sapd_r = Q.sapd_r.toFixed(1);
-}
 
 for (var record of Q.election_records) {
     record['sapd'] = 0;
@@ -500,11 +496,7 @@ Q.spm_relation = 60;
 
 // update all records
 Q.old_spm_r = 0;
-Q.spm_r = (Q.spd_r*(reformist_strength/total_strength));
-
-if (Q.spm_r) {
-    Q.spm_r = Q.spm_r.toFixed(1);
-}
+Q.spm_r = 0;
 
 Q.old_spm_r = 0;
 for (var record of Q.election_records) {
@@ -526,5 +518,20 @@ KPM expell no
 # END ----------------------------------------------------------------
 
 @congress_end
+on-arrival: {!
+
+if (sapd_formed != 0 and asum_formed = 0) 
+{Q.spd_name == 'DSPM'}
+
+if (sapd_formed != 0 and asum_formed != 0) 
+{Q.spd_name == 'SPM'}
+
+if (sapd_formed != 0 and asum_formed != 0 and spm_formed != 0) 
+{Q.spd_name == 'ISPM'}
+
+if (spm_formed != 0 and sapd_formed = 0) 
+{Q.spd_name == 'SRPM'}
+
+}!
 
 END OF THE CONGRESS
