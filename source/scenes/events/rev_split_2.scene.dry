@@ -4,7 +4,7 @@ subtitle: The Revolutionaries disagreements with the party line has led to a spl
 tags: event 
 view-if: year = 1266 and month = 3
 
-///view-if: revolutionaries_dissent >= 60 and year > 1267 and sapd_formed = 0
+# view-if: revolutionaries_dissent >= 60 and year > 1267 and sapd_formed = 0
 
 on-arrival: revolutionaries_split = 1; 
 go-to: sapd_formed_2
