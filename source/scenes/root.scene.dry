@@ -348,7 +348,7 @@ Q.old_middle_qol = 100;
 Q.new_middle_qol = 100;
 
 Q.classes = ['workers', 'old_middle', 'new_middle', 'rural', 'unemployed', 'catholics', 'peasants', 'minorieties'];
-Q.parties = ['spd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'ppu'];
+Q.parties = ['spd', 'z', 'ddp', 'dvp', 'dnvp', 'nsdap', 'other', 'ppu', 'sapd', 'spm', 'asum', 'blpm', 'gnvp'];
 
 // TODO: add 'sapd' later on
 Q.spm_formed = 0;
@@ -369,6 +369,12 @@ Q.workers_nsdap = 0;
 Q.workers_other = 3;
 Q.workers_ppu = 0;
 
+Q.workers_sapd = 0;
+Q.workers_asum = 0;
+Q.workers_spm = 0;
+Q.workers_blpm = 0;
+Q.workers_gnvp = 0;
+
 Q.old_middle_spd = 0;
 Q.old_middle_z = 10;
 Q.old_middle_ddp= 10;
@@ -377,6 +383,12 @@ Q.old_middle_dnvp = 27;
 Q.old_middle_nsdap = 5;
 Q.old_middle_other = 3;
 Q.old_middle_ppu = 0;
+
+Q.old_middle_sapd = 0;
+Q.old_middle_asum = 0;
+Q.old_middle_spm = 0;
+Q.old_middle_blpm = 0;
+Q.old_middle_gnvp = 0;
 
 Q.new_middle_spd = 5;
 Q.new_middle_z = 10;
@@ -387,6 +399,12 @@ Q.new_middle_nsdap = 5;
 Q.new_middle_other = 3;
 Q.new_middle_ppu = 1;
 
+Q.new_middle_sapd = 0;
+Q.new_middle_asum = 0;
+Q.new_middle_spm = 0;
+Q.new_middle_blpm = 0;
+Q.new_middle_gnvp = 0;
+
 Q.peasants_spd = 35;
 Q.peasants_z = 27;
 Q.peasants_ddp= 3;
@@ -395,6 +413,12 @@ Q.peasants_dnvp = 14;
 Q.peasants_nsdap = 0;
 Q.peasants_other = 6;
 Q.peasants_ppu = 1;
+
+Q.peasants_sapd = 0;
+Q.peasants_asum = 0;
+Q.peasants_spm = 0;
+Q.peasants_blpm = 0;
+Q.peasants_gnvp = 0;
 
 Q.rural_spd = 5;
 Q.rural_z = 15;
@@ -405,6 +429,12 @@ Q.rural_nsdap = 5;
 Q.rural_other = 6;
 Q.rural_ppu = 1;
 
+Q.rural_sapd = 0;
+Q.rural_asum = 0;
+Q.rural_spm = 0;
+Q.rural_blpm = 0;
+Q.rural_gnvp = 0;
+
 Q.unemployed_spd = 35;
 Q.unemployed_z = 10;
 Q.unemployed_ddp = 10;
@@ -413,6 +443,12 @@ Q.unemployed_dnvp = 15;
 Q.unemployed_nsdap = 10;
 Q.unemployed_other = 5;
 Q.unemployed_ppu = 0;
+
+Q.unemployed_sapd = 0;
+Q.unemployed_asum = 0;
+Q.unemployed_spm = 0;
+Q.unemployed_blpm = 0;
+Q.unemployed_gnvp = 0;
 
 Q.minorieties_spd = 15;
 Q.minorieties_z = 1;
@@ -423,6 +459,12 @@ Q.minorieties_nsdap = 0;
 Q.minorieties_other = 14;
 Q.minorieties_ppu = 55;
 
+Q.minorieties_sapd = 0;
+Q.minorieties_asum = 0;
+Q.minorieties_spm = 0;
+Q.minorieties_blpm = 0;
+Q.minorieties_gnvp = 0;
+
 Q.catholics_spd = 2;
 Q.catholics_z = 50;
 Q.catholics_ddp = 6;
@@ -431,6 +473,12 @@ Q.catholics_dnvp = 20;
 Q.catholics_nsdap = 0;
 Q.catholics_other = 7;
 Q.catholics_ppu = 0;
+
+Q.catholics_sapd = 0;
+Q.catholics_asum = 0;
+Q.catholics_spm = 0;
+Q.catholics_blpm = 0;
+Q.catholics_gnvp = 0;
 
 // Current Reichstag composition
 // % of Reichstag in Jan 1928
