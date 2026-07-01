@@ -526,19 +526,19 @@ KPM expell no
 @congress_end
 on-arrival: {!
 
-if (Q.sapd_formed != 0 && Q.asum_formed = 0) {
+if (!Q.sapd_formed && Q.asum_formed == 0) {
 Q.spd_name = "DSPM";
 }
 
-if (Q.sapd_formed != 0 && Q.asum_formed != 0) {
+if (!Q.sapd_formed && !Q.asum_formed) {
 Q.spd_name = "SPM";
 }
 
-if (Q.sapd_formed != 0 && Q.asum_formed != 0 && Q.spm_formed != 0) {
+if (!Q.sapd_formed && !Q.asum_formed && !Q.spm_formed) {
 Q.spd_name = "ISPM";
 }
 
-if (Q.spm_formed != 0 && Q.sapd_formed = 0) {
+if (!Q.spm_formed && Q.sapd_formed == 0) {
 Q.spd_name = "SRPM";
 }
 
