@@ -11,6 +11,8 @@ Q.old_middle_sapd = 0;
 Q.rural_sapd = 0;
 Q.unemployed_sapd = 2;
 Q.catholics_sapd = 0;
+Q.peasants_sapd = 0;
+Q.minorieties_sapd = 0;
 
 Q.workers_other -= 5;
 
