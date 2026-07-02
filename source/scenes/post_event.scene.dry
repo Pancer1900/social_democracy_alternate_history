@@ -12,7 +12,7 @@ for (var c of Q.classes) {
     }
 }
 
-if (spm_formed == 0){
+if (Q.spm_formed == 0){
 Q.workers_spm = 0;
 Q.old_middle_spm = 0;
 Q.new_middle_spm = 0;
@@ -23,7 +23,7 @@ Q.minorieties_spm = 0;
 Q.catholics_spm = 0;
 }
 
-if (sapd_formed == 0){
+if (Q.sapd_formed == 0){
 Q.workers_sapd = 0;
 Q.old_middle_sapd = 0;
 Q.new_middle_sapd = 0;
@@ -34,7 +34,7 @@ Q.minorieties_sapd = 0;
 Q.catholics_sapd = 0;
 }
 
-if (asum_formed == 0){
+if (Q.asum_formed == 0){
 Q.workers_asum = 0;
 Q.old_middle_asum = 0;
 Q.new_middle_asum = 0;
@@ -45,7 +45,7 @@ Q.minorieties_asum = 0;
 Q.catholics_asum = 0;
 }
 
-if (blpm_formed == 0){
+if (Q.blpm_formed == 0){
 Q.workers_blpm = 0;
 Q.old_middle_blpm = 0;
 Q.new_middle_blpm = 0;
@@ -56,7 +56,7 @@ Q.minorieties_blpm = 0;
 Q.catholics_blpm = 0;
 }
 
-if (gnvp_formed == 0){
+if (Q.gnvp_formed == 0){
 Q.workers_gnvp = 0;
 Q.old_middle_gnvp = 0;
 Q.new_middle_gnvp = 0;
