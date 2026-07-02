@@ -15,6 +15,11 @@ Q.lab_seats = (Q.labor_strength/total_strength)*100;
 Q.ref_seats = (Q.reformist_strength/total_strength)*100;
 
 Q.rev_seats = parseFloat(Q.rev_seats.toFixed(1));
+Q.lef_seats = parseFloat(Q.lef_seats.toFixed(1));
+Q.agr_seats = parseFloat(Q.agr_seats.toFixed(1));
+Q.cen_seats = parseFloat(Q.cen_seats.toFixed(1));
+Q.lab_seats = parseFloat(Q.lab_seats.toFixed(1));
+Q.ref_seats = parseFloat(Q.ref_seats.toFixed(1));
 
 !}
 
@@ -132,6 +137,7 @@ congress start
 -@full_ref: The party is fully centered on Reformist and Parlimentary action.
 
 @full_rev
+choose-if: (rev_seats + lef_seats) > (ref_seats + cen_seats)
 on-arrival: party_policy_main = 3; revolutionaries_dissent -= 10; left_dissent -= 8; center_dissent += 4; labor_dissent += 8; reformist_dissent += 20; 
 
 full Rev 
@@ -153,6 +159,7 @@ part ref
 -@revolution: Continue to the congress
 
 @full_ref
+choose-if: (ref_seats + cen_seats/2) > (rev_seats + lef_seats + lab_seats/2 + agr_seats/2)
 on-arrival: party_policy_main = 0; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; center_dissent += 2; reformist_dissent -= 10; 
 
 full ref
@@ -174,6 +181,7 @@ congress start
 -@condem: Condemn any revolutionary acions. 
 
 @immi
+choose-if: ((rev_seats + lef_seats) > (ref_seats + cen_seats)) and party_policy_main > 1
 on-arrival: party_policy_rev = 3; revolutionaries_dissent -= 10; left_dissent -= 8; agrarnians_dissent -= 4; center_dissent += 4; labor_dissent += 4; reformist_dissent += 20; 
 
 full Rev 
@@ -181,6 +189,7 @@ full Rev
 -@coaltions: Continue the congress
 
 @build
+choose-if: party_policy_main > 1
 on-arrival: party_policy_rev = 2; revolutionaries_dissent -= 8; left_dissent -= 6; agrarnians_dissent -= 2; reformist_dissent += 8; 
 
 part rev 
@@ -188,6 +197,7 @@ part rev
 -@coaltions: Continue to the congress
 
 @condem
+view-if: party_policy_main = 0
 on-arrival: party_policy_rev = -1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 6; center_dissent += 6; reformist_dissent -= 10; 
 
 part ref
@@ -195,6 +205,7 @@ part ref
 -@coaltions: Continue to the congress
 
 @down
+choose-if: party_policy_main >= 0 and party_policy_main <= 2
 on-arrival: party_policy_rev = 1; revolutionaries_dissent += 8; left_dissent += 5; agrarnians_dissent += 3; reformist_dissent -= 6; 
 
 full ref
@@ -202,6 +213,7 @@ full ref
 -@coaltions: Continue to the congress
 
 @nutral
+choose-if: ((rev_seats + lef_seats) < (ref_seats + cen_seats/2)) and party_policy_main < 2
 on-arrival: party_policy_rev = 0; revolutionaries_dissent += 10; left_dissent += 7; agrarnians_dissent += 5; labor_dissent += 4; center_dissent += 4; reformist_dissent -= 8; 
 
 full ref
@@ -221,6 +233,7 @@ congress start
 -@libe: We should be fully open to any and all coalitons, even if it means compomising our more radlical goals. 
 
 @soc_maj
+choose-if: ((rev_seats + lef_seats) > ref_seats) and party_policy_main < 3
 on-arrival: party_policy_coalition = 2; revolutionaries_dissent -= 6; left_dissent -= 6; agrarnians_dissent += 6; labor_dissent += 6; center_dissent += 2; reformist_dissent += 10;
 
 soc_maj
@@ -228,6 +241,7 @@ soc_maj
 -@union: Continue the congress
 
 @zel
+choose-if: party_policy_main < 3
 on-arrival: party_policy_coalition = 1; revolutionaries_dissent += 4; left_dissent += 4; agrarnians_dissent -= 2; labor_dissent -= 4; center_dissent -= 4; reformist_dissent -= 4;
 
 zel 
@@ -235,6 +249,7 @@ zel
 -@union: Continue to the congress
 
 @libe
+choose-if: ((rev_seats + lef_seats) < (ref_seats + cen_seats/2)) and party_policy_main < 2
 on-arrival: party_policy_coalition = 0; revolutionaries_dissent += 10; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 10;
 
 libe
@@ -255,6 +270,7 @@ congress start
 -@syn: The party should be subordinated to the unions and to the direct will of the people. 
 
 @party
+choose-if: (cen_seats/2 + lef_seats/2 + ref_seats/2) > (rev_seats/2 + lab_seats)
 on-arrival: party_policy_unions = 2; revolutionaries_dissent -= 2; left_dissent -= 4; labor_dissent += 10; center_dissent -= 6; reformist_dissent -= 4;
 
 party
@@ -269,6 +285,7 @@ quo
 -@para: Continue to the congress
 
 @independent
+choose-if: (rev_seats/2 + lab_seats) > (ref_seats/2 + cen_seats/2 + lef_seats/2)
 on-arrival: party_policy_unions = 0; revolutionaries_dissent += 4; left_dissent += 4; labor_dissent -= 8; center_dissent += 2;
 
 independent
@@ -276,6 +293,7 @@ independent
 -@para: Continue to the congress
 
 @syn
+choose-if: (rev_seats + lab_seats) > (ref_seats + cen_seats + lef_seats/2 + agr_seats/2)
 on-arrival: party_policy_unions = 3; revolutionaries_dissent -= 8; left_dissent -= 6; labor_dissent -= 14; center_dissent += 6; reformist_dissent += 10;
 
 syn
@@ -290,12 +308,13 @@ congress start
 
 = Issue of the Paramilitraies
 
--@revolution_usage: Our Paramilitaries should work towards preparing the revolution.
--@party_defevce: The primary duty of our forces should be to defend the party.
+-@revolution_usage: Our Paramilitaries priority is to work towards preparing the revolution.
+-@party_defevce: The primary duty of our forces should be to defend the party and support it.
 -@fight_right: The paramilitaries should focus of fignting and egtting rid of the reactionary forces. 
 -@republic: Commit the paramiltaries to defend the Federation agains the threats from the reactionares. 
 
 @revolution_usage
+choose-if: ((rev_seats + lef_seats) > (ref_seats + cen_seats)) and party_policy_main > 1
 on-arrival: party_policy_paramilitary = 3; revolutionaries_dissent -= 8; left_dissent -= 6; agrarnians_dissent -= 4; labor_dissent += 2; center_dissent += 4; reformist_dissent += 6;
 
 revolution_usage
@@ -310,6 +329,7 @@ party_defevce
 -@the: Continue to the congress
 
 @fight_right
+choose-if: (rev_seats + lef_seats) < (ref_seats + cen_seats/2)
 on-arrival: party_policy_paramilitary = 1; revolutionaries_dissent += 6; left_dissent += 4; agrarnians_dissent += 2; reformist_dissent -= 4;
 
 fight_right
@@ -317,6 +337,7 @@ fight_right
 -@the: Continue to the congress
 
 @republic
+choose-if: ((rev_seats + lef_seats + cen_seats/2) < ref_seats) and party_policy_main < 2
 on-arrival: party_policy_paramilitary = 0; revolutionaries_dissent += 10; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 10;
 
 republic
@@ -334,15 +355,38 @@ congress start
 -@rural: The peasnts and farmers are as much proletarian as a steelworker or bus driver and should be concidered as such by our party!
 -@prolet: We shall remain the party of the urban proletariat in its primacy.
 -@midlle: Maybe we can try to transform our party into a wider "people's party" represneting all social groups who arent burgoise?
+-@people_create: We can officialy become a People's Party, that will represent all of the non-burgoise society!
+-@people_support: We remain commited to the Socialist people's party. 
 
-@midlle
+@people_support
+view-if: united_front_theory == 2 
 on-arrival: united_front_theory = 2; revolutionaries_dissent += 8; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 6;
 
 midlle
 
 -@land: Continue the congress
 
+@people_create
+view-if: peoples_party_support >= 4 and united_front_theory != 2
+choose-if: (rev_seats + lef_seats + cen_seats/2) < (ref_seats + peoples_party_support*2)
+on-arrival: united_front_theory = 2; revolutionaries_dissent += 8; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 6;
+
+midlle
+
+-@land: Continue the congress
+
+@midlle
+view-if: united_front_theory != 2
+choose-if: ((rev_seats + lef_seats) < ref_seats) and united_front_theory == 1
+on-arrival: peoples_party_support += 2; revolutionaries_dissent += 8; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 6;
+
+midlle
+
+-@land: Continue the congress
+
 @rural
+view-if: united_front_theory != 2
+choose-if: (cen_seats + lef_seats/2) < (agr_seats + rev_seats + ref_seats/2)
 on-arrival: united_front_theory = 1; revolutionaries_dissent += 3; left_dissent += 3; agrarnians_dissent -= 10; labor_dissent += 4; center_dissent += 6; reformist_dissent += 2;
 
 rural 
@@ -350,6 +394,8 @@ rural
 -@land: Continue to the congress
 
 @prolet
+view-if: united_front_theory != 2
+choose-if: (cen_seats + lef_seats/2) > (agr_seats + rev_seats + ref_seats/2)
 on-arrival: united_front_theory = 0; revolutionaries_dissent -= 2; left_dissent -= 2; agrarnians_dissent += 10; labor_dissent += 2; center_dissent -= 2; reformist_dissent += 4;
 
 prolet
@@ -365,11 +411,12 @@ congress start
 = Issue of the Land policy and the rural Question. 
 
 -@land_0: The peasnts and farmers struggle should be on our forefront and their fight for emancipation is our goal!
--@land_3: The party supports colectivation plans as a way to achive Socialism in the countryside. 
+-@land_3: The party supports the new colectivation plans as a way to achive Socialism in the countryside. 
 -@land_2: Continue the current policy of supporting the rural struggle against the landowners, but do not focus on their issues.
 -@land_1: Rural affairs should not concern the party of the urban Proletariat.
 
 @land_3
+choose-if: ((cen_seats + ref_seats) < (agr_seats + rev_seats + lef_seats/2)) and asum_formed == 0 
 on-arrival: party_policy_land = 2; revolutionaries_dissent -= 4; left_dissent -= 2; agrarnians_dissent -= 8; labor_dissent -= 2; center_dissent += 6; reformist_dissent += 6;
 
 party
@@ -384,6 +431,7 @@ quo
 -@congress: Continue to the congress
 
 @land_1
+choose-if: (agr_seats + rev_seats/2) < cen_seats
 on-arrival: party_policy_land = 0; revolutionaries_dissent += 4; left_dissent += 6; agrarnians_dissent += 10; labor_dissent += 2; center_dissent -= 6; reformist_dissent += 6;
 
 independent
@@ -391,6 +439,7 @@ independent
 -@congress: Continue to the congress
 
 @land_0
+choose-if: ((cen_seats + lef_seats/2 + ref_seats/2) < (agr_seats + rev_seats)) and asum_formed == 0 
 on-arrival: party_policy_land = 3; revolutionaries_dissent -= 2; left_dissent += 2; agrarnians_dissent -= 10; labor_dissent += 4; center_dissent += 6; reformist_dissent += 6;
 
 syn
@@ -416,13 +465,20 @@ on-arrival: {!
 // set up the infrastructure
 Q.revolutionaries_split = 1;
 Q.sapd_formed = 1;
+Q.workers_sapd += (Q.workers_spd*(revolutionaries_strength/100));
+Q.workers_sapd += 2;
+Q.workers_spd -= (Q.workers_spd*(revolutionaries_strength/120));
+Q.new_middle_sapd += 2;
+Q.peasants_sapd += 4;
+Q.rural_sapd += 2;
+Q.unemployed_sapd += 4;
 
 Q.sapd_relation = 60;
 
 // update all records
 Q.old_sapd_r = 0;
 
-Q.sapd_r = Math.round((Q.spd_r / 4 + 1) * 10) / 10;
+Q.sapd_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
 Q.spd_r = Math.round((Q.spd_r - Q.sapd_r) * 10) / 10;
 
 for (var record of Q.election_records) {
@@ -463,12 +519,25 @@ on-arrival: {!
 Q.reformists_resigned = 1;
 Q.spm_formed = 1;
 
+Q.workers_spm = (Q.workers_spd*(reformist_strength/100));
+Q.workers_spm += 2;
+Q.workers_spd -= (Q.workers_spd*(reformist_strength/120));
+Q.new_middle_spm = (Q.new_middle_spd*(reformist_strength/100));
+Q.new_middle_spm += 2;
+Q.new_middle_spd -= (Q.new_middle_spd*(reformist_strength/120));
+Q.peasants_spm = 2;
+Q.old_middle_spm = 2;
+Q.rural_spm = 2;
+Q.unemployed_spm = 2;
+Q.catholics_spm = 0;
+Q.minorieties_spm = 1;
+
 Q.spm_relation = 60;
 
 // update all records
 Q.old_spm_r = 0;
 
-Q.spm_r = Math.round((Q.spd_r / 4 + 1) * 10) / 10;
+Q.spm_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
 Q.spd_r = Math.round((Q.spd_r - Q.spm_r) * 10) / 10;
 
 for (var record of Q.election_records) {
