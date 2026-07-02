@@ -12,8 +12,10 @@ Q.unemployed_sapd += 4;
 
 Q.sapd_relation = 50;
 
-Q.sapd_r = 0;
 Q.old_sapd_r = 0;
+
+Q.sapd_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
+Q.spd_r = Math.round((Q.spd_r - Q.sapd_r) * 10) / 10;
 
 for (var record of Q.election_records) {
     record['sapd'] = 0;
