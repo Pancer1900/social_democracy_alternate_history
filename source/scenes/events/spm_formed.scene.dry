@@ -1,7 +1,6 @@
 on-arrival: {!
 // set up the infrastructure
-Q.sapd_formed = 1;
-Q.parties.push('spm');
+Q.spm_formed = 1;
 
 Q.workers_spm = (Q.workers_spd*(reformist_strength/100));
 Q.workers_spm += 2;
@@ -18,7 +17,9 @@ Q.minorieties_spm = 1;
 
 // update all records
 Q.old_spm_r = 0;
-Q.spm_r = 0;
+
+Q.spm_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
+Q.spd_r = Math.round((Q.spd_r - Q.spm_r) * 10) / 10;
 
 for (var record of Q.election_records) {
     record['spm'] = 0;
