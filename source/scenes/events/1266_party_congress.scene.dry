@@ -465,9 +465,10 @@ on-arrival: {!
 // set up the infrastructure
 Q.revolutionaries_split = 1;
 Q.sapd_formed = 1;
-Q.workers_sapd += (Q.workers_spd*(revolutionaries_strength/100));
+
+Q.workers_sapd += (Q.workers_spd*(Q.revolutionaries_strength/100));
 Q.workers_sapd += 2;
-Q.workers_spd -= (Q.workers_spd*(revolutionaries_strength/120));
+Q.workers_spd -= (Q.workers_spd*(Q.revolutionaries_strength/120));
 Q.new_middle_sapd += 2;
 Q.peasants_sapd += 4;
 Q.rural_sapd += 2;
@@ -478,7 +479,7 @@ Q.sapd_relation = 60;
 // update all records
 Q.old_sapd_r = 0;
 
-Q.sapd_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
+Q.sapd_r = Math.round((Q.spd_r / 4 + 1) * 10) / 10;
 Q.spd_r = Math.round((Q.spd_r - Q.sapd_r) * 10) / 10;
 
 for (var record of Q.election_records) {
@@ -519,12 +520,12 @@ on-arrival: {!
 Q.reformists_resigned = 1;
 Q.spm_formed = 1;
 
-Q.workers_spm = (Q.workers_spd*(reformist_strength/100));
+Q.workers_spm = (Q.workers_spd*(Q.reformist_strength/100));
 Q.workers_spm += 2;
-Q.workers_spd -= (Q.workers_spd*(reformist_strength/120));
-Q.new_middle_spm = (Q.new_middle_spd*(reformist_strength/100));
+Q.workers_spd -= (Q.workers_spd*(Q.reformist_strength/120));
+Q.new_middle_spm = (Q.new_middle_spd*(Q.reformist_strength/100));
 Q.new_middle_spm += 2;
-Q.new_middle_spd -= (Q.new_middle_spd*(reformist_strength/120));
+Q.new_middle_spd -= (Q.new_middle_spd*(Q.reformist_strength/120));
 Q.peasants_spm = 2;
 Q.old_middle_spm = 2;
 Q.rural_spm = 2;
@@ -537,7 +538,7 @@ Q.spm_relation = 60;
 // update all records
 Q.old_spm_r = 0;
 
-Q.spm_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
+Q.spm_r = Math.round((Q.spd_r / 4 + 1) * 10) / 10;
 Q.spd_r = Math.round((Q.spd_r - Q.spm_r) * 10) / 10;
 
 for (var record of Q.election_records) {
