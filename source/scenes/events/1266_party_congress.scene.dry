@@ -7,6 +7,32 @@ max-visits: 1
 new-page: true
 on-arrival: {!
 
+Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.revolutionaries_strength + Q.agrarnians_strength;
+
+if (Q.labor_strength < 0 && Q.unions_independent == 0 ) {
+    Q.labor_strength = 4;
+    }
+
+if (Q.left_strength < 0 && Q.left_split == 0 ) {
+    Q.left_strength = 4;
+    }
+
+if (Q.revolutionaries_strength < 0 && Q.revolutionaries_split == 0 ) {
+    Q.revolutionaries_strength = 4;
+    }
+
+if (Q.reformist_strength < 0 && Q.reformists_resigned == 0 ) {
+    Q.reformist_strength = 4;
+    }
+
+if (Q.agrarnians_strength < 0 && Q.agrarnians_split == 0 ) {
+    Q.agrarnians_strength = 4;
+    }
+
+if (Q.center_strength < 0) {
+    Q.center_strength = 4;
+    }
+
 Q.rev_seats = (Q.revolutionaries_strength/total_strength)*100;
 Q.lef_seats = (Q.left_strength/total_strength)*100;
 Q.agr_seats = (Q.agrarnians_strength/total_strength)*100;
