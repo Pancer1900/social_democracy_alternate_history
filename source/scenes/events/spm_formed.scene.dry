@@ -1,13 +1,15 @@
 on-arrival: {!
 // set up the infrastructure
+Q.reformists_resigned = 1;
 Q.spm_formed = 1;
 
-Q.workers_spm = (Q.workers_spd*(reformist_strength/100));
-Q.workers_spm += 2;
-Q.workers_spd -= (Q.workers_spd*(reformist_strength/120));
-Q.new_middle_spm = (Q.new_middle_spd*(reformist_strength/100));
-Q.new_middle_spm += 2;
-Q.new_middle_spd -= (Q.new_middle_spd*(reformist_strength/120));
+Q.workers_spm = 12;
+Q.workers_spm += (Q.workers_spd*(Q.reformist_strength/100));
+Q.workers_spd -= 6;
+Q.workers_spd -= (Q.workers_spd*(Q.reformist_strength/120));
+Q.new_middle_spm = 8;
+Q.new_middle_spm += (Q.new_middle_spd*(Q.reformist_strength/100));
+Q.new_middle_spd -= (Q.new_middle_spd*(Q.reformist_strength/120));
 Q.peasants_spm = 2;
 Q.old_middle_spm = 2;
 Q.rural_spm = 2;
@@ -15,10 +17,12 @@ Q.unemployed_spm = 2;
 Q.catholics_spm = 0;
 Q.minorieties_spm = 1;
 
+Q.spm_relation = 60;
+
 // update all records
 Q.old_spm_r = 0;
 
-Q.spm_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
+Q.spm_r = Math.round((Q.spd_r / 4 + 1) * 10) / 10;
 Q.spd_r = Math.round((Q.spd_r - Q.spm_r) * 10) / 10;
 
 for (var record of Q.election_records) {
@@ -27,4 +31,21 @@ for (var record of Q.election_records) {
 for (var record of Q.party_support_records) {
     record['spm'] = 0;
 }
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 0) {
+Q.spd_name = "DSPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1) {
+Q.spd_name = "SPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 1 ) {
+Q.spd_name = "ISPM";
+}
+
+if (Q.spm_formed == 1 && Q.sapd_formed == 0) {
+Q.spd_name = "SRPM";
+}
+
 !}
