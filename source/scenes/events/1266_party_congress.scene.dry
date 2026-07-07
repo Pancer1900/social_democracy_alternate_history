@@ -665,20 +665,24 @@ go-to: congress_end if (reformist_dissent + center_dissent/2) < 90; expell_kpm_2
 @congress_end
 on-arrival: {!
 
-if (Q.sapd_formed == 1 && Q.asum_formed == 0) {
+if (Q.sapd_formed == 1 && Q.asum_formed == 0 && Q.spm_formed == 0) {
 Q.spd_name = "DSPM";
 }
 
-if (Q.sapd_formed == 1 && Q.asum_formed == 1) {
+if (Q.spm_formed == 1 && Q.sapd_formed == 0) {
+Q.spd_name = "SRPM";
+}
+
+if (Q.spm_formed == 0 && Q.sapd_formed == 0 && Q.asum_formed == 1) {
+Q.spd_name = "SAPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 0) {
 Q.spd_name = "SPM";
 }
 
 if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 1 ) {
 Q.spd_name = "ISPM";
-}
-
-if (Q.spm_formed == 1 && Q.sapd_formed == 0) {
-Q.spd_name = "SRPM";
 }
 
 !}
