@@ -2,16 +2,23 @@ on-arrival: {!
 // set up the infrastructure
 Q.sapd_formed = 1;
 
-Q.workers_sapd += (Q.workers_spd*(revolutionaries_strength/100));
-Q.workers_sapd += 2;
-Q.workers_spd -= (Q.workers_spd*(revolutionaries_strength/120));
-Q.new_middle_sapd += 2;
-Q.peasants_sapd += 4;
-Q.rural_sapd += 2;
-Q.unemployed_sapd += 4;
+on-arrival: {!
+// set up the infrastructure
+Q.revolutionaries_split = 1;
+Q.sapd_formed = 1;
 
-Q.sapd_relation = 50;
+Q.workers_sapd = 16;
+Q.workers_sapd += (Q.workers_spd*(Q.revolutionaries_strength/100));
+Q.workers_spd -= 6;
+Q.workers_spd -= (Q.workers_spd*(Q.revolutionaries_strength/120));
+Q.new_middle_sapd = 2;
+Q.peasants_sapd = 4;
+Q.rural_sapd = 2;
+Q.unemployed_sapd = 12;
 
+Q.sapd_relation = 60;
+
+// update all records
 Q.old_sapd_r = 0;
 
 Q.sapd_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
@@ -23,6 +30,7 @@ for (var record of Q.election_records) {
 for (var record of Q.party_support_records) {
     record['sapd'] = 0;
 }
+!}
 
 
 
