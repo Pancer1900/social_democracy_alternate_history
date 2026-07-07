@@ -1,9 +1,4 @@
 on-arrival: {!
-// set up the infrastructure
-Q.sapd_formed = 1;
-
-on-arrival: {!
-// set up the infrastructure
 Q.revolutionaries_split = 1;
 Q.sapd_formed = 1;
 
@@ -50,6 +45,5 @@ Q.spd_name = "SPM";
 if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 1 ) {
 Q.spd_name = "ISPM";
 }
-
 
 !}
