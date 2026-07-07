@@ -1,0 +1,65 @@
+title: Agrarians wing splits!
+new-page: true 
+subtitle: The agrarian faction of the party decides to split and create their own party
+tags: event
+view-if: year > 1266 and agrarnians_dissent >= 50 and asum_formed = 0
+on-arrival: {!
+// set up the infrastructure
+Q.agrarnians_split = 1;
+Q.asum_formed = 1;
+
+Q.workers_asum = 4;
+Q.workers_spd -= 2;
+Q.new_middle_asum = 2;
+Q.peasants_asum = 20;
+Q.peasants_asum += (Q.peasants_spd*(Q.agrarnians_strength/100));
+Q.peasants_spd -= (Q.peasants_spd*(Q.agrarnians_strength/120));
+Q.peasants_spd -= 8;
+Q.rural_asum += (Q.peasants_spd*(Q.agrarnians_strength/100));
+Q.rural_spd -= (Q.peasants_spd*(Q.agrarnians_strength/120));
+Q.rural_spd -= 8;
+Q.unemployed_asum = 2;
+Q.catholics_asum = 2;
+Q.minorieties_asum = 1;
+
+Q.asum_relation = 60;
+
+// update all records
+Q.old_asum_r = 0;
+
+Q.asum_r = Math.round((Q.spd_r / 5 + 1) * 10) / 10;
+Q.spd_r = Math.round((Q.spd_r - Q.asum_r) * 10) / 10;
+
+for (var record of Q.election_records) {
+    record['asum'] = 0;
+}
+for (var record of Q.party_support_records) {
+    record['asum'] = 0;
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 0 && Q.spm_formed == 0) {
+Q.spd_name = "DSPM";
+}
+
+if (Q.spm_formed == 1 && Q.sapd_formed == 0) {
+Q.spd_name = "SRPM";
+}
+
+if (Q.spm_formed == 0 && Q.sapd_formed == 0 && Q.asum_formed == 1) {
+Q.spd_name = "SAPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 0) {
+Q.spd_name = "SPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 1 ) {
+Q.spd_name = "ISPM";
+}
+
+!}
+max-visits: 1
+
+= Agrarians leaders resign
+
+Our policy choices have greatly offended the Agrarians faction. Many of our most experienced leaders have resigned.
