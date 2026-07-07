@@ -3,7 +3,7 @@ new-page: true
 subtitle: Reformist disagreements with our policies have grown too severe.
 tags: event
 view-if: year > 1266 and reformist_dissent >= 60 and spm_formed = 0
-on-arrival: revolutionaries_split = 1; 
+on-arrival: reformists_resigned = 1; 
 go-to: spm_formed
 max-visits: 1
 
