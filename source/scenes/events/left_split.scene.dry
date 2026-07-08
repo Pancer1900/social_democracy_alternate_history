@@ -1,4 +1,4 @@
-title: Left wing splits!
+title: Left wing of the party splits!
 new-page: true 
 subtitle: The Left faction of the party decides to split and join the <span style="color: #940000;">KPM</span>.
 tags: event
@@ -15,6 +15,15 @@ Q.peasants_sapd += 4;
 Q.peasants_spd -= 2;
 Q.unemployed_spd -= 14;
 Q.unemployed_sapd += 16;
+
+Q.z_relation += 2*gdsu_modifer; 
+Q.ddp_relation += 3*fvp_modifer; 
+Q.dvp_relation += 2*ldp_modifer;
+
+Q.liberal_reconciliation += 1; 
+Q.lib_dissident += 1;
+
+Q.sapd_relation -= 10;
 
 if (Q.sapd_formed == 1 && Q.asum_formed == 0 && Q.spm_formed == 0) {
 Q.spd_name = "DSPM";
@@ -39,6 +48,8 @@ Q.spd_name = "ISPM";
 !}
 max-visits: 1
 
-= Left leaders resign
+= Left wing split
 
-Our policy choices have greatly offended the left faction. Many of our most experienced leaders have resigned.
+We have wandered too far reformist and revisionst, now our core members, the commited <span style="color: #d61818;">Socialism</span> of the old <span style="color: #d61818;">SAPM</span> are leaving us. 
+
+This is bad for our relations with the <span style="color: #940000;">KPM</span>, but may give us the brakerough for true parlimetarism and reformism that we needed. 
