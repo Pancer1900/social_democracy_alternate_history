@@ -1,0 +1,49 @@
+title: Unions splits!
+new-page: true 
+subtitle: Unions declare independence form the party!
+tags: event
+view-if: year > 1266 and labor_dissent >= 60
+on-arrival: {!
+// set up the infrastructure
+Q.unions_independent = 1;
+
+Q.workers_sapd += 4;
+Q.workers_spd -= 2;
+Q.unemployed_spd -= 6;
+Q.unemployed_sapd += 9;
+             
+Q.workers_spm += 4;
+Q.workers_spd -= 2;
+Q.new_middle_spm += 4;
+Q.new_middle_spd -= 2;
+
+Q.organisation_workers -= 2;
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 0 && Q.spm_formed == 0) {
+Q.spd_name = "DSPM";
+}
+
+if (Q.spm_formed == 1 && Q.sapd_formed == 0) {
+Q.spd_name = "SRPM";
+}
+
+if (Q.spm_formed == 0 && Q.sapd_formed == 0 && Q.asum_formed == 1) {
+Q.spd_name = "SAPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 0) {
+Q.spd_name = "SPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 1 ) {
+Q.spd_name = "ISPM";
+}
+
+!}
+max-visits: 1
+
+= Unions Split!
+
+We have abondened one of our primary pillars of our <span style="color: #d61818;">Socialist</span> way. 
+
+Main unions are abandoning the party and joining ther polical alliences. 
