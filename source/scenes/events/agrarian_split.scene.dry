@@ -8,21 +8,23 @@ on-arrival: {!
 Q.agrarnians_split = 1;
 Q.asum_formed = 1;
 
-Q.workers_asum = 4;
-Q.workers_spd -= 2;
+Q.workers_asum = 8;
+Q.workers_spd -= 6;
 Q.new_middle_asum = 2;
 Q.peasants_asum = 20;
 Q.peasants_asum += (Q.peasants_spd*(Q.agrarnians_strength/100));
 Q.peasants_spd -= (Q.peasants_spd*(Q.agrarnians_strength/120));
-Q.peasants_spd -= 8;
+Q.peasants_spd -= 14;
 Q.rural_asum += (Q.peasants_spd*(Q.agrarnians_strength/100));
 Q.rural_spd -= (Q.peasants_spd*(Q.agrarnians_strength/120));
-Q.rural_spd -= 8;
+Q.rural_spd -= 14;
 Q.unemployed_asum = 2;
 Q.catholics_asum = 2;
 Q.minorieties_asum = 1;
 
-Q.asum_relation = 60;
+Q.organisation_rural -= 2;
+
+Q.asum_relation = 50;
 
 // update all records
 Q.old_asum_r = 0;
