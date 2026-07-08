@@ -7,17 +7,17 @@ on-arrival: {!
 // set up the infrastructure
 Q.unions_independent = 1;
 
-Q.workers_sapd += 4;
-Q.workers_spd -= 2;
-Q.unemployed_spd -= 6;
-Q.unemployed_sapd += 9;
+Q.workers_sapd += 20;
+Q.workers_spd -= 16;
+Q.unemployed_spd -= 10;
+Q.unemployed_sapd += 14;
              
-Q.workers_spm += 4;
-Q.workers_spd -= 2;
-Q.new_middle_spm += 4;
-Q.new_middle_spd -= 2;
+Q.workers_spm += 16;
+Q.workers_spd -= 8;
+Q.new_middle_spm += 12;
+Q.new_middle_spd -= 8;
 
-Q.organisation_workers -= 2;
+Q.organisation_workers -= 4;
 
 if (Q.sapd_formed == 1 && Q.asum_formed == 0 && Q.spm_formed == 0) {
 Q.spd_name = "DSPM";
