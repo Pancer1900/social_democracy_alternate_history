@@ -1,0 +1,44 @@
+title: Left wing splits!
+new-page: true 
+subtitle: The Left faction of the party decides to split and join the KPM
+tags: event
+view-if: year > 1266 and left_dissent >= 60
+on-arrival: {!
+// set up the infrastructure
+Q.left_split = 1;
+
+Q.workers_sapd += 6;
+Q.workers_spd -= 4;
+Q.new_middle_sapd += 2;
+Q.new_middle_spd -= 2;
+Q.peasants_sapd += 4;
+Q.peasants_spd -= 2;
+Q.unemployed_spd -= 8;
+Q.unemployed_sapd += 10;
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 0 && Q.spm_formed == 0) {
+Q.spd_name = "DSPM";
+}
+
+if (Q.spm_formed == 1 && Q.sapd_formed == 0) {
+Q.spd_name = "SRPM";
+}
+
+if (Q.spm_formed == 0 && Q.sapd_formed == 0 && Q.asum_formed == 1) {
+Q.spd_name = "SAPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 0) {
+Q.spd_name = "SPM";
+}
+
+if (Q.sapd_formed == 1 && Q.asum_formed == 1 && Q.spm_formed == 1 ) {
+Q.spd_name = "ISPM";
+}
+
+!}
+max-visits: 1
+
+= Left leaders resign
+
+Our policy choices have greatly offended the left faction. Many of our most experienced leaders have resigned.
