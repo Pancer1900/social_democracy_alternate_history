@@ -1,5 +1,5 @@
 title: Merkia Landtag Election
-view-if: year == 1266 and month == 12 and merkia_election_1266_seen = 0;
+view-if: year == 1266 and month == 12 and merkia_election_1266_seen == 0;
 new-page: true
 tags: event
 on-arrival: merkia_election_1266_seen = 1; merkia_election_seen_2_time = time; merkia_most_recent = time
