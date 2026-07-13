@@ -70,6 +70,7 @@ for (var party of Q.parties) {
 -@post_election
 
 @post_election
+title: Caversket Elections
 on-arrival: {!
 // set old results
 // election threshold constitutional reform
