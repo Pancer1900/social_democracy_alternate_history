@@ -1,8 +1,8 @@
 title: Merkia Landtag Election
-view-if: year == 1268 and month == 12
+view-if: year == 1266 and month == 12
 new-page: true
 tags: event
-on-arrival: merkia_election_1268_seen = 1; merkia_election_seen_2_time = time; merkia_most_recent = time
+on-arrival: merkia_election_1266_seen = 1; merkia_election_seen_2_time = time; merkia_most_recent = time
 priority: 2
 
 = Elections, [+ month : month +] [+ year +]
@@ -81,6 +81,7 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         Q['str_change_' + party] = sign + Q['change_' + party + '_mer'];//.toFixed(1);
     }
 }
+!}
              
 on-display: {!
 data = [];
