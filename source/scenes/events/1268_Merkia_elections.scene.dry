@@ -140,8 +140,7 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
         Q['str_change_' + party] = sign + Q['change_' + party + '_mer'];//.toFixed(1);
     }
 }
-!}
-             
+!}            
 on-display: {!
 data = [];
 if (Q.sapd_formed && Q.sapd_r) {
