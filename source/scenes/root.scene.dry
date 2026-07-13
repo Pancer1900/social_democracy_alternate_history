@@ -733,6 +733,7 @@ Q.tariffs = 4.5;
 Q.tax_rate = 0; // sum of all the taxes div 8
 
 Q.electoral_threshold = 0;
+Q.merkia_election_1266_seen = 0;
 
 // our conduct in the government, and the conduct of our coalition opponents.
 // did the SPD vote against the previous government in a vote of no confidence?
