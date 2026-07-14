@@ -65,13 +65,7 @@ for (var party of Q.parties) {
     //Q[party+'_votes'] = Q[party+'_votes_dec'];
     // display
 }
-!}
 
--@post_election
-
-@post_election
-title: Caversket Elections
-on-arrival: {!
 // set old results
 // election threshold constitutional reform
 // banning parties
@@ -215,3 +209,22 @@ if (window && d3) {
 !}
 
 = Election results
+
+{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+
+[? if revolutionaries_split == 0 : {!<tr><td><div class="box" style='background-color:#b50000'> </div> !}Revolutionatries: {!</td><td>!} [+ rev_seats +]% ?]
+
+[? if left_split == 0 : {!<tr><td><div class="box" style='background-color:#940000'> </div> !}Left: {!</td><td>!} [+ lef_seats +]% ?]
+
+[? if agrarnians_split == 0 : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}Agrarians: {!</td><td>!} [+ agr_seats +]% ?]
+
+[? if centrists_resign == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Center: {!</td><td>!} [+ cen_seats +]% ?]
+
+[? if unions_independent == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Labour: {!</td><td>!} [+ lab_seats +]% ?]
+
+[? if reformists_resigned == 0 : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}Refrormist: {!</td><td>!} [+ ref_seats +]% ?]
+
+{!</table>!}
