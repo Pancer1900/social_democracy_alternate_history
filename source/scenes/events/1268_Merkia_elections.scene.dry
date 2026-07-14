@@ -1,5 +1,5 @@
 title: Merkia Landtag Election
-view-if: year == 1266 and month == 12 and merkia_election_1266_seen == 0
+view-if: year == 1266 and month == 2 and merkia_election_1266_seen == 0
 new-page: true
 tags: event
 on-arrival: merkia_election_1266_seen = 1; merkia_election_seen_2_time = time; merkia_most_recent = time
@@ -141,100 +141,60 @@ if (Q.electoral_threshold && Q.electoral_threshold > 0) {
     }
 }
 !}            
+
+-@election: election...
+
+@election
 on-display: {!
 data = [];
-if (Q.sapd_formed && Q.sapd_r) {
+if (Q.revolutionaries_split == 0) {
     data.push({
-            "id": "sapd",
-            "legend": "KPM",
-            "name": "KPM",
-            "seats": Math.round(Q.sapd_r*5),
+            "id": "rev",
+            "legend": "Revolutionaries",
+            "name": "Revolutionaries",
+            "seats": Math.round(Q.rev_seats*8),
             });
 }
-if (Q.asum_formed && Q.asum_r) {
+if (Q.left_split == 0) {
     data.push({
-            "id": "asum",
-            "legend": "ASUM",
-            "name": "ASUM",
-            "seats": Math.round(Q.asum_r*5),
+            "id": "lef",
+            "legend": "Left",
+            "name": "Left",
+            "seats": Math.round(Q.lef_seats*8),
             });
 }
-data = data.concat([
-    {
-        "id": "spd",
-        "legend": Q.spd_name,
-        "name": Q.spd_name,
-        "seats": Math.round(Q.spd_r*5),
-    },
-    {
-        "id": "ddp",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
-        "seats": Math.round(Q.ddp_r*5),
-    },
-    {
-        "id": "z",
-        "legend": "GDSU",
-        "name": "GDSU",
-        "seats": Math.round(Q.z_r*5),
-    },
-    ]);
-if (Q.blpm_formed && Q.blpm_r) {
+if (Q.agrarnians_split == 0) {
     data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_r*5),
+            "id": "agr",
+            "legend": "Agrariarins",
+            "name": "Agrariarins",
+            "seats": Math.round(Q.agr_seats*8),
             });
 }
-data = data.concat([
-    {
-        "id": "bvp",
-        "legend": "PPU",
-        "name": "PPU",
-        "seats": Math.round(Q.ppu_r*5),
-    },
-    {
-        "id": "dvp",
-        "legend": Q.dvp_name,
-        "name": Q.dvp_name,
-        "seats": Math.round(Q.dvp_r*5),
-    },
-    {
-        "id": "other",
-        "legend": "Other",
-        "name": "Other",
-        "seats": Math.round(Q.other_r*2),
-    },
-    {
-        "id": "ltp",
-        "legend": "ltp",
-        "name": "ltp",
-        "seats": Math.round(Q.other_r*3),
-    },
-]);
-if (Q.gnvp_formed && Q.gnvp_r) {
+if (Q.centrists_resign == 0) {
     data.push({
-            "id": "gnvp",
-            "legend": "GNVP",
-            "name": "GNVP",
-            "seats": Math.round(Q.gnvp_r*5),
+            "id": "cen",
+            "legend": "Centrists",
+            "name": "Centrists",
+            "seats": Math.round(Q.cen_seats*8),
             });
 }
-data = data.concat([
-    {
-        "id": "dnvp",
-        "legend": "MNVP",
-        "name": "MNVP",
-        "seats": Math.round(Q.dnvp_r*5),
-    },
-    {
-        "id": "nsdap",
-        "legend": "NSDAP",
-        "name": "NSDAP",
-        "seats": Math.round(Q.nsdap_r*5),
-    },
-]);
+if (Q.unions_independent == 0) {
+    data.push({
+            "id": "lab",
+            "legend": "Labour",
+            "name": "Labour",
+            "seats": Math.round(Q.lab_seats*8),
+            });
+}
+if (Q.reformists_resigned == 0) {
+    data.push({
+            "id": "ref",
+            "legend": "Reformist",
+            "name": "Reformist",
+            "seats": Math.round(Q.ref_seats*8),
+            });
+}
 
 if (window && d3) {
     var width = 500; 
@@ -253,3 +213,5 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
+
+= Election results
