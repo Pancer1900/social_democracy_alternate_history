@@ -405,3 +405,55 @@ Party Relations with <span style="color: #ffa300;">Vylirian</span><span style="c
 Status of the Global Economy: [? if global_eco < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_eco < 0 and global_eco >= -0.1 : <span style="color: #e95448;">Mild Recession</span> ?][? if global_eco > 0 and global_eco <= 0.1 : <span style="color: #d2ce5e;">Slowing down</span> ?][? if global_eco > 0.1 and global_eco <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if global_eco > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
 Status of the Global Trade Networks: [? if global_trade < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_trade < 0 and global_trade >= -0.1 : <span style="color: #e95448;">Obstructed</span> ?][? if global_trade > 0 and global_trade <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if global_trade > 0.1 : <span style="color: #aad454;">Developing</span> ?]
+
+@economy
+
+= Organisation and unionisation of social groups
+
+Urban workers: [+ organisation_workers : organisation +]
+
+Rural workers and peasants: [+ organisation_rural : organisation +]
+
+White collar workers and middle class: [+ organisation_middle : organisation +]
+
+= Most importat economic factors
+
+Economic stabilty: [? if stability < -0.1 : <span style="color: #bd0000;">Chaos</span> ?][? if stability < 0 and stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if stability > 0 and stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if stability > 0.1 and stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Trade Status: [? if trade_stability < -0.1 : <span style="color: #bd0000;">Crisis</span> ?][? if trade_stability < 0 and trade_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if trade_stability > 0 and trade_stability <= 0.1 : <span style="color: #d2ce5e;">Adequete</span> ?][? if trade_stability > 0.1 and trade_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if trade_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Banking Status: [? if bank_stability < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if bank_stability < 0 and bank_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if bank_stability > 0 and bank_stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if bank_stability > 0.1 and bank_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if bank_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Investment: [? if investment < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if investment < 0 and investment >= -0.1 : <span style="color: #e95448;">Regerssion</span> ?][? if investment > 0 and investment <= 0.1 : <span style="color: #d2ce5e;">Slowdown</span> ?][? if investment > 0.1 and investment <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if investment > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Rural Economic Performance: [? if rural_eco < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if rural_eco < 0 and rural_eco >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if rural_eco > 0 and rural_eco <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if rural_eco > 0.1 and rural_eco <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Industrial Output: [? if industrial_out < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if industrial_out < 0 and industrial_out >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if industrial_out > 0 and industrial_out <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if industrial_out > 0.1 and industrial_out <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if industrial_out > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Public Works Programs: [? if public_programe < 0 : <span style="color: #e95448;">Ineffective</span> ?][? if public_programe = 0 : <span style="color: #787878;">None</span> ?][? if public_programe > 0 and public_programe <= 0.2 : <span style="color: #d2ce5e;">Working</span> ?][? if public_programe > 0.2 : <span style="color: #47d62c;">Massively improving the economy</span> ?]
+
+@politics_party
+
+= Organisation and unionisation of social groups
+
+Urban workers: [+ organisation_workers : organisation +]
+
+Rural workers and peasants: [+ organisation_rural : organisation +]
+
+White collar workers and middle class: [+ organisation_middle : organisation +]
+
+= Most importat economic factors
+
+Economic stabilty: [? if stability < -0.1 : <span style="color: #bd0000;">Chaos</span> ?][? if stability < 0 and stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if stability > 0 and stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if stability > 0.1 and stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Trade Status: [? if trade_stability < -0.1 : <span style="color: #bd0000;">Crisis</span> ?][? if trade_stability < 0 and trade_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if trade_stability > 0 and trade_stability <= 0.1 : <span style="color: #d2ce5e;">Adequete</span> ?][? if trade_stability > 0.1 and trade_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if trade_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Banking Status: [? if bank_stability < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if bank_stability < 0 and bank_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if bank_stability > 0 and bank_stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if bank_stability > 0.1 and bank_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if bank_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Investment: [? if investment < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if investment < 0 and investment >= -0.1 : <span style="color: #e95448;">Regerssion</span> ?][? if investment > 0 and investment <= 0.1 : <span style="color: #d2ce5e;">Slowdown</span> ?][? if investment > 0.1 and investment <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if investment > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Rural Economic Performance: [? if rural_eco < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if rural_eco < 0 and rural_eco >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if rural_eco > 0 and rural_eco <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if rural_eco > 0.1 and rural_eco <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Industrial Output: [? if industrial_out < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if industrial_out < 0 and industrial_out >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if industrial_out > 0 and industrial_out <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if industrial_out > 0.1 and industrial_out <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if industrial_out > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Public Works Programs: [? if public_programe < 0 : <span style="color: #e95448;">Ineffective</span> ?][? if public_programe = 0 : <span style="color: #787878;">None</span> ?][? if public_programe > 0 and public_programe <= 0.2 : <span style="color: #d2ce5e;">Working</span> ?][? if public_programe > 0.2 : <span style="color: #47d62c;">Massively improving the economy</span> ?]
