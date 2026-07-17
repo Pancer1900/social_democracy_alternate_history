@@ -189,7 +189,7 @@
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
 
-  window.updateSidebar = function() {
+  window.updateSidebarRight = function() {
       $('#qualities_right').empty();
       var scene = dendryUI.game.scenes[window.statusTab];
       dendryUI.dendryEngine._runActions(scene.onArrival);
