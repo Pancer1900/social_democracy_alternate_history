@@ -42,12 +42,6 @@ body.dark-mode .tools {
   border-color: #888;
 }
 .tools.right {
-    display: none;
-    float: none;
-    right: 0;
-    marginRight: -6em;
-  }
-.tools.right {
   float: right;
   right: 0.4em;
   display: none;
