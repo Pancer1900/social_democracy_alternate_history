@@ -252,6 +252,7 @@
   window.statusTab = "status";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
+  console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities_right");
 
   window.onload = function() {
     window.dendryUI.loadSettings({show_portraits: false});
