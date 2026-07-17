@@ -41,12 +41,6 @@ body.dark-mode .tools {
   border-width: 4px;
   border-color: #888;
 }
-.tools.right {
-  float: right;
-  right: 0.4em;
-  display: none;
-  margin-right: -6em;
-}
 header, #content, footer {
   color: var(--text-color);
   max-width: 540px;
