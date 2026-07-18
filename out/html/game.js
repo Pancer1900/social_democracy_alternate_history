@@ -189,13 +189,39 @@
       $('#qualities').append(dendryUI.contentToHTML.convert(displayContent));
   };
 
-  window.updateSidebarRight = function() {
-      $('#qualities_right').empty();
-      var scene = dendryUI.game.scenes[window.statusTab];
-      dendryUI.dendryEngine._runActions(scene.onArrival);
-      var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
-      $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
-  };
+   window.updateSidebarRight = function () {
+        $('#qualities_right').empty();
+        var statusScene = dendryUI.game.scenes["status_right"];
+        var scene = dendryUI.game.scenes[window.statusTabRight];
+        dendryUI.dendryEngine._runActions(statusScene.onArrival);
+        dendryUI.dendryEngine._runActions(scene.onArrival);
+        var displayContent = dendryUI.dendryEngine._makeDisplayContent(scene.content, true);
+        $('#qualities_right').append(dendryUI.contentToHTML.convert(displayContent));
+        dendryUI.dendryEngine._runActions(scene.onDisplay);
+    };
+
+  window.changeTab = function (newTab, tabId, isRight) {
+        if (tabId == 'poll_tab_left' && dendryUI.dendryEngine.state.qualities.historical_mode) {
+            window.alert('Polls are not available in historical mode.');
+            return;
+        }
+        var tabButton = document.getElementById(tabId);
+        var tabButtons = isRight ?
+            document.querySelectorAll('#stats_sidebar_right .tab_button') :
+            document.querySelectorAll('#stats_sidebar .tab_button');
+        for (var i = 0; i < tabButtons.length; i++) {
+            tabButtons[i].className = tabButtons[i].className.replace(' active', '');
+        }
+        tabButton.className += ' active';
+        
+        if (isRight) {
+            window.statusTabRight = newTab;
+            window.updateSidebarRight();
+        } else {
+            window.statusTab = newTab;
+            window.updateSidebar();
+        }
+    };
 
   window.changeTab = function(newTab, tabId) {
       if (tabId == 'poll_tab' && dendryUI.dendryEngine.state.qualities.historical_mode) {
@@ -214,6 +240,7 @@
 
   window.onDisplayContent = function() {
       window.updateSidebar();
+      window.updateSidebarRight();
   };
 
   /*
@@ -250,6 +277,7 @@
 
   window.justLoaded = true;
   window.statusTab = "status";
+  window.statusTabRight = "status_right";
   window.dendryModifyUI = main;
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities");
   console.log("Modifying stats: see dendryUI.dendryEngine.state.qualities_right");
