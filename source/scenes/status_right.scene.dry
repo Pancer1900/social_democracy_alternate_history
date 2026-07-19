@@ -197,25 +197,6 @@ Industrial Output: [? if industrial_out < -0.1 : <span style="color: #bd0000;">R
 Public Works Programs: [? if public_programe < 0 : <span style="color: #e95448;">Ineffective</span> ?][? if public_programe = 0 : <span style="color: #787878;">None</span> ?][? if public_programe > 0 and public_programe <= 0.2 : <span style="color: #d2ce5e;">Working</span> ?][? if public_programe > 0.2 : <span style="color: #47d62c;">Massively improving the economy</span> ?]
 
 @politics_party
-
-= Internal Politics of the <span style="color: #dc0200;">[+ spd_name +]</span>
-
-Party Chairman: [+ spd_leader +]
-
-Internal dissent: [+ dissent_percent : dissent +]
-
-Resources available: [+ resources +]
-
-Paramilitary Resources: [+ para_resources  +]
-
-Party Radicalisation: [? if radicalization < 0 : <span style="color: #0062ff;">Full Reformism</span> ?][? if radicalization < 3 and radicalization >= 0 : <span style="color: #3660a3;">Low</span> ?][? if radicalization < 7 and radicalization >= 3 : Moderate ?][? if radicalization < 12 and radicalization >= 7 : <span style="color: #c73857;">Hight</span> ?][? if radicalization >= 12 : <span style="color: #940121;">Full Revolutionary</span> ?]
-
-Party Democratisation: [? if democratization < 0 : <span style="color: #940121;">Anti-Democratic Bulwark</span> ?][? if democratization < 3 and democratization >= 0 : <span style="color: #c73857;">Low</span> ?][? if democratization < 7 and democratization >= 3 : Moderate ?][? if democratization < 12 and democratization >= 7 : <span style="color: #a8a454;">Hight</span> ?][? if democratization >= 12 : <span style="color: #c9c010;">Full Democrats</span> ?]
-
-Party Pacifism: [? if pacifism < 0 : <span style="color: #940121;">Anti-Pacifist Action</span> ?][? if pacifism < 3 and pacifism >= 0 : <span style="color: #c73857;">Low</span> ?][? if pacifism < 7 and pacifism >= 3 : Moderate ?][? if pacifism < 12 and pacifism >= 7 : <span style="color: #3660a3;">Hight</span> ?][? if pacifism >= 12 : <span style="color: #0062ff;">Full Pacifists</span> ?]
-
-Reconsiliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <span style="color: #000000;">Better Dead than Red</span> ?][? if liberal_reconciliation < 6 and liberal_reconciliation >= 0 : <span style="color: #9e5c00;">Low</span> ?][? if liberal_reconciliation < 12 and liberal_reconciliation >= 6 : <span style="color: #999e00;">Warming Up</span> ?][? if liberal_reconciliation < 18 and liberal_reconciliation >= 12 : <span style="color: #6c9e00;">Mild Reconciliation</span> ?][? if liberal_reconciliation >= 18 : <span style="color: #159e00;">Full Reconciliation</span> ?]
-
 on-display: {!
 data = [];
 if (Q.revolutionaries_split == 0) {
@@ -284,3 +265,21 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
+
+= Internal Politics of the <span style="color: #dc0200;">[+ spd_name +]</span>
+
+Party Chairman: [+ spd_leader +]
+
+Internal dissent: [+ dissent_percent : dissent +]
+
+Resources available: [+ resources +]
+
+Paramilitary Resources: [+ para_resources  +]
+
+Party Radicalisation: [? if radicalization < 0 : <span style="color: #0062ff;">Full Reformism</span> ?][? if radicalization < 3 and radicalization >= 0 : <span style="color: #3660a3;">Low</span> ?][? if radicalization < 7 and radicalization >= 3 : Moderate ?][? if radicalization < 12 and radicalization >= 7 : <span style="color: #c73857;">Hight</span> ?][? if radicalization >= 12 : <span style="color: #940121;">Full Revolutionary</span> ?]
+
+Party Democratisation: [? if democratization < 0 : <span style="color: #940121;">Anti-Democratic Bulwark</span> ?][? if democratization < 3 and democratization >= 0 : <span style="color: #c73857;">Low</span> ?][? if democratization < 7 and democratization >= 3 : Moderate ?][? if democratization < 12 and democratization >= 7 : <span style="color: #a8a454;">Hight</span> ?][? if democratization >= 12 : <span style="color: #c9c010;">Full Democrats</span> ?]
+
+Party Pacifism: [? if pacifism < 0 : <span style="color: #940121;">Anti-Pacifist Action</span> ?][? if pacifism < 3 and pacifism >= 0 : <span style="color: #c73857;">Low</span> ?][? if pacifism < 7 and pacifism >= 3 : Moderate ?][? if pacifism < 12 and pacifism >= 7 : <span style="color: #3660a3;">Hight</span> ?][? if pacifism >= 12 : <span style="color: #0062ff;">Full Pacifists</span> ?]
+
+Reconciliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <span style="color: #000000;">Better Dead than Red</span> ?][? if liberal_reconciliation < 6 and liberal_reconciliation >= 0 : <span style="color: #9e5c00;">Low</span> ?][? if liberal_reconciliation < 12 and liberal_reconciliation >= 6 : <span style="color: #999e00;">Warming Up</span> ?][? if liberal_reconciliation < 18 and liberal_reconciliation >= 12 : <span style="color: #6c9e00;">Mild Reconciliation</span> ?][? if liberal_reconciliation >= 18 : <span style="color: #159e00;">Full Reconciliation</span> ?]
