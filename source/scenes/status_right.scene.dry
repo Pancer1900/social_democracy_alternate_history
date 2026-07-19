@@ -290,8 +290,8 @@ if (Q.reformists_resigned == 0) {
 }
 
 if (window && d3) {
-    var width = 100; 
-    var height = 100;
+    var width = 40; 
+    var height = 40;
     var screenWidth = document.getElementById('content').offsetWidth;
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 
@@ -339,7 +339,7 @@ Reconciliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <spa
 
 [? if agrarnians_split == 1: <span class="tooltip-text" title="Agrarians are the rular base of the party and improving the lives of the peasants and farmers are their main goal" style="color: #dd5b00;">Agrarinas</span> Split form the Party ?]
 
-[? if centrists_resign == 0: {!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
+[? if centrists_resign == 0: {!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution" style="color: #ff1919;">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
 
 [? if unions_independent == 0: {!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers" style="color: #c96b65;">Labour</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
 
