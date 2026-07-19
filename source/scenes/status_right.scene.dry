@@ -170,242 +170,6 @@ Radicalisation of the People: [+ radicalisation_disp +]%
 
 [? if reformists_resigned == 0: {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy.">Reformist</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
 
-
-@paramilitaries
-on-arrival: {!
-if (Q.rb_strength) {
-    Q.rb_strength_2 = Q.rb_strength.toFixed(1);
-}
-if (Q.rfb_strength) {
-    Q.rfb_strength_2 = Q.rfb_strength.toFixed(1);
-}
-if (Q.df_strength) {
-    Q.df_strength_2 = Q.df_strength.toFixed(1);
-}
-if (Q.lv_strength) {
-    Q.lv_strength_2 = Q.lv_strength.toFixed(1);
-}
-if (Q.sh_strength) {
-    Q.sh_strength_2 = Q.sh_strength.toFixed(1);
-}
-if (Q.sa_strength) {
-    Q.sa_strength_2 = Q.sa_strength.toFixed(1);
-}
-!}
-
-= Paramilitaries
-
-<span class="tooltip-text" title="The RGF (Rote Gardefront) is a paramilitray/revolutionary group associated with the left wing of the socialist movemnet and the old SAPM" style="color: #8B0000;">**RGF**</span> Strength: [+ rfb_strength_2 +] thousand
-
-<span style="color: #8B0000;">**RGF**</span> Militarization: [+ rfb_militancy : militancy +]
-
-<span class="tooltip-text" title="The Demokratische Sozialfront is a organization for democracy and socialism mostly affiliated with the old SPM." style="color: #c00000;">**DSF**</span> Strength: [+ rb_strength_2 +] thousand
-
-<span style="color: #c00000;">**DSF**</span> Militarization: [+ rb_militancy : militancy +]
-
-<span class="tooltip-text" title="The Demokratisch-Federales Volksbanner is a Liberal/Democratic group associated organization for defending democracy, mostly affiliated with the FVP and the LDP." style="color: #bdc56c;">**DFVB**</span> Strength: [+ df_strength_2 +] thousand
-
-<span style="color: #bdc56c;">**DFVB**</span> Militarization: [+ df_militancy : militancy +]
-
-<span class="tooltip-text" title="The *Ländliche Volks Verteidigungskräfte* is a rural traditionalist right-wing organization of associated with the ." style="color:#095c22;">**LVVK**</span> Strength: [+ lv_strength_2 +] thousand
-
-<span style="color: #095c22;">**LVVK**</span> Militarization: [+ lv_militancy : militancy +]
-
-<span class="tooltip-text" title="The Stahlhelm is a right-wing organization of war veterans associated with the MNVP." style="color:#3F7BC1;">**Stahlhelm**</span> Strength: [+ sh_strength_2 +] thousand
-
-<span style="color: #3F7BC1;">**Stahlhelm**</span> Militarization: [+ sh_militancy : militancy +]
-
-<span class="tooltip-text" title="The SA (Sturmabteilung) is the Nazi paramilitary." style="color: #7e6f61;">**SA**</span> Strength: [+ sa_strength_2 +] thousand
-
-<span style="color: #7e6f61;">**SA**</span> Militarization: [+ sa_militancy : militancy +]
-
-= State forces
-
-Reichswehr: [+ reichswehr_strength +] thousand troops.
-
-[? if spd_in_government : Reichswehr Loyalty: [+ reichswehr_loyalty : loyalty +] ?]
-
-Police: [+ prussian_police_strength +] thousand members.
-
-[? if spd_in_government : Police loyalty: [+ prussian_police_loyalty : loyalty +] ?]
-
-Interior police: [+ interior_police_strength +] thousand members.
-
-[? if spd_in_government : Interior police loyalty: [+ interior_police_loyalty : loyalty +] ?]
-
-@polls
-
-= Projected election results
-
-(if the election were to be held now):
-
-[? if sapd_formed: <span style="color: #940000;">**KPM**</span>: [+ sapd_votes +]% ?]
-
-[? if asum_formed: <span style="color: #9B0000;">**ASUM**</span>: [+ asum_votes +]% ?]
-
-[? if spd_name != 0: <span style="color: #dc0100;">**[+ spd_name +]**</span>: [+ spd_votes +]% ?]
-
-[? if spm_formed: <span style="color: #ff1919;">**SPM**</span>: [+ spm_votes +]% ?]
-
-[? if ddp_name != 0: <span style="color: #ddd500;">**[+ ddp_name +]**</span>: [+ ddp_votes +]% ?]
-
-<span style="color: #48ba48;">**GDSU**</span>: [+ z_votes +]%
-
-[? if blpm_formed: <span style="color: #00e8ff;">**BLPM**</span>: [+ blpm_votes +]% ?]
-
-<span style="color: #4b9fde;">**PPU+**</span>: [+ ppu_votes +]%
-
-[? if dvp_name != 0: <span style="color: #fbffd5;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
-
-[? if gdvn_formed: <span style="color: #774ae2;">**GNVP**</span>: [+ gnvp_votes +]% ?]
-
-<span style="color: #dddddd;">**others**</span>: [+ other_votes +]%
-
-<span style="color: #1027dc;">**MNVP**</span>: [+ dnvp_votes +]%
-
-<span style="color: #706a65;">**NSDAP**</span>: [+ nsdap_votes +]%
-
-**Detailed results for each demographic**
-
-Workers: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ workers_spd_display +]%, GDSU: [+ workers_z_display +]%, PPU+: [+ workers_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ workers_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ workers_dvp_display +]%, MNVP: [+ workers_dnvp_display +]%, NSDAP: [+ workers_nsdap_display +]%, Others: [+ workers_other_display +]%, [? if sapd_formed: KPM: [+ workers_sapd_display +]%, ?] [? if gnvp_formed: GNVP: [+ workers_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ workers_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ workers_blpm_display +]%, ?] [? if spm_formed: SPM: [+ workers_spm_display +]%, ?]
-
-New Middle Class: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ new_middle_spd_display +]%, GDSU: [+ new_middle_z_display +]%, PPU+: [+ new_middle_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ new_middle_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ new_middle_dvp_display +]%, MNVP: [+ new_middle_dnvp_display +]%, NSDAP: [+ new_middle_nsdap_display +]%, Others: [+ new_middle_other_display +]%, [? if sapd_formed: KPM: [+ new_middle_sapd_display +]%, ?] [? if gnvp_formed: GNVP: [+ new_middle_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ new_middle_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ new_middle_blpm_display +]%, ?] [? if spm_formed: SPM: [+ new_middle_spm_display +]%, ?]
-
-Old Middle Class: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ old_middle_spd_display +]%, GDSU: [+ old_middle_z_display +]%, PPU+: [+ old_middle_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ old_middle_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ old_middle_dvp_display +]%, MNVP: [+ old_middle_dnvp_display +]%, NSDAP: [+ old_middle_nsdap_display +]%, Others: [+ old_middle_other_display +]%, [? if sapd_formed: KPM: [+ old_middle_sapd_display +]%, ?] [? if gnvp_formed: GNVP: [+ old_middle_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ old_middle_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ old_middle_blpm_display +]%, ?] [? if spm_formed: SPM: [+ old_middle_spm_display +]%, ?]
-
-Rural: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ rural_spd_display +]%, GDSU: [+ rural_z_display +]%, PPU+: [+ rural_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ rural_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%, MNVP: [+ rural_dnvp_display +]%, NSDAP: [+ rural_nsdap_display +]%, Others: [+ rural_other_display +]% [? if sapd_formed: KPM: [+ rural_sapd_display +]% ?], [? if gnvp_formed: GNVP: [+ rural_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ rural_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ rural_blpm_display +]%, ?] [? if spm_formed: SPM: [+ rural_spm_display +]%, ?]
-
-Peasants: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ peasants_spd_display +]%, GDSU: [+ peasants_z_display +]%, PPU+: [+ peasants_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ peasants_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ peasants_dvp_display +]%, MNVP: [+ peasants_dnvp_display +]%, NSDAP: [+ peasants_nsdap_display +]%, Others: [+ peasants_other_display +]%, [? if sapd_formed: KPM: [+ peasants_sapd_display +]% ?] [? if gnvp_formed: GNVP: [+ peasants_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ peasants_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ peasants_blpm_display +]%, ?] [? if spm_formed: SPM: [+ peasants_spm_display +]%, ?]
-
-Unemployed: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ unemployed_spd_display +]%, GDSU: [+ unemployed_z_display +]%, PPU+: [+ unemployed_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ unemployed_ddp_display +]%, [? if not dvp_name: DDP?][? if dvp_name != 0 : [+ dvp_name +]?]: [+ rural_dvp_display +]%, MNVP: [+ unemployed_dnvp_display +]%, NSDAP: [+ unemployed_nsdap_display +]%, Others: [+ unemployed_other_display +]%, [? if sapd_formed: KPM: [+ unemployed_sapd_display +]%, ?] [? if gnvp_formed: GNVP: [+ unemployed_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ unemployed_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ unemployed_blpm_display +]%, ?] [? if spm_formed: SPM: [+ unemployed_spm_display +]%, ?]
-
-Gecherdists: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ catholics_spd_display +]%, GDSU: [+ catholics_z_display +]%, PPU+: [+ catholics_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ catholics_ddp_display +]%, [+ dvp_name +]: [+ catholics_dvp_display +]%; MNVP: [+ catholics_dnvp_display +]%, NSDAP: [+ catholics_nsdap_display +]%, Others: [+ catholics_other_display +]% [? if sapd_formed: KPM: [+ catholics_sapd_display +]%, ?], [? if gnvp_formed: GNVP: [+ catholics_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ catholics_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ catholics_blpm_display +]%, ?] [? if spm_formed: SPM: [+ catholics_spm_display +]%, ?]
-
-Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ minorieties_spd_display +]%, GDSU: [+ minorieties_z_display +]%, PPU+: [+ minorieties_ppu_display +]%, [? if not ddp_name: DDP?][? if ddp_name != 0 : [+ ddp_name +]?]: [+ minorieties_ddp_display +]%, [+ dvp_name +]: [+ minorieties_dvp_display +]%; MNVP: [+ minorieties_dnvp_display +]%, NSDAP: [+ minorieties_nsdap_display +]%, Others: [+ minorieties_other_display +]%, [? if sapd_formed: KPM: [+ minorieties_sapd_display +]%, ?] [? if gnvp_formed: GNVP: [+ minorieties_gnvp_display +]%, ?] [? if asum_formed: ASUM: [+ minorieties_asum_display +]%, ?] [? if blpm_formed: BLPM: [+ minorieties_blpm_display +]%, ?] [? if spm_formed: SPM: [+ minorieties_spm_display +]%, ?]
-
-
-@politics_internal
-
-= Organisation and unionisation of social groups
-
-Urban workers: [+ organisation_workers : organisation +]
-
-Rural workers and peasants: [+ organisation_rural : organisation +]
-
-White collar workers and middle class: [+ organisation_middle : organisation +]
-
-= Most importat economic factors
-
-Economic stabilty: [? if stability < -0.1 : <span style="color: #bd0000;">Chaos</span> ?][? if stability < 0 and stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if stability > 0 and stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if stability > 0.1 and stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
-
-Trade Status: [? if trade_stability < -0.1 : <span style="color: #bd0000;">Crisis</span> ?][? if trade_stability < 0 and trade_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if trade_stability > 0 and trade_stability <= 0.1 : <span style="color: #d2ce5e;">Adequete</span> ?][? if trade_stability > 0.1 and trade_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if trade_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
-
-Banking Status: [? if bank_stability < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if bank_stability < 0 and bank_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if bank_stability > 0 and bank_stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if bank_stability > 0.1 and bank_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if bank_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
-
-Investment: [? if investment < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if investment < 0 and investment >= -0.1 : <span style="color: #e95448;">Regerssion</span> ?][? if investment > 0 and investment <= 0.1 : <span style="color: #d2ce5e;">Slowdown</span> ?][? if investment > 0.1 and investment <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if investment > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
-
-Rural Economic Performance: [? if rural_eco < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if rural_eco < 0 and rural_eco >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if rural_eco > 0 and rural_eco <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if rural_eco > 0.1 and rural_eco <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
-
-Industrial Output: [? if industrial_out < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if industrial_out < 0 and industrial_out >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if industrial_out > 0 and industrial_out <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if industrial_out > 0.1 and industrial_out <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if industrial_out > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
-
-Public Works Programs: [? if public_programe < 0 : <span style="color: #e95448;">Ineffective</span> ?][? if public_programe = 0 : <span style="color: #787878;">None</span> ?][? if public_programe > 0 and public_programe <= 0.2 : <span style="color: #d2ce5e;">Working</span> ?][? if public_programe > 0.2 : <span style="color: #47d62c;">Massively improving the economy</span> ?]
-
-= Taxation
-
-Upper Class: [+ upper_tax_rates : tax +]
-
-Lower Class: [+ lower_tax_rates : tax +]
-
-Corporate: [+ corporate : tax +]
-
-Tariffs: [+ tariffs : tax +]
-
-= Rular affairs 
-
-Land Reform Status: [+ land_reform_sta +]
-
-Rural Cooperatives Status: [? if rular_coop = 0 : <span style="color: #787878;">Nonexistent</span> ?][? if rular_coop = 1 : <span style="color: #d2ce5e;">Created</span> ?][? if rular_coop = 2 : <span style="color: #abd346;">Working</span> ?][? if rular_coop = 3 : <span style="color: #92e43f;">Strengthened</span> ?][? if rular_coop = 4 : <span style="color: #3cff0f;">Backbone of the rular economy</span> ?]
-
-Rural Unrest: [+ rural_unrest : unrest +]
-
-= Labour Reforms
-
-Labour Unions Status: [? if labour_sta = 0 : <span style="color: #ce2e25;">Banned</span> ?][? if labour_sta = 1 : <span style="color: #ce5a25;">Restricted</span> ?][? if labour_sta = 2 : Legal ?][? if labour_sta = 3 : <span style="color: #92e43f;">Empowered</span> ?][? if labour_sta >= 4 : <span style="color: #9ece25;">Syndicalist</span> ?]
-
-Work Councils: [? if work_council = 0 : <span style="color: #787878;">Nonexistent</span> ?][? if work_council = 1 : <span style="color: #d2ce5e;">Influencial</span> ?][? if work_council = 2 : <span style="color: #abd346;">Empowered</span> ?][? if work_council = 3 : <span style="color: #92e43f;">Syndicalist</span> ?][? if work_council = 4 : <span style="color: #3cff0f;">Full Syndicalist Economy</span> ?]
-
-Workplace Safety: [? if work_safe = 0 : <span style="color: #ce2e25;">Dangerous</span> ?][? if work_safe = 1 : <span style="color: #ce5a25;">Regulated</span> ?][? if work_safe = 2 : <span style="color: #ceb025;">Safe</span> ?][? if work_safe >= 3 : <span style="color: #9ece25;">Monitored</span> ?]
-
-Minimum Wage: [? if min_wage = 0 : <span style="color: #ce2e25;">Nonexistent</span> ?][? if min_wage = 1 : <span style="color: #ce5a25;">Minimal</span> ?][? if min_wage = 2 : <span style="color: #ceb025;">Basic</span> ?][? if min_wage >= 3 : <span style="color: #9ece25;">Living</span> ?]
-
-Working Hours: [? if working_hours = 0 : <span style="color: #ce2e25;">Unlimited</span> ?][? if working_hours = 1 : <span style="color: #ce5a25;">80 Hour Weeks</span> ?][? if working_hours = 2 : <span style="color: #ceb025;">60 Hour Weeks</span> ?][? if working_hours >= 3 : <span style="color: #9ece25;">40 Hour Weeks</span> ?]
-
-Child Labour: [? if child_lab = 0 : <span style="color: #ce2e25;">Legal</span> ?][? if child_lab = 1 : <span style="color: #ce5a25;">Regulated</span> ?][? if child_lab = 2 : <span style="color: #ceb025;">Heavily Restricted</span> ?][? if child_lab >= 3 : <span style="color: #9ece25;">Illegal</span> ?]
-
-Government Insurance Programs: [? if insurance = 0 : <span style="color: #ce2e25;">Not Funded</span> ?][? if insurance = 1 : <span style="color: #ce5a25;">Small Program</span> ?][? if insurance = 2 : <span style="color: #ceb025;">Moderate Program</span> ?][? if insurance >= 3 : <span style="color: #9ece25;">Full Insurance</span> ?]
-
-Labour Unrest: [+ labour_unrest : unrest +]
-
-= Social Issues 
-
-Women's Rights: [? if womens_rights = 0 : <span style="color: #ce2e25;">Reactionary</span> ?][? if womens_rights = 1 : <span style="color: #ce5a25;">Regressive</span> ?][? if womens_rights = 2 : <span style="color: #ceb025;">Conservative</span> ?][? if womens_rights >= 3 : <span style="color: #9ece25;">Fair</span> ?]
-
-Gecherdist Church Status: [+ gech_sta +]
-
-Minority Rights: [? if minority = 0 : <span style="color: #ce2e25;">Suspended</span> ?][? if minority = 1 : <span style="color: #ce5a25;">Under Siege</span> ?][? if minority = 2 : <span style="color: #ceb025;">Guaranteed</span> ?][? if minority = 3 : <span style="color: #9ece25;">Constitution Guaranteed</span> ?][? if minority >= 4 : <span style="color: #9ece25;">Special Ministry</span> ?]
-
-Percilian situation: [+ perci_sta +]
-
-@politics_forein
-
-= Foreign Relations
-
-Relations with <span style="color: #ffa300;">Vyliria</span>: [+ vyliria_relation : int_relationships +]
-
-Relations with <span style="color: #2cc0e9;">Arconia</span>: [+ arconia_relation : int_relationships +]
-
-Relations with <span style="color: #3cd68b;">Tracosia</span>: [+ tracosia_relation : int_relationships +]
-
-Relations with <span style="color: #89cbaf;">Crevia</span>: [+ crevia_relation : int_relationships +]
-
-Relations with <span style="color: #d7d462;">Kelland</span>: [+ kelland_relation : int_relationships +]
-
-Relations with <span style="color: #6fb7ca;">Carberdia</span>: [+ carberdia_relation : int_relationships +]
-
-Relations with <span style="color: #40b3d7;">Pekoria</span>: [+ pekoria_relation : int_relationships +]
-
-Relations with <span style="color: #df997f;">West</span><span style="color: #e5eb72;">ern Nei</span><span style="color: #9e4c2a;">ghbours</span>: [+ west_relation: int_relationships +]
-
-Relations with <span style="color: #a2d9a9;">Southern</span> <span style="color: #d7d462;">Neighbours</span>: [+ south_relation : int_relationships +]
-
-Party Relations with <span style="color: #ffa300;">Vylirian</span><span style="color: #ff1919;"> Unied Socialist Party</span>: [+ vyliria_left_relation : int_relationships +]
-
-= International situations
-
-[? if pek_thi_war = 1: Pekoria - Thrigal War: [+ pek_thi_war_sit +] ?]
-
-[? if pek_banking_act = 1: Pekorian banking and debt crisis: [+ pek_banking +] ?]
-
-[? if zurukstan_rev = 1: Revoulution in Zurukstan: [+ zurukstan +] ?]
-
-[? if purp_hand_carberde = 1: Situation with Carberdia on the Purple Hand: [+ purp_hand +] ?]
-
-[? if vyl_rev = 1: Remaining time of the Vylirian Civil War: [+ vyl_rev_sit +] ?]
-
-[? if vyl_rev = 1 and vyl_suc = 0: Remaining time of : [+ vyl_rev_sit +] ?]
-
-[? if arctien_crisis = 1: Situation and crisis in Arkten: [+ arctien_crisis_sit +] ?]
-
-[? if thi_rev = 1: Coup in Kelland and Levion Regime situation: [+ thi_rev_sit +] ?]
-
-[? if oil_crisis = 1: Status of the oil crisis affecting Merkopia: [? if oil_crisis_mer <= 0 : <span style="color: #aad454;">Stabilised</span> ?][? if oil_crisis_mer > 0 and oil_crisis_mer <= 0.1 : <span style="color: #ffbf17;">Affecting</span> ?][? if oil_crisis_mer > 0.1 and oil_crisis_mer <= 0.2 : <span style="color: #e95448;">Severe</span> ?][? if oil_crisis_mer > 0.3 : <span style="color: #bd0000;">Full Crisis</span> ?] ?]
-
-[? if oil_crisis = 1: Status of the Global Oil Crisis: [? if oil_crisis_global <= 0 : <span style="color: #aad454;">Stabilised</span> ?][? if oil_crisis_global > 0 and oil_crisis_global <= 0.1 : <span style="color: #ffbf17;">Affecting</span> ?][? if oil_crisis_global > 0.1 and oil_crisis_global <= 0.2 : <span style="color: #e95448;">Severe</span> ?][? if oil_crisis_global > 0.3 : <span style="color: #bd0000;">Global Crisis</span> ?] ?]
-
-Status of the Global Economy: [? if global_eco < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_eco < 0 and global_eco >= -0.1 : <span style="color: #e95448;">Mild Recession</span> ?][? if global_eco > 0 and global_eco <= 0.1 : <span style="color: #d2ce5e;">Slowing down</span> ?][? if global_eco > 0.1 and global_eco <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if global_eco > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
-
-Status of the Global Trade Networks: [? if global_trade < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_trade < 0 and global_trade >= -0.1 : <span style="color: #e95448;">Obstructed</span> ?][? if global_trade > 0 and global_trade <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if global_trade > 0.1 : <span style="color: #aad454;">Developing</span> ?]
-
 @economy
 
 = Organisation and unionisation of social groups
@@ -434,24 +198,89 @@ Public Works Programs: [? if public_programe < 0 : <span style="color: #e95448;"
 
 @politics_party
 
-= Organisation and unionisation of social groups
+= Internal Politics of the <span style="color: #dc0200;">[+ spd_name +]</span>
 
-Urban workers: [+ organisation_workers : organisation +]
+Party Chairman: [+ spd_leader +]
 
-Rural workers and peasants: [+ organisation_rural : organisation +]
+Internal dissent: [+ dissent_percent : dissent +]
 
-White collar workers and middle class: [+ organisation_middle : organisation +]
+Resources available: [+ resources +]
 
-= Most importat economic factors
+Paramilitary Resources: [+ para_resources  +]
 
-Economic stabilty: [? if stability < -0.1 : <span style="color: #bd0000;">Chaos</span> ?][? if stability < 0 and stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if stability > 0 and stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if stability > 0.1 and stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+Party Radicalisation: [? if radicalization < 0 : <span style="color: #0062ff;">Full Reformism</span> ?][? if radicalization < 3 and radicalization >= 0 : <span style="color: #3660a3;">Low</span> ?][? if radicalization < 7 and radicalization >= 3 : Moderate ?][? if radicalization < 12 and radicalization >= 7 : <span style="color: #c73857;">Hight</span> ?][? if radicalization >= 12 : <span style="color: #940121;">Full Revolutionary</span> ?]
 
-Trade Status: [? if trade_stability < -0.1 : <span style="color: #bd0000;">Crisis</span> ?][? if trade_stability < 0 and trade_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if trade_stability > 0 and trade_stability <= 0.1 : <span style="color: #d2ce5e;">Adequete</span> ?][? if trade_stability > 0.1 and trade_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if trade_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+Party Democratisation: [? if democratization < 0 : <span style="color: #940121;">Anti-Democratic Bulwark</span> ?][? if democratization < 3 and democratization >= 0 : <span style="color: #c73857;">Low</span> ?][? if democratization < 7 and democratization >= 3 : Moderate ?][? if democratization < 12 and democratization >= 7 : <span style="color: #a8a454;">Hight</span> ?][? if democratization >= 12 : <span style="color: #c9c010;">Full Democrats</span> ?]
 
-Banking Status: [? if bank_stability < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if bank_stability < 0 and bank_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if bank_stability > 0 and bank_stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if bank_stability > 0.1 and bank_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if bank_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+Party Pacifism: [? if pacifism < 0 : <span style="color: #940121;">Anti-Pacifist Action</span> ?][? if pacifism < 3 and pacifism >= 0 : <span style="color: #c73857;">Low</span> ?][? if pacifism < 7 and pacifism >= 3 : Moderate ?][? if pacifism < 12 and pacifism >= 7 : <span style="color: #3660a3;">Hight</span> ?][? if pacifism >= 12 : <span style="color: #0062ff;">Full Pacifists</span> ?]
 
-Investment: [? if investment < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if investment < 0 and investment >= -0.1 : <span style="color: #e95448;">Regerssion</span> ?][? if investment > 0 and investment <= 0.1 : <span style="color: #d2ce5e;">Slowdown</span> ?][? if investment > 0.1 and investment <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if investment > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+Reconsiliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <span style="color: #000000;">Better Dead than Red</span> ?][? if liberal_reconciliation < 6 and liberal_reconciliation >= 0 : <span style="color: #9e5c00;">Low</span> ?][? if liberal_reconciliation < 12 and liberal_reconciliation >= 6 : <span style="color: #999e00;">Warming Up</span> ?][? if liberal_reconciliation < 18 and liberal_reconciliation >= 12 : <span style="color: #6c9e00;">Mild Reconciliation</span> ?][? if liberal_reconciliation >= 18 : <span style="color: #159e00;">Full Reconciliation</span> ?]
 
-Rural Economic Performance: [? if rural_eco < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if rural_eco < 0 and rural_eco >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if rural_eco > 0 and rural_eco <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if rural_eco > 0.1 and rural_eco <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+on-display: {!
+data = [];
+if (Q.revolutionaries_split == 0) {
+    data.push({
+            "id": "rev",
+            "legend": "Revolutionaries",
+            "name": "Revolutionaries",
+            "seats": Math.round(Q.rev_seats*2),
+            });
+}
+if (Q.left_split == 0) {
+    data.push({
+            "id": "lef",
+            "legend": "Left",
+            "name": "Left",
+            "seats": Math.round(Q.lef_seats*2),
+            });
+}
+if (Q.agrarnians_split == 0) {
+    data.push({
+            "id": "agr",
+            "legend": "Agrariarins",
+            "name": "Agrariarins",
+            "seats": Math.round(Q.agr_seats*2),
+            });
+}
+if (Q.centrists_resign == 0) {
+    data.push({
+            "id": "cen",
+            "legend": "Centrists",
+            "name": "Centrists",
+            "seats": Math.round(Q.cen_seats*2),
+            });
+}
+if (Q.unions_independent == 0) {
+    data.push({
+            "id": "lab",
+            "legend": "Labour",
+            "name": "Labour",
+            "seats": Math.round(Q.lab_seats*2),
+            });
+}
+if (Q.reformists_resigned == 0) {
+    data.push({
+            "id": "ref",
+            "legend": "Reformist",
+            "name": "Reformist",
+            "seats": Math.round(Q.ref_seats*2),
+            });
+}
 
-Industrial Output: [? if industrial_out < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if industrial_out < 0 and industrial_out >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if industrial_out > 0 and industrial_out <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if industrial_out > 0.1 and industrial_out <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if industrial_out > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+if (window && d3) {
+    var width = 100; 
+    var height = 100;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50; 
+        height = width;
+        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+    } 
+
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#reichstag").datum(data).call(parliament);
+}
+!}
