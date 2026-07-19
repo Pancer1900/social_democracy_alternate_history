@@ -25,6 +25,47 @@ Q.economic_growth_2 = '0';
 if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
+
+Q.total_strength = Q.left_strength + Q.center_strength + Q.labor_strength + Q.reformist_strength + Q.revolutionaries_strength + Q.agrarnians_strength;
+
+if (Q.labor_strength < 4 && Q.unions_independent == 0 ) {
+    Q.labor_strength = 4;
+    }
+
+if (Q.left_strength < 4 && Q.left_split == 0 ) {
+    Q.left_strength = 4;
+    }
+
+if (Q.revolutionaries_strength < 4 && Q.revolutionaries_split == 0 ) {
+    Q.revolutionaries_strength = 4;
+    }
+
+if (Q.reformist_strength < 4 && Q.reformists_resigned == 0 ) {
+    Q.reformist_strength = 4;
+    }
+
+if (Q.agrarnians_strength < 4 && Q.agrarnians_split == 0 ) {
+    Q.agrarnians_strength = 4;
+    }
+
+if (Q.center_strength < 4) {
+    Q.center_strength = 4;
+    }
+
+Q.rev_seats = (Q.revolutionaries_strength/total_strength)*100;
+Q.lef_seats = (Q.left_strength/total_strength)*100;
+Q.agr_seats = (Q.agrarnians_strength/total_strength)*100;
+Q.cen_seats = (Q.center_strength/total_strength)*100;
+Q.lab_seats = (Q.labor_strength/total_strength)*100;
+Q.ref_seats = (Q.reformist_strength/total_strength)*100;
+
+Q.rev_seats = parseFloat(Q.rev_seats.toFixed(1));
+Q.lef_seats = parseFloat(Q.lef_seats.toFixed(1));
+Q.agr_seats = parseFloat(Q.agr_seats.toFixed(1));
+Q.cen_seats = parseFloat(Q.cen_seats.toFixed(1));
+Q.lab_seats = parseFloat(Q.lab_seats.toFixed(1));
+Q.ref_seats = parseFloat(Q.ref_seats.toFixed(1));
+
 !}
 
 = Status
@@ -283,3 +324,29 @@ Party Democratisation: [? if democratization < 0 : <span style="color: #940121;"
 Party Pacifism: [? if pacifism < 0 : <span style="color: #940121;">Anti-Pacifist Action</span> ?][? if pacifism < 3 and pacifism >= 0 : <span style="color: #c73857;">Low</span> ?][? if pacifism < 7 and pacifism >= 3 : Moderate ?][? if pacifism < 12 and pacifism >= 7 : <span style="color: #3660a3;">Hight</span> ?][? if pacifism >= 12 : <span style="color: #0062ff;">Full Pacifists</span> ?]
 
 Reconciliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <span style="color: #000000;">Better Dead than Red</span> ?][? if liberal_reconciliation < 6 and liberal_reconciliation >= 0 : <span style="color: #9e5c00;">Low</span> ?][? if liberal_reconciliation < 12 and liberal_reconciliation >= 6 : <span style="color: #999e00;">Warming Up</span> ?][? if liberal_reconciliation < 18 and liberal_reconciliation >= 12 : <span style="color: #6c9e00;">Mild Reconciliation</span> ?][? if liberal_reconciliation >= 18 : <span style="color: #159e00;">Full Reconciliation</span> ?]
+
+= Internal Factions of the Party
+
+[? if revolutionaries_split == 0: {!<span class="tooltip-text" title="Revolutionaries want to crush the Burgoise state as fast as possible and they serve as a push for revolution" style="color: #b50000;">Revolutionaries</span>!} strength: [+ revolutionaries_strength : strength +], dissent: [+ revolutionaries_dissent : dissent +] ?]
+
+[? if revolutionaries_split == 1: <span class="tooltip-text" title="Revolutionaries want to crush the Burgoise state as fast as possible and they serve as a push for revolution" style="color: #b50000;">Revolutionaries</span> Split form the Party ?]
+
+[? if left_split == 0: {!<span class="tooltip-text" title="The Left are close to revolutionaries but aren't as radical as them. They believe in a more radical path for the party, but they dont view the revolution as a immedete goal" style="color: #940000;">Left</span>!} strength: [+ left_strength : strength +], dissent: [+ left_dissent : dissent +] ?]
+
+[? if left_split == 1: <span class="tooltip-text" title="The Left are close to revolutionaries but aren't as radical as them. They believe in a more radical path for the party, but they dont view the revolution as a immedete goal" style="color: #940000;">Left</span> Split form the Party ?]
+
+[? if agrarnians_split == 0: {!<span class="tooltip-text" title="Agrarians are the rular base of the party and improving the lives of the peasants and farmers are their main goal" style="color: #dd5b00;">Agrarinas</span>!} strength: [+ agrarnians_strength : strength +], dissent: [+ agrarnians_dissent : dissent +] ?]
+
+[? if agrarnians_split == 1: <span class="tooltip-text" title="Agrarians are the rular base of the party and improving the lives of the peasants and farmers are their main goal" style="color: #dd5b00;">Agrarinas</span> Split form the Party ?]
+
+[? if centrists_resign == 0: {!<span class="tooltip-text" title="The Center is a faction of Center Marxists, between reform and revolution.">Center</span>!} strength: [+ center_strength : strength +], dissent: [+ center_dissent : dissent +] ?]
+
+[? if unions_independent == 0: {!<span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers" style="color: #c96b65;">Labour</span>!} strength: [+ labor_strength : strength +], dissent: [+ labor_dissent : dissent +] ?]
+
+[? if unions_independent == 1: <span class="tooltip-text" title="Labor's goal is economic reform and benefits for organized workers" style="color: #c96b65;">Labour</span> Split form the Party ?]
+
+[? if reformists_resigned == 0: {!<span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy" style="color: #dc0200;">Reformists</span>!} strength: [+ reformist_strength : strength +], dissent: [+ reformist_dissent : dissent +] ?]
+
+[? if revolutionaries_split == 1: <span class="tooltip-text" title="Reformists are pragmatic participants in government, and seek to expand the welfare state and defend democracy" style="color: #dc0200;">Reformists</span> Split form the Party ?]
+
+
