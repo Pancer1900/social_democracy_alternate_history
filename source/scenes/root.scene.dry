@@ -92,9 +92,9 @@ Q.nazi_urgency = 0;
 // radicalization indicates how radical the SPD's rhetoric is - scale from 0 to 10.
 Q.radicalization = 5;
 // Support for Pacifism within the SPD relative to 1928
-Q.pacifism = 0;
+Q.pacifism = 3;
 // Support for democratic reform within the SPD relative to 1928
-Q.democratization = 0;
+Q.democratization = 4;
 // Support for a communist coalition relative to 1928
 Q.communist_coalition = 0;
 // economic_plan: have we adopted *any* economic plan?
@@ -144,6 +144,8 @@ Q.party_corruption = 0;
 
 Q.party_defence = 1;
 Q.union_defence = 1;
+
+Q.spd_leader = 'Wilhelm Meller (Center)';
 
 // internal party politic 
 
