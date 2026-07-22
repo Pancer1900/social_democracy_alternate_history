@@ -213,29 +213,30 @@ Radicalisation of the People: [+ radicalisation_disp +]%
 
 @economy
 
-= Organisation and unionisation of social groups
+Economic Health:
 
-Urban workers: [+ organisation_workers : organisation +]
+Economic Growth:
 
-Rural workers and peasants: [+ organisation_rural : organisation +]
+Inflation:
 
-White collar workers and middle class: [+ organisation_middle : organisation +]
+Unemployment:
 
-= Most importat economic factors
+{!<table>!} 
+{!<tr><td>Industry Sector</td><td>Output</td><td>Stabilty</td></tr>!}
 
-Economic stabilty: [? if stability < -0.1 : <span style="color: #bd0000;">Chaos</span> ?][? if stability < 0 and stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if stability > 0 and stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if stability > 0.1 and stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+{!<tr><td>!} Heavy Industry {!</td><td>!} Output {!</td><td>!} Stabilty
 
-Trade Status: [? if trade_stability < -0.1 : <span style="color: #bd0000;">Crisis</span> ?][? if trade_stability < 0 and trade_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if trade_stability > 0 and trade_stability <= 0.1 : <span style="color: #d2ce5e;">Adequete</span> ?][? if trade_stability > 0.1 and trade_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if trade_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+[? if left_split == 0 : {!<tr><td><div class="box" style='background-color:#940000'> </div> !}Left: {!</td><td>!} [+ lef_seats +]% ?]
 
-Banking Status: [? if bank_stability < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if bank_stability < 0 and bank_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if bank_stability > 0 and bank_stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if bank_stability > 0.1 and bank_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if bank_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+[? if agrarnians_split == 0 : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}Agrarians: {!</td><td>!} [+ agr_seats +]% ?]
 
-Investment: [? if investment < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if investment < 0 and investment >= -0.1 : <span style="color: #e95448;">Regerssion</span> ?][? if investment > 0 and investment <= 0.1 : <span style="color: #d2ce5e;">Slowdown</span> ?][? if investment > 0.1 and investment <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if investment > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+[? if centrists_resign == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Center: {!</td><td>!} [+ cen_seats +]% ?]
 
-Rural Economic Performance: [? if rural_eco < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if rural_eco < 0 and rural_eco >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if rural_eco > 0 and rural_eco <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if rural_eco > 0.1 and rural_eco <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+[? if unions_independent == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Labour: {!</td><td>!} [+ lab_seats +]% ?]
 
-Industrial Output: [? if industrial_out < -0.1 : <span style="color: #bd0000;">Recession</span> ?][? if industrial_out < 0 and industrial_out >= -0.1 : <span style="color: #e95448;">Stagnating</span> ?][? if industrial_out > 0 and industrial_out <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if industrial_out > 0.1 and industrial_out <= 0.2 : <span style="color: #aad454;">Improving</span> ?][? if industrial_out > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+[? if reformists_resigned == 0 : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}Refrormist: {!</td><td>!} [+ ref_seats +]% ?]
 
-Public Works Programs: [? if public_programe < 0 : <span style="color: #e95448;">Ineffective</span> ?][? if public_programe = 0 : <span style="color: #787878;">None</span> ?][? if public_programe > 0 and public_programe <= 0.2 : <span style="color: #d2ce5e;">Working</span> ?][? if public_programe > 0.2 : <span style="color: #47d62c;">Massively improving the economy</span> ?]
+{!</table>!}
 
 @politics_party
 on-display: {!
@@ -290,8 +291,8 @@ if (Q.reformists_resigned == 0) {
 }
 
 if (window && d3) {
-    var width = 40; 
-    var height = 40;
+    var width = 20; 
+    var height = 20;
     var screenWidth = document.getElementById('content').offsetWidth;
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 
@@ -300,7 +301,7 @@ if (window && d3) {
     } 
 
     var parliament = d3.parliament();
-    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.width(width).height(height).innerRadiusCoef(0.2);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
     d3.select("#reichstag").datum(data).call(parliament);
