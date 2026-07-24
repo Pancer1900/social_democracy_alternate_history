@@ -83,52 +83,6 @@ Paramilitary Resources: [+ para_resources  +]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
-= Government
-
-President: [? if president_party = 1: <span style="color: #940000;">[+ president +]</span> (<span style="color: #940000;">KPM</span>) ?][? if president_party = 2: <span style="color: #dd5b00;">[+ president +]</span> (<span style="color: #dd5b00;">ASUM</span>) ?][? if president_party = 3: <span style="color: #dc0200;">[+ president +]</span> (<span style="color: #dc0200;">[+ spd_name +]</span>) ?][? if president_party = 4: <span style="color: #ff1919;">[+ president +]</span> (<span style="color: #ff1919;">SPM</span>) ?][? if president_party = 5: <span style="color: #ddd500;">[+ president +]</span> (<span style="color: #ddd500;">FVP</span>) ?][? if president_party = 6: <span style="color: #48b94a;">[+ president +]</span> (<span style="color: #48b94a;">GDSU</span>) ?][? if president_party = 7: <span style="color: #00e8ff;">[+ president +]</span> (<span style="color: #00e8ff;">BLPM</span>) ?][? if president_party = 8: <span style="color: #4a9fde;">[+ president +]</span> (<span style="color: #4a9fde;">PPU</span>) ?][? if president_party = 9: <span style="color: #caa58b;">[+ president +]</span> (<span style="color: #caa58b;">[+ dvp_name +]</span>) ?][? if president_party = 10: <span style="color: #808080;">[+ president +]</span> (<span style="color: #808080;">I</span>) ?][? if president_party = 11: <span style="color: #774ae2;">[+ president +]</span> (<span style="color: #774ae2;">GNVP</span>) ?][? if president_party = 12: <span style="color: #3F7BC1;">[+ president +]</span> (<span style="color: #3F7BC1;">MNVP</span>) ?][? if president_party = 13: <span style="color: #706a65;">[+ president +]</span> (<span style="color: #706a65;">MSP</span>) ?]
-
-Chancellor: [? if chancellor_party = 1: <span style="color: #940000;">[+ chancellor +]</span> (<span style="color: #940000;">KPM</span>) ?][? if chancellor_party = 2: <span style="color: #dd5b00;">[+ chancellor +]</span> (<span style="color: #dd5b00;">ASUM</span>) ?][? if chancellor_party = 3: <span style="color: #dc0200;">[+ chancellor +]</span> (<span style="color: #dc0200;">[+ spd_name +]</span>) ?][? if chancellor_party = 4: <span style="color: #ff1919;">[+ chancellor +]</span> (<span style="color: #ff1919;">SPM</span>) ?][? if chancellor_party = 5: <span style="color: #ddd500;">[+ chancellor +]</span> (<span style="color: #ddd500;">FVP</span>) ?][? if chancellor_party = 6: <span style="color: #48b94a;">[+ chancellor +]</span> (<span style="color: #48b94a;">GDSU</span>) ?][? if chancellor_party = 7: <span style="color: #00e8ff;">[+ chancellor +]</span> (<span style="color: #00e8ff;">BLPM</span>) ?][? if chancellor_party = 8: <span style="color: #4a9fde;">[+ chancellor +]</span> (<span style="color: #4a9fde;">PPU</span>) ?][? if chancellor_party = 9: <span style="color: #caa58b;">[+ chancellor +]</span> (<span style="color: #caa58b;">[+ dvp_name +]</span>) ?][? if chancellor_party = 10: <span style="color: #808080;">[+ chancellor +]</span> (<span style="color: #808080;">I</span>) ?][? if chancellor_party = 11: <span style="color: #774ae2;">[+ chancellor +]</span> (<span style="color: #774ae2;">GNVP</span>) ?][? if chancellor_party = 12: <span style="color: #3F7BC1;">[+ chancellor +]</span> (<span style="color: #3F7BC1;">MNVP</span>) ?][? if chancellor_party = 13: <span style="color: #706a65;">[+ chancellor +]</span> (<span style="color: #706a65;">MSP</span>) ?]
-
-Reichstag composition:
-
-[? if sapd_formed == 1: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #940000;">KPM</span>: [+ sapd_r +]% ?]
-
-[? if asum_formed == 1: <span class="tooltip-text" title="Agrarian-social union of Merkopia" style="color: #dd5b00;">ASUM</span>: [+ asum_r +]% ?]
-
-[? if sapd_formed == 1 and asum_formed == 0 : <span class="tooltip-text" title="Democratic Socialist Party of Merkopia" style="color: #dc0200;">**DSPM**</span>: [+ spd_r +]% ?]
-
-[? if sapd_formed == 1 and asum_formed == 1 : <span class="tooltip-text" title="Socialdemocratic Party of Merkopia" style="color: #dc0200;">**SPM**</span>: [+ spd_r +]% ?]
-
-[? if sapd_formed == 1 and asum_formed == 1 and spm_formed == 1 : <span class="tooltip-text" title="Independent Socialdemocratic Party of Merkopia" style="color: #dc0200;">**ISPM**</span>: [+ spd_r +]% ?]
-
-[? if sapd_formed == 0 and spm_formed == 0: <span class="tooltip-text" title="United Democratic Socialist Party of Merkopia" style="color: #dc0200;">**VDSPM**</span>: [+ spd_r +]% ?]
-
-[? if spm_formed == 1 and sapd_formed == 0 : <span class="tooltip-text" title=" Socialist Revolutionary Party of Merkopia" style="color: #dc0200;">**SRPM**</span>: [+ spd_r +]% ?]
-
-[? if spm_formed == 1: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #ff1919;">SPM</span>: [+ sapd_r +]% ?]
-
-{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_r +]%
-
-{!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_r +]%
-
-[? if blpm_formed == 1: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_r +]% ?]
-
-{!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_r +]%
-
-<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">[+ dvp_name +]</span>: [+ dvp_r +]%
-
-Others: [+ other_r +]%
-
-[? if gnvp_formed == 1: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_r +]% ?]
-
-{!<span class="tooltip-text" title="Merkopian National People's Party" style="color: #3F7BC1;">MNVP</span>!}: [+ dnvp_r +]%
-
-{!<span class="tooltip-text" title="National-Socialist German Worker's Party (Nazis)" style="color: #706a65;">NSDAP</span>!}: [+ nsdap_r +]%
-
-[? if spd_in_government = 1 : Budget: [+ budget +] ?]
-
-Next election: [+ next_election_month : month +] [+ next_election_year +]
-
 = Economics
 
 Inflation: [+ inflation_2 +]%
@@ -237,9 +191,29 @@ Unemployment:
 {!<tr><td>!}Peasant Agriculture{!</td><td>!} Output {!</td><td>!}Stabilty
 
 {!<tr><td>!}Estate Agriculture{!</td><td>!} Output {!</td><td>!}Stabilty
+
+{!<tr><td>!}Banking{!</td><td>!} Output {!</td><td>!}Stabilty
 {!</table>!}
 
-= Budget
+= Global/Wide Economic Indicators
+
+Investment: 
+
+Forein Investment:
+
+Trade:
+
+Global Economy: [? if global_eco < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_eco < 0 and global_eco >= -0.1 : <span style="color: #e95448;">Mild Recession</span> ?][? if global_eco > 0 and global_eco <= 0.1 : <span style="color: #d2ce5e;">Slowing down</span> ?][? if global_eco > 0.1 and global_eco <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if global_eco > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
+
+Global Trade Networks: [? if global_trade < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_trade < 0 and global_trade >= -0.1 : <span style="color: #e95448;">Obstructed</span> ?][? if global_trade > 0 and global_trade <= 0.1 : <span style="color: #d2ce5e;">Stable</span> ?][? if global_trade > 0.1 : <span style="color: #aad454;">Developing</span> ?]
+
+[? if oil_crisis = 1: Status of the oil crisis affecting Merkopia: [? if oil_crisis_mer <= 0 : <span style="color: #aad454;">Stabilised</span> ?][? if oil_crisis_mer > 0 and oil_crisis_mer <= 0.1 : <span style="color: #ffbf17;">Affecting</span> ?][? if oil_crisis_mer > 0.1 and oil_crisis_mer <= 0.2 : <span style="color: #e95448;">Severe</span> ?][? if oil_crisis_mer > 0.3 : <span style="color: #bd0000;">Full Crisis</span> ?] ?]
+
+[? if oil_crisis = 1: Status of the Global Oil Crisis: [? if oil_crisis_global <= 0 : <span style="color: #aad454;">Stabilised</span> ?][? if oil_crisis_global > 0 and oil_crisis_global <= 0.1 : <span style="color: #ffbf17;">Affecting</span> ?][? if oil_crisis_global > 0.1 and oil_crisis_global <= 0.2 : <span style="color: #e95448;">Severe</span> ?][? if oil_crisis_global > 0.3 : <span style="color: #bd0000;">Global Crisis</span> ?] ?]
+
+@budget
+
+= National Budget
 
 Net Budget:
 
@@ -251,15 +225,31 @@ Reserve:
 
 = Income
 
-{!<button class="tab_button" id="income" onclick="window.toggleInc();">Income</button>!}
+Value Tax:
 
-Net Budget:
+Corporate Tax:
 
-Income:
+Income Tax (lower class):
 
-Expence:
+Income Tax (upper class):
 
-Reserve:
+Tariffs:
+
+Other:
+
+= Expences
+
+Welfare:
+
+Administrative:
+
+Internal Transfer:
+
+Military:
+
+Government Projects:
+
+Other:
 
 @politics_party
 on-display: {!
