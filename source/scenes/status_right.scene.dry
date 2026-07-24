@@ -182,17 +182,17 @@ Unemployment:
 {!<table>!} 
 {!<tr><td>Industry Sector</td><td>Output</td><td>Stabilty</td></tr>!}
 
-{!<tr><td>!}Heavy Industry{!</td><td>!} Output {!</td><td>!}Stabilty
+{!<tr><td>!}Heavy Industry{!</td><td>!} [+ heavy_industry : eco_output +] {!</td><td>!}[+ heavy_industry_s : eco_stablity +]
 
-{!<tr><td>!}Light Industry{!</td><td>!} Output {!</td><td>!}Stabilty
+{!<tr><td>!}Light Industry{!</td><td>!} [+ light_industry : eco_output +] {!</td><td>!}[+ light_industry_s : eco_stablity +]
 
-{!<tr><td>!}Small Buisness{!</td><td>!} Output {!</td><td>!}Stabilty
+{!<tr><td>!}Small Buisness{!</td><td>!} [+ mittelstadt : eco_output +] {!</td><td>!}[+ mittelstadt_s : eco_stablity +]
 
-{!<tr><td>!}Peasant Agriculture{!</td><td>!} Output {!</td><td>!}Stabilty
+{!<tr><td>!}Peasant Agriculture{!</td><td>!} [+ rural_agr : eco_output +] {!</td><td>!}[+ rural_agr_s : eco_stablity +]
 
-{!<tr><td>!}Estate Agriculture{!</td><td>!} Output {!</td><td>!}Stabilty
+{!<tr><td>!}Estate Agriculture{!</td><td>!} [+ estate : eco_output +] {!</td><td>!}[+ estate_s : eco_stablity +]
 
-{!<tr><td>!}Banking{!</td><td>!} Output {!</td><td>!}Stabilty
+{!<tr><td>!}Banking{!</td><td>!} [+ bank : eco_output +] {!</td><td>!}[+ bank_s : eco_stablity +]
 {!</table>!}
 
 = Global/Wide Economic Indicators
