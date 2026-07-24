@@ -369,6 +369,8 @@ Q.estate = 0.1;
 Q.estate_s = 1;
 Q.rural_agr = 0.1;
 Q.rural_agr_s = 1;
+Q.bank = 0.1;
+Q.bank_s = 1;
 
 // economic expansion timer
 Q.economic_expansion = 0;
