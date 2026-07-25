@@ -167,15 +167,19 @@ Radicalisation of the People: [+ radicalisation_disp +]%
 
 @economy
 
+TEST : [+ industrial_out +]
+
+TEST2 : [+ economic_change +]
+
 = Economy Overview 
 
-Economic Health:
+Economic Growth: [+ economic_growth_2 +]%
 
-Economic Growth:
+Economic Stabilty: [? if stability < -0.1 : <span style="color: #bd0000;">Chaos</span> ?][? if stability < 0 and stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if stability > 0 and stability <= 0.1 : <span style="color: #d2ce5e;">Waring</span> ?][? if stability > 0.1 and stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
-Inflation:
+Inflation: [+ inflation_2 +]%
 
-Unemployment:
+Unemployment: [+ unemployed_2 +]%
 
 = Economy Sectors 
 
@@ -197,11 +201,11 @@ Unemployment:
 
 = Global/Wide Economic Indicators
 
-Investment: 
+Investment: [? if investment < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if investment < 0 and investment >= -0.1 : <span style="color: #e95448;">Regerssion</span> ?][? if investment > 0 and investment <= 0.1 : <span style="color: #d2ce5e;">Slowdown</span> ?][? if investment > 0.1 and investment <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if investment > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
-Forein Investment:
+Forein Investment: [? if investment_forein < -0.1 : <span style="color: #bd0000;">Collapse</span> ?][? if investment_forein < 0 and investment_forein >= -0.1 : <span style="color: #e95448;">Regerssion</span> ?][? if investment_forein > 0 and investment_forein <= 0.1 : <span style="color: #d2ce5e;">Slowdown</span> ?][? if investment_forein > 0.1 and investment_forein <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if investment_forein > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
-Trade:
+Trade Status: [? if trade_stability < -0.1 : <span style="color: #bd0000;">Crisis</span> ?][? if trade_stability < 0 and trade_stability >= -0.1 : <span style="color: #e95448;">Unstable</span> ?][? if trade_stability > 0 and trade_stability <= 0.1 : <span style="color: #d2ce5e;">Low</span> ?][? if trade_stability > 0.1 and trade_stability <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if trade_stability > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
 Global Economy: [? if global_eco < -0.1 : <span style="color: #bd0000;">Global Recession</span> ?][? if global_eco < 0 and global_eco >= -0.1 : <span style="color: #e95448;">Mild Recession</span> ?][? if global_eco > 0 and global_eco <= 0.1 : <span style="color: #d2ce5e;">Slowing down</span> ?][? if global_eco > 0.1 and global_eco <= 0.2 : <span style="color: #aad454;">Stable</span> ?][? if global_eco > 0.3 : <span style="color: #47d62c;">Growing</span> ?]
 
@@ -215,41 +219,41 @@ Global Trade Networks: [? if global_trade < -0.1 : <span style="color: #bd0000;"
 
 = National Budget
 
-Net Budget:
+Net Budget: [+ balance +] 
 
-Income:
+Income: [+ income +]
 
-Expence:
+Expence: [+ expence +]
 
-Reserve:
+Reserve: [+ reserve +]
 
 = Income
 
-Value Tax:
+Value Tax: [+ vat +]
 
-Corporate Tax:
+Corporate Tax: [+ corporate +]
 
-Income Tax (lower class):
+Income Tax (lower class): [+ income_low +]
 
-Income Tax (upper class):
+Income Tax (upper class): [+ income_high +]
 
-Tariffs:
+Tariffs: [+ tarrif +]
 
-Other:
+Other: [+ other_i +]
 
 = Expences
 
-Welfare:
+Welfare: [+ welfare +]
 
-Administrative:
+Administrative: [+ administrative +]
+ 
+Internal Transfer: [+ internal +]
 
-Internal Transfer:
+Military: [+ military +]
 
-Military:
+Government Projects: [+ projects +]
 
-Government Projects:
-
-Other:
+Other: [+ other_e +]
 
 @politics_party
 on-display: {!
