@@ -309,8 +309,8 @@ Q.budget = 4;
 Q.reserve = 1.3;
 
 // Expences
-Q.welfare = 1.1;
-Q.administrative = 2.1;
+Q.welfare_e = 0.9;
+Q.administrative = 1.8;
 Q.internal = 1.9;
 Q.military = 1.6;
 Q.projects = 0.2;
@@ -339,7 +339,6 @@ Q.minorieties = 12;
 // unemployment: 1929 - 13.3, 1930 - 22.7, 1931 - 34.3, 1932 - 43.8 (same source as above)
 
 // income for industrial workers in reichsmarks/year - 1928 = 1600 Reichsmarks/year; 1931 = 1440 Reichsmarks/year; 1933 = 1138 Reichsmarks/year - source: https://babel.hathitrust.org/cgi/pt?id=uiug.30112104147985&seq=50
-Q.income = 1600;
 // what about incomes for different classes? rural workers? middle-class workers?
 
 // inflation (in %; 1928: 2.9; 1929: 0; 1930: -5%; 1931: -10%; 1932: -10%) - source: https://en.wikipedia.org/wiki/File:BSPDRWeltkriseEngl.PNG, derived from https://www.destatis.de/DE/Methoden/WISTA-Wirtschaft-und-Statistik/2009/03/rezession-betrachtung-032009.pdf?__blob=publicationFile
@@ -350,8 +349,10 @@ Q.economic_growth = 7.1; // MAIN ECONOMIC
 Q.stability = 0.15;
 Q.trade_stability = 0.1;
 Q.bank_stability = 0.2;
+
 Q.investment = 0.2;
 Q.investment_forein = 0.2;
+
 Q.rural_eco = 0.05;
 Q.industrial_out = 0.15;
 Q.public_programe = 0;
