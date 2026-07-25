@@ -350,8 +350,8 @@ Q.stability = 0.15;
 Q.trade_stability = 0.1;
 Q.bank_stability = 0.2;
 
-Q.investment = 0.2;
-Q.investment_forein = 0.2;
+Q.investment = 0.4;
+Q.investment_forein = 0.3;
 
 Q.rural_eco = 0.05;
 Q.industrial_out = 0.15;
