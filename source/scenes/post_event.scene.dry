@@ -193,7 +193,21 @@ if (Q.month_actions >= 1) {
                              'unemployment': Q.unemployed});
     // change economic stats...
 
-// ECONOMY - FUCK ME 
+// ECONOMY - FUCK ME
+
+Q.heavy_industry = Q.hio*Q.heavy_industry_s + Q.investment + Q.investment_forein + Q.global_trade + Q.trade_stability - 0.9;
+
+Q.light_industry = Q.lio*Q.light_industry_s + Q.stability/5 + Q.investment + Q.investment_forein + Q.trade_stability - 0.8;
+
+Q.mittelstadt = Q.mio*Q.mittelstadt_s + Q.stability/4 + Q.investment/2 + Q.trade_stability - 0.8;
+
+Q.rural_agr = Q.rio*Q.estate_s + Q.stability/5 + Q.investment/2 + Q.global_trade/2 + Q.trade_stability/2 - 0.5;
+
+Q.estate = Q.eio*Q.rural_agr_s + Q.investment/2 + Q.global_trade + Q.trade_stability - 0.5;
+
+Q.bank = Q.bio*Q.bank_s + Q.stability/4 + Q.investment*1.2 + Q.investment_forein*1.2 + Q.global_eco - 1;
+
+// MAIN
 
 Q.income = Q.vat + Q.corporate + Q.income_low + Q.income_high + Q.tarrif + Q.other_i;
 
@@ -203,11 +217,11 @@ Q.balance = Q.income - Q.expence;
 
 Q.investment_g = Q.investment + Q.investment_forein;
 
-Q.industrial_out = Q.heavy_industry*1.1 + Q.light_industry*1.1 + Q.mittelstadt + Q.estate*0.8 + Q.rural_agr*0.8 + Q.bank*1.2 + Q.public_programe;
+Q.industrial_out = Q.heavy_industry*1.2 + Q.light_industry*1.1 + Q.mittelstadt + Q.estate*0.8 + Q.rural_agr*0.8 + Q.bank*1.2 + Q.public_programe;
 
-Q.stability = (Q.heavy_industry_s + Q.light_industry_s + Q.mittelstadt_s + Q.estate_s + Q.rural_agr_s + Q.bank_s*2 + trade_stability*2)/45;
+Q.stability = (Q.heavy_industry_s + Q.light_industry_s + Q.mittelstadt_s + Q.estate_s + Q.rural_agr_s + Q.bank_s*2 + Q.trade_stability*2)/9;
 
-Q.economic_change = Q.stability + Q.investment_g + Q.industrial_out - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade;
+Q.economic_change = Q.stability + Q.investment + Q.investment_forein + Q.industrial_out - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade + Q.trade_stability;
 
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
@@ -299,32 +313,26 @@ Q.economic_change = Q.stability + Q.investment_g + Q.industrial_out - Q.oil_cris
     }
 
 // economic growth v3
-    if (Q.stability < 0 ) 
-    {
-        Q.investment = Q.investment + Q.investment*Q.stability/2;
-    }
-    if (Q.bank_stability < 0 ) 
-    {
-        Q.stability = Q.stability + Q.stability*Q.bank_stability;
-    }
-    if (Q.investment < 0 ) 
-    {
-        Q.industrial_out = Q.industrial_out + Q.investment*Q.industrial_out/4;
-    }
+
 
 // ECONOMY MAIN
 
-Q.economic_change = Q.economic_change - Q.economic_growth/6.5;
+Q.economic_change = Q.economic_change - Q.economic_growth;
 
 Q.economic_growth = Q.economic_growth + Q.economic_change;
 
 // QoL
 
-Q.rural_qol = 600 + Q.estate*Q.estate_s*100 + Q.rural_agr + Q.rural_agr_s*100;
+if (Q.economic_growth >= 7) 
+    {
+        Q.economic_change -= 0.05;
+    }
 
-Q.workers_qol = 700 + Q.estate*Q.estate_s*20 + Q.rural_agr + Q.rural_agr_s*20 + Q.heavy_industry*Q.heavy_industry_s*80 + Q.light_industry*Q.light_industry_s*70 + Q.mittelstadt*Q.mittelstadt_s*40;
+Q.rural_qol = 600 + Q.estate*Q.estate_s*100 + Q.rural_agr*Q.rural_agr_s*100 - Q.inflation*10;
 
-Q.middle_qol = 800 + Q.estate*Q.estate_s*20 + Q.rural_agr + Q.rural_agr_s*20 + Q.heavy_industry*Q.heavy_industry_s*20 + Q.light_industry*Q.light_industry_s*30 + Q.mittelstadt*Q.mittelstadt_s*100 + Q.bank*Q.bank_s*40;
+Q.workers_qol = 700 + Q.estate*Q.estate_s*20 + Q.rural_agr*Q.rural_agr_s*20 + Q.heavy_industry*Q.heavy_industry_s*80 + Q.light_industry*Q.light_industry_s*70 + Q.mittelstadt*Q.mittelstadt_s*40;
+
+Q.middle_qol = 800 + Q.estate*Q.estate_s*20 + Q.rural_agr*Q.rural_agr_s*20 + Q.heavy_industry*Q.heavy_industry_s*20 + Q.light_industry*Q.light_industry_s*30 + Q.mittelstadt*Q.mittelstadt_s*100 + Q.bank*Q.bank_s*40;
 
     //////////////////////////////// Education & Science support/economic changes
     if (Q.major_curriculum && Q.major_curriculum == "democratic") {
