@@ -350,7 +350,7 @@ Q.stability = 0.15;
 Q.trade_stability = 0.1;
 Q.bank_stability = 0.2;
 
-Q.investment = 0.4;
+Q.investment = 0.3;
 Q.investment_forein = 0.3;
 
 Q.rural_eco = 0.05;
@@ -372,6 +372,13 @@ Q.rural_agr = 0.1;
 Q.rural_agr_s = 1;
 Q.bank = 0.1;
 Q.bank_s = 1;
+
+Q.hio = 0.6;
+Q.lio = 0.6;
+Q.mio = 0.65;
+Q.rio = 0.55;
+Q.eio = 0.5;
+Q.bio = 0.6;
 
 // economic expansion timer
 Q.economic_expansion = 0;
