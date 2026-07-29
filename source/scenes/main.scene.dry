@@ -21,6 +21,7 @@ max-cards: 4
 - @govt
 - #advisor
 - @shuffle_leadership_pinned
+- @gov_main_pinned
 
 @main_easy
 set-bg: img/map_2.jpg
@@ -45,6 +46,7 @@ max-cards: 5
 - @govt
 - #advisor
 - @shuffle_leadership_pinned
+- @gov_main_pinned
 
 
 @party
