@@ -69,3 +69,8 @@ card-image: img/reichstag_2.jpg
 is-deck: true
 
 - #govt_affairs
+
+@gov_main_pinned
+title: Executive and Local Governments 
+card-image: img/reichstag_2.jpg
+go-to: gov_main
