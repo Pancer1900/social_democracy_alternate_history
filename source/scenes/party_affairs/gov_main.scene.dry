@@ -3,6 +3,8 @@ new-page: true
 is-card: true
 card-image: img/vorwarts_2.jpg
 
+@rm_main
+
 Changing the leadership of the party is painful, but perhaps it is necessary to adapt to changing circumstances.
 
 Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
