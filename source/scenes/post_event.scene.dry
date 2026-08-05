@@ -317,7 +317,7 @@ Q.economic_change = Q.stability + Q.investment + Q.investment_forein + Q.industr
 
 // ECONOMY MAIN
 
-Q.economic_change = Q.economic_change - Q.economic_growth;
+Q.economic_change = Q.economic_change - Q.economic_growth/6;
 
 Q.economic_growth = Q.economic_growth + Q.economic_change;
 
