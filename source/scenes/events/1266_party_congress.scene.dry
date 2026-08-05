@@ -1,7 +1,7 @@
 title: IV Plenary Party Congress
 subtitle: Here we will decide the future of our party. 
 tags: event
-view-if: year = 1266 and month = 4 and pre_congress_seen = 1
+view-if: year = 1266 and month = 10 and pre_congress_seen = 1
 priority: 2
 max-visits: 1
 new-page: true
