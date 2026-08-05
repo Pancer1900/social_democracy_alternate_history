@@ -1,7 +1,7 @@
 title: Last manouvers before the congress.
 subtitle: We can influnce the party factions before the congress. 
 tags: event
-view-if: year = 1266 and month = 4
+view-if: year = 1266 and month = 10
 priority: 2
 max-visits: 1
 new-page: true
