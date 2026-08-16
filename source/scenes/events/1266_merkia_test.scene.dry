@@ -315,7 +315,7 @@ const inputPercentages = {
     dnvp_mer: Q.dnvp_mer,
     nsdap_mer: Q.nsdap_mer,
     gnvp_mer: Q.gnvp_mer,
-    blpm_mer: Q.blpm_mer
+    blpm_mer: Q.blpm_mer,
     other_mer: Q.other_mer
 };
 
