@@ -55,147 +55,19 @@ Q.other_mer = 0;
 Q.gnvp_mer = 0;
 Q.blpm_mer = 0;
 
-Q.spd_saxony_elections_vote = 0;
-Q.sapd_saxony_elections_vote = 0;
-Q.kpd_saxony_elections_vote = 0;
-Q.ddp_saxony_elections_vote = 0;
-Q.lvp_saxony_elections_vote = 0;
-Q.z_saxony_elections_vote = 0;
-Q.dvp_saxony_elections_vote = 0;
-Q.dnvp_saxony_elections_vote = 0;
-Q.nsdap_saxony_elections_vote = 0;
-Q.other_saxony_elections_vote = 0;
-Q.kvp_saxony_elections_vote = 0;
-Q.dnf_saxony_elections_vote = 0;
-
-if (Q.new_middle_spd_normalized + Q.old_middle_spd_normalized >= 30) saxony_adjustment_factors.spd += 0.1;
-if (Q.workers_spd_normalized >= 70) saxony_adjustment_factors.spd += 0.1;
-Q.spd_saxony_elections_vote = Q.spd_votes*saxony_adjustment_factors.spd;
-Q.sapd_saxony_elections_vote = Q.sapd_votes*saxony_adjustment_factors.sapd;
-Q.kpd_saxony_elections_vote = Q.kpd_votes*saxony_adjustment_factors.kpd;
-if (Q.stolper_program_adopted) saxony_adjustment_factors.ddp += 0.2;
-if (!Q.vnr_formed) saxony_adjustment_factors.ddp += 0.1;
-Q.ddp_saxony_elections_vote = Q.ddp_votes*saxony_adjustment_factors.ddp;
-Q.lvp_saxony_elections_vote = Q.lvp_votes*saxony_adjustment_factors.lvp;
-if (!Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes*saxony_adjustment_factors.z;
-if (Q.stegerwald_path) Q.z_saxony_elections_vote = Q.z_votes * 0.8;
-if (Q.dvp_ideology != "Right" || Q.dvp_leader != "Scholz") saxony_adjustment_factors.dvp += 0.1;
-if (Q.dvp_votes >= 6) saxony_adjustment_factors.dvp -= 0.1;
-if (Q.dvp_votes >= 7) saxony_adjustment_factors.dvp -= 0.1;
-if (Q.dvp_votes >= 8) saxony_adjustment_factors.dvp -= 0.1;
-Q.dvp_saxony_elections_vote = Q.dvp_votes*saxony_adjustment_factors.dvp;
-if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.dnvp += 0.3;
-Q.dnvp_saxony_elections_vote = Q.dnvp_votes*saxony_adjustment_factors.dnvp;
-Q.nsdap_saxony_elections_vote = Q.nsdap_votes*saxony_adjustment_factors.nsdap;
-if (Q.stolper_program_adopted) saxony_adjustment_factors.other -= 0.05;
-if (!Q.vnr_formed) saxony_adjustment_factors.other -= 0.1;
-if (!Q.csvd_formed) saxony_adjustment_factors.other -= 0.1;
-if (Q.dnvp_ideology == "Moderate") saxony_adjustment_factors.other -= 0.1;
-Q.other_saxony_elections_vote = Q.other_votes*saxony_adjustment_factors.other;
-Q.kvp_saxony_elections_vote = Q.kvp_votes*saxony_adjustment_factors.kvp;
-Q.dnf_saxony_elections_vote = Q.dnf_votes*saxony_adjustment_factors.dnf;
-
-Q.total_votes_saxony = Q.spd_saxony_elections_vote + Q.sapd_saxony_elections_vote + Q.kpd_saxony_elections_vote + Q.ddp_saxony_elections_vote + Q.lvp_saxony_elections_vote + Q.z_saxony_elections_vote + Q.dvp_saxony_elections_vote + Q.dnvp_saxony_elections_vote + Q.nsdap_saxony_elections_vote + Q.other_saxony_elections_vote + Q.kvp_saxony_elections_vote + Q.dnf_saxony_elections_vote;
-
-if (Q.total_votes_saxony > 0) {
-    Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.sapd_saxony_elections_vote = (Q.sapd_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.ddp_saxony_elections_vote = (Q.ddp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.lvp_saxony_elections_vote = (Q.lvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.z_saxony_elections_vote = (Q.z_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.dvp_saxony_elections_vote = (Q.dvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.dnvp_saxony_elections_vote = (Q.dnvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.nsdap_saxony_elections_vote = (Q.nsdap_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.kvp_saxony_elections_vote = (Q.kvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.dnf_saxony_elections_vote = (Q.dnf_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    let target = 33.37;
-    Q.spd_saxony_elections_vote = Math.round((Q.spd_saxony_elections_vote + (target - Q.spd_saxony_elections_vote) * 0.35) * 10) / 10;
-    Q.total_votes_saxony = Q.spd_saxony_elections_vote + Q.sapd_saxony_elections_vote + Q.kpd_saxony_elections_vote + Q.ddp_saxony_elections_vote + Q.lvp_saxony_elections_vote + Q.z_saxony_elections_vote + Q.dvp_saxony_elections_vote + Q.dnvp_saxony_elections_vote + Q.nsdap_saxony_elections_vote + Q.other_saxony_elections_vote + Q.kvp_saxony_elections_vote + Q.dnf_saxony_elections_vote;
-    Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.sapd_saxony_elections_vote = (Q.sapd_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.ddp_saxony_elections_vote = (Q.ddp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.lvp_saxony_elections_vote = (Q.lvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.z_saxony_elections_vote = (Q.z_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.dvp_saxony_elections_vote = (Q.dvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.dnvp_saxony_elections_vote = (Q.dnvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.nsdap_saxony_elections_vote = (Q.nsdap_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.kvp_saxony_elections_vote = (Q.kvp_saxony_elections_vote / Q.total_votes_saxony) * 100;
-    Q.dnf_saxony_elections_vote = (Q.dnf_saxony_elections_vote / Q.total_votes_saxony) * 100;
-}
-
-Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote != undefined ? parseFloat(Q.spd_saxony_elections_vote.toFixed(1)) : 0);
-Q.sapd_saxony_elections_vote = (Q.sapd_saxony_elections_vote != undefined ? parseFloat(Q.sapd_saxony_elections_vote.toFixed(1)) : 0);
-Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote != undefined ? parseFloat(Q.kpd_saxony_elections_vote.toFixed(1)) : 0);
-Q.ddp_saxony_elections_vote = (Q.ddp_saxony_elections_vote != undefined ? parseFloat(Q.ddp_saxony_elections_vote.toFixed(1)) : 0);
-Q.lvp_saxony_elections_vote = (Q.lvp_saxony_elections_vote != undefined ? parseFloat(Q.lvp_saxony_elections_vote.toFixed(1)) : 0);
-Q.z_saxony_elections_vote = (Q.z_saxony_elections_vote != undefined ? parseFloat(Q.z_saxony_elections_vote.toFixed(1)) : 0);
-Q.dvp_saxony_elections_vote = (Q.dvp_saxony_elections_vote != undefined ? parseFloat(Q.dvp_saxony_elections_vote.toFixed(1)) : 0);
-Q.dnvp_saxony_elections_vote = (Q.dnvp_saxony_elections_vote != undefined ? parseFloat(Q.dnvp_saxony_elections_vote.toFixed(1)) : 0);
-Q.nsdap_saxony_elections_vote = (Q.nsdap_saxony_elections_vote != undefined ? parseFloat(Q.nsdap_saxony_elections_vote.toFixed(1)) : 0);
-Q.other_saxony_elections_vote = (Q.other_saxony_elections_vote != undefined ? parseFloat(Q.other_saxony_elections_vote.toFixed(1)) : 0);
-Q.kvp_saxony_elections_vote = (Q.kvp_saxony_elections_vote != undefined ? parseFloat(Q.kvp_saxony_elections_vote.toFixed(1)) : 0);
-Q.dnf_saxony_elections_vote = (Q.dnf_saxony_elections_vote != undefined ? parseFloat(Q.dnf_saxony_elections_vote.toFixed(1)) : 0);
-
-if (Q.spd_saxony_elections_vote >= 1.4) Q.spd_mer = Q.spd_saxony_elections_vote;
-if (Q.sapd_saxony_elections_vote >= 1.4) Q.spm_mer = Q.sapd_saxony_elections_vote;
-if (Q.kpd_saxony_elections_vote >= 1.4) Q.sapd_mer = Q.kpd_saxony_elections_vote;
-if (Q.ddp_saxony_elections_vote >= 1.4) Q.ddp_mer = Q.ddp_saxony_elections_vote;
-if (Q.lvp_saxony_elections_vote >= 1.4) Q.ddp_mer = Q.lvp_saxony_elections_vote;
-if (Q.z_saxony_elections_vote >= 1.4) Q.z_mer = Q.z_saxony_elections_vote;
-if (Q.dvp_saxony_elections_vote >= 1.4) Q.dvp_mer = Q.dvp_saxony_elections_vote;
-if (Q.dnvp_saxony_elections_vote >= 1.4) Q.dnvp_mer = Q.dnvp_saxony_elections_vote;
-if (Q.nsdap_saxony_elections_vote >= 1.4) Q.nsdap_mer = Q.nsdap_saxony_elections_vote;
-if (Q.other_saxony_elections_vote >= 1.4) Q.other_mer = Q.other_saxony_elections_vote;
-if (Q.kvp_saxony_elections_vote >= 1.4) Q.gnvp_mer = Q.kvp_saxony_elections_vote;
-if (Q.dnf_saxony_elections_vote >= 1.4) Q.blpm_mer = Q.dnf_saxony_elections_vote;
-
-var saxony_adjustment_r_factors = {
-    spd: 1.0,
-    sapd: 1.0,
-    kpd: 0.98,
-    ddp: 0.96,
-    lvp: 1.0,
-    z: 0.0,
-    dvp: 1.0,
-    dnvp: 1.0,
-    nsdap: 1.0,
-    other: 1.0,
-    kvp: 1.0,
-    dnf: 0.3
-};
-
-Q.spd_mer = Q.spd_mer*saxony_adjustment_r_factors.spd;
-Q.spm_mer = Q.spm_mer*saxony_adjustment_r_factors.sapd;
-Q.sapd_mer = Q.sapd_mer*saxony_adjustment_r_factors.kpd;
-if (Q.stolper_program_adopted) saxony_adjustment_r_factors.ddp += 0.04;
-Q.ddp_mer = Q.ddp_mer*saxony_adjustment_r_factors.ddp;
-Q.ppu_mer = Q.ppu_mer*saxony_adjustment_r_factors.lvp;
-if (!Q.stegerwald_path) Q.z_mer = Q.z_mer*saxony_adjustment_r_factors.z;
-if (Q.stegerwald_path) Q.z_mer = Q.z_mer;
-Q.dvp_mer = Q.dvp_mer*saxony_adjustment_r_factors.dvp;
-Q.dnvp_mer = Q.dnvp_mer*saxony_adjustment_r_factors.dnvp;
-Q.nsdap_mer = Q.nsdap_mer*saxony_adjustment_r_factors.nsdap;
-Q.other_mer = Q.other_mer*saxony_adjustment_r_factors.other;
-Q.gnvp_mer = Q.gnvp_mer*saxony_adjustment_r_factors.kvp;
-Q.blpm_mer = Q.blpm_mer*saxony_adjustment_r_factors.dnf;
-
-Q.spd_mer = ((Q.workers_spd * Q.workers * 1.25) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.1) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8) + (Q.catholics_spd * Q.catholics * 0.8) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.spd * 10));
-Q.sapd_mer = ((Q.workers_sapd * Q.workers * 1.25) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.1) + (Q.peasants_sapd * Q.peasants * 0.6) + (Q.rural_sapd * Q.rural * 0.8) + (Q.catholics_sapd * Q.catholics * 0.8) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.sapd * 10));
-Q.spm_mer = ((Q.workers_spm * Q.workers * 1.25) + (Q.old_middle_spm * Q.old_middle * 1.1) + (Q.new_middle_spm * Q.new_middle * 1.1) + (Q.peasants_spm * Q.peasants * 0.6) + (Q.rural_spm * Q.rural * 0.8) + (Q.catholics_spm * Q.catholics * 0.8) + (Q.minorieties_spm * Q.minorieties * 0.5) + (Q.unemployed_spm * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.spm * 10));
-Q.asum_mer = ((Q.workers_asum * Q.workers * 1.25) + (Q.old_middle_asum * Q.old_middle * 1.1) + (Q.new_middle_asum * Q.new_middle * 1.1) + (Q.peasants_asum * Q.peasants * 0.6) + (Q.rural_asum * Q.rural * 0.8) + (Q.catholics_asum * Q.catholics * 0.8) + (Q.minorieties_asum * Q.minorieties * 0.5) + (Q.unemployed_asum * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.asum * 10));
-Q.ddp_mer = ((Q.workers_ddp * Q.workers * 1.25) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.1) + (Q.peasants_ddp * Q.peasants * 0.6) + (Q.rural_ddp * Q.rural * 0.8) + (Q.catholics_ddp * Q.catholics * 0.8) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.ddp * 10));
-Q.z_mer = ((Q.workers_z * Q.workers * 1.25) + (Q.old_middle_z * Q.old_middle * 1.1) + (Q.new_middle_z * Q.new_middle * 1.1) + (Q.peasants_z * Q.peasants * 0.6) + (Q.rural_z * Q.rural * 0.8) + (Q.catholics_z * Q.catholics * 0.8) + (Q.minorieties_z * Q.minorieties * 0.5) + (Q.unemployed_z * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.z * 10));
-Q.dvp_mer = ((Q.workers_dvp * Q.workers * 1.25) + (Q.old_middle_dvp * Q.old_middle * 1.1) + (Q.new_middle_dvp * Q.new_middle * 1.1) + (Q.peasants_dvp * Q.peasants * 0.6) + (Q.rural_dvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dvp * Q.minorieties * 0.5) + (Q.unemployed_dvp * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.dvp * 10));
-Q.dnvp_mer = ((Q.workers_dnvp * Q.workers * 1.25) + (Q.old_middle_dnvp * Q.old_middle * 1.1) + (Q.new_middle_dnvp * Q.new_middle * 1.1) + (Q.peasants_dnvp * Q.peasants * 0.6) + (Q.rural_dnvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dnvp * Q.minorieties * 0.5) + (Q.unemployed_dnvp * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.dnvp * 10));
-Q.nsdap_mer = ((Q.workers_nsdap * Q.workers * 1.25) + (Q.old_middle_nsdap * Q.old_middle * 1.1) + (Q.new_middle_nsdap * Q.new_middle * 1.1) + (Q.peasants_nsdap * Q.peasants * 0.6) + (Q.rural_nsdap * Q.rural * 0.8) + (Q.catholics_nsdap * Q.catholics * 0.8) + (Q.minorieties_nsdap * Q.minorieties * 0.5) + (Q.unemployed_nsdap * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.nsdap * 10));
-Q.ppu_mer = ((Q.workers_ppu * Q.workers * 1.25) + (Q.old_middle_ppu * Q.old_middle * 1.1) + (Q.new_middle_ppu * Q.new_middle * 1.1) + (Q.peasants_ppu * Q.peasants * 0.6) + (Q.rural_ppu * Q.rural * 0.8) + (Q.catholics_ppu * Q.catholics * 0.8) + (Q.minorieties_ppu * Q.minorieties * 0.5) + (Q.unemployed_ppu * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.ppu * 10));
-Q.gnvp_mer = ((Q.workers_gnvp * Q.workers * 1.25) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.1) + (Q.peasants_gnvp * Q.peasants * 0.6) + (Q.rural_gnvp * Q.rural * 0.8) + (Q.catholics_gnvp * Q.catholics * 0.8) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.gnvp * 10));
-Q.blpm_mer = ((Q.workers_blpm * Q.workers * 1.25) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.6) + (Q.rural_blpm * Q.rural * 0.8) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.blpm * 10));
-Q.other_mer = ((Q.workers_other * Q.workers * 1.25) + (Q.old_middle_other * Q.old_middle * 1.1) + (Q.new_middle_other * Q.new_middle * 1.1) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 0.5) + (Q.unemployed_other * Q.unemployed * 1.1) + (saxony_adjustment_r_factors.other * 10));
+Q.spd_mer = ((Q.workers_spd * Q.workers * 1.25) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.1) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8) + (Q.catholics_spd * Q.catholics * 0.8) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.spd * 10));
+Q.sapd_mer = ((Q.workers_sapd * Q.workers * 1.25) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.1) + (Q.peasants_sapd * Q.peasants * 0.6) + (Q.rural_sapd * Q.rural * 0.8) + (Q.catholics_sapd * Q.catholics * 0.8) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.sapd * 10));
+Q.spm_mer = ((Q.workers_spm * Q.workers * 1.25) + (Q.old_middle_spm * Q.old_middle * 1.1) + (Q.new_middle_spm * Q.new_middle * 1.1) + (Q.peasants_spm * Q.peasants * 0.6) + (Q.rural_spm * Q.rural * 0.8) + (Q.catholics_spm * Q.catholics * 0.8) + (Q.minorieties_spm * Q.minorieties * 0.5) + (Q.unemployed_spm * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.spm * 10));
+Q.asum_mer = ((Q.workers_asum * Q.workers * 1.25) + (Q.old_middle_asum * Q.old_middle * 1.1) + (Q.new_middle_asum * Q.new_middle * 1.1) + (Q.peasants_asum * Q.peasants * 0.6) + (Q.rural_asum * Q.rural * 0.8) + (Q.catholics_asum * Q.catholics * 0.8) + (Q.minorieties_asum * Q.minorieties * 0.5) + (Q.unemployed_asum * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.asum * 10));
+Q.ddp_mer = ((Q.workers_ddp * Q.workers * 1.25) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.1) + (Q.peasants_ddp * Q.peasants * 0.6) + (Q.rural_ddp * Q.rural * 0.8) + (Q.catholics_ddp * Q.catholics * 0.8) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.ddp * 10));
+Q.z_mer = ((Q.workers_z * Q.workers * 1.25) + (Q.old_middle_z * Q.old_middle * 1.1) + (Q.new_middle_z * Q.new_middle * 1.1) + (Q.peasants_z * Q.peasants * 0.6) + (Q.rural_z * Q.rural * 0.8) + (Q.catholics_z * Q.catholics * 0.8) + (Q.minorieties_z * Q.minorieties * 0.5) + (Q.unemployed_z * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.z * 10));
+Q.dvp_mer = ((Q.workers_dvp * Q.workers * 1.25) + (Q.old_middle_dvp * Q.old_middle * 1.1) + (Q.new_middle_dvp * Q.new_middle * 1.1) + (Q.peasants_dvp * Q.peasants * 0.6) + (Q.rural_dvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dvp * Q.minorieties * 0.5) + (Q.unemployed_dvp * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.dvp * 10));
+Q.dnvp_mer = ((Q.workers_dnvp * Q.workers * 1.25) + (Q.old_middle_dnvp * Q.old_middle * 1.1) + (Q.new_middle_dnvp * Q.new_middle * 1.1) + (Q.peasants_dnvp * Q.peasants * 0.6) + (Q.rural_dnvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dnvp * Q.minorieties * 0.5) + (Q.unemployed_dnvp * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.dnvp * 10));
+Q.nsdap_mer = ((Q.workers_nsdap * Q.workers * 1.25) + (Q.old_middle_nsdap * Q.old_middle * 1.1) + (Q.new_middle_nsdap * Q.new_middle * 1.1) + (Q.peasants_nsdap * Q.peasants * 0.6) + (Q.rural_nsdap * Q.rural * 0.8) + (Q.catholics_nsdap * Q.catholics * 0.8) + (Q.minorieties_nsdap * Q.minorieties * 0.5) + (Q.unemployed_nsdap * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.nsdap * 10));
+Q.ppu_mer = ((Q.workers_ppu * Q.workers * 1.25) + (Q.old_middle_ppu * Q.old_middle * 1.1) + (Q.new_middle_ppu * Q.new_middle * 1.1) + (Q.peasants_ppu * Q.peasants * 0.6) + (Q.rural_ppu * Q.rural * 0.8) + (Q.catholics_ppu * Q.catholics * 0.8) + (Q.minorieties_ppu * Q.minorieties * 0.5) + (Q.unemployed_ppu * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.ppu * 10));
+Q.gnvp_mer = ((Q.workers_gnvp * Q.workers * 1.25) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.1) + (Q.peasants_gnvp * Q.peasants * 0.6) + (Q.rural_gnvp * Q.rural * 0.8) + (Q.catholics_gnvp * Q.catholics * 0.8) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.gnvp * 10));
+Q.blpm_mer = ((Q.workers_blpm * Q.workers * 1.25) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.6) + (Q.rural_blpm * Q.rural * 0.8) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.blpm * 10));
+Q.other_mer = ((Q.workers_other * Q.workers * 1.25) + (Q.old_middle_other * Q.old_middle * 1.1) + (Q.new_middle_other * Q.new_middle * 1.1) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 0.5) + (Q.unemployed_other * Q.unemployed * 1.1) + (Q.saxony_adjustment_r_factors.other * 10));
 
 Q.total_r_saxony = 0;
 
