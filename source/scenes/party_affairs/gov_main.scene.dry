@@ -10,13 +10,122 @@ Changing the leadership of the party is painful, but perhaps it is necessary to 
 Removing advisors will increase dissent from their faction of the party, while selecting advisors will increase a faction's strength.
 
 - @government: Federal Government
-- @local: Federal States Map
+- @local: Federal States
 - @easy_discard
 
 @local
 
-  LOCAL
+The list of the Govermnents of Merkopia. 
+
+- @merkia: Republic Of Merkia
+- @getewehn: The City Of Getewehn
+- @yougen: State Of Yougen
+- @lurek: Republic Of Lurek
+
+@merkia
+
+Republic of Merkia:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@merkia_action: Policies in Merkia
+-@local: Return
+
+@merkia_action
+unavailable-subtitle: We are not in the Merkian Government 
+choose-if: merkia_spd == 1;
+
+----- Actions Merkia ----------
+
+
+
+@getewehn
+view-if: getewehn_independent == 1
+
+The City of Getewehn:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@getewehn_action: Policies in Getewehn
+-@local: Return
+
+@getewehn_action
+unavailable-subtitle: We do not hold the mayorat of Getewehn
+choose-if: getewehn_spd == 1;
+
+----- Actions getewehn ----------
+
+
+
+@lurek
+view-if: lukek_federation == 1
+
+The Republic of Lurek:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@lurek_action: Policies in Lurek
+-@local: Return
+
+@lurek_action
+unavailable-subtitle: We do not hold the mayorat of Lurek
+choose-if: lurek_spd == 1;
+
+----- Actions Lurek ----------
+
+
+
+
+@yougen
+subtitle: Call for increased public works and fiscal stimulus.
+unavailable-subtitle: The Reformist faction is not strong enough.
+view-if: crisis_urgency >= 3
+choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
+on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+
+State of Yougen:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@yougen_action: Policies in Yougen
+-@local: Return
+
+@yougen_action
+unavailable-subtitle: We are not in the Yougen Government 
+choose-if: yougen_spd == 1;
+
+----- Actions Merkia ----------
+
+@merkia
+subtitle: Call for increased public works and fiscal stimulus.
+unavailable-subtitle: The Reformist faction is not strong enough.
+view-if: crisis_urgency >= 3
+choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
+on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+
+Republic of Merkia:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@merkia_action: Policies in Merkia
+-@local: Return
+
+@merkia_action
+unavailable-subtitle: We are not in the Merkian Government 
+choose-if: merkia_spd == 1;
+
+----- Actions Merkia ----------
 
 @government
 
-  GOV
+  government
