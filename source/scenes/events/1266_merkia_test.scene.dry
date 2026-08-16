@@ -27,18 +27,19 @@ Q.gnvp_mer_old = Q.gnvp_mer;
 Q.blpm_mer_old = Q.blpm_mer;
 
 var saxony_adjustment_factors = {
-    spd: 1.27,
+    spd: 1.0,
     sapd: 1.0,
-    kpd: 1.2,
+    spm: 1.0,
+    asum: 1.0,
     ddp: 1.0,
-    lvp: 1.5,
-    z: 0.0,
-    dvp: 1.7,
-    dnvp: 0.55,
+    blpm: 1.0,
+    z: 1.0,
+    dvp: 1.0,
+    dnvp: 1.0,
     nsdap: 1.0,
-    other: 1.65,
-    kvp: 1.3,
-    dnf: 0.3
+    other: 1.0,
+    gnvp: 1.0,
+    ppu: 1.0
 };
 
 Q.spd_mer = 0;
