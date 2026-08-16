@@ -12,20 +12,6 @@ priority: 2
 @saxony
 on-arrival: {!
 
-Q.spd_mer_old = Q.spd_mer;
-Q.asum_mer_old = Q.asum_mer;
-Q.spm_mer_old = Q.spm_mer;
-Q.sapd_mer_old = Q.sapd_mer;
-Q.ddp_mer_old = Q.ddp_mer;
-Q.ppu_mer_old = Q.ppu_mer;
-Q.z_mer_old = Q.z_mer;
-Q.dvp_mer_old = Q.dvp_mer;
-Q.dnvp_mer_old = Q.dnvp_mer;
-Q.nsdap_mer_old = Q.nsdap_mer;
-Q.other_mer_old = Q.other_mer;
-Q.gnvp_mer_old = Q.gnvp_mer;
-Q.blpm_mer_old = Q.blpm_mer;
-
 var saxony_adjustment_factors = {
     spd: 1.27,
     sapd: 1.0,
@@ -200,6 +186,7 @@ Q.other_mer = (Q.workers_other * Q.workers * 1.25) + (Q.old_middle_other * Q.old
 Q.total_r_saxony = 0;
 
 if (Q.spd_mer) Q.total_r_saxony += Q.spd_mer;
+if (Q.asum_mer) Q.total_r_saxony += Q.asum_mer;
 if (Q.spm_mer) Q.total_r_saxony += Q.spm_mer;
 if (Q.sapd_mer) Q.total_r_saxony += Q.sapd_mer;
 if (Q.ddp_mer) Q.total_r_saxony += Q.ddp_mer;
@@ -216,6 +203,7 @@ if (Q.total_r_saxony > 0) {
     Q.spd_mer = (Q.spd_mer / Q.total_r_saxony) * 100;
     Q.spm_mer = (Q.spm_mer / Q.total_r_saxony) * 100;
     Q.sapd_mer = (Q.sapd_mer / Q.total_r_saxony) * 100;
+    Q.asum_mer = (Q.asum_mer / Q.total_r_saxony) * 100;
     Q.ddp_mer = (Q.ddp_mer / Q.total_r_saxony) * 100;
     Q.ppu_mer = (Q.ppu_mer / Q.total_r_saxony) * 100;
     Q.z_mer = (Q.z_mer / Q.total_r_saxony) * 100;
@@ -230,6 +218,7 @@ if (Q.total_r_saxony > 0) {
 Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
 Q.spm_mer = (Q.spm_mer != undefined ? parseFloat(Q.spm_mer.toFixed(1)) : 0);
 Q.sapd_mer = (Q.sapd_mer != undefined ? parseFloat(Q.sapd_mer.toFixed(1)) : 0);
+Q.asum_mer = (Q.asum_mer != undefined ? parseFloat(Q.asum_mer.toFixed(1)) : 0);
 Q.ddp_mer = (Q.ddp_mer != undefined ? parseFloat(Q.ddp_mer.toFixed(1)) : 0);
 Q.ppu_mer = (Q.ppu_mer != undefined ? parseFloat(Q.ppu_mer.toFixed(1)) : 0);
 Q.z_mer = (Q.z_mer != undefined ? parseFloat(Q.z_mer.toFixed(1)) : 0);
@@ -334,6 +323,7 @@ Q.nsdap_mer = (Q.nsdap_mer != undefined ? parseFloat(Q.nsdap_mer.toFixed(1)) : 0
 Q.other_mer = (Q.other_mer != undefined ? parseFloat(Q.other_mer.toFixed(1)) : 0);
 Q.gnvp_mer = (Q.gnvp_mer != undefined ? parseFloat(Q.gnvp_mer.toFixed(1)) : 0);
 Q.blpm_mer = (Q.blpm_mer != undefined ? parseFloat(Q.blpm_mer.toFixed(1)) : 0);
+Q.asum_mer = (Q.asum_mer != undefined ? parseFloat(Q.asum_mer.toFixed(1)) : 0);
 
 !}
 on-display: {!
