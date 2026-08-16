@@ -27,19 +27,19 @@ Q.gnvp_mer_old = Q.gnvp_mer;
 Q.blpm_mer_old = Q.blpm_mer;
 
 var saxony_adjustment_factors = {
-    spd: 1.0,
-    sapd: 1.0,
-    spm: 1.0,
-    asum: 1.0,
-    ddp: 1.0,
-    blpm: 1.0,
-    z: 1.0,
-    dvp: 1.0,
-    dnvp: 1.0,
-    nsdap: 1.0,
-    other: 1.0,
-    gnvp: 1.0,
-    ppu: 1.0
+    spd: 1.1,
+    sapd: 1.1,
+    spm: 1.1,
+    asum: 1.1,
+    ddp: 1.1,
+    blpm: 1.1,
+    z: 1.1,
+    dvp: 1.1,
+    dnvp: 1.1,
+    nsdap: 1.1,
+    other: 1.1,
+    gnvp: 1.1,
+    ppu: 1.1
 };
 
 Q.spd_mer = 0;
@@ -70,7 +70,7 @@ Q.gnvp_mer = ((Q.workers_gnvp * Q.workers * 1.25) + (Q.old_middle_gnvp * Q.old_m
 Q.blpm_mer = ((Q.workers_blpm * Q.workers * 1.25) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.6) + (Q.rural_blpm * Q.rural * 0.8) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 1.1) + (saxony_adjustment_factors.blpm * 10));
 Q.other_mer = ((Q.workers_other * Q.workers * 1.25) + (Q.old_middle_other * Q.old_middle * 1.1) + (Q.new_middle_other * Q.new_middle * 1.1) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 0.5) + (Q.unemployed_other * Q.unemployed * 1.1) + (saxony_adjustment_factors.other * 10));
 
-Q.spd_mer = Q.workers_spd * Q.workers * 1.25;
+Q.spd_mer = 100;
 
 Q.total_r_saxony = 0;
 
