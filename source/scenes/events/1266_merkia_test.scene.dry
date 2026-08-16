@@ -283,11 +283,6 @@ const inputPercentages = {
     dvp_mer: Q.dvp_mer,
     dnvp_mer: Q.dnvp_mer,
     nsdap_mer: Q.nsdap_mer,
-    wp_r_saxony: Q.wp_r_saxony,
-    farm_r_saxony: Q.farm_r_saxony,
-    vrp_r_saxony: Q.vrp_r_saxony,
-    csvd_r_saxony: Q.csvd_r_saxony,
-    vnr_r_saxony: Q.vnr_r_saxony,
     gnvp_mer: Q.gnvp_mer,
     blpm_mer: Q.blpm_mer
 };
@@ -317,23 +312,13 @@ Q.other_mer = (Q.other_mer != undefined ? parseFloat(Q.other_mer.toFixed(1)) : 0
 Q.gnvp_mer = (Q.gnvp_mer != undefined ? parseFloat(Q.gnvp_mer.toFixed(1)) : 0);
 Q.blpm_mer = (Q.blpm_mer != undefined ? parseFloat(Q.blpm_mer.toFixed(1)) : 0);
 
-Q.farm_saxony_elections_vote = (Q.farm_saxony_elections_vote != undefined ? parseFloat(Q.farm_saxony_elections_vote.toFixed(1)) : 0);
-Q.wp_saxony_elections_vote = (Q.wp_saxony_elections_vote != undefined ? parseFloat(Q.wp_saxony_elections_vote.toFixed(1)) : 0);
-Q.vrp_saxony_elections_vote = (Q.vrp_saxony_elections_vote != undefined ? parseFloat(Q.vrp_saxony_elections_vote.toFixed(1)) : 0);
 Q.kpo_saxony_elections_vote = (Q.kpo_saxony_elections_vote != undefined ? parseFloat(Q.kpo_saxony_elections_vote.toFixed(1)) : 0);
 Q.kpd_saxony_elections_vote = (Q.kpd_saxony_elections_vote != undefined ? parseFloat(Q.kpd_saxony_elections_vote.toFixed(1)) : 0);
 Q.aspd_saxony_elections_vote = (Q.aspd_saxony_elections_vote != undefined ? parseFloat(Q.aspd_saxony_elections_vote.toFixed(1)) : 0);
 Q.spd_saxony_elections_vote = (Q.spd_saxony_elections_vote != undefined ? parseFloat(Q.spd_saxony_elections_vote.toFixed(1)) : 0);
-Q.vnr_saxony_elections_vote = (Q.vnr_saxony_elections_vote != undefined ? parseFloat(Q.vnr_saxony_elections_vote.toFixed(1)) : 0);
-Q.csvd_saxony_elections_vote = (Q.csvd_saxony_elections_vote != undefined ? parseFloat(Q.csvd_saxony_elections_vote.toFixed(1)) : 0);
 Q.dnvp_mer = (Q.dnvp_mer != undefined ? parseFloat(Q.dnvp_mer.toFixed(1)) : 0);
-Q.farm_r_saxony = (Q.farm_r_saxony != undefined ? parseFloat(Q.farm_r_saxony.toFixed(1)) : 0);
-Q.wp_r_saxony = (Q.wp_r_saxony != undefined ? parseFloat(Q.wp_r_saxony.toFixed(1)) : 0);
-Q.vrp_r_saxony = (Q.vrp_r_saxony != undefined ? parseFloat(Q.vrp_r_saxony.toFixed(1)) : 0);
 Q.asum_mer = (Q.asum_mer != undefined ? parseFloat(Q.asum_mer.toFixed(1)) : 0);
 Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
-Q.csvd_r_saxony = (Q.csvd_r_saxony != undefined ? parseFloat(Q.csvd_r_saxony.toFixed(1)) : 0);
-Q.vnr_r_saxony = (Q.vnr_r_saxony != undefined ? parseFloat(Q.vnr_r_saxony.toFixed(1)) : 0);
 
 !}
 on-display: {!
