@@ -298,7 +298,7 @@ const inputPercentages = {
 const allocatedSeats = allocateSeats(inputPercentages);
 
 for (const party in allocatedSeats) {
-    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 96).toFixed(1));
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 200).toFixed(1));
 }
 
 Q.other_r_saxony = Q.farm_r_saxony + Q.wp_r_saxony + Q.vrp_r_saxony + Q.vnr_r_saxony + Q.csvd_r_saxony;
@@ -345,7 +345,9 @@ if (Q.dnvp_ideology == "Moderate") Q.mega_bourgeois_coalition_saxony = parseFloa
 Q.far_right_coalition_saxony = parseFloat((Q.z_r_saxony + Q.dvp_r_saxony + Q.lvp_r_saxony + Q.other_r_saxony + Q.dnvp_r_saxony + Q.kvp_r_saxony + Q.dnf_r_saxony + Q.nsdap_r_saxony - Q.vnr_r_saxony - Q.csvd_r_saxony).toFixed(1));
 Q.spd_coalition_saxony = parseFloat((Q.aspd_r_saxony + Q.spd_r_saxony + Q.ddp_r_saxony + Q.lvp_r_saxony + Q.z_r_saxony + Q.dvp_r_saxony).toFixed(1));
 
-if (Q.vnr_r_saxony >= 1.4) Q.vnr_cool = 1;
+Q.spd_r_saxony = 50;
+Q.ddp_r_saxony = 50;
+
 !}
 on-display: {!
 data = [{
