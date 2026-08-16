@@ -4,24 +4,8 @@ new-page: true
 tags: event
 on-arrival: saxony_election_1930_seen = 1; saxony_election_seen_2_time = time; saxony_most_recent = time
 priority: 2
-on-display: {!  
-    var cardEl = document.createElement('div');  
-    cardEl.className = "face-figure2";  
-
-    var image = new Image();  
-    image.className = "face-img";  
-    image.src = "img/states.png";  
-
-    cardEl.appendChild(image);  
-    var contentDiv = document.querySelector("#page #mid_panel #content");
-    contentDiv.appendChild(cardEl);
-!}
 
 = Elections, [+ month : month +] [+ year +]
-
-The Saxon state elections are to be held now.
-
-# 1932 ref to dissolve saxony
 
 - @saxony: May we do our best...
 
@@ -382,6 +366,9 @@ for (const party in allocatedSeats) {
 }
 
 Q.other_r_saxony = Q.farm_r_saxony + Q.wp_r_saxony + Q.vrp_r_saxony + Q.vnr_r_saxony + Q.csvd_r_saxony;
+
+Q.spd_r_saxony = 50;
+Q.ddp_r_saxony = 50;
 
 Q.spd_r_saxony = (Q.spd_r_saxony != undefined ? parseFloat(Q.spd_r_saxony.toFixed(1)) : 0);
 Q.sapd_r_saxony = (Q.sapd_r_saxony != undefined ? parseFloat(Q.sapd_r_saxony.toFixed(1)) : 0);
