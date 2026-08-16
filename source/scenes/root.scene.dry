@@ -566,6 +566,22 @@ Q.old_asum_r = 0;
 Q.blpm_r = 0;
 Q.old_blpm_r = 0;
 
+/// LOCAL GOV
+
+Q.spd_mer = 28;
+Q.asum_mer = 0;
+Q.spm_mer = 0;
+Q.sapd_mer = 0;
+Q.ddp_mer = 10;
+Q.ppu_mer = 4;
+Q.z_mer = 16;
+Q.dvp_mer = 19;
+Q.dnvp_mer = 13;
+Q.nsdap_mer = 2;
+Q.other_mer = 8;
+Q.gnvp_mer = 0;
+Q.blpm_mer = 0;
+
 // for changing the DDP's name to the DStP
 Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
