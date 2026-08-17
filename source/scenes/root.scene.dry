@@ -799,6 +799,17 @@ Q.tax_rate = 0; // sum of all the taxes div 8
 Q.electoral_threshold = 0;
 Q.merkia_election_1266_seen = 0;
 
+Q.local_spd = 0;
+Q.lurek_gov = 0;
+Q.merkia_gov = 0;
+Q.getewehn_gov = 0;
+Q.yougen_gov = 0;
+Q.percil_gov = 0;
+Q.merfeld_gov = 0;
+Q.mirfallen_gov = 0;
+Q.mirvieren_gov = 0;
+Q.tippleford_gov = 0;
+
 // our conduct in the government, and the conduct of our coalition opponents.
 // did the SPD vote against the previous government in a vote of no confidence?
 Q.spd_no_confidence = 0;
@@ -829,12 +840,28 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
             'education_science', 'curriculum',
+            // local gov
+            'merkia','lurek','getewehn','yougen','percil',
+            'merfeld','mirfallen','mirvieren','tippleford',
+            'local',
             // events
             'emergency_cuts', 'unemployment_insurance',
             'sa_ban', 'sh_ban', 'papen_chancellor',
             'kpd_policy', 'kpd_ultimatum', 'popular_front_dispute',
             'high_inflation', 'banking_crisis', 'march_on_berlin',
             'understanding_enemy', 'schleichers_schemes'];
+
+Q.tippleford_timer = 0;
+Q.mirvieren_timer = 0;
+Q.mirfallen_timer = 0;
+Q.merfeld_timer = 0;
+Q.percil_timer = 0;
+Q.yougen_timer = 0;
+Q.lurek_timer = 0;
+Q.getewehn_timer = 0;
+Q.merkia_timer = 0;
+Q.local_timer = 0;
+
 Q.advisor_action_timer = 0;
 // party affairs timers
 Q.confronting_nazis_timer = 0;
