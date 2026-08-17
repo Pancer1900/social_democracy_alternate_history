@@ -17,15 +17,15 @@ Removing advisors will increase dissent from their faction of the party, while s
 
 The list of the Govermnents of Merkopia. 
 
-- @merkia: Republic Of Merkia
-- @getewehn: The City Of Getewehn
-- @yougen: State Of Yougen
-- @percil_reinenburg: Free State Of Percil-Reinenburg
-- @merfeld: State Of Merfeld
-- @mirfallen: Republic Of Mirfallen
-- @mirvieren: State Of Mirvieren
-- @tippleford: Free Region Of Tippleford
-- @lurek: Republic Of Lurek
+- @merkia: Republic of Merkia
+- @getewehn: The City of Getewehn
+- @yougen: State of Yougen
+- @percil_reinenburg: Free State of Percil-Reinenburg
+- @merfeld: State of Merfeld
+- @mirfallen: Republic of Mirfallen
+- @mirvieren: State of Mirvieren
+- @tippleford: Free Region of Tippleford
+- @lurek: Republic of Lurek
 
 @merkia
 subtitle: [? if merkia_spd == 1 and merkia_timer == 0: Available action of the local Government ?]
