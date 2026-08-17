@@ -41,7 +41,7 @@ Governing Coalition :
 
 @merkia_action
 unavailable-subtitle: We are not in the Merkian Government 
-choose-if: merkia_spd = 1
+choose-if: merkia_spd == 1
 
 ----- Actions Merkia ----------
 
@@ -51,7 +51,7 @@ choose-if: merkia_spd = 1
 
 @getewehn
 subtitle: [? if getewehn_spd == 1 and getewehn_timer == 0: Available action of the local Government ?]
-view-if: getewehn_independent = 1
+view-if: getewehn_independent == 1
 
 The City of Getewehn:
 
@@ -64,7 +64,7 @@ Governing Coalition :
 
 @getewehn_action
 unavailable-subtitle: We do not hold the mayorat of Getewehn
-choose-if: getewehn_spd = 1;
+choose-if: getewehn_spd == 1
 
 ----- Actions getewehn ----------
 
@@ -74,7 +74,7 @@ choose-if: getewehn_spd = 1;
 
 @lurek
 subtitle: [? if lurek_spd == 1 and lurek_timer == 0: Available action of the local Government ?]
-view-if: lukek_federation = 1
+view-if: lukek_federation == 1
 
 The Republic of Lurek:
 
@@ -87,7 +87,7 @@ Governing Coalition :
 
 @lurek_action
 unavailable-subtitle: We do not hold the mayorat of Lurek
-choose-if: lurek_spd = 1;
+choose-if: lurek_spd == 1
 
 ----- Actions Lurek ----------
 
@@ -109,7 +109,7 @@ Governing Coalition :
 
 @yougen_action
 unavailable-subtitle: We are not in the Yougen Government 
-choose-if: yougen_spd = 1;
+choose-if: yougen_spd == 1
 
 ----- Actions Merkia ----------
 
@@ -131,7 +131,7 @@ Governing Coalition :
 
 @percil_action
 unavailable-subtitle: We are not in the Percilian-Reinenburgian Government 
-choose-if: percil_spd = 1;
+choose-if: percil_spd == 1
 
 ----- Actions Merkia ----------
 
@@ -153,7 +153,7 @@ Governing Coalition :
 
 @merfeld_action
 unavailable-subtitle: We are not in the Merfeld Government 
-choose-if: merfeld_spd = 1;
+choose-if: merfeld_spd == 1
 
 ----- Actions Merkia ----------
 
@@ -175,7 +175,7 @@ Governing Coalition :
 
 @mirfallen_action
 unavailable-subtitle: We are not in the Mirfallen Government 
-choose-if: mirfallen_spd = 1;
+choose-if: mirfallen_spd == 1
 
 ----- Actions Merkia ----------
 
@@ -197,7 +197,7 @@ Governing Coalition :
 
 @mirvieren_action
 unavailable-subtitle: We are not in the Mirvish Government 
-choose-if: mirvieren_spd = 1;
+choose-if: mirvieren_spd == 1
 
 ----- Actions Merkia ----------
 
@@ -219,7 +219,7 @@ Governing Coalition :
 
 @tippleford_action
 unavailable-subtitle: We are not in the Tipplefordian Government 
-choose-if: tippleford_spd = 1;
+choose-if: tippleford_spd == 1
 
 ----- Actions Merkia ----------
 
