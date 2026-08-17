@@ -42,6 +42,8 @@ Paramilitary Resources: [+ para_resources  +]
 
 Internal dissent: [+ dissent_percent : dissent +]
 
+Local Government Action: [? if local_spd = 1 and local_timer = 0: <span style="color: #2ccc21;">Avalible</span> ?][? if local_spd = 1 and local_timer > 0: <span style="color: #b59a12;">Pending</span> ?][? if local_spd = 0: <span style="color: #9c4343;">Out of all local Governments</span> ?]
+
 = Government
 
 President: [? if president_party = 1: <span style="color: #940000;">[+ president +]</span> (<span style="color: #940000;">KPM</span>) ?][? if president_party = 2: <span style="color: #dd5b00;">[+ president +]</span> (<span style="color: #dd5b00;">ASUM</span>) ?][? if president_party = 3: <span style="color: #dc0200;">[+ president +]</span> (<span style="color: #dc0200;">[+ spd_name +]</span>) ?][? if president_party = 4: <span style="color: #ff1919;">[+ president +]</span> (<span style="color: #ff1919;">SPM</span>) ?][? if president_party = 5: <span style="color: #ddd500;">[+ president +]</span> (<span style="color: #ddd500;">FVP</span>) ?][? if president_party = 6: <span style="color: #48b94a;">[+ president +]</span> (<span style="color: #48b94a;">GDSU</span>) ?][? if president_party = 7: <span style="color: #00e8ff;">[+ president +]</span> (<span style="color: #00e8ff;">BLPM</span>) ?][? if president_party = 8: <span style="color: #4a9fde;">[+ president +]</span> (<span style="color: #4a9fde;">PPU</span>) ?][? if president_party = 9: <span style="color: #caa58b;">[+ president +]</span> (<span style="color: #caa58b;">[+ dvp_name +]</span>) ?][? if president_party = 10: <span style="color: #808080;">[+ president +]</span> (<span style="color: #808080;">I</span>) ?][? if president_party = 11: <span style="color: #774ae2;">[+ president +]</span> (<span style="color: #774ae2;">GNVP</span>) ?][? if president_party = 12: <span style="color: #3F7BC1;">[+ president +]</span> (<span style="color: #3F7BC1;">MNVP</span>) ?][? if president_party = 13: <span style="color: #706a65;">[+ president +]</span> (<span style="color: #706a65;">MSP</span>) ?]
@@ -66,9 +68,9 @@ Reichstag composition:
 
 [? if spm_formed == 1: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #ff1919;">SPM</span>: [+ sapd_r +]% ?]
 
-{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_r +]%
-
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_r +]%
+
+{!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!}: [+ z_r +]%
 
 [? if blpm_formed == 1: <span class="tooltip-text" title="Federal Liberal Party of Merkopia" style="color: #00e8ff;">BLPM</span>: [+ blpm_r +]% ?]
 
