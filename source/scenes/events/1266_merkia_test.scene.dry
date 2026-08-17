@@ -170,20 +170,6 @@ for (const party in allocatedSeats) {
     Q[party] = parseFloat(((allocatedSeats[party] * 100) / 200).toFixed(1));
 }
 
-Q.mer_change_spd = Q.spd_mer - Q.spd_mer_old;
-Q.mer_change_sapd = Q.sapd_mer - Q.sapd_mer_old;
-Q.mer_change_spm = Q.spm_mer - Q.spm_mer_old;
-Q.mer_change_asum = Q.asum_mer - Q.asum_mer_old;
-Q.mer_change_ddp = Q.ddp_mer - Q.ddp_mer_old;
-Q.mer_change_z = Q.z_mer - Q.z_mer_old;
-Q.mer_change_blpm = Q.blpm_mer - Q.blpm_mer_old;
-Q.mer_change_ppu = Q.ppu_mer - Q.ppu_mer_old;
-Q.mer_change_dvp = Q.dvp_mer - Q.dvp_mer_old;
-Q.mer_change_dnvp = Q.dnvp_mer - Q.dnvp_mer_old;
-Q.mer_change_nsdap = Q.nsdap_mer - Q.nsdap_mer_old;
-Q.mer_change_other = Q.other_mer - Q.other_mer_old;
-Q.mer_change_gnvp = Q.gnvp_mer - Q.gnvp_mer_old;
-
 Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
 Q.spm_mer = (Q.spm_mer != undefined ? parseFloat(Q.spm_mer.toFixed(1)) : 0);
 Q.sapd_mer = (Q.sapd_mer != undefined ? parseFloat(Q.sapd_mer.toFixed(1)) : 0);
@@ -197,6 +183,20 @@ Q.nsdap_mer = (Q.nsdap_mer != undefined ? parseFloat(Q.nsdap_mer.toFixed(1)) : 0
 Q.other_mer = (Q.other_mer != undefined ? parseFloat(Q.other_mer.toFixed(1)) : 0);
 Q.gnvp_mer = (Q.gnvp_mer != undefined ? parseFloat(Q.gnvp_mer.toFixed(1)) : 0);
 Q.blpm_mer = (Q.blpm_mer != undefined ? parseFloat(Q.blpm_mer.toFixed(1)) : 0);
+
+Q.mer_change_spd = Q.spd_mer - Q.spd_mer_old;
+Q.mer_change_sapd = Q.sapd_mer - Q.sapd_mer_old;
+Q.mer_change_spm = Q.spm_mer - Q.spm_mer_old;
+Q.mer_change_asum = Q.asum_mer - Q.asum_mer_old;
+Q.mer_change_ddp = Q.ddp_mer - Q.ddp_mer_old;
+Q.mer_change_z = Q.z_mer - Q.z_mer_old;
+Q.mer_change_blpm = Q.blpm_mer - Q.blpm_mer_old;
+Q.mer_change_ppu = Q.ppu_mer - Q.ppu_mer_old;
+Q.mer_change_dvp = Q.dvp_mer - Q.dvp_mer_old;
+Q.mer_change_dnvp = Q.dnvp_mer - Q.dnvp_mer_old;
+Q.mer_change_nsdap = Q.nsdap_mer - Q.nsdap_mer_old;
+Q.mer_change_other = Q.other_mer - Q.other_mer_old;
+Q.mer_change_gnvp = Q.gnvp_mer - Q.gnvp_mer_old;
 
 !}
 on-display: {!
