@@ -348,7 +348,7 @@ if (window && d3) {
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mer +]% {!</td><td>!} [+ mer_change_nsdap +] {!</td></tr>!}
 {!</table>!}
 
--@ele
+-@ele: test
 
 @ele
 on-arrival: merkia_spd = 1; local_spd = 1
