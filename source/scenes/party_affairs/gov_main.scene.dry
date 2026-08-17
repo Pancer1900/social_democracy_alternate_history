@@ -28,6 +28,7 @@ The list of the Govermnents of Merkopia.
 - @lurek: Republic Of Lurek
 
 @merkia
+subtitle: [? if merkia_spd == 1 and merkia_timer == 0: Available action of the local Government ?]
 
 Republic of Merkia:
 
@@ -49,6 +50,7 @@ choose-if: merkia_spd == 1;
 
 
 @getewehn
+subtitle: [? if getewehn_spd == 1 and getewehn_timer == 0: Available action of the local Government ?]
 view-if: getewehn_independent == 1
 
 The City of Getewehn:
@@ -71,6 +73,7 @@ choose-if: getewehn_spd == 1;
 
 
 @lurek
+subtitle: [? if lurek_spd == 1 and lurek_timer == 0: Available action of the local Government ?]
 view-if: lukek_federation == 1
 
 The Republic of Lurek:
@@ -93,11 +96,7 @@ choose-if: lurek_spd == 1;
 
 
 @yougen
-subtitle: Call for increased public works and fiscal stimulus.
-unavailable-subtitle: The Reformist faction is not strong enough.
-view-if: crisis_urgency >= 3
-choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
-on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+subtitle: [? if yougen_spd == 1 and yougen_timer == 0: Available action of the local Government ?]
 
 State of Yougen:
 
@@ -119,6 +118,7 @@ choose-if: yougen_spd == 1;
 
 
 @percil_reinenburg
+subtitle: [? if percil_spd == 1 and percil_timer == 0: Available action of the local Government ?]
 
 Free State of Percil-Reinenburg:
 
@@ -140,6 +140,7 @@ choose-if: percil_spd == 1;
 
 
 @merfeld
+subtitle: [? if merfeld_spd == 1 and merfeld_timer == 0: Available action of the local Government ?]
 
 State of Merfeld:
 
@@ -161,11 +162,7 @@ choose-if: merfeld_spd == 1;
 
 
 @mirfallen
-subtitle: Call for increased public works and fiscal stimulus.
-unavailable-subtitle: The Reformist faction is not strong enough.
-view-if: crisis_urgency >= 3
-choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
-on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+subtitle: [? if mirfallen_spd == 1 and mirfallen_timer == 0: Available action of the local Government ?]
 
 Republic of Mirfallen:
 
@@ -187,11 +184,7 @@ choose-if: mirfallen_spd == 1;
 
 
 @mirvieren
-subtitle: Call for increased public works and fiscal stimulus.
-unavailable-subtitle: The Reformist faction is not strong enough.
-view-if: crisis_urgency >= 3
-choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
-on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+subtitle: [? if mirvieren_spd == 1 and mirvieren_timer == 0: Available action of the local Government ?]
 
 State of Mirvieren:
 
@@ -213,11 +206,7 @@ choose-if: mirvieren_spd == 1;
 
 
 @tippleford
-subtitle: Call for increased public works and fiscal stimulus.
-unavailable-subtitle: The Reformist faction is not strong enough.
-view-if: crisis_urgency >= 3
-choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
-on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+subtitle: [? if tippleford_spd == 1 and tippleford_timer == 0: Available action of the local Government ?]
 
 Free Region of Tippleford:
 
