@@ -184,6 +184,20 @@ Q.mer_change_nsdap = Q.nsdap_mer - Q.nsdap_mer_old;
 Q.mer_change_other = Q.other_mer - Q.other_mer_old;
 Q.mer_change_gnvp = Q.gnvp_mer - Q.gnvp_mer_old;
 
+Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
+Q.spm_mer = (Q.spm_mer != undefined ? parseFloat(Q.spm_mer.toFixed(1)) : 0);
+Q.sapd_mer = (Q.sapd_mer != undefined ? parseFloat(Q.sapd_mer.toFixed(1)) : 0);
+Q.asum_mer = (Q.asum_mer != undefined ? parseFloat(Q.asum_mer.toFixed(1)) : 0);
+Q.ddp_mer = (Q.ddp_mer != undefined ? parseFloat(Q.ddp_mer.toFixed(1)) : 0);
+Q.ppu_mer = (Q.ppu_mer != undefined ? parseFloat(Q.ppu_mer.toFixed(1)) : 0);
+Q.z_mer = (Q.z_mer != undefined ? parseFloat(Q.z_mer.toFixed(1)) : 0);
+Q.dvp_mer = (Q.dvp_mer != undefined ? parseFloat(Q.dvp_mer.toFixed(1)) : 0);
+Q.dnvp_mer = (Q.dnvp_mer != undefined ? parseFloat(Q.dnvp_mer.toFixed(1)) : 0);
+Q.nsdap_mer = (Q.nsdap_mer != undefined ? parseFloat(Q.nsdap_mer.toFixed(1)) : 0);
+Q.other_mer = (Q.other_mer != undefined ? parseFloat(Q.other_mer.toFixed(1)) : 0);
+Q.gnvp_mer = (Q.gnvp_mer != undefined ? parseFloat(Q.gnvp_mer.toFixed(1)) : 0);
+Q.blpm_mer = (Q.blpm_mer != undefined ? parseFloat(Q.blpm_mer.toFixed(1)) : 0);
+
 !}
 on-display: {!
 data = [];
@@ -333,3 +347,9 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mer +]% {!</td><td>!} [+ mer_change_nsdap +] {!</td></tr>!}
 {!</table>!}
+
+-@ele
+
+@ele
+on-arrival: merkia_spd = 1; local_spd = 1
+
