@@ -202,7 +202,7 @@ Governing Coalition :
 -@mirvieren_action: Policies in Mirvieren
 -@local: Return
 
-@merkia_action
+@mirvieren_action
 unavailable-subtitle: We are not in the Mirvish Government 
 choose-if: mirvieren_spd == 1;
 
