@@ -41,7 +41,7 @@ Governing Coalition :
 
 @merkia_action
 unavailable-subtitle: We are not in the Merkian Government 
-choose-if: merkia_spd = 1;
+choose-if: merkia_spd = 1
 
 ----- Actions Merkia ----------
 
