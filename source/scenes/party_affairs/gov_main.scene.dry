@@ -20,6 +20,11 @@ The list of the Govermnents of Merkopia.
 - @merkia: Republic Of Merkia
 - @getewehn: The City Of Getewehn
 - @yougen: State Of Yougen
+- @percil_reinenburg: Free State Of Percil-Reinenburg
+- @merfeld: State Of Merfeld
+- @mirfallen: Republic Of Mirfallen
+- @mirvieren: State Of Mirvieren
+- @tippleford: Free Region Of Tippleford
 - @lurek: Republic Of Lurek
 
 @merkia
@@ -39,6 +44,8 @@ choose-if: merkia_spd == 1;
 
 ----- Actions Merkia ----------
 
+
+////getewehn
 
 
 @getewehn
@@ -60,6 +67,8 @@ choose-if: getewehn_spd == 1;
 ----- Actions getewehn ----------
 
 
+////lurek
+
 
 @lurek
 view-if: lukek_federation == 1
@@ -80,6 +89,7 @@ choose-if: lurek_spd == 1;
 ----- Actions Lurek ----------
 
 
+////yougen
 
 
 @yougen
@@ -104,25 +114,123 @@ choose-if: yougen_spd == 1;
 
 ----- Actions Merkia ----------
 
-@merkia
+
+////percil-reinenburg
+
+
+@percil_reinenburg
+
+Free State of Percil-Reinenburg:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@percil_action: Policies in Percil-Reinenburg
+-@local: Return
+
+@percil_action
+unavailable-subtitle: We are not in the Percilian-Reinenburgian Government 
+choose-if: percil_spd == 1;
+
+----- Actions Merkia ----------
+
+
+////merfeld
+
+
+@merfeld
+
+State of Merfeld:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@merfeld_action: Policies in Merfeld
+-@local: Return
+
+@merfeld_action
+unavailable-subtitle: We are not in the Merfeld Government 
+choose-if: merfeld_spd == 1;
+
+----- Actions Merkia ----------
+
+
+/////mirfallen
+
+
+@mirfallen
 subtitle: Call for increased public works and fiscal stimulus.
 unavailable-subtitle: The Reformist faction is not strong enough.
 view-if: crisis_urgency >= 3
 choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
 on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
 
-Republic of Merkia:
+Republic of Mirfallen:
 
 ----- PARLIMENT IMAGINE -------------
 
 Governing Coalition :
 
--@merkia_action: Policies in Merkia
+-@mirfallen_action: Policies in Mirfallen
+-@local: Return
+
+@mirfallen_action
+unavailable-subtitle: We are not in the Mirfallen Government 
+choose-if: mirfallen_spd == 1;
+
+----- Actions Merkia ----------
+
+
+////mirvieren
+
+
+@mirvieren
+subtitle: Call for increased public works and fiscal stimulus.
+unavailable-subtitle: The Reformist faction is not strong enough.
+view-if: crisis_urgency >= 3
+choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
+on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+
+State of Mirvieren:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@mirvieren_action: Policies in Mirvieren
 -@local: Return
 
 @merkia_action
-unavailable-subtitle: We are not in the Merkian Government 
-choose-if: merkia_spd == 1;
+unavailable-subtitle: We are not in the Mirvish Government 
+choose-if: mirvieren_spd == 1;
+
+----- Actions Merkia ----------
+
+
+////tippleford
+
+
+@tippleford
+subtitle: Call for increased public works and fiscal stimulus.
+unavailable-subtitle: The Reformist faction is not strong enough.
+view-if: crisis_urgency >= 3
+choose-if: historical_mode == 0 or (reformist_strength >= center_strength*0.8 and reformist_strength >= (left_strength + revolutionaries_strength))
+on-arrival: reformist_strength += 8; revolutionaries_strength -= 6; left_strength -= 4; revolutionaries_dissent += 8; left_dissent += 6; wtb_support += 2; 
+
+Free Region of Tippleford:
+
+----- PARLIMENT IMAGINE -------------
+
+Governing Coalition :
+
+-@tippleford_action: Policies in Tippleford
+-@local: Return
+
+@tippleford_action
+unavailable-subtitle: We are not in the Tipplefordian Government 
+choose-if: tippleford_spd == 1;
 
 ----- Actions Merkia ----------
 
