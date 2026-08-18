@@ -116,6 +116,8 @@ Q.other_mer = (Q.other_mer / Q.total_r_saxony) * 100;
 Q.gnvp_mer = (Q.gnvp_mer / Q.total_r_saxony) * 100;
 Q.blpm_mer = (Q.blpm_mer / Q.total_r_saxony) * 100;
 
+Q.total_r_saxony = Q.spd_mer;
+
 Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
 Q.spm_mer = (Q.spm_mer != undefined ? parseFloat(Q.spm_mer.toFixed(1)) : 0);
 Q.sapd_mer = (Q.sapd_mer != undefined ? parseFloat(Q.sapd_mer.toFixed(1)) : 0);
@@ -207,8 +209,6 @@ Q.mer_change_dnvp = Q.dnvp_mer - Q.dnvp_mer_old;
 Q.mer_change_nsdap = Q.nsdap_mer - Q.nsdap_mer_old;
 Q.mer_change_other = Q.other_mer - Q.other_mer_old;
 Q.mer_change_gnvp = Q.gnvp_mer - Q.gnvp_mer_old;
-
-Q.total_r_saxony += 100;
 
 !}
 on-display: {!
