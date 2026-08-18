@@ -221,7 +221,7 @@ Q.industrial_out = Q.heavy_industry*1.2 + Q.light_industry*1.1 + Q.mittelstadt +
 
 Q.stability = (Q.heavy_industry_s + Q.light_industry_s + Q.mittelstadt_s + Q.estate_s + Q.rural_agr_s + Q.bank_s*2 + Q.trade_stability*2)/9;
 
-Q.economic_change = Q.stability + Q.investment + Q.investment_forein + Q.industrial_out - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade + Q.trade_stability;
+Q.economic_change = Q.stability + Q.investment + Q.investment_forein + Q.industrial_out - Q.oil_crisis_mer - Q.oil_crisis_global - Q.depression + Q.global_eco + Q.global_trade + Q.trade_stability - 4;
 
     // we're basically implicity drawing a Philips curve
     // budget deficits lead to some inflation
@@ -319,7 +319,7 @@ Q.economic_change = Q.stability + Q.investment + Q.investment_forein + Q.industr
 
 Q.economic_change = Q.economic_change - Q.economic_growth/6;
 
-Q.economic_growth = Q.economic_growth + Q.economic_change;
+Q.economic_growth = Q.economic_growth + Q.economic_change/4;
 
 // QoL
 
