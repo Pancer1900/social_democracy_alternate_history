@@ -100,7 +100,7 @@ Q.other_mer = (Q.other_mer != undefined ? parseFloat(Q.other_mer.toFixed(1)) : 0
 Q.gnvp_mer = (Q.gnvp_mer != undefined ? parseFloat(Q.gnvp_mer.toFixed(1)) : 0);
 Q.blpm_mer = (Q.blpm_mer != undefined ? parseFloat(Q.blpm_mer.toFixed(1)) : 0);
 
-function allocateSeats(percentages, totalSeats = 200) {
+function allocateSeats(percentages, totalSeats = 250) {
     const exactSeats = {};
     const flooredSeats = {};
     const remainders = [];
@@ -147,7 +147,7 @@ const inputPercentages = {
 const allocatedSeats = allocateSeats(inputPercentages);
 
 for (const party in allocatedSeats) {
-    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 200).toFixed(1));
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 250).toFixed(1));
 }
 
 Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
