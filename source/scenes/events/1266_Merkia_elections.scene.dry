@@ -1,230 +1,349 @@
-title: Merkia Landtag Election
-view-if: year == 1266 and month == 4 and merkia_election_1266_seen == 0
+title: Merkia Election test1
+view-if: year == 1266 and month == 2 
 new-page: true
 tags: event
-on-arrival: merkia_election_1266_seen = 1; merkia_election_seen_2_time = time; merkia_most_recent = time
+on-arrival: saxony_election_1930_seen = 1; saxony_election_seen_2_time = time; saxony_most_recent = time
 priority: 2
 
 = Elections, [+ month : month +] [+ year +]
 
-The Merkia state elections are to be held now.
+- @saxony: May we do our best...
 
-- @election_algorithm: May we do our best...
-
-@election_algorithm
+@saxony
 on-arrival: {!
-// calculate normalized class voting amounts (0 to 100)
-for (var c of Q.classes) {
-    var class_votes = 0;
-    for (var party of Q.parties) {
-        if (Q[c+'_'+party] < 0) {
-            Q[c+'_'+party] = 0;
-        }
-        class_votes += Q[c+'_'+party];
-    }
-    for (var party of Q.parties) {
-        Q[c + '_' + party + '_normalized'] = 100*Q[c+'_'+party]/class_votes;
-        Q[c + '_' + party + '_display'] = Math.round(100*Q[c+'_'+party]/class_votes);
-    }
+
+Q.spd_mer_old = Q.spd_mer;
+Q.asum_mer_old = Q.asum_mer;
+Q.spm_mer_old = Q.spm_mer;
+Q.sapd_mer_old = Q.sapd_mer;
+Q.ddp_mer_old = Q.ddp_mer;
+Q.ppu_mer_old = Q.ppu_mer;
+Q.z_mer_old = Q.z_mer;
+Q.dvp_mer_old = Q.dvp_mer;
+Q.dnvp_mer_old = Q.dnvp_mer;
+Q.nsdap_mer_old = Q.nsdap_mer;
+Q.other_mer_old = Q.other_mer;
+Q.gnvp_mer_old = Q.gnvp_mer;
+Q.blpm_mer_old = Q.blpm_mer;
+
+Q.spd_mer = 0;
+Q.asum_mer = 0;
+Q.spm_mer = 0;
+Q.sapd_mer = 0;
+Q.ddp_mer = 0;
+Q.ppu_mer = 0;
+Q.z_mer = 0;
+Q.dvp_mer = 0;
+Q.dnvp_mer = 0;
+Q.nsdap_mer = 0;
+Q.other_mer = 0;
+Q.gnvp_mer = 0;
+Q.blpm_mer = 0;
+
+Q.spd_mer = (Q.workers_spd * Q.workers * 1.25) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.1) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8) + (Q.catholics_spd * Q.catholics * 0.8) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 1.1) + (1 * 10);
+Q.sapd_mer = (Q.workers_sapd * Q.workers * 1.25) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.1) + (Q.peasants_sapd * Q.peasants * 0.6) + (Q.rural_sapd * Q.rural * 0.8) + (Q.catholics_sapd * Q.catholics * 0.8) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 1.1) + (1 * 10);
+Q.spm_mer = (Q.workers_spm * Q.workers * 1.25) + (Q.old_middle_spm * Q.old_middle * 1.1) + (Q.new_middle_spm * Q.new_middle * 1.1) + (Q.peasants_spm * Q.peasants * 0.6) + (Q.rural_spm * Q.rural * 0.8) + (Q.catholics_spm * Q.catholics * 0.8) + (Q.minorieties_spm * Q.minorieties * 0.5) + (Q.unemployed_spm * Q.unemployed * 1.1) + (1 * 10);
+Q.asum_mer = (Q.workers_asum * Q.workers * 1.25) + (Q.old_middle_asum * Q.old_middle * 1.1) + (Q.new_middle_asum * Q.new_middle * 1.1) + (Q.peasants_asum * Q.peasants * 0.6) + (Q.rural_asum * Q.rural * 0.8) + (Q.catholics_asum * Q.catholics * 0.8) + (Q.minorieties_asum * Q.minorieties * 0.5) + (Q.unemployed_asum * Q.unemployed * 1.1) + (1 * 10);
+Q.ddp_mer = (Q.workers_ddp * Q.workers * 1.25) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.1) + (Q.peasants_ddp * Q.peasants * 0.6) + (Q.rural_ddp * Q.rural * 0.8) + (Q.catholics_ddp * Q.catholics * 0.8) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 1.1) + (1 * 10);
+Q.z_mer = (Q.workers_z * Q.workers * 1.25) + (Q.old_middle_z * Q.old_middle * 1.1) + (Q.new_middle_z * Q.new_middle * 1.1) + (Q.peasants_z * Q.peasants * 0.6) + (Q.rural_z * Q.rural * 0.8) + (Q.catholics_z * Q.catholics * 0.8) + (Q.minorieties_z * Q.minorieties * 0.5) + (Q.unemployed_z * Q.unemployed * 1.1) + (1 * 10);
+Q.dvp_mer = (Q.workers_dvp * Q.workers * 1.25) + (Q.old_middle_dvp * Q.old_middle * 1.1) + (Q.new_middle_dvp * Q.new_middle * 1.1) + (Q.peasants_dvp * Q.peasants * 0.6) + (Q.rural_dvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dvp * Q.minorieties * 0.5) + (Q.unemployed_dvp * Q.unemployed * 1.1) + (1 * 10);
+Q.dnvp_mer = (Q.workers_dnvp * Q.workers * 1.25) + (Q.old_middle_dnvp * Q.old_middle * 1.1) + (Q.new_middle_dnvp * Q.new_middle * 1.1) + (Q.peasants_dnvp * Q.peasants * 0.6) + (Q.rural_dnvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dnvp * Q.minorieties * 0.5) + (Q.unemployed_dnvp * Q.unemployed * 1.1) + (1 * 10);
+Q.nsdap_mer = (Q.workers_nsdap * Q.workers * 1.25) + (Q.old_middle_nsdap * Q.old_middle * 1.1) + (Q.new_middle_nsdap * Q.new_middle * 1.1) + (Q.peasants_nsdap * Q.peasants * 0.6) + (Q.rural_nsdap * Q.rural * 0.8) + (Q.catholics_nsdap * Q.catholics * 0.8) + (Q.minorieties_nsdap * Q.minorieties * 0.5) + (Q.unemployed_nsdap * Q.unemployed * 1.1) + (1 * 10);
+Q.ppu_mer = (Q.workers_ppu * Q.workers * 1.25) + (Q.old_middle_ppu * Q.old_middle * 1.1) + (Q.new_middle_ppu * Q.new_middle * 1.1) + (Q.peasants_ppu * Q.peasants * 0.6) + (Q.rural_ppu * Q.rural * 0.8) + (Q.catholics_ppu * Q.catholics * 0.8) + (Q.minorieties_ppu * Q.minorieties * 1.0) + (Q.unemployed_ppu * Q.unemployed * 1.1) + (1 * 10);
+Q.gnvp_mer = (Q.workers_gnvp * Q.workers * 1.25) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.1) + (Q.peasants_gnvp * Q.peasants * 0.6) + (Q.rural_gnvp * Q.rural * 0.8) + (Q.catholics_gnvp * Q.catholics * 0.8) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 1.1) + (1 * 10);
+Q.blpm_mer = (Q.workers_blpm * Q.workers * 1.25) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.6) + (Q.rural_blpm * Q.rural * 0.8) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 1.1) + (1 * 10);
+Q.other_mer = (Q.workers_other * Q.workers * 1.25) + (Q.old_middle_other * Q.old_middle * 1.1) + (Q.new_middle_other * Q.new_middle * 1.1) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 0.5) + (Q.unemployed_other * Q.unemployed * 1.1) + (1 * 10);
+
+Q.spd_mer = 100;
+
+Q.total_r_saxony = 0;
+
+if (Q.spd_mer) Q.total_r_saxony += Q.spd_mer;
+if (Q.asum_mer) Q.total_r_saxony += Q.asum_mer;
+if (Q.spm_mer) Q.total_r_saxony += Q.spm_mer;
+if (Q.sapd_mer) Q.total_r_saxony += Q.sapd_mer;
+if (Q.ddp_mer) Q.total_r_saxony += Q.ddp_mer;
+if (Q.ppu_mer) Q.total_r_saxony += Q.ppu_mer;
+if (Q.z_mer) Q.total_r_saxony += Q.z_mer;
+if (Q.dvp_mer) Q.total_r_saxony += Q.dvp_mer;
+if (Q.dnvp_mer) Q.total_r_saxony += Q.dnvp_mer;
+if (Q.nsdap_mer) Q.total_r_saxony += Q.nsdap_mer;
+if (Q.other_mer) Q.total_r_saxony += Q.other_mer;
+if (Q.gnvp_mer) Q.total_r_saxony += Q.gnvp_mer;
+if (Q.blpm_mer) Q.total_r_saxony += Q.blpm_mer;
+
+if (Q.total_r_saxony > 0) {
+    Q.spd_mer = (Q.spd_mer / Q.total_r_saxony) * 100;
+    Q.spm_mer = (Q.spm_mer / Q.total_r_saxony) * 100;
+    Q.sapd_mer = (Q.sapd_mer / Q.total_r_saxony) * 100;
+    Q.asum_mer = (Q.asum_mer / Q.total_r_saxony) * 100;
+    Q.ddp_mer = (Q.ddp_mer / Q.total_r_saxony) * 100;
+    Q.ppu_mer = (Q.ppu_mer / Q.total_r_saxony) * 100;
+    Q.z_mer = (Q.z_mer / Q.total_r_saxony) * 100;
+    Q.dvp_mer = (Q.dvp_mer / Q.total_r_saxony) * 100;
+    Q.dnvp_mer = (Q.dnvp_mer / Q.total_r_saxony) * 100;
+    Q.nsdap_mer = (Q.nsdap_mer / Q.total_r_saxony) * 100;
+    Q.other_mer = (Q.other_mer / Q.total_r_saxony) * 100;
+    Q.gnvp_mer = (Q.gnvp_mer / Q.total_r_saxony) * 100;
+    Q.blpm_mer = (Q.blpm_mer / Q.total_r_saxony) * 100;
 }
 
-// 1. calculate support for each of the parties
-var total_support = 0;
-for (var party of Q.parties) {
-    var party_support = 0;
-    for (var c of Q.classes) {
-        // but this version is somewhat more entertaining and allows for wilder swings in votes.
-        // the other option basically necessitates a multi-class strategy. while the first option allows for a working-class-only strategy.
-        if (Q.old_demographics) {
-            // okay i'm pretty sure this is wrong, and the hard version is correct
-            // basically this allows for "spillover" effects in other demographics.
-            // so you can campaign among say the workers and 
-            party_support += Q[c]*Q[c+'_'+party];
-            // However, there should be a cap on how much party support you can get in a certain demo.
-        } else  {
-            party_support += Q[c]*Q[c+'_'+party+'_normalized'];
-        }
-    }
-    Q[party + '_support'] = party_support;
-    total_support += party_support;
-}
-// 2. normalize support (fraction)
-// 3. Round to integers
-// TODO: round to 1 decimal instead of rounding to integers
-// to do that, we multiply party_normalized*1000 and divide the rounded number by 10.
-for (var party of Q.parties) {
-    Q[party+'_normalized'] = Q[party + '_support']/total_support;
-    Q[party+'_votes_dec'] = Math.round(Q[party+'_normalized']*1000)/10;
-    if (Q.use_decimals) {
-        Q[party+'_votes'] = Q[party+'_votes_dec'];
-        Q[party + '_votes_disp'] = Q[party+'_votes'];
-    } else {
-        Q[party+'_votes'] = Math.round(Q[party+'_normalized']*100);
-        Q[party + '_votes_disp'] = Q[party+'_votes_dec'].toFixed(1);
-    }
-    //Q[party+'_votes'] = Q[party+'_votes_dec'];
-    // display
+Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
+Q.spm_mer = (Q.spm_mer != undefined ? parseFloat(Q.spm_mer.toFixed(1)) : 0);
+Q.sapd_mer = (Q.sapd_mer != undefined ? parseFloat(Q.sapd_mer.toFixed(1)) : 0);
+Q.asum_mer = (Q.asum_mer != undefined ? parseFloat(Q.asum_mer.toFixed(1)) : 0);
+Q.ddp_mer = (Q.ddp_mer != undefined ? parseFloat(Q.ddp_mer.toFixed(1)) : 0);
+Q.ppu_mer = (Q.ppu_mer != undefined ? parseFloat(Q.ppu_mer.toFixed(1)) : 0);
+Q.z_mer = (Q.z_mer != undefined ? parseFloat(Q.z_mer.toFixed(1)) : 0);
+Q.dvp_mer = (Q.dvp_mer != undefined ? parseFloat(Q.dvp_mer.toFixed(1)) : 0);
+Q.dnvp_mer = (Q.dnvp_mer != undefined ? parseFloat(Q.dnvp_mer.toFixed(1)) : 0);
+Q.nsdap_mer = (Q.nsdap_mer != undefined ? parseFloat(Q.nsdap_mer.toFixed(1)) : 0);
+Q.other_mer = (Q.other_mer != undefined ? parseFloat(Q.other_mer.toFixed(1)) : 0);
+Q.gnvp_mer = (Q.gnvp_mer != undefined ? parseFloat(Q.gnvp_mer.toFixed(1)) : 0);
+Q.blpm_mer = (Q.blpm_mer != undefined ? parseFloat(Q.blpm_mer.toFixed(1)) : 0);
+
+Q.total_r_saxony = 0;
+
+if (Q.spd_mer) Q.total_r_saxony += Q.spd_mer;
+if (Q.asum_mer) Q.total_r_saxony += Q.asum_mer;
+if (Q.spm_mer) Q.total_r_saxony += Q.spm_mer;
+if (Q.sapd_mer) Q.total_r_saxony += Q.sapd_mer;
+if (Q.ddp_mer) Q.total_r_saxony += Q.ddp_mer;
+if (Q.ppu_mer) Q.total_r_saxony += Q.ppu_mer;
+if (Q.z_mer) Q.total_r_saxony += Q.z_mer;
+if (Q.dvp_mer) Q.total_r_saxony += Q.dvp_mer;
+if (Q.dnvp_mer) Q.total_r_saxony += Q.dnvp_mer;
+if (Q.nsdap_mer) Q.total_r_saxony += Q.nsdap_mer;
+if (Q.other_mer) Q.total_r_saxony += Q.other_mer;
+if (Q.gnvp_mer) Q.total_r_saxony += Q.gnvp_mer;
+if (Q.blpm_mer) Q.total_r_saxony += Q.blpm_mer;
+
+if (Q.total_r_saxony > 0) {
+    Q.spd_mer = (Q.spd_mer / Q.total_r_saxony) * 100;
+    Q.asum_mer = (Q.asum_mer / Q.total_r_saxony) * 100;
+    Q.spm_mer = (Q.spm_mer / Q.total_r_saxony) * 100;
+    Q.sapd_mer = (Q.sapd_mer / Q.total_r_saxony) * 100;
+    Q.ddp_mer = (Q.ddp_mer / Q.total_r_saxony) * 100;
+    Q.ppu_mer = (Q.ppu_mer / Q.total_r_saxony) * 100;
+    Q.z_mer = (Q.z_mer / Q.total_r_saxony) * 100;
+    Q.dvp_mer = (Q.dvp_mer / Q.total_r_saxony) * 100;
+    Q.dnvp_mer = (Q.dnvp_mer / Q.total_r_saxony) * 100;
+    Q.nsdap_mer = (Q.nsdap_mer / Q.total_r_saxony) * 100;
+    Q.other_mer = (Q.other_mer / Q.total_r_saxony) * 100;
+    Q.gnvp_mer = (Q.gnvp_mer / Q.total_r_saxony) * 100;
+    Q.blpm_mer = (Q.blpm_mer / Q.total_r_saxony) * 100;
 }
 
-// set old results
-// election threshold constitutional reform
-// banning parties
-var new_party_sum = 0;
-for (var party of Q.parties) {
-    Q['old_' + party + '_mer'] = Q[party + '_mer'];
-    if (Q.constitutional_reform > 0) {
-        if (Q[party + '_votes'] < Q.electoral_threshold || (Q.electoral_threshold > 1 && party == 'other') || Q[party + '_banned']) {
-            Q[party + '_mer'] = 0;
-        } else {
-            Q[party + '_mer'] = Q[party + '_votes'];
-        }
-        new_party_sum += Q[party + '_mer'];
-    } else {
-        Q[party + '_mer'] = Q[party + '_votes'];
-    }
-    // if we use decimals, then we might want to truncate the numbers
-    if (Q.use_decimals) {
-        Q[party + '_r_disp'] = Q[party+'_mer'].toFixed(1);
-    }  else {
-            Q[party + '_r_disp'] = Q[party+'_mer'];
-    }
-    Q['change_' + party + '_mer'] = Q[party + '_mer'] - Q['old_' + party + '_mer'];
-    var sign = Q['change_' + party + '_mer'] > 0 ? '+'  : '';
-    Q['str_change_' + party] = sign + Q['change_' + party + '_mer'];//.toFixed(1);
-}
-for (var party of Q.parties) {
-        Q['change_' + party + '_mer'] = Q[party + '_mer'] - Q['old_' + party + '_mer'];
-        var sign = Q['change_' + party + '_mer'] > 0 
-                   ? '<img src="img/arrowup.png"> ' 
-                   : Q['change_' + party + '_mer'] < 0 
-                     ? '<img src="img/arrowdown.png"> ' 
-                     : '<img src="img/steady.png"> ';
-        Q['change_' + party + '_mer'] = Math.abs(Q['change_' + party + '_mer']);
-        Q['str_change_' + party] = sign + parseFloat(Q['change_' + party + '_mer']).toFixed(1);
-    
-        // Calculate changes in votes
-        Q['change_' + party + '_votes'] = Q[party + '_votes'] - Q['previous_' + party + '_last_election_votes'];
-        if (Q['previous_' + party + '_last_election_votes'] === undefined) {
-            Q['change_' + party + '_votes'] = Q[party + '_votes'];
-        }
-        var sign2 = Q['change_' + party + '_votes'] > 0 
-                    ? '<img src="img/arrowup.png"> ' 
-                    : Q['change_' + party + '_votes'] < 0 
-                      ? '<img src="img/arrowdown.png"> ' 
-                      : '<img src="img/steady.png"> ';
-        Q['str_votes_change_' + party] = sign2 + Math.abs(Q['change_' + party + '_votes']).toFixed(1);
-    }
-// calculate new party sum if electoral reform
-if (Q.electoral_threshold && Q.electoral_threshold > 0) {
-    for (var party of Q.parties) {
-        if (Q[party + '_mer'] > 0) {
-            if (Q.use_decimals) {
-                Q[party + '_mer'] = Math.round((Q[party + '_mer']*1000/new_party_sum)/10).toFixed(1);
-            } else {
-                Q[party + '_mer'] = Math.round(Q[party + '_mer']*100/new_party_sum);
-            }
-        }
-        if (Q.use_decimals) {
-            Q[party + '_r_disp'] = Q[party+'_mer'].toFixed(1);
-        } else {
-            Q[party + '_r_disp'] = Q[party+'_mer'];
-        }
-        Q['change_' + party + '_mer'] = Q[party + '_mer'] - Q['old_' + party + '_mer'];
-        var sign = Q['change_' + party + '_mer'] > 0 ? '+'  : '';
-        Q['str_change_' + party] = sign + Q['change_' + party + '_mer'];//.toFixed(1);
-    }
-}
-!}            
+function allocateSeats(percentages, totalSeats = 200) {
+    const exactSeats = {};
+    const flooredSeats = {};
+    const remainders = [];
 
--@election: election...
+    let totalFlooredSeats = 0;
+    for (const party in percentages) {
+        const exact = (percentages[party] * totalSeats) / 100;
+        const floored = Math.floor(exact);
+        const remainder = exact - floored;
 
-@election
+        exactSeats[party] = exact;
+        flooredSeats[party] = floored;
+        totalFlooredSeats += floored;
+
+        remainders.push({ party, remainder });
+    }
+
+    const seatsToDistribute = totalSeats - totalFlooredSeats;
+    remainders.sort((a, b) => b.remainder - a.remainder);
+
+    for (let i = 0; i < seatsToDistribute; i++) {
+        flooredSeats[remainders[i].party]++;
+    }
+
+    return flooredSeats;
+}
+
+const inputPercentages = {
+    spd_mer: Q.spd_mer,
+    asum_mer: Q.asum_mer,
+    spm_mer: Q.spm_mer,
+    sapd_mer: Q.sapd_mer,
+    ddp_mer: Q.ddp_mer,
+    ppu_mer: Q.ppu_mer,
+    z_mer: Q.z_mer,
+    dvp_mer: Q.dvp_mer,
+    dnvp_mer: Q.dnvp_mer,
+    nsdap_mer: Q.nsdap_mer,
+    gnvp_mer: Q.gnvp_mer,
+    blpm_mer: Q.blpm_mer,
+    other_mer: Q.other_mer
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 200).toFixed(1));
+}
+
+Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
+Q.spm_mer = (Q.spm_mer != undefined ? parseFloat(Q.spm_mer.toFixed(1)) : 0);
+Q.sapd_mer = (Q.sapd_mer != undefined ? parseFloat(Q.sapd_mer.toFixed(1)) : 0);
+Q.ddp_mer = (Q.ddp_mer != undefined ? parseFloat(Q.ddp_mer.toFixed(1)) : 0);
+Q.ppu_mer = (Q.ppu_mer != undefined ? parseFloat(Q.ppu_mer.toFixed(1)) : 0);
+Q.z_mer = (Q.z_mer != undefined ? parseFloat(Q.z_mer.toFixed(1)) : 0);
+Q.dvp_mer = (Q.dvp_mer != undefined ? parseFloat(Q.dvp_mer.toFixed(1)) : 0);
+Q.dnvp_mer = (Q.dnvp_mer != undefined ? parseFloat(Q.dnvp_mer.toFixed(1)) : 0);
+Q.nsdap_mer = (Q.nsdap_mer != undefined ? parseFloat(Q.nsdap_mer.toFixed(1)) : 0);
+Q.other_mer = (Q.other_mer != undefined ? parseFloat(Q.other_mer.toFixed(1)) : 0);
+Q.gnvp_mer = (Q.gnvp_mer != undefined ? parseFloat(Q.gnvp_mer.toFixed(1)) : 0);
+Q.blpm_mer = (Q.blpm_mer != undefined ? parseFloat(Q.blpm_mer.toFixed(1)) : 0);
+Q.asum_mer = (Q.asum_mer != undefined ? parseFloat(Q.asum_mer.toFixed(1)) : 0);
+
+!}
 on-display: {!
 data = [];
-if (Q.revolutionaries_split == 0) {
+if (Q.sapd_formed && Q.sapd_r) {
     data.push({
-            "id": "rev",
-            "legend": "Revolutionaries",
-            "name": "Revolutionaries",
-            "seats": Math.round(Q.rev_seats*8),
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_mer*0.96),
             });
 }
-if (Q.left_split == 0) {
+if (Q.asum_formed && Q.asum_r) {
     data.push({
-            "id": "lef",
-            "legend": "Left",
-            "name": "Left",
-            "seats": Math.round(Q.lef_seats*8),
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_mer*0.96),
             });
 }
-if (Q.agrarnians_split == 0) {
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_mer*0.96),
+    },
+    ]);
+if (Q.spm_formed && Q.spm_r) {
     data.push({
-            "id": "agr",
-            "legend": "Agrariarins",
-            "name": "Agrariarins",
-            "seats": Math.round(Q.agr_seats*8),
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_mer*0.96),
             });
 }
-if (Q.centrists_resign == 0) {
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_mer*0.96),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_mer*0.96),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_r) {
     data.push({
-            "id": "cen",
-            "legend": "Centrists",
-            "name": "Centrists",
-            "seats": Math.round(Q.cen_seats*8),
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_mer*0.96),
             });
 }
-if (Q.unions_independent == 0) {
+data = data.concat([
+    {
+        "id": "bvp",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.ppu_mer*0.96),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_mer*0.96),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_mer*0.96),
+    },
+]);
+if (Q.gnvp_formed && Q.gnvp_r) {
     data.push({
-            "id": "lab",
-            "legend": "Labour",
-            "name": "Labour",
-            "seats": Math.round(Q.lab_seats*8),
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_mer*0.96),
             });
 }
-if (Q.reformists_resigned == 0) {
-    data.push({
-            "id": "ref",
-            "legend": "Reformist",
-            "name": "Reformist",
-            "seats": Math.round(Q.ref_seats*8),
-            });
-}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_mer*0.96),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_mer*0.96),
+    },
+]);
+
 
 if (window && d3) {
-    var width = 500; 
+    var width = 500;
     var height = 500;
     var screenWidth = document.getElementById('content').offsetWidth;
     if (screenWidth < width - 50) {
-        width = screenWidth - 50; 
+        width = screenWidth - 50;
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
-    } 
-
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#reichstag").datum(data).call(parliament);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
 }
 !}
 
-= Election results
 
-{!<svg id="reichstag" style="width: 500px; height: 250px;"> </svg>!}
+**Saxony results:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_mer +]%** {!</td><td>!} **[+ str_change_spd +]** {!</td></tr>!}
 
-[? if revolutionaries_split == 0 : {!<tr><td><div class="box" style='background-color:#b50000'> </div> !}Revolutionatries: {!</td><td>!} [+ rev_seats +]% ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_mer +]% {!</td><td>!} [+ str_change_sapd +] {!</td></tr>!} ?]
 
-[? if left_split == 0 : {!<tr><td><div class="box" style='background-color:#940000'> </div> !}Left: {!</td><td>!} [+ lef_seats +]% ?]
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_mer +]% {!</td><td>!} [+ str_change_asum +] {!</td></tr>!} ?]
 
-[? if agrarnians_split == 0 : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}Agrarians: {!</td><td>!} [+ agr_seats +]% ?]
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mer +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
 
-[? if centrists_resign == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Center: {!</td><td>!} [+ cen_seats +]% ?]
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mer +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
 
-[? if unions_independent == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Labour: {!</td><td>!} [+ lab_seats +]% ?]
+[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_mer +]% {!</td><td>!} [+ str_change_blpm +] {!</td></tr>!} ?]
 
-[? if reformists_resigned == 0 : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}Refrormist: {!</td><td>!} [+ ref_seats +]% ?]
+{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_mer +]% {!</td><td>!} [+ str_change_ppu +] {!</td></tr>!}
 
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mer +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_mer +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+
+[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_mer +]% {!</td><td>!} [+ str_change_gnvp +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mer +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mer +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
 {!</table>!}
