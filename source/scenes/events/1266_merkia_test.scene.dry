@@ -1,5 +1,5 @@
 title: Merkia Election test 12
-view-if: time = next_merkia_election 
+view-if: time = (next_merkia_election + 1)
 new-page: true
 tags: event
 on-arrival: next_merkia_election = time + 48
