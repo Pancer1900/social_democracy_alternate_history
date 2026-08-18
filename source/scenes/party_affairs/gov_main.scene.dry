@@ -29,10 +29,124 @@ The list of the Govermnents of Merkopia.
 
 @merkia
 subtitle: [? if merkia_spd == 1 and merkia_timer == 0: Available action of the local Government ?]
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_r) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_mer*2),
+            });
+}
+if (Q.asum_formed && Q.asum_r) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_mer*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_mer*2),
+    },
+    ]);
+if (Q.spm_formed && Q.spm_r) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_mer*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_mer*2),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_mer*2),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_r) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_mer*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "bvp",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.ppu_mer*2),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_mer*2),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_mer*2),
+    },
+]);
+if (Q.gnvp_formed && Q.gnvp_r) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_mer*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_mer*2),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_mer*0.96),
+    },
+]);
 
-Republic of Merkia:
 
------ PARLIMENT IMAGINE -------------
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Caversket of the Republic of Merkia:**
 
 Governing Coalition :
 
