@@ -596,9 +596,9 @@ Q.gnvp_mer = 0;
 Q.blpm_mer = 0;
 
 Q.spd_mer_mod = 10;
-Q.asum_mer_mod = 10;
-Q.spm_mer_mod = 10;
-Q.sapd_mer_mod = 10;
+Q.asum_mer_mod = 0;
+Q.spm_mer_mod = 0;
+Q.sapd_mer_mod = 0;
 Q.ddp_mer_mod = 10;
 Q.ppu_mer_mod = 10;
 Q.z_mer_mod = 10;
@@ -606,8 +606,8 @@ Q.dvp_mer_mod = 10;
 Q.dnvp_mer_mod = 10;
 Q.nsdap_mer_mod = 10;
 Q.other_mer_mod = 10;
-Q.gnvp_mer_mod = 10;
-Q.blpm_mer_mod = 10;
+Q.gnvp_mer_mod = 0;
+Q.blpm_mer_mod = 0;
 
 // for changing the DDP's name to the DStP
 Q.spd_name = "VDSPM";
