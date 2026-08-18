@@ -88,35 +88,35 @@ Q.other_mer = parseFloat(Q.other_mer.toFixed(1));
 Q.gnvp_mer = parseFloat(Q.gnvp_mer.toFixed(1));
 Q.blpm_mer = parseFloat(Q.blpm_mer.toFixed(1));
 
-if (Q.spd_mer) Q.total_r_saxony += Q.spd_mer;
-if (Q.asum_mer) Q.total_r_saxony += Q.asum_mer;
-if (Q.spm_mer) Q.total_r_saxony += Q.spm_mer;
-if (Q.sapd_mer) Q.total_r_saxony += Q.sapd_mer;
-if (Q.ddp_mer) Q.total_r_saxony += Q.ddp_mer;
-if (Q.ppu_mer) Q.total_r_saxony += Q.ppu_mer;
-if (Q.z_mer) Q.total_r_saxony += Q.z_mer;
-if (Q.dvp_mer) Q.total_r_saxony += Q.dvp_mer;
-if (Q.dnvp_mer) Q.total_r_saxony += Q.dnvp_mer;
-if (Q.nsdap_mer) Q.total_r_saxony += Q.nsdap_mer;
-if (Q.other_mer) Q.total_r_saxony += Q.other_mer;
-if (Q.gnvp_mer) Q.total_r_saxony += Q.gnvp_mer;
-if (Q.blpm_mer) Q.total_r_saxony += Q.blpm_mer;
+if (Q.spd_mer) Q.total_mer += Q.spd_mer;
+if (Q.asum_mer) Q.total_mer += Q.asum_mer;
+if (Q.spm_mer) Q.total_mer += Q.spm_mer;
+if (Q.sapd_mer) Q.total_mer += Q.sapd_mer;
+if (Q.ddp_mer) Q.total_mer += Q.ddp_mer;
+if (Q.ppu_mer) Q.total_mer += Q.ppu_mer;
+if (Q.z_mer) Q.total_mer += Q.z_mer;
+if (Q.dvp_mer) Q.total_mer += Q.dvp_mer;
+if (Q.dnvp_mer) Q.total_mer += Q.dnvp_mer;
+if (Q.nsdap_mer) Q.total_mer += Q.nsdap_mer;
+if (Q.other_mer) Q.total_mer += Q.other_mer;
+if (Q.gnvp_mer) Q.total_mer += Q.gnvp_mer;
+if (Q.blpm_mer) Q.total_mer += Q.blpm_mer;
 
-Q.spd_mer = (Q.spd_mer / Q.total_r_saxony) * 100;
-Q.spm_mer = (Q.spm_mer / Q.total_r_saxony) * 100;
-Q.sapd_mer = (Q.sapd_mer / Q.total_r_saxony) * 100;
-Q.asum_mer = (Q.asum_mer / Q.total_r_saxony) * 100;
-Q.ddp_mer = (Q.ddp_mer / Q.total_r_saxony) * 100;
-Q.ppu_mer = (Q.ppu_mer / Q.total_r_saxony) * 100;
-Q.z_mer = (Q.z_mer / Q.total_r_saxony) * 100;
-Q.dvp_mer = (Q.dvp_mer / Q.total_r_saxony) * 100;
-Q.dnvp_mer = (Q.dnvp_mer / Q.total_r_saxony) * 100;
-Q.nsdap_mer = (Q.nsdap_mer / Q.total_r_saxony) * 100;
-Q.other_mer = (Q.other_mer / Q.total_r_saxony) * 100;
-Q.gnvp_mer = (Q.gnvp_mer / Q.total_r_saxony) * 100;
-Q.blpm_mer = (Q.blpm_mer / Q.total_r_saxony) * 100;
+Q.spd_mer = (Q.spd_mer / Q.total_mer) * 100;
+Q.spm_mer = (Q.spm_mer / Q.total_mer) * 100;
+Q.sapd_mer = (Q.sapd_mer / Q.total_mer) * 100;
+Q.asum_mer = (Q.asum_mer / Q.total_mer) * 100;
+Q.ddp_mer = (Q.ddp_mer / Q.total_mer) * 100;
+Q.ppu_mer = (Q.ppu_mer / Q.total_mer) * 100;
+Q.z_mer = (Q.z_mer / Q.total_mer) * 100;
+Q.dvp_mer = (Q.dvp_mer / Q.total_mer) * 100;
+Q.dnvp_mer = (Q.dnvp_mer / Q.total_mer) * 100;
+Q.nsdap_mer = (Q.nsdap_mer / Q.total_mer) * 100;
+Q.other_mer = (Q.other_mer / Q.total_mer) * 100;
+Q.gnvp_mer = (Q.gnvp_mer / Q.total_mer) * 100;
+Q.blpm_mer = (Q.blpm_mer / Q.total_mer) * 100;
 
-Q.total_r_saxony = Q.spd_mer;
+Q.total_mer = Q.spd_mer;
 
 Q.spd_mer = (Q.spd_mer != undefined ? parseFloat(Q.spd_mer.toFixed(1)) : 0);
 Q.spm_mer = (Q.spm_mer != undefined ? parseFloat(Q.spm_mer.toFixed(1)) : 0);
@@ -365,7 +365,7 @@ if (window && d3) {
 @ele
 on-arrival: merkia_spd = 1; local_spd = 1
 
-[+ total_r_saxony +]
+[+ total_mer +]
 
 test
 
