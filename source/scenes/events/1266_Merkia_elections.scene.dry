@@ -1,5 +1,5 @@
-title: Merkia Election test1
-view-if: year == 1266 and month == 2 
+title: Merkia Election test2
+view-if: year == 1266 and month == 2 and saxony_election_1930_seen == 0
 new-page: true
 tags: event
 on-arrival: saxony_election_1930_seen = 1; saxony_election_seen_2_time = time; saxony_most_recent = time
