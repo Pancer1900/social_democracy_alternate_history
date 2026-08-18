@@ -1,8 +1,8 @@
-title: Merkia Election test22
-view-if: year == 1266 and month == 2 and saxony_election_1930_seen == 0
+title: Merkia Election test222
+view-if: time = next_merkia_election 
 new-page: true
 tags: event
-on-arrival: saxony_election_1930_seen = 1; saxony_election_seen_2_time = time; saxony_most_recent = time
+on-arrival: next_merkia_election = time + 48
 priority: 2
 
 = Elections, [+ month : month +] [+ year +]
@@ -177,6 +177,20 @@ Q.mer_change_dnvp = Q.dnvp_mer - Q.dnvp_mer_old;
 Q.mer_change_nsdap = Q.nsdap_mer - Q.nsdap_mer_old;
 Q.mer_change_other = Q.other_mer - Q.other_mer_old;
 Q.mer_change_gnvp = Q.gnvp_mer - Q.gnvp_mer_old;
+
+Q.mer_change_spd = (Q.mer_change_spd != undefined ? parseFloat(Q.mer_change_spd.toFixed(1)) : 0);
+Q.mer_change_spm = (Q.mer_change_spm != undefined ? parseFloat(Q.mer_change_spm.toFixed(1)) : 0);
+Q.mer_change_sapd = (Q.mer_change_sapd != undefined ? parseFloat(Q.mer_change_sapd.toFixed(1)) : 0);
+Q.mer_change_ddp = (Q.mer_change_ddp != undefined ? parseFloat(Q.mer_change_ddp.toFixed(1)) : 0);
+Q.mer_change_ppu = (Q.mer_change_ppu != undefined ? parseFloat(Q.mer_change_ppu.toFixed(1)) : 0);
+Q.mer_change_z = (Q.mer_change_z != undefined ? parseFloat(Q.mer_change_z.toFixed(1)) : 0);
+Q.mer_change_dvp = (Q.mer_change_dvp != undefined ? parseFloat(Q.mer_change_dvp.toFixed(1)) : 0);
+Q.mer_change_dnvp = (Q.mer_change_dnvp != undefined ? parseFloat(Q.mer_change_dnvp.toFixed(1)) : 0);
+Q.mer_change_nsdap = (Q.mer_change_nsdap != undefined ? parseFloat(Q.mer_change_nsdap.toFixed(1)) : 0);
+Q.mer_change_other = (Q.mer_change_other != undefined ? parseFloat(Q.mer_change_other.toFixed(1)) : 0);
+Q.mer_change_gnvp = (Q.mer_change_gnvp != undefined ? parseFloat(Q.mer_change_gnvp.toFixed(1)) : 0);
+Q.mer_change_blpm = (Q.mer_change_blpm != undefined ? parseFloat(Q.mer_change_blpm.toFixed(1)) : 0);
+Q.mer_change_asum = (Q.mer_change_asum != undefined ? parseFloat(Q.mer_change_asum.toFixed(1)) : 0);
 
 !}
 on-display: {!
