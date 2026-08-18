@@ -167,9 +167,11 @@ Radicalisation of the People: [+ radicalisation_disp +]%
 
 @economy
 
-TEST : [+ industrial_out +]
+ind out : [+ industrial_out +]
 
-TEST2 : [+ economic_change +]
+eco chan : [+ economic_change +]
+
+stabil : [+ stability +]
 
 = Economy Overview 
 
