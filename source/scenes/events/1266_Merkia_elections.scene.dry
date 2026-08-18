@@ -1,4 +1,4 @@
-title: Merkia Election test2221
+title: Merkia Election test2223
 view-if: time = next_merkia_election 
 new-page: true
 tags: event
@@ -39,6 +39,20 @@ Q.nsdap_mer = 0;
 Q.other_mer = 0;
 Q.gnvp_mer = 0;
 Q.blpm_mer = 0;
+
+Q.spd_mer_mod = (Q.spd_mer_mod != undefined ? parseFloat(Q.spd_mer_mod.toFixed(1)) : 0);
+Q.spm_mer_mod = (Q.spm_mer_mod != undefined ? parseFloat(Q.spm_mer_mod.toFixed(1)) : 0);
+Q.sapd_mer_mod = (Q.sapd_mer_mod != undefined ? parseFloat(Q.sapd_mer_mod.toFixed(1)) : 0);
+Q.asum_mer_mod = (Q.asum_mer_mod != undefined ? parseFloat(Q.asum_mer_mod.toFixed(1)) : 0);
+Q.ddp_mer_mod = (Q.ddp_mer_mod != undefined ? parseFloat(Q.ddp_mer_mod.toFixed(1)) : 0);
+Q.ppu_mer_mod = (Q.ppu_mer_mod != undefined ? parseFloat(Q.ppu_mer_mod.toFixed(1)) : 0);
+Q.z_mer_mod_mod = (Q.z_mer_mod_mod != undefined ? parseFloat(Q.z_mer_mod_mod.toFixed(1)) : 0);
+Q.dvp_mer_mod = (Q.dvp_mer_mod != undefined ? parseFloat(Q.dvp_mer_mod.toFixed(1)) : 0);
+Q.dnvp_mer_mod = (Q.dnvp_mer_mod != undefined ? parseFloat(Q.dnvp_mer_mod.toFixed(1)) : 0);
+Q.nsdap_mer_mod = (Q.nsdap_mer_mod != undefined ? parseFloat(Q.nsdap_mer_mod.toFixed(1)) : 0);
+Q.other_mer_mod = (Q.other_mer_mod != undefined ? parseFloat(Q.other_mer_mod.toFixed(1)) : 0);
+Q.gnvp_mer_mod = (Q.gnvp_mer_mod != undefined ? parseFloat(Q.gnvp_mer_mod.toFixed(1)) : 0);
+Q.blpm_mer_mod = (Q.blpm_mer_mod != undefined ? parseFloat(Q.blpm_mer_mod.toFixed(1)) : 0);
 
 Q.spd_mer = (Q.workers_spd * Q.workers * 1.25) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.1) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8) + (Q.catholics_spd * Q.catholics * 0.8) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 1.1) + (Q.spd_mer_mod * 10.0);
 Q.ddp_mer = (Q.workers_ddp * Q.workers * 1.25) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.1) + (Q.peasants_ddp * Q.peasants * 0.6) + (Q.rural_ddp * Q.rural * 0.8) + (Q.catholics_ddp * Q.catholics * 0.8) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 1.1) + (Q.ddp_mer_mod * 10.0);
