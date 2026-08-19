@@ -79,7 +79,8 @@ const allocatedSeats = allocateSeats(inputPercentages);
 for (const party in allocatedSeats) {
     Q[party] = parseFloat(((allocatedSeats[party] * 100) / 250).toFixed(1));
 }
-}!
+!}
+
 on-display: {!
 data = [];
 if (Q.sapd_formed && Q.sapd_r) {
