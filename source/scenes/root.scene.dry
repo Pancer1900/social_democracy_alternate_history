@@ -459,7 +459,7 @@ Q.peasants_ddp= 3;
 Q.peasants_dvp = 9;
 Q.peasants_dnvp = 14;
 Q.peasants_nsdap = 0;
-Q.peasants_other = 6;
+Q.peasants_other = 8;
 Q.peasants_ppu = 1;
 
 Q.peasants_sapd = 0;
@@ -474,7 +474,7 @@ Q.rural_ddp= 5;
 Q.rural_dvp = 30;
 Q.rural_dnvp = 28;
 Q.rural_nsdap = 5;
-Q.rural_other = 6;
+Q.rural_other = 8;
 Q.rural_ppu = 1;
 
 Q.rural_sapd = 0;
@@ -633,13 +633,13 @@ Q.spd_mir_mod = 10;
 Q.asum_mir_mod = 0;
 Q.spm_mir_mod = 0;
 Q.sapd_mir_mod = 0;
-Q.ddp_mir_mod = 10;
+Q.ddp_mir_mod = 5;
 Q.ppu_mir_mod = 10;
 Q.z_mir_mod = 10;
 Q.dvp_mir_mod = 10;
 Q.dnvp_mir_mod = 10;
 Q.nsdap_mir_mod = 10;
-Q.other_mir_mod = 10;
+Q.other_mir_mod = 15;
 Q.gnvp_mir_mod = 0;
 Q.blpm_mir_mod = 0;
 
