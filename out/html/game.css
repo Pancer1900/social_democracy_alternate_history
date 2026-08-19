@@ -607,6 +607,9 @@ table {
 .seat.other {
     fill: #dddddd;
 }
+.seat.sud {
+    fill: #9100bd;
+}
 .seat.ltp {
     fill: #1b7035;
 }
@@ -615,6 +618,15 @@ table {
 }
 .seat.nsdap {
     fill: #706a65;
+}
+.seat.liv {
+    fill: #fdff7a;
+}
+.seat.bra {
+    fill: #993902;
+}
+.seat.lac {
+    fill: #b0cf00;
 }
 .seat.sapd {
     fill: #940000;
