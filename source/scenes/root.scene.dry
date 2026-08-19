@@ -580,6 +580,8 @@ Q.mirvieren_gov = 0;
 Q.tippleford_gov = 0;
 
 Q.next_merkia_election = 3;
+Q.merkia_election_1266_seen = 0;
+Q.merkia_election_failed = 0;
 
 Q.spd_mer = 28;
 Q.asum_mer = 0;
@@ -608,6 +610,36 @@ Q.nsdap_mer_mod = 10;
 Q.other_mer_mod = 10;
 Q.gnvp_mer_mod = 0;
 Q.blpm_mer_mod = 0;
+
+Q.next_mirfallen_election = 3;
+
+Q.spd_mir = 32;
+Q.asum_mir = 0;
+Q.spm_mir = 0;
+Q.sapd_mir = 0;
+Q.ddp_mir = 7;
+Q.ppu_mir = 3;
+Q.z_mir = 16;
+Q.dvp_mir = 19;
+Q.dnvp_mir = 12;
+Q.nsdap_mir = 2;
+Q.other_mir = 9;
+Q.gnvp_mir = 0;
+Q.blpm_mir = 0;
+
+Q.spd_mir_mod = 10;
+Q.asum_mir_mod = 0;
+Q.spm_mir_mod = 0;
+Q.sapd_mir_mod = 0;
+Q.ddp_mir_mod = 10;
+Q.ppu_mir_mod = 10;
+Q.z_mir_mod = 10;
+Q.dvp_mir_mod = 10;
+Q.dnvp_mir_mod = 10;
+Q.nsdap_mir_mod = 10;
+Q.other_mir_mod = 10;
+Q.gnvp_mir_mod = 0;
+Q.blpm_mir_mod = 0;
 
 // for changing the DDP's name to the DStP
 Q.spd_name = "VDSPM";
