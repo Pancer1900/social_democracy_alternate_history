@@ -643,6 +643,38 @@ Q.other_mir_mod = 10;
 Q.gnvp_mir_mod = 0;
 Q.blpm_mir_mod = 0;
 
+Q.next_yougen_election = 3;
+Q.yougen_election_1266_seen = 0;
+Q.yougen_election_failed = 0;
+
+Q.spd_youg = 24;
+Q.asum_youg = 0;
+Q.spm_youg = 0;
+Q.sapd_youg = 0;
+Q.ddp_youg = 12;
+Q.ppu_youg = 2;
+Q.z_youg = 19;
+Q.dvp_youg = 21;
+Q.dnvp_youg = 11;
+Q.nsdap_youg = 2;
+Q.other_youg = 9;
+Q.gnvp_youg = 0;
+Q.blpm_youg = 0;
+
+Q.spd_youg_mod = 10;
+Q.asum_youg_mod = 0;
+Q.spm_youg_mod = 0;
+Q.sapd_youg_mod = 0;
+Q.ddp_youg_mod = 10;
+Q.ppu_youg_mod = 10;
+Q.z_youg_mod = 10;
+Q.dvp_youg_mod = 10;
+Q.dnvp_youg_mod = 10;
+Q.nsdap_youg_mod = 10;
+Q.other_youg_mod = 10;
+Q.gnvp_youg_mod = 0;
+Q.blpm_youg_mod = 0;
+
 // for changing the DDP's name to the DStP
 Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
