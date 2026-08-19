@@ -258,7 +258,6 @@ data = data.concat([
         "seats": Math.round(Q.dnvp_zel*1.5),
     },
     {
-    {
         "id": "nsdap",
         "legend": "NSDAP",
         "name": "NSDAP",
