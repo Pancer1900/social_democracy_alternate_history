@@ -316,7 +316,7 @@ if (window && d3) {
 
 [? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_mirv +]% {!</td><td>!} [+ mirv_change_blpm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNP: {!</td><td>!} [+ rnp_mirv +]% {!</td><td>!} [+ mirv_change_rnc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNP: {!</td><td>!} [+ rnp_mirv +]% {!</td><td>!} [+ mirv_change_rnp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mirv +]% {!</td><td>!} [+ mirv_change_dvp +] {!</td></tr>!}
  
@@ -326,7 +326,7 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mirv +]% {!</td><td>!} [+ mirv_change_dnvp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtu_mirv +] % {!</td><td>!} [+ mirv_change_mtp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtu_mirv +] % {!</td><td>!} [+ mirv_change_mtu +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mirv +]% {!</td><td>!} [+ mirv_change_nsdap +] {!</td></tr>!}
 {!</table>!}
