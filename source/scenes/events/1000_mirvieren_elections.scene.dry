@@ -1,4 +1,4 @@
-title: Mirvieren Election test1
+title: Mirvieren Election test11
 view-if: time = next_mirviern_election 
 new-page: true
 tags: event
@@ -123,7 +123,6 @@ Q.mirv_change_asum = Q.asum_mirv - Q.asum_mirv_old;
 Q.mirv_change_ddp = Q.ddp_mirv - Q.ddp_mirv_old;
 Q.mirv_change_z = Q.z_mirv - Q.z_mirv_old;
 Q.mirv_change_blpm = Q.blpm_mirv - Q.blpm_mirv_old;
-Q.mirv_change_ppu = Q.ppu_mirv - Q.ppu_mirv_old;
 Q.mirv_change_dvp = Q.dvp_mirv - Q.dvp_mirv_old;
 Q.mirv_change_dnvp = Q.dnvp_mirv - Q.dnvp_mirv_old;
 Q.mirv_change_nsdap = Q.nsdap_mirv - Q.nsdap_mirv_old;
@@ -161,10 +160,10 @@ Q.mirv_change_other = (Q.mirv_change_other != undefined ? parseFloat(Q.mirv_chan
 Q.mirv_change_gnvp = (Q.mirv_change_gnvp != undefined ? parseFloat(Q.mirv_change_gnvp.toFixed(1)) : 0);
 Q.mirv_change_blpm = (Q.mirv_change_blpm != undefined ? parseFloat(Q.mirv_change_blpm.toFixed(1)) : 0);
 Q.mirv_change_asum = (Q.mirv_change_asum != undefined ? parseFloat(Q.mirv_change_asum.toFixed(1)) : 0);
-Q.mirv_change_mtu = (Q.mirv_change_blpm != undefined ? parseFloat(Q.mirv_change_blpm.toFixed(1)) : 0);
-Q.mirv_change_ltp = (Q.mirv_change_asum != undefined ? parseFloat(Q.mirv_change_asum.toFixed(1)) : 0);
-Q.mirv_change_rnp = (Q.mirv_change_blpm != undefined ? parseFloat(Q.mirv_change_blpm.toFixed(1)) : 0);
-Q.mirv_change_bvp = (Q.mirv_change_asum != undefined ? parseFloat(Q.mirv_change_asum.toFixed(1)) : 0);
+Q.mirv_change_mtu = (Q.mirv_change_mtu != undefined ? parseFloat(Q.mirv_change_mtu.toFixed(1)) : 0);
+Q.mirv_change_ltp = (Q.mirv_change_ltp != undefined ? parseFloat(Q.mirv_change_ltp.toFixed(1)) : 0);
+Q.mirv_change_rnp = (Q.mirv_change_rnp != undefined ? parseFloat(Q.mirv_change_rnp.toFixed(1)) : 0);
+Q.mirv_change_bvp = (Q.mirv_change_bvp != undefined ? parseFloat(Q.mirv_change_bvp.toFixed(1)) : 0);
 
 !}
 on-display: {!
@@ -232,9 +231,9 @@ if (Q.blpm_formed && Q.blpm_mirv) {
 data = data.concat([
     {
         "id": "lac",
-        "legend": "PPU",
-        "name": "PPU",
-        "seats": Math.round(Q.rnc_mirv*1.5),
+        "legend": "RNP",
+        "name": "RNP",
+        "seats": Math.round(Q.rnp_mirv*1.5),
     },
     {
         "id": "dvp",
@@ -317,7 +316,7 @@ if (window && d3) {
 
 [? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_mirv +]% {!</td><td>!} [+ mirv_change_blpm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNC: {!</td><td>!} [+ rnc_mirv +]% {!</td><td>!} [+ mirv_change_rnc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNP: {!</td><td>!} [+ rnp_mirv +]% {!</td><td>!} [+ mirv_change_rnc +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mirv +]% {!</td><td>!} [+ mirv_change_dvp +] {!</td></tr>!}
  
@@ -327,7 +326,7 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mirv +]% {!</td><td>!} [+ mirv_change_dnvp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtp_mirv +] % {!</td><td>!} [+ mirv_change_mtp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtu_mirv +] % {!</td><td>!} [+ mirv_change_mtp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mirv +]% {!</td><td>!} [+ mirv_change_nsdap +] {!</td></tr>!}
 {!</table>!}
