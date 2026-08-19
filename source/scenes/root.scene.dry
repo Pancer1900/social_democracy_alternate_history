@@ -783,20 +783,20 @@ Q.next_zeltbrin_election = 3;
 Q.zeltbrin_election_1266_seen = 0;
 Q.zeltbrin_election_failed = 0;
 
-Q.spd_zel = 32;
+Q.spd_zel = 22;
 Q.asum_zel = 0;
 Q.spm_zel = 0;
 Q.sapd_zel = 0;
-Q.ddp_zel = 7;
-Q.ppu_zel = 3;
-Q.z_zel = 16;
-Q.dvp_zel = 19;
+Q.ddp_zel = 6;
+Q.z_zel = 14;
+Q.dvp_zel = 18;
 Q.dnvp_zel = 12;
 Q.nsdap_zel = 2;
 Q.gnvp_zel = 0;
 Q.blpm_zel = 0;
-Q.ltp_zel = 0;
-Q.mtu_zel = 0;
+Q.ltp_zel = 4;
+Q.rnc_zel = 8;
+Q.zek_zel = 14;
 
 Q.spd_zel_mod = 10;
 Q.asum_zel_mod = 0;
@@ -810,8 +810,7 @@ Q.dnvp_zel_mod = 10;
 Q.nsdap_zel_mod = 10;
 Q.gnvp_zel_mod = 0;
 Q.blpm_zel_mod = 0;
-Q.ltp_zel_mod = 10;
-Q.mtu_zel_mod = 10;
+Q.others_zel_mod = 10;
 
 Q.next_lurek_election = 3;
 Q.lurek_election_1266_seen = 0;
