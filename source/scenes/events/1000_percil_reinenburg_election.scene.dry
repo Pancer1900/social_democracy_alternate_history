@@ -1,9 +1,9 @@
-title: Percil-Reinenburg Election test11
+title: Percil-Reinenburg Election test12
 view-if: time = next_percil_election 
 new-page: true
 tags: event
 on-arrival: next_percil_election = time + 48
-priority: 1.5
+priority: 2
 
 = Elections, [+ month : month +] [+ year +]
 
@@ -280,7 +280,7 @@ if (window && d3) {
 
 **Mirfallen Caversket:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 1.550px;"> </svg>!}
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
@@ -292,40 +292,40 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#a302a6'> </div> !} PNF: {!</td><td>!} [+ pnf_per +]% {!</td><td>!} [+ mer_change_pnf +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_per +]% {!</td><td>!} [+ mer_change_ddp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mer +]% {!</td><td>!} [+ mer_change_ddp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_per +]% {!</td><td>!} [+ mer_change_z +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mer +]% {!</td><td>!} [+ mer_change_z +] {!</td></tr>!}
 
-[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_per +]% {!</td><td>!} [+ mer_change_blpm +] {!</td></tr>!} ?]
+[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_mer +]% {!</td><td>!} [+ mer_change_blpm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_per +]% {!</td><td>!} [+ mer_change_ppu +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_mer +]% {!</td><td>!} [+ mer_change_ppu +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_per +]% {!</td><td>!} [+ mer_change_dvp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mer +]% {!</td><td>!} [+ mer_change_dvp +] {!</td></tr>!}
  
-{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_per +] % {!</td><td>!} [+ mer_change_other +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_mer +] % {!</td><td>!} [+ mer_change_other +] {!</td></tr>!}
 
-[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae1.5'> </div> !}GNVP: {!</td><td>!} [+ gnvp_per +]% {!</td><td>!} [+ mer_change_gnvp +] {!</td></tr>!} ?]
+[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_mer +]% {!</td><td>!} [+ mer_change_gnvp +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#111.55e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_per +]% {!</td><td>!} [+ mer_change_dnvp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mer +]% {!</td><td>!} [+ mer_change_dnvp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_per +]% {!</td><td>!} [+ mer_change_nsdap +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mer +]% {!</td><td>!} [+ mer_change_nsdap +] {!</td></tr>!}
 {!</table>!}
 
 **Potential coalitions:**
 
-Zeltbrin Coalition (<span style="color: #dc01.500;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_per +]%
+Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_mer +]%
 
-[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc01.500;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_per +]% ?]
+[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_mer +]% ?]
 
-[? if liberal_reconciliation >= 1.50: Grand Coalition (<span style="color: #dc01.500;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_per +]% ?]
+[? if liberal_reconciliation >= 18: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_mer +]% ?]
 
-Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_per +]%
+Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_mer +]%
 
-[? if liberal_coalition < 50 : Wide - Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + others): [+ wide_liberal_coalition_per +]% ?]
+[? if liberal_coalition < 50 : Wide - Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + others): [+ wide_liberal_coalition_mer +]% ?]
 
-Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae1.5;">GNVP</span>  ?][? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span>  ?]): [+ center_right_coalition_per +]%
+Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span>  ?][? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span>  ?]): [+ center_right_coalition_mer +]%
 
-Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae1.5;">GNVP</span> ?]): [+ right_coalition_per +]%
+Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span> ?]): [+ right_coalition_mer +]%
 
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
