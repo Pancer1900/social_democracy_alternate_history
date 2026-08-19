@@ -612,6 +612,8 @@ Q.gnvp_mer_mod = 0;
 Q.blpm_mer_mod = 0;
 
 Q.next_mirfallen_election = 3;
+Q.mirfallen_election_1266_seen = 0;
+Q.mirfallen_election_failed = 0;
 
 Q.spd_mir = 32;
 Q.asum_mir = 0;
