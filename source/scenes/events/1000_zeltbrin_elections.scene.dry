@@ -1,0 +1,340 @@
+title: Zeltbrin Election test1
+view-if: time = next_zeltbrin_election 
+new-page: true
+tags: event
+on-arrival: next_zeltbrin_election = time + 48
+priority: 2
+
+= Elections, [+ month : month +] [+ year +]
+
+- @saxony: May we do our best...
+
+@saxony
+on-arrival: {!
+
+Q.spd_zel_old = Q.spd_zel;
+Q.asum_zel_old = Q.asum_zel;
+Q.spm_zel_old = Q.spm_zel;
+Q.sapd_zel_old = Q.sapd_zel;
+Q.ddp_zel_old = Q.ddp_zel;
+Q.z_zel_old = Q.z_zel;
+Q.dvp_zel_old = Q.dvp_zel;
+Q.dnvp_zel_old = Q.dnvp_zel;
+Q.nsdap_zel_old = Q.nsdap_zel;
+Q.gnvp_zel_old = Q.gnvp_zel;
+Q.blpm_zel_old = Q.blpm_zel;
+Q.zek_zel_old = Q.zek_zel;
+Q.ltp_zel_old = Q.ltp_zel;
+Q.rnp_zel_old = Q.rnp_zel;
+
+Q.spd_zel = 0;
+Q.asum_zel = 0;
+Q.spm_zel = 0;
+Q.sapd_zel = 0;
+Q.ddp_zel = 0;
+Q.ppu_zel = 0;
+Q.z_zel = 0;
+Q.dvp_zel = 0;
+Q.dnvp_zel = 0;
+Q.nsdap_zel = 0;
+Q.gnvp_zel = 0;
+Q.blpm_zel = 0;
+Q.zek_zel = 0;
+Q.ltp_zel = 0;
+
+Q.spd_zel = (Q.workers_spd * Q.workers * 1.05) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.1) + (Q.peasants_spd * Q.peasants * 0.9) + (Q.rural_spd * Q.rural * 0.9) + (Q.catholics_spd * Q.catholics * 0.8) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 0.9) + (Q.spd_zel_mod * 10);
+Q.sapd_zel = (Q.workers_sapd * Q.workers * 1.05) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.1) + (Q.peasants_sapd * Q.peasants * 0.9) + (Q.rural_sapd * Q.rural * 0.9) + (Q.catholics_sapd * Q.catholics * 0.8) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 0.9) + (Q.sapd_zel_mod * 10);
+Q.spm_zel = (Q.workers_spm * Q.workers * 1.05) + (Q.old_middle_spm * Q.old_middle * 1.1) + (Q.new_middle_spm * Q.new_middle * 1.1) + (Q.peasants_spm * Q.peasants * 0.9) + (Q.rural_spm * Q.rural * 0.9) + (Q.catholics_spm * Q.catholics * 0.8) + (Q.minorieties_spm * Q.minorieties * 0.5) + (Q.unemployed_spm * Q.unemployed * 0.9) + (Q.spm_zel_mod * 10);
+Q.asum_zel = (Q.workers_asum * Q.workers * 1.05) + (Q.old_middle_asum * Q.old_middle * 1.1) + (Q.new_middle_asum * Q.new_middle * 1.1) + (Q.peasants_asum * Q.peasants * 0.9) + (Q.rural_asum * Q.rural * 0.9) + (Q.catholics_asum * Q.catholics * 0.8) + (Q.minorieties_asum * Q.minorieties * 0.5) + (Q.unemployed_asum * Q.unemployed * 0.9) + (Q.asum_zel_mod * 10);
+Q.ddp_zel = (Q.workers_ddp * Q.workers * 1.05) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.1) + (Q.peasants_ddp * Q.peasants * 0.9) + (Q.rural_ddp * Q.rural * 0.9) + (Q.catholics_ddp * Q.catholics * 0.8) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 0.9) + (Q.ddp_zel_mod * 10);
+Q.z_zel = (Q.workers_z * Q.workers * 1.05) + (Q.old_middle_z * Q.old_middle * 1.1) + (Q.new_middle_z * Q.new_middle * 1.1) + (Q.peasants_z * Q.peasants * 0.9) + (Q.rural_z * Q.rural * 0.9) + (Q.catholics_z * Q.catholics * 0.8) + (Q.minorieties_z * Q.minorieties * 0.5) + (Q.unemployed_z * Q.unemployed * 0.9) + (Q.z_zel_mod * 10);
+Q.dvp_zel = (Q.workers_dvp * Q.workers * 1.05) + (Q.old_middle_dvp * Q.old_middle * 1.1) + (Q.new_middle_dvp * Q.new_middle * 1.1) + (Q.peasants_dvp * Q.peasants * 0.9) + (Q.rural_dvp * Q.rural * 0.9) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dvp * Q.minorieties * 0.5) + (Q.unemployed_dvp * Q.unemployed * 0.9) + (Q.dvp_zel_mod * 10);
+Q.dnvp_zel = (Q.workers_dnvp * Q.workers * 1.05) + (Q.old_middle_dnvp * Q.old_middle * 1.1) + (Q.new_middle_dnvp * Q.new_middle * 1.1) + (Q.peasants_dnvp * Q.peasants * 0.9) + (Q.rural_dnvp * Q.rural * 0.9) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dnvp * Q.minorieties * 0.5) + (Q.unemployed_dnvp * Q.unemployed * 0.9) + (Q.dnvp_zel_mod * 10);
+Q.nsdap_zel = (Q.workers_nsdap * Q.workers * 1.05) + (Q.old_middle_nsdap * Q.old_middle * 1.1) + (Q.new_middle_nsdap * Q.new_middle * 1.1) + (Q.peasants_nsdap * Q.peasants * 0.9) + (Q.rural_nsdap * Q.rural * 0.9) + (Q.catholics_nsdap * Q.catholics * 0.8) + (Q.minorieties_nsdap * Q.minorieties * 0.5) + (Q.unemployed_nsdap * Q.unemployed * 0.9) + (Q.nsdap_zel_mod * 10);
+Q.gnvp_zel = (Q.workers_gnvp * Q.workers * 1.05) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.1) + (Q.peasants_gnvp * Q.peasants * 0.9) + (Q.rural_gnvp * Q.rural * 0.9) + (Q.catholics_gnvp * Q.catholics * 0.8) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 0.9) + (Q.gnvp_zel_mod * 10);
+Q.blpm_zel = (Q.workers_blpm * Q.workers * 1.05) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.9) + (Q.rural_blpm * Q.rural * 0.9) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 0.9) + (Q.blpm_zel_mod * 10);
+
+Q.rnp_zel = (Q.peasants_ppu * Q.peasants * 2) + (Q.rural_ppu * Q.rural * 2) + (Q.ppu_zel_mod * 10) + (Q.workers_ppu * Q.workers * 1) + (Q.old_middle_blpm * Q.old_middle * 2) + (Q.new_middle_blpm * Q.new_middle * 2) + (Q.minorieties_ppu * Q.minorieties * 2);
+Q.zek_zel = (Q.peasants_other * Q.peasants * 0.8) + (Q.rural_other * Q.rural * 0.8) + (Q.other_zel_mod * 10) + (Q.workers_other * Q.workers * 1) + (Q.old_middle_other * Q.old_middle * 1.5) + (Q.new_middle_blpm * Q.new_middle * 1.5);
+Q.ltp_zel = (Q.peasants_other * Q.peasants * 1.2) + (Q.rural_other * Q.rural * 1.2) + (Q.other_zel_mod * 10) + (Q.workers_other * Q.workers * 0.5);
+             
+Q.zel_total = 0;
+
+if (Q.spd_zel) Q.zel_total += Q.spd_zel;
+if (Q.asum_zel) Q.zel_total += Q.asum_zel;
+if (Q.spm_zel) Q.zel_total += Q.spm_zel;
+if (Q.sapd_zel) Q.zel_total += Q.sapd_zel;
+if (Q.ddp_zel) Q.zel_total += Q.ddp_zel;
+if (Q.ppu_zel) Q.zel_total += Q.ppu_zel;
+if (Q.z_zel) Q.zel_total += Q.z_zel;
+if (Q.dvp_zel) Q.zel_total += Q.dvp_zel;
+if (Q.dnvp_zel) Q.zel_total += Q.dnvp_zel;
+if (Q.nsdap_zel) Q.zel_total += Q.nsdap_zel;
+if (Q.gnvp_zel) Q.zel_total += Q.gnvp_zel;
+if (Q.blpm_zel) Q.zel_total += Q.blpm_zel;
+if (Q.zek_zel) Q.zel_total += Q.zek_zel;
+if (Q.ltp_zel) Q.zel_total += Q.ltp_zel;
+if (Q.rnp_zel) Q.zel_total += Q.rnp_zel;
+
+if (Q.zel_total > 0) {
+    Q.spd_zel = (Q.spd_zel / Q.zel_total) * 100;
+    Q.spm_zel = (Q.spm_zel / Q.zel_total) * 100;
+    Q.sapd_zel = (Q.sapd_zel / Q.zel_total) * 100;
+    Q.asum_zel = (Q.asum_zel / Q.zel_total) * 100;
+    Q.ddp_zel = (Q.ddp_zel / Q.zel_total) * 100;
+    Q.ppu_zel = (Q.ppu_zel / Q.zel_total) * 100;
+    Q.z_zel = (Q.z_zel / Q.zel_total) * 100;
+    Q.dvp_zel = (Q.dvp_zel / Q.zel_total) * 100;
+    Q.dnvp_zel = (Q.dnvp_zel / Q.zel_total) * 100;
+    Q.nsdap_zel = (Q.nsdap_zel / Q.zel_total) * 100;
+    Q.gnvp_zel = (Q.gnvp_zel / Q.zel_total) * 100;
+    Q.blpm_zel = (Q.blpm_zel / Q.zel_total) * 100;
+    Q.zek_zel = (Q.zek_zel / Q.zel_total) * 100;
+    Q.ltp_zel = (Q.ltp_zel / Q.zel_total) * 100;
+    Q.rnp_zel = (Q.rnp_zel / Q.zel_total) * 100;
+}
+
+Q.spd_zel = (Q.spd_zel != undefined ? parseFloat(Q.spd_zel.toFixed(1)) : 0);
+Q.spm_zel = (Q.spm_zel != undefined ? parseFloat(Q.spm_zel.toFixed(1)) : 0);
+Q.sapd_zel = (Q.sapd_zel != undefined ? parseFloat(Q.sapd_zel.toFixed(1)) : 0);
+Q.asum_zel = (Q.asum_zel != undefined ? parseFloat(Q.asum_zel.toFixed(1)) : 0);
+Q.ddp_zel = (Q.ddp_zel != undefined ? parseFloat(Q.ddp_zel.toFixed(1)) : 0);
+Q.ppu_zel = (Q.ppu_zel != undefined ? parseFloat(Q.ppu_zel.toFixed(1)) : 0);
+Q.z_zel = (Q.z_zel != undefined ? parseFloat(Q.z_zel.toFixed(1)) : 0);
+Q.dvp_zel = (Q.dvp_zel != undefined ? parseFloat(Q.dvp_zel.toFixed(1)) : 0);
+Q.dnvp_zel = (Q.dnvp_zel != undefined ? parseFloat(Q.dnvp_zel.toFixed(1)) : 0);
+Q.nsdap_zel = (Q.nsdap_zel != undefined ? parseFloat(Q.nsdap_zel.toFixed(1)) : 0);
+Q.gnvp_zel = (Q.gnvp_zel != undefined ? parseFloat(Q.gnvp_zel.toFixed(1)) : 0);
+Q.blpm_zel = (Q.blpm_zel != undefined ? parseFloat(Q.blpm_zel.toFixed(1)) : 0);
+Q.zek_zel = (Q.zek_zel != undefined ? parseFloat(Q.zek_zel.toFixed(1)) : 0);
+Q.ltp_zel = (Q.ltp_zel != undefined ? parseFloat(Q.ltp_zel.toFixed(1)) : 0);
+Q.rnp_zel = (Q.rnp_zel != undefined ? parseFloat(Q.rnp_zel.toFixed(1)) : 0);
+
+Q.zel_change_spd = Q.spd_zel - Q.spd_zel_old;
+Q.zel_change_sapd = Q.sapd_zel - Q.sapd_zel_old;
+Q.zel_change_spm = Q.spm_zel - Q.spm_zel_old;
+Q.zel_change_asum = Q.asum_zel - Q.asum_zel_old;
+Q.zel_change_ddp = Q.ddp_zel - Q.ddp_zel_old;
+Q.zel_change_z = Q.z_zel - Q.z_zel_old;
+Q.zel_change_blpm = Q.blpm_zel - Q.blpm_zel_old;
+Q.zel_change_ppu = Q.ppu_zel - Q.ppu_zel_old;
+Q.zel_change_dvp = Q.dvp_zel - Q.dvp_zel_old;
+Q.zel_change_dnvp = Q.dnvp_zel - Q.dnvp_zel_old;
+Q.zel_change_nsdap = Q.nsdap_zel - Q.nsdap_zel_old;
+Q.zel_change_zek = Q.zek_zel - Q.zek_zel_old;
+Q.zel_change_ltp = Q.ltp_zel - Q.ltp_zel_old;
+Q.zel_change_gnvp = Q.gnvp_zel - Q.gnvp_zel_old;
+Q.zel_change_rnp = Q.rnp_zel - Q.rnp_zel_old;
+
+Q.left_coalition_zel = (Q.spd_zel + Q.sapd_zel + Q.spm_zel + Q.asum_zel).toFixed(1);
+Q.progressive_coalition_zel = (Q.spd_zel + Q.sapd_zel + Q.spm_zel + Q.asum_zel + Q.ddp_zel).toFixed(1);
+Q.popular_front_coalition_zel = (Q.spd_zel + Q.sapd_zel + Q.spm_zel + Q.asum_zel + Q.z_zel + Q.ddp_zel).toFixed(1);
+Q.weimar_coalition_zel = (Q.spd_zel + Q.ddp_zel + Q.z_zel + Q.spm_zel).toFixed(1);
+Q.zeltbrin_plus_coalition_zel = (Q.spd_zel + Q.ddp_zel + Q.z_zel + Q.blpm_zel + Q.ppu_zel + Q.spm_zel).toFixed(1);
+Q.grand_coalition_zel = (Q.spd_zel + Q.spm_zel + Q.ddp_zel + Q.z_zel + Q.ppu_zel + Q.dvp_zel + Q.blpm_zel).toFixed(1);
+
+Q.liberal_coalition_zel = (Q.z_zel + Q.ddp_zel + Q.dvp_zel + Q.ppu_zel + Q.blpm_zel).toFixed(1); 
+Q.wide_liberal_coalition_zel = (Q.z_zel + Q.ddp_zel + Q.dvp_zel + Q.other_zel + Q.ppu_zel + Q.blpm_zel).toFixed(1);
+Q.center_right_coalition_zel = (Q.z_zel + Q.dvp_zel + Q.other_zel + Q.dnvp_zel + Q.blpm_zel + Q.gnvp_zel + Q.ppu_zel).toFixed(1);
+Q.right_coalition_zel = (Q.dvp_zel + Q.other_zel + Q.dnvp_zel + Q.gnvp_zel).toFixed(1);
+Q.far_right_coalition_zel = (Q.dnvp_zel + Q.nsdap_zel + Q.gnvp_zel).toFixed(1);
+Q.anti_democratic_coalition_zel = (Q.sapd_zel + Q.nsdap_zel + Q.dnvp_zel + Q.gnvp_zel).toFixed(1);
+Q.hitler_right_coalition_zel = (Q.dnvp_zel + Q.nsdap_zel + Q.dvp_zel + Q.other_zel + Q.gnvp_zel).toFixed(1);
+
+Q.zel_change_spd = (Q.zel_change_spd != undefined ? parseFloat(Q.zel_change_spd.toFixed(1)) : 0);
+Q.zel_change_spm = (Q.zel_change_spm != undefined ? parseFloat(Q.zel_change_spm.toFixed(1)) : 0);
+Q.zel_change_sapd = (Q.zel_change_sapd != undefined ? parseFloat(Q.zel_change_sapd.toFixed(1)) : 0);
+Q.zel_change_ddp = (Q.zel_change_ddp != undefined ? parseFloat(Q.zel_change_ddp.toFixed(1)) : 0);
+Q.zel_change_ppu = (Q.zel_change_ppu != undefined ? parseFloat(Q.zel_change_ppu.toFixed(1)) : 0);
+Q.zel_change_z = (Q.zel_change_z != undefined ? parseFloat(Q.zel_change_z.toFixed(1)) : 0);
+Q.zel_change_dvp = (Q.zel_change_dvp != undefined ? parseFloat(Q.zel_change_dvp.toFixed(1)) : 0);
+Q.zel_change_dnvp = (Q.zel_change_dnvp != undefined ? parseFloat(Q.zel_change_dnvp.toFixed(1)) : 0);
+Q.zel_change_nsdap = (Q.zel_change_nsdap != undefined ? parseFloat(Q.zel_change_nsdap.toFixed(1)) : 0);
+Q.zel_change_other = (Q.zel_change_other != undefined ? parseFloat(Q.zel_change_other.toFixed(1)) : 0);
+Q.zel_change_gnvp = (Q.zel_change_gnvp != undefined ? parseFloat(Q.zel_change_gnvp.toFixed(1)) : 0);
+Q.zel_change_blpm = (Q.zel_change_blpm != undefined ? parseFloat(Q.zel_change_blpm.toFixed(1)) : 0);
+Q.zel_change_asum = (Q.zel_change_asum != undefined ? parseFloat(Q.zel_change_asum.toFixed(1)) : 0);
+Q.zel_change_zek = (Q.zel_change_blpm != undefined ? parseFloat(Q.zel_change_blpm.toFixed(1)) : 0);
+Q.zel_change_ltp = (Q.zel_change_asum != undefined ? parseFloat(Q.zel_change_asum.toFixed(1)) : 0);
+Q.zel_change_rnp = (Q.zel_change_blpm != undefined ? parseFloat(Q.zel_change_blpm.toFixed(1)) : 0);
+
+!}
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_zel) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_zel*1.5),
+            });
+}
+if (Q.asum_formed && Q.asum_zel) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_zel*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_zel*1.5)
+    },
+    ]);
+if (Q.spm_formed && Q.spm_zel) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_zel*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_zel*1.5),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_zel*1.5),
+    },
+    {
+        "id": "znc",
+        "legend": "ZEK",
+        "name": "ZEK",
+        "seats": Math.round(Q.zek_zel*1.5),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_zel) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_zel*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "lac",
+        "legend": "LREP",
+        "name": "LREP",
+        "seats": Math.round(Q.rnc_zel*1.5),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_zel*1.5),
+    },
+    {
+        "id": "ltp",
+        "legend": "LTP",
+        "name": "LTP",
+        "seats": Math.round(Q.ltp_zel*1.5),
+    },
+
+]);
+if (Q.gnvp_formed && Q.gnvp_zel) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_zel*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_zel*1.5),
+    },
+    {
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_zel*1.5),
+    },
+]);
+
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Mirvieren Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_zel +]%** {!</td><td>!} **[+ zel_change_spd +]** {!</td></tr>!}
+
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_zel +]% {!</td><td>!} [+ zel_change_sapd +] {!</td></tr>!} ?]
+
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_zel +]% {!</td><td>!} [+ zel_change_asum +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_zel +]% {!</td><td>!} [+ zel_change_ddp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_zel +]% {!</td><td>!} [+ zel_change_z +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} ZEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [+ zel_change_zel +] {!</td></tr>!}
+
+[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_zel +]% {!</td><td>!} [+ zel_change_blpm +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnc_zel +]% {!</td><td>!} [+ zel_change_rnc +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_zel +]% {!</td><td>!} [+ zel_change_dvp +] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#1b7035'> </div> !} LTP: {!</td><td>!} [+ ltp_zel +] % {!</td><td>!} [+ zel_change_ltp +] {!</td></tr>!}
+
+[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_zel +]% {!</td><td>!} [+ zel_change_gnvp +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_zel +]% {!</td><td>!} [+ zel_change_dnvp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtp_zel +] % {!</td><td>!} [+ zel_change_mtp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_zel +]% {!</td><td>!} [+ zel_change_nsdap +] {!</td></tr>!}
+{!</table>!}
+
+**Potential coalitions:**
+
+Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_zel +]%
+
+[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_zel +]% ?]
+
+[? if liberal_reconciliation >= 20: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_zel +]% ?]
+
+Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_zel +]%
+
+[? if liberal_coalition < 50 : Wide - Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + others): [+ wide_liberal_coalition_zel +]% ?]
+
+Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span>  ?][? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span>  ?]): [+ center_right_coalition_zel +]%
+
+Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span> ?]): [+ right_coalition_zel +]%
+
+[? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+
+There are some potential coalition arrangements.
