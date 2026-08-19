@@ -1,4 +1,4 @@
-title: Merfeld Election test11
+title: Merfeld Election test12
 view-if: time = next_merfeld_election 
 new-page: true
 tags: event
@@ -55,8 +55,8 @@ Q.ppu_merf = (Q.workers_ppu * Q.workers * 0.6) + (Q.old_middle_ppu * Q.old_middl
 Q.gnvp_merf = (Q.workers_gnvp * Q.workers * 0.6) + (Q.old_middle_gnvp * Q.old_middle * 0.8) + (Q.new_middle_gnvp * Q.new_middle * 0.8) + (Q.peasants_gnvp * Q.peasants * 1.4) + (Q.rural_gnvp * Q.rural * 1.2) + (Q.catholics_gnvp * Q.catholics * 1.2) + (Q.minorieties_gnvp * Q.minorieties * 0.9) + (Q.unemployed_gnvp * Q.unemployed * 0.7) + (Q.gnvp_merf_mod * 10);
 Q.blpm_merf = (Q.workers_blpm * Q.workers * 0.6) + (Q.old_middle_blpm * Q.old_middle * 0.8) + (Q.new_middle_blpm * Q.new_middle * 0.8) + (Q.peasants_blpm * Q.peasants * 1.4) + (Q.rural_blpm * Q.rural * 1.2) + (Q.catholics_blpm * Q.catholics * 1.2) + (Q.minorieties_blpm * Q.minorieties * 0.9) + (Q.unemployed_blpm * Q.unemployed * 0.7) + (Q.blpm_merf_mod * 10);
 
-Q.mtu_merf = (Q.peasants_other * Q.peasants * 1.5) + (Q.rural_other * Q.rural * 1.5) + (Q.other_merf_mod * 10) + (Q.minorieties_other * Q.minorieties * 4);
-Q.ltp_merf = (Q.peasants_other * Q.peasants * 3) + (Q.rural_other * Q.rural * 3) + (Q.other_merf_mod * 10) + (Q.workers_other * Q.workers * 0.6);
+Q.mtu_merf = (Q.peasants_other * Q.peasants * 1.5) + (Q.rural_other * Q.rural * 1.5) + (Q.other_merf_mod * 20) + (Q.minorieties_other * Q.minorieties * 4);
+Q.ltp_merf = (Q.peasants_other * Q.peasants * 3) + (Q.rural_other * Q.rural * 3) + (Q.other_merf_mod * 20) + (Q.workers_other * Q.workers * 0.6);
              
 Q.mer_total = 0;
 
@@ -150,6 +150,8 @@ Q.mer_change_other = (Q.mer_change_other != undefined ? parseFloat(Q.mer_change_
 Q.mer_change_gnvp = (Q.mer_change_gnvp != undefined ? parseFloat(Q.mer_change_gnvp.toFixed(1)) : 0);
 Q.mer_change_blpm = (Q.mer_change_blpm != undefined ? parseFloat(Q.mer_change_blpm.toFixed(1)) : 0);
 Q.mer_change_asum = (Q.mer_change_asum != undefined ? parseFloat(Q.mer_change_asum.toFixed(1)) : 0);
+Q.mer_change_mtu = (Q.mer_change_mtu != undefined ? parseFloat(Q.mer_change_mtu.toFixed(1)) : 0);
+Q.mer_change_ltp = (Q.mer_change_ltp != undefined ? parseFloat(Q.mer_change_ltp.toFixed(1)) : 0);
 
 !}
 on-display: {!
@@ -304,7 +306,7 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_merf +]% {!</td><td>!} [+ mer_change_dnvp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtp_merf +] % {!</td><td>!} [+ mer_change_mtp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtu_merf +] % {!</td><td>!} [+ mer_change_mtu +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_merf +]% {!</td><td>!} [+ mer_change_nsdap +] {!</td></tr>!}
 {!</table>!}
