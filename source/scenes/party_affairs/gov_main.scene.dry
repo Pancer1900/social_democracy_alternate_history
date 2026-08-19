@@ -358,10 +358,134 @@ choose-if: yougen_spd == 1
 
 @percil_reinenburg
 subtitle: [? if percil_spd == 1 and percil_timer == 0: Available action of the local Government ?]
+on-display: {!
+data = [];
+data = data.concat([
+    {
+        "id": "pnf",
+        "legend": "PNF",
+        "name": "PNF",
+        "seats": Math.round(Q.pnf_per*1.5),
+    },
+    ]);
+if (Q.sapd_formed && Q.sapd_per) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_per*1.5),
+            });
+}
+if (Q.asum_formed && Q.asum_per) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_per*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_per*1.5),
+    },
+    ]);
+if (Q.spm_formed && Q.spm_per) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_per*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_per*1.5),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_per*1.5),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_per) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_per*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "bvp",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.ppu_per*1.5),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_per*1.5),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_per*1.5),
+    },
+]);
+if (Q.gnvp_formed && Q.gnvp_per) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_per*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_per*1.5),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_per*1.5),
+    },
+]);
 
-Free State of Percil-Reinenburg:
 
------ PARLIMENT IMAGINE -------------
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/1.5 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Percil-Reinenburg Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -380,10 +504,133 @@ choose-if: percil_spd == 1
 
 @merfeld
 subtitle: [? if merfeld_spd == 1 and merfeld_timer == 0: Available action of the local Government ?]
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_merf) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_merf*1),
+            });
+}
+if (Q.asum_formed && Q.asum_merf) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_merf*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_merf*1)
+    },
+    ]);
+if (Q.spm_formed && Q.spm_merf) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_merf*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_merf*1),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_merf*1),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_merf) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_merf*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "bvp",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.ppu_merf*1),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_merf*1),
+    },
+    {
+        "id": "ltp",
+        "legend": "LTP",
+        "name": "LTP",
+        "seats": Math.round(Q.ltp_merf*1),
+    },
 
-State of Merfeld:
+]);
+if (Q.gnvp_formed && Q.gnvp_merf) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_merf*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_merf*1),
+    },
+    {
+        "id": "sud",
+        "legend": "MTU",
+        "name": "MTU",
+        "seats": Math.round(Q.mtu_merf*1),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_merf*1),
+    },
+]);
 
------ PARLIMENT IMAGINE -------------
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Mirfallen Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -541,10 +788,139 @@ choose-if: mirfallen_spd == 1
 
 @mirvieren
 subtitle: [? if mirvieren_spd == 1 and mirvieren_timer == 0: Available action of the local Government ?]
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_mirv) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_mirv*1.5),
+            });
+}
+if (Q.asum_formed && Q.asum_mirv) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_mirv*1.5)
+    },
+    ]);
+if (Q.spm_formed && Q.spm_mirv) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_mirv*1.5),
+    },
+    {
+        "id": "bra",
+        "legend": "PPB",
+        "name": "PPB",
+        "seats": Math.round(Q.bvp_mirv*1.5),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_mirv*1.5),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_mirv) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "lac",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.rnc_mirv*1.5),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_mirv*1.5),
+    },
+    {
+        "id": "ltp",
+        "legend": "LTP",
+        "name": "LTP",
+        "seats": Math.round(Q.ltp_mirv*1.5),
+    },
 
-State of Mirvieren:
+]);
+if (Q.gnvp_formed && Q.gnvp_mirv) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_mirv*1.5),
+    },
+    {
+        "id": "sud",
+        "legend": "MTU",
+        "name": "MTU",
+        "seats": Math.round(Q.mtu_mirv*1.5),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_mirv*1.5),
+    },
+]);
 
------ PARLIMENT IMAGINE -------------
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Mirvieren Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -563,10 +939,133 @@ choose-if: mirvieren_spd == 1
 
 @tippleford
 subtitle: [? if tippleford_spd == 1 and tippleford_timer == 0: Available action of the local Government ?]
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_zel) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_zel*1),
+            });
+}
+if (Q.asum_formed && Q.asum_zel) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_zel*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_zel*1)
+    },
+    ]);
+if (Q.spm_formed && Q.spm_zel) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_zel*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_zel*1),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_zel*1),
+    },
+    {
+        "id": "znc",
+        "legend": "ZEK",
+        "name": "ZEK",
+        "seats": Math.round(Q.zek_zel*1),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_zel) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_zel*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "lac",
+        "legend": "LREP",
+        "name": "LREP",
+        "seats": Math.round(Q.rnp_zel*1),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_zel*1),
+    },
+    {
+        "id": "ltp",
+        "legend": "LTP",
+        "name": "LTP",
+        "seats": Math.round(Q.ltp_zel*1),
+    },
 
-Free Region of Tippleford:
+]);
+if (Q.gnvp_formed && Q.gnvp_zel) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_zel*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_zel*1),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_zel*1),
+    },
+]);
 
------ PARLIMENT IMAGINE -------------
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Tippleford Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
