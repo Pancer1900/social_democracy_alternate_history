@@ -639,7 +639,7 @@ Q.z_mir_mod = 10;
 Q.dvp_mir_mod = 10;
 Q.dnvp_mir_mod = 10;
 Q.nsdap_mir_mod = 10;
-Q.other_mir_mod = 15;
+Q.other_mir_mod = 20;
 Q.gnvp_mir_mod = 0;
 Q.blpm_mir_mod = 0;
 
@@ -812,9 +812,8 @@ Q.gnvp_zel_mod = 0;
 Q.blpm_zel_mod = 0;
 Q.others_zel_mod = 10;
 
-Q.next_lurek_election = 3;
-Q.lurek_election_1266_seen = 0;
-Q.lurek_election_failed = 0;
+Q.next_lurek_election = 0;
+Q.lurek_integrated = 0;
 
 Q.spd_lur = 32;
 Q.asum_lur = 0;
