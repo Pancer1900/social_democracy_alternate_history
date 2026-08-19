@@ -675,6 +675,43 @@ Q.other_youg_mod = 10;
 Q.gnvp_youg_mod = 0;
 Q.blpm_youg_mod = 0;
 
+Q.next_percil_election = 3;
+Q.percil_election_1266_seen = 0;
+Q.percil_election_failed = 0;
+
+Q.percil_radicalisation = 100;
+Q.purpule_hand_strenth = 15;
+
+Q.spd_per = 19;
+Q.asum_per = 0;
+Q.spm_per = 0;
+Q.sapd_per = 0;
+Q.ddp_per = 7;
+Q.ppu_per = 23;
+Q.z_per = 13;
+Q.dvp_per = 12;
+Q.dnvp_per = 9;
+Q.nsdap_per = 1;
+Q.other_per = 5;
+Q.gnvp_per = 0;
+Q.blpm_per = 0;
+Q.pnf_per = 11;
+
+Q.spd_per_mod = 10;
+Q.asum_per_mod = 0;
+Q.spm_per_mod = 0;
+Q.sapd_per_mod = 0;
+Q.ddp_per_mod = 10;
+Q.ppu_per_mod = 10;
+Q.z_per_mod = 10;
+Q.dvp_per_mod = 10;
+Q.dnvp_per_mod = 10;
+Q.nsdap_per_mod = 10;
+Q.other_per_mod = 10;
+Q.gnvp_per_mod = 0;
+Q.blpm_per_mod = 0;
+Q.pnf_per_mod = 10;
+
 // for changing the DDP's name to the DStP
 Q.spd_name = "VDSPM";
 Q.ddp_name = "FVP";
