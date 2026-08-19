@@ -1,4 +1,4 @@
-title: Zeltbrin Election test11
+title: Tippleford Election test13
 view-if: time = next_zeltbrin_election 
 new-page: true
 tags: event
@@ -283,7 +283,7 @@ if (window && d3) {
 }
 !}
 
-**Zeltbrin Caversket:**
+**Tippleford Caversket:**
 
 {!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
@@ -299,11 +299,11 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_zel +]% {!</td><td>!} [+ zel_change_z +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} ZEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [+ zel_change_zek +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} TEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [+ zel_change_zek +] {!</td></tr>!}
 
 [? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_zel +]% {!</td><td>!} [+ zel_change_blpm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnp_zel +]% {!</td><td>!} [+ zel_change_rnc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnp_zel +]% {!</td><td>!} [+ zel_change_rnp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_zel +]% {!</td><td>!} [+ zel_change_dvp +] {!</td></tr>!}
  
