@@ -1,0 +1,353 @@
+title: Mirvieren Election test1
+view-if: time = next_mirviern_election 
+new-page: true
+tags: event
+on-arrival: next_mirviern_election = time + 48
+priority: 2
+
+= Elections, [+ month : month +] [+ year +]
+
+- @saxony: May we do our best...
+
+@saxony
+on-arrival: {!
+
+Q.spd_mirv_old = Q.spd_mirv;
+Q.asum_mirv_old = Q.asum_mirv;
+Q.spm_mirv_old = Q.spm_mirv;
+Q.sapd_mirv_old = Q.sapd_mirv;
+Q.ddp_mirv_old = Q.ddp_mirv;
+Q.z_mirv_old = Q.z_mirv;
+Q.dvp_mirv_old = Q.dvp_mirv;
+Q.dnvp_mirv_old = Q.dnvp_mirv;
+Q.nsdap_mirv_old = Q.nsdap_mirv;
+Q.gnvp_mirv_old = Q.gnvp_mirv;
+Q.blpm_mirv_old = Q.blpm_mirv;
+Q.mtu_mirv_old = Q.mtu_mirv;
+Q.ltp_mirv_old = Q.ltp_mirv;
+Q.bvp_mirv_old = Q.bvp_mirv;
+Q.rnp_mirv_old = Q.rnp_mirv;
+
+Q.spd_mirv = 0;
+Q.asum_mirv = 0;
+Q.spm_mirv = 0;
+Q.sapd_mirv = 0;
+Q.ddp_mirv = 0;
+Q.ppu_mirv = 0;
+Q.z_mirv = 0;
+Q.dvp_mirv = 0;
+Q.dnvp_mirv = 0;
+Q.nsdap_mirv = 0;
+Q.gnvp_mirv = 0;
+Q.blpm_mirv = 0;
+Q.mtu_mirv = 0;
+Q.ltp_mirv = 0;
+
+Q.spd_mirv = (Q.workers_spd * Q.workers * 0.8) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.0) + (Q.peasants_spd * Q.peasants * 1.2) + (Q.rural_spd * Q.rural * 1.2) + (Q.catholics_spd * Q.catholics * 1.0) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 0.7) + (Q.spd_mirv_mod * 10);
+Q.sapd_mirv = (Q.workers_sapd * Q.workers * 0.8) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.0) + (Q.peasants_sapd * Q.peasants * 1.2) + (Q.rural_sapd * Q.rural * 1.2) + (Q.catholics_sapd * Q.catholics * 1.0) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 0.7) + (Q.sapd_mirv_mod * 10);
+Q.spm_mirv = (Q.workers_spm * Q.workers * 0.8) + (Q.old_middle_spm * Q.old_middle * 1.1) + (Q.new_middle_spm * Q.new_middle * 1.0) + (Q.peasants_spm * Q.peasants * 1.2) + (Q.rural_spm * Q.rural * 1.2) + (Q.catholics_spm * Q.catholics * 1.0) + (Q.minorieties_spm * Q.minorieties * 0.5) + (Q.unemployed_spm * Q.unemployed * 0.7) + (Q.spm_mirv_mod * 10);
+Q.asum_mirv = (Q.workers_asum * Q.workers * 0.8) + (Q.old_middle_asum * Q.old_middle * 1.1) + (Q.new_middle_asum * Q.new_middle * 1.0) + (Q.peasants_asum * Q.peasants * 1.2) + (Q.rural_asum * Q.rural * 1.2) + (Q.catholics_asum * Q.catholics * 1.0) + (Q.minorieties_asum * Q.minorieties * 0.5) + (Q.unemployed_asum * Q.unemployed * 0.7) + (Q.asum_mirv_mod * 10);
+Q.ddp_mirv = (Q.workers_ddp * Q.workers * 0.8) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.0) + (Q.peasants_ddp * Q.peasants * 1.2) + (Q.rural_ddp * Q.rural * 1.2) + (Q.catholics_ddp * Q.catholics * 1.0) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 0.7) + (Q.ddp_mirv_mod * 10);
+Q.z_mirv = (Q.workers_z * Q.workers * 0.8) + (Q.old_middle_z * Q.old_middle * 1.1) + (Q.new_middle_z * Q.new_middle * 1.0) + (Q.peasants_z * Q.peasants * 1.2) + (Q.rural_z * Q.rural * 1.2) + (Q.catholics_z * Q.catholics * 1.0) + (Q.minorieties_z * Q.minorieties * 0.5) + (Q.unemployed_z * Q.unemployed * 0.7) + (Q.z_mirv_mod * 10);
+Q.dvp_mirv = (Q.workers_dvp * Q.workers * 0.8) + (Q.old_middle_dvp * Q.old_middle * 1.1) + (Q.new_middle_dvp * Q.new_middle * 1.0) + (Q.peasants_dvp * Q.peasants * 1.2) + (Q.rural_dvp * Q.rural * 1.2) + (Q.catholics_dvp * Q.catholics * 1.0) + (Q.minorieties_dvp * Q.minorieties * 0.5) + (Q.unemployed_dvp * Q.unemployed * 0.7) + (Q.dvp_mirv_mod * 10);
+Q.dnvp_mirv = (Q.workers_dnvp * Q.workers * 0.8) + (Q.old_middle_dnvp * Q.old_middle * 1.1) + (Q.new_middle_dnvp * Q.new_middle * 1.0) + (Q.peasants_dnvp * Q.peasants * 1.2) + (Q.rural_dnvp * Q.rural * 1.2) + (Q.catholics_dvp * Q.catholics * 1.0) + (Q.minorieties_dnvp * Q.minorieties * 0.5) + (Q.unemployed_dnvp * Q.unemployed * 0.7) + (Q.dnvp_mirv_mod * 10);
+Q.nsdap_mirv = (Q.workers_nsdap * Q.workers * 0.8) + (Q.old_middle_nsdap * Q.old_middle * 1.1) + (Q.new_middle_nsdap * Q.new_middle * 1.0) + (Q.peasants_nsdap * Q.peasants * 1.2) + (Q.rural_nsdap * Q.rural * 1.2) + (Q.catholics_nsdap * Q.catholics * 1.0) + (Q.minorieties_nsdap * Q.minorieties * 0.5) + (Q.unemployed_nsdap * Q.unemployed * 0.7) + (Q.nsdap_mirv_mod * 10);
+Q.gnvp_mirv = (Q.workers_gnvp * Q.workers * 0.8) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.0) + (Q.peasants_gnvp * Q.peasants * 1.2) + (Q.rural_gnvp * Q.rural * 1.2) + (Q.catholics_gnvp * Q.catholics * 1.0) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 0.7) + (Q.gnvp_mirv_mod * 10);
+Q.blpm_mirv = (Q.workers_blpm * Q.workers * 0.8) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.0) + (Q.peasants_blpm * Q.peasants * 1.2) + (Q.rural_blpm * Q.rural * 1.2) + (Q.catholics_blpm * Q.catholics * 1.0) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 0.7) + (Q.blpm_mirv_mod * 10);
+
+Q.rnp_mirv = (Q.peasants_ppu * Q.peasants * 2) + (Q.rural_ppu * Q.rural * 2) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 1) + (Q.minorieties_ppu * Q.minorieties * 2);
+Q.bvp_mirv = (Q.peasants_ppu * Q.peasants * 1) + (Q.rural_ppu * Q.rural * 1) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 2) + (Q.minorieties_ppu * Q.minorieties * 1.5) + (Q.old_middle_ppu * Q.old_middle * 1.5) + (Q.new_middle_ppu * Q.new_middle * 1.5);
+
+Q.mtu_mirv = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.other_mirv_mod * 10) + (Q.minorieties_other * Q.minorieties * 2);
+Q.ltp_mirv = (Q.peasants_other * Q.peasants * 2) + (Q.rural_other * Q.rural * 2) + (Q.other_mirv_mod * 10) + (Q.workers_other * Q.workers * 0.5);
+             
+Q.mirv_total = 0;
+
+if (Q.spd_mirv) Q.mirv_total += Q.spd_mirv;
+if (Q.asum_mirv) Q.mirv_total += Q.asum_mirv;
+if (Q.spm_mirv) Q.mirv_total += Q.spm_mirv;
+if (Q.sapd_mirv) Q.mirv_total += Q.sapd_mirv;
+if (Q.ddp_mirv) Q.mirv_total += Q.ddp_mirv;
+if (Q.ppu_mirv) Q.mirv_total += Q.ppu_mirv;
+if (Q.z_mirv) Q.mirv_total += Q.z_mirv;
+if (Q.dvp_mirv) Q.mirv_total += Q.dvp_mirv;
+if (Q.dnvp_mirv) Q.mirv_total += Q.dnvp_mirv;
+if (Q.nsdap_mirv) Q.mirv_total += Q.nsdap_mirv;
+if (Q.gnvp_mirv) Q.mirv_total += Q.gnvp_mirv;
+if (Q.blpm_mirv) Q.mirv_total += Q.blpm_mirv;
+if (Q.mtu_mirv) Q.mirv_total += Q.mtu_mirv;
+if (Q.ltp_mirv) Q.mirv_total += Q.ltp_mirv;
+if (Q.rnp_mirv) Q.mirv_total += Q.rnp_mirv;
+if (Q.bvp_mirv) Q.mirv_total += Q.bvp_mirv;
+
+if (Q.mirv_total > 0) {
+    Q.spd_mirv = (Q.spd_mirv / Q.mirv_total) * 100;
+    Q.spm_mirv = (Q.spm_mirv / Q.mirv_total) * 100;
+    Q.sapd_mirv = (Q.sapd_mirv / Q.mirv_total) * 100;
+    Q.asum_mirv = (Q.asum_mirv / Q.mirv_total) * 100;
+    Q.ddp_mirv = (Q.ddp_mirv / Q.mirv_total) * 100;
+    Q.ppu_mirv = (Q.ppu_mirv / Q.mirv_total) * 100;
+    Q.z_mirv = (Q.z_mirv / Q.mirv_total) * 100;
+    Q.dvp_mirv = (Q.dvp_mirv / Q.mirv_total) * 100;
+    Q.dnvp_mirv = (Q.dnvp_mirv / Q.mirv_total) * 100;
+    Q.nsdap_mirv = (Q.nsdap_mirv / Q.mirv_total) * 100;
+    Q.gnvp_mirv = (Q.gnvp_mirv / Q.mirv_total) * 100;
+    Q.blpm_mirv = (Q.blpm_mirv / Q.mirv_total) * 100;
+    Q.mtu_mirv = (Q.mtu_mirv / Q.mirv_total) * 100;
+    Q.ltp_mirv = (Q.ltp_mirv / Q.mirv_total) * 100;
+    Q.rnp_mirv = (Q.rnp_mirv / Q.mirv_total) * 100;
+    Q.bvp_mirv = (Q.bvp_mirv / Q.mirv_total) * 100;
+}
+
+Q.spd_mirv = (Q.spd_mirv != undefined ? parseFloat(Q.spd_mirv.toFixed(1)) : 0);
+Q.spm_mirv = (Q.spm_mirv != undefined ? parseFloat(Q.spm_mirv.toFixed(1)) : 0);
+Q.sapd_mirv = (Q.sapd_mirv != undefined ? parseFloat(Q.sapd_mirv.toFixed(1)) : 0);
+Q.asum_mirv = (Q.asum_mirv != undefined ? parseFloat(Q.asum_mirv.toFixed(1)) : 0);
+Q.ddp_mirv = (Q.ddp_mirv != undefined ? parseFloat(Q.ddp_mirv.toFixed(1)) : 0);
+Q.ppu_mirv = (Q.ppu_mirv != undefined ? parseFloat(Q.ppu_mirv.toFixed(1)) : 0);
+Q.z_mirv = (Q.z_mirv != undefined ? parseFloat(Q.z_mirv.toFixed(1)) : 0);
+Q.dvp_mirv = (Q.dvp_mirv != undefined ? parseFloat(Q.dvp_mirv.toFixed(1)) : 0);
+Q.dnvp_mirv = (Q.dnvp_mirv != undefined ? parseFloat(Q.dnvp_mirv.toFixed(1)) : 0);
+Q.nsdap_mirv = (Q.nsdap_mirv != undefined ? parseFloat(Q.nsdap_mirv.toFixed(1)) : 0);
+Q.gnvp_mirv = (Q.gnvp_mirv != undefined ? parseFloat(Q.gnvp_mirv.toFixed(1)) : 0);
+Q.blpm_mirv = (Q.blpm_mirv != undefined ? parseFloat(Q.blpm_mirv.toFixed(1)) : 0);
+Q.mtu_mirv = (Q.mtu_mirv != undefined ? parseFloat(Q.mtu_mirv.toFixed(1)) : 0);
+Q.ltp_mirv = (Q.ltp_mirv != undefined ? parseFloat(Q.ltp_mirv.toFixed(1)) : 0);
+Q.rnp_mirv = (Q.rnp_mirv != undefined ? parseFloat(Q.rnp_mirv.toFixed(1)) : 0);
+Q.bvp_mirv = (Q.bvp_mirv != undefined ? parseFloat(Q.bvp_mirv.toFixed(1)) : 0);
+
+Q.mirv_change_spd = Q.spd_mirv - Q.spd_mirv_old;
+Q.mirv_change_sapd = Q.sapd_mirv - Q.sapd_mirv_old;
+Q.mirv_change_spm = Q.spm_mirv - Q.spm_mirv_old;
+Q.mirv_change_asum = Q.asum_mirv - Q.asum_mirv_old;
+Q.mirv_change_ddp = Q.ddp_mirv - Q.ddp_mirv_old;
+Q.mirv_change_z = Q.z_mirv - Q.z_mirv_old;
+Q.mirv_change_blpm = Q.blpm_mirv - Q.blpm_mirv_old;
+Q.mirv_change_ppu = Q.ppu_mirv - Q.ppu_mirv_old;
+Q.mirv_change_dvp = Q.dvp_mirv - Q.dvp_mirv_old;
+Q.mirv_change_dnvp = Q.dnvp_mirv - Q.dnvp_mirv_old;
+Q.mirv_change_nsdap = Q.nsdap_mirv - Q.nsdap_mirv_old;
+Q.mirv_change_mtu = Q.mtu_mirv - Q.mtu_mirv_old;
+Q.mirv_change_ltp = Q.ltp_mirv - Q.ltp_mirv_old;
+Q.mirv_change_gnvp = Q.gnvp_mirv - Q.gnvp_mirv_old;
+Q.mirv_change_rnp = Q.rnp_mirv - Q.rnp_mirv_old;
+Q.mirv_change_bvp = Q.bvp_mirv - Q.bvp_mirv_old;
+
+Q.left_coalition_mirv = (Q.spd_mirv + Q.sapd_mirv + Q.spm_mirv + Q.asum_mirv).toFixed(1);
+Q.progressive_coalition_mirv = (Q.spd_mirv + Q.sapd_mirv + Q.spm_mirv + Q.asum_mirv + Q.ddp_mirv).toFixed(1);
+Q.popular_front_coalition_mirv = (Q.spd_mirv + Q.sapd_mirv + Q.spm_mirv + Q.asum_mirv + Q.z_mirv + Q.ddp_mirv).toFixed(1);
+Q.weimar_coalition_mirv = (Q.spd_mirv + Q.ddp_mirv + Q.z_mirv + Q.spm_mirv).toFixed(1);
+Q.zeltbrin_plus_coalition_mirv = (Q.spd_mirv + Q.ddp_mirv + Q.z_mirv + Q.blpm_mirv + Q.ppu_mirv + Q.spm_mirv).toFixed(1);
+Q.grand_coalition_mirv = (Q.spd_mirv + Q.spm_mirv + Q.ddp_mirv + Q.z_mirv + Q.ppu_mirv + Q.dvp_mirv + Q.blpm_mirv).toFixed(1);
+
+Q.liberal_coalition_mirv = (Q.z_mirv + Q.ddp_mirv + Q.dvp_mirv + Q.ppu_mirv + Q.blpm_mirv).toFixed(1); 
+Q.wide_liberal_coalition_mirv = (Q.z_mirv + Q.ddp_mirv + Q.dvp_mirv + Q.other_mirv + Q.ppu_mirv + Q.blpm_mirv).toFixed(1);
+Q.center_right_coalition_mirv = (Q.z_mirv + Q.dvp_mirv + Q.other_mirv + Q.dnvp_mirv + Q.blpm_mirv + Q.gnvp_mirv + Q.ppu_mirv).toFixed(1);
+Q.right_coalition_mirv = (Q.dvp_mirv + Q.other_mirv + Q.dnvp_mirv + Q.gnvp_mirv).toFixed(1);
+Q.far_right_coalition_mirv = (Q.dnvp_mirv + Q.nsdap_mirv + Q.gnvp_mirv).toFixed(1);
+Q.anti_democratic_coalition_mirv = (Q.sapd_mirv + Q.nsdap_mirv + Q.dnvp_mirv + Q.gnvp_mirv).toFixed(1);
+Q.hitler_right_coalition_mirv = (Q.dnvp_mirv + Q.nsdap_mirv + Q.dvp_mirv + Q.other_mirv + Q.gnvp_mirv).toFixed(1);
+
+Q.mirv_change_spd = (Q.mirv_change_spd != undefined ? parseFloat(Q.mirv_change_spd.toFixed(1)) : 0);
+Q.mirv_change_spm = (Q.mirv_change_spm != undefined ? parseFloat(Q.mirv_change_spm.toFixed(1)) : 0);
+Q.mirv_change_sapd = (Q.mirv_change_sapd != undefined ? parseFloat(Q.mirv_change_sapd.toFixed(1)) : 0);
+Q.mirv_change_ddp = (Q.mirv_change_ddp != undefined ? parseFloat(Q.mirv_change_ddp.toFixed(1)) : 0);
+Q.mirv_change_ppu = (Q.mirv_change_ppu != undefined ? parseFloat(Q.mirv_change_ppu.toFixed(1)) : 0);
+Q.mirv_change_z = (Q.mirv_change_z != undefined ? parseFloat(Q.mirv_change_z.toFixed(1)) : 0);
+Q.mirv_change_dvp = (Q.mirv_change_dvp != undefined ? parseFloat(Q.mirv_change_dvp.toFixed(1)) : 0);
+Q.mirv_change_dnvp = (Q.mirv_change_dnvp != undefined ? parseFloat(Q.mirv_change_dnvp.toFixed(1)) : 0);
+Q.mirv_change_nsdap = (Q.mirv_change_nsdap != undefined ? parseFloat(Q.mirv_change_nsdap.toFixed(1)) : 0);
+Q.mirv_change_other = (Q.mirv_change_other != undefined ? parseFloat(Q.mirv_change_other.toFixed(1)) : 0);
+Q.mirv_change_gnvp = (Q.mirv_change_gnvp != undefined ? parseFloat(Q.mirv_change_gnvp.toFixed(1)) : 0);
+Q.mirv_change_blpm = (Q.mirv_change_blpm != undefined ? parseFloat(Q.mirv_change_blpm.toFixed(1)) : 0);
+Q.mirv_change_asum = (Q.mirv_change_asum != undefined ? parseFloat(Q.mirv_change_asum.toFixed(1)) : 0);
+Q.mirv_change_mtu = (Q.mirv_change_blpm != undefined ? parseFloat(Q.mirv_change_blpm.toFixed(1)) : 0);
+Q.mirv_change_ltp = (Q.mirv_change_asum != undefined ? parseFloat(Q.mirv_change_asum.toFixed(1)) : 0);
+Q.mirv_change_rnp = (Q.mirv_change_blpm != undefined ? parseFloat(Q.mirv_change_blpm.toFixed(1)) : 0);
+Q.mirv_change_bvp = (Q.mirv_change_asum != undefined ? parseFloat(Q.mirv_change_asum.toFixed(1)) : 0);
+
+!}
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_mirv) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_mirv*1.5),
+            });
+}
+if (Q.asum_formed && Q.asum_mirv) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_mirv*1.5)
+    },
+    ]);
+if (Q.spm_formed && Q.spm_mirv) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_mirv*1.5),
+    },
+    {
+        "id": "bra",
+        "legend": "PPB",
+        "name": "PPB",
+        "seats": Math.round(Q.bvp_mirv*1.5),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_mirv*1.5),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_mirv) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "lac",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.rnc_mirv*1.5),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_mirv*1.5),
+    },
+    {
+        "id": "ltp",
+        "legend": "LTP",
+        "name": "LTP",
+        "seats": Math.round(Q.ltp_mirv*1.5),
+    },
+
+]);
+if (Q.gnvp_formed && Q.gnvp_mirv) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_mirv*1.5),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_mirv*1.5),
+    },
+    {
+        "id": "sud",
+        "legend": "MTU",
+        "name": "MTU",
+        "seats": Math.round(Q.mtu_mirv*1.5),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_mirv*1.5),
+    },
+]);
+
+
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Mirvieren Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_mirv +]%** {!</td><td>!} **[+ mirv_change_spd +]** {!</td></tr>!}
+
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_mirv +]% {!</td><td>!} [+ mirv_change_sapd +] {!</td></tr>!} ?]
+
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_mirv +]% {!</td><td>!} [+ mirv_change_asum +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mirv +]% {!</td><td>!} [+ mirv_change_ddp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#993902'> </div> !} PPB: {!</td><td>!} [+ bvp_mirv +]% {!</td><td>!} [+ mirv_change_bvp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mirv +]% {!</td><td>!} [+ mirv_change_z +] {!</td></tr>!}
+
+[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_mirv +]% {!</td><td>!} [+ mirv_change_blpm +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNC: {!</td><td>!} [+ rnc_mirv +]% {!</td><td>!} [+ mirv_change_rnc +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mirv +]% {!</td><td>!} [+ mirv_change_dvp +] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#1b7035'> </div> !} LTP: {!</td><td>!} [+ ltp_mirv +] % {!</td><td>!} [+ mirv_change_ltp +] {!</td></tr>!}
+
+[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_mirv +]% {!</td><td>!} [+ mirv_change_gnvp +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mirv +]% {!</td><td>!} [+ mirv_change_dnvp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtp_mirv +] % {!</td><td>!} [+ mirv_change_mtp +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mirv +]% {!</td><td>!} [+ mirv_change_nsdap +] {!</td></tr>!}
+{!</table>!}
+
+**Potential coalitions:**
+
+Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_mirv +]%
+
+[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_mirv +]% ?]
+
+[? if liberal_reconciliation >= 20: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_mirv +]% ?]
+
+Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_mirv +]%
+
+[? if liberal_coalition < 50 : Wide - Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + others): [+ wide_liberal_coalition_mirv +]% ?]
+
+Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span>  ?][? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span>  ?]): [+ center_right_coalition_mirv +]%
+
+Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span> ?]): [+ right_coalition_mirv +]%
+
+[? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
+
+There are some potential coalition arrangements.
