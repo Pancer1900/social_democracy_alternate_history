@@ -1,4 +1,4 @@
-title: Mirfallen Election test11
+title: Mirfallen Election test12
 view-if: time = next_mirfallen_election 
 new-page: true
 tags: event
@@ -214,11 +214,18 @@ data = data.concat([
         "seats": Math.round(Q.dvp_mir*2),
     },
     {
-        "id": "other",
+        "id": "sud",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_mir*2),
+        "seats": Math.round(Q.other_r*1),
     },
+    {
+        "id": "ltp",
+        "legend": "ltp",
+        "name": "ltp",
+        "seats": Math.round(Q.other_r*1),
+    },
+
 ]);
 if (Q.gnvp_formed && Q.gnvp_mir) {
     data.push({
