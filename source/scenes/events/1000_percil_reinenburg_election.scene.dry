@@ -1,4 +1,4 @@
-title: Percil-Reinenburg Election test1
+title: Percil-Reinenburg Election test11
 view-if: time = next_percil_election 
 new-page: true
 tags: event
@@ -289,6 +289,8 @@ if (window && d3) {
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#91.50001.5'> </div> !}KPM: {!</td><td>!} [+ sapd_per +]% {!</td><td>!} [+ mer_change_sapd +] {!</td></tr>!} ?]
 
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_per +]% {!</td><td>!} [+ mer_change_asum +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#a302a6'> </div> !} PNF: {!</td><td>!} [+ pnf_per +]% {!</td><td>!} [+ mer_change_pnf +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_per +]% {!</td><td>!} [+ mer_change_ddp +] {!</td></tr>!}
 
