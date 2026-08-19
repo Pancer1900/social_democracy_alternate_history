@@ -628,6 +628,9 @@ table {
 .seat.lac {
     fill: #b0cf00;
 }
+.seat.pnf {
+    fill: #a302a6;
+}
 .seat.sapd {
     fill: #940000;
 }
