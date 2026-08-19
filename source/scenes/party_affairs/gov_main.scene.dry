@@ -29,6 +29,57 @@ The list of the Govermnents of Merkopia.
 
 @merkia
 subtitle: [? if merkia_spd == 1 and merkia_timer == 0: Available action of the local Government ?]
+on-arrival: {!
+function allocateSeats(percentages, totalSeats = 250) {
+    const exactSeats = {};
+    const flooredSeats = {};
+    const remainders = [];
+
+    let totalFlooredSeats = 0;
+    for (const party in percentages) {
+        const exact = (percentages[party] * totalSeats) / 100;
+        const floored = Math.floor(exact);
+        const remainder = exact - floored;
+
+        exactSeats[party] = exact;
+        flooredSeats[party] = floored;
+        totalFlooredSeats += floored;
+
+        remainders.push({ party, remainder });
+    }
+
+    const seatsToDistribute = totalSeats - totalFlooredSeats;
+    remainders.sort((a, b) => b.remainder - a.remainder);
+
+    for (let i = 0; i < seatsToDistribute; i++) {
+        flooredSeats[remainders[i].party]++;
+    }
+
+    return flooredSeats;
+}
+
+const inputPercentages = {
+    spd_mer: Q.spd_mer,
+    asum_mer: Q.asum_mer,
+    spm_mer: Q.spm_mer,
+    sapd_mer: Q.sapd_mer,
+    ddp_mer: Q.ddp_mer,
+    ppu_mer: Q.ppu_mer,
+    z_mer: Q.z_mer,
+    dvp_mer: Q.dvp_mer,
+    dnvp_mer: Q.dnvp_mer,
+    nsdap_mer: Q.nsdap_mer,
+    gnvp_mer: Q.gnvp_mer,
+    blpm_mer: Q.blpm_mer,
+    other_mer: Q.other_mer
+};
+
+const allocatedSeats = allocateSeats(inputPercentages);
+
+for (const party in allocatedSeats) {
+    Q[party] = parseFloat(((allocatedSeats[party] * 100) / 250).toFixed(1));
+}
+}!
 on-display: {!
 data = [];
 if (Q.sapd_formed && Q.sapd_r) {
