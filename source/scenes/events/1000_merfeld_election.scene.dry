@@ -1,8 +1,8 @@
-title: Merfeld Election test1
-view-if: time = next_merffeld_election 
+title: Merfeld Election test11
+view-if: time = next_merfeld_election 
 new-page: true
 tags: event
-on-arrival: next_merffeld_election = time + 48
+on-arrival: next_merfeld_election = time + 48
 priority: 2
 
 = Elections, [+ month : month +] [+ year +]
