@@ -220,10 +220,126 @@ choose-if: lurek_spd == 1
 
 @yougen
 subtitle: [? if yougen_spd == 1 and yougen_timer == 0: Available action of the local Government ?]
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_youg) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_youg*1),
+            });
+}
+if (Q.asum_formed && Q.asum_youg) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_youg*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_youg*1),
+    },
+    ]);
+if (Q.spm_formed && Q.spm_youg) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_youg*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_youg*1),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_youg*1),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_youg) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_youg*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "bvp",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.ppu_youg*1),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_youg*1),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_youg*1),
+    },
+]);
+if (Q.gnvp_formed && Q.gnvp_youg) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_youg*1),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_youg*1),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_youg*1),
+    },
+]);
 
-State of Yougen:
 
------ PARLIMENT IMAGINE -------------
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Yougen Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -286,10 +402,127 @@ choose-if: merfeld_spd == 1
 
 @mirfallen
 subtitle: [? if mirfallen_spd == 1 and mirfallen_timer == 0: Available action of the local Government ?]
+on-display: {!
+data = [];
+if (Q.sapd_formed && Q.sapd_mir) {
+    data.push({
+            "id": "sapd",
+            "legend": "KPM",
+            "name": "KPM",
+            "seats": Math.round(Q.sapd_mir*2),
+            });
+}
+if (Q.asum_formed && Q.asum_mir) {
+    data.push({
+            "id": "asum",
+            "legend": "ASUM",
+            "name": "ASUM",
+            "seats": Math.round(Q.asum_mir*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "spd",
+        "legend": Q.spd_name,
+        "name": Q.spd_name,
+        "seats": Math.round(Q.spd_mir*2),
+    },
+    ]);
+if (Q.spm_formed && Q.spm_mir) {
+    data.push({
+            "id": "spm",
+            "legend": "SPM",
+            "name": "SPM",
+            "seats": Math.round(Q.spm_mir*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_mir*2),
+    },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_mir*2),
+    },
+    ]);
+if (Q.blpm_formed && Q.blpm_mir) {
+    data.push({
+            "id": "blpm",
+            "legend": "BLPM",
+            "name": "BLPM",
+            "seats": Math.round(Q.blpm_mir*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "bvp",
+        "legend": "PPU",
+        "name": "PPU",
+        "seats": Math.round(Q.ppu_mir*2),
+    },
+    {
+        "id": "dvp",
+        "legend": Q.dvp_name,
+        "name": Q.dvp_name,
+        "seats": Math.round(Q.dvp_mir*2),
+    },
+    {
+        "id": "other",
+        "legend": "Other",
+        "name": "Other",
+        "seats": Math.round(Q.other_mir*2),
+    },
+]);
+if (Q.gnvp_formed && Q.gnvp_mir) {
+    data.push({
+            "id": "gnvp",
+            "legend": "GNVP",
+            "name": "GNVP",
+            "seats": Math.round(Q.gnvp_mir*2),
+            });
+}
+data = data.concat([
+    {
+        "id": "dnvp",
+        "legend": "MNVP",
+        "name": "MNVP",
+        "seats": Math.round(Q.dnvp_mir*2),
+    },
+    {
+        "id": "nsdap",
+        "legend": "NSDAP",
+        "name": "NSDAP",
+        "seats": Math.round(Q.nsdap_mir*2),
+    },
+]);
 
-Republic of Mirfallen:
 
------ PARLIMENT IMAGINE -------------
+if (window && d3) {
+    var width = 500;
+    var height = 500;
+    var screenWidth = document.getElementById('content').offsetWidth;
+    if (screenWidth < width - 50) {
+        width = screenWidth - 50;
+        height = width;
+        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+    }
+    var parliament = d3.parliament();
+    parliament.width(width).height(height).innerRadiusCoef(0.4);
+    parliament.enter.fromCenter(true).smallToBig(true);
+    parliament.exit.toCenter(false).bigToSmall(true);
+    d3.select("#saxony_landtag").datum(data).call(parliament);
+}
+!}
+
+**Mirfallen Caversket:**
+
+{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+
 
 Governing Coalition :
 
