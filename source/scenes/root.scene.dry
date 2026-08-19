@@ -754,7 +754,7 @@ Q.asum_mirv = 0;
 Q.spm_mirv = 0;
 Q.sapd_mirv = 0;
 Q.ddp_mirv = 7;
-Q.rpn_mirv = 3;
+Q.rnp_mirv = 3;
 Q.bvp_mirv = 3;
 Q.z_mirv = 17;
 Q.dvp_mirv = 16;
@@ -795,7 +795,7 @@ Q.nsdap_zel = 2;
 Q.gnvp_zel = 0;
 Q.blpm_zel = 0;
 Q.ltp_zel = 4;
-Q.rnc_zel = 8;
+Q.rnp_zel = 8;
 Q.zek_zel = 14;
 
 Q.spd_zel_mod = 10;
