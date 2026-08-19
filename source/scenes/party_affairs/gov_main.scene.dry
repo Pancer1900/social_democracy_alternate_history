@@ -26,6 +26,7 @@ The list of the Govermnents of Merkopia.
 - @mirvieren: State of Mirvieren
 - @tippleford: Free Region of Tippleford
 - @lurek: Republic of Lurek
+- @easy_discard
 
 @merkia
 subtitle: [? if merkia_spd == 1 and merkia_timer == 0: Available action of the local Government ?]
