@@ -1,4 +1,4 @@
-title: Zeltbrin Election test1
+title: Zeltbrin Election test11
 view-if: time = next_zeltbrin_election 
 new-page: true
 tags: event
@@ -154,9 +154,9 @@ Q.zel_change_other = (Q.zel_change_other != undefined ? parseFloat(Q.zel_change_
 Q.zel_change_gnvp = (Q.zel_change_gnvp != undefined ? parseFloat(Q.zel_change_gnvp.toFixed(1)) : 0);
 Q.zel_change_blpm = (Q.zel_change_blpm != undefined ? parseFloat(Q.zel_change_blpm.toFixed(1)) : 0);
 Q.zel_change_asum = (Q.zel_change_asum != undefined ? parseFloat(Q.zel_change_asum.toFixed(1)) : 0);
-Q.zel_change_zek = (Q.zel_change_blpm != undefined ? parseFloat(Q.zel_change_blpm.toFixed(1)) : 0);
-Q.zel_change_ltp = (Q.zel_change_asum != undefined ? parseFloat(Q.zel_change_asum.toFixed(1)) : 0);
-Q.zel_change_rnp = (Q.zel_change_blpm != undefined ? parseFloat(Q.zel_change_blpm.toFixed(1)) : 0);
+Q.zel_change_zek = (Q.zel_change_zek != undefined ? parseFloat(Q.zel_change_zek.toFixed(1)) : 0);
+Q.zel_change_ltp = (Q.zel_change_ltp != undefined ? parseFloat(Q.zel_change_ltp.toFixed(1)) : 0);
+Q.zel_change_rnp = (Q.zel_change_rnp != undefined ? parseFloat(Q.zel_change_rnp.toFixed(1)) : 0);
 
 !}
 on-display: {!
@@ -166,7 +166,7 @@ if (Q.sapd_formed && Q.sapd_zel) {
             "id": "sapd",
             "legend": "KPM",
             "name": "KPM",
-            "seats": Math.round(Q.sapd_zel*1.5),
+            "seats": Math.round(Q.sapd_zel*1),
             });
 }
 if (Q.asum_formed && Q.asum_zel) {
@@ -174,7 +174,7 @@ if (Q.asum_formed && Q.asum_zel) {
             "id": "asum",
             "legend": "ASUM",
             "name": "ASUM",
-            "seats": Math.round(Q.asum_zel*1.5),
+            "seats": Math.round(Q.asum_zel*1),
             });
 }
 data = data.concat([
@@ -182,7 +182,7 @@ data = data.concat([
         "id": "spd",
         "legend": Q.spd_name,
         "name": Q.spd_name,
-        "seats": Math.round(Q.spd_zel*1.5)
+        "seats": Math.round(Q.spd_zel*1)
     },
     ]);
 if (Q.spm_formed && Q.spm_zel) {
@@ -190,7 +190,7 @@ if (Q.spm_formed && Q.spm_zel) {
             "id": "spm",
             "legend": "SPM",
             "name": "SPM",
-            "seats": Math.round(Q.spm_zel*1.5),
+            "seats": Math.round(Q.spm_zel*1),
             });
 }
 data = data.concat([
@@ -198,19 +198,19 @@ data = data.concat([
         "id": "ddp",
         "legend": Q.ddp_name,
         "name": Q.ddp_name,
-        "seats": Math.round(Q.ddp_zel*1.5),
+        "seats": Math.round(Q.ddp_zel*1),
     },
     {
         "id": "z",
         "legend": "GDSU",
         "name": "GDSU",
-        "seats": Math.round(Q.z_zel*1.5),
+        "seats": Math.round(Q.z_zel*1),
     },
     {
         "id": "znc",
         "legend": "ZEK",
         "name": "ZEK",
-        "seats": Math.round(Q.zek_zel*1.5),
+        "seats": Math.round(Q.zek_zel*1),
     },
     ]);
 if (Q.blpm_formed && Q.blpm_zel) {
@@ -218,7 +218,7 @@ if (Q.blpm_formed && Q.blpm_zel) {
             "id": "blpm",
             "legend": "BLPM",
             "name": "BLPM",
-            "seats": Math.round(Q.blpm_zel*1.5),
+            "seats": Math.round(Q.blpm_zel*1),
             });
 }
 data = data.concat([
@@ -226,19 +226,19 @@ data = data.concat([
         "id": "lac",
         "legend": "LREP",
         "name": "LREP",
-        "seats": Math.round(Q.rnc_zel*1.5),
+        "seats": Math.round(Q.rnp_zel*1),
     },
     {
         "id": "dvp",
         "legend": Q.dvp_name,
         "name": Q.dvp_name,
-        "seats": Math.round(Q.dvp_zel*1.5),
+        "seats": Math.round(Q.dvp_zel*1),
     },
     {
         "id": "ltp",
         "legend": "LTP",
         "name": "LTP",
-        "seats": Math.round(Q.ltp_zel*1.5),
+        "seats": Math.round(Q.ltp_zel*1),
     },
 
 ]);
@@ -247,7 +247,7 @@ if (Q.gnvp_formed && Q.gnvp_zel) {
             "id": "gnvp",
             "legend": "GNVP",
             "name": "GNVP",
-            "seats": Math.round(Q.gnvp_zel*1.5),
+            "seats": Math.round(Q.gnvp_zel*1),
             });
 }
 data = data.concat([
@@ -255,13 +255,13 @@ data = data.concat([
         "id": "dnvp",
         "legend": "MNVP",
         "name": "MNVP",
-        "seats": Math.round(Q.dnvp_zel*1.5),
+        "seats": Math.round(Q.dnvp_zel*1),
     },
     {
         "id": "nsdap",
         "legend": "NSDAP",
         "name": "NSDAP",
-        "seats": Math.round(Q.nsdap_zel*1.5),
+        "seats": Math.round(Q.nsdap_zel*1),
     },
 ]);
 
@@ -283,7 +283,7 @@ if (window && d3) {
 }
 !}
 
-**Mirvieren Caversket:**
+**Zeltbrin Caversket:**
 
 {!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
@@ -299,11 +299,11 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_zel +]% {!</td><td>!} [+ zel_change_z +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} ZEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [+ zel_change_zel +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} ZEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [+ zel_change_zek +] {!</td></tr>!}
 
 [? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_zel +]% {!</td><td>!} [+ zel_change_blpm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnc_zel +]% {!</td><td>!} [+ zel_change_rnc +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnp_zel +]% {!</td><td>!} [+ zel_change_rnc +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_zel +]% {!</td><td>!} [+ zel_change_dvp +] {!</td></tr>!}
  
@@ -312,8 +312,6 @@ if (window && d3) {
 [? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_zel +]% {!</td><td>!} [+ zel_change_gnvp +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_zel +]% {!</td><td>!} [+ zel_change_dnvp +] {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtp_zel +] % {!</td><td>!} [+ zel_change_mtp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_zel +]% {!</td><td>!} [+ zel_change_nsdap +] {!</td></tr>!}
 {!</table>!}
