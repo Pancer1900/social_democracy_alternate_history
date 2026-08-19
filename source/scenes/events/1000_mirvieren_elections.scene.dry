@@ -1,4 +1,4 @@
-title: Mirvieren Election test11
+title: Mirvieren Election test12
 view-if: time = next_mirviern_election 
 new-page: true
 tags: event
@@ -56,7 +56,7 @@ Q.gnvp_mirv = (Q.workers_gnvp * Q.workers * 0.8) + (Q.old_middle_gnvp * Q.old_mi
 Q.blpm_mirv = (Q.workers_blpm * Q.workers * 0.8) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.0) + (Q.peasants_blpm * Q.peasants * 1.2) + (Q.rural_blpm * Q.rural * 1.2) + (Q.catholics_blpm * Q.catholics * 1.0) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 0.7) + (Q.blpm_mirv_mod * 10);
 
 Q.rnp_mirv = (Q.peasants_ppu * Q.peasants * 2) + (Q.rural_ppu * Q.rural * 2) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 1) + (Q.minorieties_ppu * Q.minorieties * 2);
-Q.bvp_mirv = (Q.peasants_ppu * Q.peasants * 1) + (Q.rural_ppu * Q.rural * 1) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 2) + (Q.minorieties_ppu * Q.minorieties * 1.5) + (Q.old_middle_ppu * Q.old_middle * 1.5) + (Q.new_middle_ppu * Q.new_middle * 1.5);
+Q.bvp_mirv = (Q.peasants_ppu * Q.peasants * 1) + (Q.rural_ppu * Q.rural * 1) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 1.5) + (Q.minorieties_ppu * Q.minorieties * 1) + (Q.old_middle_ppu * Q.old_middle * 1) + (Q.new_middle_ppu * Q.new_middle * 1);
 
 Q.mtu_mirv = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.other_mirv_mod * 10) + (Q.minorieties_other * Q.minorieties * 2);
 Q.ltp_mirv = (Q.peasants_other * Q.peasants * 2) + (Q.rural_other * Q.rural * 2) + (Q.other_mirv_mod * 10) + (Q.workers_other * Q.workers * 0.5);
