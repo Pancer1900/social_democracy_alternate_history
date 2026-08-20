@@ -1,4 +1,4 @@
-title: Percil-Reinenburg Election test13
+title: Percil-Reinenburg Election test131
 view-if: time = next_percil_election 
 new-page: true
 tags: event
@@ -284,9 +284,9 @@ if (window && d3) {
 
 {!<table>!} 
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
-{!<tr><td><div class="box" style='background-color:#dc0100; outline: 1.5px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_per +]%** {!</td><td>!} **[+ per_change_spd +]** {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_per +]%** {!</td><td>!} **[+ per_change_spd +]** {!</td></tr>!}
 
-[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#91.50001.5'> </div> !}KPM: {!</td><td>!} [+ sapd_per +]% {!</td><td>!} [+ per_change_sapd +] {!</td></tr>!} ?]
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_per +]% {!</td><td>!} [+ per_change_sapd +] {!</td></tr>!} ?]
 
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_per +]% {!</td><td>!} [+ per_change_asum +] {!</td></tr>!} ?]
 
