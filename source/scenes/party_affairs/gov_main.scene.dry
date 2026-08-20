@@ -327,19 +327,19 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+        document.getElementById("saxony_landtag_2").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#saxony_landtag").datum(data).call(parliament);
+    d3.select("#saxony_landtag_2").datum(data).call(parliament);
 }
 !}
 
 **Yougen Caversket:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="saxony_landtag_2" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -473,19 +473,19 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("saxony_landtag").style.height = screenWidth/1.5 + "px";
+        document.getElementById("saxony_landtag_3").style.height = screenWidth/1.5 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#saxony_landtag").datum(data).call(parliament);
+    d3.select("#saxony_landtag_3").datum(data).call(parliament);
 }
 !}
 
 **Percil-Reinenburg Caversket:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="saxony_landtag_3" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -618,19 +618,19 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+        document.getElementById("saxony_landtag_4").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#saxony_landtag").datum(data).call(parliament);
+    d3.select("#saxony_landtag_4").datum(data).call(parliament);
 }
 !}
 
 **Mirfallen Caversket:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="saxony_landtag_4" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -756,19 +756,19 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+        document.getElementById("saxony_landtag_5").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#saxony_landtag").datum(data).call(parliament);
+    d3.select("#saxony_landtag_5").datum(data).call(parliament);
 }
 !}
 
 **Mirfallen Caversket:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="saxony_landtag_5" style="width: 500px; height: 250px;"> </svg>!}
 
 
 Governing Coalition :
@@ -908,19 +908,19 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+        document.getElementById("saxony_landtag_6").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#saxony_landtag").datum(data).call(parliament);
+    d3.select("#saxony_landtag_6").datum(data).call(parliament);
 }
 !}
 
 **Mirvieren Caversket:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="saxony_landtag_6" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
@@ -1053,19 +1053,19 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50;
         height = width;
-        document.getElementById("saxony_landtag").style.height = screenWidth/2 + "px";
+        document.getElementById("saxony_landtag_7").style.height = screenWidth/2 + "px";
     }
     var parliament = d3.parliament();
     parliament.width(width).height(height).innerRadiusCoef(0.4);
     parliament.enter.fromCenter(true).smallToBig(true);
     parliament.exit.toCenter(false).bigToSmall(true);
-    d3.select("#saxony_landtag").datum(data).call(parliament);
+    d3.select("#saxony_landtag_7").datum(data).call(parliament);
 }
 !}
 
 **Tippleford Caversket:**
 
-{!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
+{!<svg id="saxony_landtag_7" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
 
