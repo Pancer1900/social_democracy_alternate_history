@@ -44,7 +44,7 @@ Q.spd_mir = (Q.workers_spd * Q.workers * 1.5) + (Q.old_middle_spd * Q.old_middle
 Q.sapd_mir = (Q.workers_sapd * Q.workers * 1.5) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.1) + (Q.peasants_sapd * Q.peasants * 0.6) + (Q.rural_sapd * Q.rural * 0.8) + (Q.catholics_sapd * Q.catholics * 0.8) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 1.2) + (Q.sapd_mir_mod * 10);
 Q.spm_mir = (Q.workers_spm * Q.workers * 1.5) + (Q.old_middle_spm * Q.old_middle * 1.1) + (Q.new_middle_spm * Q.new_middle * 1.1) + (Q.peasants_spm * Q.peasants * 0.6) + (Q.rural_spm * Q.rural * 0.8) + (Q.catholics_spm * Q.catholics * 0.8) + (Q.minorieties_spm * Q.minorieties * 0.5) + (Q.unemployed_spm * Q.unemployed * 1.2) + (Q.spm_mir_mod * 10);
 Q.asum_mir = (Q.workers_asum * Q.workers * 1.5) + (Q.old_middle_asum * Q.old_middle * 1.1) + (Q.new_middle_asum * Q.new_middle * 1.1) + (Q.peasants_asum * Q.peasants * 0.6) + (Q.rural_asum * Q.rural * 0.8) + (Q.catholics_asum * Q.catholics * 0.8) + (Q.minorieties_asum * Q.minorieties * 0.5) + (Q.unemployed_asum * Q.unemployed * 1.2) + (Q.asum_mir_mod * 10);
-Q.ddp_mir = (Q.workers_ddp * Q.workers * 1.5) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.1) + (Q.peasants_ddp * Q.peasants * 0.6) + (Q.rural_ddp * Q.rural * 0.8) + (Q.catholics_ddp * Q.catholics * 0.8) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 1.2) + (Q.ddp_mir_mod * 5);
+Q.ddp_mir = (Q.workers_ddp * Q.workers * 1.3) + (Q.old_middle_ddp * Q.old_middle * 1.1) + (Q.new_middle_ddp * Q.new_middle * 1.1) + (Q.peasants_ddp * Q.peasants * 0.6) + (Q.rural_ddp * Q.rural * 0.8) + (Q.catholics_ddp * Q.catholics * 0.8) + (Q.minorieties_ddp * Q.minorieties * 0.5) + (Q.unemployed_ddp * Q.unemployed * 1.2) + (Q.ddp_mir_mod * 5);
 Q.z_mir = (Q.workers_z * Q.workers * 1.5) + (Q.old_middle_z * Q.old_middle * 1.1) + (Q.new_middle_z * Q.new_middle * 1.1) + (Q.peasants_z * Q.peasants * 0.6) + (Q.rural_z * Q.rural * 0.8) + (Q.catholics_z * Q.catholics * 0.8) + (Q.minorieties_z * Q.minorieties * 0.5) + (Q.unemployed_z * Q.unemployed * 1.2) + (Q.z_mir_mod * 10);
 Q.dvp_mir = (Q.workers_dvp * Q.workers * 1.5) + (Q.old_middle_dvp * Q.old_middle * 1.1) + (Q.new_middle_dvp * Q.new_middle * 1.1) + (Q.peasants_dvp * Q.peasants * 0.6) + (Q.rural_dvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dvp * Q.minorieties * 0.5) + (Q.unemployed_dvp * Q.unemployed * 1.2) + (Q.dvp_mir_mod * 10);
 Q.dnvp_mir = (Q.workers_dnvp * Q.workers * 1.5) + (Q.old_middle_dnvp * Q.old_middle * 1.1) + (Q.new_middle_dnvp * Q.new_middle * 1.1) + (Q.peasants_dnvp * Q.peasants * 0.6) + (Q.rural_dnvp * Q.rural * 0.8) + (Q.catholics_dvp * Q.catholics * 0.8) + (Q.minorieties_dnvp * Q.minorieties * 0.5) + (Q.unemployed_dnvp * Q.unemployed * 1.2) + (Q.dnvp_mir_mod * 10);
@@ -217,13 +217,19 @@ data = data.concat([
         "id": "sud",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_r*1),
+        "seats": Math.round(Q.other_r*0.67),
     },
     {
         "id": "ltp",
         "legend": "ltp",
         "name": "ltp",
-        "seats": Math.round(Q.other_r*1),
+        "seats": Math.round(Q.other_r*0.67),
+    },
+    {
+        "id": "other",
+        "legend": "other",
+        "name": "other",
+        "seats": Math.round(Q.other_r*0.67),
     },
 
 ]);
