@@ -191,7 +191,7 @@ if (Q.revolutionaries_split == 0) {
             "id": "rev",
             "legend": "Revolutionaries",
             "name": "Revolutionaries",
-            "seats": Math.round(Q.rev_seats*8),
+            "seats": Math.round(Q.rev_seats*2),
             });
 }
 if (Q.left_split == 0) {
@@ -199,7 +199,7 @@ if (Q.left_split == 0) {
             "id": "lef",
             "legend": "Left",
             "name": "Left",
-            "seats": Math.round(Q.lef_seats*8),
+            "seats": Math.round(Q.lef_seats*2),
             });
 }
 if (Q.agrarnians_split == 0) {
@@ -207,7 +207,7 @@ if (Q.agrarnians_split == 0) {
             "id": "agr",
             "legend": "Agrariarins",
             "name": "Agrariarins",
-            "seats": Math.round(Q.agr_seats*8),
+            "seats": Math.round(Q.agr_seats*2),
             });
 }
 if (Q.centrists_resign == 0) {
@@ -215,7 +215,7 @@ if (Q.centrists_resign == 0) {
             "id": "cen",
             "legend": "Centrists",
             "name": "Centrists",
-            "seats": Math.round(Q.cen_seats*8),
+            "seats": Math.round(Q.cen_seats*2),
             });
 }
 if (Q.unions_independent == 0) {
@@ -223,7 +223,7 @@ if (Q.unions_independent == 0) {
             "id": "lab",
             "legend": "Labour",
             "name": "Labour",
-            "seats": Math.round(Q.lab_seats*8),
+            "seats": Math.round(Q.lab_seats*2),
             });
 }
 if (Q.reformists_resigned == 0) {
@@ -231,13 +231,13 @@ if (Q.reformists_resigned == 0) {
             "id": "ref",
             "legend": "Reformist",
             "name": "Reformist",
-            "seats": Math.round(Q.ref_seats*8),
+            "seats": Math.round(Q.ref_seats*2),
             });
 }
 
 if (window && d3) {
-    var width = 500; 
-    var height = 500;
+    var width = 200; 
+    var height = 100;
     var screenWidth = document.getElementById('content').offsetWidth;
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 
