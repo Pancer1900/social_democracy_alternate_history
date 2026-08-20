@@ -1,4 +1,4 @@
-title: Tippleford Election test131
+title: Tippleford Election test132
 view-if: time = next_zeltbrin_election 
 new-page: true
 tags: event
@@ -57,7 +57,10 @@ Q.blpm_zel = (Q.workers_blpm * Q.workers * 1.05) + (Q.old_middle_blpm * Q.old_mi
 Q.rnp_zel = (Q.peasants_ppu * Q.peasants * 2) + (Q.rural_ppu * Q.rural * 2) + (Q.ppu_zel_mod * 10) + (Q.workers_ppu * Q.workers * 1) + (Q.old_middle_blpm * Q.old_middle * 2) + (Q.new_middle_blpm * Q.new_middle * 2) + (Q.minorieties_ppu * Q.minorieties * 2);
 Q.zek_zel = (Q.peasants_other * Q.peasants * 0.8) + (Q.rural_other * Q.rural * 0.8) + (Q.other_zel_mod * 10) + (Q.workers_other * Q.workers * 1) + (Q.old_middle_other * Q.old_middle * 1.5) + (Q.new_middle_blpm * Q.new_middle * 1.5);
 Q.ltp_zel = (Q.peasants_other * Q.peasants * 1.2) + (Q.rural_other * Q.rural * 1.2) + (Q.other_zel_mod * 10) + (Q.workers_other * Q.workers * 0.5);
-             
+
+Q.zek_zel = 1000;
+Q.ltp_zel = 1000;
+
 Q.zel_total = 0;
 
 if (Q.spd_zel) Q.zel_total += Q.spd_zel;
