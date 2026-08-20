@@ -1,4 +1,4 @@
-title: Merfeld Election test12
+title: Merfeld Election test13
 view-if: time = next_merfeld_election 
 new-page: true
 tags: event
@@ -55,8 +55,8 @@ Q.ppu_merf = (Q.workers_ppu * Q.workers * 0.6) + (Q.old_middle_ppu * Q.old_middl
 Q.gnvp_merf = (Q.workers_gnvp * Q.workers * 0.6) + (Q.old_middle_gnvp * Q.old_middle * 0.8) + (Q.new_middle_gnvp * Q.new_middle * 0.8) + (Q.peasants_gnvp * Q.peasants * 1.4) + (Q.rural_gnvp * Q.rural * 1.2) + (Q.catholics_gnvp * Q.catholics * 1.2) + (Q.minorieties_gnvp * Q.minorieties * 0.9) + (Q.unemployed_gnvp * Q.unemployed * 0.7) + (Q.gnvp_merf_mod * 10);
 Q.blpm_merf = (Q.workers_blpm * Q.workers * 0.6) + (Q.old_middle_blpm * Q.old_middle * 0.8) + (Q.new_middle_blpm * Q.new_middle * 0.8) + (Q.peasants_blpm * Q.peasants * 1.4) + (Q.rural_blpm * Q.rural * 1.2) + (Q.catholics_blpm * Q.catholics * 1.2) + (Q.minorieties_blpm * Q.minorieties * 0.9) + (Q.unemployed_blpm * Q.unemployed * 0.7) + (Q.blpm_merf_mod * 10);
 
-Q.mtu_merf = (Q.peasants_other * Q.peasants * 1.5) + (Q.rural_other * Q.rural * 1.5) + (Q.other_merf_mod * 20) + (Q.minorieties_other * Q.minorieties * 4);
-Q.ltp_merf = (Q.peasants_other * Q.peasants * 3) + (Q.rural_other * Q.rural * 3) + (Q.other_merf_mod * 20) + (Q.workers_other * Q.workers * 0.6);
+Q.mtu_merf = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.other_merf_mod * 20) + (Q.minorieties_other * Q.minorieties * 4);
+Q.ltp_merf = (Q.peasants_other * Q.peasants * 3.5) + (Q.rural_other * Q.rural * 3.5) + (Q.other_merf_mod * 20) + (Q.workers_other * Q.workers * 1);
              
 Q.mer_total = 0;
 
@@ -278,7 +278,7 @@ if (window && d3) {
 }
 !}
 
-**Mirfallen Caversket:**
+**Merfeld Caversket:**
 
 {!<svg id="saxony_landtag" style="width: 500px; height: 250px;"> </svg>!}
 
