@@ -631,6 +631,9 @@ table {
 .seat.pnf {
     fill: #a302a6;
 }
+.seat.znc {
+    fill: #ba9750;
+}
 .seat.sapd {
     fill: #940000;
 }
