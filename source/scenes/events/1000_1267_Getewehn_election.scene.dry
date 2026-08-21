@@ -1,0 +1,206 @@
+title: Merkia Election test231
+view-if: time = next_getewehn_election 
+new-page: true
+tags: event
+priority: 2
+
+Getewehn Elections 
+
+blag blah capital lore
+
+-@candidates: What are the possible candidates? 
+
+@candidates
+
+  There are a couple of candidates we can support
+
+<span style="color: #940000;">Gustav Schimdt</span> is the more radical option and our classical candidate in the city but his last defeat four years ago leaves much to be desired. His radial program and affiliation with the old <span style="color: #d61818;">SAP</span> makes him the face of many strikes and overall <span style="color: #d61818;">Socialist</span> movement in the city.
+The <span style="color: #dc0200;">Reformists</span> argue that his more radical outlook has stopped him from winning, and are propsing their own candidate <span style="color: #dc0200;">Henrich Alder</span>. <span style="color: #dc0200;">Alder</span> is a well known, expericed and respected man, but will he be the best choice for Getewehn?   
+
+Another option is a young <span style="color: #c96b65;">Johan Lhemann</span>, a local activist affiliated with the local trade union federation, he is rapiadly rising in the party ranks, but his candidateship may be risky, as he apears young and inexperinced. 
+
+The party is once again split on the nomination. 
+
+[? if sapd_formed = 1 or asum_formed = 1 or spm_formed = 1: Our <span style="color: #d61818;">Socialist</span> allies will back our candidate. ?]
+
+- @gustav: Gustav Schimdt is the true red star of Getewehn.
+- @johan: Johan Lhemann is the best candidate.
+- @alder: We should run Henrich Alder.
+
+@gustav
+on-arrival: getewehn_spd_candidate = 1; getewehn_spd_candidate_popularty = 30; reformist_dissent += 3; left_strength += 4; revolutionaries_dissent -= 4; left_dissent -= 4; braus_popularty += 5;
+
+We decided to support <span style="color: #940000;">Gustav Schimdt</span>, the <span style="color: #d61818;">Left</span> of the party centanly approves of our decision, but the <span style="color: #dc0200;">Reformists</span> certanly have their doubts. 
+
+- @oposition
+
+@johan
+on-arrival: getewehn_spd_candidate = 2; getewehn_spd_candidate_popularty = 30; reformist_dissent += 2; revolutionaries_dissent += 2; left_dissent += 2; labor_strength += 4; labor_dissent -= 4
+
+We decided to support <span style="color: #c96b65;">Johan Lhemann</span>, this is certanly a odd decision and most of the party is not very fond of it, but the young candidate may yet change their opions.
+
+- @oposition
+
+@alder
+on-arrival: getewehn_spd_candidate = 3; getewehn_spd_candidate_popularty = 28; reformist_dissent -= 4; revolutionaries_strength += 2; revolutionaries_dissent += 4; left_dissent += 4; braus_popularty -= 5;
+
+We decided to support <span style="color: #dc0200;">Henrich Alder</span>, this will certanly apease the <span style="color: #dc0200;">Reformists</span>, but the <span style="color: #d61818;">Left</span> will certanly be unhappy.
+  
+- @oposition
+
+@oposition
+title: Who will the Liberals nominate?
+go-to: lib_split if liberal_unity =< 15; lib_unity if liberal_unity > 15
+
+@lib_split
+on-arrival: getewehn_lib_candidate = 1; liberal_unity -= 1; braus_popularty += 5
+
+A suprising news came form the <span style="color: #ccc912;">Liberal</span> camp. They decided to split their vote! This is a amazing news for us as this shows that the <span style="color: #ccc912;">Liberal Allince</span> starts to break even more!
+
+The {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!} supports the incumbet <span style="color: #ddd500;">Otto Braus</span>.
+
+While the {!<span class="tooltip-text" title="Gecherdist Democratic Social Union" style="color: #48b94a;">GDSU</span>!} and <span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">[+ dvp_name +]</span> support <span style="color: #caa58b;">Otto Lief</span>.
+
+<span style="color: #ddd500;">Braus</span> should recieve the bulk of the <span style="color: #ccc912;">Liberal</span> support as the city is very pro {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}.
+
+While <span style="color: #caa58b;">Lief</span> could steal some of the nationalist and unaligned vote. 
+
+The <span style="color: #1e27c9;">Nationalits</span> have backed as ussual mr.<span style="color: #1e27c9;">Berrung</span>, a scrawny indutralist that recieves his support form the miserable rich of the city. 
+
+- @campain
+
+@lib_unity
+on-arrival: getewehn_lib_candidate = 2
+
+<span style="color: #ccc912;">Liberal</span> as ussual backed the the incumbet <span style="color: #ddd500;">Otto Braus</span> of the {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}. This is a expected move but it may end exacly as the last time with us losing by a couple of precents agains the whole establishment. 
+
+But not all hope is lost as the <span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">[+ dvp_name +]</span> is not very eager to support <span style="color: #ddd500;">Braus</span> due to him being too progressive. They endorsed him for the sake of <span style="color: #ccc912;">Liberal Unity</span>, but they are certanly not pushing their propagnda mashine for him.
+  
+The <span style="color: #1e27c9;">Nationalits</span> have backed as ussual mr.<span style="color: #1e27c9;">Berrung</span>, a scrawny indutralist that recieves his support form the miserable rich of the city. 
+
+With the <span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">[+ dvp_name +]</span> not pulling their weight, we could see a rise in votes for <span style="color: #1e27c9;">Berrung</span>.
+
+- @campain
+
+@campain
+title: Now, how do we campain against them?
+
+We must decide how to campain for our candidate, or against other candidates. 
+
+- @union: Utilise our influence in the local labour unions to campain for our candidate.
+- @newspaper: Launch a massive news campain and organsie election rallies for our candidate.
+- @steal: Campain agianst <span style="color: #ddd500;">Braus</span>, to persuade people against him.
+- @saxony: We have done enough campaining...
+
+@union
+on-arrival: getewehn_spd_candidate_popularty += 5; labor_strength += 4; labor_dissent -= 4; resources -= 1; resources += 1 if getewehn_spd_candidate == 2; union_support_getewehn += 1
+subtitle: [? if getewehn_spd_candidate == 2: <span style="color: #c96b65;">Lhemanns</span> connections in the unions allow us to campain cost free ?][? if getewehn_spd_candidate != 2: - 1 resource ?]
+choose-if: resources >= 1 or getewehn_spd_candidate = 2
+view-if: union_support_getewehn == 0
+
+Our Unions organise a whole campain for our candidate. This should really help us in the election.
+  
+- @campain: We should continue campaining...
+
+@newspaper
+on-arrival: getewehn_spd_candidate_popularty += 5; resources -= 1; newspaper_support_getewehn += 1
+subtitle: - 1 resource
+choose-if: resources >= 1
+view-if: newspaper_support_getewehn == 0
+
+We organise rallies and our media pump out constant parise for our guy, lets hope it allows us to win.
+  
+- @campain: We should continue campaining...
+
+@steal
+on-arrival: braus_popularty -= 5; resources -= 1; braus_support_getewehn += 1
+subtitle: - 1 resource
+choose-if: resources >= 1
+view-if: braus_support_getewehn == 0
+
+We focus our message against <span style="color: #ddd500;">Braus</span>. This should steal some of his supporters. 
+  
+- @campain: We should continue campaining...
+  
+
+@saxony
+on-arrival: {!
+
+Q.workers_spd_getewehn = Q.workers_spd + Q.workers_sapd + Q.workers_spm + Q.workers_asum;
+Q.new_mid_spd_getewehn = Q.new_middle_spd + Q.new_middle_sapd + Q.new_middle_spm + Q.new_middle_asum;
+Q.old_mid_spd_getewehn = Q.old_middle_spd + Q.old_middle_sapd + Q.old_middle_spm + Q.old_middle_asum;
+
+Q.workers_lib_1_getewehn = Q.workers_ddp + Q.workers_ppu + Q.workers_blpm + 5;
+Q.new_mid_lib_1_getewehn = Q.new_middle_ddp + Q.new_middle_ppu + Q.new_middle_blpm + 5;
+Q.workers_lib_1_getewehn = Q.old_middle_ddp + Q.old_middle_ppu + Q.old_middle_blpm;
+
+Q.workers_nat_getewehn = Q.workers_other + Q.workers_gnvp + Q.workers_dnvp;
+Q.new_mid_nat_getewehn = Q.new_middle_other + Q.new_middle_gnvp + Q.new_middle_dnvp;
+Q.old_mid_nat_getewehn = Q.old_middle_other + Q.old_middle_gnvp + Q.old_middle_dnvp;
+
+if (Q.getewehn_lib_candidate == 1) {
+    Q.workers_lib_2_getewehn = Q.workers_z + Q.workers_dvp;
+    Q.new_mid_lib_2_getewehn = Q.new_middle_z + Q.new_middle_dvp;
+    Q.old_mid_lib_2_getewehn = Q.old_middle_z + Q.old_middle_dvp;
+}
+
+if (Q.getewehn_lib_candidate == 2) {
+    Q.workers_lib_1_getewehn += Q.workers_z + Q.workers_dvp/2;
+    Q.workers_nat_getewehn += Q.workers_dvp/2;
+    Q.new_mid_lib_1_getewehn += Q.new_middle_z + Q.new_middle_dvp/2;
+    Q.new_mid_nat_getewehn += Q.new_middle_dvp/2;
+    Q.old_mid_lib_1_getewehn += Q.old_middle_z + Q.old_middle_dvp/2;
+    Q.old_mid_nat_getewehn += Q.old_middle_dvp/2;
+}
+
+Q.spd_getewehn = (Q.workers_spd_getewehn * 5) + (Q.new_mid_spd_getewehn * 2) + (Q.old_mid_spd_getewehn * 2) + (getewehn_spd_candidate_popularty * 2);
+Q.lib_1_getewehn = (Q.workers_lib_1_getewehn * 5) + (Q.new_mid_lib_1_getewehn * 2) + (Q.old_mid_lib_1_getewehn * 2) + (braus_popularty * 2);
+Q.nat_getewehn = (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (berrung_popularty * 2) + (50);
+Q.nsdap_getewehn = (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (40 * 2);
+
+if (Q.getewehn_lib_candidate == 1) {
+    Q.lib_2_getewehn = (Q.workers_lib_2_getewehn * 5) + (Q.new_mid_lib_2_getewehn * 2) + (Q.old_mid_lib_2_getewehn * 2) + (lief_popularty * 2) + (100);
+}
+
+Q.getewehn_total = 0;
+
+if (Q.spd_getewehn) Q.getewehn_total += Q.spd_getewehn;
+if (Q.lib_1_getewehn) Q.getewehn_total += Q.lib_1_getewehn;
+if (Q.nat_getewehn) Q.getewehn_total += Q.nat_getewehn;
+if (Q.nsdap_getewehn) Q.getewehn_total += Q.nsdap_getewehn;
+if (Q.lib_2_getewehn) Q.getewehn_total += Q.lib_2_getewehn;
+
+if (Q.getewehn_total > 0) {
+    Q.spd_getewehn = (Q.spd_getewehn / Q.getewehn_total) * 100;
+    Q.lib_1_getewehn = (Q.lib_1_getewehn / Q.getewehn_total) * 100;
+    Q.nat_getewehn = (Q.nat_getewehn / Q.getewehn_total) * 100;
+    Q.nsdap_getewehn = (Q.nsdap_getewehn / Q.getewehn_total) * 100;
+    Q.lib_2_getewehn = (Q.lib_2_getewehn / Q.getewehn_total) * 100;
+}
+
+Q.lib_2_getewehn = (Q.lib_2_getewehn != undefined ? parseFloat(Q.lib_2_getewehn.toFixed(1)) : 0);
+Q.nsdap_getewehn = (Q.nsdap_getewehn != undefined ? parseFloat(Q.nsdap_getewehn.toFixed(1)) : 0);
+Q.nat_getewehn = (Q.nat_getewehn != undefined ? parseFloat(Q.nat_getewehn.toFixed(1)) : 0);
+Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.toFixed(1)) : 0);
+Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
+
+!}
+
+= Getewehn Elections First Round 
+
+First round of elections is over.
+
+[? if getewehn_spd_candidate == 1: <span style="color: #940000;">Gustav Schimdt</span> : **[+ spd_getewehn +]**% ?]
+[? if getewehn_spd_candidate == 2: <span style="color: #c96b65;">Johan Lhemann</span> : **[+ spd_getewehn +]**% ?]
+[? if getewehn_spd_candidate == 3: <span style="color: #dc0200;">Henrich Alder</span> : **[+ spd_getewehn +]**% ?]
+
+<span style="color: #ddd500;">Otto Braus</span> : [+ lib_1_getewehn +]%
+
+[? getewehn_lib_candidate == 1: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
+[? getewehn_lib_candidate == 1 ?]
+
+<span style="color: #1e27c9;">Alferd Berrung</span> : [+ nat_getewehn +]%
+
+<span style="color: #706a65;">Lider Flocht</span> : [+ nsdap_getewehn +]%
+
+A new, unknown candidate entered a race. Lider and his far right <span style="color: #706a65;">MNSVP</span> score a suprising [+ nsdap_getewehn +]%!
