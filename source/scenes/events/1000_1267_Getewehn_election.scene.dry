@@ -196,10 +196,10 @@ First round of elections is over.
 
 <span style="color: #ddd500;">Otto Braus</span> : [+ lib_1_getewehn +]%
 
-[? getewehn_lib_candidate = 1: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
+[? if getewehn_lib_candidate = 1: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
 
 <span style="color: #1e27c9;">Alferd Berrung</span> : [+ nat_getewehn +]%
 
 <span style="color: #706a65;">Lider Flocht</span> : [+ nsdap_getewehn +]%
 
-A new, unknown candidate entered a race. Lider and his far right <span style="color: #706a65;">MNSVP</span> score a suprising [+ nsdap_getewehn +]%!
+A new, unknown candidate entered a race. Lider and his far right <span style="color: #706a65;">MNSVP</span> scoreing a suprising [+ nsdap_getewehn +]%!
