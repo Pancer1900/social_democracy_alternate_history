@@ -197,10 +197,75 @@ First round of elections is over.
 <span style="color: #ddd500;">Otto Braus</span> : [+ lib_1_getewehn +]%
 
 [? getewehn_lib_candidate == 1: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
-[? getewehn_lib_candidate == 1 ?]
 
 <span style="color: #1e27c9;">Alferd Berrung</span> : [+ nat_getewehn +]%
 
 <span style="color: #706a65;">Lider Flocht</span> : [+ nsdap_getewehn +]%
 
 A new, unknown candidate entered a race. Lider and his far right <span style="color: #706a65;">MNSVP</span> score a suprising [+ nsdap_getewehn +]%!
+
+- @second: Now is the time for the second round
+
+@second
+on-arrival: {!
+
+Q.workers_spd_getewehn = Q.workers_spd + Q.workers_sapd + Q.workers_spm + Q.workers_asum;
+Q.new_mid_spd_getewehn = Q.new_middle_spd + Q.new_middle_sapd + Q.new_middle_spm + Q.new_middle_asum;
+Q.old_mid_spd_getewehn = Q.old_middle_spd + Q.old_middle_sapd + Q.old_middle_spm + Q.old_middle_asum;
+
+Q.workers_lib_1_getewehn = Q.workers_ddp + Q.workers_ppu + Q.workers_blpm + 5;
+Q.new_mid_lib_1_getewehn = Q.new_middle_ddp + Q.new_middle_ppu + Q.new_middle_blpm + 5;
+Q.workers_lib_1_getewehn = Q.old_middle_ddp + Q.old_middle_ppu + Q.old_middle_blpm;
+
+Q.workers_nat_getewehn = Q.workers_other + Q.workers_gnvp + Q.workers_dnvp;
+Q.new_mid_nat_getewehn = Q.new_middle_other + Q.new_middle_gnvp + Q.new_middle_dnvp;
+Q.old_mid_nat_getewehn = Q.old_middle_other + Q.old_middle_gnvp + Q.old_middle_dnvp;
+
+if (Q.getewehn_lib_candidate == 1) {
+    Q.workers_lib_2_getewehn = Q.workers_z + Q.workers_dvp;
+    Q.new_mid_lib_2_getewehn = Q.new_middle_z + Q.new_middle_dvp;
+    Q.old_mid_lib_2_getewehn = Q.old_middle_z + Q.old_middle_dvp;
+}
+
+if (Q.getewehn_lib_candidate == 2) {
+    Q.workers_lib_1_getewehn += Q.workers_z + Q.workers_dvp/2;
+    Q.workers_nat_getewehn += Q.workers_dvp/2;
+    Q.new_mid_lib_1_getewehn += Q.new_middle_z + Q.new_middle_dvp/2;
+    Q.new_mid_nat_getewehn += Q.new_middle_dvp/2;
+    Q.old_mid_lib_1_getewehn += Q.old_middle_z + Q.old_middle_dvp/2;
+    Q.old_mid_nat_getewehn += Q.old_middle_dvp/2;
+}
+
+Q.spd_getewehn = (Q.workers_spd_getewehn * 5) + (Q.new_mid_spd_getewehn * 2) + (Q.old_mid_spd_getewehn * 2) + (getewehn_spd_candidate_popularty * 2);
+Q.lib_1_getewehn = (Q.workers_lib_1_getewehn * 5) + (Q.new_mid_lib_1_getewehn * 2) + (Q.old_mid_lib_1_getewehn * 2) + (braus_popularty * 2);
+Q.nat_getewehn = (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (berrung_popularty * 2) + (50);
+Q.nsdap_getewehn = (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (40 * 2);
+
+if (Q.getewehn_lib_candidate == 1) {
+    Q.lib_2_getewehn = (Q.workers_lib_2_getewehn * 5) + (Q.new_mid_lib_2_getewehn * 2) + (Q.old_mid_lib_2_getewehn * 2) + (lief_popularty * 2) + (100);
+}
+
+Q.getewehn_total = 0;
+
+if (Q.spd_getewehn) Q.getewehn_total += Q.spd_getewehn;
+if (Q.lib_1_getewehn) Q.getewehn_total += Q.lib_1_getewehn;
+if (Q.nat_getewehn) Q.getewehn_total += Q.nat_getewehn;
+if (Q.nsdap_getewehn) Q.getewehn_total += Q.nsdap_getewehn;
+if (Q.lib_2_getewehn) Q.getewehn_total += Q.lib_2_getewehn;
+
+if (Q.getewehn_total > 0) {
+    Q.spd_getewehn = (Q.spd_getewehn / Q.getewehn_total) * 100;
+    Q.lib_1_getewehn = (Q.lib_1_getewehn / Q.getewehn_total) * 100;
+    Q.nat_getewehn = (Q.nat_getewehn / Q.getewehn_total) * 100;
+    Q.nsdap_getewehn = (Q.nsdap_getewehn / Q.getewehn_total) * 100;
+    Q.lib_2_getewehn = (Q.lib_2_getewehn / Q.getewehn_total) * 100;
+}
+
+Q.lib_2_getewehn = (Q.lib_2_getewehn != undefined ? parseFloat(Q.lib_2_getewehn.toFixed(1)) : 0);
+Q.nsdap_getewehn = (Q.nsdap_getewehn != undefined ? parseFloat(Q.nsdap_getewehn.toFixed(1)) : 0);
+Q.nat_getewehn = (Q.nat_getewehn != undefined ? parseFloat(Q.nat_getewehn.toFixed(1)) : 0);
+Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.toFixed(1)) : 0);
+Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
+
+!}
+
