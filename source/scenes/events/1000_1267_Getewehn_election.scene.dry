@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test115
+title: Getewehn Mayoral Election test116
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -132,7 +132,7 @@ Q.old_mid_spd_getewehn = Q.old_middle_spd + Q.old_middle_sapd + Q.old_middle_spm
 
 Q.workers_lib_1_getewehn = Q.workers_ddp + Q.workers_ppu + Q.workers_blpm + 5;
 Q.new_mid_lib_1_getewehn = Q.new_middle_ddp + Q.new_middle_ppu + Q.new_middle_blpm + 5;
-Q.workers_lib_1_getewehn = Q.old_middle_ddp + Q.old_middle_ppu + Q.old_middle_blpm;
+Q.old_mid_lib_1_getewehn = Q.old_middle_ddp + Q.old_middle_ppu + Q.old_middle_blpm;
 
 Q.workers_nat_getewehn = Q.workers_other + Q.workers_gnvp + Q.workers_dnvp;
 Q.new_mid_nat_getewehn = Q.new_middle_other + Q.new_middle_gnvp + Q.new_middle_dnvp;
