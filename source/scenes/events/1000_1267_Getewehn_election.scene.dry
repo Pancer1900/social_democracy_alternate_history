@@ -93,7 +93,7 @@ We must decide how to campain for our candidate, or against other candidates.
 - @saxony: We have done enough campaining...
 
 @union
-on-arrival: getewehn_spd_candidate_popularty += 5; labor_strength += 4; labor_dissent -= 4; resources -= 1; resources += 1 if getewehn_spd_candidate == 2; union_support_getewehn += 1
+on-arrival: getewehn_spd_candidate_popularty += 5; labor_strength += 4; labor_dissent -= 4; resources -= 1; resources += 1 if getewehn_spd_candidate = 2; union_support_getewehn += 1
 subtitle: [? if getewehn_spd_candidate = 2: <span style="color: #c96b65;">Lhemanns</span> connections in the unions allow us to campain cost free ?][? if getewehn_spd_candidate != 2: - 1 resource ?]
 choose-if: resources >= 1 or getewehn_spd_candidate = 2
 view-if: union_support_getewehn = 0
@@ -138,13 +138,13 @@ Q.workers_nat_getewehn = Q.workers_other + Q.workers_gnvp + Q.workers_dnvp;
 Q.new_mid_nat_getewehn = Q.new_middle_other + Q.new_middle_gnvp + Q.new_middle_dnvp;
 Q.old_mid_nat_getewehn = Q.old_middle_other + Q.old_middle_gnvp + Q.old_middle_dnvp;
 
-if (Q.getewehn_lib_candidate == 1) {
+if (Q.getewehn_lib_candidate = 1) {
     Q.workers_lib_2_getewehn = Q.workers_z + Q.workers_dvp;
     Q.new_mid_lib_2_getewehn = Q.new_middle_z + Q.new_middle_dvp;
     Q.old_mid_lib_2_getewehn = Q.old_middle_z + Q.old_middle_dvp;
 }
 
-if (Q.getewehn_lib_candidate == 2) {
+if (Q.getewehn_lib_candidate = 2) {
     Q.workers_lib_1_getewehn += Q.workers_z + Q.workers_dvp/2;
     Q.workers_nat_getewehn += Q.workers_dvp/2;
     Q.new_mid_lib_1_getewehn += Q.new_middle_z + Q.new_middle_dvp/2;
@@ -158,7 +158,7 @@ Q.lib_1_getewehn = (Q.workers_lib_1_getewehn * 5) + (Q.new_mid_lib_1_getewehn * 
 Q.nat_getewehn = (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (berrung_popularty * 2) + (50);
 Q.nsdap_getewehn = (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (40 * 2);
 
-if (Q.getewehn_lib_candidate == 1) {
+if (Q.getewehn_lib_candidate = 1) {
     Q.lib_2_getewehn = (Q.workers_lib_2_getewehn * 5) + (Q.new_mid_lib_2_getewehn * 2) + (Q.old_mid_lib_2_getewehn * 2) + (lief_popularty * 2) + (100);
 }
 
@@ -196,7 +196,7 @@ First round of elections is over.
 
 <span style="color: #ddd500;">Otto Braus</span> : [+ lib_1_getewehn +]%
 
-[? getewehn_lib_candidate == 1: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
+[? getewehn_lib_candidate = 1: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
 
 <span style="color: #1e27c9;">Alferd Berrung</span> : [+ nat_getewehn +]%
 
