@@ -170,9 +170,11 @@ Q.kpm_modifier = 1;
 
 Q.spm_ally = 1;
 Q.kpm_ally = 1;
+Q.asum_ally = 1;
 Q.left_betray = 0;
 
 Q.liberal_reconciliation = 0;
+Q.liberal_unity = 20;
 
 Q.z_relation = 35;
 Q.sapd_relation = 50;
@@ -578,6 +580,24 @@ Q.merfeld_gov = 0;
 Q.mirfallen_gov = 0;
 Q.mirvieren_gov = 0;
 Q.tippleford_gov = 0;
+
+//GETEWEHN
+
+Q.next_getewehn_election = 3;
+Q.getewehn_mayor = 'Braus';
+Q.getewehn_mayor_party = 5;
+
+Q.getewehn_spd_candidate = 0;
+Q.getewehn_spd_candidate_popularty = 0;
+
+Q.union_support_getewehn = 0;
+Q.newspaper_support_getewehn = 0;
+Q.braus_support_getewehn = 0;
+
+Q.getewehn_lib_candidate = 0;
+Q.braus_popularty = 30;
+Q.lief_popularty = 30;
+Q.berrung_popularty = 25;
 
 Q.next_merkia_election = 3;
 Q.merkia_election_1266_seen = 0;
