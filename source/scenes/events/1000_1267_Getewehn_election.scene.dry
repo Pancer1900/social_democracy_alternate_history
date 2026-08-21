@@ -1,4 +1,4 @@
-title: Merkia Election test231
+title: Getewehn Mayoral Election test1
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -50,7 +50,7 @@ We decided to support <span style="color: #dc0200;">Henrich Alder</span>, this w
 
 @oposition
 title: Who will the Liberals nominate?
-go-to: lib_split if liberal_unity =< 15; lib_unity if liberal_unity > 15
+go-to: lib_split if liberal_unity <= 15; lib_unity if liberal_unity > 15
 
 @lib_split
 on-arrival: getewehn_lib_candidate = 1; liberal_unity -= 1; braus_popularty += 5
