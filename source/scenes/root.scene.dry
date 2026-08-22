@@ -583,7 +583,7 @@ Q.tippleford_gov = 0;
 
 //GETEWEHN
 
-Q.next_getewehn_election = 2;
+Q.next_getewehn_election = 3;
 Q.getewehn_mayor = 'Braus';
 Q.getewehn_mayor_party = 5;
 
