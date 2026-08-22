@@ -2,6 +2,7 @@ title: Getewehn Mayoral Election test15
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
+on-arrival: next_getewehn_election = time + 48
 priority: 2
 
 Getewehn Elections 
