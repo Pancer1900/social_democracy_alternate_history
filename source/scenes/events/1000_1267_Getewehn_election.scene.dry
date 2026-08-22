@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test12
+title: Getewehn Mayoral Election test121
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -185,6 +185,7 @@ Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.
 Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
 
 !}
+
 = Getewehn Elections First Round 
 
 First round of elections is over.
