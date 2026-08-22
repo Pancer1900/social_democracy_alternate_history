@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test125
+title: Getewehn Mayoral Election test15
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -9,7 +9,6 @@ Getewehn Elections
 blag blah capital lore
 
 -@candidates: What are the possible candidates? 
--@saxony: test elections
 
 @candidates
 
@@ -178,11 +177,11 @@ if (Q.getewehn_lib_candidate == 2) {
 
 Q.spd_getewehn += (Q.workers_spd_getewehn * 5) + (Q.new_mid_spd_getewehn * 2) + (Q.old_mid_spd_getewehn * 2) + (Q.getewehn_spd_candidate_popularty * 2);
 Q.lib_1_getewehn += (Q.workers_lib_1_getewehn * 5) + (Q.new_mid_lib_1_getewehn * 2) + (Q.old_mid_lib_1_getewehn * 2) + (Q.braus_popularty * 2);
-Q.nat_getewehn += (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (Q.berrung_popularty * 2) + (50);
-Q.nsdap_getewehn += (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (80);
+Q.nat_getewehn += (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (Q.berrung_popularty * 2) + (25);
+Q.nsdap_getewehn += (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (40);
 
 if (Q.getewehn_lib_candidate == 1) {
-    Q.lib_2_getewehn += (Q.workers_lib_2_getewehn * 5) + (Q.new_mid_lib_2_getewehn * 2) + (Q.old_mid_lib_2_getewehn * 2) + (lief_popularty * 2) + (100);
+    Q.lib_2_getewehn += (Q.workers_lib_2_getewehn * 5) + (Q.new_mid_lib_2_getewehn * 2) + (Q.old_mid_lib_2_getewehn * 2) + (lief_popularty * 2) + (50);
 }
 
 Q.getewehn_total = 0;
@@ -196,6 +195,12 @@ if (Q.getewehn_total > 0) {
     Q.nsdap_getewehn = (Q.nsdap_getewehn / Q.getewehn_total) * 100;
     Q.lib_2_getewehn = (Q.lib_2_getewehn / Q.getewehn_total) * 100;
 }
+
+Q.lib_2_getewehn = (Q.lib_2_getewehn != undefined ? parseFloat(Q.lib_2_getewehn.toFixed(1)) : 0);
+Q.nsdap_getewehn = (Q.nsdap_getewehn != undefined ? parseFloat(Q.nsdap_getewehn.toFixed(1)) : 0);
+Q.nat_getewehn = (Q.nat_getewehn != undefined ? parseFloat(Q.nat_getewehn.toFixed(1)) : 0);
+Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.toFixed(1)) : 0);
+Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
 
 !}
 
@@ -218,3 +223,117 @@ First round of elections is over.
 <span style="color: #706a65;">Lider Flocht</span> : [+ nsdap_getewehn +]%
 
 A new, unknown candidate entered a race. Lider and his far right <span style="color: #706a65;">MNSVP</span> scoreing a suprising [+ nsdap_getewehn +]%!
+
+Only two candidates socring the highest will now remain for the runoff election. 
+
+-@second: Now its the time for the second round
+
+@second
+on-arrival: {!
+
+Q.max1 = 0;
+Q.max2 = 0;
+
+    if (Q.spd_getewehn > Q.max1) {
+        Q.max2 = Q.max1;
+        Q.max1 = Q.spd_getewehn;
+    } else if (Q.spd_getewehn > Q.max2) {
+        Q.max2 = Q.spd_getewehn;
+    }
+
+    if (Q.lib_1_getewehn > Q.max1) {
+        Q.max2 = Q.max1;
+        Q.max1 = Q.lib_1_getewehn;
+    } else if (Q.lib_1_getewehn > Q.max2) {
+        Q.max2 = Q.lib_1_getewehn;
+    }
+
+    if (Q.lib_2_getewehn > Q.max1) {
+        Q.max2 = Q.max1;
+        Q.max1 = Q.lib_2_getewehn;
+    } else if (Q.lib_2_getewehn > Q.max2) {
+        Q.max2 = Q.lib_2_getewehn;
+    }
+
+    if (Q.nat_getewehn > Q.max1) {
+        Q.max2 = Q.max1;
+        Q.max1 = Q.nat_getewehn;
+    } else if (Q.nat_getewehn > Q.max2) {
+        Q.max2 = Q.nat_getewehn;
+    }
+
+  if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_1_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_1_getewehn) )
+  {
+  Q.getewehn_spd_candidate_popularty += 20;
+  Q.lib_1_getewehn += (Q.lib_2_getewehn * 0.75) + (Q.nat_getewehn * 0.5)
+  Q.lib_2_getewehn = 0;
+  Q.nat_getewehn = 0;
+  }
+
+  if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_2_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_2_getewehn) )
+  {
+  Q.getewehn_spd_candidate_popularty += 20;
+  Q.spd_getewehn += Q.lib_1_getewehn * 0.5;
+  Q.lib_2_getewehn += (Q.nat_getewehn * 0.75) + (Q.lib_1_getewehn * 0.25);
+  Q.lib_1_getewehn = 0;
+  Q.nat_getewehn = 0;
+  }
+
+  if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.nat_getewehn) )
+  {
+  Q.getewehn_spd_candidate_popularty += 10;
+  Q.spd_getewehn += Q.lib_1_getewehn * 0.5;
+  Q.nat_getewehn += Q.lib_2_getewehn;
+  Q.lib_2_getewehn = 0;
+  Q.lib_1_getewehn = 0;
+  }
+
+  if ( (Q.max1 == Q.lib_1_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.lib_1_getewehn && Q.max1 == Q.nat_getewehn) )
+  {
+  Q.lib_1_getewehn += (Q.spd_getewehn * 0.5) + (Q.lib_2_getewehn * 0.25);
+  Q.nat_getewehn += (Q.lib_2_getewehn * 0.75);
+  Q.spd_getewehn = 0;
+  Q.lib_2_getewehn = 0;
+  }
+
+  if ( (Q.max1 == Q.lib_2_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.lib_2_getewehn && Q.max1 == Q.nat_getewehn) )
+  {
+  Q.lib_2_getewehn += Q.lib_1_geteweh;
+  Q.nat_getewehn += 20;
+  Q.spd_getewehn = 0;
+  Q.lib_1_geteweh = 0;
+  }
+
+  if ( (Q.max1 == Q.lib_2_getewehn && Q.max2 == Q.lib_1_getewehn) or (Q.max2 == Q.lib_2_getewehn && Q.max1 == Q.lib_1_getewehn) )
+  {
+  Q.lib_1_getewehn += (Q.spd_getewehn * 0.5);
+  Q.lib_2_getewehn += (Q.nat_getewehn * 0.75);
+  Q.spd_getewehn = 0;
+  Q.nat_getewehn = 0;
+  }
+
+  Q.getewehn_total = Q.spd_getewehn + Q.lib_1_getewehn + Q.nat_getewehn + Q.lib_2_getewehn;
+
+if (Q.getewehn_total > 0) {
+    Q.spd_getewehn = (Q.spd_getewehn / Q.getewehn_total) * 100;
+    Q.lib_1_getewehn = (Q.lib_1_getewehn / Q.getewehn_total) * 100;
+    Q.nat_getewehn = (Q.nat_getewehn / Q.getewehn_total) * 100;
+    Q.lib_2_getewehn = (Q.lib_2_getewehn / Q.getewehn_total) * 100;
+}
+
+Q.lib_2_getewehn = (Q.lib_2_getewehn != undefined ? parseFloat(Q.lib_2_getewehn.toFixed(1)) : 0);
+Q.nat_getewehn = (Q.nat_getewehn != undefined ? parseFloat(Q.nat_getewehn.toFixed(1)) : 0);
+Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.toFixed(1)) : 0);
+Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
+
+!}
+
+[? if getewehn_spd_candidate = 1 and spd_getewehn > 0: <span style="color: #940000;">Gustav Schimdt</span> : **[+ spd_getewehn +]**% ?]
+[? if getewehn_spd_candidate = 2 and spd_getewehn > 0: <span style="color: #c96b65;">Johan Lhemann</span> : **[+ spd_getewehn +]**% ?]
+[? if getewehn_spd_candidate = 3 and spd_getewehn > 0: <span style="color: #dc0200;">Henrich Alder</span> : **[+ spd_getewehn +]**% ?]
+
+[? if lib_1_getewehn > 0: <span style="color: #ddd500;">Otto Braus</span> : [+ lib_1_getewehn +]% ?]
+
+[? if lib_2_getewehn > 0: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
+
+[? if nat_getewehn > 0: <span style="color: #1e27c9;">Alferd Berrung</span> : [+ nat_getewehn +]% ?]
