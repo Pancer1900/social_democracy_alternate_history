@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test123
+title: Getewehn Mayoral Election test124
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -9,6 +9,7 @@ Getewehn Elections
 blag blah capital lore
 
 -@candidates: What are the possible candidates? 
+-@saxony: test elections
 
 @candidates
 
