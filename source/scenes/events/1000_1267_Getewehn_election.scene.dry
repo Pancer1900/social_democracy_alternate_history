@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test16
+title: Getewehn Mayoral Election test162
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -230,6 +230,11 @@ Only two candidates socring the highest will now remain for the runoff election.
 @second
 on-arrival: {!
 
+if ( Q.nsdap_getewehn > 6)
+  {
+  Q.workers_nsdap += 2;
+  }
+
 let kandydaci = [Q.spd_getewehn, Q.lib_1_getewehn, Q.lib_2_getewehn, Q.nat_getewehn];
 Q.max1 = 0;
 Q.max2 = 0;
@@ -336,3 +341,12 @@ if (Q.spd_getewehn > 50) {
 [? if lib_2_getewehn > 0: <span style="color: #caa58b;">Otto Lief</span> : [+ lib_2_getewehn +]% ?]
 
 [? if nat_getewehn > 0: <span style="color: #1e27c9;">Alferd Berrung</span> : [+ nat_getewehn +]% ?]
+
+[? if lib_1_getewehn_win > 0: The incumbent <span style="color: #ddd500;">Otto Braus</span> has won the election! ?]
+
+[? if spd_getewehn_win > 0: We have won the elections. Its a moment we should celebrate as its the first time a <span style="color: #d61818;">Socialist/span> has won a important office in the history of <span style="color: #d52f30;">Mer</span><span style="color: #d5d5d5;">kop</span><span style="color: #ffd31e;">ia</span> ?]
+
+[? if lib_2_getewehn_win > 0: <span style="color: #caa58b;">Otto Lief</span> has won the election! ?]
+
+[? if nat_getewehn_win > 0: The <span style="color: #ddd500;">Reactonary</span> <span style="color: #ddd500;">Otto Braus</span> has won the election, this is a dark time for the capital... ?]
+
