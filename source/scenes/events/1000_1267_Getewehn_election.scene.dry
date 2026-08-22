@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test122
+title: Getewehn Mayoral Election test123
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -186,11 +186,7 @@ if (Q.getewehn_lib_candidate == 1) {
 
 Q.getewehn_total = 0;
 
-if (Q.spd_getewehn) Q.getewehn_total += Q.spd_getewehn;
-if (Q.lib_1_getewehn) Q.getewehn_total += Q.lib_1_getewehn;
-if (Q.nat_getewehn) Q.getewehn_total += Q.nat_getewehn;
-if (Q.nsdap_getewehn) Q.getewehn_total += Q.nsdap_getewehn;
-if (Q.lib_2_getewehn) Q.getewehn_total += Q.lib_2_getewehn;
+Q.getewehn_total = Q.spd_getewehn + Q.lib_1_getewehn + Q.nat_getewehn + Q.nsdap_getewehn + Q.lib_2_getewehn;
 
 if (Q.getewehn_total > 0) {
     Q.spd_getewehn = (Q.spd_getewehn / Q.getewehn_total) * 100;
@@ -199,12 +195,6 @@ if (Q.getewehn_total > 0) {
     Q.nsdap_getewehn = (Q.nsdap_getewehn / Q.getewehn_total) * 100;
     Q.lib_2_getewehn = (Q.lib_2_getewehn / Q.getewehn_total) * 100;
 }
-
-//Q.lib_2_getewehn = (Q.lib_2_getewehn != undefined ? parseFloat(Q.lib_2_getewehn.toFixed(1)) : 0);
-//Q.nsdap_getewehn = (Q.nsdap_getewehn != undefined ? parseFloat(Q.nsdap_getewehn.toFixed(1)) : 0);
-//Q.nat_getewehn = (Q.nat_getewehn != undefined ? parseFloat(Q.nat_getewehn.toFixed(1)) : 0);
-//Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.toFixed(1)) : 0);
-//Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
 
 !}
 
