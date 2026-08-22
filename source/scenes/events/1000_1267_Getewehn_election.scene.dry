@@ -316,18 +316,34 @@ Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixe
 
 if (Q.lib_1_getewehn > 50) {
     Q.lib_1_getewehn_win = 1;
+    Q.getewehn_mayor_party = 5;
+    Q.getewehn_mayor = 'Otto Braus';
 }
 
 if (Q.nat_getewehn > 50) {
     Q.nat_getewehn_win = 1;
+    Q.getewehn_mayor_party = 12;
+    Q.getewehn_mayor = 'Alferd Berrung';
 }
 
 if (Q.lib_2_getewehn > 50) {
     Q.lib_2_getewehn_win = 1;
+    Q.getewehn_mayor_party = 9;
+    Q.getewehn_mayor = 'Otto Lief';
 }
 
 if (Q.spd_getewehn > 50) {
     Q.spd_getewehn_win = 1;
+    Q.getewehn_mayor_party = 3;
+    if (Q.getewehn_spd_candidate == 1) {
+    Q.getewehn_mayor = 'Gustav Schimdt';
+    }
+    if (Q.getewehn_spd_candidate == 2) {
+    Q.getewehn_mayor = 'Johan Lhemann';
+    }
+    if (Q.getewehn_spd_candidate == 3) {
+    Q.getewehn_mayor = 'Henrich Alder';
+    }
 }
 
 !}
