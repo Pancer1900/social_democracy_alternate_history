@@ -209,8 +209,6 @@ Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixe
 
 First round of elections is over.
 
-[+ getewehn_total +]
-
 [? if getewehn_spd_candidate = 1: <span style="color: #940000;">Gustav Schimdt</span> : **[+ spd_getewehn +]**% ?]
 [? if getewehn_spd_candidate = 2: <span style="color: #c96b65;">Johan Lhemann</span> : **[+ spd_getewehn +]**% ?]
 [? if getewehn_spd_candidate = 3: <span style="color: #dc0200;">Henrich Alder</span> : **[+ spd_getewehn +]**% ?]
@@ -249,7 +247,7 @@ for(let i = 0; i < kandydaci.length; i++){
 
   if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_1_getewehn) || (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_1_getewehn) )
   {
-  Q.getewehn_spd_candidate_popularty += 20;
+  Q.spd_getewehn *= 1.1;
   Q.lib_1_getewehn += (Q.lib_2_getewehn * 0.75) + (Q.nat_getewehn * 0.5);
   Q.lib_2_getewehn = 0;
   Q.nat_getewehn = 0;
@@ -257,7 +255,7 @@ for(let i = 0; i < kandydaci.length; i++){
 
   else if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_2_getewehn) || (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_2_getewehn) )
   {
-  Q.getewehn_spd_candidate_popularty += 20;
+  Q.spd_getewehn *= 1.1;
   Q.spd_getewehn += Q.lib_1_getewehn * 0.5;
   Q.lib_2_getewehn += (Q.nat_getewehn * 0.75) + (Q.lib_1_getewehn * 0.25);
   Q.lib_1_getewehn = 0;
@@ -266,7 +264,7 @@ for(let i = 0; i < kandydaci.length; i++){
 
   else if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.nat_getewehn) || (Q.max2 == Q.spd_getewehn && Q.max1 == Q.nat_getewehn) )
   {
-  Q.getewehn_spd_candidate_popularty += 10;
+  Q.spd_getewehn *= 1.1;
   Q.spd_getewehn += Q.lib_1_getewehn * 0.5;
   Q.nat_getewehn += Q.lib_2_getewehn;
   Q.lib_2_getewehn = 0;
@@ -311,11 +309,20 @@ Q.nat_getewehn = (Q.nat_getewehn != undefined ? parseFloat(Q.nat_getewehn.toFixe
 Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.toFixed(1)) : 0);
 Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
 
-if (Q.getewehn_total > 0) {
-    Q.spd_getewehn = (Q.spd_getewehn / Q.getewehn_total) * 100;
-    Q.lib_1_getewehn = (Q.lib_1_getewehn / Q.getewehn_total) * 100;
-    Q.nat_getewehn = (Q.nat_getewehn / Q.getewehn_total) * 100;
-    Q.lib_2_getewehn = (Q.lib_2_getewehn / Q.getewehn_total) * 100;
+if (Q.lib_1_getewehn > 50) {
+    Q.lib_1_getewehn_win = 1;
+}
+
+if (Q.nat_getewehn > 50) {
+    Q.nat_getewehn_win = 1;
+}
+
+if (Q.lib_2_getewehn > 50) {
+    Q.lib_2_getewehn_win = 1;
+}
+
+if (Q.spd_getewehn > 50) {
+    Q.spd_getewehn_win = 1;
 }
 
 !}
