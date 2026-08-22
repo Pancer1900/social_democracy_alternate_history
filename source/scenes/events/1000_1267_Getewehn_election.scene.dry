@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test124
+title: Getewehn Mayoral Election test125
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -176,10 +176,10 @@ if (Q.getewehn_lib_candidate == 2) {
     Q.old_mid_nat_getewehn += Q.old_middle_dvp * 0.5;
 }
 
-Q.spd_getewehn += (Q.workers_spd_getewehn * 5) + (Q.new_mid_spd_getewehn * 2) + (Q.old_mid_spd_getewehn * 2) + (getewehn_spd_candidate_popularty * 2);
-Q.lib_1_getewehn += (Q.workers_lib_1_getewehn * 5) + (Q.new_mid_lib_1_getewehn * 2) + (Q.old_mid_lib_1_getewehn * 2) + (braus_popularty * 2);
-Q.nat_getewehn += (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (berrung_popularty * 2) + (50);
-Q.nsdap_getewehn += (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (40 * 2);
+Q.spd_getewehn += (Q.workers_spd_getewehn * 5) + (Q.new_mid_spd_getewehn * 2) + (Q.old_mid_spd_getewehn * 2) + (Q.getewehn_spd_candidate_popularty * 2);
+Q.lib_1_getewehn += (Q.workers_lib_1_getewehn * 5) + (Q.new_mid_lib_1_getewehn * 2) + (Q.old_mid_lib_1_getewehn * 2) + (Q.braus_popularty * 2);
+Q.nat_getewehn += (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (Q.berrung_popularty * 2) + (50);
+Q.nsdap_getewehn += (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (80);
 
 if (Q.getewehn_lib_candidate == 1) {
     Q.lib_2_getewehn += (Q.workers_lib_2_getewehn * 5) + (Q.new_mid_lib_2_getewehn * 2) + (Q.old_mid_lib_2_getewehn * 2) + (lief_popularty * 2) + (100);
