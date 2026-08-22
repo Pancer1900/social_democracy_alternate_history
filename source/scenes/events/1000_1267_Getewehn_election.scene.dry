@@ -1,4 +1,4 @@
-title: Getewehn Mayoral Election test15
+title: Getewehn Mayoral Election test151
 view-if: time = next_getewehn_election 
 new-page: true
 tags: event
@@ -266,7 +266,7 @@ Q.max2 = 0;
   if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_1_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_1_getewehn) )
   {
   Q.getewehn_spd_candidate_popularty += 20;
-  Q.lib_1_getewehn += (Q.lib_2_getewehn * 0.75) + (Q.nat_getewehn * 0.5)
+  Q.lib_1_getewehn += (Q.lib_2_getewehn * 0.75) + (Q.nat_getewehn * 0.5);
   Q.lib_2_getewehn = 0;
   Q.nat_getewehn = 0;
   }
