@@ -29,21 +29,21 @@ The party is once again split on the nomination.
 - @alder: We should run Henrich Alder.
 
 @gustav
-on-arrival: getewehn_spd_candidate = 1; getewehn_spd_candidate_popularty = 30; reformist_dissent += 3; left_strength += 4; revolutionaries_dissent -= 4; left_dissent -= 4; braus_popularty += 5;
+on-arrival: getewehn_spd_candidate = 1; getewehn_spd_candidate_popularty = 1.25; reformist_dissent += 3; left_strength += 4; revolutionaries_dissent -= 4; left_dissent -= 4; braus_popularty += 5;
 
 We decided to support <span style="color: #940000;">Gustav Schimdt</span>, the <span style="color: #d61818;">Left</span> of the party centanly approves of our decision, but the <span style="color: #dc0200;">Reformists</span> certanly have their doubts. 
 
 - @oposition
 
 @johan
-on-arrival: getewehn_spd_candidate = 2; getewehn_spd_candidate_popularty = 30; reformist_dissent += 2; revolutionaries_dissent += 2; left_dissent += 2; labor_strength += 4; labor_dissent -= 4
+on-arrival: getewehn_spd_candidate = 2; getewehn_spd_candidate_popularty = 1.25; reformist_dissent += 2; revolutionaries_dissent += 2; left_dissent += 2; labor_strength += 4; labor_dissent -= 4
 
 We decided to support <span style="color: #c96b65;">Johan Lhemann</span>, this is certanly a odd decision and most of the party is not very fond of it, but the young candidate may yet change their opions.
 
 - @oposition
 
 @alder
-on-arrival: getewehn_spd_candidate = 3; getewehn_spd_candidate_popularty = 28; reformist_dissent -= 4; revolutionaries_strength += 2; revolutionaries_dissent += 4; left_dissent += 4; braus_popularty -= 5;
+on-arrival: getewehn_spd_candidate = 3; getewehn_spd_candidate_popularty = 1.2; reformist_dissent -= 4; revolutionaries_strength += 2; revolutionaries_dissent += 4; left_dissent += 4; braus_popularty -= 5;
 
 We decided to support <span style="color: #dc0200;">Henrich Alder</span>, this will certanly apease the <span style="color: #dc0200;">Reformists</span>, but the <span style="color: #d61818;">Left</span> will certanly be unhappy.
   
@@ -94,7 +94,7 @@ We must decide how to campain for our candidate, or against other candidates.
 - @saxony: We have done enough campaining...
 
 @union
-on-arrival: getewehn_spd_candidate_popularty += 5; labor_strength += 4; labor_dissent -= 4; resources -= 1; resources += 1 if getewehn_spd_candidate = 2; union_support_getewehn += 1
+on-arrival: getewehn_spd_candidate_popularty += 0.05; labor_strength += 4; labor_dissent -= 4; resources -= 1; resources += 1 if getewehn_spd_candidate = 2; union_support_getewehn += 1
 subtitle: [? if getewehn_spd_candidate = 2: <span style="color: #c96b65;">Lhemanns</span> connections in the unions allow us to campain cost free ?][? if getewehn_spd_candidate != 2: - 1 resource ?]
 choose-if: resources >= 1 or getewehn_spd_candidate = 2
 view-if: union_support_getewehn = 0
@@ -104,7 +104,7 @@ Our Unions organise a whole campain for our candidate. This should really help u
 - @campain: We should continue campaining...
 
 @newspaper
-on-arrival: getewehn_spd_candidate_popularty += 5; resources -= 1; newspaper_support_getewehn += 1
+on-arrival: getewehn_spd_candidate_popularty += 0.05; resources -= 1; newspaper_support_getewehn += 1
 subtitle: - 1 resource
 choose-if: resources >= 1
 view-if: newspaper_support_getewehn = 0
@@ -114,7 +114,7 @@ We organise rallies and our media pump out constant parise for our guy, lets hop
 - @campain: We should continue campaining...
 
 @steal
-on-arrival: braus_popularty -= 5; resources -= 1; braus_support_getewehn += 1
+on-arrival: braus_popularty -= 20; resources -= 1; braus_support_getewehn += 1
 subtitle: - 1 resource
 choose-if: resources >= 1
 view-if: braus_support_getewehn = 0
@@ -176,7 +176,7 @@ if (Q.getewehn_lib_candidate == 2) {
     Q.old_mid_nat_getewehn += Q.old_middle_dvp * 0.5;
 }
 
-Q.spd_getewehn += (Q.workers_spd_getewehn * 5) + (Q.new_mid_spd_getewehn * 2) + (Q.old_mid_spd_getewehn * 2) + (Q.getewehn_spd_candidate_popularty * 2);
+Q.spd_getewehn += (Q.workers_spd_getewehn * 5 * Q.getewehn_spd_candidate_popularty) + (Q.new_mid_spd_getewehn * 2 * Q.getewehn_spd_candidate_popularty) + (Q.old_mid_spd_getewehn * 2 * Q.getewehn_spd_candidate_popularty) + (Q.getewehn_spd_candidate_popularty * 20);
 Q.lib_1_getewehn += (Q.workers_lib_1_getewehn * 5) + (Q.new_mid_lib_1_getewehn * 2) + (Q.old_mid_lib_1_getewehn * 2) + (Q.braus_popularty * 2);
 Q.nat_getewehn += (Q.workers_nat_getewehn * 5) + (Q.new_mid_nat_getewehn * 2) + (Q.old_mid_nat_getewehn * 2) + (Q.berrung_popularty * 2) + (25);
 Q.nsdap_getewehn += (Q.workers_nsdap * 5) + (Q.new_middle_nsdap * 2) + (Q.old_middle_nsdap * 2) + (40);
@@ -232,36 +232,20 @@ Only two candidates socring the highest will now remain for the runoff election.
 @second
 on-arrival: {!
 
+let kandydaci = [Q.spd_getewehn, Q.lib_1_getewehn, Q.lib_2_getewehn, Q.nat_getewehn];
 Q.max1 = 0;
 Q.max2 = 0;
 
-    if (Q.spd_getewehn > Q.max1) {
-        Q.max2 = Q.max1;
-        Q.max1 = Q.spd_getewehn;
-    } else if (Q.spd_getewehn > Q.max2) {
-        Q.max2 = Q.spd_getewehn;
-    }
-
-    if (Q.lib_1_getewehn > Q.max1) {
-        Q.max2 = Q.max1;
-        Q.max1 = Q.lib_1_getewehn;
-    } else if (Q.lib_1_getewehn > Q.max2) {
-        Q.max2 = Q.lib_1_getewehn;
-    }
-
-    if (Q.lib_2_getewehn > Q.max1) {
-        Q.max2 = Q.max1;
-        Q.max1 = Q.lib_2_getewehn;
-    } else if (Q.lib_2_getewehn > Q.max2) {
-        Q.max2 = Q.lib_2_getewehn;
-    }
-
-    if (Q.nat_getewehn > Q.max1) {
-        Q.max2 = Q.max1;
-        Q.max1 = Q.nat_getewehn;
-    } else if (Q.nat_getewehn > Q.max2) {
-        Q.max2 = Q.nat_getewehn;
-    }
+for(let i = 0; i < kandydaci.length; i++){
+  let k = kandydaci[i];
+  
+  if(k > Q.max1) {
+    Q.max2 = Q.max1;
+    Q.max1 = k;
+  } else if(k > Q.max2) {
+    Q.max2 = k;
+  }
+}
 
   if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_1_getewehn) || (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_1_getewehn) )
   {
@@ -326,6 +310,13 @@ Q.lib_2_getewehn = (Q.lib_2_getewehn != undefined ? parseFloat(Q.lib_2_getewehn.
 Q.nat_getewehn = (Q.nat_getewehn != undefined ? parseFloat(Q.nat_getewehn.toFixed(1)) : 0);
 Q.lib_1_getewehn = (Q.lib_1_getewehn != undefined ? parseFloat(Q.lib_1_getewehn.toFixed(1)) : 0);
 Q.spd_getewehn = (Q.spd_getewehn != undefined ? parseFloat(Q.spd_getewehn.toFixed(1)) : 0);
+
+if (Q.getewehn_total > 0) {
+    Q.spd_getewehn = (Q.spd_getewehn / Q.getewehn_total) * 100;
+    Q.lib_1_getewehn = (Q.lib_1_getewehn / Q.getewehn_total) * 100;
+    Q.nat_getewehn = (Q.nat_getewehn / Q.getewehn_total) * 100;
+    Q.lib_2_getewehn = (Q.lib_2_getewehn / Q.getewehn_total) * 100;
+}
 
 !}
 
