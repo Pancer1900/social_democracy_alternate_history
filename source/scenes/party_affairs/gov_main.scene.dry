@@ -174,13 +174,10 @@ choose-if: merkia_spd == 1
 
 @getewehn
 subtitle: [? if getewehn_spd == 1 and getewehn_timer == 0: Available action of the local Government ?]
-view-if: getewehn_independent == 1
 
-The City of Getewehn:
+= The City of Getewehn
 
------ PARLIMENT IMAGINE -------------
-
-Governing Coalition :
+President: [? if getewehn_mayor_party = 1: <span style="color: #940000;">[+ getewehn_mayor +]</span> (<span style="color: #940000;">KPM</span>) ?][? if getewehn_mayor_party = 2: <span style="color: #dd5b00;">[+ getewehn_mayor +]</span> (<span style="color: #dd5b00;">ASUM</span>) ?][? if getewehn_mayor_party = 3: <span style="color: #dc0200;">[+ getewehn_mayor +]</span> (<span style="color: #dc0200;">[+ spd_name +]</span>) ?][? if getewehn_mayor_party = 4: <span style="color: #ff1919;">[+ getewehn_mayor +]</span> (<span style="color: #ff1919;">SPM</span>) ?][? if getewehn_mayor_party = 5: <span style="color: #ddd500;">[+ getewehn_mayor +]</span> (<span style="color: #ddd500;">FVP</span>) ?][? if getewehn_mayor_party = 6: <span style="color: #48b94a;">[+ getewehn_mayor +]</span> (<span style="color: #48b94a;">GDSU</span>) ?][? if getewehn_mayor_party = 7: <span style="color: #00e8ff;">[+ getewehn_mayor +]</span> (<span style="color: #00e8ff;">BLPM</span>) ?][? if getewehn_mayor_party = 8: <span style="color: #4a9fde;">[+ getewehn_mayor +]</span> (<span style="color: #4a9fde;">PPU</span>) ?][? if getewehn_mayor_party = 9: <span style="color: #caa58b;">[+ getewehn_mayor +]</span> (<span style="color: #caa58b;">[+ dvp_name +]</span>) ?][? if getewehn_mayor_party = 10: <span style="color: #808080;">[+ getewehn_mayor +]</span> (<span style="color: #808080;">I</span>) ?][? if getewehn_mayor_party = 11: <span style="color: #774ae2;">[+ getewehn_mayor +]</span> (<span style="color: #774ae2;">GNVP</span>) ?][? if getewehn_mayor_party = 12: <span style="color: #3F7BC1;">[+ getewehn_mayor +]</span> (<span style="color: #3F7BC1;">MNVP</span>) ?][? if getewehn_mayor_party = 13: <span style="color: #706a65;">[+ getewehn_mayor +]</span> (<span style="color: #706a65;">MSP</span>) ?]
 
 -@getewehn_action: Policies in Getewehn
 -@local: Return
@@ -188,6 +185,7 @@ Governing Coalition :
 @getewehn_action
 unavailable-subtitle: We do not hold the mayorat of Getewehn
 choose-if: getewehn_spd == 1
+view-if: getewehn_independent == 1
 
 ----- Actions getewehn ----------
 
