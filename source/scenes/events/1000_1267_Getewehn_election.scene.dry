@@ -271,7 +271,7 @@ Q.max2 = 0;
   Q.nat_getewehn = 0;
   }
 
-  if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_2_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_2_getewehn) )
+  else if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.lib_2_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.lib_2_getewehn) )
   {
   Q.getewehn_spd_candidate_popularty += 20;
   Q.spd_getewehn += Q.lib_1_getewehn * 0.5;
@@ -280,7 +280,7 @@ Q.max2 = 0;
   Q.nat_getewehn = 0;
   }
 
-  if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.nat_getewehn) )
+  else if ( (Q.max1 == Q.spd_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.spd_getewehn && Q.max1 == Q.nat_getewehn) )
   {
   Q.getewehn_spd_candidate_popularty += 10;
   Q.spd_getewehn += Q.lib_1_getewehn * 0.5;
@@ -289,26 +289,26 @@ Q.max2 = 0;
   Q.lib_1_getewehn = 0;
   }
 
-  if ( (Q.max1 == Q.lib_1_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.lib_1_getewehn && Q.max1 == Q.nat_getewehn) )
+  else if ( (Q.max1 == Q.lib_1_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.lib_1_getewehn && Q.max1 == Q.nat_getewehn) )
   {
   Q.lib_1_getewehn += (Q.spd_getewehn * 0.5) + (Q.lib_2_getewehn * 0.25);
-  Q.nat_getewehn += (Q.lib_2_getewehn * 0.75);
+  Q.nat_getewehn += Q.lib_2_getewehn * 0.75;
   Q.spd_getewehn = 0;
   Q.lib_2_getewehn = 0;
   }
 
-  if ( (Q.max1 == Q.lib_2_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.lib_2_getewehn && Q.max1 == Q.nat_getewehn) )
+  else if ( (Q.max1 == Q.lib_2_getewehn && Q.max2 == Q.nat_getewehn) or (Q.max2 == Q.lib_2_getewehn && Q.max1 == Q.nat_getewehn) )
   {
-  Q.lib_2_getewehn += Q.lib_1_geteweh;
+  Q.lib_2_getewehn += Q.lib_1_getewehn;
   Q.nat_getewehn += 20;
   Q.spd_getewehn = 0;
-  Q.lib_1_geteweh = 0;
+  Q.lib_1_getewehn = 0;
   }
 
-  if ( (Q.max1 == Q.lib_2_getewehn && Q.max2 == Q.lib_1_getewehn) or (Q.max2 == Q.lib_2_getewehn && Q.max1 == Q.lib_1_getewehn) )
+  else if ( (Q.max1 == Q.lib_2_getewehn && Q.max2 == Q.lib_1_getewehn) or (Q.max2 == Q.lib_2_getewehn && Q.max1 == Q.lib_1_getewehn) )
   {
-  Q.lib_1_getewehn += (Q.spd_getewehn * 0.5);
-  Q.lib_2_getewehn += (Q.nat_getewehn * 0.75);
+  Q.lib_1_getewehn += Q.spd_getewehn * 0.5;
+  Q.lib_2_getewehn += Q.nat_getewehn * 0.75;
   Q.spd_getewehn = 0;
   Q.nat_getewehn = 0;
   }
