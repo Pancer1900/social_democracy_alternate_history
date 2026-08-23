@@ -139,6 +139,7 @@ Q.united_front_theory = 0; // UNITED FRONT THEORY
 Q.party_policy_unions = 0; // UNIONS
 Q.party_policy_land = 0; // LAND REFROM 
 Q.party_policy_paramilitary = 0; // paramil
+Q.party_policy_fed = 1; // federal 
 Q.pre_congress_seen = 0;
 Q.party_corruption = 0;
 
@@ -161,6 +162,9 @@ Q.gdsu_ideology = 0; // +++ its more left wing --- is more right wing
 Q.fvp_ideology = 0;
 Q.fvp_path = 0; // 0 - centre, 1 -  left, -1 - right
 
+Q.ppu_ideology = 0;
+Q.ppu_path = 0; // 0 - centre, 1 -  left, -1 - right
+
 Q.fvp_modifer = 1;
 Q.ldp_modifer = 1;
 Q.gdsu_modifer = 1;
@@ -171,6 +175,8 @@ Q.kpm_modifier = 1;
 Q.spm_ally = 1;
 Q.kpm_ally = 1;
 Q.asum_ally = 1;
+Q.ppu_ally = 0;
+Q.fvp_ally = 0;
 Q.left_betray = 0;
 
 Q.liberal_reconciliation = 0;

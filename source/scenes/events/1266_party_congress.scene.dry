@@ -40,12 +40,12 @@ Q.cen_seats = (Q.center_strength/total_strength)*100;
 Q.lab_seats = (Q.labor_strength/total_strength)*100;
 Q.ref_seats = (Q.reformist_strength/total_strength)*100;
 
-Q.rev_seats = parseFloat(Q.rev_seats.toFixed(1));
-Q.lef_seats = parseFloat(Q.lef_seats.toFixed(1));
-Q.agr_seats = parseFloat(Q.agr_seats.toFixed(1));
-Q.cen_seats = parseFloat(Q.cen_seats.toFixed(1));
-Q.lab_seats = parseFloat(Q.lab_seats.toFixed(1));
-Q.ref_seats = parseFloat(Q.ref_seats.toFixed(1));
+Q.ref_seats = (Q.ref_seats != undefined ? parseFloat(Q.ref_seats.toFixed(1)) : 0);
+Q.lab_seats = (Q.lab_seats != undefined ? parseFloat(Q.lab_seats.toFixed(1)) : 0);
+Q.agr_seats = (Q.agr_seats != undefined ? parseFloat(Q.agr_seats.toFixed(1)) : 0);
+Q.cen_seats = (Q.cen_seats != undefined ? parseFloat(Q.cen_seats.toFixed(1)) : 0);
+Q.lab_seats = (Q.lab_seats != undefined ? parseFloat(Q.lab_seats.toFixed(1)) : 0);
+Q.ref_seats = (Q.ref_seats != undefined ? parseFloat(Q.ref_seats.toFixed(1)) : 0);
 
 !}
 
@@ -171,7 +171,7 @@ full Rev
 -@revolution: Continue to the congress
 
 @part_rev
-on-arrival: party_policy_main = 2; revolutionaries_dissent -= 4; left_dissent -= 2; agrarnians_dissent -= 2; labor_dissent += 6; reformist_dissent += 8; 
+on-arrival: party_policy_main = 2; revolutionaries_dissent -= 4; left_dissent -= 2; agrarnians_dissent -= 2; labor_dissent += 4; reformist_dissent += 8; 
 
 part rev 
 
@@ -186,7 +186,7 @@ part ref
 
 @full_ref
 choose-if: (ref_seats + cen_seats/2) > (rev_seats + lef_seats + lab_seats/2 + agr_seats/2)
-on-arrival: party_policy_main = 0; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; center_dissent += 2; reformist_dissent -= 10; 
+on-arrival: party_policy_main = 0; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; center_dissent += 2; reformist_dissent -= 10;
 
 full ref
 
@@ -208,7 +208,7 @@ congress start
 
 @immi
 choose-if: ((rev_seats + lef_seats) > (ref_seats + cen_seats)) and party_policy_main > 1
-on-arrival: party_policy_rev = 3; revolutionaries_dissent -= 10; left_dissent -= 8; agrarnians_dissent -= 4; center_dissent += 4; labor_dissent += 4; reformist_dissent += 20; 
+on-arrival: party_policy_rev = 3; revolutionaries_dissent -= 10; left_dissent -= 8; agrarnians_dissent -= 4; center_dissent += 4; labor_dissent += 4; reformist_dissent += 20; liberal_reconciliation -= 4; liberal_unity += 5;
 
 full Rev 
 
@@ -224,7 +224,7 @@ part rev
 
 @condem
 view-if: party_policy_main = 0
-on-arrival: party_policy_rev = -1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 6; center_dissent += 6; reformist_dissent -= 10; 
+on-arrival: party_policy_rev = -1; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 6; center_dissent += 6; reformist_dissent -= 10; liberal_reconciliation += 2; liberal_unity -= 1;
 
 part ref
 
@@ -268,7 +268,7 @@ soc_maj
 
 @zel
 choose-if: party_policy_main < 3
-on-arrival: party_policy_coalition = 1; revolutionaries_dissent += 4; left_dissent += 4; agrarnians_dissent -= 2; labor_dissent -= 4; center_dissent -= 4; reformist_dissent -= 4;
+on-arrival: party_policy_coalition = 1; revolutionaries_dissent += 4; left_dissent += 4; agrarnians_dissent -= 2; labor_dissent -= 4; center_dissent -= 4; reformist_dissent -= 4; liberal_reconciliation += 1;
 
 zel 
 
@@ -276,7 +276,7 @@ zel
 
 @libe
 choose-if: ((rev_seats + lef_seats) < (ref_seats + cen_seats/2)) and party_policy_main < 2
-on-arrival: party_policy_coalition = 0; revolutionaries_dissent += 10; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 10;
+on-arrival: party_policy_coalition = 0; revolutionaries_dissent += 10; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 10; liberal_reconciliation += 2;
 
 libe
 
@@ -341,7 +341,7 @@ congress start
 
 @revolution_usage
 choose-if: ((rev_seats + lef_seats) > (ref_seats + cen_seats)) and party_policy_main > 1
-on-arrival: party_policy_paramilitary = 3; revolutionaries_dissent -= 8; left_dissent -= 6; agrarnians_dissent -= 4; labor_dissent += 2; center_dissent += 4; reformist_dissent += 6;
+on-arrival: party_policy_paramilitary = 3; revolutionaries_dissent -= 8; left_dissent -= 6; agrarnians_dissent -= 4; labor_dissent += 2; center_dissent += 4; reformist_dissent += 6; pacifism -= 2;
 
 revolution_usage
 
@@ -412,7 +412,7 @@ midlle
 
 @rural
 view-if: united_front_theory != 2
-choose-if: (cen_seats + lef_seats/2) < (agr_seats + rev_seats + ref_seats/2)
+choose-if: (cen_seats + lef_seats/2 + lab_seats/2) < (agr_seats + rev_seats/2 + ref_seats/2)
 on-arrival: united_front_theory = 1; revolutionaries_dissent += 3; left_dissent += 3; agrarnians_dissent -= 10; labor_dissent += 4; center_dissent += 6; reformist_dissent += 2;
 
 rural 
@@ -442,19 +442,19 @@ congress start
 -@land_1: Rural affairs should not concern the party of the urban Proletariat.
 
 @land_3
-choose-if: ((cen_seats + ref_seats) < (agr_seats + rev_seats + lef_seats/2)) and asum_formed == 0 
+choose-if: ((cen_seats + ref_seats) < (agr_seats + rev_seats + lef_seats/2 + lab_seats/2)) and asum_formed == 0 
 on-arrival: party_policy_land = 2; revolutionaries_dissent -= 4; left_dissent -= 2; agrarnians_dissent -= 8; labor_dissent -= 2; center_dissent += 6; reformist_dissent += 6;
 
 party
 
--@congress: Continue the congress
+-@regional: Continue the congress
 
 @land_2
 on-arrival: party_policy_land = 1; revolutionaries_dissent -= 2; left_dissent += 4; agrarnians_dissent -= 4; labor_dissent += 2; center_dissent -= 2; reformist_dissent -= 6;
 
 quo 
 
--@congress: Continue to the congress
+-@regional: Continue to the congress
 
 @land_1
 choose-if: (agr_seats + rev_seats/2) < cen_seats
@@ -462,7 +462,7 @@ on-arrival: party_policy_land = 0; revolutionaries_dissent += 4; left_dissent +=
 
 independent
 
--@congress: Continue to the congress
+-@regional: Continue to the congress
 
 @land_0
 choose-if: ((cen_seats + lef_seats/2 + ref_seats/2) < (agr_seats + rev_seats)) and asum_formed == 0 
@@ -470,7 +470,52 @@ on-arrival: party_policy_land = 3; revolutionaries_dissent -= 2; left_dissent +=
 
 syn
 
+-@regional: Continue to the congress
+
+@regional
+
+= Issue of our regional policy and the Federal question.   
+
+<span style="color: #d52f30;">Mer</span><span style="color: #d5d5d5;">kop</span><span style="color: #ffd31e;">ia</span> is a Federation and so we need to set our policy on the federal and minority question strait.
+
+Our policy so far was to support the current distribution of power in the country, while not stricty endorsing the federal system. In the Caversket we have consistenty voted against strenthening any local goverments and justified it by claiming that we prefer a status quo and don't want eider strenthening regional authourites, nor setting a precedens for prosecution of unsobordinary ones. 
+
+Now this could be a chance to alter our policy, to gain the support of the minority partes by supporting the federal model, or officialy setting a united policy for the whole coutry. 
+
+-@federa: We should support the federal solution, as if we have a stong local goverment it cannot be opressed by the central one.
+-@quo_fed: Maintaining the current status quo, about the federal question. 
+-@central: We need to have a strong central government so that we can protect the people and serve them directly.  
+
+@federa
+choose-if: (agr_seats + lab_seats/2 + rev_seats/2) > (cen_seats/2 + lef_seats/2 + ref_seats/2)
+on-arrival: party_policy_fed = 2; ppu_relation += 5; agrarnians_strength += 3; agrarnians_dissent -= 4; left_dissent += 4; center_dissent += 4; reformist_dissent += 4;
+
+This finnaly settles the federal question, this decision also gains us the approval of the {!<span class="tooltip-text" title="Agrarians are the rular base of the party and improving the lives of the peasants and farmers are their main goal" style="color: #dd5b00;">Agrarina</span>!} wing of the party as they prioretise the local struggle and prefer a Federal Republic.
+
+Our endorsing of the Federal system could open us the route to the possible alliance with the {!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}.
+
+-@congress: Continue the congress
+
+@quo_fed
+on-arrival: party_policy_fed = 1; agrarnians_dissent += 2; 
+
+The continuation of our current policy is a safe option, it doesn't alienate anyone, but it doesn't gain us any new allies too.  
+
 -@congress: Continue to the congress
+
+@central
+choose-if: (agr_seats + rev_seats/2 + lab_seats) < (cen_seats + lef_seats/2 + ref_seats/2)
+on-arrival: party_policy_fed = 0; ppu_relation -= 5; agrarnians_dissent += 6; agrarnians_strength -= 3; labor_dissent += 4; labor_strength -= 2; center_strength += 2; center_dissent -= 3;
+
+The central policy is supported by the bulk of the party and they see this as a option to end localism and take the one singe struggle on the national level. 
+
+Another point they make is that this will allow us to efficently govern without the issue of the local conflicts once we gain power.
+
+-@congress: Continue to the congress
+
+
+# EXPLEESIONS ------------------------------------
+
 
 @congress
 go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 60; congress_kpm if (revolutionaries_dissent + left_dissent) >= 60
