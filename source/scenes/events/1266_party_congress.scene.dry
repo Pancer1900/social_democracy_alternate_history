@@ -49,9 +49,9 @@ Q.ref_seats = (Q.ref_seats != undefined ? parseFloat(Q.ref_seats.toFixed(1)) : 0
 
 !}
 
-= Congress
+= The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**</span>. 
 
-The IV plenary congress of the <span style="color: #dc0100;">**[+ spd_name +]**</span>. 
+This is a moment that will decide the future of our party...
 
 - @steats: May the delegates take their seats...
 
@@ -153,9 +153,13 @@ if (window && d3) {
 
 @congress_begin_2
 
-congress start
-
 = Main issue Reform or Revolution 
+
+The classic question of every <span style="color: #d61818;">Socialist</span> is **Reform Or Revolution**
+
+Should we focus our actions on <span style="color: #b50000;">Revolutionary</span> means and the preparation of the People's Revolution?
+
+Or shoud we focus on Parlimtary, <span style="color: #dc0200;">Reformist</span> ways and try to get into the Federal Goverment?
 
 -@full_rev: The party is fully centered on Revolutionary action. 
 -@part_rev: We are focusing on revolutionary action, but we still remain commited to parlimentary means. 
@@ -164,41 +168,49 @@ congress start
 
 @full_rev
 choose-if: (rev_seats + lef_seats) > (ref_seats + cen_seats)
-on-arrival: party_policy_main = 3; revolutionaries_dissent -= 10; left_dissent -= 8; center_dissent += 4; labor_dissent += 8; reformist_dissent += 20; 
+on-arrival: party_policy_main = 3; revolutionaries_dissent -= 10; left_dissent -= 8; center_dissent += 8; labor_dissent += 16; reformist_dissent += 50; 
 
-full Rev 
+We decided to fully support the <span style="color: #b50000;">Revolution</span>.
+
+This is a shocking move and this mean essentialy the end of the United Party, as we can now essentialy expect the <span style="color: #dc0200;">SPM</span> to split form the party...
 
 -@revolution: Continue to the congress
 
 @part_rev
 on-arrival: party_policy_main = 2; revolutionaries_dissent -= 4; left_dissent -= 2; agrarnians_dissent -= 2; labor_dissent += 4; reformist_dissent += 8; 
 
-part rev 
+Our policy of focusing on the <span style="color: #b50000;">Revolutionary</span> means while continously supporting the <span style="color: #dc0200;">Reformist</span> ways. 
+
+This can balance party wings, but it sets the policy to work towars a revolution. 
 
 -@revolution: Continue to the congress
 
 @part_ref
 on-arrival: party_policy_main = 1; revolutionaries_dissent += 6; left_dissent += 4; center_dissent -= 6; labor_dissent -= 4; reformist_dissent -= 4; 
 
-part ref
+Our policy of focusing on the <span style="color: #dc0200;">Reformist</span> means while continously supporting the <span style="color: #b50000;">Revolutionary</span> ways. 
+
+This can balance party wings, but it sets the policy to work towars a parlimentary participation. 
 
 -@revolution: Continue to the congress
 
 @full_ref
 choose-if: (ref_seats + cen_seats/2) > (rev_seats + lef_seats + lab_seats/2 + agr_seats/2)
-on-arrival: party_policy_main = 0; revolutionaries_dissent += 20; left_dissent += 10; agrarnians_dissent += 2; center_dissent += 2; reformist_dissent -= 10;
+on-arrival: party_policy_main = 0; revolutionaries_dissent += 50; left_dissent += 14; agrarnians_dissent += 2; center_dissent += 2; reformist_dissent -= 10;
 
-full ref
+We decided to fully support the <span style="color: #dc0200;">Reformist</span> way of parlimentary participation.
+
+This is a shocking move and this mean essentialy the end of the United Party, as we can now essentialy expect the <span style="color: #b50000;">KPM</span> to split form the party...
 
 -@revolution: Continue to the congress
 
-# REVOLUTION --------------------------------------------------------------
+#  revolution ---------------------------------------------------
 
 @revolution
 
-congress start
-
 = Issue of Revolution 
+
+Now that we have pushed for <span style="color: #b50000;">Revolutionary</span> means to be endorced by the party, we need to decide our policy towards the <span style="color: #b50000;">Revolution</span> itself. 
 
 -@immi: We should strive for the revolution as soon as possible!
 -@build: We must build up and wait for the good moment for our revolution, but dont start it now.
@@ -250,9 +262,9 @@ full ref
 
 @coaltions
 
-congress start
+= The issue of palimentary coalitions 
 
-= Issue of palimentary coalitions 
+Now that we have pushed for parlimentary actions to be endorced by the party, we need to decide our policy towards the coalitionmaking and how much we are willing to compromise in order to enter the goverment.
 
 -@soc_maj: We should strive to achieve a socialist majorty and do not compromise with the burgoise.
 -@zel: Our parlimetary efforts should strive to rebuild our links with the left wing liberals to potentilay enter a goverment with us, that would not require us to beray our ideas. 

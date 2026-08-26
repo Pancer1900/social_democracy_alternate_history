@@ -589,7 +589,7 @@ Q.tippleford_gov = 0;
 
 //GETEWEHN
 
-Q.next_getewehn_election = 3;
+Q.next_getewehn_election = 15;
 Q.getewehn_mayor = 'Braus';
 Q.getewehn_mayor_party = 5;
 
@@ -605,7 +605,7 @@ Q.braus_popularty = 30;
 Q.lief_popularty = 30;
 Q.berrung_popularty = 25;
 
-Q.next_merkia_election = 3;
+Q.next_merkia_election = 17;
 Q.merkia_election_1266_seen = 0;
 Q.merkia_election_failed = 0;
 
@@ -637,7 +637,7 @@ Q.other_mer_mod = 25;
 Q.gnvp_mer_mod = 0;
 Q.blpm_mer_mod = 0;
 
-Q.next_mirfallen_election = 3;
+Q.next_mirfallen_election = 20;
 Q.mirfallen_election_1266_seen = 0;
 Q.mirfallen_election_failed = 0;
 
@@ -669,7 +669,7 @@ Q.other_mir_mod = 30;
 Q.gnvp_mir_mod = 0;
 Q.blpm_mir_mod = 0;
 
-Q.next_yougen_election = 3;
+Q.next_yougen_election = 6;
 Q.yougen_election_1266_seen = 0;
 Q.yougen_election_failed = 0;
 
@@ -738,7 +738,7 @@ Q.gnvp_per_mod = 0;
 Q.blpm_per_mod = 0;
 Q.pnf_per_mod = 10;
 
-Q.next_merfeld_election = 3;
+Q.next_merfeld_election = 6;
 Q.merfeld_election_1266_seen = 0;
 Q.merfeld_election_failed = 0;
 
@@ -771,7 +771,7 @@ Q.gnvp_merf_mod = 0;
 Q.blpm_merf_mod = 0;
 Q.other_merf_mod = 25;
 
-Q.next_mirviern_election = 3;
+Q.next_mirviern_election = 20;
 Q.mirvieren_election_1266_seen = 0;
 Q.mirvieren_election_failed = 0;
 
@@ -805,7 +805,7 @@ Q.gnvp_mirv_mod = 0;
 Q.blpm_mirv_mod = 0;
 Q.other_mirv_mod = 20;
 
-Q.next_zeltbrin_election = 3;
+Q.next_zeltbrin_election = 20;
 Q.zeltbrin_election_1266_seen = 0;
 Q.zeltbrin_election_failed = 0;
 
