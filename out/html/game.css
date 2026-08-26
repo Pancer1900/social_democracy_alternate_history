@@ -637,6 +637,9 @@ table {
 .seat.sapd {
     fill: #940000;
 }
+.seat.spm {
+    fill: #dc0200;
+}
 .seat.asum {
     fill: #dd5b00;
 }

@@ -54,8 +54,8 @@ Q.nsdap_zel = (Q.workers_nsdap * Q.workers * 1.05) + (Q.old_middle_nsdap * Q.old
 Q.gnvp_zel = (Q.workers_gnvp * Q.workers * 1.05) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.1) + (Q.peasants_gnvp * Q.peasants * 0.9) + (Q.rural_gnvp * Q.rural * 0.9) + (Q.catholics_gnvp * Q.catholics * 0.8) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 0.9) + (Q.gnvp_zel_mod * 10);
 Q.blpm_zel = (Q.workers_blpm * Q.workers * 1.05) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.9) + (Q.rural_blpm * Q.rural * 0.9) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 0.9) + (Q.blpm_zel_mod * 10);
 
-Q.rnp_zel = (Q.peasants_ppu * Q.peasants * 2) + (Q.rural_ppu * Q.rural * 2) + (Q.ppu_zel_mod * 10) + (Q.workers_ppu * Q.workers * 1) + (Q.old_middle_blpm * Q.old_middle * 2) + (Q.new_middle_blpm * Q.new_middle * 2) + (Q.minorieties_ppu * Q.minorieties * 2);
-Q.zek_zel = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.others_zel_mod * 30) + (Q.workers_other * Q.workers * 3) + (Q.old_middle_other * Q.old_middle * 3) + (Q.new_middle_blpm * Q.new_middle * 3);
+Q.rnp_zel = (Q.peasants_ppu * Q.peasants * 2) + (Q.rural_ppu * Q.rural * 2) + (Q.ppu_zel_mod * 10) + (Q.workers_ppu * Q.workers * 1) + (Q.minorieties_ppu * Q.minorieties * 2);
+Q.zek_zel = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.others_zel_mod * 30) + (Q.workers_other * Q.workers * 3) + (Q.old_middle_other * Q.old_middle * 3) + (Q.new_middle_z * Q.new_middle * 0.5) + (Q.old_middle_dnvp * Q.old_middle * 0.5) + (Q.old_middle_dvp * Q.old_middle * 0.5);
 Q.ltp_zel = (Q.peasants_other * Q.peasants * 1.2) + (Q.rural_other * Q.rural * 1.2) + (Q.others_zel_mod * 10) + (Q.workers_other * Q.workers * 0.5);
 
 Q.zel_total = 0;
@@ -294,6 +294,8 @@ if (window && d3) {
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_zel +]% {!</td><td>!} [+ zel_change_sapd +] {!</td></tr>!} ?]
 
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_zel +]% {!</td><td>!} [+ zel_change_asum +] {!</td></tr>!} ?]
+
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_zel +]% {!</td><td>!} [+ zel_change_spm +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_zel +]% {!</td><td>!} [+ zel_change_ddp +] {!</td></tr>!}
 

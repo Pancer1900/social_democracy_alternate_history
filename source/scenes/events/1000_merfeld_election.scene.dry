@@ -290,6 +290,8 @@ if (window && d3) {
 
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_merf +]% {!</td><td>!} [+ mer_change_asum +] {!</td></tr>!} ?]
 
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_merf +]% {!</td><td>!} [+ merf_change_spm +] {!</td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_merf +]% {!</td><td>!} [+ mer_change_ddp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_merf +]% {!</td><td>!} [+ mer_change_z +] {!</td></tr>!}
