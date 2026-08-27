@@ -161,7 +161,7 @@ Q.dissent = 0.01*total_dissent/total_strength;
 Q.dissent_percent = Q.dissent*100;
 console.log('new dissent: ' + Q.dissent);
 
-Q.total_union = Q.union_lef_id + Q.union_kpm + Q.union_syn + Q.union_spd + Q.union_agr + Q.union_lib + Q.union_gech;
+var total_union = Q.union_lef_id + Q.union_kpm + Q.union_syn + Q.union_spd + Q.union_agr + Q.union_lib + Q.union_gech;
 
 Q.union_lef_id_prec = (Q.union_lef_id/total_union*100);
 Q.union_kpm_prec = (Q.union_kpm/total_union*100);
