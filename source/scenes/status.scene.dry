@@ -25,6 +25,29 @@ Q.economic_growth_2 = '0';
 if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
+
+if (Q.union_lef_id_prec) {
+    Q.union_lef_id_prec_d = Q.union_lef_id_prec.toFixed(1);
+}
+if (Q.union_kpm_prec) {
+    Q.union_kpm_prec_d = Q.union_kpm_prec.toFixed(1);
+}
+if (Q.union_syn_prec) {
+    Q.union_syn_prec_d = Q.union_syn_prec.toFixed(1);
+}
+if (Q.union_spd_prec) {
+    Q.union_spd_prec_d = Q.union_spd_prec.toFixed(1);
+}
+if (Q.union_agr_prec) {
+    Q.union_agr_prec_d = Q.union_agr_prec.toFixed(1);
+}
+if (Q.union_lib_prec) {
+    Q.union_lib_prec_d = Q.union_lib_prec.toFixed(1);
+}
+if (Q.union_gech_prec) {
+    Q.union_gech_prec_d = Q.union_gech_prec.toFixed(1);
+}
+
 !}
 
 = Status
@@ -66,7 +89,7 @@ Reichstag composition:
 
 [? if spm_formed == 1 and sapd_formed == 0 : <span class="tooltip-text" title=" Socialist Revolutionary Party of Merkopia" style="color: #dc0200;">**SRPM**</span>: [+ spd_r +]% ?]
 
-[? if spm_formed == 1: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #ff1919;">SPM</span>: [+ sapd_r +]% ?]
+[? if spm_formed == 1: <span class="tooltip-text" title="Communist Party of Merkopia" style="color: #ff1919;">SPM</span>: [+ spm_r +]% ?]
 
 {!<span class="tooltip-text" title="Progressive People's Party" style="color: #ddd500;">FVP</span>!}: [+ ddp_r +]%
 
@@ -291,7 +314,7 @@ Minorities: [? if not spd_name: DDP?][? if spd_name != 0 : [+ spd_name +]?]: [+ 
 
 @politics_internal
 
-= Organisation and unionisation of social groups
+= Unionisation of social groups
 
 Urban workers: [+ organisation_workers : organisation +]
 
@@ -301,15 +324,19 @@ White collar workers and middle class: [+ organisation_middle : organisation +]
 
 = Union Influence
 
-KPM unions -
+[? if sapd_formed : <span style="color: #940000;">KPM</span> allinged unions: [+ union_kpm_prec_d +] ?]
 
-VDSPM unions - 
+[? if syn_created : <span style="color: #913724;">Syndicalist</span> unions: [+ union_syn_prec_d +] ?]
 
-Independent socialist unions - 
+Independent <span style="color: #d61818;">Socialist</span> unions - [+ union_lef_id_prec_d +]
 
-burgoise unions - 
+<span style="color: #dc0100;">**[+ spd_name +]**</span> allinged unions - [+ union_spd_prec_d +]
 
-rural unions - 
+<span style="color: #ccc912;">Liberal</span> allinged unions - [+ union_lib_prec_d +]
+
+<span style="color: #1b7035;">Rural</span> unions - [+ union_agr_prec_d +]
+
+<span style="color: #48b94a;">Gecherdist Social</span> unions - [+ union_gech_prec_d +]
 
 = Rular affairs 
 

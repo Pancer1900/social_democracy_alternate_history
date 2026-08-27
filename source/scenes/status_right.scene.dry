@@ -234,6 +234,14 @@ if (Q.reformists_resigned == 0) {
             "seats": Math.round(Q.ref_seats*2),
             });
 }
+if (Q.syn_created == 1) {
+    data.push({
+            "id": "syn",
+            "legend": "Syndycalists",
+            "name": "Syndycalists",
+            "seats": Math.round(Q.syn_seats*2),
+            });
+}
 
 if (window && d3) {
     var width = 200; 
@@ -284,17 +292,19 @@ if (window && d3) {
 
 Party Chairman: [+ spd_leader +]
 
+President: [? if president_party = 1: <span style="color: #940000;">[+ president +]</span> (<span style="color: #940000;">KPM</span>) ?][? if president_party = 2: <span style="color: #dd5b00;">[+ president +]</span> (<span style="color: #dd5b00;">ASUM</span>) ?][? if president_party = 3: <span style="color: #dc0200;">[+ president +]</span> (<span style="color: #dc0200;">[+ spd_name +]</span>) ?][? if president_party = 4: <span style="color: #ff1919;">[+ president +]</span> (<span style="color: #ff1919;">SPM</span>) ?][? if president_party = 5: <span style="color: #ddd500;">[+ president +]</span> (<span style="color: #ddd500;">FVP</span>) ?][? if president_party = 6: <span style="color: #48b94a;">[+ president +]</span> (<span style="color: #48b94a;">GDSU</span>) ?][? if president_party = 7: <span style="color: #00e8ff;">[+ president +]</span> (<span style="color: #00e8ff;">BLPM</span>) ?][? if president_party = 8: <span style="color: #4a9fde;">[+ president +]</span> (<span style="color: #4a9fde;">PPU</span>) ?][? if president_party = 9: <span style="color: #caa58b;">[+ president +]</span> (<span style="color: #caa58b;">[+ dvp_name +]</span>) ?][? if president_party = 10: <span style="color: #808080;">[+ president +]</span> (<span style="color: #808080;">I</span>) ?][? if president_party = 11: <span style="color: #774ae2;">[+ president +]</span> (<span style="color: #774ae2;">GNVP</span>) ?][? if president_party = 12: <span style="color: #3F7BC1;">[+ president +]</span> (<span style="color: #3F7BC1;">MNVP</span>) ?][? if president_party = 13: <span style="color: #706a65;">[+ president +]</span> (<span style="color: #706a65;">MSP</span>) ?]
+
 Internal dissent: [+ dissent_percent : dissent +]
 
 Resources available: [+ resources +]
 
 Paramilitary Resources: [+ para_resources  +]
 
-Party Radicalisation: [? if radicalization < 0 : <span style="color: #0062ff;">Full Reformism</span> ?][? if radicalization < 3 and radicalization >= 0 : <span style="color: #3660a3;">Low</span> ?][? if radicalization < 7 and radicalization >= 3 : Moderate ?][? if radicalization < 12 and radicalization >= 7 : <span style="color: #c73857;">Hight</span> ?][? if radicalization >= 12 : <span style="color: #940121;">Full Revolutionary</span> ?]
+Party Radicalisation: [? if radicalization < 3 : <span style="color: #0062ff;">Full Reformism</span> ?][? if radicalization < 8 and radicalization >= 3 : <span style="color: #3660a3;">Low</span> ?][? if radicalization < 14 and radicalization >= 8 : Moderate ?][? if radicalization < 18 and radicalization >= 14 : <span style="color: #c73857;">Hight</span> ?][? if radicalization >= 18 : <span style="color: #940121;">Full Revolutionary</span> ?]
 
-Party Democratisation: [? if democratization < 0 : <span style="color: #940121;">Anti-Democratic Bulwark</span> ?][? if democratization < 3 and democratization >= 0 : <span style="color: #c73857;">Low</span> ?][? if democratization < 7 and democratization >= 3 : Moderate ?][? if democratization < 12 and democratization >= 7 : <span style="color: #a8a454;">Hight</span> ?][? if democratization >= 12 : <span style="color: #c9c010;">Full Democrats</span> ?]
+Party Democratisation: [? if democratization < 3 : <span style="color: #940121;">Anti-Democratic Bulwark</span> ?][? if democratization < 8 and democratization >= 3 : <span style="color: #c73857;">Low</span> ?][? if democratization < 14 and democratization >= 8 : Moderate ?][? if democratization < 18 and democratization >= 14 : <span style="color: #a8a454;">Hight</span> ?][? if democratization >= 18 : <span style="color: #c9c010;">Full Democrats</span> ?]
 
-Party Pacifism: [? if pacifism < 0 : <span style="color: #940121;">Anti-Pacifist Action</span> ?][? if pacifism < 3 and pacifism >= 0 : <span style="color: #c73857;">Low</span> ?][? if pacifism < 7 and pacifism >= 3 : Moderate ?][? if pacifism < 12 and pacifism >= 7 : <span style="color: #3660a3;">Hight</span> ?][? if pacifism >= 12 : <span style="color: #0062ff;">Full Pacifists</span> ?]
+Party Pacifism: [? if pacifism < 3 : <span style="color: #940121;">Anti-Pacifist Action</span> ?][? if pacifism < 8 and pacifism >= 3 : <span style="color: #c73857;">Low</span> ?][? if pacifism < 12 and pacifism >= 8 : Moderate ?][? if pacifism < 16 and pacifism >= 12 : <span style="color: #3660a3;">Hight</span> ?][? if pacifism >= 16 : <span style="color: #0062ff;">Full Pacifists</span> ?]
 
 Reconciliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <span style="color: #000000;">Better Dead than Red</span> ?][? if liberal_reconciliation < 6 and liberal_reconciliation >= 0 : <span style="color: #9e5c00;">Low</span> ?][? if liberal_reconciliation < 12 and liberal_reconciliation >= 6 : <span style="color: #999e00;">Warming Up</span> ?][? if liberal_reconciliation < 18 and liberal_reconciliation >= 12 : <span style="color: #6c9e00;">Mild Reconciliation</span> ?][? if liberal_reconciliation >= 18 : <span style="color: #159e00;">Full Reconciliation</span> ?]
 

@@ -17,7 +17,15 @@ Q.workers_spd -= 8;
 Q.new_middle_spm += 12;
 Q.new_middle_spd -= 8;
 
-Q.organisation_workers -= 4;
+Q.organisation_workers -= 4; 
+
+Q.union_spd = Q.union_spd/2;  
+Q.union_lef_id += 50;
+Q.union_syn += 30;
+
+if (sapd_formed == 1) {
+Q.union_kpm += 20; 
+}
 
 if (Q.sapd_formed == 1 && Q.asum_formed == 0 && Q.spm_formed == 0) {
 Q.spd_name = "DSPM";

@@ -667,6 +667,9 @@ table {
 .seat.ref {
     fill: #dc0200;
 }
+.seat.syn {
+    fill: #913724;
+}
 
 .tooltip-text {
     text-decoration: underline;

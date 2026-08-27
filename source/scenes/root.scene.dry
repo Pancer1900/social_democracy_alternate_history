@@ -60,6 +60,8 @@ Q.factions = ['left', 'center', 'labor', 'reformist', 'neorevisionist','revoluti
 // should this be normalized to 100%?
 Q.left_strength = 35;
 Q.left_dissent = 15;
+Q.syn_strength = 0;
+Q.syn_dissent = 0;
 Q.revolutionaries_strength = 23;
 Q.revolutionaries_dissent = 25;
 Q.agrarnians_strength = 23;
@@ -70,8 +72,8 @@ Q.labor_strength = 29;
 Q.labor_dissent = 15;
 Q.reformist_strength = 43;
 Q.reformist_dissent = 5;
-Q.neorevisionist_strength = 5;
-Q.neorevisionist_dissent = 10;
+Q.neorevisionist_strength = 0;
+Q.neorevisionist_dissent = 0;
 
 // secret events...
 Q.unions_independent = 0;
@@ -90,11 +92,11 @@ Q.crisis_urgency = 0;
 // nazi_urgency indicates how seriously the SPD takes the nazis - scale from 0 to 10.
 Q.nazi_urgency = 0;
 // radicalization indicates how radical the SPD's rhetoric is - scale from 0 to 10.
-Q.radicalization = 5;
+Q.radicalization = 9;
 // Support for Pacifism within the SPD relative to 1928
-Q.pacifism = 3;
+Q.pacifism = 6;
 // Support for democratic reform within the SPD relative to 1928
-Q.democratization = 4;
+Q.democratization = 11;
 // Support for a communist coalition relative to 1928
 Q.communist_coalition = 0;
 // economic_plan: have we adopted *any* economic plan?
@@ -123,6 +125,14 @@ Q.organisation_workers = 20;
 Q.organisation_rural = 16;
 Q.organisation_middle = 11;
 
+Q.union_lef_id = 28;
+Q.union_kpm = 0;
+Q.union_syn = 0;
+Q.union_spd = 102;
+Q.union_agr = 24;
+Q.union_lib = 42;
+Q.union_gech = 40
+
 // Mod - Party Affairs 
 
 Q.expand_media = 0;
@@ -142,11 +152,14 @@ Q.party_policy_paramilitary = 0; // paramil
 Q.party_policy_fed = 1; // federal 
 Q.pre_congress_seen = 0;
 Q.party_corruption = 0;
+Q.syn_created = 0;
+Q.syn_support = 0;
 
 Q.party_defence = 1;
 Q.union_defence = 1;
 
-Q.spd_leader = 'Wilhelm Meller (Center)';
+Q.spd_leader = 'Wilhelm Meller';
+Q.spd_leader_wing = 4; // 0 - syn, 1 - rev, 2 - left, 3 - agr, 4 - cen, 5 - lab, 6 - ref
 
 // internal party politic 
 
@@ -180,7 +193,7 @@ Q.fvp_ally = 0;
 Q.left_betray = 0;
 
 Q.liberal_reconciliation = 0;
-Q.liberal_unity = 20;
+Q.liberal_unity = 65;
 
 Q.z_relation = 35;
 Q.sapd_relation = 50;
@@ -952,7 +965,6 @@ Q.spd_toleration = 0;
 Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
-// starting with the 4th Marx cabinet https://en.wikipedia.org/wiki/Fourth_Marx_cabinet
 // is the agricultural ministry useful at all?
 Q.foreign_minister = 'Streseman';
 Q.foreign_minister_party = 'DVP';
