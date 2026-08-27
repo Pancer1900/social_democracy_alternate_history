@@ -324,19 +324,19 @@ White collar workers and middle class: [+ organisation_middle : organisation +]
 
 = Union Influence
 
-[? if sapd_formed : <span style="color: #940000;">KPM</span> allinged unions: [+ union_kpm_prec_d +] ?]
+[? if sapd_formed : <span style="color: #940000;">KPM</span> allinged unions: [+ union_kpm_prec_d +] ?]%
 
-[? if syn_created : <span style="color: #913724;">Syndicalist</span> unions: [+ union_syn_prec_d +] ?]
+[? if syn_created : <span style="color: #913724;">Syndicalist</span> unions: [+ union_syn_prec_d +] ?]%
 
-Independent <span style="color: #d61818;">Socialist</span> unions - [+ union_lef_id_prec_d +]
+Independent <span style="color: #d61818;">Socialist</span> unions - [+ union_lef_id_prec_d +]%
 
-<span style="color: #dc0100;">**[+ spd_name +]**</span> allinged unions - [+ union_spd_prec_d +]
+<span style="color: #dc0100;">**[+ spd_name +]**</span> allinged unions - [+ union_spd_prec_d +]%
 
-<span style="color: #ccc912;">Liberal</span> allinged unions - [+ union_lib_prec_d +]
+<span style="color: #ccc912;">Liberal</span> allinged unions - [+ union_lib_prec_d +]%
 
-<span style="color: #1b7035;">Rural</span> unions - [+ union_agr_prec_d +]
+<span style="color: #1b7035;">Rural</span> unions - [+ union_agr_prec_d +]%
 
-<span style="color: #48b94a;">Gecherdist Social</span> unions - [+ union_gech_prec_d +]
+<span style="color: #48b94a;">Gecherdist Social</span> unions - [+ union_gech_prec_d +]%
 
 = Rular affairs 
 

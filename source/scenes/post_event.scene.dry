@@ -163,13 +163,13 @@ console.log('new dissent: ' + Q.dissent);
 
 var total_union = Q.union_lef_id + Q.union_kpm + Q.union_syn + Q.union_spd + Q.union_agr + Q.union_lib + Q.union_gech;
 
-///Q.union_lef_id_prec = (Q.union_lef_id/total_union*100);
-///Q.union_kpm_prec = (Q.union_kpm/total_union*100);
-///Q.union_syn_prec = (Q.union_syn/total_union*100);
-///Q.union_spd_prec = (Q.union_spd/total_union*100);
-///Q.union_agr_prec = (Q.union_agr/total_union*100);
-///Q.union_lib_prec = (Q.union_lib/total_union*100);
-///Q.union_gech_prec = (Q.union_gech/total_union*100);
+Q.union_lef_id_prec = (Q.union_lef_id/total_union*100);
+Q.union_kpm_prec = (Q.union_kpm/total_union*100);
+Q.union_syn_prec = (Q.union_syn/total_union*100);
+Q.union_spd_prec = (Q.union_spd/total_union*100);
+Q.union_agr_prec = (Q.union_agr/total_union*100);
+Q.union_lib_prec = (Q.union_lib/total_union*100);
+Q.union_gech_prec = (Q.union_gech/total_union*100);
 
 if (Q.dissent < 0) {
     Q.dissent = 0;
