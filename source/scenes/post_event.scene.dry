@@ -34,6 +34,7 @@ if (Q.sapd_formed == 0)
     Q.unemployed_sapd = 0;
     Q.minorieties_sapd = 0;
     Q.catholics_sapd = 0;
+    Q.union_kpm = 0;
     }
 
 if (Q.asum_formed == 0)    
@@ -129,10 +130,6 @@ for (var c of Q.factions) {
     if (Q[c+'_strength'] < 0) {
         Q[c+'_strength'] = 0;
     }
-}
-
-if (Q.unemployed <= 1) {
-    Q.unemployed = 1;
 }
 
 // re-calculate dissent.

@@ -324,9 +324,9 @@ White collar workers and middle class: [+ organisation_middle : organisation +]
 
 = Union Influence
 
-[? if sapd_formed : <span style="color: #940000;">KPM</span> allinged unions: [+ union_kpm_prec_d +] ?]%
+[? if sapd_formed : <span style="color: #940000;">KPM</span> allinged unions: [+ union_kpm_prec_d +]% ?]
 
-[? if syn_created : <span style="color: #913724;">Syndicalist</span> unions: [+ union_syn_prec_d +] ?]%
+[? if syn_created : <span style="color: #913724;">Syndicalist</span> unions: [+ union_syn_prec_d +]% ?]
 
 Independent <span style="color: #d61818;">Socialist</span> unions - [+ union_lef_id_prec_d +]%
 

@@ -16,6 +16,7 @@ Building class concusness and organisaing the people of Merkopia is a key repons
 - @rural: We can try to maybe organise peasnts and rural population of the country. 
 - @middle: We can try to maybe organise middle class by supporting white collar unions and possibly bringing them under our umberella. 
 - @labour: We can use our strengthend unions to expand them across all social groups.  
+- @integrate: Work towards integrating independednt unions under our party structure.
 - @root: We either don't want to or cannot organise right now.
 - @easy_discard
 
@@ -23,15 +24,15 @@ Building class concusness and organisaing the people of Merkopia is a key repons
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 3; organisation_workers += 2; resources -= 1; labor_strength += 4; labor_dissent -= 6; organisation_workers += 1 if labor_strength >= 40
+on-arrival: workers_spd += 3; organisation_workers += 2; resources -= 1; labor_strength += 4; labor_dissent -= 6; organisation_workers += 1 if (union_spd_prec + labor_strength) >= 100; union_spd += 2; union_lef_id += 2;
 
-We have supprted and increased organisaing among the workers. [? if labor_strength >= 40: The high strenth of the labor faction makes our organising much easier. ?]
+We have supprted and increased organisaing among the workers. [? if (union_spd_prec + labor_strength) >= 100: The high strenth of the labor faction makes our organising much easier. ?]
 
 @middle
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: new_middle_spd += 1.5; old_middle_spd += 1.5; organisation_middle += 1.5; resources -= 1; labor_strength += 2; labor_dissent -= 4; reformist_strength += 2; reformist_dissent -= 4; organisation_middle += 1 if united_front_theory = 2
+on-arrival: new_middle_spd += 1.5; old_middle_spd += 1.5; organisation_middle += 1.5; resources -= 1; labor_strength += 2; labor_dissent -= 4; reformist_strength += 2; reformist_dissent -= 4; organisation_middle += 1 if united_front_theory = 2; union_spd += 1; union_lef_id += 1; union_lib += 1 
 
 We have supprted and increased organisaing among the middle class, maybe this can awake the class consciousness of these people. 
 
@@ -39,16 +40,25 @@ We have supprted and increased organisaing among the middle class, maybe this ca
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: peasants_spd += 3; rural_spd += 1; organisation_rural += 2; organisation_rural += 1 if agrarnians_strength >= 50; resources -= 1; agrarnians_strength += 4; agrarnians_dissent -= 6; 
+on-arrival: peasants_spd += 3; rural_spd += 1; organisation_rural += 1.5; organisation_rural += 1 if agrarnians_strength >= 40; resources -= 1; agrarnians_strength += 5; agrarnians_dissent -= 6; organisation_rural += 1 if united_front_theory <= 1; union_spd += 1; union_agr += 1;
 
-We have increased our campaigning among farmers. [? if agrarnians_strength >= 50: The high strenth of the agrarnian faction makes our organising much easier. ?]
+We have have supported the expansion of rural unions and Cooperatives. [? if agrarnians_strength >= 40: The high strenth of the agrarnian faction makes our organising much easier. ?][? if united_front_theory >= 1: The adoption of the united front theory makes our organising in the countryside much easier. ?]
+
+@integrate
+subtitle: -1 resources
+view-if: (party_policy_unions) <= 2
+choose-if: resources >= 1
+unavailable-subtitle: Not enough resources.
+on-arrival: union_spd += 7; union_lef_id -= 2; union_kpm -= 2; union_lib -= 1; union_agr -= 1; union_gech -= 1; labor_strength -= 2; labor_dissent += 6; center_strength += 1; reformist_strength += 1; left_strength += 1; center_dissent -= 2; 
+
+We work towards integrating independent unions under the party umberella.
 
 
 @labour 
 subtitle: We have emopwered the labor faction enought, that they can now efficiently expand independenty!
-view-if: labor_strength >= 40
-choose-if: labor_strength >= 60
-unavailable-subtitle: Labour not strong enough.
-on-arrival: organisation_workers += 2; organisation_rural += 1; organisation_middle += 1; workers_spd += 2; new_middle_spd += 1; peasants_spd += 1; labor_strength += 5; labor_dissent -= 10
+view-if: (union_spd_prec + labor_strength + union_lef_id_prec) >= 120 and party_policy_unions <= 1
+choose-if: (union_spd_prec + labor_strength + union_lef_id_prec) >= 150 
+unavailable-subtitle: Labour and unions not strong enough.
+on-arrival: organisation_workers += 1.5; organisation_rural += 0.75; organisation_middle += 0.75; workers_spd += 2; new_middle_spd += 1; peasants_spd += 1; labor_strength += 5; labor_dissent -= 5; union_spd += 2; union_lef_id += 1; union_kpm += 1; union_syn += 6; union_lib -= 1; union_agr -= 1; union_gech -= 1;
 
-We have increased our campaigning among the peasants. [? if agrarnians_strength >= 40: The strenth of the argrarian faction makes campaining among peasants much easier ?] [? if united_front_theory = 1: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if united_front_theory = 2: Our adoption of the United Front Theory including the rural class makes them open to the socialist capmpaining ?] [? if socialism <= 40 and nationalism >= 50: The traditionalism in this group makes our campaning more difficult. ?]
+Our unions are strong enough and we have suppored them for so long, that they can expand nearly independenty, and soon enough we are going to see every man become a union man!
