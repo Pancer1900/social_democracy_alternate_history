@@ -230,7 +230,7 @@ Q.prussian_government = "Z";
 // The array of forces - paramilitary groups
 // Number of members in 1928 (in thousands)
 // Reichsbanner, 
-Q.rb_strength = 170;
+Q.rb_strength = 190;
 Q.rb_militancy = 0.25;
 Q.dsf_experce = 0.7;
 Q.rb_banned = 0;
@@ -240,7 +240,7 @@ Q.dsf_rfb_coop = 4;
 Q.police_coop = 0; 
 
 // RFB
-Q.rfb_strength = 75;
+Q.rfb_strength = 90;
 Q.rfb_militancy = 0.5;
 Q.rgf_experce = 1;
 Q.rgf_agrarian = 0;

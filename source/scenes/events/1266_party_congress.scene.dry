@@ -158,7 +158,49 @@ if (window && d3) {
 
 {!</table>!}
 
--@congress_begin_2: Let the Congress Begin...
+-@congress_begin_3: Let the Congress Begin...
+
+@congress_begin_3
+
+= The Elections of a Party Chairman
+
+The most importat posiotion in the <span style="color: #d61818;">Party</span>, he will shape the way the party will evolve. 
+
+<span style="color: #c96b65;">Wilhelm Meller</span> has been the leader of the party since 1262, he is a experienced, <span style="color: #c96b65;">Centrist</span> politician. 
+
+Next we have <span style="color: #c96b65;">August Heufer</span>, still officially a <span style="color: #c96b65;">Centrist</span> but he is also suppored by the more <span style="color: #940000;">Left</span> and <span style="color: #c96b65;">Labour</span> elements of the party. 
+
+Lastly we have <span style="color: #dc0200;">Ludwig Jelegen</span> of the <span style="color: #dc0200;">Reformist</span> wing of the party. 
+
+-@heufer: Heufer will win the position. 
+-@meller: Another term for Meller.
+-@jelegen: Jelegen shall lead the party. 
+
+@meller
+on-arrival: revolutionaries_dissent += 4; left_dissent += 2; center_dissent -= 6; reformist_dissent += 4;
+
+<span style="color: #c96b65;">Wilhelm Meller</span> will continuation to lead the <span style="color: #d61818;">Party</span>. This mean the continuation of trying to balance out the different factions of the <span style="color: #d61818;">Party</span> to keep it together.
+
+-@congress_begin_2: Continue to the congress
+
+@heufer
+on-arrival: spd_leader = 'August Heufer'; revolutionaries_dissent -= 6; left_dissent -= 4; agrarnians_dissent -= 2; labor_dissent -= 4; reformist_dissent += 8; center_dissent += 8; center_strength -= 4; left_strength += 4; reformist_strength -= 6;
+
+<span style="color: #c96b65;">August Heufer</span> has been elected as the Chairman of the party. 
+
+This means a minor shift to the <span style="color: #940000;">Left</span>, but still maintaining the broad policy of the <span style="color: #c96b65;">Centrists</span>.
+
+-@congress_begin_2: Continue to the congress
+
+@jelegen
+on-arrival: spd_leader = 'Ludwig Jelegen'; revolutionaries_dissent += 10; left_dissent += 6; center_dissent += 2; labor_dissent -= 4; reformist_dissent -= 4; radicalization -= 1; democratization += 1; center_strength -= 2; left_strength -= 4; reformist_strength += 6;
+
+Now that <span style="color: #dc0200;">Ludwig Jelegen</span> has won the posiotion, the party shifts firmly to the right.
+
+This could mean an end to the 
+
+-@congress_begin_2: Continue to the congress
+
 
 # BEGIN - REFORM OR REVOLUTION  --------------------------------------------------
 
@@ -184,7 +226,7 @@ on-arrival: party_policy_main = 3; revolutionaries_dissent -= 10; left_dissent -
 
 We decided to fully support the <span style="color: #b50000;">Revolution</span>.
 
-This is a shocking move and this mean essentialy the end of the United Party, as we can now essentialy expect the <span style="color: #dc0200;">SPM</span> to split form the party...
+This is a shocking move and this mean essentialy the end of the <span style="color: #d61818;">United Socialist Party</span>, as we can now essentialy expect the <span style="color: #dc0200;">SPM</span> to split form the party...
 
 -@revolution: Continue to the congress
 
@@ -212,7 +254,7 @@ on-arrival: party_policy_main = 0; revolutionaries_dissent += 50; left_dissent +
 
 We decided to fully support the <span style="color: #dc0200;">Reformist</span> way of parlimentary participation.
 
-This is a shocking move and this mean essentialy the end of the United Party, as we can now essentialy expect the <span style="color: #b50000;">KPM</span> to split form the party...
+This is a shocking move and this mean essentialy the end of the  <span style="color: #d61818;">United Socialist Party</span>, as we can now essentialy expect the <span style="color: #b50000;">KPM</span> to split form the party...
 
 -@revolution: Continue to the congress
 
@@ -368,9 +410,9 @@ syn
 
 @para
 
-congress start
-
 = Issue of the Paramilitraies
+
+The Paramilitaries of the Party are the sword and gun of the <span style="color: #b50000;">Revolution</span>, they are the ones that shall defend the party, the workers and fight the reactionaries, but what shall be their primary task?
 
 -@revolution_usage: Our Paramilitaries priority is to work towards preparing the revolution.
 -@party_defevce: The primary duty of our forces should be to defend the party and support it.
@@ -379,32 +421,35 @@ congress start
 
 @revolution_usage
 choose-if: ((rev_seats + lef_seats) > (ref_seats + cen_seats)) and party_policy_main > 1
-on-arrival: party_policy_paramilitary = 3; revolutionaries_dissent -= 8; left_dissent -= 6; agrarnians_dissent -= 4; labor_dissent += 2; center_dissent += 4; reformist_dissent += 6; pacifism -= 2; radicalization += 1;
+on-arrival: party_policy_paramilitary = 3; revolutionaries_dissent -= 8; left_dissent -= 6; agrarnians_dissent -= 4; labor_dissent += 2; center_dissent += 4; reformist_dissent += 6; pacifism -= 2; radicalization += 1; dsf_ideology += 3; rev_plus += 0.1;
 
-revolution_usage
+The primary task of our Paramilitaries is going to supporting the <span style="color: #b50000;">Revolution</span> and preparing it. 
+Of course the <span style="color: #b50000;">Revolutionaries</span> and the <span style="color: #940000;">Left</span> support this while, the <span style="color: #dc0200;">Reformists</span> not.
 
 -@the: Continue the congress
 
 @party_defevce
-on-arrival: party_policy_paramilitary = 2; revolutionaries_dissent -= 4; left_dissent -= 4; agrarnians_dissent += 2; labor_dissent += 2; center_dissent -= 6; reformist_dissent -= 2;
+subtitle: This is essentaily the moderate decision, balancing the more radical plans
+on-arrival: party_policy_paramilitary = 2; revolutionaries_dissent -= 4; left_dissent -= 4; agrarnians_dissent += 2; labor_dissent += 2; center_dissent -= 6; reformist_dissent -= 2; party_defence += 0.1; union_defence += 0.1;
 
-party_defevce 
+Delegating our paramiltaries to defending the party was the historical path we have taken and its balancing the more radical plans.
+It should not dissapoint anybody.   
 
 -@the: Continue to the congress
 
 @fight_right
 choose-if: (rev_seats + lef_seats) < (ref_seats + cen_seats/2)
-on-arrival: party_policy_paramilitary = 1; revolutionaries_dissent += 6; left_dissent += 4; agrarnians_dissent += 2; reformist_dissent -= 4;
+on-arrival: party_policy_paramilitary = 1; revolutionaries_dissent += 4; left_dissent += 2; agrarnians_dissent += 1; reformist_dissent -= 4; rfb_strength += 3; rb_strength += 1; 
 
-fight_right
+The policy of focusing on combating the right wing paramilitaries is popular among the <span style="color: #dc0200;">Reformists</span> wing of the part, but the <span style="color: #940000;">Left</span> argues that, we must direct more forces for anti-state actions and protection of the party.
 
 -@the: Continue to the congress
 
 @republic
-choose-if: ((rev_seats + lef_seats + cen_seats/2) < ref_seats) and party_policy_main < 2
-on-arrival: party_policy_paramilitary = 0; revolutionaries_dissent += 10; left_dissent += 6; agrarnians_dissent += 4; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 10; democratization += 2; radicalization -= 2; pacifism += 1;
+choose-if: ((rev_seats + lef_seats + cen_seats/2) < ref_seats*1.25) and party_policy_main < 2 and dsf_republican == 1
+on-arrival: party_policy_paramilitary = 0; revolutionaries_dissent += 20; left_dissent += 14; agrarnians_dissent += 6; labor_dissent += 2; center_dissent += 6; reformist_dissent -= 10; democratization += 2; radicalization -= 2; pacifism += 3; rgf_party -= 4; liberal_reconciliation += 2; liberal_unity -= 2;
 
-republic
+Committing our paramilitaries to the defence of the <span style="color: #dee03a;">Federation</span> is going to be controvential... 
 
 -@the: Continue to the congress
 
@@ -412,9 +457,11 @@ republic
 
 @the
 
-congress start
-
 = Class Theory Queation 
+
+For a long time <span style="color: #d61818;">Socialist</span> theoreticians and scholars have debated the question of who is "Proletarian".
+As a <span style="color: #d61818;">United Socialist Party</span> we have a sizable <span style="color: #dd5b00;">Agrarian</span> wing and a theoretian form theri wing has been agitating for the long time to classify the rural farmes as Proletarian.
+<span style="color: #dd5b00;">Vanmann's</span> "United Front Theory" as he calls it would unite the urban and rural struggle into one and he wants the party to adopt it officially. 
 
 -@rural: The peasnts and farmers are as much proletarian as a steelworker or bus driver and should be concidered as such by our party!
 -@prolet: We shall remain the party of the urban proletariat in its primacy.
@@ -450,19 +497,18 @@ midlle
 
 @rural
 view-if: united_front_theory != 2
-choose-if: (cen_seats + lef_seats/2) < (agr_seats*2 + rev_seats/2 + ref_seats/2)
-on-arrival: united_front_theory = 1; revolutionaries_dissent += 3; left_dissent += 3; agrarnians_dissent -= 10; labor_dissent += 4; center_dissent += 6; reformist_dissent += 2;
+choose-if: (cen_seats + lef_seats/2) < (agr_seats*1.5 + rev_seats/2 + ref_seats/2)
+on-arrival: united_front_theory = 1; revolutionaries_dissent += 3; left_dissent += 3; agrarnians_dissent -= 10; labor_dissent += 4; center_dissent += 8; reformist_dissent += 4; agr_seats += 10;
 
-rural 
+Our adoption of the "United Front Theory" should massively bolster our base in the countryside, but orthodox <span style="color: #c96b65;">Marxist</span> say that it will break the spirit of the masses and degenrate the movement. 
 
 -@land: Continue to the congress
 
 @prolet
 view-if: united_front_theory != 2
-choose-if: (cen_seats + lef_seats/2) > (agr_seats + rev_seats)
-on-arrival: united_front_theory = 0; revolutionaries_dissent -= 2; left_dissent -= 2; agrarnians_dissent += 10; labor_dissent += 2; center_dissent -= 2; reformist_dissent += 4;
+on-arrival: united_front_theory = 0; revolutionaries_dissent += 2; left_dissent -= 2; agrarnians_dissent += 10; labor_dissent += 2; center_dissent -= 8; reformist_dissent += 4;
 
-prolet
+This is a orthodox and safe decision, but as the <span style="color: #dd5b00;">Agrarians</span> argue it's a great wasted opportunity.  
 
 -@land: Continue to the congress
 
@@ -470,9 +516,12 @@ prolet
 
 @land
 
-congress start
-
 = Issue of the Land policy and the rural Question. 
+
+The <span style="color: #dd5b00;">Agrarian</span> representatives have brought before the party a new ambitious plan of colectivation of the rural land. 
+It's more radical than before, but it also maintains some form of homesteading and private owning by the farmers as to not alienate the ones who already have their own land.
+
+Should we support their plans?
 
 -@land_0: The peasnts and farmers struggle should be on our forefront and their fight for emancipation is our goal!
 -@land_3: The party supports the new colectivation plans as a way to achive Socialism in the countryside. 
@@ -480,33 +529,35 @@ congress start
 -@land_1: Rural affairs should not concern the party of the urban Proletariat.
 
 @land_3
-choose-if: ((cen_seats + ref_seats) < (agr_seats + rev_seats + lef_seats/2 + lab_seats/2)) and asum_formed == 0 
+choose-if: ((cen_seats + ref_seats) < (agr_seats + rev_seats + lef_seats/2 + lab_seats/2)) and asum_formed == 0 and united_front_theory <= 1
 on-arrival: party_policy_land = 2; revolutionaries_dissent -= 4; left_dissent -= 2; agrarnians_dissent -= 8; labor_dissent -= 2; center_dissent += 6; reformist_dissent += 6;
 
-party
+We chose to support the <span style="color: #dd5b00;">Agrarian</span> plan and push for further involvment in the countryside.
 
 -@regional: Continue the congress
 
 @land_2
 on-arrival: party_policy_land = 1; revolutionaries_dissent -= 2; left_dissent += 4; agrarnians_dissent -= 4; labor_dissent += 2; center_dissent -= 2; reformist_dissent -= 6;
 
-quo 
+This is a conservative policy, which nidher gives the <span style="color: #dd5b00;">Agrarians</span> enough support to push their agenda, while also keeping them in line.
 
 -@regional: Continue to the congress
 
 @land_1
+subtitle: This is essentaily means the split of the agrarians (we must apease them somehow)
 choose-if: (agr_seats + rev_seats/2) < cen_seats
-on-arrival: party_policy_land = 0; revolutionaries_dissent += 4; left_dissent += 6; agrarnians_dissent += 10; labor_dissent += 2; center_dissent -= 6; reformist_dissent += 6;
+on-arrival: party_policy_land = 0; revolutionaries_dissent += 4; left_dissent += 6; agrarnians_dissent += 40; labor_dissent += 2; center_dissent -= 6; reformist_dissent += 6;
 
-independent
+This is the end of the united party, we have chose to fuck over the <span style="color: #dd5b00;">Agrarian</span> and we shall see the outcome of that.
 
 -@regional: Continue to the congress
 
 @land_0
+view-if: united_front_theory <= 1
 choose-if: ((cen_seats + lef_seats/2 + ref_seats/2) < (agr_seats + rev_seats)) and asum_formed == 0 
-on-arrival: party_policy_land = 3; revolutionaries_dissent -= 2; left_dissent += 2; agrarnians_dissent -= 10; labor_dissent += 4; center_dissent += 6; reformist_dissent += 6;
+on-arrival: party_policy_land = 3; revolutionaries_dissent -= 2; left_dissent += 2; agrarnians_dissent -= 10; labor_dissent += 4; center_dissent += 6; reformist_dissent += 6; rural_unrest += 1; rgf_agrarian_support += 1;
 
-syn
+We push for further increase of our rural program, this will push for a much radical party program. 
 
 -@regional: Continue to the congress
 
@@ -564,7 +615,9 @@ go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 50; congress
 
 @congress_kpm
 
-possible desiosion to expell the KPM
+During the congress many of the <span style="color: #b50000;">Revolutionaries</span> and the <span style="color: #940000;">Left</span> delegates have come to the conclusion that the party has fell too much to <span style="color: #785b5a;">Revisionism</span> and <span style="color: #dc0200;">Reformism</span>.
+
+They came to the party Chairman with a proportion
 
 -@expell_kpm: Expell the KPM 
 -@expell_no: do not expell

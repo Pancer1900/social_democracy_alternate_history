@@ -5,7 +5,7 @@ tags: party_affairs
 view-if: rally_timer <= 0
 on-arrival: month_actions += 1; rally_timer = 7
 card-image: img/protest.jpg
-go-to: main_rally; sa_disrupt if sa_strength > 200 and not sa_banned and not return_to_normalcy
+go-to: main_rally;
 
 @sa_disrupt
 
@@ -81,7 +81,7 @@ Mass rallies are a main feature of any kind of political life, but as <span styl
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += 1.5*(1-dissent); unemployed_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); workers_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); left_strength += 5; left_dissent -= 5; radicalization += 1; revolutionaries_strength += 5; revolutionaries_dissent -= 5; reformist_strength -= 3; reformist_dissent += 3; old_middle_spd -= 3; new_middle_spd -= 2; ddp_relation -= 3/fvp_modifer ; z_relation -= 4/gdsu_modifer ; dvp_relation -= 5/ldp_modifer; sapd_relation += 3*kpm_modifier; labour_unrest += 2;
+on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += (radicalization/10); workers_spd += (radicalization/10); unemployed_spd += 1.5*(1-dissent); unemployed_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); workers_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); left_strength += 5; left_dissent -= 5; radicalization += 1; revolutionaries_strength += 5; revolutionaries_dissent -= 5; reformist_strength -= 3; reformist_dissent += 3; old_middle_spd -= 3; new_middle_spd -= 2; ddp_relation -= 3/fvp_modifer ; z_relation -= 4/gdsu_modifer ; dvp_relation -= 5/ldp_modifer; sapd_relation += 3*kpm_modifier; labour_unrest += 2;
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. What is the secondary theme of this rally?
 
@@ -91,7 +91,7 @@ Our message of class struggle appeals to the left wing of the working class, whi
 - @fund: Fundrasing for the party.
 
 @pacifism
-on-arrival: workers_spd += 2*(1-dissent)*(organisation_workers/20); new_middle_spd += 1*(1-dissent)*(organisation_middle/20); unemployed_spd += 1*(1-dissent); unemployed_spd += 1*(1-dissent) if (pacifism >= 4); new_middle_spd += 3*(1-dissent)*(organisation_middle/20) if (pacifism >= 4); workers_spd += 1*(1-dissent) if (pacifism >= 4); left_dissent += 5; radicalization -= 0.5; revolutionaries_dissent += 5; reformist_strength += 2; ddp_relation += 3*fvp_modifer ; z_relation += 3*gdsu_modifer ; dvp_relation += 2*ldp_modifer; pacifism += 1;
+on-arrival: workers_spd += 2*(1-dissent)*(organisation_workers/20); unemployed_spd += (pacifism/10); workers_spd += 0.6*(pacifism/10); new_middle_spd += 1.5*(pacifism/10); new_middle_spd += 1*(1-dissent)*(organisation_middle/20); unemployed_spd += 1*(1-dissent); left_dissent += 5; radicalization -= 0.5; revolutionaries_dissent += 5; reformist_strength += 2; ddp_relation += 3*fvp_modifer ; z_relation += 3*gdsu_modifer ; dvp_relation += 2*ldp_modifer; pacifism += 1;
 
 Our message of pacifism appeals to the middle class and aggitates the masses agains the right. What is the secondary theme of this rally?
 
@@ -103,7 +103,7 @@ Our message of pacifism appeals to the middle class and aggitates the masses aga
 @welfare
 on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += 1.5*(1-dissent); new_middle_spd += 2*(1-dissent)*(organisation_middle/20); old_middle_spd += 1.5*(1-dissent)*(organisation_middle/20); socialism += 2*(1 - dissent); center_strength += 6; reformist_dissent -= 3; center_dissent -= 4; left_dissent -= 2; labour_unrest += 1; labour_unrest += 1; rural_unrest += 1;
 
-The centrist is balancing out both extemes of the party and is effitient electorally across wide society. What is the secondary theme of this rally?
+The centrist message is balancing out both extemes of the party and is effitient electorally across wide society. What is the secondary theme of this rally?
 
 - @union: Support the unions and work to expand union membership.
 - @agrarian: Tackle the rural issues and possibly reach the rural population,
@@ -121,7 +121,7 @@ The agrarian message appeals to the rural population and untes them in struggle 
 - @fund: Fundrasing for the party.
 
 @democracy
-on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); workers_spd += 2*(1-dissent)*(organisation_workers/20); workers_spd += 3*(1-dissent) if democratization > 2; unemployed_spd += 3*(1-dissent) if democratization > 2; pro_republic += 2*(1 - dissent) if democratization > 2; new_middle_spd += 3*(1-dissent) if democratization > 2; reformist_strength += 6; reformist_dissent -= 6; revolutionaries_strength -= 6; revolutionaries_dissent += 6; 
+on-arrival: democratization += 1; pro_republic += 2*(1 - dissent); pro_republic += 1.5*(pacifism/10); unemployed_spd += 0.5*(pacifism/10); workers_spd += (pacifism/10); workers_spd += (pacifism/10); new_middle_spd += 1.5*(pacifism/10); workers_spd += 2*(1-dissent)*(organisation_workers/20); new_middle_spd += 2*(1-dissent)*(organisation_middle/20); old_middle_spd += 1*(1-dissent)*(organisation_middle/20); reformist_strength += 6; reformist_dissent -= 6; revolutionaries_strength -= 6; revolutionaries_dissent += 6; 
 
 Our speakers defend the <span style="color: #dee03a;">republican</span> system and rail against the monarchists and authoritarians who threaten it. What is the secondary theme of this rally?
 

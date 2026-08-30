@@ -51,7 +51,7 @@ choose-if: para_resources >= 1
 unavailable-subtitle: We dont have enough funds.
 on-arrival: para_resources -= 1; rb_strength += 2; dsf_experce += 0.01; rfb_strength += 1; rgf_experce += 0.01; union_defence += 0.15*revolution_ready; revolutionaries_strength += 2; left_strength += 2; revolutionaries_dissent -= 2; center_dissent -= 2; left_dissent -= 2; revolutionary_preparations += 1*revolution_ready; organisation_workers += 1; labor_strength += 3; labor_dissent -= 3; radicalisation += 1; sapd_relation += 2*kpm_modifier; labour_unrest += 2; socialism += 1*revolution_ready; workers_spd += 1.5*(rgf_party/8); workers_sapd += 3 if sapd_formed = 1;
 
-The workers are the core of the revolution and we are agitation them towrds that goal.  
+The workers are the core of the revolution and we are agitation them towards that goal.  
 
 @rev_begin
 subtitle: This mean the start of our revolution...
