@@ -2,7 +2,7 @@ title: Union Rally
 new-page: true
 max-visits: 36
 is-card: true
-view-if: org_rally_timer <= 0 and unions_independent = 0 and labor_strength >= 30
+view-if: org_rally_timer <= 0 and unions_independent = 0 and (union_spd_prec + labor_strength + union_lef_id_prec) >= 120
 on-arrival: month_actions += 1; org_rally_timer += 10
 card-image: img/union_rally.jpg
 frequency: 100
@@ -21,28 +21,28 @@ Union life plays a big role in party politics. Most of the unions are asocieated
 - @easy_discard
 
 @workers
-on-arrival: workers_spd += 3*(organisation_workers/20)*(1+(labor_strength/100)); new_middle_spd += 2*(organisation_middle/20)*(1+(labor_strength/100)); labor_strength += 4; labor_dissent -= 2
+on-arrival: union_spd += 1; workers_spd += 3*(organisation_workers/20)*(1+(labor_strength/100)); new_middle_spd += 2*(organisation_middle/20)*(1+(labor_strength/100)); labor_strength += 4; labor_dissent -= 2
 
 We have used this rally to further our support across the workers.
 
 @new_middle
-on-arrival: workers_spd += 1*(organisation_workers/20)*(1+(labor_strength/100)); labor_strength += 6; labor_dissent -= 8; center_dissent -= 3; left_dissent -= 3; reformist_dissent -= 3
+on-arrival: union_spd += 1; union_lef_id += 2; workers_spd += 1*(organisation_workers/20)*(1+(labor_strength/100)); labor_strength += 6; labor_dissent -= 8; center_dissent -= 3; left_dissent -= 3; reformist_dissent -= 3
 
 Focusing on union affairs decreases dissident across the union-orineted party wings. 
 
 @old_middle
-on-arrival: workers_spd += 1.5*(organisation_workers/20)*(1+(labor_strength/100)); new_middle_spd += 1*(organisation_middle/20)*(1+(labor_strength/100)); labor_strength += 6; organisation_workers += 1
+on-arrival: union_spd += 2; union_lef_id += 2; workers_spd += 1.5*(organisation_workers/20)*(1+(labor_strength/100)); new_middle_spd += 1*(organisation_middle/20)*(1+(labor_strength/100)); labor_strength += 6; organisation_workers += 1
 
-We encurage more people to join the unions and by this we are strenthening the unions themselfs.
+We encurage more people to join the unions and by this we are strenthening the unions themselvs.
 
 @rural
-on-arrival: rural_spd += 2*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); peasants_spd += 2*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); labor_strength += 2; organisation_rular += 1; agrarnians_strength += 4; agrarnians_dissent -= 4
+on-arrival: union_spd += 1; union_agr += 1; rural_spd += 2*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); peasants_spd += 2*(1-dissent)*(organisation_rural/10)*(1+(agrarnians_strength/100)); labor_strength += 2; organisation_rular += 1; agrarnians_strength += 4; agrarnians_dissent -= 4
 
 Our calls for unity across social groups mostly agittates the farmers and peasants, who have felt neglected by us for a long time but now they hear our call and flock to rurual unions.
 
 @defend
 view-if: labour_sta < 2
 subtitle: Now that the opressive state has shown its true colors we must stand strong with the unions!
-on-arrival: labor_strength += 4; organisation_workers += 1; labor_dissent -= 4; workers_spd += 2*(organisation_workers/20)*(1+(labor_strength/100)); union_defence += 0.05;
+on-arrival: union_spd += 2; labor_strength += 4; organisation_workers += 1; labor_dissent -= 4; workers_spd += 2*(organisation_workers/20)*(1+(labor_strength/100)); union_defence += 0.05;
 
 We stand commited to defending the unions against the opressive state!

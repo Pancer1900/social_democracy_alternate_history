@@ -155,6 +155,11 @@ Q.party_corruption = 0;
 Q.syn_created = 0;
 Q.syn_support = 0;
 
+Q.international_member = 0;
+Q.internationale_relations = 0;
+Q.internationale_dependence = 0;
+Q.internationale_policy = 0; // 1 - radlical 2 - moderate 
+
 Q.party_defence = 1;
 Q.union_defence = 1;
 
@@ -302,7 +307,7 @@ Q.sh_state = 0;
 
 Q.nationalism = 68; // socialism vs capitalism
 Q.socialism = 35; // pro-republic vs anti-republic
-Q.pro_republic = 64;
+Q.pro_republic = 66;
 
 Q.emergency_rule = 0;
 
@@ -1115,7 +1120,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining
             'fundraising', 'ideology', 'party_disunity',
             'inter_party_relationships', 'international_relations',
             'media', 'enemies', 'para_funding', 
-            'party_organizations', 'rally',
+            'party_organizations', 'rally','internatioal',
             'shuffle_leadership', 'streetfighting', 'peoples_party',
             // Paramiltray
             'para_funding', 'red_guard_affairs', 'coordination', 'revolution_prep', 'target_enemies',

@@ -1,0 +1,61 @@
+title: International
+new-page: true
+max-visits: 36
+is-card: true
+view-if: internatioal_timer <= 0 and international_member == 1
+on-arrival: internatioal_timer += 12
+card-image: img/union_rally.jpg
+frequency: 100
+tags: party_affairs
+
+= International
+
+Now that we joined the International, they might serve us or we might serve them...
+
+WIP
+
+- @closer: Make closer relations with the International.
+- @distance: Attemt to distance ourselvs from the organisation.
+- @relations: Use the International to increse our relations with <span style="color: #ffa300;">Vyliria</span> and other <span style="color: #d61818;">Socialismt/span> partners. 
+- @rally: We can use the International as a strong rallying cry for our campian. 
+- @support: We can ask the International for economic support...
+- @support_rev: Internationale is willing to give us revolutionary support.
+- @advisors: The Internationale offers sending their advisors 
+- @easy_discard
+
+@closer
+on-arrival: internationale_relations += 2; internationale_dependence += 1; radicalization += 1 if internationale_policy = 1; pacifism += 1 if internationale_policy = 2;
+
+WIP 
+
+@distance
+on-arrival: internationale_relations -= 1; internationale_dependence -= 1;
+
+WIP
+
+@relations
+on-arrival: vyliria_left_relation += 2; internationale_relations += 2; radicalization += 1 if internationale_policy = 1; pacifism += 1 if internationale_policy = 2;
+
+WIP
+
+@rally
+on-arrival: radicalization += 1 if internationale_policy = 1; pacifism += 1 if internationale_policy = 2; 
+
+WIP 
+
+@support
+on-arrival:
+
+WIP
+
+@support_rev
+on-arrival:
+
+WIP
+
+@advisors
+choose-if: internationale_relations > 15
+subtitle: They will be a valube aid for us!
+on-arrival:
+
+WIP
