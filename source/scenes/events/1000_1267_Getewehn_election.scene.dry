@@ -274,7 +274,7 @@ A new, unknown candidate entered a race. Lider and his far right <span style="co
 -@second: Now its the time for the second round
 
 @second
-view-if: first_turn_getewehn = 0;
+view-if: first_turn_getewehn == 0
 on-arrival: {!
 
 if ( Q.nsdap_getewehn > 6)

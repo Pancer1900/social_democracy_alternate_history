@@ -1,0 +1,12 @@
+title: Land Reform WIP
+new-page: true
+is-card: true
+on-arrival: land_reform_timer += 7; month_actions += 1
+view-if: spd_in_government = 1 and (agriculture_minister_party = 3) and land_reform_timer == 0
+card-image: img/portraits/BaadeFritz.jpg
+tags: govt_affairs, cabinet
+#subtitle: Issues of farmer financing, grain purchasing, and land reform.
+
+= Agricultural Policy
+
+While agricultural policy
