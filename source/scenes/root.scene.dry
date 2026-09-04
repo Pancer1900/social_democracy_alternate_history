@@ -1154,7 +1154,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
             'education_science', 'curriculum',
-            'land_reform',
+            'land_reform', 'minory_policy', 'economic_projects',
             // local gov
             'merkia','lurek','getewehn','yougen','percil',
             'merfeld','mirfallen','mirvieren','tippleford',

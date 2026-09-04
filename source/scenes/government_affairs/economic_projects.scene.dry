@@ -1,0 +1,12 @@
+title: Economic Projects WIP
+new-page: true
+is-card: true
+on-arrival: economic_projects_timer += 7; month_actions += 1
+view-if: spd_in_government = 1 and (economic_minister_party = 3) and economic_projects_timer == 0
+card-image: img/portraits/SchmidtRobert.jpg
+tags: govt_affairs, cabinet
+#subtitle: Issues of farmer financing, grain purchasing, and land reform.
+
+= Economic Projects WIP
+
+While agricultural policy
