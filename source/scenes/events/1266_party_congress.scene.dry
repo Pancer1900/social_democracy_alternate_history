@@ -150,7 +150,7 @@ if (window && d3) {
 
 [? if agrarnians_split == 0 : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}Agrarians: {!</td><td>!} [+ agr_seats +]% ?]
 
-[? if centrists_resign == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Center: {!</td><td>!} [+ cen_seats +]% ?]
+[? if centrists_resign == 0 : {!<tr><td><div class="box" style='background-color:#ff1919'> </div> !}Center: {!</td><td>!} [+ cen_seats +]% ?]
 
 [? if unions_independent == 0 : {!<tr><td><div class="box" style='background-color:#c96b65'> </div> !}Labour: {!</td><td>!} [+ lab_seats +]% ?]
 
@@ -166,9 +166,9 @@ if (window && d3) {
 
 The most importat posiotion in the <span style="color: #d61818;">Party</span>, he will shape the way the party will evolve. 
 
-<span style="color: #c96b65;">Wilhelm Meller</span> has been the leader of the party since 1262, he is a experienced, <span style="color: #c96b65;">Centrist</span> politician. 
+<span style="color: #ff1919;">Wilhelm Meller</span> has been the leader of the party since 1262, he is a experienced, <span style="color: #ff1919;">Centrist</span> politician. 
 
-Next we have <span style="color: #c96b65;">August Heufer</span>, still officially a <span style="color: #c96b65;">Centrist</span> but he is also suppored by the more <span style="color: #940000;">Left</span> and <span style="color: #c96b65;">Labour</span> elements of the party. 
+Next we have <span style="color: #ff1919;">August Heufer</span>, still officially a <span style="color: #ff1919;">Centrist</span> but he is also suppored by the more <span style="color: #940000;">Left</span> and <span style="color: #c96b65;">Labour</span> elements of the party. 
 
 Lastly we have <span style="color: #dc0200;">Ludwig Jelegen</span> of the <span style="color: #dc0200;">Reformist</span> wing of the party. 
 
@@ -607,7 +607,7 @@ Another point they make is that this will allow us to efficently govern without 
 
 
 @congress
-go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 50; congress_kpm if (revolutionaries_dissent + left_dissent) >= 50
+go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 60; congress_kpm if (revolutionaries_dissent + left_dissent) >= 60
 
 
 # KPM ------------------------------------
@@ -617,10 +617,12 @@ go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 50; congress
 
 During the congress many of the <span style="color: #b50000;">Revolutionaries</span> and the <span style="color: #940000;">Left</span> delegates have come to the conclusion that the party has fell too much to <span style="color: #785b5a;">Revisionism</span> and <span style="color: #dc0200;">Reformism</span>.
 
-They came to the party Chairman with a proportion
+They came to the party Chairman with a proportion to peacefully split off the party <span style="color: #940000;">Left</span> forming a more radical <span style="color: #940000;">Komunistiche Partei Merkopia</span>, that will enter into a practical alliance with the rest of the <span style="color: #dc0100;">[+ spd_name +]</span>.
 
--@expell_kpm: Expell the KPM 
--@expell_no: do not expell
+Should we accept their proportion?
+
+-@expell_kpm: Accept the proposlition and expell the KPM.
+-@expell_no: Refuse the proportion and try to maintain party unity.
 
 @expell_kpm
 on-arrival: {!
@@ -703,7 +705,7 @@ go-to: congress_begin if (revolutionaries_dissent + left_dissent) < 75; expell_k
 
 
 @congress_begin
-go-to: congress_end if (reformist_dissent + center_dissent/2) < 40; congress_spm if (reformist_dissent + center_dissent/2) >= 40
+go-to: congress_end if (reformist_dissent + center_dissent/2) < 50; congress_spm if (reformist_dissent + center_dissent/2) >= 50
 
 @congress_spm
 
@@ -794,7 +796,7 @@ Expell SPM decisions 2
 
 KPM expell no 
 
-go-to: congress_end if (reformist_dissent + center_dissent/2) < 55; expell_kpm_2 if (reformist_dissent + center_dissent/2) >= 55
+go-to: congress_end if (reformist_dissent + center_dissent/2) < 60; expell_kpm_2 if (reformist_dissent + center_dissent/2) >= 60
 
 # END ----------------------------------------------------------------
 

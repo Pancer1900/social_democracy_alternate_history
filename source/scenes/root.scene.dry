@@ -164,7 +164,7 @@ Q.party_defence = 1;
 Q.union_defence = 1;
 
 Q.spd_leader = 'Wilhelm Meller';
-Q.spd_leader_wing = 4; // 0 - syn, 1 - rev, 2 - left, 3 - agr, 4 - cen, 5 - lab, 6 - ref
+Q.spd_leader_party = 4; // 0 - syn, 1 - rev, 2 - left, 3 - agr, 4 - cen, 5 - lab, 6 - ref
 
 // internal party politic 
 
@@ -709,13 +709,13 @@ Q.spd_youg_mod = 5;
 Q.asum_youg_mod = 0;
 Q.spm_youg_mod = 0;
 Q.sapd_youg_mod = 0;
-Q.ddp_youg_mod = 15;
+Q.ddp_youg_mod = 35;
 Q.ppu_youg_mod = 10;
-Q.z_youg_mod = 15;
-Q.dvp_youg_mod = 15;
+Q.z_youg_mod = 25;
+Q.dvp_youg_mod = 20;
 Q.dnvp_youg_mod = 5;
 Q.nsdap_youg_mod = 10;
-Q.other_youg_mod = 25;
+Q.other_youg_mod = 35;
 Q.gnvp_youg_mod = 0;
 Q.blpm_youg_mod = 0;
 
@@ -746,7 +746,7 @@ Q.asum_per_mod = 0;
 Q.spm_per_mod = 0;
 Q.sapd_per_mod = 0;
 Q.ddp_per_mod = 10;
-Q.ppu_per_mod = 10;
+Q.ppu_per_mod = 30;
 Q.z_per_mod = 10;
 Q.dvp_per_mod = 10;
 Q.dnvp_per_mod = 10;
@@ -754,7 +754,7 @@ Q.nsdap_per_mod = 10;
 Q.other_per_mod = 20;
 Q.gnvp_per_mod = 0;
 Q.blpm_per_mod = 0;
-Q.pnf_per_mod = 10;
+Q.pnf_per_mod = 30;
 
 Q.next_merfeld_election = 6;
 Q.merfeld_election_1266_seen = 0;
@@ -775,15 +775,15 @@ Q.blpm_merf = 0;
 Q.ltp_merf = 11;
 Q.mtu_merf = 8;
 
-Q.spd_merf_mod = 5;
+Q.spd_merf_mod = 1;
 Q.asum_merf_mod = 0;
 Q.spm_merf_mod = 0;
 Q.sapd_merf_mod = 0;
 Q.ddp_merf_mod = 1;
 Q.ppu_merf_mod = 5;
 Q.z_merf_mod = 5;
-Q.dvp_merf_mod = 10;
-Q.dnvp_merf_mod = 20;
+Q.dvp_merf_mod = 12;
+Q.dnvp_merf_mod = 40;
 Q.nsdap_merf_mod = 5;
 Q.gnvp_merf_mod = 0;
 Q.blpm_merf_mod = 0;
@@ -971,22 +971,41 @@ Q.minority_government = 0;
 
 // ministries - which parties control the ministries?
 // is the agricultural ministry useful at all?
+
+// 1 - KPM, 2 - ASUM, 3 - VDSPM, 4 - SPM, 5 - FVP, 6 - GDSU, 7 - BLPM, 8 - PPU, 9 - LDP, 10 - I, 11 - GNVP, 12 - MNVP, 13 - MSP 
+
 Q.foreign_minister = 'Streseman';
-Q.foreign_minister_party = 'DVP';
+Q.foreign_minister_party = 9;
+
 Q.interior_minister = 'von Keudell';
-Q.interior_minister_party = 'DNVP';
+Q.interior_minister_party = 5;
+
 Q.justice_minister = 'Hergt';
-Q.justice_minister_party = 'DNVP';
+Q.justice_minister_party = 9;
+
 Q.labor_minister = 'Brauns';
-Q.labor_minister_party = 'Z';
+Q.labor_minister_party = 6;
+
 Q.reichswehr_minister = 'Groener';
-Q.reichswehr_minister_party = 'I';
+Q.reichswehr_minister_party = 9;
+
 Q.economic_minister = 'Curtius';
-Q.economic_minister_party = 'DVP';
+Q.economic_minister_party = 6;
+
 Q.finance_minister = 'Köhler';
-Q.finance_minister_party = 'Z';
+Q.finance_minister_party = 5;
+
+Q.culture_minister = 'Schiele';
+Q.culture_minister_party = 5;
+
+Q.education_minister = 'Schiele';
+Q.education_minister_party = 6;
+
+Q.minority_minister = 'Schiele';
+Q.minority_minister_party = 8;
+
 Q.agriculture_minister = 'Schiele';
-Q.agriculture_minister_party = 'DNVP';
+Q.agriculture_minister_party = 9;
 
 // Events: what has occurred?
 Q.panzerkreuzer_seen = 0;
