@@ -641,6 +641,20 @@ Q.other_mer = 8;
 Q.gnvp_mer = 0;
 Q.blpm_mer = 0;
 
+Q.spd_mer_gov = 0;
+Q.asum_mer_gov = 0;
+Q.spm_mer_gov = 0;
+Q.sapd_mer_gov = 0;
+Q.ddp_mer_gov = 1;
+Q.ppu_mer_gov = 1;
+Q.z_mer_gov = 1;
+Q.dvp_mer_gov = 1;
+Q.dnvp_mer_gov = 0;
+Q.nsdap_mer_gov = 0;
+Q.other_mer_gov = 0;
+Q.gnvp_mer_gov = 0;
+Q.blpm_mer_gov = 0;
+
 Q.spd_mer_mod = 1;
 Q.asum_mer_mod = 0;
 Q.spm_mer_mod = 0;
