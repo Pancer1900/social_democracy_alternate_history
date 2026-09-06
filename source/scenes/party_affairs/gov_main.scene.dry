@@ -370,6 +370,35 @@ if (window && d3) {
 
 Governing Coalition :
 
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Position</td></tr>!}
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_youg +]% {!</td><td>!} [? if sapd_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if sapd_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_youg +]% {!</td><td>!} [? if asum_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if asum_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_youg +]%** {!</td><td>!} [? if spd_youg_gov = 0 : <span style="color: #824c4c;">**Opposition**</span> ?][? if spd_youg_gov = 1 : <span style="color: #438543;">**Goverment**</span> ?] {!</td></tr>!}
+
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_youg +]% {!</td><td>!} [? if spm_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if spm_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_youg +]% {!</td><td>!} [? if ddp_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ddp_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_youg +]% {!</td><td>!} [? if z_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_youg +]% {!</td><td>!} [? if blpm_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if blpm_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_youg +]% {!</td><td>!} [? if ppu_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_youg +]% {!</td><td>!} [? if dvp_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_youg +] % {!</td><td>!} [? if other_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if other_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_youg +]% {!</td><td>!} [? if gnvp_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if gnvp_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_youg +]% {!</td><td>!} [? if dnvp_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dnvp_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_youg +]% {!</td><td>!} [? if nsdap_youg_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if nsdap_youg_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+{!</table>!}
+
 -@yougen_action: Policies in Yougen
 -@local: Return
 
