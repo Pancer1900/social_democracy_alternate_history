@@ -775,7 +775,7 @@ Q.gnvp_merf = 0;
 Q.blpm_merf = 0;
 Q.ltp_merf = 10;
 Q.mtu_merf = 8;
-Q.vsp_merf = 3;
+Q.svp_merf = 3;
 
 Q.spd_merf_mod = 1;
 Q.asum_merf_mod = 0;

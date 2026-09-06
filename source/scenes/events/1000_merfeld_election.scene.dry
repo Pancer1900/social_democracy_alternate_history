@@ -307,7 +307,7 @@ if (window && d3) {
 
 [? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_merf +]% {!</td><td>!} [+ mer_change_spm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#ff7b00'> </div> !} SVP: {!</td><td>!} [+ svp_merf +]% {!</td><td>!} [+ merf_change_svp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ff7b00'> </div> !} VSP: {!</td><td>!} [+ svp_merf +]% {!</td><td>!} [+ merf_change_svp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_merf +]% {!</td><td>!} [+ mer_change_ddp +] {!</td></tr>!}
 
