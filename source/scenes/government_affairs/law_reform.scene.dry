@@ -1,0 +1,10 @@
+
+title: Law Reforms WIP
+new-page: true
+is-card: true
+tags: govt_affairs, cabinet
+on-arrival: law_reform_timer = 10; month_actions += 1
+view-if: spd_in_government = 1 and law_reform_timer = 0
+card-image: img/portraits/JuchaczMarie.jpg
+
+= Law Reforms WIP

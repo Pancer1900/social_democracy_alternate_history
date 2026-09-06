@@ -1,0 +1,12 @@
+title: Cultrual Affaris WIP
+new-page: true
+is-card: true
+on-arrival: culture_org_timer += 7; month_actions += 1
+view-if: spd_in_government = 1 and (culture_minister_party = 3) and culture_org_timer == 0
+card-image: img/portraits/BaadeFritz.jpg
+tags: govt_affairs, cabinet
+#subtitle: Issues of farmer financing, grain purchasing, and land reform.
+
+= Cultrual Affaris WIP
+
+While agricultural policy
