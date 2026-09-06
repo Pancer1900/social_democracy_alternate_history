@@ -25,6 +25,7 @@ Q.nsdap_mir_old = Q.nsdap_mir;
 Q.other_mir_old = Q.other_mir;
 Q.gnvp_mir_old = Q.gnvp_mir;
 Q.blpm_mir_old = Q.blpm_mir;
+Q.vsp_mir_old = Q.vsp_mir;
 
 Q.spd_mir = 0;
 Q.asum_mir = 0;
@@ -39,6 +40,7 @@ Q.nsdap_mir = 0;
 Q.other_mir = 0;
 Q.gnvp_mir = 0;
 Q.blpm_mir = 0;
+Q.vsp_mir = 0;
 
 Q.spd_mir = (Q.workers_spd * Q.workers * 1.5) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.1) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8) + (Q.catholics_spd * Q.catholics * 0.8) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 1.2) + (Q.spd_mir_mod * 10);
 Q.sapd_mir = (Q.workers_sapd * Q.workers * 1.5) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.1) + (Q.peasants_sapd * Q.peasants * 0.6) + (Q.rural_sapd * Q.rural * 0.8) + (Q.catholics_sapd * Q.catholics * 0.8) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 1.2) + (Q.sapd_mir_mod * 10);
@@ -53,7 +55,7 @@ Q.ppu_mir = (Q.workers_ppu * Q.workers * 1.5) + (Q.old_middle_ppu * Q.old_middle
 Q.gnvp_mir = (Q.workers_gnvp * Q.workers * 1.5) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.1) + (Q.peasants_gnvp * Q.peasants * 0.6) + (Q.rural_gnvp * Q.rural * 0.8) + (Q.catholics_gnvp * Q.catholics * 0.8) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 1.2) + (Q.gnvp_mir_mod * 10);
 Q.blpm_mir = (Q.workers_blpm * Q.workers * 1.5) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.6) + (Q.rural_blpm * Q.rural * 0.8) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 1.2) + (Q.blpm_mir_mod * 10);
 Q.other_mir = (Q.workers_other * Q.workers * 1.5) + (Q.old_middle_other * Q.old_middle * 1.1) + (Q.new_middle_other * Q.new_middle * 1.1) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 0.5) + (Q.unemployed_other * Q.unemployed * 1.2) + (Q.other_mir_mod * 15);
-Q.vsp_mir = (Q.workers_other * Q.workers * 0.5) + (Q.old_middle_other * Q.old_middle * 1) + (Q.new_middle_other * Q.new_middle * 0.4) + (Q.peasants_other * Q.peasants * 0.3) + (Q.rural_other * Q.rural * 0.4) + (Q.workers_spd * Q.workers * 0.5) + (Q.old_middle_spd * Q.old_middle * 0.8) + (Q.new_middle_spd * Q.new_middle * 0.4) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8);
+Q.vsp_mir = ((Q.workers_other * Q.workers * 0.5) + (Q.old_middle_other * Q.old_middle * 1) + (Q.new_middle_other * Q.new_middle * 0.4) + (Q.peasants_other * Q.peasants * 0.3) + (Q.rural_other * Q.rural * 0.4) + (Q.workers_spd * Q.workers * 0.4) + (Q.old_middle_spd * Q.old_middle * 0.8) + (Q.new_middle_spd * Q.new_middle * 0.4) + (Q.peasants_spd * Q.peasants * 0.3) + (Q.rural_spd * Q.rural * 0.4))*0.5;
 
 Q.mer_total = 0;
 
