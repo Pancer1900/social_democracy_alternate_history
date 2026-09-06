@@ -659,19 +659,20 @@ Q.next_mirfallen_election = 3;
 Q.mirfallen_election_1266_seen = 0;
 Q.mirfallen_election_failed = 0;
 
-Q.spd_mir = 32;
+Q.spd_mir = 30;
 Q.asum_mir = 0;
 Q.spm_mir = 0;
 Q.sapd_mir = 0;
-Q.ddp_mir = 7;
+Q.ddp_mir = 6;
 Q.ppu_mir = 3;
 Q.z_mir = 16;
-Q.dvp_mir = 19;
+Q.dvp_mir = 18;
 Q.dnvp_mir = 12;
 Q.nsdap_mir = 2;
-Q.other_mir = 9;
+Q.other_mir = 8;
 Q.gnvp_mir = 0;
 Q.blpm_mir = 0;
+Q.vsp_mir = 5;
 
 Q.spd_mir_mod = 5;
 Q.asum_mir_mod = 0;
@@ -760,20 +761,21 @@ Q.next_merfeld_election = 6;
 Q.merfeld_election_1266_seen = 0;
 Q.merfeld_election_failed = 0;
 
-Q.spd_merf = 18;
+Q.spd_merf = 17;
 Q.asum_merf = 0;
 Q.spm_merf = 0;
 Q.sapd_merf = 0;
 Q.ddp_merf = 6;
 Q.ppu_merf = 4;
-Q.z_merf = 18;
+Q.z_merf = 17;
 Q.dvp_merf = 14;
 Q.dnvp_merf = 19;
 Q.nsdap_merf = 2;
 Q.gnvp_merf = 0;
 Q.blpm_merf = 0;
-Q.ltp_merf = 11;
+Q.ltp_merf = 10;
 Q.mtu_merf = 8;
+Q.vsp_merf = 3;
 
 Q.spd_merf_mod = 1;
 Q.asum_merf_mod = 0;
@@ -789,7 +791,7 @@ Q.gnvp_merf_mod = 0;
 Q.blpm_merf_mod = 0;
 Q.other_merf_mod = 25;
 
-Q.next_mirviern_election = 20;
+Q.next_mirviern_election = 3;
 Q.mirvieren_election_1266_seen = 0;
 Q.mirvieren_election_failed = 0;
 
