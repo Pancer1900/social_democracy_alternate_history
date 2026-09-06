@@ -655,7 +655,7 @@ Q.other_mer_mod = 25;
 Q.gnvp_mer_mod = 0;
 Q.blpm_mer_mod = 0;
 
-Q.next_mirfallen_election = 20;
+Q.next_mirfallen_election = 3;
 Q.mirfallen_election_1266_seen = 0;
 Q.mirfallen_election_failed = 0;
 
@@ -1154,7 +1154,7 @@ Q.timers = ['advisor_action', 'confronting_nazis', 'crisis_program', 'campaining
             'dealing_with_toleration',
             'constitutional_reform', 'labor_rights',
             'education_science', 'curriculum',
-            'land_reform', 'minory_policy', 'economic_projects', 'religion', 'culture_org', 
+            'land_reform', 'minory_policy', 'economic_projects', 'religion', 'culture_org', 'law_reform', 
             // local gov
             'merkia','lurek','getewehn','yougen','percil',
             'merfeld','mirfallen','mirvieren','tippleford',

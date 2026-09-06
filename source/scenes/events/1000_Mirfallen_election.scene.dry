@@ -53,6 +53,7 @@ Q.ppu_mir = (Q.workers_ppu * Q.workers * 1.5) + (Q.old_middle_ppu * Q.old_middle
 Q.gnvp_mir = (Q.workers_gnvp * Q.workers * 1.5) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.1) + (Q.peasants_gnvp * Q.peasants * 0.6) + (Q.rural_gnvp * Q.rural * 0.8) + (Q.catholics_gnvp * Q.catholics * 0.8) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 1.2) + (Q.gnvp_mir_mod * 10);
 Q.blpm_mir = (Q.workers_blpm * Q.workers * 1.5) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.1) + (Q.peasants_blpm * Q.peasants * 0.6) + (Q.rural_blpm * Q.rural * 0.8) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 1.2) + (Q.blpm_mir_mod * 10);
 Q.other_mir = (Q.workers_other * Q.workers * 1.5) + (Q.old_middle_other * Q.old_middle * 1.1) + (Q.new_middle_other * Q.new_middle * 1.1) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 0.5) + (Q.unemployed_other * Q.unemployed * 1.2) + (Q.other_mir_mod * 15);
+Q.vsp_mir = (Q.workers_other * Q.workers * 0.5) + (Q.old_middle_other * Q.old_middle * 1) + (Q.new_middle_other * Q.new_middle * 0.4) + (Q.peasants_other * Q.peasants * 0.3) + (Q.rural_other * Q.rural * 0.4) + (Q.workers_spd * Q.workers * 0.5) + (Q.old_middle_spd * Q.old_middle * 0.8) + (Q.new_middle_spd * Q.new_middle * 0.4) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8);
 
 Q.mer_total = 0;
 
@@ -69,6 +70,7 @@ if (Q.nsdap_mir) Q.mer_total += Q.nsdap_mir;
 if (Q.other_mir) Q.mer_total += Q.other_mir;
 if (Q.gnvp_mir) Q.mer_total += Q.gnvp_mir;
 if (Q.blpm_mir) Q.mer_total += Q.blpm_mir;
+if (Q.vsp_mir) Q.mer_total += Q.vsp_mir;
 
 if (Q.mer_total > 0) {
     Q.spd_mir = (Q.spd_mir / Q.mer_total) * 100;
@@ -84,6 +86,7 @@ if (Q.mer_total > 0) {
     Q.other_mir = (Q.other_mir / Q.mer_total) * 100;
     Q.gnvp_mir = (Q.gnvp_mir / Q.mer_total) * 100;
     Q.blpm_mir = (Q.blpm_mir / Q.mer_total) * 100;
+    Q.vsp_mir = (Q.vsp_mir / Q.mer_total) * 100;
 }
 
 Q.spd_mir = (Q.spd_mir != undefined ? parseFloat(Q.spd_mir.toFixed(1)) : 0);
@@ -99,6 +102,7 @@ Q.nsdap_mir = (Q.nsdap_mir != undefined ? parseFloat(Q.nsdap_mir.toFixed(1)) : 0
 Q.other_mir = (Q.other_mir != undefined ? parseFloat(Q.other_mir.toFixed(1)) : 0);
 Q.gnvp_mir = (Q.gnvp_mir != undefined ? parseFloat(Q.gnvp_mir.toFixed(1)) : 0);
 Q.blpm_mir = (Q.blpm_mir != undefined ? parseFloat(Q.blpm_mir.toFixed(1)) : 0);
+Q.vsp_mir = (Q.vsp_mir != undefined ? parseFloat(Q.vsp_mir.toFixed(1)) : 0);
 
 Q.mer_change_spd = Q.spd_mir - Q.spd_mir_old;
 Q.mer_change_sapd = Q.sapd_mir - Q.sapd_mir_old;
@@ -113,6 +117,7 @@ Q.mer_change_dnvp = Q.dnvp_mir - Q.dnvp_mir_old;
 Q.mer_change_nsdap = Q.nsdap_mir - Q.nsdap_mir_old;
 Q.mer_change_other = Q.other_mir - Q.other_mir_old;
 Q.mer_change_gnvp = Q.gnvp_mir - Q.gnvp_mir_old;
+Q.mer_change_vsp = Q.vsp_mir - Q.vsp_mir_old;
 
 Q.left_coalition_mir = (Q.spd_mir + Q.sapd_mir + Q.spm_mir + Q.asum_mir).toFixed(1);
 Q.progressive_coalition_mir = (Q.spd_mir + Q.sapd_mir + Q.spm_mir + Q.asum_mir + Q.ddp_mir).toFixed(1);
@@ -130,6 +135,7 @@ Q.anti_democratic_coalition_mir = (Q.sapd_mir + Q.nsdap_mir + Q.dnvp_mir + Q.gnv
 Q.hitler_right_coalition_mir = (Q.dnvp_mir + Q.nsdap_mir + Q.dvp_mir + Q.other_mir + Q.gnvp_mir).toFixed(1);
 
 Q.mer_change_spd = (Q.mer_change_spd != undefined ? parseFloat(Q.mer_change_spd.toFixed(1)) : 0);
+Q.mer_change_vsp = (Q.mer_change_vsp != undefined ? parseFloat(Q.mer_change_vsp.toFixed(1)) : 0);
 Q.mer_change_spm = (Q.mer_change_spm != undefined ? parseFloat(Q.mer_change_spm.toFixed(1)) : 0);
 Q.mer_change_sapd = (Q.mer_change_sapd != undefined ? parseFloat(Q.mer_change_sapd.toFixed(1)) : 0);
 Q.mer_change_ddp = (Q.mer_change_ddp != undefined ? parseFloat(Q.mer_change_ddp.toFixed(1)) : 0);
@@ -179,6 +185,12 @@ if (Q.spm_formed && Q.spm_mir) {
             });
 }
 data = data.concat([
+    {
+        "id": "vsp",
+        "legend": VSP,
+        "name": VSP,
+        "seats": Math.round(Q.vsp_mir*2),
+    },
     {
         "id": "ddp",
         "legend": Q.ddp_name,
@@ -287,6 +299,8 @@ if (window && d3) {
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_mir +]% {!</td><td>!} [+ mer_change_asum +] {!</td></tr>!} ?]
 
 [? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_mir +]% {!</td><td>!} [+ mir_change_spm +] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#ff7b00'> </div> !} VSP: {!</td><td>!} [+ vsp_mir +]% {!</td><td>!} [+ mer_change_vsp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mir +]% {!</td><td>!} [+ mer_change_ddp +] {!</td></tr>!}
 
