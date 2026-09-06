@@ -791,7 +791,7 @@ Q.gnvp_merf_mod = 0;
 Q.blpm_merf_mod = 0;
 Q.other_merf_mod = 25;
 
-Q.next_mirviern_election = 3;
+Q.next_mirviern_election = 20;
 Q.mirvieren_election_1266_seen = 0;
 Q.mirvieren_election_failed = 0;
 

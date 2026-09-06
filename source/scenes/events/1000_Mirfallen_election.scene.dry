@@ -188,7 +188,7 @@ if (Q.spm_formed && Q.spm_mir) {
 }
 data = data.concat([
     {
-        "id": "znc",
+        "id": "vsp",
         "legend": VSP,
         "name": VSP,
         "seats": Math.round(Q.vsp_mir*2),
