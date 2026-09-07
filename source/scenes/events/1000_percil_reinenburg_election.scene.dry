@@ -55,8 +55,16 @@ Q.gnvp_per = (Q.workers_gnvp * Q.workers * 0.8) + (Q.old_middle_gnvp * Q.old_mid
 Q.blpm_per = (Q.workers_blpm * Q.workers * 0.8) + (Q.old_middle_blpm * Q.old_middle * 1.0) + (Q.new_middle_blpm * Q.new_middle * 1.0) + (Q.peasants_blpm * Q.peasants * 0.6) + (Q.rural_blpm * Q.rural * 0.8) + (Q.catholics_blpm * Q.catholics * 0.8) + (Q.minorieties_blpm * Q.minorieties * 1.0) + (Q.unemployed_blpm * Q.unemployed * 0.8) + (Q.blpm_per_mod * 10);
 Q.other_per = (Q.workers_other * Q.workers * 0.8) + (Q.old_middle_other * Q.old_middle * 1.0) + (Q.new_middle_other * Q.new_middle * 1.0) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 1.0) + (Q.unemployed_other * Q.unemployed * 0.8) + (Q.other_per_mod * 10);
 
-Q.ppu_per = (Q.minorieties_ppu * Q.minorieties * 5.0) + (Q.ppu_per_mod * 10);
-Q.pnf_per = (Q.percil_radicalisation * 10) + (Q.pnf_per_mod * 10) + (Q.minorieties_ppu * Q.minorieties * 1.0);
+Q.ppu_per = (Q.minorieties_ppu * Q.minorieties * 5.0) + (Q.workers_ppu * Q.workers * 1.5) + (Q.old_middle_ppu * Q.old_middle * 1.1) + (Q.new_middle_ppu * Q.new_middle * 1.1) + (Q.peasants_ppu * Q.peasants * 0.6) + (Q.rural_ppu * Q.rural * 0.8) + (Q.catholics_ppu * Q.catholics * 0.8) + (Q.minorieties_ppu * Q.minorieties * 0.5) + (Q.unemployed_ppu * Q.unemployed * 1.2) + (Q.ppu_per_mod * 10);
+Q.pnf_per = (Q.percil_radicalisation * 10) + (Q.pnf_per_mod * 10) + (Q.minorieties_ppu * Q.minorieties * 1.5);
+
+Q.dnvp_per += Q.z_per*0.3;
+Q.dvp_per += Q.z_per*0.5; 
+Q.ddp_per += Q.z_per*0.1;
+Q.ddp_per += Q.blpm_per;
+
+Q.z_per = 0;
+Q.blpm_per = 0;
              
 Q.per_total = 0;
 
@@ -202,12 +210,6 @@ data = data.concat([
         "name": Q.ddp_name,
         "seats": Math.round(Q.ddp_per*1.5),
     },
-    {
-        "id": "z",
-        "legend": "GDSU",
-        "name": "GDSU",
-        "seats": Math.round(Q.z_per*1.5),
-    },
     ]);
 if (Q.blpm_formed && Q.blpm_per) {
     data.push({
@@ -286,23 +288,19 @@ if (window && d3) {
 {!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
 {!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_per +]%** {!</td><td>!} **[+ per_change_spd +]** {!</td></tr>!}
 
+{!<tr><td><div class="box" style='background-color:#a302a6'> </div> !} PNF: {!</td><td>!} [+ pnf_per +]% {!</td><td>!} [+ per_change_pnf +] {!</td></tr>!}
+
 [? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_per +]% {!</td><td>!} [+ per_change_sapd +] {!</td></tr>!} ?]
 
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_per +]% {!</td><td>!} [+ per_change_asum +] {!</td></tr>!} ?]
 
 [? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_per +]% {!</td><td>!} [+ per_change_spm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#a302a6'> </div> !} PNF: {!</td><td>!} [+ pnf_per +]% {!</td><td>!} [+ per_change_pnf +] {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_per +]% {!</td><td>!} [+ per_change_ddp +] {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_per +]% {!</td><td>!} [+ per_change_z +] {!</td></tr>!}
-
-[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_per +]% {!</td><td>!} [+ per_change_blpm +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU: {!</td><td>!} [+ ppu_per +]% {!</td><td>!} [+ per_change_ppu +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_per +]% {!</td><td>!} [+ per_change_dvp +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} Liberal-Gecherdist Liste: {!</td><td>!} [+ dvp_per +]% {!</td><td>!} [+ per_change_dvp +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_per +] % {!</td><td>!} [+ per_change_other +] {!</td></tr>!}
 

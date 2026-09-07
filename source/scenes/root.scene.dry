@@ -651,7 +651,7 @@ Q.z_mer_gov = 1;
 Q.dvp_mer_gov = 1;
 Q.dnvp_mer_gov = 0;
 Q.nsdap_mer_gov = 0;
-Q.other_mer_gov = 0;
+Q.other_mer_gov = 1;
 Q.gnvp_mer_gov = 0;
 Q.blpm_mer_gov = 0;
 
@@ -687,6 +687,20 @@ Q.other_mir = 8;
 Q.gnvp_mir = 0;
 Q.blpm_mir = 0;
 Q.vsp_mir = 5;
+
+Q.spd_mir_gov = 0;
+Q.asum_mir_gov = 0;
+Q.spm_mir_gov = 0;
+Q.sapd_mir_gov = 0;
+Q.ddp_mir_gov = 1;
+Q.ppu_mir_gov = 1;
+Q.z_mir_gov = 1;
+Q.dvp_mir_gov = 1;
+Q.dnvp_mir_gov = 0;
+Q.nsdap_mir_gov = 0;
+Q.other_mir_gov = 1;
+Q.gnvp_mir_gov = 0;
+Q.blpm_mir_gov = 0;
 
 Q.spd_mir_mod = 5;
 Q.asum_mir_mod = 0;
@@ -770,6 +784,21 @@ Q.gnvp_per = 0;
 Q.blpm_per = 0;
 Q.pnf_per = 12;
 
+Q.spd_per_gov = 0;
+Q.asum_per_gov = 0;
+Q.spm_per_gov = 0;
+Q.sapd_per_gov = 0;
+Q.ddp_per_gov = 1;
+Q.ppu_per_gov = 1;
+Q.z_per_gov = 1;
+Q.dvp_per_gov = 1;
+Q.dnvp_per_gov = 0;
+Q.nsdap_per_gov = 0;
+Q.other_per_gov = 0;
+Q.gnvp_per_gov = 0;
+Q.blpm_per_gov = 0;
+Q.pnf_per_gov = 0;
+
 Q.spd_per_mod = 10;
 Q.asum_per_mod = 0;
 Q.spm_per_mod = 0;
@@ -785,25 +814,42 @@ Q.gnvp_per_mod = 0;
 Q.blpm_per_mod = 0;
 Q.pnf_per_mod = 30;
 
-Q.next_merfeld_election = 6;
+Q.next_merfeld_election = 3;
 Q.merfeld_election_1266_seen = 0;
 Q.merfeld_election_failed = 0;
 
-Q.spd_merf = 17;
+Q.spd_merf = 18;
 Q.asum_merf = 0;
 Q.spm_merf = 0;
 Q.sapd_merf = 0;
-Q.ddp_merf = 6;
+Q.ddp_merf = 6.5;
 Q.ppu_merf = 4;
-Q.z_merf = 17;
+Q.z_merf = 17.5;
 Q.dvp_merf = 14;
-Q.dnvp_merf = 19;
+Q.dnvp_merf = 17;
 Q.nsdap_merf = 2;
 Q.gnvp_merf = 0;
 Q.blpm_merf = 0;
 Q.ltp_merf = 10;
 Q.mtu_merf = 8;
 Q.svp_merf = 3;
+
+Q.spd_merf_gov = 0;
+Q.asum_merf_gov = 0;
+Q.spm_merf_gov = 0;
+Q.sapd_merf_gov = 0;
+Q.ddp_merf_gov = 0;
+Q.ppu_merf_gov = 0;
+Q.z_merf_gov = 1;
+Q.dvp_merf_gov = 1;
+Q.dnvp_merf_gov = 1;
+Q.nsdap_merf_gov = 0;
+Q.other_merf_gov = 0;
+Q.gnvp_merf_gov = 0;
+Q.blpm_merf_gov = 0;
+Q.mtu_merf_gov = 0;
+Q.ltp_merf_gov = 1;
+Q.svp_merf_gov = 0;
 
 Q.spd_merf_mod = 1;
 Q.asum_merf_mod = 0;
@@ -819,7 +865,7 @@ Q.gnvp_merf_mod = 0;
 Q.blpm_merf_mod = 0;
 Q.other_merf_mod = 25;
 
-Q.next_mirviern_election = 20;
+Q.next_mirviern_election = 3;
 Q.mirvieren_election_1266_seen = 0;
 Q.mirvieren_election_failed = 0;
 
@@ -853,7 +899,7 @@ Q.gnvp_mirv_mod = 0;
 Q.blpm_mirv_mod = 0;
 Q.other_mirv_mod = 20;
 
-Q.next_zeltbrin_election = 20;
+Q.next_zeltbrin_election = 3;
 Q.zeltbrin_election_1266_seen = 0;
 Q.zeltbrin_election_failed = 0;
 
