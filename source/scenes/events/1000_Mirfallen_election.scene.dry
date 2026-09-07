@@ -57,6 +57,10 @@ Q.blpm_mir = (Q.workers_blpm * Q.workers * 1.5) + (Q.old_middle_blpm * Q.old_mid
 Q.other_mir = (Q.workers_other * Q.workers * 1.5) + (Q.old_middle_other * Q.old_middle * 1.1) + (Q.new_middle_other * Q.new_middle * 1.1) + (Q.peasants_other * Q.peasants * 0.6) + (Q.rural_other * Q.rural * 0.8) + (Q.catholics_other * Q.catholics * 0.8) + (Q.minorieties_other * Q.minorieties * 0.5) + (Q.unemployed_other * Q.unemployed * 1.2) + (Q.other_mir_mod * 15);
 Q.vsp_mir = ((Q.workers_other * Q.workers * 0.5) + (Q.old_middle_other * Q.old_middle * 1) + (Q.new_middle_other * Q.new_middle * 0.4) + (Q.peasants_other * Q.peasants * 0.3) + (Q.rural_other * Q.rural * 0.4) + (Q.workers_spd * Q.workers * 0.4) + (Q.old_middle_spd * Q.old_middle * 0.8) + (Q.new_middle_spd * Q.new_middle * 0.4) + (Q.peasants_spd * Q.peasants * 0.3) + (Q.rural_spd * Q.rural * 0.4))*0.5;
 
+Q.ddp_mir += blpm_mir;
+
+Q.blpm_mir = 0;
+
 Q.mer_total = 0;
 
 if (Q.spd_mir) Q.mer_total += Q.spd_mir;
@@ -307,8 +311,6 @@ if (window && d3) {
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mir +]% {!</td><td>!} [+ mer_change_ddp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mir +]% {!</td><td>!} [+ mer_change_z +] {!</td></tr>!}
-
-[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_mir +]% {!</td><td>!} [+ mer_change_blpm +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_mir +]% {!</td><td>!} [+ mer_change_ppu +] {!</td></tr>!}
 

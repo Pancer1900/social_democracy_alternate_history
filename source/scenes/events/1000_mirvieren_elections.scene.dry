@@ -55,12 +55,20 @@ Q.nsdap_mirv = (Q.workers_nsdap * Q.workers * 0.8) + (Q.old_middle_nsdap * Q.old
 Q.gnvp_mirv = (Q.workers_gnvp * Q.workers * 0.8) + (Q.old_middle_gnvp * Q.old_middle * 1.1) + (Q.new_middle_gnvp * Q.new_middle * 1.0) + (Q.peasants_gnvp * Q.peasants * 1.2) + (Q.rural_gnvp * Q.rural * 1.2) + (Q.catholics_gnvp * Q.catholics * 1.0) + (Q.minorieties_gnvp * Q.minorieties * 0.5) + (Q.unemployed_gnvp * Q.unemployed * 0.7) + (Q.gnvp_mirv_mod * 10);
 Q.blpm_mirv = (Q.workers_blpm * Q.workers * 0.8) + (Q.old_middle_blpm * Q.old_middle * 1.1) + (Q.new_middle_blpm * Q.new_middle * 1.0) + (Q.peasants_blpm * Q.peasants * 1.2) + (Q.rural_blpm * Q.rural * 1.2) + (Q.catholics_blpm * Q.catholics * 1.0) + (Q.minorieties_blpm * Q.minorieties * 0.5) + (Q.unemployed_blpm * Q.unemployed * 0.7) + (Q.blpm_mirv_mod * 10);
 
-Q.rnp_mirv = (Q.peasants_ppu * Q.peasants * 1) + (Q.rural_ppu * Q.rural * 1) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 1) + (Q.minorieties_ppu * Q.minorieties * 2);
-Q.bvp_mirv = (Q.peasants_ppu * Q.peasants * 1) + (Q.rural_ppu * Q.rural * 1) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 1.5) + (Q.minorieties_ppu * Q.minorieties * 1) + (Q.old_middle_ppu * Q.old_middle * 1) + (Q.new_middle_ppu * Q.new_middle * 1);
+Q.rnp_mirv = (Q.peasants_ppu * Q.peasants * 0.8) + (Q.rural_ppu * Q.rural * 0.8) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 0.5) + (Q.minorieties_ppu * Q.minorieties * 1.5);
+Q.bvp_mirv = (Q.peasants_ppu * Q.peasants * 0.8) + (Q.rural_ppu * Q.rural * 0.8) + (Q.ppu_mirv_mod * 10) + (Q.workers_ppu * Q.workers * 1.0) + (Q.minorieties_ppu * Q.minorieties * 1) + (Q.old_middle_ppu * Q.old_middle * 1) + (Q.new_middle_ppu * Q.new_middle * 1);
 
-Q.mtu_mirv = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.other_mirv_mod * 10) + (Q.minorieties_other * Q.minorieties * 2);
-Q.ltp_mirv = (Q.peasants_other * Q.peasants * 2.5) + (Q.rural_other * Q.rural * 2.5) + (Q.other_mirv_mod * 10) + (Q.workers_other * Q.workers * 0.5);
-             
+Q.mtu_mirv = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.other_mirv_mod * 10) + (Q.minorieties_other * Q.minorieties * 2) + (Q.workers_other * Q.workers * 0.4) + (Q.old_middle_other * Q.old_middle * 0.4) + (Q.new_middle_other * Q.new_middle * 0.4);
+Q.ltp_mirv = (Q.peasants_other * Q.peasants * 2.5) + (Q.rural_other * Q.rural * 2.5) + (Q.other_mirv_mod * 10) + (Q.workers_other * Q.workers * 0.5) + (Q.workers_other * Q.workers * 0.4) + (Q.old_middle_other * Q.old_middle * 0.4) + (Q.new_middle_other * Q.new_middle * 0.4);
+           
+Q.dnvp_mirv += Q.gnvp_mirv*0.6;
+Q.ltp_mirv += Q.gnvp_mirv*0.2;
+Q.mtu_mirv += Q.gnvp_mirv*0.2;
+Q.ddp_per += Q.blpm_per;
+
+Q.gnvp_mirv = 0;
+Q.blpm_per = 0;
+
 Q.mirv_total = 0;
 
 if (Q.spd_mirv) Q.mirv_total += Q.spd_mirv;
@@ -202,16 +210,16 @@ if (Q.spm_formed && Q.spm_mirv) {
 }
 data = data.concat([
     {
-        "id": "ddp",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
-        "seats": Math.round(Q.ddp_mirv*1.5),
-    },
-    {
         "id": "bra",
         "legend": "PPB",
         "name": "PPB",
         "seats": Math.round(Q.bvp_mirv*1.5),
+    },
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_mirv*1.5),
     },
     {
         "id": "z",
@@ -310,21 +318,17 @@ if (window && d3) {
 
 [? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_mirv +]% {!</td><td>!} [+ mirv_change_spm +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mirv +]% {!</td><td>!} [+ mirv_change_ddp +] {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#993902'> </div> !} PPB: {!</td><td>!} [+ bvp_mirv +]% {!</td><td>!} [+ mirv_change_bvp +] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mirv +]% {!</td><td>!} [+ mirv_change_z +] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mirv +]% {!</td><td>!} [+ mirv_change_ddp +] {!</td></tr>!}
 
-[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_mirv +]% {!</td><td>!} [+ mirv_change_blpm +] {!</td></tr>!} ?]
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mirv +]% {!</td><td>!} [+ mirv_change_z +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNP: {!</td><td>!} [+ rnp_mirv +]% {!</td><td>!} [+ mirv_change_rnp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mirv +]% {!</td><td>!} [+ mirv_change_dvp +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#1b7035'> </div> !} LTP: {!</td><td>!} [+ ltp_mirv +] % {!</td><td>!} [+ mirv_change_ltp +] {!</td></tr>!}
-
-[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_mirv +]% {!</td><td>!} [+ mirv_change_gnvp +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mirv +]% {!</td><td>!} [+ mirv_change_dnvp +] {!</td></tr>!}
 

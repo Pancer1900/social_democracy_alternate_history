@@ -882,8 +882,36 @@ if (window && d3) {
 
 {!<svg id="saxony_landtag_5" style="width: 500px; height: 250px;"> </svg>!}
 
-
 Governing Coalition :
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Position</td></tr>!}
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_mir +]% {!</td><td>!} [? if sapd_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if sapd_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_mir +]% {!</td><td>!} [? if asum_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if asum_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_mir +]%** {!</td><td>!} [? if spd_mir_gov = 0 : <span style="color: #824c4c;">**Opposition**</span> ?][? if spd_mir_gov = 1 : <span style="color: #438543;">**Goverment**</span> ?] {!</td></tr>!}
+
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_mir +]% {!</td><td>!} [? if spm_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if spm_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#ff7b00'> </div> !} VSP: {!</td><td>!} [+ vsp_mir +]% {!</td><td>!} [? if svp_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if svp_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mir +]% {!</td><td>!} [? if ddp_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ddp_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mir +]% {!</td><td>!} [? if z_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_mir +]% {!</td><td>!} [+ ppu_mir +]% {!</td><td>!} [? if ppu_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mir +]% {!</td><td>!} [? if dvp_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_mir +]% {!</td><td>!} [? if other_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if other_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_mir +]% {!</td><td>!} [? if gnvp_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if gnvp_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mir +]% {!</td><td>!} [? if dnvp_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dnvp_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mir +]% {!</td><td>!} [? if nsdap_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if nsdap_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+{!</table>!}
 
 -@mirfallen_action: Policies in Mirfallen
 -@local: Return
@@ -936,16 +964,16 @@ if (Q.spm_formed && Q.spm_mirv) {
 }
 data = data.concat([
     {
-        "id": "ddp",
-        "legend": Q.ddp_name,
-        "name": Q.ddp_name,
-        "seats": Math.round(Q.ddp_mirv*1.5),
-    },
-    {
         "id": "bra",
         "legend": "PPB",
         "name": "PPB",
         "seats": Math.round(Q.bvp_mirv*1.5),
+    },
+    {
+        "id": "ddp",
+        "legend": Q.ddp_name,
+        "name": Q.ddp_name,
+        "seats": Math.round(Q.ddp_mirv*1.5),
     },
     {
         "id": "z",
@@ -965,9 +993,9 @@ if (Q.blpm_formed && Q.blpm_mirv) {
 data = data.concat([
     {
         "id": "lac",
-        "legend": "PPU",
-        "name": "PPU",
-        "seats": Math.round(Q.rnc_mirv*1.5),
+        "legend": "RNP",
+        "name": "RNP",
+        "seats": Math.round(Q.rnp_mirv*1.5),
     },
     {
         "id": "dvp",
@@ -1035,6 +1063,35 @@ if (window && d3) {
 {!<svg id="saxony_landtag_6" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Position</td></tr>!}
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_mirv +]% {!</td><td>!} [? if sapd_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if sapd_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_mirv +]% {!</td><td>!} [? if asum_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if asum_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_mirv +]%** {!</td><td>!} [? if spd_mirv_gov = 0 : <span style="color: #824c4c;">**Opposition**</span> ?][? if spd_mirv_gov = 1 : <span style="color: #438543;">**Goverment**</span> ?] {!</td></tr>!}
+
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_mirv +]% {!</td><td>!} [? if spm_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if spm_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#993902'> </div> !} PPB: {!</td><td>!} [+ bvp_mirv +]% {!</td><td>!} [? if bvp_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if bvp_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_mirv +]% {!</td><td>!} [? if ddp_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ddp_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mirv +]% {!</td><td>!} [? if z_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNP: {!</td><td>!} [+ rnp_mirv +]% {!</td><td>!} [+ ppu_mirv +]% {!</td><td>!} [? if ppu_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mirv +]% {!</td><td>!} [? if dvp_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#1b7035'> </div> !} LTP: {!</td><td>!} [+ ltp_mirv +]% {!</td><td>!} [? if ltp_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ltp_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_mirv +]% {!</td><td>!} [? if dnvp_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dnvp_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#8c1a16'> </div> !} MTP: {!</td><td>!} [+ mtu_mirv +]% {!</td><td>!} [? if mtu_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if mtu_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mirv +]% {!</td><td>!} [? if nsdap_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if nsdap_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+{!</table>!}
 
 -@mirvieren_action: Policies in Mirvieren
 -@local: Return
