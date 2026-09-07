@@ -623,6 +623,12 @@ if (Q.spm_formed && Q.spm_merf) {
 }
 data = data.concat([
     {
+        "id": "vsp",
+        "legend": "SVP",
+        "name": "SVP",
+        "seats": Math.round(Q.svp_merf*1),
+    },
+    {
         "id": "ddp",
         "legend": Q.ddp_name,
         "name": Q.ddp_name,
@@ -635,14 +641,6 @@ data = data.concat([
         "seats": Math.round(Q.z_merf*1),
     },
     ]);
-if (Q.blpm_formed && Q.blpm_merf) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_merf*1),
-            });
-}
 data = data.concat([
     {
         "id": "bvp",
@@ -664,14 +662,6 @@ data = data.concat([
     },
 
 ]);
-if (Q.gnvp_formed && Q.gnvp_merf) {
-    data.push({
-            "id": "gnvp",
-            "legend": "GNVP",
-            "name": "GNVP",
-            "seats": Math.round(Q.gnvp_merf*1),
-            });
-}
 data = data.concat([
     {
         "id": "dnvp",
@@ -975,21 +965,7 @@ data = data.concat([
         "name": Q.ddp_name,
         "seats": Math.round(Q.ddp_mirv*1.5),
     },
-    {
-        "id": "z",
-        "legend": "GDSU",
-        "name": "GDSU",
-        "seats": Math.round(Q.z_mirv*1.5),
-    },
     ]);
-if (Q.blpm_formed && Q.blpm_mirv) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_mirv*1.5),
-            });
-}
 data = data.concat([
     {
         "id": "lac",

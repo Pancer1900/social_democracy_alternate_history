@@ -225,14 +225,6 @@ data = data.concat([
         "seats": Math.round(Q.z_merf*1),
     },
     ]);
-if (Q.blpm_formed && Q.blpm_merf) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_merf*1),
-            });
-}
 data = data.concat([
     {
         "id": "bvp",
@@ -254,14 +246,6 @@ data = data.concat([
     },
 
 ]);
-if (Q.gnvp_formed && Q.gnvp_merf) {
-    data.push({
-            "id": "gnvp",
-            "legend": "GNVP",
-            "name": "GNVP",
-            "seats": Math.round(Q.gnvp_merf*1),
-            });
-}
 data = data.concat([
     {
         "id": "dnvp",
