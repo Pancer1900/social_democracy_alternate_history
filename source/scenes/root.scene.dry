@@ -623,7 +623,7 @@ Q.braus_popularty = 30;
 Q.lief_popularty = 30;
 Q.berrung_popularty = 25;
 
-Q.next_merkia_election = 17;
+Q.next_merkia_election = 3;
 Q.merkia_election_1266_seen = 0;
 Q.merkia_election_failed = 0;
 
@@ -716,7 +716,7 @@ Q.other_mir_mod = 30;
 Q.gnvp_mir_mod = 0;
 Q.blpm_mir_mod = 0;
 
-Q.next_yougen_election = 6;
+Q.next_yougen_election = 3;
 Q.yougen_election_1266_seen = 0;
 Q.yougen_election_failed = 0;
 
@@ -933,6 +933,22 @@ Q.blpm_zel = 0;
 Q.ltp_zel = 4;
 Q.rnp_zel = 8;
 Q.zek_zel = 14;
+
+Q.spd_zel_gov = 0;
+Q.asum_zel_gov = 0;
+Q.spm_zel_gov = 0;
+Q.sapd_zel_gov = 0;
+Q.ddp_zel_gov = 1;
+Q.ppu_zel_gov = 0;
+Q.z_zel_gov = 1;
+Q.dvp_zel_gov = 1;
+Q.dnvp_zel_gov = 0;
+Q.nsdap_zel_gov = 0;
+Q.gnvp_zel_gov = 0;
+Q.blpm_zel_gov = 0;
+Q.tel_zel_gov = 1;
+Q.ltp_zel_gov = 0;
+Q.lrel_zel_gov = 1;
 
 Q.spd_zel_mod = 5;
 Q.asum_zel_mod = 0;

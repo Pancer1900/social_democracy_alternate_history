@@ -58,6 +58,14 @@ Q.rnp_zel = (Q.peasants_ppu * Q.peasants * 2) + (Q.rural_ppu * Q.rural * 2) + (Q
 Q.zek_zel = (Q.peasants_other * Q.peasants * 1) + (Q.rural_other * Q.rural * 1) + (Q.others_zel_mod * 30) + (Q.workers_other * Q.workers * 3) + (Q.old_middle_other * Q.old_middle * 3) + (Q.new_middle_z * Q.new_middle * 0.5) + (Q.old_middle_dnvp * Q.old_middle * 0.5) + (Q.old_middle_dvp * Q.old_middle * 0.5);
 Q.ltp_zel = (Q.peasants_other * Q.peasants * 1.2) + (Q.rural_other * Q.rural * 1.2) + (Q.others_zel_mod * 10) + (Q.workers_other * Q.workers * 0.5);
 
+Q.zek_zel += Q.blpm_zel*0.5;
+Q.ddp_zel += Q.blpm_zel*0.5;
+Q.dnvp_zel += Q.gnvp_zel*0.6;
+Q.ltp_zel += Q.gnvp_zel*0.4;
+
+Q.gnvp_zel = 0;
+Q.blpm_zel = 0;
+
 Q.zel_total = 0;
 
 if (Q.spd_zel) Q.zel_total += Q.spd_zel;
@@ -213,14 +221,6 @@ data = data.concat([
         "seats": Math.round(Q.zek_zel*1),
     },
     ]);
-if (Q.blpm_formed && Q.blpm_zel) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_zel*1),
-            });
-}
 data = data.concat([
     {
         "id": "lac",
@@ -242,14 +242,6 @@ data = data.concat([
     },
 
 ]);
-if (Q.gnvp_formed && Q.gnvp_zel) {
-    data.push({
-            "id": "gnvp",
-            "legend": "GNVP",
-            "name": "GNVP",
-            "seats": Math.round(Q.gnvp_zel*1),
-            });
-}
 data = data.concat([
     {
         "id": "dnvp",
@@ -303,15 +295,11 @@ if (window && d3) {
 
 {!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} TEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [+ zel_change_zek +] {!</td></tr>!}
 
-[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_zel +]% {!</td><td>!} [+ zel_change_blpm +] {!</td></tr>!} ?]
-
 {!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnp_zel +]% {!</td><td>!} [+ zel_change_rnp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_zel +]% {!</td><td>!} [+ zel_change_dvp +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#1b7035'> </div> !} LTP: {!</td><td>!} [+ ltp_zel +] % {!</td><td>!} [+ zel_change_ltp +] {!</td></tr>!}
-
-[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_zel +]% {!</td><td>!} [+ zel_change_gnvp +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_zel +]% {!</td><td>!} [+ zel_change_dnvp +] {!</td></tr>!}
 

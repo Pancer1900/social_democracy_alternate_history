@@ -210,14 +210,6 @@ data = data.concat([
         "seats": Math.round(Q.z_mir*2),
     },
     ]);
-if (Q.blpm_formed && Q.blpm_mir) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_mir*2),
-            });
-}
 data = data.concat([
     {
         "id": "bvp",

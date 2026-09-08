@@ -463,21 +463,7 @@ data = data.concat([
         "name": Q.ddp_name,
         "seats": Math.round(Q.ddp_per*1.5),
     },
-    {
-        "id": "z",
-        "legend": "GDSU",
-        "name": "GDSU",
-        "seats": Math.round(Q.z_per*1.5),
-    },
     ]);
-if (Q.blpm_formed && Q.blpm_per) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_per*1.5),
-            });
-}
 data = data.concat([
     {
         "id": "bvp",
@@ -787,6 +773,12 @@ if (Q.spm_formed && Q.spm_mir) {
 }
 data = data.concat([
     {
+        "id": "vsp",
+        "legend": "SVP",
+        "name": "SVP",
+        "seats": Math.round(Q.vsp_mir*2),
+    },
+    {
         "id": "ddp",
         "legend": Q.ddp_name,
         "name": Q.ddp_name,
@@ -799,14 +791,6 @@ data = data.concat([
         "seats": Math.round(Q.z_mir*2),
     },
     ]);
-if (Q.blpm_formed && Q.blpm_mir) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_mir*2),
-            });
-}
 data = data.concat([
     {
         "id": "bvp",
@@ -821,11 +805,24 @@ data = data.concat([
         "seats": Math.round(Q.dvp_mir*2),
     },
     {
-        "id": "other",
+        "id": "sud",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_mir*2),
+        "seats": Math.round(Q.other_r*0.67),
     },
+    {
+        "id": "ltp",
+        "legend": "ltp",
+        "name": "ltp",
+        "seats": Math.round(Q.other_r*0.67),
+    },
+    {
+        "id": "other",
+        "legend": "other",
+        "name": "other",
+        "seats": Math.round(Q.other_r*0.67),
+    },
+
 ]);
 if (Q.gnvp_formed && Q.gnvp_mir) {
     data.push({
@@ -890,7 +887,7 @@ Governing Coalition :
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mir +]% {!</td><td>!} [? if z_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_mir +]% {!</td><td>!} [+ ppu_mir +]% {!</td><td>!} [? if ppu_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_mir +]% {!</td><td>!} [? if ppu_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mir +]% {!</td><td>!} [? if dvp_mir_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_mir_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
  
@@ -965,6 +962,12 @@ data = data.concat([
         "name": Q.ddp_name,
         "seats": Math.round(Q.ddp_mirv*1.5),
     },
+    {
+        "id": "z",
+        "legend": "GDSU",
+        "name": "GDSU",
+        "seats": Math.round(Q.z_mirv*1.5),
+    },
     ]);
 data = data.concat([
     {
@@ -987,14 +990,6 @@ data = data.concat([
     },
 
 ]);
-if (Q.gnvp_formed && Q.gnvp_mirv) {
-    data.push({
-            "id": "gnvp",
-            "legend": "GNVP",
-            "name": "GNVP",
-            "seats": Math.round(Q.gnvp_mirv*1.5),
-            });
-}
 data = data.concat([
     {
         "id": "dnvp",
@@ -1138,14 +1133,6 @@ data = data.concat([
         "seats": Math.round(Q.zek_zel*1),
     },
     ]);
-if (Q.blpm_formed && Q.blpm_zel) {
-    data.push({
-            "id": "blpm",
-            "legend": "BLPM",
-            "name": "BLPM",
-            "seats": Math.round(Q.blpm_zel*1),
-            });
-}
 data = data.concat([
     {
         "id": "lac",
@@ -1167,14 +1154,6 @@ data = data.concat([
     },
 
 ]);
-if (Q.gnvp_formed && Q.gnvp_zel) {
-    data.push({
-            "id": "gnvp",
-            "legend": "GNVP",
-            "name": "GNVP",
-            "seats": Math.round(Q.gnvp_zel*1),
-            });
-}
 data = data.concat([
     {
         "id": "dnvp",
@@ -1213,6 +1192,33 @@ if (window && d3) {
 {!<svg id="saxony_landtag_7" style="width: 500px; height: 250px;"> </svg>!}
 
 Governing Coalition :
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Position</td></tr>!}
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_zel +]% {!</td><td>!} [? if sapd_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if sapd_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_zel +]% {!</td><td>!} [? if asum_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if asum_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_zel +]%** {!</td><td>!} [? if spd_zel_gov = 0 : <span style="color: #824c4c;">**Opposition**</span> ?][? if spd_zel_gov = 1 : <span style="color: #438543;">**Goverment**</span> ?] {!</td></tr>!}
+
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dc0200'> </div> !}SPM: {!</td><td>!} [+ spm_zel +]% {!</td><td>!} [? if spm_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if spm_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_zel +]% {!</td><td>!} [? if ddp_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ddp_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_zel +]% {!</td><td>!} [? if z_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} TEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [? if tel_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if tel_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnp_zel +]% {!</td><td>!} [? if lrel_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if lrel_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_zel +]% {!</td><td>!} [? if dvp_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+ 
+{!<tr><td><div class="box" style='background-color:#1b7035'> </div> !} LTP: {!</td><td>!} [+ ltp_zel +]% {!</td><td>!} [? if ltp_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ltp_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_zel +]% {!</td><td>!} [? if dnvp_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dnvp_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_zel +]% {!</td><td>!} [? if nsdap_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if nsdap_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+{!</table>!}
 
 -@tippleford_action: Policies in Tippleford
 -@local: Return
