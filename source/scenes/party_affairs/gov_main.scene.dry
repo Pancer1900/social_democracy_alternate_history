@@ -1051,7 +1051,7 @@ Governing Coalition :
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_mirv +]% {!</td><td>!} [? if z_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
 
-{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNP: {!</td><td>!} [+ rnp_mirv +]% {!</td><td>!} [+ ppu_mirv +]% {!</td><td>!} [? if ppu_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} RNP: {!</td><td>!} [+ rnp_mirv +]% {!</td><td>!} [? if ppu_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_mirv +]% {!</td><td>!} [? if dvp_mirv_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_mirv_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
  
