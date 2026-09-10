@@ -1,4 +1,4 @@
-title: Merkia Election test31
+title: Merkia Election test41
 view-if: time = next_merkia_election 
 new-page: true
 tags: event
@@ -115,7 +115,8 @@ Q.mer_change_other = Q.other_mer - Q.other_mer_old;
 Q.mer_change_gnvp = Q.gnvp_mer - Q.gnvp_mer_old;
 
 Q.left_coalition_mer = (Q.spd_mer + Q.sapd_mer + Q.spm_mer + Q.asum_mer).toFixed(1);
-Q.progressive_coalition_mer = (Q.spd_mer + Q.sapd_mer + Q.spm_mer + Q.asum_mer + Q.ddp_mer).toFixed(1);
+Q.progressive_front_mer = (Q.spd_mer + Q.sapd_mer + Q.spm_mer + Q.asum_mer + Q.ddp_mer).toFixed(1);
+Q.progressive_coalition_mer = (Q.spd_mer + Q.spm_mer + Q.ddp_mer).toFixed(1);
 Q.popular_front_coalition_mer = (Q.spd_mer + Q.sapd_mer + Q.spm_mer + Q.asum_mer + Q.z_mer + Q.ddp_mer).toFixed(1);
 Q.weimar_coalition_mer = (Q.spd_mer + Q.ddp_mer + Q.z_mer + Q.spm_mer).toFixed(1);
 Q.zeltbrin_plus_coalition_mer = (Q.spd_mer + Q.ddp_mer + Q.z_mer + Q.blpm_mer + Q.ppu_mer + Q.spm_mer).toFixed(1);
@@ -362,79 +363,68 @@ on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; ch
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @prog_fro
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: progressive_front_mer >= 40
+choose-if: progressive_front_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @popu
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: popular_front_coalition_mer >= 40
+choose-if: popular_front_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @prog
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: progressive_coalition_mer >= 40
+choose-if: progressive_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @zelt
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: weimar_coalition_mer >= 40
+choose-if: weimar_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @zelt_whide
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: zeltbrin_plus_coalition_mer >= 40
+choose-if: zeltbrin_plus_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @grand
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: grand_coalition_mer >= 40
+choose-if: grand_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @lib
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: liberal_coalition_mer >= 40
+choose-if: liberal_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @lib_whide
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: wide_liberal_coalition_mer >= 40
+choose-if: wide_liberal_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @cent_right
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: center_right_coalition_mer >= 40
+choose-if: center_right_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @right
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: right_coalition_mer >= 40
+choose-if: right_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
 @far_right
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>: [+ liberal_coalition +]%
-view-if: spd_mer >= 50
-choose-if: not(ldp_ideology < 0 and fvp_path = 1)
+view-if: hitler_right_coalition_mer >= 40
+choose-if: hitler_right_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 go-to: liberal_coalition_3 if neuman_dead = 0; liberal_coalition_4 if neuman_dead = 1 and dvp_r > z_r; liberal_coalition_5 if neuman_dead = 1 and z_r > dvp_r
 
