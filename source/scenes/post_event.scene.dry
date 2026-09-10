@@ -73,6 +73,22 @@ if (Q.gnvp_formed == 0)
     Q.catholics_gnvp = 0;
     }
 
+if (Q.lurek_gov == 1) { Q.local_spd = 1 };
+
+if (Q.merkia_gov == 1) { Q.local_spd = 1 };
+
+if (Q.yougen_gov == 1) { Q.local_spd = 1 };
+
+if (Q.percil_gov == 1) { Q.local_spd = 1 };
+
+if (Q.mirfallen_gov == 1) { Q.local_spd = 1 };
+
+if (Q.merfeld_gov == 1) { Q.local_spd = 1 };
+
+if (Q.mirvieren_gov == 1) { Q.local_spd = 1 };
+
+if (Q.tippleford_gov == 1) { Q.local_spd = 1 };
+
 Q.pro_republic = (Q.pro_republic);
 Q.nationalism = (Q.nationalism);
 Q.socialism = (Q.socialism);
