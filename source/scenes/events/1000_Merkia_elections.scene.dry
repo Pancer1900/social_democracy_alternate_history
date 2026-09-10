@@ -357,62 +357,62 @@ view-if: spd_mer >= 50
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; 
 
 @left
-view-if: left_coalition_mer >= 40
-choose-if: left_coalition_mer >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
+view-if: left_coalition_mer >= 45 and sapd_formed > 0
+choose-if: left_coalition_mer >= 50 and (sapd_relation + spm_relation) >= 100
+on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1;
 
 @prog_fro
-view-if: progressive_front_mer >= 40
-choose-if: progressive_front_mer >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
+view-if: progressive_front_mer >= 45 and sapd_formed > 0
+choose-if: progressive_front_mer >= 50 and (sapd_relation + spm_relation) >= 110 and ddp_relation >= 55
+on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1;
 
 @popu
-view-if: popular_front_coalition_mer >= 40
-choose-if: popular_front_coalition_mer >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
+view-if: popular_front_coalition_mer >= 45 and sapd_formed > 0
+choose-if: popular_front_coalition_mer >= 50 and (sapd_relation + spm_relation) >= 120 and (ddp_relation + z_relation) >= 120 and liberal_reconciliation >= 15
+on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1; z_mer_gov = 1;
 
 @prog
-view-if: progressive_coalition_mer >= 40
-choose-if: progressive_coalition_mer >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
+view-if: progressive_coalition_mer >= 45
+choose-if: progressive_coalition_mer >= 50 and ddp_relation >= 55 and liberal_reconciliation >= 10
+on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; spm_mer_gov = 1; ddp_mer_gov = 1;
 
 @zelt
-view-if: weimar_coalition_mer >= 40
-choose-if: weimar_coalition_mer >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
+view-if: weimar_coalition_mer >= 45 and liberal_reconciliation >= 6
+choose-if: weimar_coalition_mer >= 50 and (ddp_relation + z_relation) >= 110 and liberal_reconciliation >= 10 
+on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1; z_mer_gov = 1;
 
 @zelt_whide
-view-if: zeltbrin_plus_coalition_mer >= 40
-choose-if: zeltbrin_plus_coalition_mer >= 50
-on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
+view-if: zeltbrin_plus_coalition_mer >= 50 and weimar_coalition_mer <= 50 and liberal_reconciliation >= 8
+choose-if: zeltbrin_plus_coalition_mer >= 50 and (ddp_relation + z_relation) >= 110 and liberal_reconciliation >= 12
+on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1; z_mer_gov = 1; ppu_mer_gov = 1; other_mer_gov = 1;
 
 @grand
-view-if: grand_coalition_mer >= 40
-choose-if: grand_coalition_mer >= 50
+view-if: grand_coalition_mer >= 50 and zeltbrin_plus_coalition_mer <= 50  and liberal_reconciliation >= 16 and center_right_coalition_mer <= 45
+choose-if: grand_coalition_mer >= 50 and liberal_reconciliation >= 18 and (ddp_relation + z_relation) >= 120 and dvp_relation >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 
 @lib
-view-if: liberal_coalition_mer >= 40
-choose-if: liberal_coalition_mer >= 50
+view-if: liberal_coalition_mer >= 45
+choose-if: liberal_coalition_mer >= 50 and liberal_unity >= 40
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 
 @lib_whide
-view-if: wide_liberal_coalition_mer >= 40
-choose-if: wide_liberal_coalition_mer >= 50
+view-if: wide_liberal_coalition_mer >= 50 and wide_liberal_coalition_mer <= 50
+choose-if: wide_liberal_coalition_mer >= 50 and liberal_unity >= 40
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 
 @cent_right
-view-if: center_right_coalition_mer >= 40
-choose-if: center_right_coalition_mer >= 50
+view-if: center_right_coalition_mer >= 45
+choose-if: center_right_coalition_mer >= 50 and (dnvp_path - gdsu_ideology + 2) >= 0 and liberal_unity >= 30
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 
 @right
-view-if: right_coalition_mer >= 40
+view-if: right_coalition_mer >= 45
 choose-if: right_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 
 @far_right
-view-if: hitler_right_coalition_mer >= 40
+view-if: hitler_right_coalition_mer >= 45 and nsdap_mer >= 10
 choose-if: hitler_right_coalition_mer >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 
