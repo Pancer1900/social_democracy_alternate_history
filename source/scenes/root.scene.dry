@@ -183,6 +183,9 @@ Q.fvp_path = 0; // 0 - centre, 1 -  left, -1 - right
 Q.ppu_ideology = 0;
 Q.ppu_path = 0; // 0 - centre, 1 -  left, -1 - right
 
+Q.dnvp_ideology = 0;
+Q.dnvp_path = -1; // 0 - centre, 1 -  republic, -1 - anti-republic
+
 Q.fvp_modifer = 1;
 Q.ldp_modifer = 1;
 Q.gdsu_modifer = 1;
@@ -201,9 +204,8 @@ Q.liberal_reconciliation = 0;
 Q.liberal_unity = 65;
 
 Q.z_relation = 35;
-Q.sapd_relation = 50;
-Q.spm_relation = 50;
-Q.asum_relation = 50;
+Q.sapd_relation = 65;
+Q.spm_relation = 65;
 Q.blpm_relation = 50;
 Q.ddp_relation = 42;
 Q.dvp_relation = 20;
@@ -595,15 +597,15 @@ Q.old_blpm_r = 0;
 /// LOCAL GOV
 
 Q.local_spd = 0;
-Q.lurek_gov = 0;
-Q.merkia_gov = 0;
+Q.lurek_gov = 0; // 1 - SPD, 2 - lib, 3 -right
+Q.merkia_gov = 2;
 Q.getewehn_gov = 0;
-Q.yougen_gov = 0;
-Q.percil_gov = 0;
-Q.merfeld_gov = 0;
-Q.mirfallen_gov = 0;
-Q.mirvieren_gov = 0;
-Q.tippleford_gov = 0;
+Q.yougen_gov = 2;
+Q.percil_gov = 2;
+Q.merfeld_gov = 3;
+Q.mirfallen_gov = 2;
+Q.mirvieren_gov = 3;
+Q.tippleford_gov = 2;
 
 //GETEWEHN
 
