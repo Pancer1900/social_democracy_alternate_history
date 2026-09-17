@@ -387,7 +387,7 @@ choose-if: zeltbrin_plus_coalition_mer >= 50 and (ddp_relation + z_relation) >= 
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1; z_mer_gov = 1; ppu_mer_gov = 1; other_mer_gov = 1;
 
 @grand
-view-if: grand_coalition_mer >= 50 and zeltbrin_plus_coalition_mer <= 50  and liberal_reconciliation >= 16 and center_right_coalition_mer <= 45
+view-if: grand_coalition_mer >= 50 and zeltbrin_plus_coalition_mer <= 50  and liberal_reconciliation >= 16 and center_right_coalition_mer <= 50
 choose-if: grand_coalition_mer >= 50 and liberal_reconciliation >= 18 and (ddp_relation + z_relation) >= 120 and dvp_relation >= 50
 on-arrival: spd_in_government = 0; spd_toleration = 0; chancellor = "Schmit"; chancellor_party = "LDP"; foreign_minister_party = "DVP"; interior_minister_party = "DNVP"; justice_minister_party = "DNVP"; labor_minister_party = "Z"; reichswehr_minister_party = "I"; economic_minister_party = "DVP"; finance_minister_party = "Z"; agriculture_minister_party = "DNVP"; in_liberal_coalition = 1;
 
