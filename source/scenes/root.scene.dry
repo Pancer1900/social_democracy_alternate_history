@@ -215,6 +215,16 @@ Q.gnvp_relation = 10;
 Q.DNVP_relation = 10;
 Q.NSDAP_relation = 0;
 
+Q.kpm_coa = 1;
+Q.asum_coa = 1;
+Q.spm_coa = 1;
+Q.fvp_coa = 1;
+Q.gdsu_coa = 1;
+Q.ppu_coa = 1;
+Q.blpm_coa = 1;
+Q.ldp_coa = 1;
+Q.other_coa = 1;
+
 Q.kpd_leader = "Thälmann";
 // alternative is the Conciliators as party leader
 Q.kpd_party_leader = "Thälmann";
