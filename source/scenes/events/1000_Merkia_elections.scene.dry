@@ -84,14 +84,14 @@ if (Q.kpm_ally) Q.kpm_coa += 20;
 if (Q.ppu_ally) Q.ppu_coa += 20;
 if (Q.fvp_ally) Q.fvp_coa += 20;
 
-if (Q.sapd_formed = 0) Q.fvp_coa -= 10;
-if (Q.sapd_formed = 0) Q.gdsu_coa -= 20;
-if (Q.sapd_formed = 0) Q.blpm_coa -= 20;
-if (Q.sapd_formed = 0) Q.ldp_coa -= 30;
+if (Q.sapd_formed == 0) {Q.fvp_coa -= 10;}
+if (Q.sapd_formed == 0) {Q.gdsu_coa -= 20;}
+if (Q.sapd_formed == 0) {Q.blpm_coa -= 20;}
+if (Q.sapd_formed == 0) {Q.ldp_coa -= 30;}
 
-if (Q.party_policy_fed = 2) Q.ppu_coa += 10;
-if (Q.party_policy_fed = 2) Q.other_coa += 10;
-if (Q.party_policy_fed = 0) Q.ppu_coa -= 10;
+if (Q.party_policy_fed == 2) {Q.ppu_coa += 10;}
+if (Q.party_policy_fed == 2) {Q.other_coa += 10;}
+if (Q.party_policy_fed == 0) {Q.ppu_coa -= 10;}
 
 Q.fvp_coa -= Q.party_policy_main*2
 Q.gdsu_coa -= Q.party_policy_main*3;
@@ -385,21 +385,21 @@ view-if: spd_mer >= 50
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; 
 
 @left
-subtitle: [+ spd_name +][? if sapd_formed : + KPM ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?]([+ left_coalition_mer +]%)
+subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?]([+ left_coalition_mer +]%)
 view-if: left_coalition_mer >= 45 and (sapd_formed > 0 or spm_formed > 0)
 choose-if: left_coalition_mer >= 50 and (kpm_coa + spm_coa) >= 130
 unavailable-subtitle: [? if (kpm_coa + spm_coa) < 130: We do not have good enough relations with the other socialist parties. ?]
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1;
 
 @prog_fro
-subtitle: [+ spd_name +][? if sapd_formed : + KPM ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?] + FVP ([+ progressive_front_mer +]%)
+subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?] + FVP ([+ progressive_front_mer +]%)
 view-if: progressive_front_mer >= 45 and sapd_formed > 0
 choose-if: progressive_front_mer >= 50 and (kpm_coa + spm_coa) >= 140 and ddp_coa >= 75
 unavailable-subtitle: [? if (kpm_coa + spm_coa) < 140: We do not have good enough relations with the other socialist parties. ?][? if ddp_coa < 75: We do not have good enough relations with the FVP. ?]
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1;
 
 @popu
-subtitle: [+ spd_name +][? if sapd_formed : + KPM ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?] + FVP + GDSU ([+ popular_front_coalition_mer +]%)
+subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?] + FVP + GDSU ([+ popular_front_coalition_mer +]%)
 view-if: popular_front_coalition_mer >= 45 and sapd_formed > 0
 choose-if: popular_front_coalition_mer >= 50 and (kpm_coa + spm_coa) >= 150 and ddp_coa >= 80 and gdsu_coa >= 80 and liberal_reconciliation >= 18
 unavailable-subtitle: [? if (kpm_coa + spm_coa) < 150: We do not have good enough relations with the other socialist parties. ?][? if gdsu_coa < 75: We do not have good enough relations with the GDSU. ?][? if fvp_coa < 75: We do not have good enough relations with the FVP. ?][? if liberal_reconciliation < 18: The Liberal Parties do not trust us enough to enter into a goverment with communists. ?]
