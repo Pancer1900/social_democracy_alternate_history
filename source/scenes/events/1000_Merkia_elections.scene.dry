@@ -70,6 +70,34 @@ if (Q.other_mer) Q.mer_total += Q.other_mer;
 if (Q.gnvp_mer) Q.mer_total += Q.gnvp_mer;
 if (Q.blpm_mer) Q.mer_total += Q.blpm_mer;
 
+Q.kpm_coa = kpm_modifier*sapd_relation + 5;
+Q.spm_coa = spm_modifier*spm_relation + 5;
+Q.fvp_coa = fvp_modifier*ddp_relation + 5;
+Q.gdsu_coa = gdsu_modifier*z_relation + 5;
+Q.ppu_coa = ppu_relation + 5;
+Q.blpm_coa = fvp_modifier*ldp_modifier*dvp_relation + 5;
+Q.ldp_coa = ldp_modifier*dvp_relation + 5;
+Q.other_coa = fvp_modifier*ldp_modifier*gdsu_modifier*50 + 5;
+
+if (Q.spm_ally) Q.spm_coa += 20;
+if (Q.kpm_ally) Q.kpm_coa += 20;
+if (Q.ppu_ally) Q.ppu_coa += 20;
+if (Q.fvp_ally) Q.fvp_coa += 20;
+
+if (Q.sapd_formed = 0) Q.fvp_coa -= 10;
+if (Q.sapd_formed = 0) Q.gdsu_coa -= 20;
+if (Q.sapd_formed = 0) Q.blpm_coa -= 20;
+if (Q.sapd_formed = 0) Q.ldp_coa -= 30;
+
+if (Q.party_policy_fed = 2) Q.ppu_coa += 10;
+if (Q.party_policy_fed = 2) Q.other_coa += 10;
+if (Q.party_policy_fed = 0) Q.ppu_coa -= 10;
+
+Q.fvp_coa -= Q.party_policy_main*2
+Q.gdsu_coa -= Q.party_policy_main*3;
+Q.ldp_coa -= Q.party_policy_main*4;
+
+
 if (Q.mer_total > 0) {
     Q.spd_mer = (Q.spd_mer / Q.mer_total) * 100;
     Q.spm_mer = (Q.spm_mer / Q.mer_total) * 100;
@@ -324,8 +352,6 @@ Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <s
 
 [? if liberal_reconciliation >= 18: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_mer +]% ?]
 
-[? if liberal_coalition < 50 : Wide - Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + others): [+ wide_liberal_coalition_mer +]% ?]
-
 Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_mer +]%
 
 [? if liberal_coalition < 50 : Wide - Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + others): [+ wide_liberal_coalition_mer +]% ?]
@@ -357,23 +383,31 @@ view-if: spd_mer >= 50
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; 
 
 @left
-view-if: left_coalition_mer >= 45 and sapd_formed > 0
-choose-if: left_coalition_mer >= 50 and (sapd_relation + spm_relation) >= 100
+subtitle: [+ spd_name +] + KPM + [? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?]([+ left_coalition_mer +]%)
+view-if: left_coalition_mer >= 45 and (sapd_formed > 0 or spm_formed > 0)
+choose-if: left_coalition_mer >= 50 and kpm_modifier*(sapd_relation + spm_relation) >= 120
+unavailable-subtitle: [? if kpm_modifier*(sapd_relation + spm_relation) <= 120: We do not have good enough relations with the other socialist parties. ?]
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1;
 
 @prog_fro
+subtitle: [+ spd_name +][? if sapd_formed : + KPM ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?] + FVP ([+ progressive_front_mer +]%)
 view-if: progressive_front_mer >= 45 and sapd_formed > 0
-choose-if: progressive_front_mer >= 50 and (sapd_relation + spm_relation) >= 110 and ddp_relation >= 55
+choose-if: progressive_front_mer >= 50 and kpm_modifier*(sapd_relation + spm_relation) >= 130 and ddp_relation*fvp_modifer >= 70
+unavailable-subtitle: [? if kpm_modifier*(sapd_relation + spm_relation) <= 135: We do not have good enough relations with the other socialist parties. ?][? if ddp_relation*fvp_modifer >= 70: We do not have good enough relations with the FVP. ?]
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1;
 
 @popu
+subtitle: [+ spd_name +][? if sapd_formed : + KPM ?][? if asum_formed: + ASUM ?][? if spm_formed : + SPM ?] + FVP + GDSU ([+ popular_front_coalition_mer +]%)
 view-if: popular_front_coalition_mer >= 45 and sapd_formed > 0
-choose-if: popular_front_coalition_mer >= 50 and (sapd_relation + spm_relation) >= 120 and (ddp_relation + z_relation) >= 120 and liberal_reconciliation >= 15
+choose-if: popular_front_coalition_mer >= 50 and (sapd_relation + spm_relation) >= 140 and gdsu_modifer*fvp_modifer*(ddp_relation + z_relation) >= 140 and liberal_reconciliation >= 15
+unavailable-subtitle: [? if kpm_modifier*(sapd_relation + spm_relation) <= 140: We do not have good enough relations with the other socialist parties. ?][? if gdsu_modifer*fvp_modifer*(ddp_relation + z_relation) >= 140: We do not have good enough relations with the FVP and the GDSU. ?]
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; asum_mer_gov = 1; spm_mer_gov = 1; sapd_mer_gov = 1; ddp_mer_gov = 1; z_mer_gov = 1;
 
 @prog
+subtitle: [+ spd_name +][? if spm_formed : + SPM ?] + FVP ([+ popular_front_coalition_mer +]%)
 view-if: progressive_coalition_mer >= 45
-choose-if: progressive_coalition_mer >= 50 and ddp_relation >= 55 and liberal_reconciliation >= 10
+choose-if: progressive_coalition_mer >= 50 and ddp_relation*fvp_modifer >= 70 and liberal_reconciliation >= 10
+unavailable-subtitle: [? if kpm_modifier*(sapd_relation + spm_relation) <= 140: We do not have good enough relations with the other socialist parties. ?][? if gdsu_modifer*fvp_modifer*(ddp_relation + z_relation) >= 140: We do not have good enough relations with the FVP and the GDSU. ?]
 on-arrival: spd_mer_gov = 1; merkia_gov = 1; local_spd = 1; spm_mer_gov = 1; ddp_mer_gov = 1;
 
 @zelt
