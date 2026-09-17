@@ -1,4 +1,4 @@
-title: Merkia Election test431
+title: Merkia Election test432
 view-if: time = next_merkia_election 
 new-page: true
 tags: event
@@ -93,7 +93,7 @@ if (Q.party_policy_fed == 2) {Q.ppu_coa += 10;}
 if (Q.party_policy_fed == 2) {Q.other_coa += 10;}
 if (Q.party_policy_fed == 0) {Q.ppu_coa -= 10;}
 
-Q.fvp_coa -= Q.party_policy_main*2
+Q.fvp_coa -= Q.party_policy_main*2;
 Q.gdsu_coa -= Q.party_policy_main*3;
 Q.ldp_coa -= Q.party_policy_main*4;
 
