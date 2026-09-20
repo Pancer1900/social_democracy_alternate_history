@@ -1,4 +1,4 @@
-title: Merkia Election test443
+title: Merkia Election test444
 view-if: time = next_merkia_election 
 new-page: true
 tags: event
@@ -647,4 +647,97 @@ Governing Arrangements:
 
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_mer +]% {!</td><td>!} [? if nsdap_mer_coa = 0 : <span style="color: #824c4c;">Opposition</span> ?] {!</td></tr>!}
 {!</table>!}
+
+-@kpm_gov: We should try a colaition with the KPM.
+-@kpm_tol: Maybe we can try to get KPM toleration.
+-@asum_gov: We should try a colaition with the ASUM.
+-@asum_tol: Maybe we can try to get ASUM toleration.
+-@spm_gov: We should try a colaition with the SPM.
+-@spm_tol: Maybe we can try to get SPM toleration.
+-@fvp_gov: We should try a colaition with the FVP.
+-@fvp_tol: Maybe we can try to get FVP toleration.
+-@gdsu_gov: We should try a colaition with the GDSU.
+-@gdsu_tol: Maybe we can try to get GDSU toleration.
+-@blpm_gov: We should try a colaition with the BLPM.
+-@blpm_tol: Maybe we can try to get BLPM toleration.
+-@ppu_gov: We should try a colaition with the PPU.
+-@ppu_tol: Maybe we can try to get PPU toleration.
+-@ldp_gov: We should try a colaition with the [+ dvp_name +].
+-@ldp_tol: Maybe we can try to get [+ dvp_name +] toleration.
+
+@kpm_gov
+view-if: sapd_formed > 0
+choose-if: kpm_coa >= 50
+on-arrival: sapd_mer_coa = 1; 
+
+@kpm_tol
+view-if: sapd_formed > 0
+choose-if: kpm_coa >= 50
+on-arrival: sapd_mer_coa = 2; 
+
+@asum_gov
+view-if: asum_formed > 0
+choose-if: (kpm_coa + spm_coa) >= 100
+on-arrival: asum_mer_coa = 1; 
+
+@asum_tol
+view-if: asum_formed > 0
+choose-if: (kpm_coa + spm_coa) >= 100
+on-arrival: asum_mer_coa = 2;
+
+@spm_gov
+view-if: spm_formed > 0
+choose-if: spm_coa >= 50
+on-arrival: spm_mer_coa = 1; 
+
+@spm_tol
+view-if: spm_formed > 0
+choose-if: spm_coa >= 50
+on-arrival: spm_mer_coa = 2;
+
+@fvp_gov
+view-if: fvp_formed > 0
+choose-if: fvp_coa >= 50
+on-arrival: fvp_mer_coa = 1; 
+
+@fvp_tol
+view-if: fvp_formed > 0
+choose-if: fvp_coa >= 50
+on-arrival: fvp_mer_coa = 2;
+
+@gdsu_gov
+choose-if: gdsu_coa >= 50
+on-arrival: gdsu_mer_coa = 1; 
+
+@gdsu_tol
+choose-if: gdsu_coa >= 50
+on-arrival: gdsu_mer_coa = 2;
+
+@ppu_gov
+choose-if: ppu_coa >= 50
+on-arrival: ppu_mer_coa = 1; 
+
+@ppu_tol
+choose-if: ppu_coa >= 50
+on-arrival: ppu_mer_coa = 2;
+
+@blpm_gov
+view-if: blpm_formed > 0
+choose-if: blpm_coa >= 50
+on-arrival: blpm_mer_coa = 1; 
+
+@blpm_tol
+view-if: blpm_formed > 0
+choose-if: blpm_coa >= 50
+on-arrival: blpm_mer_coa = 2;
+
+@ldp_gov
+choose-if: ldp_coa >= 50
+on-arrival: ldp_mer_coa = 1; 
+
+@ldp_tol
+choose-if: ldp_coa >= 50
+on-arrival: ldp_mer_coa = 2;
+
+
 
