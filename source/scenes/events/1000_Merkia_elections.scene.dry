@@ -1,4 +1,4 @@
-title: Merkia Election test442
+title: Merkia Election test443
 view-if: time = next_merkia_election 
 new-page: true
 tags: event
@@ -70,14 +70,57 @@ if (Q.other_mer) Q.mer_total += Q.other_mer;
 if (Q.gnvp_mer) Q.mer_total += Q.gnvp_mer;
 if (Q.blpm_mer) Q.mer_total += Q.blpm_mer;
 
-Q.kpm_coa = (kpm_modifier*sapd_relation);
-Q.spm_coa = (spm_modifier*spm_relation);
-Q.fvp_coa = (fvp_modifier*ddp_relation);
-Q.gdsu_coa = (gdsu_modifier*z_relation);
-Q.ppu_coa = (ppu_relation);
-Q.blpm_coa = (fvp_modifier*ldp_modifier*dvp_relation);
-Q.ldp_coa = (ldp_modifier*dvp_relation);
-Q.other_coa = (fvp_modifier*ldp_modifier*gdsu_modifier*50);
+Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation) + 5;
+Q.spm_coa = (Q.spm_modifier*Q.spm_relation) + 5;
+Q.fvp_coa = (Q.fvp_modifier*Q.ddp_relation) + 5;
+Q.gdsu_coa = (Q.gdsu_modifier*Q.z_relation) + 5;
+Q.ppu_coa = (Q.ppu_relation) + 5;
+Q.blpm_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.dvp_relation) + 5;
+Q.ldp_coa = (Q.ldp_modifier*Q.dvp_relation) + 5;
+Q.other_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.gdsu_modifier*50) + 5;
+
+if (Q.spm_ally) {
+    Q.spm_coa += 20;
+    }
+if (Q.kpm_ally) {
+    Q.kpm_coa += 20;
+    }
+if (Q.ppu_ally) {
+    Q.ppu_coa += 20;
+    }
+if (Q.fvp_ally) {
+    Q.fvp_coa += 20;
+    }
+
+if (Q.sapd_formed == 0) {
+    Q.fvp_coa -= 10;
+    }
+if (Q.sapd_formed == 0) {
+    Q.gdsu_coa -= 20;
+    }
+if (Q.sapd_formed == 0) {
+    Q.blpm_coa -= 20;
+    }
+if (Q.sapd_formed == 0) {
+    Q.ldp_coa -= 30;
+    }
+
+if (Q.party_policy_fed == 2) {
+    Q.ppu_coa += 10;
+    }
+if (Q.party_policy_fed == 2) {
+    Q.other_coa += 10;
+    }
+if (Q.party_policy_fed == 0) {
+    Q.ppu_coa -= 10;
+    }
+
+Q.fvp_coa -= Q.party_policy_main*2;
+Q.gdsu_coa -= Q.party_policy_main*3;
+Q.ldp_coa -= Q.party_policy_main*4;
+
+Q.kpm_coa += Q.party_policy_main*2;
+Q.spm_coa -= Q.party_policy_main;
 
 if (Q.mer_total > 0) {
     Q.spd_mer = (Q.spd_mer / Q.mer_total) * 100;
