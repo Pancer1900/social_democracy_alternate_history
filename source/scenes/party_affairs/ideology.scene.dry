@@ -28,7 +28,7 @@ if (Q.ideology && Q.ideology != "left") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "left"; revolutionaries_strength += 10; left_strength += 8; revolutionaries_dissent -= 8; agrarnians_strength += 3; agrarnians_dissent -= 3; left_dissent -= 6; z_relation -= 4/gdsu_modifer ; dvp_relation -= 5/ldp_modifer ; ddp_relation -= 5/fvp_modifer ; reformist_strength -= 5; reformist_dissent += 6; radicalisation += 1; sapd_relation += 5*kpm_modifier
+on-departure: ideology = "left"; revolutionaries_strength += 10; left_strength += 8; revolutionaries_dissent -= 8; agrarnians_strength += 3; agrarnians_dissent -= 3; left_dissent -= 6; z_relation -= 4/gdsu_modifier ; dvp_relation -= 5/ldp_modifier ; ddp_relation -= 5/fvp_modifer ; reformist_strength -= 5; reformist_dissent += 6; radicalisation += 1; sapd_relation += 5*kpm_modifier
 
 The radical left of the party supports a course of class struggle and preparing for revolution. They belive that the party should reject parlimetarism for a full commitment to revolutionary struggle.
 
@@ -39,7 +39,7 @@ if (Q.ideology && Q.ideology != "front") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "front"; left_strength += 4; revolutionaries_strength += 2; agrarnians_strength += 8; labor_strength += 4; left_dissent -= 3; revolutionaries_dissent -= 3; labor_dissent -= 5; agrarnians_dissent -= 8; reformist_dissent += 4; dvp_relation -= 3/ldp_modifer ; z_relation -= 2/gdsu_modifer; radicalisation += 0.5; sapd_relation += 3*kpm_modifier
+on-departure: ideology = "front"; left_strength += 4; revolutionaries_strength += 2; agrarnians_strength += 8; labor_strength += 4; left_dissent -= 3; revolutionaries_dissent -= 3; labor_dissent -= 5; agrarnians_dissent -= 8; reformist_dissent += 4; dvp_relation -= 3/ldp_modifier ; z_relation -= 2/gdsu_modifier; radicalisation += 0.5; sapd_relation += 3*kpm_modifier
 
 The agararian wing wants to unite the laborers and farmers of the land and create a united front agains the Burgoise and the old Aristocrasy.
 
@@ -73,7 +73,7 @@ if (Q.ideology && Q.ideology != "reformist") {
 }
 !}
 go-to: changed if changed = 1
-on-departure: ideology = "reformist"; reformist_strength += 10; reformist_dissent -= 8; z_relation += 2*gdsu_modifer ; ddp_relation += 2*fvp_modifer ; revolutionaries_strength -= 6; revolutionaries_dissent += 8; left_strength -= 4; left_dissent += 6; radicalisation -= 1; sapd_relation -= 3/kpm_modifier
+on-departure: ideology = "reformist"; reformist_strength += 10; reformist_dissent -= 8; z_relation += 2*gdsu_modifier ; ddp_relation += 2*fvp_modifer ; revolutionaries_strength -= 6; revolutionaries_dissent += 8; left_strength -= 4; left_dissent += 6; radicalisation -= 1; sapd_relation -= 3/kpm_modifier
 
 The reformist wing of the party seeks to preserve the <span style="color: #dee03a;">Federation</span> and the <span style="color: #437dfa;">democratic</span> system of government, and is most supportive of coalitions with the other pro-<span style="color: #437dfa;">democracy</span> parties.
 

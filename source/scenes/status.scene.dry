@@ -285,7 +285,7 @@ Interior police: [+ interior_police_strength +] thousand members.
 
 [? if dvp_name != 0: <span style="color: #fbffd5;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
 
-[? if gdvn_formed: <span style="color: #774ae2;">**GNVP**</span>: [+ gnvp_votes +]% ?]
+[? if gnvp_formed: <span style="color: #774ae2;">**GNVP**</span>: [+ gnvp_votes +]% ?]
 
 <span style="color: #dddddd;">**others**</span>: [+ other_votes +]%
 

@@ -38,17 +38,17 @@ on-arrival: resources -= 1; liberal_reconciliation += 1; gdsu_left += 1
 go-to: center_reform if gdsu_ideology < 0; center_coalition if gdsu_ideology > 0; center_op if gdsu_ideology = 0
 
 @center_op
-on-arrival: z_relation += 5.5*(1 - dissent)*(gdsu_modifer)
+on-arrival: z_relation += 5.5*(1 - dissent)*(gdsu_modifier)
 
 <span style="color: #48b94a;">GDSU</span> was one of the founding partes of the Federation and they are commited to democrasy, as well as many social policies, that makes them a potential ally of us. 
 
 @center_coalition
-on-arrival: z_relation += 6.5*(1 - dissent)*(gdsu_modifer)
+on-arrival: z_relation += 6.5*(1 - dissent)*(gdsu_modifier)
 
 The left wing leadership of the <span style="color: #48b94a;">GDSU</span> suports some form of cooperation with us, so goodwill between our partes can grow.
 
 @center_reform
-on-arrival: z_relation += 4.5*(1 - dissent)*(gdsu_modifer)
+on-arrival: z_relation += 4.5*(1 - dissent)*(gdsu_modifier)
 
 Even with the right governing the <span style="color: #48b94a;">GDSU</span> it doesn't mean we cannot try to get them to cooperate with us.
 
@@ -68,7 +68,7 @@ on-arrival: resources -= 1; liberal_reconciliation += 2; ldp_left += 1; dvp_rela
 go-to: lpd_reforma if ldp_reform = 1; ldp_coalition if blpm_formed = 1; lpd_op if ldp_reform = 0 and blpm_formed = 0
 
 @lpd_op
-on-arrival: dvp_relation += 5.5*(1 - dissent)*(ldp_modifer)
+on-arrival: dvp_relation += 5.5*(1 - dissent)*(ldp_modifier)
 
 <span style="color: #caa58b;">LDP</span> has been a vocal oposition against socialists in the Rejonsket, but we may change their mind.
 
@@ -78,7 +78,7 @@ on-arrival: blpm_relation += 6.5*(1 - dissent); dvp_relation += 3*(1 - dissent)
 The newly created <span style="color: #00e8ff;">BLPM</span> is much more open to cooperation with us, so improving relations comes naturally.
 
 @lpd_reforma
-on-arrival: dvp_relation += 5.5*(1 - dissent)*(ldp_modifer)
+on-arrival: dvp_relation += 5.5*(1 - dissent)*(ldp_modifier)
 
 Even thou <span style="color: #caa58b;">LDP</span> is still a majority center-right party, after the reforms it is now a bit more open to cooperation with us.
 
