@@ -81,7 +81,7 @@ Mass rallies are a main feature of any kind of political life, but as <span styl
 - @easy_discard
 
 @class_struggle
-on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += (radicalization/10); workers_spd += (radicalization/10); unemployed_spd += 1.5*(1-dissent); unemployed_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); workers_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); left_strength += 5; left_dissent -= 5; radicalization += 1; revolutionaries_strength += 5; revolutionaries_dissent -= 5; reformist_strength -= 3; reformist_dissent += 3; old_middle_spd -= 3; new_middle_spd -= 2; ddp_relation -= 3/fvp_modifer ; z_relation -= 4/gdsu_modifier ; dvp_relation -= 5/ldp_modifier; sapd_relation += 3*kpm_modifier; labour_unrest += 2;
+on-arrival: workers_spd += 3*(1-dissent)*(organisation_workers/20); unemployed_spd += (radicalization/10); workers_spd += (radicalization/10); unemployed_spd += 1.5*(1-dissent); unemployed_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); workers_spd += 2*(1-dissent) if (left_strength + revolutionaries_strength) > (reformist_strength + center_strength/2); left_strength += 5; left_dissent -= 5; radicalization += 1; revolutionaries_strength += 5; revolutionaries_dissent -= 5; reformist_strength -= 3; reformist_dissent += 3; old_middle_spd -= 3; new_middle_spd -= 2; ddp_relation -= 3/fvp_modifier ; z_relation -= 4/gdsu_modifier ; dvp_relation -= 5/ldp_modifier; sapd_relation += 3*kpm_modifier; labour_unrest += 2;
 
 Our message of class struggle appeals to the left wing of the working class, while potentially alienating the middle class. What is the secondary theme of this rally?
 
@@ -91,7 +91,7 @@ Our message of class struggle appeals to the left wing of the working class, whi
 - @fund: Fundrasing for the party.
 
 @pacifism
-on-arrival: workers_spd += 2*(1-dissent)*(organisation_workers/20); unemployed_spd += (pacifism/10); workers_spd += 0.6*(pacifism/10); new_middle_spd += 1.5*(pacifism/10); new_middle_spd += 1*(1-dissent)*(organisation_middle/20); unemployed_spd += 1*(1-dissent); left_dissent += 5; radicalization -= 0.5; revolutionaries_dissent += 5; reformist_strength += 2; ddp_relation += 3*fvp_modifer ; z_relation += 3*gdsu_modifier ; dvp_relation += 2*ldp_modifier; pacifism += 1;
+on-arrival: workers_spd += 2*(1-dissent)*(organisation_workers/20); unemployed_spd += (pacifism/10); workers_spd += 0.6*(pacifism/10); new_middle_spd += 1.5*(pacifism/10); new_middle_spd += 1*(1-dissent)*(organisation_middle/20); unemployed_spd += 1*(1-dissent); left_dissent += 5; radicalization -= 0.5; revolutionaries_dissent += 5; reformist_strength += 2; ddp_relation += 3*fvp_modifier ; z_relation += 3*gdsu_modifier ; dvp_relation += 2*ldp_modifier; pacifism += 1;
 
 Our message of pacifism appeals to the middle class and aggitates the masses agains the right. What is the secondary theme of this rally?
 
@@ -137,7 +137,7 @@ on-arrival: workers_spd += 2*(1-dissent)*(organisation_workers/20); unemployed_s
 go-to: radical if economic_plan = 3; moderate if economic_plan = 2; reformist if economic_plan = 1
 
 @radical
-on-arrival: workers_spd += 4*(1-dissent)*(organisation_workers/20); unemployed_spd += 4*(1-dissent); new_middle_spd -= 4; old_middle_spd -= 4; socialism += 3*(1 + (revolutionaries_strength + left_strength)/100); ddp_relation -= 3/fvp_modifer ; z_relation -= 4/gdsu_modifier ; dvp_relation -= 5/ldp_modifier ; blpm_relation -= 5; radicalization += 1; labour_unrest += 2;
+on-arrival: workers_spd += 4*(1-dissent)*(organisation_workers/20); unemployed_spd += 4*(1-dissent); new_middle_spd -= 4; old_middle_spd -= 4; socialism += 3*(1 + (revolutionaries_strength + left_strength)/100); ddp_relation -= 3/fvp_modifier ; z_relation -= 4/gdsu_modifier ; dvp_relation -= 5/ldp_modifier ; blpm_relation -= 5; radicalization += 1; labour_unrest += 2;
 
 Our radical plan is massively supported by workers and the unemployed, the radical rethoric attracts more and more people to <span style="color: #d61818;">socialist </span> causes, while the middle class is against it.
 
@@ -160,7 +160,7 @@ go-to: land_reform if land_plan = 1; collectivisation_2 if land_plan = 2
 // rural
 
 @takeover
-on-arrival: peasants_spd += 4*(1-dissent)*(organisation_rural/20)*(1+(agrarnians_strength/100)); rural_spd += 1*(1-dissent)*(organisation_rural/20)*(1+(agrarnians_strength/100)); rural_unrest += 4; ddp_relation -= 3/fvp_modifer; z_relation -= 4/gdsu_modifier ; dvp_relation -= 5/ldp_modifier ; blpm_relation -= 5; radicalization += 1;
+on-arrival: peasants_spd += 4*(1-dissent)*(organisation_rural/20)*(1+(agrarnians_strength/100)); rural_spd += 1*(1-dissent)*(organisation_rural/20)*(1+(agrarnians_strength/100)); rural_unrest += 4; ddp_relation -= 3/fvp_modifier; z_relation -= 4/gdsu_modifier ; dvp_relation -= 5/ldp_modifier ; blpm_relation -= 5; radicalization += 1;
 
 Our radial land reform plan is getting massive support from the peasants and is massively radicalising the rural population. 
 

@@ -188,7 +188,7 @@ Q.dnvp_path = -1; // 0 - centre, 1 -  republic, -1 - anti-republic
 
 Q.fvp_modifier = 1;
 Q.ldp_modifier = 1;
-Q.gdsu_modifer = 1;
+Q.gdsu_modifier = 1;
 Q.kpm_modifier = 1;
 Q.spm_modifier = 1;
 
