@@ -392,6 +392,8 @@ Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + others + <span 
 
 There are some potential coalition arrangements.
 
+@coalition_menu
+
 -@spd: We achived a <span style="color: #dc0200;">**[+ spd_name +]**</span> majority!
 -@left: We achived a <span style="color: #d61818;">Socialist</span> majority of all the left wing patries!
 -@prog_fro: We can atempth to form a <span style="color: #d61818;">Progr</span><span style="color: #ddd500;">esive</span> front with the <span style="color: #ddd500;">FVP</span> and other leftists parties.
@@ -405,7 +407,7 @@ There are some potential coalition arrangements.
 -@cent_right: Center right coalition could form. 
 -@right: A reactionary Right wing coalition could form.
 -@far_right: This is the end....
--@coalition: Maybe we can try some other
+-@coalition: Maybe we can try some other coalition?
 
 @spd
 view-if: spd_mer >= 50
@@ -499,7 +501,7 @@ Governing Arrangement:
 
 Current Caversket Support: [+ custom_coalition_mer +]%
 
-**Coalition:** [? if sapd_mer_coa = 1: KPM ?][? if asum_mer_coa = 1: ASUM ?][? if spm_mer_coa = 1: SPM ?][? if fvp_mer_coa = 1: FVP ?][? if gdsu_mer_coa = 1: GDSU ?][? if blpm_mer_coa = 1: BLPM ?][? if ppu_mer_coa = 1: PPU ?][? if ldp_mer_coa = 1: LDP ?]
+**Coalition:** [? if sapd_mer_coa = 1: KPM ?][? if asum_mer_coa = 1: ASUM ?]<span style="color: #dc0200;">**[+ spd_name +]**</span>[? if spm_mer_coa = 1: SPM ?][? if fvp_mer_coa = 1: FVP ?][? if gdsu_mer_coa = 1: GDSU ?][? if blpm_mer_coa = 1: BLPM ?][? if ppu_mer_coa = 1: PPU ?][? if ldp_mer_coa = 1: LDP ?]
 
 *Toleration:* [? if sapd_mer_coa = 2: KPM ?][? if asum_mer_coa = 2: ASUM ?][? if spm_mer_coa = 2: SPM ?][? if fvp_mer_coa = 2: FVP ?][? if gdsu_mer_coa = 2: GDSU ?][? if blpm_mer_coa = 2: BLPM ?][? if ppu_mer_coa = 2: PPU ?][? if ldp_mer_coa = 2: LDP ?]
 
@@ -533,6 +535,10 @@ Opposition: [? if sapd_mer_coa = 0: KPM ?][? if asum_mer_coa = 0: ASUM ?][? if s
 -@ppu_tol_drop: Drop the PPU toleration.
 -@ldp_gov: We should try a colaition with the [+ dvp_name +].
 -@ldp_gov_drop: Leave the [+ dvp_name +] out of the coalition.
+-@return: Return to the "normal" coalitions.
+
+@return
+go-to: coalition_menu
 
 @kpm_gov
 view-if: sapd_formed > 0
@@ -590,24 +596,22 @@ on-arrival: spm_mer_coa = 0; custom_coalition_mer -= spm_mer;
 go-to: coalition
 
 @fvp_gov
-view-if: fvp_formed > 0
 choose-if: fvp_coa >= 50
 on-arrival: fvp_mer_coa = 1; custom_coalition_mer += ddp_mer;
 go-to: coalition
 
 @fvp_tol
-view-if: fvp_formed > 0
 choose-if: fvp_coa >= 50
 on-arrival: fvp_mer_coa = 2; custom_coalition_mer += ddp_mer;
 go-to: coalition
 
 @fvp_gov_drop
-view-if: asum_formed > 0 and asum_mer_coa = 1
+view-if: fvp_mer_coa = 1
 on-arrival: asum_mer_coa = 0; custom_coalition_mer -= ddp_mer;
 go-to: coalition
 
 @fvp_tol_drop
-view-if: asum_formed > 0 and asum_mer_coa = 2
+view-if: fvp_mer_coa = 2
 on-arrival: asum_mer_coa = 0; custom_coalition_mer -= ddp_mer;
 go-to: coalition
 
