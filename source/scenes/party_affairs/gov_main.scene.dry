@@ -66,6 +66,12 @@ if (Q.spm_formed && Q.spm_mer) {
 }
 data = data.concat([
     {
+        "id": "vsp",
+        "legend": VSP,
+        "name": VSP,
+        "seats": Math.round(Q.other_mer*0.84),
+    },
+    {
         "id": "ddp",
         "legend": Q.ddp_name,
         "name": Q.ddp_name,
@@ -103,13 +109,13 @@ data = data.concat([
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_mer*1.5),
+        "seats": Math.round(Q.other_mer*0.84),
     },
     {
         "id": "ltp",
         "legend": "ltp",
         "name": "ltp",
-        "seats": Math.round(Q.other_mer*1),
+        "seats": Math.round(Q.other_mer*0.84),
     },
 ]);
 if (Q.gnvp_formed && Q.gnvp_mer) {

@@ -657,6 +657,7 @@ Q.blpm_mer = 0;
 Q.spd_mer_gov = 0;
 Q.asum_mer_gov = 0;
 Q.spm_mer_gov = 0;
+Q.vsp_mer_gov = 0;
 Q.sapd_mer_gov = 0;
 Q.ddp_mer_gov = 1;
 Q.ppu_mer_gov = 1;
