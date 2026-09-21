@@ -700,12 +700,12 @@ on-arrival: sapd_mer_coa = 2;
 go-to: coalition
 
 @kpm_gov_drop
-view-if: sapd_formed > 0 and sapd_mer_coa = 1; 
+view-if: sapd_formed > 0 and sapd_mer_coa = 1
 on-arrival: sapd_mer_coa = 0; 
 go-to: coalition
 
 @kpm_tol_drop
-view-if: sapd_formed > 0 and sapd_mer_coa = 2; 
+view-if: sapd_formed > 0 and sapd_mer_coa = 2
 on-arrival: sapd_mer_coa = 0; 
 go-to: coalition
 
@@ -722,12 +722,12 @@ on-arrival: asum_mer_coa = 2;
 go-to: coalition
 
 @asum_gov_drop
-view-if: asum_formed > 0 and asum_mer_coa = 1; 
+view-if: asum_formed > 0 and asum_mer_coa = 1
 on-arrival: asum_mer_coa = 0;
 go-to: coalition 
 
 @asum_tol_drop
-view-if: asum_formed > 0 and asum_mer_coa = 2; 
+view-if: asum_formed > 0 and asum_mer_coa = 2
 on-arrival: asum_mer_coa = 0; 
 go-to: coalition
 
@@ -738,7 +738,7 @@ on-arrival: spm_mer_coa = 1;
 go-to: coalition
 
 @spm_gov_drop
-view-if: spm_formed > 0 and spm_mer_coa = 1; 
+view-if: spm_formed > 0 and spm_mer_coa = 1
 on-arrival: spm_mer_coa = 0;  
 go-to: coalition
 
@@ -755,12 +755,12 @@ on-arrival: spm_mer_coa = 2;
 go-to: coalition
 
 @vsp_gov_drop
-view-if: vsp_mer_coa = 1; 
+view-if: vsp_mer_coa = 1
 on-arrival: vsp_mer_coa = 0; 
 go-to: coalition
 
 @vsp_tol_drop
-view-if: vsp_mer_coa = 2; 
+view-if: vsp_mer_coa = 2
 on-arrival: vsp_mer_coa = 0; 
 go-to: coalition
 
@@ -777,12 +777,12 @@ on-arrival: fvp_mer_coa = 2;
 go-to: coalition
 
 @fvp_gov_drop
-view-if: asum_formed > 0 and asum_mer_coa = 1; 
+view-if: asum_formed > 0 and asum_mer_coa = 1
 on-arrival: asum_mer_coa = 0; 
 go-to: coalition
 
 @fvp_tol_drop
-view-if: asum_formed > 0 and asum_mer_coa = 2; 
+view-if: asum_formed > 0 and asum_mer_coa = 2
 on-arrival: asum_mer_coa = 0; 
 go-to: coalition
 
@@ -797,12 +797,12 @@ on-arrival: gdsu_mer_coa = 2;
 go-to: coalition
 
 @gdsu_gov_drop
-view-if: gdsu_mer_coa = 1; 
+view-if: gdsu_mer_coa = 1
 on-arrival: asum_mer_coa = 0; 
 go-to: coalition
 
 @gdsu_tol_drop
-view-if: gdsu_mer_coa = 2; 
+view-if: gdsu_mer_coa = 2 
 on-arrival: asum_mer_coa = 0; 
 go-to: coalition
 
@@ -817,12 +817,12 @@ on-arrival: ppu_mer_coa = 2;
 go-to: coalition
 
 @ppu_gov_drop
-view-if: ppu_mer_coa = 1; 
+view-if: ppu_mer_coa = 1
 on-arrival: asum_mer_coa = 0; 
 go-to: coalition
 
 @ppu_tol_drop
-view-if: ppu_mer_coa = 2; 
+view-if: ppu_mer_coa = 2
 on-arrival: asum_mer_coa = 0; 
 go-to: coalition
 
@@ -839,12 +839,12 @@ on-arrival: blpm_mer_coa = 2;
 go-to: coalition
 
 @blpm_gov_drop
-view-if: blpm_formed > 0 and blpm_mer_coa = 1; 
+view-if: blpm_formed > 0 and blpm_mer_coa = 1 
 on-arrival: blpm_mer_coa = 0; 
 go-to: coalition
 
 @blpm_tol_drop
-view-if: blpm_formed > 0 and blpm_mer_coa = 2; 
+view-if: blpm_formed > 0 and blpm_mer_coa = 2
 on-arrival: blpm_mer_coa = 0; 
 go-to: coalition
 
@@ -854,7 +854,7 @@ on-arrival: ldp_mer_coa = 1;
 go-to: coalition
 
 @ldp_gov_drop
-view-if: ldp_mer_coa = 1; 
+view-if: ldp_mer_coa = 1
 on-arrival: ldp_mer_coa = 0; 
 go-to: coalition
 
