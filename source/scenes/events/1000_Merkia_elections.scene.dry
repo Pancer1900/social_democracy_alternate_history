@@ -1,4 +1,4 @@
-title: Merkia Election test600
+title: Merkia Election test601
 view-if: time = next_merkia_election 
 new-page: true
 tags: event
@@ -338,6 +338,7 @@ if (window && d3) {
     d3.select("#saxony_landtag").datum(data).call(parliament);
 }
 !}
+go-to: coalition_menu
 
 **Merkia Elections results:**
 
@@ -535,6 +536,7 @@ Opposition: [? if sapd_mer_coa = 0: KPM ?][? if asum_mer_coa = 0: ASUM ?][? if s
 -@ppu_tol_drop: Drop the PPU toleration.
 -@ldp_gov: We should try a colaition with the [+ dvp_name +].
 -@ldp_gov_drop: Leave the [+ dvp_name +] out of the coalition.
+-@custom: We can try this arrnagment to work.
 -@return: Return to the "normal" coalitions.
 
 @return
@@ -687,7 +689,14 @@ view-if: ldp_mer_coa = 1
 on-arrival: ldp_mer_coa = 0; custom_coalition_mer -= dvp_mer;
 go-to: coalition
 
+@custom
+choose-if: custom_coalition_mer >= 50
+on-arrival: {!
 
+!}
+go-to: custom_sucess if failed = 0; custom_failed if failed > 1
 
+@custom_sucess
 
+@custom_failed
 
