@@ -152,6 +152,7 @@ Q.party_policy_paramilitary = 0; // paramil
 Q.party_policy_fed = 1; // federal 
 Q.pre_congress_seen = 0;
 Q.party_corruption = 0;
+Q.state_corruption = 0;
 Q.syn_created = 0;
 Q.syn_support = 0;
 
