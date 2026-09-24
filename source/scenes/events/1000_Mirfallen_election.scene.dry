@@ -411,6 +411,7 @@ There are some potential coalition arrangements.
 @coalition_menu
 
 - @coalition: Maybe we can try some other coalition?
+- @continue: Maybe we can try some other coalition?
 
 # TODO: black-brown coalition
 
@@ -730,3 +731,7 @@ After pulling some strings we manged to convice them to make a goverment with us
 Even though we work our best to make the coalition work, there are some underlying problem that we cannot resolve. 
 
 -@coalition: We must return to the drawing board. 
+
+@continue
+
+Governing Arrangement:
