@@ -353,6 +353,7 @@ if (window && d3) {
     d3.select("#saxony_landtag").datum(data).call(parliament);
 }
 !}
+go-to: coalition_menu
 
 **Mirfallen Caversket:**
 
@@ -406,6 +407,8 @@ Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + others + <span 
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
+
+@coalition_menu
 
 - @coalition: Maybe we can try some other coalition?
 
