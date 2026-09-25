@@ -191,8 +191,11 @@ Q.reichswehr_goal_completed = 0;
 Q.strike_term_seen = 0;
 
 Q.z_minus_bvp_r = Q.z_r - 3;
-Q.vsp_r = Q.other_r/5;
-Q.str_change_vsp = Q.str_change_other/5;
+Q.vsp_r = Q.other_r/Q.vsp_strength;
+Q.str_change_vsp = Q.str_change_other/Q.vsp_strength;
+
+Q.vsp_r = (Q.vsp_r != undefined ? parseFloat(Q.vsp_r.toFixed(1)) : 0);
+Q.str_change_vsp = (Q.str_change_vsp != undefined ? parseFloat(Q.str_change_vsp.toFixed(1)) : 0);
 
 Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation);
 Q.spm_coa = (Q.spm_modifier*Q.spm_relation);

@@ -195,6 +195,8 @@ Q.spm_modifier = 1;
 
 // inter-party relations
 
+Q.vsp_strength = 5;
+
 Q.spm_ally = 1;
 Q.kpm_ally = 1;
 Q.asum_ally = 1;
@@ -1324,7 +1326,7 @@ Q.n_elections = 0;
 Q.no_majority_elections = 0;
 // elections are not on a timer, but rather there is an indicator for whether you're in an electoral cycle.
 Q.in_election = 1;
-Q.next_election_year = 1268;
+Q.next_election_year = 1266;
 Q.next_election_month = 3;
 Q.next_election_time = 25;
 // government affairs timers
