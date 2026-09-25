@@ -190,11 +190,17 @@ Q.reichswehr_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 
+Q.vsp_old = Q.vsp_r;
+
 Q.z_minus_bvp_r = Q.z_r - 3;
 Q.vsp_r = Q.other_r/Q.vsp_strength;
-Q.str_change_vsp = Q.str_change_other/Q.vsp_strength;
+Q.str_change_vsp = Q.vsp_r - Q.vsp_old;
+
+Q.other_r = Q.other_r - Q.vsp_r;
 
 Q.vsp_r = (Q.vsp_r != undefined ? parseFloat(Q.vsp_r.toFixed(1)) : 0);
+Q.str_change_vsp = (Q.str_change_vsp != undefined ? parseFloat(Q.str_change_vsp.toFixed(1)) : 0);
+Q.other_r = (Q.other_r != undefined ? parseFloat(Q.other_r.toFixed(1)) : 0);
 Q.str_change_vsp = (Q.str_change_vsp != undefined ? parseFloat(Q.str_change_vsp.toFixed(1)) : 0);
 
 Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation);
@@ -251,6 +257,7 @@ Q.spm_r_coa = 0;
 Q.sapd_r_coa = 0;
 Q.ddp_r_coa = 0;
 Q.ppu_r_coa = 0;
+Q.vsp_r_coa = 0;
 Q.z_r_coa = 0;
 Q.dvp_r_coa = 0;
 Q.dnvp_r_coa = 0;
@@ -314,8 +321,8 @@ if (Q.spm_formed && Q.spm_r) {
 data = data.concat([
     {
         "id": "vsp",
-        "legend": VSP,
-        "name": VSP,
+        "legend": "VSP",
+        "name": "VSP",
         "seats": Math.round(Q.other_r*1),
     },
     {
