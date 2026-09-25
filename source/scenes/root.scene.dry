@@ -204,6 +204,7 @@ Q.left_betray = 0;
 
 Q.liberal_reconciliation = 0;
 Q.liberal_unity = 65;
+Q.liberal_allience = 2; // 0 - broken, 1 - national, 2 - full 
 
 Q.z_relation = 35;
 Q.sapd_relation = 65;

@@ -239,10 +239,6 @@ if (Q.party_policy_fed == 0) {
     Q.ppu_coa -= 10;
     }
 
-Q.fvp_coa -= Q.party_policy_main*2;
-Q.gdsu_coa -= Q.party_policy_main*3;
-Q.ldp_coa -= Q.party_policy_main*4;
-
 Q.kpm_coa += Q.party_policy_main*2;
 Q.spm_coa -= Q.party_policy_main;
 
@@ -559,13 +555,13 @@ Opposition: [? if sapd_r_coa = 0: <span style="color: #940000;">KPM</span> ?][? 
 go-to: coalition_menu
 
 @kpm_gov
-view-if: sapd_formed > 0
+view-if: sapd_formed > 0 and sapd_r_coa = 0
 choose-if: kpm_coa >= 50
 on-arrival: sapd_r_coa = 1; custom_coalition_r += sapd_r; ldp_coa -= 20; blpm_coa -= 15; gdsu_coa -= 15; fvp_coa -= 10; ppu_coa -= 10; fvp_coa += 5 if fvp_path >= 1; gdsu_coa += 5 if gdsu_ideology >= 2; ppu_coa += 5 if ppu_path >= 1;
 go-to: coalition
 
 @kpm_tol
-view-if: sapd_formed > 0
+view-if: sapd_formed > 0 and sapd_r_coa = 0
 choose-if: kpm_coa >= 50
 on-arrival: sapd_r_coa = 2; custom_coalition_r += sapd_r; ldp_coa -= 15; blpm_coa -= 11; gdsu_coa -= 11; fvp_coa -= 7; ppu_coa -= 7; fvp_coa += 3 if fvp_path >= 1; gdsu_coa += 3 if gdsu_ideology >= 2; ppu_coa += 3 if ppu_path >= 1;
 go-to: coalition
@@ -581,13 +577,13 @@ on-arrival: sapd_r_coa = 0; custom_coalition_r -= sapd_r; ldp_coa += 15; blpm_co
 go-to: coalition
 
 @asum_gov
-view-if: asum_formed > 0
+view-if: asum_formed > 0 and asum_r_coa = 0
 choose-if: (kpm_coa + spm_coa) >= 100
 on-arrival: asum_r_coa = 1; custom_coalition_r += asum_r; ldp_coa -= 5; blpm_coa -= 4; gdsu_coa -= 3;
 go-to: coalition
 
 @asum_tol
-view-if: asum_formed > 0
+view-if: asum_formed > 0 and asum_r_coa = 0
 choose-if: (kpm_coa + spm_coa) >= 100
 on-arrival: asum_r_coa = 2; custom_coalition_r += asum_r; ldp_coa -= 3; blpm_coa -= 2; gdsu_coa -= 2;
 go-to: coalition
@@ -603,7 +599,7 @@ on-arrival: asum_r_coa = 0; custom_coalition_r -= asum_r; ldp_coa += 3; blpm_coa
 go-to: coalition
 
 @spm_gov
-view-if: spm_formed > 0
+view-if: spm_formed > 0 and spm_r_coa = 0
 choose-if: spm_coa >= 50
 on-arrival: spm_r_coa = 1; custom_coalition_r += spm_r; 
 go-to: coalition
@@ -614,21 +610,21 @@ on-arrival: spm_r_coa = 0; custom_coalition_r -= spm_r;
 go-to: coalition
 
 @vsp_gov
-choose-if: (fvp_coa + kpm_coa + ldp_coa) >= 120
-on-arrival: vsp_coa = 1; custom_coalition_r += other_r/5; 
+choose-if: (fvp_coa + kpm_coa + ldp_coa) >= 120 and vsp_r_coa = 0
+on-arrival: vsp_r_coa = 1; custom_coalition_r += other_r/5; 
 go-to: coalition
 
 @vsp_gov_drop
-on-arrival: vsp_coa = 0; custom_coalition_r -= other_r/5;
+on-arrival: vsp_r_coa = 0; custom_coalition_r -= other_r/5;
 go-to: coalition
 
 @fvp_gov
-choose-if: fvp_coa >= 50
+choose-if: fvp_coa >= 50 and fvp_r_coa = 0
 on-arrival: fvp_r_coa = 1; custom_coalition_r += ddp_r; kpm_coa += 5 if fvp_path >= 1; kpm_coa -= 10;
 go-to: coalition
 
 @fvp_tol
-choose-if: fvp_coa >= 50
+choose-if: fvp_coa >= 50 and fvp_r_coa = 0
 on-arrival: fvp_r_coa = 2; custom_coalition_r += ddp_r; kpm_coa += 5 if fvp_path >= 1; kpm_coa -= 5;
 go-to: coalition
 
@@ -643,12 +639,14 @@ on-arrival: fvp_r_coa = 0; custom_coalition_r -= ddp_r; kpm_coa -= 5 if fvp_path
 go-to: coalition
 
 @gdsu_gov
-choose-if: gdsu_coa >= 50
+view-if: gdsu_coa >= 40
+choose-if: gdsu_coa >= 50 and gdsu_r_coa = 0
 on-arrival: gdsu_r_coa = 1; custom_coalition_r += z_r; kpm_coa += 5 if gdsu_ideology >= 2; kpm_coa -= 15;
 go-to: coalition
 
 @gdsu_tol
-choose-if: gdsu_coa >= 50
+view-if: gdsu_coa >= 40
+choose-if: gdsu_coa >= 50 and gdsu_r_coa = 0
 on-arrival: gdsu_r_coa = 2; custom_coalition_r += z_r; kpm_coa += 5 if gdsu_ideology >= 2; kpm_coa -= 10;
 go-to: coalition
 
@@ -663,12 +661,14 @@ on-arrival: asum_r_coa = 0; custom_coalition_r -= z_r; kpm_coa -= 5 if gdsu_ideo
 go-to: coalition
 
 @ppu_gov
-choose-if: ppu_coa >= 50
+view-if: ppu_coa >= 40
+choose-if: ppu_coa >= 50 and ppu_r_coa = 0
 on-arrival: ppu_r_coa = 1; custom_coalition_r += ppu_r; kpm_coa += 5 if ppu_path >= 1; kpm_coa -= 15;
 go-to: coalition
 
 @ppu_tol
-choose-if: ppu_coa >= 50
+view-if: ppu_coa >= 40
+choose-if: ppu_coa >= 50 and ppu_r_coa = 0
 on-arrival: ppu_r_coa = 2; custom_coalition_r += ppu_r; kpm_coa += 5 if ppu_path >= 1; kpm_coa -= 10;
 go-to: coalition
 
@@ -683,13 +683,13 @@ on-arrival: asum_r_coa = 0; custom_coalition_r -= ppu_r; kpm_coa -= 5 if ppu_pat
 go-to: coalition
 
 @blpm_gov
-view-if: blpm_formed > 0
+view-if: blpm_formed > 0 and blpm_r_coa = 0 and blpm_coa >= 40
 choose-if: blpm_coa >= 50
 on-arrival: blpm_r_coa = 1; custom_coalition_r += blpm_r; kpm_coa -= 15;
 go-to: coalition
 
 @blpm_tol
-view-if: blpm_formed > 0
+view-if: blpm_formed > 0 and blpm_r_coa = 0 and blpm_coa >= 40
 choose-if: blpm_coa >= 50
 on-arrival: blpm_r_coa = 2; custom_coalition_r += blpm_r; kpm_coa -= 10;
 go-to: coalition
@@ -705,7 +705,8 @@ on-arrival: blpm_r_coa = 0; custom_coalition_r -= blpm_r; kpm_coa += 10;
 go-to: coalition
 
 @ldp_gov
-choose-if: ldp_coa >= 50
+view-if: ldp_coa >= 40
+choose-if: ldp_coa >= 50 and ldp_r_coa = 0
 on-arrival: ldp_r_coa = 1; custom_coalition_r += dvp_r;
 go-to: coalition
 
@@ -717,6 +718,14 @@ go-to: coalition
 @custom
 choose-if: custom_coalition_r >= 50
 on-arrival: {!
+
+Q.fvp_coa -= Q.party_policy_main*2;
+Q.gdsu_coa -= Q.party_policy_main*3;
+Q.ldp_coa -= Q.party_policy_main*4;
+
+Q.fvp_coa -= Q.liberal_allience*3;
+Q.gdsu_coa -= Q.liberal_allience*5;
+Q.ldp_coa -= Q.liberal_allience*7;
 
 if(Q.ldp_r_coa > 0 && Q.ldp_coa <= 50)
 {Q.failed = 1; Q.coa_tention += Q.ldp_coa - 50;}
