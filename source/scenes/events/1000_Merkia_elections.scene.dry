@@ -177,7 +177,10 @@ Q.wide_liberal_coalition_mer = (Q.z_mer + Q.ddp_mer + Q.dvp_mer + Q.ppu_mer + Q.
 Q.center_right_coalition_mer = (Q.z_mer + Q.dvp_mer + Q.other_mer + Q.dnvp_mer + Q.blpm_mer + Q.gnvp_mer + Q.ppu_mer).toFixed(1);
 Q.right_coalition_mer = (Q.dvp_mer + Q.other_mer + Q.dnvp_mer + Q.gnvp_mer).toFixed(1);
 Q.far_right_coalition_mer = (Q.dnvp_mer + Q.nsdap_mer + Q.gnvp_mer).toFixed(1);
-Q.anti_democratic_coalition_mer = (Q.sapd_mer + Q.nsdap_mer + Q.dnvp_mer + Q.gnvp_mer).toFixed(1);
+Q.anti_democratic_coalition_mer = (Q.nsdap_mer + Q.dnvp_mer);
+if (Q.kpm_ally == 0) {Q.anti_democratic_coalition_mer += Q.kpm_mer;}
+if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_mer = Q.anti_democratic_coalition_mer + Q.kpm_mer + Q.spd_mer/2;}
+Q.anti_democratic_coalition_mer = (Q.anti_democratic_coalition_mer).toFixed(1);
 Q.hitler_right_coalition_mer = (Q.dnvp_mer + Q.nsdap_mer + Q.dvp_mer + Q.other_mer + Q.gnvp_mer).toFixed(1);
 
 Q.mer_change_spd = (Q.mer_change_spd != undefined ? parseFloat(Q.mer_change_spd.toFixed(1)) : 0);
@@ -221,7 +224,6 @@ Q.nsdap_mer_coa = 0;
 Q.other_mer_coa = 0;
 Q.gnvp_mer_coa = 0;
 Q.blpm_mer_coa = 0;
-Q.merkia_gov = 0;
 Q.failed = 0;
 
 Q.custom_coalition_mer = Q.spd_mer;
@@ -419,7 +421,13 @@ There are some potential coalition arrangements.
 -@cent_right: Center right coalition could form. 
 -@right: A reactionary Right wing coalition could form.
 -@far_right: This is the end....
+-@no_majority: There is no possilbe majority. 
 -@coalition: Maybe we can try some other coalition?
+
+@no_majority
+view-if: anti_democratic_coalition_mer >= 45
+subtitle: This would mean the continuation of the current goverment with federal support and next election will be called in half of a year.
+on-arrival: pro_republic -= 2; ddp_mer_gov = 1 if merkia_gov = 1; spd_mer_gov = 1 if merkia_gov = 1; spm_mer_gov = 1 if merkia_gov = 1; ddp_mer_gov = 1 if merkia_gov = 2; z_mer_gov = 1 if merkia_gov = 2; dvp_mer_gov = 1 if merkia_gov = 2; ppu_mer_gov = 1 if merkia_gov = 2; other_mer_gov = 1 if merkia_gov = 2; z_mer_gov = 1 if merkia_gov = 3; dvp_mer_gov = 1 if merkia_gov = 3; other_mer_gov = 1 if merkia_gov = 3; dnvp_mer_gov = 1 if merkia_gov = 3; ddp_mer_gov = 1 if merkia_gov = 2; nsdap_mer_mod += 25; sapd_mer_mod += 15;
 
 @spd
 view-if: spd_mer >= 50
@@ -517,7 +525,7 @@ Current Caversket Support: [+ custom_coalition_mer +]%
 
 *Toleration:* [? if sapd_mer_coa = 2: <span style="color: #940000;">KPM</span> ?][? if asum_mer_coa = 2: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_mer_coa = 2: <span style="color: #ff1919;">SPM</span> ?][? if fvp_mer_coa = 2: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_mer_coa = 2: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_mer_coa = 2: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_mer_coa = 2: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_mer_coa = 2: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
 
-Opposition: [? if sapd_mer_coa = 0: <span style="color: #940000;">KPM</span> ?][? if asum_mer_coa = 0: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_mer_coa = 0: <span style="color: #ff1919;">SPM</span> ?][? if fvp_mer_coa = 0: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_mer_coa = 0: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_mer_coa = 0: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_mer_coa = 0: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_mer_coa = 0: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
+Opposition: [? if sapd_mer_coa = 0 and sapd_formed = 1: <span style="color: #940000;">KPM</span> ?][? if asum_mer_coa = 0 and asum_formed = 1: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_mer_coa = 0 and spm_formed = 1: <span style="color: #ff1919;">SPM</span> ?][? if fvp_mer_coa = 0: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_mer_coa = 0: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_mer_coa = 0 and blpm_formed = 1: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_mer_coa = 0: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_mer_coa = 0: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
 
 -@kpm_gov: We should try a colaition with the <span style="color: #940000;">KPM</span>.
 -@kpm_tol: Maybe we can try to get <span style="color: #940000;">KPM</span> toleration.
