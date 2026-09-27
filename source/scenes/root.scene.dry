@@ -467,10 +467,10 @@ Q.workers_blpm = 0;
 Q.workers_gnvp = 0;
 
 Q.old_middle_spd = 0;
-Q.old_middle_z = 10;
+Q.old_middle_z = 7;
 Q.old_middle_ddp= 10;
 Q.old_middle_dvp = 35;
-Q.old_middle_dnvp = 27;
+Q.old_middle_dnvp = 30;
 Q.old_middle_nsdap = 5;
 Q.old_middle_other = 4;
 Q.old_middle_ppu = 0;
@@ -482,10 +482,10 @@ Q.old_middle_blpm = 0;
 Q.old_middle_gnvp = 0;
 
 Q.new_middle_spd = 5;
-Q.new_middle_z = 10;
+Q.new_middle_z = 9;
 Q.new_middle_ddp= 20;
 Q.new_middle_dvp = 32;
-Q.new_middle_dnvp = 19;
+Q.new_middle_dnvp = 20;
 Q.new_middle_nsdap = 5;
 Q.new_middle_other = 4;
 Q.new_middle_ppu = 1;
@@ -544,10 +544,10 @@ Q.unemployed_gnvp = 0;
 Q.minorieties_spd = 15;
 Q.minorieties_z = 1;
 Q.minorieties_ddp = 10;
-Q.minorieties_dvp = 14;
+Q.minorieties_dvp = 12;
 Q.minorieties_dnvp = 1;
 Q.minorieties_nsdap = 0;
-Q.minorieties_other = 14;
+Q.minorieties_other = 16;
 Q.minorieties_ppu = 55;
 
 Q.minorieties_sapd = 0;
@@ -557,12 +557,12 @@ Q.minorieties_blpm = 0;
 Q.minorieties_gnvp = 0;
 
 Q.catholics_spd = 2;
-Q.catholics_z = 50;
+Q.catholics_z = 45;
 Q.catholics_ddp = 6;
 Q.catholics_dvp = 10;
 Q.catholics_dnvp = 20;
 Q.catholics_nsdap = 0;
-Q.catholics_other = 7;
+Q.catholics_other = 13;
 Q.catholics_ppu = 0;
 
 Q.catholics_sapd = 0;
@@ -578,13 +578,13 @@ Q.catholics_gnvp = 0;
 // since they were ideologically similar, but they were separate parties.
 // They did not have a CDU/CSU-style relationship.
 Q.spd_r = 25.2;
-Q.z_r = 17.8;
+Q.z_r = 17.5;
 Q.ppu_r = 4.1;
-Q.ddp_r = 8.6;
+Q.ddp_r = 8.5;
 Q.dvp_r = 20.1;
 Q.dnvp_r = 17.1;
-Q.nsdap_r = 2.9;
-Q.other_r = 4.2;
+Q.nsdap_r = 2.2;
+Q.other_r = 5.2;
 
 // diff from prev
 Q.old_spd_r = 25.2;

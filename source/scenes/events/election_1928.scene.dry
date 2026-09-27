@@ -190,18 +190,22 @@ Q.reichswehr_goal_completed = 0;
 
 Q.strike_term_seen = 0;
 
-Q.vsp_old = Q.vsp_r;
+Q.others_main = Q.vsp_strength + 4 + 5 + 6 + 3;
 
-Q.z_minus_bvp_r = Q.z_r - 3;
-Q.vsp_r = Q.other_r/Q.vsp_strength;
-Q.str_change_vsp = Q.vsp_r - Q.vsp_old;
+Q.vsp_r = Q.other_r/Q.others_main*Q.vsp_strength;
+Q.zel_r = Q.other_r/Q.others_main*4;
+Q.ltp_r = Q.other_r/Q.others_main*6;
+Q.mtu_r = Q.other_r/Q.others_main*5;
+Q.other_other_r = Q.other_r/Q.others_main*3;
 
-Q.other_r = Q.other_r - Q.vsp_r;
 
 Q.vsp_r = (Q.vsp_r != undefined ? parseFloat(Q.vsp_r.toFixed(1)) : 0);
-Q.str_change_vsp = (Q.str_change_vsp != undefined ? parseFloat(Q.str_change_vsp.toFixed(1)) : 0);
+Q.zel_r = (Q.zel_r != undefined ? parseFloat(Q.zel_r.toFixed(1)) : 0);
+Q.ltp_r = (Q.ltp_r != undefined ? parseFloat(Q.ltp_r.toFixed(1)) : 0);
+Q.mtu_r = (Q.mtu_r != undefined ? parseFloat(Q.mtu_r.toFixed(1)) : 0);
+Q.other_other_r = (Q.other_other_r != undefined ? parseFloat(Q.other_other_r.toFixed(1)) : 0);
+
 Q.other_r = (Q.other_r != undefined ? parseFloat(Q.other_r.toFixed(1)) : 0);
-Q.str_change_vsp = (Q.str_change_vsp != undefined ? parseFloat(Q.str_change_vsp.toFixed(1)) : 0);
 
 Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation);
 Q.spm_coa = (Q.spm_modifier*Q.spm_relation);
@@ -337,12 +341,6 @@ data = data.concat([
         "name": "GDSU",
         "seats": Math.round(Q.z_r*5),
     },
-    {
-        "id": "znc",
-        "legend": "TEL",
-        "name": "TEL",
-        "seats": Math.round(Q.other_r*1),
-    },
     ]);
 if (Q.blpm_formed && Q.blpm_r) {
     data.push({
@@ -370,6 +368,12 @@ data = data.concat([
         "legend": "LIV",
         "name": "LIV",
         "seats": Math.round(Q.ppu_r*1),
+    },
+    {
+        "id": "znc",
+        "legend": "TEL",
+        "name": "TEL",
+        "seats": Math.round(Q.other_r*1),
     },
     {
         "id": "dvp",
@@ -450,8 +454,6 @@ go-to: coalition_menu
 
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_r +]% {!</td><td>!} [+ str_change_asum +] {!</td></tr>!} ?]
 
-{!<tr><td><div class="box" style='background-color:#ff7b00'> </div> !} VSP: {!</td><td>!} [+ vsp_r +]% {!</td><td>!} [+ str_change_vsp +] {!</td></tr>!}
-
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}
@@ -463,6 +465,8 @@ go-to: coalition_menu
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [+ str_change_dvp +] {!</td></tr>!}
  
 {!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+
+( <span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span> [+ vsp_r +], <span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span> [+ zel_r +], <span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span> [+ ltp_r +], <span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span> [+ mtu_r +], minor [+ other_other_r +] )
 
 [? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_r +]% {!</td><td>!} [+ str_change_gnvp +] {!</td></tr>!} ?]
 
