@@ -327,7 +327,7 @@ data = data.concat([
         "id": "vsp",
         "legend": "VSP",
         "name": "VSP",
-        "seats": Math.round(Q.vsp_r*1),
+        "seats": Math.round(Q.vsp_r*5),
     },
     {
         "id": "ddp",
@@ -339,7 +339,7 @@ data = data.concat([
         "id": "znc",
         "legend": "TEL",
         "name": "TEL",
-        "seats": Math.round(Q.zel_r*1),
+        "seats": Math.round(Q.zel_r*5),
     },
     {
         "id": "z",
@@ -385,19 +385,19 @@ data = data.concat([
         "id": "other",
         "legend": "Other",
         "name": "Other",
-        "seats": Math.round(Q.other_other_r*0.5),
+        "seats": Math.round(Q.other_other_r*5),
     },
     {
         "id": "ltp",
         "legend": "ltp",
         "name": "ltp",
-        "seats": Math.round(Q.ltp_r*1.5),
+        "seats": Math.round(Q.ltp_r*5),
     },
     {
         "id": "sud",
         "legend": "MTP",
         "name": "MTP",
-        "seats": Math.round(Q.mtu_r*1),
+        "seats": Math.round(Q.mtu_r*5),
     },
 ]);
 if (Q.gnvp_formed && Q.gnvp_r) {
@@ -466,7 +466,7 @@ go-to: coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
-{!<tr><td><div <span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span>!} [+ vsp_r +], {!<span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span>!} [+ zel_r +], </div> {!<span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span>!} [+ ltp_r +], {!<span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span>!} [+ mtu_r +], </div> minor [+ other_other_r +]
+{!<tr><td> <span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span> !} [+ vsp_r +] %, {!<span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span> !} [+ zel_r +] %, {!</td><td>!} {!<span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span> !} [+ ltp_r +] %, {!<span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span> !} [+ mtu_r +] %, {!</td><td>!} minor [+ other_other_r +] %
 
 [? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_r +]% {!</td><td>!} [+ str_change_gnvp +] {!</td></tr>!} ?]
 
@@ -530,7 +530,7 @@ Current Caversket Support: [+ custom_coalition_r +]%
 
 *Toleration:* [? if sapd_r_coa = 2: <span style="color: #940000;">KPM</span> ?][? if asum_r_coa = 2: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_r_coa = 2: <span style="color: #ff1919;">SPM</span> ?][? if fvp_r_coa = 2: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_r_coa = 2: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_r_coa = 2: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_r_coa = 2: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_r_coa = 2: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
 
-Opposition: [? if sapd_r_coa = 0 and sapd_formed = 1: <span style="color: #940000;">KPM</span> ?][? if asum_r_coa = 0 and asum_formed = 1: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_r_coa = 0 and spm_formed = 1: <span style="color: #ff1919;">SPM</span> ?][? if vsp_r_coa = 0: <span style="color: #ff7b00;">VSP</span> ?][? if fvp_r_coa = 0: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_r_coa = 0: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_r_coa = 0: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_r_coa = 0: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_r_coa = 0: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
+Opposition: [? if sapd_r_coa = 0 and sapd_formed = 1: <span style="color: #940000;">KPM</span> ?][? if asum_r_coa = 0 and asum_formed = 1: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_r_coa = 0 and spm_formed = 1: <span style="color: #ff1919;">SPM</span> ?][? if vsp_r_coa = 0: <span style="color: #ff7b00;">VSP</span> ?][? if fvp_r_coa = 0: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_r_coa = 0: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_r_coa = 0 and blpm_formed = 1: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_r_coa = 0: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_r_coa = 0: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
 
 -@kpm_gov: We should try a colaition with the <span style="color: #940000;">KPM</span>.
 -@kpm_tol: Maybe we can try to get <span style="color: #940000;">KPM</span> toleration.
