@@ -198,7 +198,7 @@ Q.grand_coalition_2 = (Q.spd_r + Q.spm_r + Q.ddp_r + Q.z_r + Q.ppu_r + Q.blpm_r)
 Q.liberal_coalition = (Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r + Q.blpm_r).toFixed(1); 
 Q.wide_liberal_coalition = (Q.z_r + Q.ddp_r + Q.dvp_r + Q.ppu_r + Q.blpm_r + Q.zel_r + Q.ltp_r + Q.other_other_r).toFixed(1);
 Q.center_right_coalition = (Q.z_r + Q.dvp_r + Q.dnvp_r + Q.blpm_r + Q.gnvp_r + Q.ltp_r + Q.other_other_r + Q.mtu_r + Q.zel_r).toFixed(1);
-if (Q.ppu_path = -1) {Q.center_right_coalition += Q.ppu_r;}
+if (Q.ppu_path == -1) {Q.center_right_coalition += Q.ppu_r;}
 Q.center_right_coalition = (Q.center_right_coalition).toFixed(1);
 Q.right_coalition = (Q.dvp_r + Q.dnvp_r + Q.gnvp_r + Q.ltp_r + Q.other_other_r + Q.mtu_r).toFixed(1);
 Q.far_right_coalition = (Q.dnvp_r + Q.nsdap_r + Q.gnvp_r).toFixed(1);
