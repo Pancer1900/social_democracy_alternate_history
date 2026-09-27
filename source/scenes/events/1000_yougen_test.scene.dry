@@ -264,6 +264,7 @@ if (window && d3) {
     d3.select("#saxony_landtag").datum(data).call(parliament);
 }
 !}
+go-to: coalition_menu
 
 **Yougen Elections results:**
 
