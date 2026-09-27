@@ -466,7 +466,7 @@ go-to: coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
-{!<tr><td><div ( <span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span> [+ vsp_r +], <span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span> [+ zel_r +], <span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span> [+ ltp_r +], <span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span> [+ mtu_r +], minor [+ other_other_r +] ) !}
+{!<tr><td><div <span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span>!} [+ vsp_r +], {!<span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span>!} [+ zel_r +], </div> {!<span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span>!} [+ ltp_r +], {!<span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span>!} [+ mtu_r +], </div> minor [+ other_other_r +]
 
 [? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_r +]% {!</td><td>!} [+ str_change_gnvp +] {!</td></tr>!} ?]
 
