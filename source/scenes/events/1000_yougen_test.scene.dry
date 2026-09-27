@@ -147,6 +147,74 @@ Q.youg_change_gnvp = (Q.youg_change_gnvp != undefined ? parseFloat(Q.youg_change
 Q.youg_change_blpm = (Q.youg_change_blpm != undefined ? parseFloat(Q.youg_change_blpm.toFixed(1)) : 0);
 Q.youg_change_asum = (Q.youg_change_asum != undefined ? parseFloat(Q.youg_change_asum.toFixed(1)) : 0);
 
+Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation) + 5;
+Q.spm_coa = (Q.spm_modifier*Q.spm_relation) + 5;
+Q.fvp_coa = (Q.fvp_modifier*Q.ddp_relation) + 5;
+Q.gdsu_coa = (Q.gdsu_modifier*Q.z_relation) + 5;
+Q.ppu_coa = (Q.ppu_relation) + 5;
+Q.blpm_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.dvp_relation) + 5;
+Q.ldp_coa = (Q.ldp_modifier*Q.dvp_relation) + 5;
+Q.other_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.gdsu_modifier*50) + 5;
+
+if (Q.spm_ally) {
+    Q.spm_coa += 20;
+    }
+if (Q.kpm_ally) {
+    Q.kpm_coa += 20;
+    }
+if (Q.ppu_ally) {
+    Q.ppu_coa += 20;
+    }
+if (Q.fvp_ally) {
+    Q.fvp_coa += 20;
+    }
+
+if (Q.sapd_formed == 0) {
+    Q.fvp_coa -= 10;
+    }
+if (Q.sapd_formed == 0) {
+    Q.gdsu_coa -= 20;
+    }
+if (Q.sapd_formed == 0) {
+    Q.blpm_coa -= 20;
+    }
+if (Q.sapd_formed == 0) {
+    Q.ldp_coa -= 30;
+    }
+
+if (Q.party_policy_fed == 2) {
+    Q.ppu_coa += 10;
+    }
+if (Q.party_policy_fed == 2) {
+    Q.other_coa += 10;
+    }
+if (Q.party_policy_fed == 0) {
+    Q.ppu_coa -= 10;
+    }
+
+Q.kpm_coa += Q.party_policy_main*2;
+Q.spm_coa -= Q.party_policy_main;
+
+Q.spd_youg_coa = 0;
+Q.asum_youg_coa = 0;
+Q.spm_youg_coa = 0;
+Q.sapd_youg_coa = 0;
+Q.ddp_youg_coa = 0;
+Q.ppu_youg_coa = 0;
+Q.z_youg_coa = 0;
+Q.dvp_youg_coa = 0;
+Q.dnvp_youg_coa = 0;
+Q.nsdap_youg_coa = 0;
+Q.other_youg_coa = 0;
+Q.gnvp_youg_coa = 0;
+Q.blpm_youg_coa = 0;
+
+Q.coa_tention = 0;
+
+Q.failed = 0;
+
+Q.custom_coalition_youg = Q.spd_youg;
+
 !}
 on-display: {!
 data = [];
@@ -304,8 +372,6 @@ go-to: coalition_menu
 Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_youg +]%
 
 [? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_youg +]% ?]
-
-[? if liberal_reconciliation >= 18: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_youg +]% ?]
 
 Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_youg +]%
 
@@ -583,7 +649,7 @@ if(Q.gdsu_youg_coa > 0 && Q.liberal_reconciliation < 14)
 if(Q.ppu_youg_coa > 0 && Q.ppu_coa <= 50)
 {Q.failed = 1; Q.coa_tention += Q.ppu_coa - 50;}
 
-if(Q.ldp_youg_coa > 0 && Q.sapd_mir_coa > 0)
+if(Q.ldp_youg_coa > 0 && Q.sapd_youg_coa > 0)
 {Q.failed = 1; Q.coa_tention += Q.ldp_coa; Q.coa_tention += Q.kpm_coa;}
 
 if(Q.ldp_youg_coa > 0 && Q.liberal_reconciliation < 18)

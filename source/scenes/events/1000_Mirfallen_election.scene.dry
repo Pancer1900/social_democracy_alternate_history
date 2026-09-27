@@ -158,14 +158,14 @@ Q.mer_change_gnvp = (Q.mer_change_gnvp != undefined ? parseFloat(Q.mer_change_gn
 Q.mer_change_blpm = (Q.mer_change_blpm != undefined ? parseFloat(Q.mer_change_blpm.toFixed(1)) : 0);
 Q.mer_change_asum = (Q.mer_change_asum != undefined ? parseFloat(Q.mer_change_asum.toFixed(1)) : 0);
 
-Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation);
-Q.spm_coa = (Q.spm_modifier*Q.spm_relation);
-Q.fvp_coa = (Q.fvp_modifier*Q.ddp_relation);
-Q.gdsu_coa = (Q.gdsu_modifier*Q.z_relation);
-Q.ppu_coa = (Q.ppu_relation);
-Q.blpm_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.dvp_relation);
-Q.ldp_coa = (Q.ldp_modifier*Q.dvp_relation);
-Q.other_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.gdsu_modifier*50);
+Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation) + 5;
+Q.spm_coa = (Q.spm_modifier*Q.spm_relation) + 5;
+Q.fvp_coa = (Q.fvp_modifier*Q.ddp_relation) + 5;
+Q.gdsu_coa = (Q.gdsu_modifier*Q.z_relation) + 5;
+Q.ppu_coa = (Q.ppu_relation) + 5;
+Q.blpm_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.dvp_relation) + 5;
+Q.ldp_coa = (Q.ldp_modifier*Q.dvp_relation) + 5;
+Q.other_coa = (Q.fvp_modifier*Q.ldp_modifier*Q.gdsu_modifier*50) + 5;
 
 if (Q.spm_ally) {
     Q.spm_coa += 20;
@@ -392,8 +392,6 @@ go-to: coalition_menu
 Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_mir +]%
 
 [? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_mir +]% ?]
-
-[? if liberal_reconciliation >= 20: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_mir +]% ?]
 
 Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_mir +]%
 

@@ -469,10 +469,10 @@ Q.workers_gnvp = 0;
 Q.old_middle_spd = 0;
 Q.old_middle_z = 7;
 Q.old_middle_ddp= 10;
-Q.old_middle_dvp = 35;
-Q.old_middle_dnvp = 30;
+Q.old_middle_dvp = 38;
+Q.old_middle_dnvp = 28;
 Q.old_middle_nsdap = 5;
-Q.old_middle_other = 4;
+Q.old_middle_other = 3;
 Q.old_middle_ppu = 0;
 
 Q.old_middle_sapd = 0;
