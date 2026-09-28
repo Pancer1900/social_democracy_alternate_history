@@ -490,7 +490,7 @@ on-arrival: mirfallen_gov = 2; ddp_mir_gov = 1; z_mir_gov = 1; ppu_mir_gov = 1; 
 
 @lib_whide
 subtitle: <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Others ([+ wide_liberal_coalition_mir +]%) (This would mean the expanision of the liberal coalition with <span style="color: #ff7b00;">VSP</span>)
-view-if: wide_liberal_coalition_mir >= 50 and wide_liberal_coalition_mir <= 50
+view-if: wide_liberal_coalition_mir >= 50 and liberal_coalition_mir <= 50
 choose-if: wide_liberal_coalition_mir >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
 on-arrival: mirfallen_gov = 2; ddp_mir_gov = 1; z_mir_gov = 1; ppu_mir_gov = 1; other_mir_gov = 1; dvp_mir_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; vsp_mir_gov = 1;
@@ -498,7 +498,7 @@ on-arrival: mirfallen_gov = 2; ddp_mir_gov = 1; z_mir_gov = 1; ppu_mir_gov = 1; 
 @cent_right
 subtitle: <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Other[? if gnvp_formed : + <span style="color: #774ae2;">GNVP</span> ?] + <span style="color: #1027dc;">MNVP</span> ([+ center_right_coalition_mir +]%)
 view-if: center_right_coalition_mir >= 45
-choose-if: center_right_coalition_mir >= 50 and (dnvp_path - gdsu_ideology + 2 - ldp_ideology) >= 0 and liberal_unity >= 30
+choose-if: center_right_coalition_mir >= 50 and (dnvp_path - gdsu_ideology + 2 - ldp_ideology) >= 0 and liberal_unity >= 30 and liberal_right >= 30
 unavailable-subtitle: [? if liberal_unity <= 30: Liberals are too conflicted to form a coherent goverment. ?][? if (dnvp_path - gdsu_ideology + 2 - ldp_ideology) < 0: Liberals are unwilling to compromise with the MNVP. ?]
 on-arrival: mirfallen_gov = 3; z_mir_gov = 1; ppu_mir_gov = 1; other_mir_gov = 1; dvp_mir_gov = 1; gnvp_mir_gov = 1; dnvp_mir_gov = 1; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1 ; rural_dnvp += 1; minorieties_ppu += 1; new_middle_dvp += 1; other_rural += 1;
 

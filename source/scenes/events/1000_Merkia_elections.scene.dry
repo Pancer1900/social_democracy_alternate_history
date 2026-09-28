@@ -491,7 +491,7 @@ on-arrival: merkia_gov = 2; ddp_mer_gov = 1; z_mer_gov = 1; ppu_mer_gov = 1; dvp
 
 @lib_whide
 subtitle: <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Other ([+ wide_liberal_coalition_mer +]%)
-view-if: wide_liberal_coalition_mer >= 50 and wide_liberal_coalition_mer <= 50
+view-if: wide_liberal_coalition_mer >= 50 and liberal_coalition_mer <= 50
 choose-if: wide_liberal_coalition_mer >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
 on-arrival: merkia_gov = 2; ddp_mer_gov = 1; z_mer_gov = 1; ppu_mer_gov = 1; other_mer_gov = 1; dvp_mer_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5;

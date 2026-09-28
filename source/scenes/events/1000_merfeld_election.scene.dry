@@ -148,11 +148,13 @@ Q.liberal_coalition_merf = (Q.z_merf + Q.ddp_merf + Q.dvp_merf + Q.ppu_merf).toF
 Q.wide_liberal_coalition_merf = (Q.z_merf + Q.ddp_merf + Q.dvp_merf + Q.svp_merf + Q.ppu_merf + Q.ltp_merf).toFixed(1);
 Q.center_right_coalition_merf = (Q.z_merf + Q.dvp_merf + Q.ltp_merf + Q.dnvp_merf + Q.gnvp_merf).toFixed(1);
 Q.anti_democratic_coalition_merf = (Q.sapd_merf + Q.nsdap_merf + Q.dnvp_merf + Q.gnvp_merf).toFixed(1);
-Q.hitler_right_coalition_merf = (Q.dnvp_merf + Q.nsdap_merf + Q.gnvp_merf + Q.ltp_merf + Q.mtu_merf).toFixed(1);
+Q.hitler_right_coalition_merf = (Q.dnvp_merf + Q.nsdap_merf + Q.ltp_merf + Q.mtu_merf).toFixed(1);
 Q.agrarian_right_coalition = (Q.mtu_merf + Q.dnvp_merf + Q.ltp_merf + Q.z_merf).toFixed(1);
-if (Q.ldp_reform > 0) {Q.agrarian_right_coalition = Q.agrarian_right_coalition + Q.dvp_merf;}
-Q.agrarian_right_coalition = (Q.agrarian_right_coalition).toFixed(1);
+if (Q.ldp_reform > 0) {
+    Q.agrarian_right_coalition = Q.agrarian_right_coalition + Q.dvp_merf;
+    }
 
+Q.agrarian_right_coalition = (Q.agrarian_right_coalition != undefined ? parseFloat(Q.agrarian_right_coalition.toFixed(1)) : 0);
 Q.mer_change_spd = (Q.mer_change_spd != undefined ? parseFloat(Q.mer_change_spd.toFixed(1)) : 0);
 Q.mer_change_spm = (Q.mer_change_spm != undefined ? parseFloat(Q.mer_change_spm.toFixed(1)) : 0);
 Q.mer_change_sapd = (Q.mer_change_sapd != undefined ? parseFloat(Q.mer_change_sapd.toFixed(1)) : 0);
@@ -500,18 +502,18 @@ on-arrival: mirfallen_gov = 2; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 
 @cent_right
 subtitle: <span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #4a9fde;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> ([+ center_right_coalition_merf +]%)
 view-if: center_right_coalition_merf >= 45
-choose-if: center_right_coalition_merf >= 50 and (dnvp_path - gdsu_ideology + 2 - ldp_ideology) >= 0 and liberal_unity >= 30
+choose-if: center_right_coalition_merf >= 50 and (dnvp_path - gdsu_ideology + 3 - ldp_ideology) >= 0 and liberal_unity >= 30 and liberal_right >= 30
 unavailable-subtitle: [? if liberal_unity <= 30: Liberals are too conflicted to form a coherent goverment. ?][? if (dnvp_path - gdsu_ideology + 2 - ldp_ideology) < 0: Liberals are unwilling to compromise with the MNVP. ?]
 on-arrival: mirfallen_gov = 3; z_merf_gov = 1; ppu_merf_gov = 1; other_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1 ; rural_dnvp += 1; minorieties_ppu += 1; new_middle_dvp += 1; other_rural += 1;
 
 @right
 subtitle: [? if ldp_reform > 0 : <span style="color: #caa58b;">[+ dvp_name +]</span> + ?]<span style="color: #48b94a;">GDSU</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span> ([+ agrarian_right_coalition +]%)
-choose-if: right_coalition_merf >= 50
+choose-if: agrarian_right_coalition >= 50
 on-arrival: mirfallen_gov = 3; other_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; liberal_unity -= 2;
 
 @far_right
 subtitle: <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span> + <span style="color: #706a65;">NSDAP</span> ([+ hitler_right_coalition_merf +]%)
-view-if: hitler_right_coalition_merf >= 45 and nsdap_merf >= 10
+view-if: hitler_right_coalition_merf >= 45 and nsdap_merf >= 15
 choose-if: hitler_right_coalition_merf >= 50
 on-arrival: mirfallen_gov = 3; other_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; nsdap_merf_gov = 1; workers_nsdap += 2; new_middle_nsdap += 2; old_middle_nsdap += 2; nsdap_merf_mod += 10;
 
@@ -582,12 +584,12 @@ go-to: coalition
 
 @vsp_gov
 choose-if: (fvp_coa + kpm_coa + ldp_coa) >= 120 and vsp_merf_coa = 0
-on-arrival: vsp_coa = 1; custom_coalition_merf += other_merf/5; 
+on-arrival: vsp_merf_coa = 1; custom_coalition_merf += other_merf/5; 
 go-to: coalition
 
 @vsp_gov_drop
-view-if: vsp_coa = 1
-on-arrival: vsp_coa = 0; custom_coalition_merf -= other_merf/5;
+view-if: vsp_merf_coa = 1
+on-arrival: vsp_merf_coa = 0; custom_coalition_merf -= other_merf/5;
 go-to: coalition
 
 @fvp_gov

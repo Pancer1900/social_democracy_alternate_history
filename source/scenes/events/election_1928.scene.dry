@@ -470,14 +470,17 @@ go-to: coalition_menu
  
 {!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
 
-{!<tr><td> <span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span> !} [+ vsp_r +] %, {!<span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span> !} [+ zel_r +] %, {!</td><td>!} {!<span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span> !} [+ ltp_r +] %, {!<span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span> !} [+ mtu_r +] %, {!</td><td>!} Minor [+ other_other_r +] %
-
 [? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_r +]% {!</td><td>!} [+ str_change_gnvp +] {!</td></tr>!} ?]
 
 {!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [+ str_change_dnvp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [+ str_change_nsdap +] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!} [+ str_change_other +] {!</td></tr>!}
+
 {!</table>!}
+
+<span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span> [+ vsp_r +] %, <span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span> [+ zel_r +] %, <span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span> [+ ltp_r +] %, <span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span> [+ mtu_r +] %, Minor [+ other_other_r +] %
 
 **Potential coalitions:**
 
