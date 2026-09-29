@@ -146,7 +146,7 @@ Q.grand_coalition_merf = (Q.spd_merf + Q.spm_merf + Q.ddp_merf + Q.z_merf + Q.pp
 
 Q.liberal_coalition_merf = (Q.z_merf + Q.ddp_merf + Q.dvp_merf + Q.ppu_merf).toFixed(1); 
 Q.wide_liberal_coalition_merf = (Q.z_merf + Q.ddp_merf + Q.dvp_merf + Q.svp_merf + Q.ppu_merf + Q.ltp_merf).toFixed(1);
-Q.center_right_coalition_merf = (Q.z_merf + Q.dvp_merf + Q.ltp_merf + Q.dnvp_merf + Q.gnvp_merf).toFixed(1);
+Q.center_right_coalition_merf = (Q.z_merf + Q.dvp_merf + Q.ltp_merf + Q.dnvp_merf).toFixed(1);
 Q.anti_democratic_coalition_merf = (Q.sapd_merf + Q.nsdap_merf + Q.dnvp_merf + Q.gnvp_merf).toFixed(1);
 Q.hitler_right_coalition_merf = (Q.dnvp_merf + Q.nsdap_merf + Q.ltp_merf + Q.mtu_merf).toFixed(1);
 Q.agrarian_right_coalition = (Q.mtu_merf + Q.dnvp_merf + Q.ltp_merf + Q.z_merf).toFixed(1);
@@ -400,7 +400,7 @@ Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span s
 
 [? if liberal_coalition_merf < 50 : Wide - Liberal Coalition (<span style="color: #ff7b00;">VSP</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #1b7035;">LTP</span>): [+ wide_liberal_coalition_merf +]% ?]
 
-Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span>): [+ center_right_coalition_merf +]%
+Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span>): [+ center_right_coalition_merf +]%
 
 Right-Agrarian Coalition ([? if ldp_reform > 0 : <span style="color: #caa58b;">[+ dvp_name +]</span> + ?]<span style="color: #48b94a;">GDSU</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span>): [+ agrarian_right_coalition +]%
 
@@ -430,59 +430,59 @@ There are some potential coalition arrangements.
 @no_majority
 view-if: anti_democratic_coalition_merf >= 45
 subtitle: This would mean the continuation of the current goverment with federal support and next election will be called in half of a year.
-on-arrival: pro_republic -= 2; ddp_merf_gov = 1 if mirfallen_gov = 1; spd_merf_gov = 1 if mirfallen_gov = 1; spm_merf_gov = 1 if mirfallen_gov = 1; ddp_merf_gov = 1 if mirfallen_gov = 2; z_merf_gov = 1 if mirfallen_gov = 2; dvp_merf_gov = 1 if mirfallen_gov = 2; ppu_merf_gov = 1 if mirfallen_gov = 2; other_merf_gov = 1 if mirfallen_gov = 2; z_merf_gov = 1 if mirfallen_gov = 3; dvp_merf_gov = 1 if mirfallen_gov = 3; other_merf_gov = 1 if mirfallen_gov = 3; dnvp_merf_gov = 1 if mirfallen_gov = 3; ddp_merf_gov = 1 if mirfallen_gov = 2; nsdap_merf_mod += 25; sapd_merf_mod += 15;
+on-arrival: pro_republic -= 2; ddp_merf_gov = 1 if merfeld_gov = 1; spd_merf_gov = 1 if merfeld_gov = 1; spm_merf_gov = 1 if merfeld_gov = 1; ddp_merf_gov = 1 if merfeld_gov = 2; z_merf_gov = 1 if merfeld_gov = 2; dvp_merf_gov = 1 if merfeld_gov = 2; ppu_merf_gov = 1 if merfeld_gov = 2; ltp_merf_gov = 1 if merfeld_gov = 2; z_merf_gov = 1 if merfeld_gov = 3; dvp_merf_gov = 1 if merfeld_gov = 3; ltp_merf_gov = 1 if merfeld_gov = 3;  other_merf_gov = 1 if merfeld_gov = 3; dnvp_merf_gov = 1 if merfeld_gov = 3; ddp_merf_gov = 1 if merfeld_gov = 2; nsdap_merf_mod += 25; sapd_merf_mod += 15;
 
 @spd
 view-if: spd_merf >= 50
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; workers_spd += 3; new_middle_spd += 2.5; rural_spd += 2; 
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; workers_spd += 3; new_middle_spd += 2.5; rural_spd += 2; 
 
 @left
 subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + <span style="color: #dd5b00;">ASUM</span> ?][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?]([+ left_coalition_merf +]%)
 view-if: left_coalition_merf >= 45 and (sapd_formed > 0 or spm_formed > 0)
 choose-if: left_coalition_merf >= 50 and (kpm_coa + spm_coa) >= 130
 unavailable-subtitle: [? if (kpm_coa + spm_coa) < 130: We do not have good enough relations with the other socialist parties. ?]
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; asum_merf_gov = 1; spm_merf_gov = 1; sapd_merf_gov = 1; liberal_unity += 3; sapd_relation += 3*kpm_modifier; dvp_relation -= 3*ldp_modifier; z_relation -= 2*gdsu_modifier; ppu_relation -= 1; ddp_relation -= 1; workers_spd += 2.5; new_middle_spd += 2; rural_spd += 1;  peasants_asum += 1.5; rural_asum += 1; workers_sapd += 2.5; workers_spm += 1; new_middle_spm += 1; vsp_merf_gov = 1;
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; asum_merf_gov = 1; spm_merf_gov = 1; sapd_merf_gov = 1; liberal_unity += 3; sapd_relation += 3*kpm_modifier; dvp_relation -= 3*ldp_modifier; z_relation -= 2*gdsu_modifier; ppu_relation -= 1; ddp_relation -= 1; workers_spd += 2.5; new_middle_spd += 2; rural_spd += 1;  peasants_asum += 1.5; rural_asum += 1; workers_sapd += 2.5; workers_spm += 1; new_middle_spm += 1; vsp_merf_gov = 1;
 
 @prog_fro
 subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + <span style="color: #dd5b00;">ASUM</span> ?][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> ([+ progressive_front_merf +]%)
 view-if: progressive_front_merf >= 45 and sapd_formed > 0
 choose-if: progressive_front_merf >= 50 and (kpm_coa + spm_coa) >= 140 and ddp_coa >= 75 and liberal_reconciliation >= 10
 unavailable-subtitle: [? if (kpm_coa + spm_coa) < 140: We do not have good enough relations with the other socialist parties. ?][? if ddp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?]
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; asum_merf_gov = 1; spm_merf_gov = 1; sapd_merf_gov = 1; ddp_merf_gov = 1; liberal_unity += 1; sapd_relation += 2*kpm_modifier; dvp_relation -= 2.5*ldp_modifier; z_relation -= 1.5*gdsu_modifier; ppu_relation -= 1;  ddp_relation += 1; new_middle_ddp += 2; new_middle_spd += 2; workers_spd += 2.5; workers_spm += 1; new_middle_spm += 1; workers_ddp += 1; peasants_asum += 1; rural_asum += 1; workers_sapd += 2;
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; asum_merf_gov = 1; spm_merf_gov = 1; sapd_merf_gov = 1; ddp_merf_gov = 1; liberal_unity += 1; sapd_relation += 2*kpm_modifier; dvp_relation -= 2.5*ldp_modifier; z_relation -= 1.5*gdsu_modifier; ppu_relation -= 1;  ddp_relation += 1; new_middle_ddp += 2; new_middle_spd += 2; workers_spd += 2.5; workers_spm += 1; new_middle_spm += 1; workers_ddp += 1; peasants_asum += 1; rural_asum += 1; workers_sapd += 2;
 
 @popu
 subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + <span style="color: #dd5b00;">ASUM</span> ?][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> ([+ popular_front_coalition_merf +]%)
 view-if: popular_front_coalition_merf >= 45 and sapd_formed > 0
 choose-if: popular_front_coalition_merf >= 50 and (kpm_coa + spm_coa) >= 150 and ddp_coa >= 80 and gdsu_coa >= 80 and liberal_reconciliation >= 18
 unavailable-subtitle: [? if (kpm_coa + spm_coa) < 150: We do not have good enough relations with the other socialist parties. ?][? if gdsu_coa < 75: We do not have good enough relations with the <span style="color: #48ba48;">GDSU</span>. ?][? if fvp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?][? if liberal_reconciliation < 18: The Liberal Parties do not trust us enough to enter into a goverment with communists. ?]
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; asum_merf_gov = 1; spm_merf_gov = 1; sapd_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; liberal_unity += 3; sapd_relation += 2*kpm_modifier; dvp_relation -= 3*ldp_modifier; z_relation -= 1*gdsu_modifier;  ddp_relation += 1; new_middle_ddp += 1; new_middle_spd += 2; workers_spd += 2; workers_spm += 1; new_middle_spm += 0.5; workers_ddp += 1; workers_z += 1; rural_z += 1; peasants_asum += 1; rural_asum += 0.5; workers_sapd += 2; vsp_merf_gov = 1;
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; asum_merf_gov = 1; spm_merf_gov = 1; sapd_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; liberal_unity += 3; sapd_relation += 2*kpm_modifier; dvp_relation -= 3*ldp_modifier; z_relation -= 1*gdsu_modifier;  ddp_relation += 1; new_middle_ddp += 1; new_middle_spd += 2; workers_spd += 2; workers_spm += 1; new_middle_spm += 0.5; workers_ddp += 1; workers_z += 1; rural_z += 1; peasants_asum += 1; rural_asum += 0.5; workers_sapd += 2; vsp_merf_gov = 1;
 
 @prog
 subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> ([+ progressive_coalition_merf +]%)
 view-if: progressive_coalition_merf >= 45
 choose-if: progressive_coalition_merf >= 50 and ddp_coa >= 70 and liberal_reconciliation >= 8
 unavailable-subtitle: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span> and they do not trust us enough.
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; liberal_unity += 1; ddp_relation += 1; new_middle_ddp += 2; new_middle_spd += 2; workers_spd += 2.5; workers_spm += 1; new_middle_spm += 1; workers_ddp += 1;
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; liberal_unity += 1; ddp_relation += 1; new_middle_ddp += 2; new_middle_spd += 2; workers_spd += 2.5; workers_spm += 1; new_middle_spm += 1; workers_ddp += 1;
 
 @zelt
 view-if: weimar_coalition_merf >= 45 and liberal_reconciliation >= 8
 subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> ([+ weimar_coalition_merf +]%)
 choose-if: weimar_coalition_merf >= 50 and ddp_coa >= 65 and gdsu_coa >= 65 and liberal_reconciliation >= 12
 unavailable-subtitle: [? if gdsu_coa < 75: We do not have good enough relations with the <span style="color: #48ba48;">GDSU</span>. ?][? if fvp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?][? if liberal_reconciliation < 10: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; sapd_relation -= 1*kpm_modifier; dvp_relation += 1*ldp_modifier; z_relation += 1.5*gdsu_modifier; ddp_relation += 1.5*fvp_modifier; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1; new_middle_ddp += 1.5; workers_spd += 2; new_middle_spd += 1.5; workers_spm += 1; vsp_merf_gov = 1;
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; sapd_relation -= 1*kpm_modifier; dvp_relation += 1*ldp_modifier; z_relation += 1.5*gdsu_modifier; ddp_relation += 1.5*fvp_modifier; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1; new_middle_ddp += 1.5; workers_spd += 2; new_middle_spd += 1.5; workers_spm += 1; vsp_merf_gov = 1;
 
 @zelt_whide
 view-if: zeltbrin_plus_coalition_merf >= 50 and weimar_coalition_merf <= 50 and liberal_reconciliation >= 8
 subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?]([+ weimar_coalition_merf +]%)
 choose-if: zeltbrin_plus_coalition_merf >= 50 and ddp_coa >= 70 and gdsu_coa >= 70 and liberal_reconciliation >= 14 and ppu_coa >= 65
 unavailable-subtitle: [? if gdsu_coa < 75: We do not have good enough relations with the <span style="color: #48ba48;">GDSU</span>. ?][? if fvp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?][? if liberal_reconciliation < 12: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; sapd_relation -= 2*kpm_modifier; dvp_relation += 1.5*ldp_modifier; z_relation += 1.5*gdsu_modifier; ppu_relation += 1.5; ddp_relation += 1.5*fvp_modifier; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; other_rural += 1; new_middle_ddp += 1.5; workers_spd += 2; new_middle_spd += 1.5; workers_spm += 1; vsp_merf_gov = 1;
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; sapd_relation -= 2*kpm_modifier; dvp_relation += 1.5*ldp_modifier; z_relation += 1.5*gdsu_modifier; ppu_relation += 1.5; ddp_relation += 1.5*fvp_modifier; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; other_rural += 1; new_middle_ddp += 1.5; workers_spd += 2; new_middle_spd += 1.5; workers_spm += 1; vsp_merf_gov = 1;
 
 @grand
-view-if: grand_coalition_merf >= 50 and zeltbrin_plus_coalition_merf <= 50 and liberal_reconciliation >= 16 and center_right_coalition_merf <= 50
+view-if: grand_coalition_merf >= 50 and zeltbrin_plus_coalition_merf <= 50 and liberal_reconciliation >= 16
 subtitle: <span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #ff7b00;">VSP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> ([+ grand_coalition_merf +]%)
 choose-if: grand_coalition_merf >= 50 and liberal_reconciliation >= 18 and (fvp_coa + gdsu_coa) >= 140 and ldp_coa >= 65 and ppu_coa >= 65 and ppu_coa >= 65 and other_coa >= 65
-on-arrival: spd_merf_gov = 1; mirfallen_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; other_merf_gov = 1; dvp_merf_gov = 1; sapd_relation -= 3*kpm_modifier; dvp_relation += 2*ldp_modifier; z_relation += 2*gdsu_modifier; ppu_relation += 2; ddp_relation += 2*fvp_modifier; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; workers_spd += 1.5; new_middle_spd += 1.5; workers_spm += 1;
+on-arrival: spd_merf_gov = 1; merfeld_gov = 1; local_spd = 1; spm_merf_gov = 1; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; dvp_merf_gov = 1; sapd_relation -= 3*kpm_modifier; dvp_relation += 2*ldp_modifier; z_relation += 2*gdsu_modifier; ppu_relation += 2; ddp_relation += 2*fvp_modifier; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; workers_spd += 1.5; new_middle_spd += 1.5; workers_spm += 1;
 unavailable-subtitle: [? if (fvp_coa + gdsu_coa) <= 140: We do not have good enough relations with the left Liberals. ?][? if ldp_coa < 75: The LDP, is unwilling to compromise at all. ?][? if liberal_reconciliation < 18: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
 
 @lib
@@ -490,32 +490,32 @@ view-if: liberal_coalition_merf >= 45
 subtitle: <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> ([+ liberal_coalition_merf +]%)
 choose-if: liberal_coalition_merf >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
-on-arrival: mirfallen_gov = 2; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; dvp_merf_gov = 1; liberal_unity += 2.5; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; new_middle_ddp += 2;
+on-arrival: merfeld_gov = 2; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; dvp_merf_gov = 1; liberal_unity += 2.5; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; new_middle_ddp += 2;
 
 @lib_whide
 subtitle: <span style="color: #ff7b00;">VSP</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #1b7035;">LTP</span> ([+ wide_liberal_coalition_merf +]%)
 view-if: wide_liberal_coalition_merf >= 50 and wide_liberal_coalition_merf <= 50
 choose-if: wide_liberal_coalition_merf >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
-on-arrival: mirfallen_gov = 2; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; other_merf_gov = 1; dvp_merf_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; vsp_merf_gov = 1;
+on-arrival: merfeld_gov = 2; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; ltp_merf_gov = 1; dvp_merf_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; vsp_merf_gov = 1;
 
 @cent_right
 subtitle: <span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #4a9fde;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> ([+ center_right_coalition_merf +]%)
 view-if: center_right_coalition_merf >= 45
 choose-if: center_right_coalition_merf >= 50 and (dnvp_path - gdsu_ideology + 3 - ldp_ideology) >= 0 and liberal_unity >= 30 and liberal_right >= 30
 unavailable-subtitle: [? if liberal_unity <= 30: Liberals are too conflicted to form a coherent goverment. ?][? if (dnvp_path - gdsu_ideology + 2 - ldp_ideology) < 0: Liberals are unwilling to compromise with the MNVP. ?]
-on-arrival: mirfallen_gov = 3; z_merf_gov = 1; ppu_merf_gov = 1; other_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1 ; rural_dnvp += 1; minorieties_ppu += 1; new_middle_dvp += 1; other_rural += 1;
+on-arrival: merfeld_gov = 3; z_merf_gov = 1; mtu_merf_gov = 1; ltp_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1 ; rural_dnvp += 1; minorieties_ppu += 1; new_middle_dvp += 1; other_rural += 1;
 
 @right
 subtitle: [? if ldp_reform > 0 : <span style="color: #caa58b;">[+ dvp_name +]</span> + ?]<span style="color: #48b94a;">GDSU</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span> ([+ agrarian_right_coalition +]%)
 choose-if: agrarian_right_coalition >= 50
-on-arrival: mirfallen_gov = 3; other_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; liberal_unity -= 2;
+on-arrival: merfeld_gov = 3; mtu_merf_gov = 1; ltp_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; liberal_unity -= 2;
 
 @far_right
 subtitle: <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span> + <span style="color: #706a65;">NSDAP</span> ([+ hitler_right_coalition_merf +]%)
 view-if: hitler_right_coalition_merf >= 45 and nsdap_merf >= 15
 choose-if: hitler_right_coalition_merf >= 50
-on-arrival: mirfallen_gov = 3; other_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; nsdap_merf_gov = 1; workers_nsdap += 2; new_middle_nsdap += 2; old_middle_nsdap += 2; nsdap_merf_mod += 10;
+on-arrival: merfeld_gov = 3;  mtu_merf_gov = 1; ltp_merf_gov = 1; dvp_merf_gov = 1; gnvp_merf_gov = 1; dnvp_merf_gov = 1; nsdap_merf_gov = 1; workers_nsdap += 2; new_middle_nsdap += 2; old_middle_nsdap += 2; nsdap_merf_mod += 10;
 
 @coalition
 
