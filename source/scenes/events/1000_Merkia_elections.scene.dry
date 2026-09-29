@@ -177,9 +177,8 @@ Q.wide_liberal_coalition_mer = (Q.z_mer + Q.ddp_mer + Q.dvp_mer + Q.ppu_mer + Q.
 Q.center_right_coalition_mer = (Q.z_mer + Q.dvp_mer + Q.other_mer + Q.dnvp_mer + Q.blpm_mer + Q.gnvp_mer + Q.ppu_mer).toFixed(1);
 Q.right_coalition_mer = (Q.dvp_mer + Q.other_mer + Q.dnvp_mer + Q.gnvp_mer).toFixed(1);
 Q.far_right_coalition_mer = (Q.dnvp_mer + Q.nsdap_mer + Q.gnvp_mer).toFixed(1);
-Q.anti_democratic_coalition_mer = (Q.nsdap_mer + Q.dnvp_mer);
-if (Q.kpm_ally == 0) {Q.anti_democratic_coalition_mer += Q.kpm_mer;}
-if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_mer = Q.anti_democratic_coalition_mer + Q.kpm_mer + Q.spd_mer/2;}
+Q.anti_democratic_coalition_mer = (Q.nsdap_mer + Q.dnvp_mer + Q.kpm_mer);
+if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_mer = Q.anti_democratic_coalition_mer + Q.spd_mer/2;}
 Q.anti_democratic_coalition_mer = (Q.anti_democratic_coalition_mer).toFixed(1);
 Q.hitler_right_coalition_mer = (Q.dnvp_mer + Q.nsdap_mer + Q.dvp_mer + Q.other_mer + Q.gnvp_mer).toFixed(1);
 
@@ -425,7 +424,7 @@ There are some potential coalition arrangements.
 -@coalition: Maybe we can try some other coalition?
 
 @no_majority
-view-if: anti_democratic_coalition_mer >= 45
+view-if: anti_democratic_coalition_mer >= 45 or (liberal_unity + liberal_right) < 80
 subtitle: This would mean the continuation of the current goverment with federal support and next election will be called in half of a year.
 on-arrival: pro_republic -= 2; ddp_mer_gov = 1 if merkia_gov = 1; spd_mer_gov = 1 if merkia_gov = 1; spm_mer_gov = 1 if merkia_gov = 1; ddp_mer_gov = 1 if merkia_gov = 2; z_mer_gov = 1 if merkia_gov = 2; dvp_mer_gov = 1 if merkia_gov = 2; ppu_mer_gov = 1 if merkia_gov = 2; other_mer_gov = 1 if merkia_gov = 2; z_mer_gov = 1 if merkia_gov = 3; dvp_mer_gov = 1 if merkia_gov = 3; other_mer_gov = 1 if merkia_gov = 3; dnvp_mer_gov = 1 if merkia_gov = 3; ddp_mer_gov = 1 if merkia_gov = 2; nsdap_mer_mod += 25; sapd_mer_mod += 15;
 
@@ -499,7 +498,7 @@ on-arrival: merkia_gov = 2; ddp_mer_gov = 1; z_mer_gov = 1; ppu_mer_gov = 1; oth
 @cent_right
 subtitle: <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Other[? if gnvp_formed : + <span style="color: #774ae2;">GNVP</span> ?] + <span style="color: #1027dc;">MNVP</span> ([+ center_right_coalition_mer +]%)
 view-if: center_right_coalition_mer >= 45
-choose-if: center_right_coalition_mer >= 50 and (dnvp_path - gdsu_ideology + 2 - ldp_ideology) >= 0 and liberal_unity >= 30
+choose-if: center_right_coalition_mer >= 50 and (dnvp_path - gdsu_ideology + 2 - ldp_ideology) >= 0 and liberal_unity >= 30 and liberal_right >= 35
 unavailable-subtitle: [? if liberal_unity <= 30: Liberals are too conflicted to form a coherent goverment. ?][? if (dnvp_path - gdsu_ideology + 2 - ldp_ideology) < 0: Liberals are unwilling to compromise with the MNVP. ?]
 on-arrival: merkia_gov = 3; z_mer_gov = 1; ppu_mer_gov = 1; other_mer_gov = 1; dvp_mer_gov = 1; gnvp_mer_gov = 1; dnvp_mer_gov = 1; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1 ; rural_dnvp += 1; minorieties_ppu += 1; new_middle_dvp += 1; other_rural += 1;
 
@@ -672,12 +671,12 @@ go-to: coalition
 
 @ppu_gov_drop
 view-if: ppu_mer_coa = 1
-on-arrival: asum_mer_coa = 0; custom_coalition_mer -= ppu_mer; kpm_coa -= 5 if ppu_path >= 1; kpm_coa += 15;
+on-arrival: ppu_mer_coa = 0; custom_coalition_mer -= ppu_mer; kpm_coa -= 5 if ppu_path >= 1; kpm_coa += 15;
 go-to: coalition
 
 @ppu_tol_drop
 view-if: ppu_mer_coa = 2
-on-arrival: asum_mer_coa = 0; custom_coalition_mer -= ppu_mer; kpm_coa -= 5 if ppu_path >= 1; kpm_coa += 10;
+on-arrival: ppu_mer_coa = 0; custom_coalition_mer -= ppu_mer; kpm_coa -= 5 if ppu_path >= 1; kpm_coa += 10;
 go-to: coalition
 
 @blpm_gov
