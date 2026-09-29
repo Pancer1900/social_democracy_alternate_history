@@ -1211,11 +1211,11 @@ Governing Coalition :
 
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_zel +]% {!</td><td>!} [? if ddp_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ddp_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
 
+{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnp_zel +]% {!</td><td>!} [? if lrel_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if lrel_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_zel +]% {!</td><td>!} [? if z_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#ba9750'> </div> !} TEL: {!</td><td>!} [+ zek_zel +]% {!</td><td>!} [? if tel_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if tel_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
-
-{!<tr><td><div class="box" style='background-color:#b0cf00'> </div> !} LREP: {!</td><td>!} [+ rnp_zel +]% {!</td><td>!} [? if lrel_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if lrel_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_zel +]% {!</td><td>!} [? if dvp_zel_gov = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_zel_gov = 1 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
  

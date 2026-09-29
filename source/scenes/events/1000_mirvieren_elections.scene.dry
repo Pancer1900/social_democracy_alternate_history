@@ -202,7 +202,9 @@ Q.liberal_coalition_mirv = (Q.z_mirv + Q.ddp_mirv + Q.dvp_mirv + Q.ppu_mirv + Q.
 Q.center_right_coalition_mirv = (Q.z_mirv + Q.dvp_mirv + Q.ltp_mirv + Q.dnvp_mirv + Q.mtu_mirv).toFixed(1);
 Q.right_coalition_mirv = (Q.dvp_mirv + Q.ltp_mirv + Q.dnvp_mirv + Q.mtu_mirv + Q.nsdap_mirv).toFixed(1);
 Q.anti_democratic_coalition_mirv = (Q.sapd_mirv + Q.nsdap_mirv + Q.dnvp_mirv).toFixed(1);
-if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_mirv = Q.anti_democratic_coalition_mirv + Q.spd_mirv/2;}
+if (Q.liberal_reconciliation <= 12) {
+    Q.anti_democratic_coalition_mirv += Q.spd_mirv/2;
+}
 Q.anti_democratic_coalition_mirv = (Q.anti_democratic_coalition_mirv).toFixed(1);
 
 Q.mirv_change_spd = (Q.mirv_change_spd != undefined ? parseFloat(Q.mirv_change_spd.toFixed(1)) : 0);
@@ -410,7 +412,7 @@ Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <s
 
 [? if zeltbrin_plus_coalition_mirv < 50 and liberal_reconciliation >= 16: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span>): [+ grand_coalition_mirv +]% ?]
 
-Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span>): [+ liberal_coalition_mirv +]%
+Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span>): [+ liberal_coalition_mirv +]%
 
 Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span>): [+ center_right_coalition_mirv +]%
 
@@ -703,8 +705,8 @@ on-arrival: {!
 if(Q.ldp_mirv_coa > 0)
 {Q.dvp_mirv_gov = 1; Q.old_middle_dvp += 1; Q.dvp_mirv_mod += 5; Q.dvp_relation += 2*Q.ldp_modifier;}
 
-if(Q.blpm_mirv_coa > 0)
-{Q.blpm_mirv_gov = 1; Q.new_middle_blpm += 1; Q.blpm_mirv_mod += 5;}
+if(Q.ppb_mirv_coa > 0)
+{Q.bvp_mirv_gov = 1; Q.minorieties_ppu += 1; Q.ppu_mirv_mod += 5; Q.ppu_relation += 2;}
 
 if(Q.sapd_mirv_coa > 0)
 {Q.sapd_mirv_gov = 1; Q.workers_sapd += 1; Q.sapd_mirv_mod += 5; Q.sapd_relation += 2*Q.kpm_modifier}

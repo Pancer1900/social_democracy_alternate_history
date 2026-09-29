@@ -151,8 +151,8 @@ Q.anti_democratic_coalition_merf = (Q.sapd_merf + Q.nsdap_merf + Q.dnvp_merf + Q
 Q.hitler_right_coalition_merf = (Q.dnvp_merf + Q.nsdap_merf + Q.ltp_merf + Q.mtu_merf).toFixed(1);
 Q.agrarian_right_coalition = (Q.mtu_merf + Q.dnvp_merf + Q.ltp_merf + Q.z_merf).toFixed(1);
 if (Q.ldp_reform > 0) {
-    Q.agrarian_right_coalition = Q.agrarian_right_coalition + Q.dvp_merf;
-    }
+    Q.agrarian_right_coalition += Q.dvp_merf;
+}
 
 Q.agrarian_right_coalition = (Q.agrarian_right_coalition != undefined ? parseFloat(Q.agrarian_right_coalition.toFixed(1)) : 0);
 Q.mer_change_spd = (Q.mer_change_spd != undefined ? parseFloat(Q.mer_change_spd.toFixed(1)) : 0);
@@ -396,7 +396,7 @@ Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <s
 
 [? if weimar_coalition_merf < 50 and liberal_reconciliation >= 16: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #ff7b00;">VSP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span>): [+ grand_coalition_merf +]% ?]
 
-Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_merf +]%
+[? if liberal_coalition_merf >= 50 : Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_merf +]% ?]
 
 [? if liberal_coalition_merf < 50 : Wide - Liberal Coalition (<span style="color: #ff7b00;">VSP</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #1b7035;">LTP</span>): [+ wide_liberal_coalition_merf +]% ?]
 
@@ -404,7 +404,7 @@ Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style=
 
 Right-Agrarian Coalition ([? if ldp_reform > 0 : <span style="color: #caa58b;">[+ dvp_name +]</span> + ?]<span style="color: #48b94a;">GDSU</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span>): [+ agrarian_right_coalition +]%
 
-Right-wing Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span> + <span style="color: #706a65;">NSDAP</span>): [+ hitler_right_coalition_merf +]%
+[? if nsdap_merf > 10: Right-wing Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span> + <span style="color: #706a65;">NSDAP</span>): [+ hitler_right_coalition_merf +]% ?]
 
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
@@ -494,7 +494,7 @@ on-arrival: merfeld_gov = 2; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1;
 
 @lib_whide
 subtitle: <span style="color: #ff7b00;">VSP</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #1b7035;">LTP</span> ([+ wide_liberal_coalition_merf +]%)
-view-if: wide_liberal_coalition_merf >= 50 and wide_liberal_coalition_merf <= 50
+view-if: wide_liberal_coalition_merf >= 50
 choose-if: wide_liberal_coalition_merf >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
 on-arrival: merfeld_gov = 2; ddp_merf_gov = 1; z_merf_gov = 1; ppu_merf_gov = 1; ltp_merf_gov = 1; dvp_merf_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; vsp_merf_gov = 1;
