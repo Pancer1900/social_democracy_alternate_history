@@ -198,7 +198,7 @@ Q.progressive_coalition_mirv = (Q.spd_mirv + Q.sapd_mirv + Q.spm_mirv + Q.asum_m
 Q.zeltbrin_plus_coalition_mirv = (Q.spd_mirv + Q.ddp_mirv + Q.z_mirv + Q.ppu_mirv + Q.spm_mirv + Q.bvp_mirv).toFixed(1);
 Q.grand_coalition_mirv = (Q.spd_mirv + Q.spm_mirv + Q.ddp_mirv + Q.z_mirv + Q.ppu_mirv + Q.dvp_mirv + Q.bvp_mirv).toFixed(1);
 
-Q.liberal_coalition_mirv = (Q.z_mirv + Q.ddp_mirv + Q.dvp_mirv + Q.ppu_mirv + Q.blpm_mirv + Q.bvp_mirv).toFixed(1); 
+Q.liberal_coalition_mirv = (Q.z_mirv + Q.ddp_mirv + Q.dvp_mirv + Q.ppu_mirv + Q.bvp_mirv + Q.ltp_mirv).toFixed(1); 
 Q.center_right_coalition_mirv = (Q.z_mirv + Q.dvp_mirv + Q.ltp_mirv + Q.dnvp_mirv + Q.mtu_mirv).toFixed(1);
 Q.right_coalition_mirv = (Q.dvp_mirv + Q.ltp_mirv + Q.dnvp_mirv + Q.mtu_mirv + Q.nsdap_mirv).toFixed(1);
 Q.anti_democratic_coalition_mirv = (Q.sapd_mirv + Q.nsdap_mirv + Q.dnvp_mirv).toFixed(1);
@@ -412,7 +412,7 @@ Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <s
 
 [? if zeltbrin_plus_coalition_mirv < 50 and liberal_reconciliation >= 16: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span>): [+ grand_coalition_mirv +]% ?]
 
-Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span>): [+ liberal_coalition_mirv +]%
+Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span> + <span style="color: #1b7035;">LTP</span>): [+ liberal_coalition_mirv +]%
 
 Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span>): [+ center_right_coalition_mirv +]%
 
@@ -459,7 +459,7 @@ unavailable-subtitle: [? if (kpm_coa + spm_coa) < 140: We do not have good enoug
 on-arrival: spd_mirv_gov = 1; mirvieren_gov = 1; local_spd = 1; asum_mirv_gov = 1; spm_mirv_gov = 1; sapd_mirv_gov = 1; ddp_mirv_gov = 1; liberal_unity += 1; sapd_relation += 2*kpm_modifier; dvp_relation -= 2.5*ldp_modifier; z_relation -= 1.5*gdsu_modifier; ppu_relation += 1; bvp_mirv_gov = 1; ddp_relation += 1; new_middle_ddp += 2; new_middle_spd += 2; workers_spd += 2.5; workers_spm += 1; new_middle_spm += 1; workers_ddp += 1; peasants_asum += 1; rural_asum += 1; workers_sapd += 2; minorieties_ppu += 1;
 
 @zelt_whide
-view-if: zeltbrin_plus_coalition_mirv >= 50 and weimar_coalition_mirv <= 50 and liberal_reconciliation >= 8
+view-if: zeltbrin_plus_coalition_mirv >= 50 and liberal_reconciliation >= 8
 subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">ZET</span> + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span> ([+ weimar_coalition_mirv +]%)
 choose-if: zeltbrin_plus_coalition_mirv >= 50 and ddp_coa >= 70 and gdsu_coa >= 70 and liberal_reconciliation >= 14 and ppu_coa >= 65
 unavailable-subtitle: [? if gdsu_coa < 75: We do not have good enough relations with the <span style="color: #48ba48;">GDSU</span>. ?][? if fvp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?][? if liberal_reconciliation < 12: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
@@ -477,7 +477,7 @@ subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a
 view-if: liberal_coalition_mirv >= 50
 choose-if: liberal_coalition_mirv >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
-on-arrival: mirvieren_gov = 2; ddp_mirv_gov = 1; z_mirv_gov = 1; ppu_mirv_gov = 1; other_mirv_gov = 1; dvp_mirv_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; bvp_mirv_gov = 1; minorieties_ppu += 1;
+on-arrival: mirvieren_gov = 2;  ltp_mirv_gov = 1; ddp_mirv_gov = 1; z_mirv_gov = 1; ppu_mirv_gov = 1; other_mirv_gov = 1; dvp_mirv_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; bvp_mirv_gov = 1; minorieties_ppu += 1;
 
 @cent_right
 subtitle: <span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #8c1a16;">MTP</span> ([+ center_right_coalition_mirv +]%)

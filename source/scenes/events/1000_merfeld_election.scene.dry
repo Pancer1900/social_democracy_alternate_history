@@ -145,13 +145,18 @@ Q.weimar_coalition_merf = (Q.spd_merf + Q.ddp_merf + Q.z_merf + Q.spm_merf).toFi
 Q.grand_coalition_merf = (Q.spd_merf + Q.spm_merf + Q.ddp_merf + Q.z_merf + Q.ppu_merf + Q.dvp_merf + Q.svp_merf).toFixed(1);
 
 Q.liberal_coalition_merf = (Q.z_merf + Q.ddp_merf + Q.dvp_merf + Q.ppu_merf).toFixed(1); 
-Q.wide_liberal_coalition_merf = (Q.z_merf + Q.ddp_merf + Q.dvp_merf + Q.svp_merf + Q.ppu_merf + Q.ltp_merf).toFixed(1);
+Q.wide_liberal_coalition_merf = (Q.z_merf + Q.ddp_merf + Q.dvp_merf + Q.ppu_merf + Q.ltp_merf).toFixed(1);
 Q.center_right_coalition_merf = (Q.z_merf + Q.dvp_merf + Q.ltp_merf + Q.dnvp_merf).toFixed(1);
 Q.anti_democratic_coalition_merf = (Q.sapd_merf + Q.nsdap_merf + Q.dnvp_merf + Q.gnvp_merf).toFixed(1);
 Q.hitler_right_coalition_merf = (Q.dnvp_merf + Q.nsdap_merf + Q.ltp_merf + Q.mtu_merf).toFixed(1);
 Q.agrarian_right_coalition = (Q.mtu_merf + Q.dnvp_merf + Q.ltp_merf + Q.z_merf).toFixed(1);
+
 if (Q.ldp_reform > 0) {
     Q.agrarian_right_coalition += Q.dvp_merf;
+}
+if (Q.wide_liberal_coalition_merf < 50) {
+    Q.wide_liberal_coalition_merf += Q.svp_merf;
+    Q.vsp_merf_lib = 1;
 }
 
 Q.agrarian_right_coalition = (Q.agrarian_right_coalition != undefined ? parseFloat(Q.agrarian_right_coalition.toFixed(1)) : 0);
@@ -398,7 +403,7 @@ Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <s
 
 [? if liberal_coalition_merf >= 50 : Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_merf +]% ?]
 
-[? if liberal_coalition_merf < 50 : Wide - Liberal Coalition (<span style="color: #ff7b00;">VSP</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #1b7035;">LTP</span>): [+ wide_liberal_coalition_merf +]% ?]
+[? if liberal_coalition_merf < 50 : Wide - Liberal Coalition ([? if vsp_merf_lib = 1 : <span style="color: #ff7b00;">VSP</span> + ?] <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #1b7035;">LTP</span>): [+ wide_liberal_coalition_merf +]% ?]
 
 Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #1b7035;">LTP</span> + <span style="color: #3F7BC1;">MNVP</span>): [+ center_right_coalition_merf +]%
 

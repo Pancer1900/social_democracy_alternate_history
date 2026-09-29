@@ -198,10 +198,7 @@ Q.liberal_coalition_zel = (Q.z_zel + Q.ddp_zel + Q.dvp_zel + Q.rnp_zel + Q.zek_z
 Q.center_right_coalition_zel = (Q.z_zel + Q.dvp_zel + Q.dnvp_zel + Q.zek_zel + Q.ltp_zel).toFixed(1);
 Q.far_right_coalition_zel = (Q.dnvp_zel + Q.nsdap_zel + Q.ltp_zel + Q.dvp_zel).toFixed(1);
 Q.anti_democratic_coalition_zel = (Q.sapd_zel + Q.nsdap_zel + Q.dnvp_zel + Q.ltp_zel).toFixed(1);
-if (Q.liberal_reconciliation <= 12) {
-    Q.anti_democratic_coalition_zel += Q.spd_mirv/2;
-}
-Q.anti_democratic_coalition_zel = (Q.anti_democratic_coalition_zel).toFixed(1);
+
 
 
 Q.zel_change_spd = (Q.zel_change_spd != undefined ? parseFloat(Q.zel_change_spd.toFixed(1)) : 0);
@@ -469,7 +466,7 @@ unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to 
 on-arrival: tippleford_gov = 2; ddp_zel_gov = 1; z_zel_gov = 1; ppu_zel_gov = 1; other_zel_gov = 1; dvp_zel_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; bvp_zel_gov = 1; minorieties_ppu += 1;
 
 @cent_right
-subtitle: <span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #87c4df;">TEL</span> + <span style="color: #1b7035;">LTP</span>([+ center_right_coalition_zel +]%)
+subtitle: <span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #87c4df;">TEL</span> + <span style="color: #1b7035;">LTP</span> ([+ center_right_coalition_zel +]%)
 view-if: center_right_coalition_zel >= 45
 choose-if: center_right_coalition_zel >= 50 and (dnvp_path - gdsu_ideology + 2 - ldp_ideology) >= 0 and liberal_unity >= 30 and liberal_right >= 35
 unavailable-subtitle: [? if liberal_unity <= 30: Liberals are too conflicted to form a coherent goverment. ?][? if (dnvp_path - gdsu_ideology + 2 - ldp_ideology) < 0: Liberals are unwilling to compromise with the MNVP. ?]
