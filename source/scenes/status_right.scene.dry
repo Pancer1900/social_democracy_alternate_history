@@ -66,6 +66,24 @@ Q.cen_seats = parseFloat(Q.cen_seats.toFixed(1));
 Q.lab_seats = parseFloat(Q.lab_seats.toFixed(1));
 Q.ref_seats = parseFloat(Q.ref_seats.toFixed(1));
 
+Q.balance_2 = Q.balance.toFixed(1);
+Q.income_2 = Q.income.toFixed(1);
+Q.expence_2 = Q.expence.toFixed(1);
+Q.reserve_2 = Q.reserve.toFixed(1);
+Q.debt_2 = Q.debt.toFixed(1);
+Q.vat_2 = Q.vat.toFixed(1);
+Q.corporate_2 = Q.corporate.toFixed(1);
+Q.income_low_2 = Q.income_low.toFixed(1);
+Q.income_high_2 = Q.income_high.toFixed(1);
+Q.tarrif_2 = Q.tarrif.toFixed(1);
+Q.other_i_2 = Q.other_i.toFixed(1);
+Q.welfare_e_2 = Q.welfare_e.toFixed(1);
+Q.administrative_2 = Q.administrative.toFixed(1);
+Q.internal_2 = Q.internal.toFixed(1);
+Q.military_2 = Q.military.toFixed(1);
+Q.projects_2 = Q.projects.toFixed(1);
+Q.other_e_2 = Q.other_e.toFixed(1);
+
 !}
 
 = Status
@@ -102,6 +120,8 @@ stabil : [+ stability +]
 = Economy Overview 
 
 Economic Growth: [+ economic_growth_2 +]%
+
+Industrial Output : [? if industrial_out < 1 : <span style="color: #bd0000;">Recession</span> ?][? if industrial_out < 1.5 and industrial_out >= 1 : <span style="color: #e95448;">Crisis</span> ?][? if industrial_out > 1.5 and stability <= 2 : <span style="color: #d49837;">Falling</span> ?][? if industrial_out > 2 and industrial_out <= 2.5 : <span style="color: #d2ce5e;">Slowing</span> ?][? if industrial_out > 2.5 and industrial_out <= 3 : <span style="color: #aad454;">Steady</span> ?][? if industrial_out > 3: <span style="color: #26b54f;">Growing</span> ?]
 
 Economic Stabilty: [? if stability < 0.5 : <span style="color: #bd0000;">Chaos</span> ?][? if stability < 0.5 and stability >= 0.7 : <span style="color: #e95448;">Unstable</span> ?][? if stability > 0.7 and stability <= 0.9 : <span style="color: #d2ce5e;">Waring</span> ?][? if stability > 0.9 and stability <= 1.1 : <span style="color: #aad454;">Stable</span> ?][? if stability > 1.1 : <span style="color: #47d62c;">Growing</span> ?]
 
@@ -147,41 +167,43 @@ Global Trade Networks: [? if global_trade < -0.1 : <span style="color: #bd0000;"
 
 = National Budget
 
-Net Budget: [+ balance +] 
+Net Budget: [+ balance_2 +] 
 
-Income: [+ income +]
+Income: [+ income_2 +]
 
-Expence: [+ expence +]
+Expence: [+ expence_2 +]
 
-Reserve: [+ reserve +]
+Reserve: [+ reserve_2 +]
+
+Debt: [+ debt_2 +]
 
 = Income
 
-Value Tax: [+ vat +]
+Value Tax: [+ vat_2 +]
 
-Corporate Tax: [+ corporate +]
+Corporate Tax: [+ corporate_2 +]
 
-Income Tax (lower class): [+ income_low +]
+Income Tax (lower class): [+ income_low_2 +]
 
-Income Tax (upper class): [+ income_high +]
+Income Tax (upper class): [+ income_high_2 +]
 
-Tariffs: [+ tarrif +]
+Tariffs: [+ tarrif_2 +]
 
-Other: [+ other_i +]
+Other: [+ other_i_2 +]
 
 = Expences
 
-Welfare: [+ welfare_e +]
+Welfare: [+ welfare_e_2 +]
 
-Administrative: [+ administrative +]
+Administrative: [+ administrative_2 +]
  
-Internal Transfer: [+ internal +]
+Internal Transfer: [+ internal_2 +]
 
-Military: [+ military +]
+Military: [+ military_2 +]
 
-Government Projects: [+ projects +]
+Government Projects: [+ projects_2 +]
 
-Other: [+ other_e +]
+Other: [+ other_e_2 +]
 
 @politics_party
 on-display: {!

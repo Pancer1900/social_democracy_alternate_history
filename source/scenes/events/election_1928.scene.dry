@@ -461,6 +461,8 @@ go-to: coalition_menu
 
 [? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_r +]% {!</td><td>!} [+ str_change_asum +] {!</td></tr>!} ?]
 
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}SPM: {!</td><td>!} [+ spm_r +]% {!</td><td>!} [+ str_change_spm +] {!</td></tr>!} ?]
+
 {!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [+ str_change_ddp +] {!</td></tr>!}
 
 {!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_r +]% {!</td><td>!} [+ str_change_z +] {!</td></tr>!}

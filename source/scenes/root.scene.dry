@@ -351,6 +351,7 @@ Q.capital_strike_progress = 0;
 Q.budget = 4;
 
 Q.reserve = 1.3;
+Q.debt = 14.2;
 
 // Expences
 Q.welfare_e = 0.9;
@@ -1061,6 +1062,9 @@ Q.sapd_in_government = 0;
 Q.spm_in_government = 0;
 Q.asum_in_government = 0;
 Q.nsdap_in_government = 0;
+Q.blpm_in_government = 0;
+Q.gnvp_in_government = 0;
+Q.vsp_in_government = 0;
 
 Q.in_liberal_coalition = 1; // Liberal coalition = FVP + GDSU + LDP + PPU
 Q.in_right_coalition = 0; // Right coalition = LDP + PPU + others + MNVP

@@ -4,6 +4,7 @@ is-special: true
 on-arrival: {!
 
 Q.radicalisation_disp = Q.radicalisation_sum;
+Q.radicalisation_disp_2 = Q.radicalisation_sum.toFixed(1)
 
 if (Q.socialism) {
     Q.socialism_disp = Q.socialism.toFixed(1);
@@ -129,7 +130,7 @@ Support for the <span style="color: #d61818;">Socialism</span>: [+ socialism_dis
 
 Support for the <span style="color: #1e27c9;">Nationalism</span>: [+ nationalism_disp +]%
 
-Radicalisation of the People: [+ radicalisation_disp +]%
+Radicalisation of the People: [+ radicalisation_disp_2 +]%
 
 @politics
 
@@ -141,7 +142,7 @@ FVP ALLY -
 
 PPU ALLY - 
 
-Liberal reconcliation - 
+Reconciliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <span style="color: #000000;">Better Dead than Red</span> ?][? if liberal_reconciliation < 6 and liberal_reconciliation >= 0 : <span style="color: #9e5c00;">Low</span> ?][? if liberal_reconciliation < 12 and liberal_reconciliation >= 6 : <span style="color: #999e00;">Warming Up</span> ?][? if liberal_reconciliation < 18 and liberal_reconciliation >= 12 : <span style="color: #6c9e00;">Mild Reconciliation</span> ?][? if liberal_reconciliation >= 18 : <span style="color: #159e00;">Full Reconciliation</span> ?]
 
 left batrayl - 
 

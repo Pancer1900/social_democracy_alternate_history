@@ -1378,7 +1378,7 @@ if (window && d3) {
     if (screenWidth < width - 50) {
         width = screenWidth - 50; 
         height = width;
-        document.getElementById("reichstag").style.height = screenWidth/2 + "px";
+        document.getElementById("reichstag_main").style.height = screenWidth/2 + "px";
     } 
 
     var parliament = d3.parliament();
@@ -1388,5 +1388,44 @@ if (window && d3) {
     d3.select("#reichstag").datum(data).call(parliament);
 }
 !}
+
+{!<svg id="reichstag_main" style="width: 500px; height: 250px;"> </svg>!}
+
+President: [? if president_party = 1: <span style="color: #940000;">[+ president +]</span> (<span style="color: #940000;">KPM</span>) ?][? if president_party = 2: <span style="color: #dd5b00;">[+ president +]</span> (<span style="color: #dd5b00;">ASUM</span>) ?][? if president_party = 3: <span style="color: #dc0200;">[+ president +]</span> (<span style="color: #dc0200;">[+ spd_name +]</span>) ?][? if president_party = 4: <span style="color: #ff1919;">[+ president +]</span> (<span style="color: #ff1919;">SPM</span>) ?][? if president_party = 5: <span style="color: #ddd500;">[+ president +]</span> (<span style="color: #ddd500;">FVP</span>) ?][? if president_party = 6: <span style="color: #48b94a;">[+ president +]</span> (<span style="color: #48b94a;">GDSU</span>) ?][? if president_party = 7: <span style="color: #00e8ff;">[+ president +]</span> (<span style="color: #00e8ff;">BLPM</span>) ?][? if president_party = 8: <span style="color: #4a9fde;">[+ president +]</span> (<span style="color: #4a9fde;">PPU</span>) ?][? if president_party = 9: <span style="color: #caa58b;">[+ president +]</span> (<span style="color: #caa58b;">[+ dvp_name +]</span>) ?][? if president_party = 10: <span style="color: #808080;">[+ president +]</span> (<span style="color: #808080;">I</span>) ?][? if president_party = 11: <span style="color: #774ae2;">[+ president +]</span> (<span style="color: #774ae2;">GNVP</span>) ?][? if president_party = 12: <span style="color: #3F7BC1;">[+ president +]</span> (<span style="color: #3F7BC1;">MNVP</span>) ?][? if president_party = 13: <span style="color: #706a65;">[+ president +]</span> (<span style="color: #706a65;">MSP</span>) ?]
+
+Chancellor: [? if chancellor_party = 1: <span style="color: #940000;">[+ chancellor +]</span> (<span style="color: #940000;">KPM</span>) ?][? if chancellor_party = 2: <span style="color: #dd5b00;">[+ chancellor +]</span> (<span style="color: #dd5b00;">ASUM</span>) ?][? if chancellor_party = 3: <span style="color: #dc0200;">[+ chancellor +]</span> (<span style="color: #dc0200;">[+ spd_name +]</span>) ?][? if chancellor_party = 4: <span style="color: #ff1919;">[+ chancellor +]</span> (<span style="color: #ff1919;">SPM</span>) ?][? if chancellor_party = 5: <span style="color: #ddd500;">[+ chancellor +]</span> (<span style="color: #ddd500;">FVP</span>) ?][? if chancellor_party = 6: <span style="color: #48b94a;">[+ chancellor +]</span> (<span style="color: #48b94a;">GDSU</span>) ?][? if chancellor_party = 7: <span style="color: #00e8ff;">[+ chancellor +]</span> (<span style="color: #00e8ff;">BLPM</span>) ?][? if chancellor_party = 8: <span style="color: #4a9fde;">[+ chancellor +]</span> (<span style="color: #4a9fde;">PPU</span>) ?][? if chancellor_party = 9: <span style="color: #caa58b;">[+ chancellor +]</span> (<span style="color: #caa58b;">[+ dvp_name +]</span>) ?][? if chancellor_party = 10: <span style="color: #808080;">[+ chancellor +]</span> (<span style="color: #808080;">I</span>) ?][? if chancellor_party = 11: <span style="color: #774ae2;">[+ chancellor +]</span> (<span style="color: #774ae2;">GNVP</span>) ?][? if chancellor_party = 12: <span style="color: #3F7BC1;">[+ chancellor +]</span> (<span style="color: #3F7BC1;">MNVP</span>) ?][? if chancellor_party = 13: <span style="color: #706a65;">[+ chancellor +]</span> (<span style="color: #706a65;">MSP</span>) ?]
+
+{!<table>!} 
+{!<tr><td>Party</td><td>Vote share</td><td>% Change</td></tr>!}
+{!<tr><td><div class="box" style='background-color:#dc0100; outline: 2px; outline-style: solid;'> </div> !} **[+ spd_name +]:** {!</td><td>!} **[+ spd_r +]%** {!</td><td>!} [? if spd_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if spd_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if spd_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+[? if sapd_formed : {!<tr><td><div class="box" style='background-color:#920002'> </div> !}KPM: {!</td><td>!} [+ sapd_r +]% {!</td><td>!} [? if sapd_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if sapd_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if sapd_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+[? if asum_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}ASUM: {!</td><td>!} [+ asum_r +]% {!</td><td>!} [? if asum_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if asum_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if asum_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+[? if spm_formed : {!<tr><td><div class="box" style='background-color:#dd5b00'> </div> !}SPM: {!</td><td>!} [+ spm_r +]% {!</td><td>!} [? if spm_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if spm_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if spm_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#ddd500'> </div> !} [+ ddp_name +]: {!</td><td>!} [+ ddp_r +]% {!</td><td>!} [? if ddp_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ddp_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if ddp_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#48b94a'> </div> !} GDSU: {!</td><td>!} [+ z_r +]% {!</td><td>!} [? if z_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if z_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if z_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+[? if blpm_formed : {!<tr><td><div class="box" style='background-color:#00e8ff'> </div> !}BLPM: {!</td><td>!} [+ blpm_r +]% {!</td><td>!} [? if blpm_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if blpm_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if blpm_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#4b9ee0'> </div> !} PPU+: {!</td><td>!} [+ ppu_r +]% {!</td><td>!} [? if ppu_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if ppu_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if ppu_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#caa58b'> </div> !} [+ dvp_name +]: {!</td><td>!} [+ dvp_r +]% {!</td><td>!} [? if dvp_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dvp_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if dvp_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+ 
+[? if gnvp_formed : {!<tr><td><div class="box" style='background-color:#774ae2'> </div> !}GNVP: {!</td><td>!} [+ gnvp_r +]% {!</td><td>!} [? if gnvp_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if gnvp_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if gnvp_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!} ?]
+
+{!<tr><td><div class="box" style='background-color:#1125e0'> </div> !} MNVP: {!</td><td>!} [+ dnvp_r +]% {!</td><td>!} [? if dnvp_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if dnvp_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if dnvp_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#706a65'> </div> !} NSDAP: {!</td><td>!} [+ nsdap_r +]% {!</td><td>!} [? if nsdap_in_government = 0 : <span style="color: #824c4c;">Opposition</span> ?][? if nsdap_in_government = 1 : <span style="color: #c4bb10;">Toleration</span> ?][? if nsdap_in_government = 2 : <span style="color: #438543;">Goverment</span> ?] {!</td></tr>!}
+
+{!<tr><td><div class="box" style='background-color:#dddddd'> </div> !} Others: {!</td><td>!} [+ other_r +] % {!</td><td>!}
+
+{!</table>!}
+
+<span class="tooltip-text" title="Volks-Socilistiche Partei" style="color: #ff7b00;">VSP</span> [+ vsp_r +] %, <span class="tooltip-text" title="Zeltbrin National Coalition" style="color: #87c4df;">ZNC</span> [+ zel_r +] %, <span class="tooltip-text" title="Landliche-Tremann Partei" style="color: #1b7035;">LTP</span> [+ ltp_r +] %, <span class="tooltip-text" title="Merkopishe-Traditionell Union" style="color: #8c1a16;">MTU</span> [+ mtu_r +] %, Minor [+ other_other_r +] %
+
 
   government
