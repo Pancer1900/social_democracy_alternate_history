@@ -471,7 +471,7 @@ on-arrival: spd_mirv_gov = 1; mirvieren_gov = 1; local_spd = 1; spm_mirv_gov = 1
 unavailable-subtitle: [? if (fvp_coa + gdsu_coa) <= 140: We do not have good enough relations with the left Liberals. ?][? if ldp_coa < 75: The LDP, is unwilling to compromise at all. ?][? if liberal_reconciliation < 18: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
 
 @lib_whide
-subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span> ([+ liberal_coalition_mirv +]%)
+subtitle: <span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #993902;">PPB</span> + <span style="color: #b0cf00;">RNP</span> + <span style="color: #1b7035;">LTP</span> ([+ liberal_coalition_mirv +]%)
 view-if: liberal_coalition_mirv >= 50
 choose-if: liberal_coalition_mirv >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]

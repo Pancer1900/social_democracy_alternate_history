@@ -402,7 +402,7 @@ Liberal Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + <span s
 
 Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">[+ dvp_name +]</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #87c4df;">TEL</span> + <span style="color: #1b7035;">LTP</span>): [+ center_right_coalition_zel +]%
 
-Right-wing Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + others + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #706a65;">NSDAP</span>): [+ right_coalition_zel +]%
+Right-wing Coalition (<span style="color: #caa58b;">[+ dvp_name +]</span> + others + <span style="color: #3F7BC1;">MNVP</span> + <span style="color: #706a65;">NSDAP</span>): [+ far_right_coalition_zel +]%
 
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 

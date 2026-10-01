@@ -141,9 +141,8 @@ if (Q.wide_liberal_coalition_mir <= 50) {Q.wide_liberal_coalition_mir += Q.vsp_m
 Q.center_right_coalition_mir = (Q.z_mir + Q.dvp_mir + Q.other_mir + Q.dnvp_mir + Q.blpm_mir + Q.gnvp_mir + Q.ppu_mir).toFixed(1);
 Q.right_coalition_mir = (Q.dvp_mir + Q.other_mir + Q.dnvp_mir + Q.gnvp_mir).toFixed(1);
 Q.far_right_coalition_mir = (Q.dnvp_mir + Q.nsdap_mir + Q.gnvp_mir).toFixed(1);
-Q.anti_democratic_coalition_mir = (Q.nsdap_mir + Q.dnvp_mir);
-if (Q.kpm_ally == 0) {Q.anti_democratic_coalition_mir += Q.kpm_mir;}
-if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_mir = Q.anti_democratic_coalition_mir + Q.kpm_mir + Q.spd_mir/2;}
+Q.anti_democratic_coalition_mir = (Q.nsdap_mir + Q.dnvp_mir + Q.sapd_mir);
+if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_mir = Q.anti_democratic_coalition_mir + Q.spd_mir/2;}
 Q.hitler_right_coalition_mir = (Q.dnvp_mir + Q.nsdap_mir + Q.dvp_mir + Q.other_mir + Q.gnvp_mir).toFixed(1);
 
 Q.mer_change_spd = (Q.mer_change_spd != undefined ? parseFloat(Q.mer_change_spd.toFixed(1)) : 0);
