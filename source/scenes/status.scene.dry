@@ -23,6 +23,7 @@ if (Q.inflation) {
 }
 
 Q.economic_growth_2 = '0';
+
 if (Q.economic_growth) {
     Q.economic_growth_2 = Q.economic_growth.toFixed(1);
 }
@@ -166,7 +167,7 @@ coalition promices -
 
 {!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_relation : relationships +]
 
-{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_relation : relationships +]
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">[+ dvp_name +]</span>!}: [+ dvp_relation : relationships +]
 
 [? if gnvp_formed and gnvp_r > 0: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_relation : relationships +] ?]
 
@@ -190,7 +191,7 @@ coalition promices -
 
 {!<span class="tooltip-text" title="Percilian People's Union" style="color: #4a9fde;">PPU+</span>!}: [+ ppu_leader +]
 
-{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">LDP</span>!}: [+ dvp_leader +]
+{!<span class="tooltip-text" title="Liberal Democratic Party" style="color: #caa58b;">[+ dvp_name +]</span>!}: [+ dvp_leader +]
 
 [? if gnvp_formed == 1: <span class="tooltip-text" title="Gecherdist National People's Party" style="color: #774ae2;">GNVP</span>: [+ gnvp_leader +] ?]
 
@@ -282,7 +283,7 @@ Interior police: [+ interior_police_strength +] thousand members.
 
 <span style="color: #4b9fde;">**PPU+**</span>: [+ ppu_votes +]%
 
-[? if dvp_name != 0: <span style="color: #fbffd5;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
+[? if dvp_name != 0: <span style="color: #caa58b;">**[+ dvp_name +]**</span>: [+ dvp_votes +]% ?]
 
 [? if gnvp_formed: <span style="color: #774ae2;">**GNVP**</span>: [+ gnvp_votes +]% ?]
 
