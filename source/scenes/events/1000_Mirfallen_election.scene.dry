@@ -41,6 +41,7 @@ Q.other_mir = 0;
 Q.gnvp_mir = 0;
 Q.blpm_mir = 0;
 Q.vsp_mir = 0;
+Q.vsp_lib = 0;
 
 Q.spd_mir = (Q.workers_spd * Q.workers * 1.5) + (Q.old_middle_spd * Q.old_middle * 1.1) + (Q.new_middle_spd * Q.new_middle * 1.1) + (Q.peasants_spd * Q.peasants * 0.6) + (Q.rural_spd * Q.rural * 0.8) + (Q.catholics_spd * Q.catholics * 0.8) + (Q.minorieties_spd * Q.minorieties * 0.5) + (Q.unemployed_spd * Q.unemployed * 1.2) + (Q.spd_mir_mod * 10);
 Q.sapd_mir = (Q.workers_sapd * Q.workers * 1.5) + (Q.old_middle_sapd * Q.old_middle * 1.1) + (Q.new_middle_sapd * Q.new_middle * 1.1) + (Q.peasants_sapd * Q.peasants * 0.6) + (Q.rural_sapd * Q.rural * 0.8) + (Q.catholics_sapd * Q.catholics * 0.8) + (Q.minorieties_sapd * Q.minorieties * 0.5) + (Q.unemployed_sapd * Q.unemployed * 1.2) + (Q.sapd_mir_mod * 10);
@@ -134,7 +135,9 @@ Q.zeltbrin_plus_coalition_mir = (Q.spd_mir + Q.ddp_mir + Q.z_mir + Q.blpm_mir + 
 Q.grand_coalition_mir = (Q.spd_mir + Q.spm_mir + Q.ddp_mir + Q.z_mir + Q.ppu_mir + Q.dvp_mir + Q.blpm_mir + Q.other_mir + Q.vsp_mir).toFixed(1);
 
 Q.liberal_coalition_mir = (Q.z_mir + Q.ddp_mir + Q.dvp_mir + Q.ppu_mir + Q.blpm_mir).toFixed(1); 
-Q.wide_liberal_coalition_mir = (Q.z_mir + Q.ddp_mir + Q.dvp_mir + Q.ppu_mir + Q.other_mir + Q.blpm_mir + Q.vsp_mir).toFixed(1);
+Q.wide_liberal_coalition_mir = (Q.z_mir + Q.ddp_mir + Q.dvp_mir + Q.ppu_mir + Q.other_mir + Q.blpm_mir).toFixed(1);
+if (Q.wide_liberal_coalition_mir <= 50) {Q.vsp_lib = 1;}
+if (Q.wide_liberal_coalition_mir <= 50) {Q.wide_liberal_coalition_mir += Q.vsp_mir;}
 Q.center_right_coalition_mir = (Q.z_mir + Q.dvp_mir + Q.other_mir + Q.dnvp_mir + Q.blpm_mir + Q.gnvp_mir + Q.ppu_mir).toFixed(1);
 Q.right_coalition_mir = (Q.dvp_mir + Q.other_mir + Q.dnvp_mir + Q.gnvp_mir).toFixed(1);
 Q.far_right_coalition_mir = (Q.dnvp_mir + Q.nsdap_mir + Q.gnvp_mir).toFixed(1);
@@ -391,7 +394,7 @@ go-to: coalition_menu
 
 Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_mir +]%
 
-[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_mir +]% ?]
+[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?][? if vsp_lib = 1 : + <span style="color: #ff7b00;">VSP</span> ?]): [+ zeltbrin_plus_coalition_mir +]% ?]
 
 Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_mir +]%
 
@@ -489,7 +492,7 @@ unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to 
 on-arrival: mirfallen_gov = 2; ddp_mir_gov = 1; z_mir_gov = 1; ppu_mir_gov = 1; dvp_mir_gov = 1; liberal_unity += 2.5; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; new_middle_ddp += 2;
 
 @lib_whide
-subtitle: <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Others ([+ wide_liberal_coalition_mir +]%) (This would mean the expanision of the liberal coalition with <span style="color: #ff7b00;">VSP</span>)
+subtitle: <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Others ([+ wide_liberal_coalition_mir +]%) [? if vsp_lib = 1 : (This would mean the expanision of the liberal coalition with <span style="color: #ff7b00;">VSP</span>) ?]
 view-if: wide_liberal_coalition_mir >= 50 and liberal_coalition_mir <= 50
 choose-if: wide_liberal_coalition_mir >= 50 and liberal_unity >= 40
 unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
