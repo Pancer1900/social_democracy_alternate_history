@@ -59,7 +59,7 @@ Q.ppu_per = ((Q.minorieties_ppu * Q.minorieties * 5.0) + (Q.workers_ppu * Q.work
 Q.pnf_per = (Q.percil_radicalisation * 10) + (Q.pnf_per_mod * 10) + (Q.minorieties_ppu * Q.minorieties * 1.5);
 
 Q.dnvp_per += Q.z_per*0.3;
-Q.dvp_per += Q.z_per*0.5; 
+Q.dvp_per += Q.z_per*0.6; 
 Q.ddp_per += Q.z_per*0.1;
 Q.ddp_per += Q.blpm_per;
 
@@ -100,6 +100,53 @@ if (Q.per_total > 0) {
     Q.pnf_per = (Q.pnf_per / Q.per_total) * 100;
 }
 
+Q.kpm_coa = (Q.kpm_modifier*Q.sapd_relation) + 5;
+Q.spm_coa = (Q.spm_modifier*Q.spm_relation) + 5;
+Q.fvp_coa = (Q.fvp_modifier*Q.ddp_relation) + 5;
+Q.ppu_coa = (Q.ppu_relation) + 5;
+Q.pnf_coa = (Q.ppu_relation) - 10;
+Q.ldp_coa = (Q.ldp_modifier*Q.dvp_relation*Q.gdsu_modifier) + 5;
+
+if (Q.spm_ally) {
+    Q.spm_coa += 20;
+    }
+if (Q.kpm_ally) {
+    Q.kpm_coa += 20;
+    }
+if (Q.ppu_ally) {
+    Q.ppu_coa += 20;
+    }
+if (Q.fvp_ally) {
+    Q.fvp_coa += 20;
+    }
+
+if (Q.sapd_formed == 0) {
+    Q.fvp_coa -= 10;
+    }
+if (Q.sapd_formed == 0) {
+    Q.gdsu_coa -= 20;
+    }
+if (Q.sapd_formed == 0) {
+    Q.ppu_coa -= 20;
+    }
+if (Q.sapd_formed == 0) {
+    Q.ldp_coa -= 30;
+    }
+
+if (Q.party_policy_fed == 2) {
+    Q.ppu_coa += 10;
+    Q.pnf_coa += 15;
+    }
+if (Q.party_policy_fed == 0) {
+    Q.ppu_coa -= 10;
+    Q.pnf_coa -= 15;
+    }
+
+Q.kpm_coa += Q.party_policy_main*2;
+Q.spm_coa -= Q.party_policy_main;
+
+Q.coa_tention = 0;
+
 Q.spd_per = (Q.spd_per != undefined ? parseFloat(Q.spd_per.toFixed(1)) : 0);
 Q.spm_per = (Q.spm_per != undefined ? parseFloat(Q.spm_per.toFixed(1)) : 0);
 Q.sapd_per = (Q.sapd_per != undefined ? parseFloat(Q.sapd_per.toFixed(1)) : 0);
@@ -131,19 +178,17 @@ Q.per_change_gnvp = Q.gnvp_per - Q.gnvp_per_old;
 Q.per_change_pnf = Q.pnf_per - Q.pnf_per_old;
 
 Q.left_coalition_per = (Q.spd_per + Q.sapd_per + Q.spm_per + Q.asum_per).toFixed(1);
-Q.progressive_coalition_per = (Q.spd_per + Q.sapd_per + Q.spm_per + Q.asum_per + Q.ddp_per).toFixed(1);
-Q.popular_front_coalition_per = (Q.spd_per + Q.sapd_per + Q.spm_per + Q.asum_per + Q.z_per + Q.ddp_per).toFixed(1);
-Q.weimar_coalition_per = (Q.spd_per + Q.ddp_per + Q.z_per + Q.spm_per).toFixed(1);
-Q.zeltbrin_plus_coalition_per = (Q.spd_per + Q.ddp_per + Q.z_per + Q.blpm_per + Q.ppu_per + Q.spm_per).toFixed(1);
-Q.grand_coalition_per = (Q.spd_per + Q.spm_per + Q.ddp_per + Q.z_per + Q.ppu_per + Q.dvp_per + Q.blpm_per).toFixed(1);
+Q.popular_front_coalition_per = (Q.spd_per + Q.sapd_per + Q.spm_per + Q.asum_per + Q.ppu_per + Q.ddp_per).toFixed(1);
+Q.weimar_coalition_per = (Q.spd_per + Q.ddp_per + Q.ppu_per + Q.spm_per).toFixed(1);
+Q.minority_coalition = (Q.spd_per + Q.sapd_per + Q.spm_per + Q.asum_per + Q.ppu_per + Q.pnf_per).toFixed(1);
+Q.grand_coalition_per = (Q.spd_per + Q.spm_per + Q.ddp_per + Q.ppu_per + Q.dvp_per).toFixed(1);
 
-Q.liberal_coalition_per = (Q.z_per + Q.ddp_per + Q.dvp_per + Q.ppu_per + Q.blpm_per).toFixed(1); 
-Q.wide_liberal_coalition_per = (Q.z_per + Q.ddp_per + Q.dvp_per + Q.ppu_per + Q.other_per + Q.blpm_per).toFixed(1);
-Q.center_right_coalition_per = (Q.z_per + Q.dvp_per + Q.other_per + Q.dnvp_per + Q.blpm_per + Q.gnvp_per + Q.ppu_per).toFixed(1);
-Q.right_coalition_per = (Q.dvp_per + Q.other_per + Q.dnvp_per + Q.gnvp_per).toFixed(1);
-Q.far_right_coalition_per = (Q.dnvp_per + Q.nsdap_per + Q.gnvp_per).toFixed(1);
-Q.anti_democratic_coalition_per = (Q.sapd_per + Q.nsdap_per + Q.dnvp_per + Q.gnvp_per).toFixed(1);
-Q.hitler_right_coalition_per = (Q.dnvp_per + Q.nsdap_per + Q.dvp_per + Q.other_per + Q.gnvp_per).toFixed(1);
+Q.liberal_coalition_per = (Q.ddp_per + Q.dvp_per + Q.ppu_per).toFixed(1); 
+Q.wide_liberal_coalition_per = (Q.ddp_per + Q.dvp_per + Q.ppu_per + Q.other_per).toFixed(1);
+Q.center_right_coalition_per = (Q.dvp_per + Q.other_per + Q.dnvp_per + Q.gnvp_per).toFixed(1);
+Q.anti_democratic_coalition_per = (Q.nsdap_per + Q.dnvp_per + Q.sapd_per);
+if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_per = Q.anti_democratic_coalition_per + Q.spd_per/2;}
+Q.anti_democratic_coalition_per = (Q.anti_democratic_coalition_per).toFixed(1);Q.hitler_right_coalition_per = (Q.dnvp_per + Q.nsdap_per + Q.dvp_per + Q.other_per + Q.gnvp_per).toFixed(1);
 
 Q.per_change_spd = (Q.per_change_spd != undefined ? parseFloat(Q.per_change_spd.toFixed(1)) : 0);
 Q.per_change_spm = (Q.per_change_spm != undefined ? parseFloat(Q.per_change_spm.toFixed(1)) : 0);
@@ -159,6 +204,8 @@ Q.per_change_gnvp = (Q.per_change_gnvp != undefined ? parseFloat(Q.per_change_gn
 Q.per_change_blpm = (Q.per_change_blpm != undefined ? parseFloat(Q.per_change_blpm.toFixed(1)) : 0);
 Q.per_change_asum = (Q.per_change_asum != undefined ? parseFloat(Q.per_change_asum.toFixed(1)) : 0);
 Q.per_change_pnf = (Q.per_change_pnf != undefined ? parseFloat(Q.per_change_pnf.toFixed(1)) : 0);
+
+Q.custom_coalition_per = Q.spd_per;
 
 !}
 on-display: {!
@@ -271,6 +318,7 @@ if (window && d3) {
     d3.select("#saxony_landtag").datum(data).call(parliament);
 }
 !}
+go-to: coalition_menu
 
 **Percil-Reinenburg Caversket:**
 
@@ -307,8 +355,6 @@ if (window && d3) {
 
 Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span>): [+ weimar_coalition_per +]%
 
-[? if weimar_coalition < 50 and liberal_reconciliation >= 10: Wide - Zeltbrin Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?]): [+ zeltbrin_plus_coalition_per +]% ?]
-
 [? if liberal_reconciliation >= 18: Grand Coalition (<span style="color: #dc0200;">**[+ spd_name +]**</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span> + <span style="color: #caa58b;">LDP</span>[? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span> ?] ): [+ grand_coalition_per +]% ?]
 
 Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color: #48b94a;">GDSU</span> + <span style="color: #ddd500;">FVP</span> + <span style="color: #4a9fde;">PPU</span>): [+ liberal_coalition_per +]%
@@ -317,8 +363,422 @@ Liberal Coalition (<span style="color: #caa58b;">LDP</span> + <span style="color
 
 Center-Right Coalition (<span style="color: #48b94a;">GDSU</span> + <span style="color: #caa58b;">LDP</span> + <span style="color: #4a9fde;">PPU</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span>  ?][? if blpm_formed = 1 : + <span style="color: #00e8ff;">BLPM</span>  ?]): [+ center_right_coalition_per +]%
 
-Right-wing Coalition (<span style="color: #caa58b;">LDP</span> + others + <span style="color: #3F7BC1;">MNVP</span> [? if gnvp_formed = 1 : + <span style="color: #774ae2;">GNVP</span> ?]): [+ right_coalition_per +]%
-
 [? if anti_democratic_coalition >= 50 : Together, the anti-democratic KPD, DNVP, and NSDAP have a majority in the Reichstag. A stable governing majority will be almost impossible. ?]
 
 There are some potential coalition arrangements.
+
+@coalition_menu
+
+-@spd: We achived a <span style="color: #dc0200;">**[+ spd_name +]**</span> majority!
+-@left: We achived a <span style="color: #d61818;">Socialist</span> majority of all the left wing patries!
+-@popu: We can try to form the Popular Front bettwen the <span style="color: #48b94a;">GDSU</span>,<span style="color: #ddd500;">FVP</span> and other leftists parties.
+-@zelt: Zeltbrin coalition could be possible. 
+-@grand: Maybe the reactionary Grand coalition? 
+-@lib: The Liberal coalition is formed. 
+-@lib_whide: The liberals can form a wide coalition. 
+-@cent_right: Center right coalition could form. 
+-@far_right: This is the end....
+-@no_majority: There is no possilbe majority. 
+-@coalition: Maybe we can try some other coalition?
+
+@no_majority
+view-if: anti_democratic_coalition_per >= 45 or (liberal_unity + liberal_right) < 80
+subtitle: This would mean the continuation of the current goverment with federal support and next election will be called in half of a year.
+on-arrival: pro_republic -= 2; ddp_per_gov = 1 if percil_gov  = 1; spd_per_gov = 1 if percil_gov  = 1; spm_per_gov = 1 if percil_gov  = 1; ddp_per_gov = 1 if percil_gov  = 2; z_per_gov = 1 if percil_gov  = 2; dvp_per_gov = 1 if percil_gov  = 2; ppu_per_gov = 1 if percil_gov  = 2; other_per_gov = 1 if percil_gov  = 2; z_per_gov = 1 if percil_gov  = 3; dvp_per_gov = 1 if percil_gov  = 3; other_per_gov = 1 if percil_gov  = 3; dnvp_per_gov = 1 if percil_gov  = 3; ddp_per_gov = 1 if percil_gov  = 2; nsdap_per_mod += 25; sapd_per_mod += 15;
+
+@spd
+view-if: spd_per >= 50
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; workers_spd += 3; new_middle_spd += 2.5; rural_spd += 2; 
+
+@left
+subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + <span style="color: #dd5b00;">ASUM</span> ?][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?]([+ left_coalition_per +]%)
+view-if: left_coalition_per >= 45 and (sapd_formed > 0 or spm_formed > 0)
+choose-if: left_coalition_per >= 50 and (kpm_coa + spm_coa) >= 130
+unavailable-subtitle: [? if (kpm_coa + spm_coa) < 130: We do not have good enough relations with the other socialist parties. ?]
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; asum_per_gov = 1; spm_per_gov = 1; sapd_per_gov = 1; liberal_unity += 3; sapd_relation += 3*kpm_modifier; dvp_relation -= 3*ldp_modifier; z_relation -= 2*gdsu_modifier; ppu_relation -= 1; ddp_relation -= 1; workers_spd += 2.5; new_middle_spd += 2; rural_spd += 1;  peasants_asum += 1.5; rural_asum += 1; workers_sapd += 2.5; workers_spm += 1; new_middle_spm += 1;
+
+@prog_fro
+subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + <span style="color: #dd5b00;">ASUM</span> ?][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> ([+ progressive_front_per +]%)
+view-if: progressive_front_per >= 45 and sapd_formed > 0
+choose-if: progressive_front_per >= 50 and (kpm_coa + spm_coa) >= 140 and ddp_coa >= 75 and liberal_reconciliation >= 10
+unavailable-subtitle: [? if (kpm_coa + spm_coa) < 140: We do not have good enough relations with the other socialist parties. ?][? if ddp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?]
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; asum_per_gov = 1; spm_per_gov = 1; sapd_per_gov = 1; ddp_per_gov = 1; liberal_unity += 1; sapd_relation += 2*kpm_modifier; dvp_relation -= 2.5*ldp_modifier; z_relation -= 1.5*gdsu_modifier; ppu_relation -= 1;  ddp_relation += 1; new_middle_ddp += 2; new_middle_spd += 2; workers_spd += 2.5; workers_spm += 1; new_middle_spm += 1; workers_ddp += 1; peasants_asum += 1; rural_asum += 1; workers_sapd += 2;
+
+@popu
+subtitle: [+ spd_name +][? if sapd_formed : + <span style="color: #940000;">KPM</span> ?][? if asum_formed: + <span style="color: #dd5b00;">ASUM</span> ?][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> ([+ popular_front_coalition_per +]%)
+view-if: popular_front_coalition_per >= 45 and sapd_formed > 0
+choose-if: popular_front_coalition_per >= 50 and (kpm_coa + spm_coa) >= 150 and ddp_coa >= 80 and gdsu_coa >= 80 and liberal_reconciliation >= 18
+unavailable-subtitle: [? if (kpm_coa + spm_coa) < 150: We do not have good enough relations with the other socialist parties. ?][? if gdsu_coa < 75: We do not have good enough relations with the <span style="color: #48ba48;">GDSU</span>. ?][? if fvp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?][? if liberal_reconciliation < 18: The Liberal Parties do not trust us enough to enter into a goverment with communists. ?]
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; asum_per_gov = 1; spm_per_gov = 1; sapd_per_gov = 1; ddp_per_gov = 1; z_per_gov = 1; liberal_unity += 3; sapd_relation += 2*kpm_modifier; dvp_relation -= 3*ldp_modifier; z_relation -= 1*gdsu_modifier;  ddp_relation += 1; new_middle_ddp += 1; new_middle_spd += 2; workers_spd += 2; workers_spm += 1; new_middle_spm += 0.5; workers_ddp += 1; workers_z += 1; rural_z += 1; peasants_asum += 1; rural_asum += 0.5; workers_sapd += 2;
+
+@prog
+subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> ([+ progressive_coalition_per +]%)
+view-if: progressive_coalition_per >= 45
+choose-if: progressive_coalition_per >= 50 and ddp_coa >= 70 and liberal_reconciliation >= 8
+unavailable-subtitle: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span> and they do not trust us enough.
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; spm_per_gov = 1; ddp_per_gov = 1; liberal_unity += 1; ddp_relation += 1; new_middle_ddp += 2; new_middle_spd += 2; workers_spd += 2.5; workers_spm += 1; new_middle_spm += 1; workers_ddp += 1;
+
+@zelt
+view-if: weimar_coalition_per >= 45 and liberal_reconciliation >= 8
+subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> ([+ weimar_coalition_per +]%)
+choose-if: weimar_coalition_per >= 50 and ddp_coa >= 65 and gdsu_coa >= 65 and liberal_reconciliation >= 12
+unavailable-subtitle: [? if gdsu_coa < 75: We do not have good enough relations with the <span style="color: #48ba48;">GDSU</span>. ?][? if fvp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?][? if liberal_reconciliation < 10: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; spm_per_gov = 1; ddp_per_gov = 1; z_per_gov = 1; sapd_relation -= 1*kpm_modifier; dvp_relation += 1*ldp_modifier; z_relation += 1.5*gdsu_modifier; ddp_relation += 1.5*fvp_modifier; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1; new_middle_ddp += 1.5; workers_spd += 2; new_middle_spd += 1.5; workers_spm += 1;
+
+@zelt_whide
+view-if: zeltbrin_plus_coalition_per >= 50 and weimar_coalition_per <= 50 and liberal_reconciliation >= 8
+subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?]([+ weimar_coalition_per +]%)
+choose-if: zeltbrin_plus_coalition_per >= 50 and ddp_coa >= 70 and gdsu_coa >= 70 and liberal_reconciliation >= 14 and ppu_coa >= 65
+unavailable-subtitle: [? if gdsu_coa < 75: We do not have good enough relations with the <span style="color: #48ba48;">GDSU</span>. ?][? if fvp_coa < 75: We do not have good enough relations with the <span style="color: #ddd500;">FVP</span>. ?][? if liberal_reconciliation < 12: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; spm_per_gov = 1; ddp_per_gov = 1; z_per_gov = 1; ppu_per_gov = 1; sapd_relation -= 2*kpm_modifier; dvp_relation += 1.5*ldp_modifier; z_relation += 1.5*gdsu_modifier; ppu_relation += 1.5; ddp_relation += 1.5*fvp_modifier; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; other_rural += 1; new_middle_ddp += 1.5; workers_spd += 2; new_middle_spd += 1.5; workers_spm += 1;
+
+@grand
+view-if: grand_coalition_per >= 50 and zeltbrin_plus_coalition_per <= 50 and liberal_reconciliation >= 16 and center_right_coalition_per <= 50
+subtitle: [+ spd_name +][? if spm_formed : + <span style="color: #ff1919;">SPM</span> ?] + <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Other([+ grand_coalition_per +]%)
+choose-if: grand_coalition_per >= 50 and liberal_reconciliation >= 18 and (fvp_coa + gdsu_coa) >= 140 and ldp_coa >= 65 and ppu_coa >= 65 and ppu_coa >= 65 and other_coa >= 65
+on-arrival: spd_per_gov = 1; percil_gov  = 1; local_spd = 1; spm_per_gov = 1; ddp_per_gov = 1; z_per_gov = 1; ppu_per_gov = 1; other_per_gov = 1; dvp_per_gov = 1; sapd_relation -= 3*kpm_modifier; dvp_relation += 2*ldp_modifier; z_relation += 2*gdsu_modifier; ppu_relation += 2; ddp_relation += 2*fvp_modifier; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5; workers_spd += 1.5; new_middle_spd += 1.5; workers_spm += 1;
+unavailable-subtitle: [? if (fvp_coa + gdsu_coa) <= 140: We do not have good enough relations with the left Liberals. ?][? if ldp_coa < 75: The LDP, is unwilling to compromise at all. ?][? if liberal_reconciliation < 18: The Liberal Parties do not trust us enough to enter into a goverment with us. ?]
+
+@lib
+view-if: liberal_coalition_per >= 45
+subtitle: <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> ([+ liberal_coalition_per +]%)
+choose-if: liberal_coalition_per >= 50 and liberal_unity >= 40
+unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
+on-arrival: percil_gov  = 2; ddp_per_gov = 1; z_per_gov = 1; ppu_per_gov = 1; dvp_per_gov = 1; liberal_unity += 2.5; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; new_middle_ddp += 2;
+
+@lib_whide
+subtitle: <span style="color: #ddd500;">FVP</span> + <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Other ([+ wide_liberal_coalition_per +]%)
+view-if: wide_liberal_coalition_per >= 50 and liberal_coalition_per <= 50
+choose-if: wide_liberal_coalition_per >= 50 and liberal_unity >= 40
+unavailable-subtitle: [? if liberal_unity <= 40: Liberals are too conflicted to form a coherent goverment ?]
+on-arrival: percil_gov  = 2; ddp_per_gov = 1; z_per_gov = 1; ppu_per_gov = 1; other_per_gov = 1; dvp_per_gov = 1; liberal_unity += 2; old_middle_dvp += 1; rural_z += 1; minorieties_ppu += 1; peasnts_z += 1; new_middle_dvp += 1; other_rural += 1; new_middle_ddp += 1.5;
+
+@cent_right
+subtitle: <span style="color: #48ba48;">GDSU</span> + <span style="color: #4b9fde;">PPU</span>[? if blpm_formed : + <span style="color: #00e8ff;">BLPM</span> ?] + <span style="color: #caa58b;">[+ dvp_name +]</span> + Other[? if gnvp_formed : + <span style="color: #774ae2;">GNVP</span> ?] + <span style="color: #1027dc;">MNVP</span> ([+ center_right_coalition_per +]%)
+view-if: center_right_coalition_per >= 45
+choose-if: center_right_coalition_per >= 50 and (dnvp_path - gdsu_ideology + 2 - ldp_ideology) >= 0 and liberal_unity >= 30 and liberal_right >= 35
+unavailable-subtitle: [? if liberal_unity <= 30: Liberals are too conflicted to form a coherent goverment. ?][? if (dnvp_path - gdsu_ideology + 2 - ldp_ideology) < 0: Liberals are unwilling to compromise with the MNVP. ?]
+on-arrival: percil_gov  = 3; z_per_gov = 1; ppu_per_gov = 1; other_per_gov = 1; dvp_per_gov = 1; gnvp_per_gov = 1; dnvp_per_gov = 1; old_middle_dvp += 1; rural_z += 1; peasnts_z += 1 ; rural_dnvp += 1; minorieties_ppu += 1; new_middle_dvp += 1; other_rural += 1;
+
+@right
+subtitle: <span style="color: #caa58b;">[+ dvp_name +]</span> + Other[? if gnvp_formed : + <span style="color: #774ae2;">GNVP</span> ?] + <span style="color: #1027dc;">MNVP</span> ([+ right_coalition_per +]%)
+view-if: right_coalition_per >= 45
+choose-if: right_coalition_per >= 50
+on-arrival: percil_gov  = 3; other_per_gov = 1; dvp_per_gov = 1; gnvp_per_gov = 1; dnvp_per_gov = 1; liberal_unity -= 2;
+
+@far_right
+subtitle: <span style="color: #fbffd5;">[+ dvp_name +]</span> + Other[? if gnvp_formed : + <span style="color: #774ae2;">GNVP</span> ?] + <span style="color: #1027dc;">MNVP</span> + <span style="color: #706a65;">NSDAP</span>([+ hitler_right_coalition_per +]%)
+view-if: hitler_right_coalition_per >= 45 and nsdap_per >= 10
+choose-if: hitler_right_coalition_per >= 50
+on-arrival: percil_gov  = 3; other_per_gov = 1; dvp_per_gov = 1; gnvp_per_gov = 1; dnvp_per_gov = 1; nsdap_per_gov = 1; workers_nsdap += 2; new_middle_nsdap += 2; old_middle_nsdap += 2; nsdap_per_mod += 10;
+
+@coalition
+
+Governing Arrangement:
+
+Current Caversket Support: [+ custom_coalition_per +]%
+
+**Coalition:** [? if sapd_per_coa = 1: <span style="color: #940000;">KPM</span> ?][? if asum_per_coa = 1: <span style="color: #dd5b00;">ASUM</span> ?] <span style="color: #dc0200;">**[+ spd_name +]**</span> [? if spm_per_coa = 1: <span style="color: #ff1919;">SPM</span> ?][? if fvp_per_coa = 1: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_per_coa = 1: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_per_coa = 1: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_per_coa = 1: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_per_coa = 1: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
+
+*Toleration:* [? if sapd_per_coa = 2: <span style="color: #940000;">KPM</span> ?][? if asum_per_coa = 2: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_per_coa = 2: <span style="color: #ff1919;">SPM</span> ?][? if fvp_per_coa = 2: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_per_coa = 2: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_per_coa = 2: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_per_coa = 2: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_per_coa = 2: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
+
+Opposition: [? if sapd_per_coa = 0 and sapd_formed = 1: <span style="color: #940000;">KPM</span> ?][? if asum_per_coa = 0 and asum_formed = 1: <span style="color: #dd5b00;">ASUM</span> ?][? if spm_per_coa = 0 and spm_formed = 1: <span style="color: #ff1919;">SPM</span> ?][? if fvp_per_coa = 0: <span style="color: #ddd500;">FVP</span> ?][? if gdsu_per_coa = 0: <span style="color: #48ba48;">GDSU</span> ?][? if blpm_per_coa = 0 and blpm_formed = 1: <span style="color: #00e8ff;">BLPM</span> ?][? if ppu_per_coa = 0: <span style="color: #4b9fde;">PPU</span> ?][? if ldp_per_coa = 0: <span style="color: #caa58b;">[+ dvp_name +]</span> ?]
+
+-@gdsu_gov: We should try a colaition with the <span style="color: #48ba48;">GDSU</span>.
+-@gdsu_gov_drop: Maybe we can try to get <span style="color: #48ba48;">GDSU</span> toleration.
+-@kpm_gov: We should try a colaition with the <span style="color: #940000;">KPM</span>.
+-@kpm_gov_drop: Leave the <span style="color: #940000;">KPM</span> out of the coalition.
+-@asum_gov: We should try a colaition with the <span style="color: #dd5b00;">ASUM</span>.
+-@asum_gov_drop: Leave the <span style="color: #dd5b00;">ASUM</span> out of the coalition.
+-@spm_gov: We should try a colaition with the <span style="color: #ff1919;">SPM</span>.
+-@spm_gov_drop: Leave the <span style="color: #ff1919;">SPM</span> out of the coalition.
+-@fvp_gov: We should try a colaition with the <span style="color: #ddd500;">FVP</span>.
+-@fvp_gov_drop: Leave the <span style="color: #ddd500;">FVP</span> out of the coalition.
+-@ppu_gov: We should try a colaition with the <span style="color: #4b9fde;">PPU</span>.
+-@ppu_gov_drop: Leave the <span style="color: #4b9fde;">PPU</span> out of the coalition.
+-@ldp_gov: We should try a colaition with the <span style="color: #caa58b;">[+ dvp_name +]</span>.
+-@ldp_gov_drop: Leave the <span style="color: #caa58b;">[+ dvp_name +]</span> out of the coalition.
+-@custom: We can try this arrnagment to work.
+-@return: Return to the "normal" coalitions.
+
+@return
+go-to: coalition_menu
+
+@kpm_gov
+view-if: sapd_formed > 0 and sapd_per_coa = 0
+choose-if: kpm_coa >= 50
+on-arrival: sapd_per_coa = 1; custom_coalition_per += sapd_per; ldp_coa -= 20; blpm_coa -= 15; gdsu_coa -= 15; fvp_coa -= 10; ppu_coa -= 10; fvp_coa += 5 if fvp_path >= 1; gdsu_coa += 5 if gdsu_ideology >= 2; ppu_coa += 5 if ppu_path >= 1;
+go-to: coalition
+
+@kpm_tol
+view-if: sapd_formed > 0 and sapd_per_coa = 0
+choose-if: kpm_coa >= 50
+on-arrival: sapd_per_coa = 2; custom_coalition_per += sapd_per; ldp_coa -= 15; blpm_coa -= 11; gdsu_coa -= 11; fvp_coa -= 7; ppu_coa -= 7; fvp_coa += 3 if fvp_path >= 1; gdsu_coa += 3 if gdsu_ideology >= 2; ppu_coa += 3 if ppu_path >= 1;
+go-to: coalition
+
+@kpm_gov_drop
+view-if: sapd_formed > 0 and sapd_per_coa = 1
+on-arrival: sapd_per_coa = 0;  custom_coalition_per -= sapd_per; ldp_coa += 20; blpm_coa += 15; gdsu_coa += 15; fvp_coa += 10; ppu_coa += 10; fvp_coa -= 5 if fvp_path >= 1; gdsu_coa -= 5 if gdsu_ideology >= 2; ppu_coa -= 5 if ppu_path >= 1;
+go-to: coalition
+
+@kpm_tol_drop
+view-if: sapd_formed > 0 and sapd_per_coa = 2
+on-arrival: sapd_per_coa = 0; custom_coalition_per -= sapd_per; ldp_coa += 15; blpm_coa += 11; gdsu_coa += 11; fvp_coa += 7; ppu_coa += 7; fvp_coa -= 3 if fvp_path >= 1; gdsu_coa -= 3 if gdsu_ideology >= 2; ppu_coa -= 3 if ppu_path >= 1;
+go-to: coalition
+
+@asum_gov
+view-if: asum_formed > 0 and asum_per_coa = 0
+choose-if: (kpm_coa + spm_coa) >= 100
+on-arrival: asum_per_coa = 1; custom_coalition_per += asum_per; ldp_coa -= 5; blpm_coa -= 4; gdsu_coa -= 3;
+go-to: coalition
+
+@asum_tol
+view-if: asum_formed > 0 and asum_per_coa = 0
+choose-if: (kpm_coa + spm_coa) >= 100
+on-arrival: asum_per_coa = 2; custom_coalition_per += asum_per; ldp_coa -= 3; blpm_coa -= 2; gdsu_coa -= 2;
+go-to: coalition
+
+@asum_gov_drop
+view-if: asum_formed > 0 and asum_per_coa = 1
+on-arrival: asum_per_coa = 0; custom_coalition_per -= asum_per; ldp_coa += 5; blpm_coa += 4; gdsu_coa += 3;
+go-to: coalition 
+
+@asum_tol_drop
+view-if: asum_formed > 0 and asum_per_coa = 2
+on-arrival: asum_per_coa = 0; custom_coalition_per -= asum_per; ldp_coa += 3; blpm_coa += 2; gdsu_coa += 2;
+go-to: coalition
+
+@spm_gov
+view-if: spm_formed > 0 and spm_per_coa = 0
+choose-if: spm_coa >= 50
+on-arrival: spm_per_coa = 1; custom_coalition_per += spm_per; 
+go-to: coalition
+
+@spm_gov_drop
+view-if: spm_formed > 0 and spm_per_coa = 1
+on-arrival: spm_per_coa = 0; custom_coalition_per -= spm_per;
+go-to: coalition
+
+@fvp_gov
+choose-if: fvp_coa >= 50 and fvp_per_coa = 0
+on-arrival: fvp_per_coa = 1; custom_coalition_per += ddp_per; kpm_coa += 5 if fvp_path >= 1; kpm_coa -= 10;
+go-to: coalition
+
+@fvp_tol
+choose-if: fvp_coa >= 50 and fvp_per_coa = 0
+on-arrival: fvp_per_coa = 2; custom_coalition_per += ddp_per; kpm_coa += 5 if fvp_path >= 1; kpm_coa -= 5;
+go-to: coalition
+
+@fvp_gov_drop
+view-if: fvp_per_coa = 1
+on-arrival: fvp_per_coa = 0; custom_coalition_per -= ddp_per; kpm_coa -= 5 if fvp_path >= 1; kpm_coa += 10;
+go-to: coalition
+
+@fvp_tol_drop
+view-if: fvp_per_coa = 2
+on-arrival: fvp_per_coa = 0; custom_coalition_per -= ddp_per; kpm_coa -= 5 if fvp_path >= 1; kpm_coa += 5;
+go-to: coalition
+
+@gdsu_gov
+view-if: pnf_coa >= 40
+choose-if: pnf_coa >= 50 and gdsu_per_coa = 0
+on-arrival: gdsu_per_coa = 1; custom_coalition_per += z_per;
+go-to: coalition
+
+@gdsu_tol
+view-if: gdsu_coa >= 40
+choose-if: gdsu_coa >= 50 and gdsu_per_coa = 0
+on-arrival: gdsu_per_coa = 2; custom_coalition_per += z_per;
+go-to: coalition
+
+@gdsu_gov_drop
+view-if: gdsu_per_coa = 1
+on-arrival: asum_per_coa = 0; custom_coalition_per -= z_per;
+go-to: coalition
+
+@gdsu_tol_drop
+view-if: gdsu_per_coa = 2 
+on-arrival: asum_per_coa = 0; custom_coalition_per -= z_per;
+go-to: coalition
+
+@ppu_gov
+view-if: ppu_coa >= 40
+choose-if: ppu_coa >= 50 and ppu_per_coa = 0
+on-arrival: ppu_per_coa = 1; custom_coalition_per += ppu_per; kpm_coa += 5 if ppu_path >= 1; kpm_coa -= 15;
+go-to: coalition
+
+@ppu_tol
+view-if: ppu_coa >= 40
+choose-if: ppu_coa >= 50 and ppu_per_coa = 0
+on-arrival: ppu_per_coa = 2; custom_coalition_per += ppu_per; kpm_coa += 5 if ppu_path >= 1; kpm_coa -= 10;
+go-to: coalition
+
+@ppu_gov_drop
+view-if: ppu_per_coa = 1
+on-arrival: ppu_per_coa = 0; custom_coalition_per -= ppu_per; kpm_coa -= 5 if ppu_path >= 1; kpm_coa += 15;
+go-to: coalition
+
+@ppu_tol_drop
+view-if: ppu_per_coa = 2
+on-arrival: ppu_per_coa = 0; custom_coalition_per -= ppu_per; kpm_coa -= 5 if ppu_path >= 1; kpm_coa += 10;
+go-to: coalition
+
+@blpm_gov
+view-if: blpm_formed > 0 and blpm_per_coa = 0 and blpm_coa >= 40
+choose-if: blpm_coa >= 50
+on-arrival: blpm_per_coa = 1; custom_coalition_per += blpm_per; kpm_coa -= 15;
+go-to: coalition
+
+@blpm_tol
+view-if: blpm_formed > 0 and blpm_per_coa = 0 and blpm_coa >= 40
+choose-if: blpm_coa >= 50
+on-arrival: blpm_per_coa = 2; custom_coalition_per += blpm_per; kpm_coa -= 10;
+go-to: coalition
+
+@blpm_gov_drop
+view-if: blpm_formed > 0 and blpm_per_coa = 1 
+on-arrival: blpm_per_coa = 0; custom_coalition_per -= blpm_per; kpm_coa += 15;
+go-to: coalition
+
+@blpm_tol_drop
+view-if: blpm_formed > 0 and blpm_per_coa = 2
+on-arrival: blpm_per_coa = 0; custom_coalition_per -= blpm_per; kpm_coa += 10;
+go-to: coalition
+
+@ldp_gov
+view-if: ldp_coa >= 40
+choose-if: ldp_coa >= 50 and ldp_per_coa = 0
+on-arrival: ldp_per_coa = 1; custom_coalition_per += dvp_per; kpm_coa += 20;
+go-to: coalition
+
+@ldp_gov_drop
+view-if: ldp_per_coa = 1
+on-arrival: ldp_per_coa = 0; custom_coalition_per -= dvp_per; kpm_coa -= 20; 
+go-to: coalition
+
+@custom
+choose-if: custom_coalition_per >= 50
+on-arrival: {!
+
+Q.fvp_coa -= Q.party_policy_main*2;
+Q.gdsu_coa -= Q.party_policy_main*3;
+Q.ldp_coa -= Q.party_policy_main*4;
+
+Q.fvp_coa -= Q.liberal_allience*3;
+Q.gdsu_coa -= Q.liberal_allience*5;
+Q.ldp_coa -= Q.liberal_allience*7;
+
+if(Q.ldp_per_coa > 0 && Q.ldp_coa <= 50)
+{Q.failed = 1; Q.coa_tention += Q.ldp_coa - 50;}
+
+if(Q.blpm_per_coa > 0 && Q.blpm_coa <= 50)
+{Q.failed = 1; Q.coa_tention += Q.blpm_coa - 50;}
+
+if(Q.sapd_per_coa > 0 && Q.kpm_coa <= 50)
+{Q.failed = 1; Q.coa_tention += Q.kpm_coa - 50;}
+
+if(Q.spm_per_coa > 0 && Q.spm_coa <= 50)
+{Q.failed = 1; Q.coa_tention += Q.spm_coa - 50;}
+
+if(Q.fvp_per_coa > 0 && Q.liberal_reconciliation < 8)
+{Q.failed = 1; Q.coa_tention += Q.liberal_reconciliation;}
+
+if(Q.gdsu_per_coa > 0 && Q.pnf_coa <= 50)
+{Q.failed = 1; Q.coa_tention += Q.pnf_coa - 50;}
+
+if(Q.ppu_per_coa > 0 && Q.ppu_coa <= 50)
+{Q.failed = 1; Q.coa_tention += Q.ppu_coa - 50;}
+
+if(Q.ldp_per_coa > 0 && Q.sapd_mir_coa > 0)
+{Q.failed = 1; Q.coa_tention += Q.ldp_coa; Q.coa_tention += Q.kpm_coa;}
+
+if(Q.ldp_per_coa > 0 && Q.liberal_reconciliation < 18)
+{Q.failed = 1; Q.coa_tention += Q.liberal_reconciliation;}
+
+!}
+go-to: custom_sucess if failed = 0; custom_failed if failed > 1
+
+@custom_sucess
+on-arrival: {!
+
+if(Q.ldp_per_coa > 0)
+{Q.dvp_per_gov = 1; Q.old_middle_dvp += 1; Q.dvp_per_mod += 5; Q.dvp_relation += 2*Q.ldp_modifier;}
+
+if(Q.blpm_per_coa > 0)
+{Q.blpm_per_gov = 1; Q.new_middle_blpm += 1; Q.blpm_per_mod += 5;}
+
+if(Q.sapd_per_coa > 0)
+{Q.sapd_per_gov = 1; Q.workers_sapd += 1; Q.sapd_per_mod += 5; Q.sapd_relation += 2*Q.kpm_modifier}
+
+if(Q.spm_per_coa > 0)
+{Q.spm_per_gov = 1; Q.new_middle_spm += 1; Q.spm_per_mod += 5;}
+
+if(Q.fvp_per_coa > 0)
+{Q.ddp_per_gov = 1; Q.new_middle_ddp += 1; Q.ddp_per_mod += 5; Q.ddp_relation += 2*Q.fvp_modifer;}
+
+if(Q.gdsu_per_coa > 0)
+{Q.pnf_per_gov = 1; Q.minorieties_ppu += 1; Q.pnf_per_mod += 5; Q.ppu_relation += 2;}
+
+if(Q.ppu_per_coa > 0)
+{Q.ppu_per_gov = 1; Q.minorieties_ppu += 1; Q.ppu_per_mod += 5; Q.ppu_relation += 2;}
+
+if(Q.asum_per_coa > 0)
+{Q.asum_per_gov = 1; Q.peasants_asum += 1; Q.asum_per_mod += 5;}
+
+Q.spd_per_gov = 1;
+Q.workers_spd += 1;
+Q.spd_per_mod += 5;
+Q.percil_gov = 1;
+
+!}
+
+Our Coalition planning succeded and we succesfully entered the goverment! 
+
+@custom_failed
+go-to: custom_try if coa_tention <= 15; custom_failed_2 if coa_tention > 15
+
+Talks about this coalition are in progress, yet we still are not sure if the coalition can work. 
+
+[? if kpm_coa <= 50 and kpm_per_coa >= 1 : <span style="color: #940000;">KPM</span> could have a problem with this coalition ?]
+[? if asum_coa <= 50 and asum_per_coa >= 1 : <span style="color: #dd5b00;">ASUM</span> could have a problem with this coalition ?]
+[? if spm_coa <= 50 and spm_per_coa >= 1 : <span style="color: #ff1919;">SPM</span> could have a problem with this coalition ?]
+[? if fvp_coa <= 50 and fvp_per_coa >= 1 : <span style="color: #ddd500;">FVP</span> could have a problem with this coalition ?]
+[? if gdsu_coa <= 50 and gdsu_per_coa >= 1 : <span style="color: #48ba48;">GDSU</span> could have a problem with this coalition ?]
+[? if ppu_coa <= 50 and ppu_per_coa >= 1 : <span style="color: #4b9fde;">PPU</span> could have a problem with this coalition ?]
+[? if blpm_coa <= 50 and blpm_per_coa >= 1 : <span style="color: #00e8ff;">BLPM</span> could have a problem with this coalition ?]
+[? if ldp_coa <= 50 and ldp_per_coa >= 1 : <span style="color: #caa58b;">[+ dvp_name +]</span> could have a problem with this coalition ?]
+[? if ldp_per_coa > 0 and sapd_per_coa > 0 : <span style="color: #caa58b;">[+ dvp_name +]</span> and <span style="color: #940000;">KPM</span> will never cooperate ?]
+[? if fvp_per_coa > 0 and liberal_reconciliation < 8 : <span style="color: #ddd500;">FVP</span> will not cooperate with us as we have not reconciliatiatied with them yet. ?]
+[? if gdsu_per_coa > 0 and liberal_reconciliation < 14 : <span style="color: #48ba48;">GDSU</span> will not cooperate with us as we have not reconciliatiatied with them yet. ?]
+[? if ldp_per_coa > 0 and liberal_reconciliation < 18 : <span style="color: #caa58b;">[+ dvp_name +]</span> will never cooperate with us ?]
+
+@custom_try
+
+We could try to convince some unwilling partners to maybe try this coalition.
+
+-@bribe: Maybe we can try to pull some contacts and strings to make it work.
+-@concede: Concede on most of the major issues and essentaly promice a bit stronger "toleration".
+-@coalition: Return to the drawing board. 
+
+@concede
+on-arrival: state_corruption += 1; resources -= 2; spd_per_mod -= 20; workers_spd -= 2.5; new_middle_spd -= 2; left_dissent += 2; labor_dissent += 2; center_dissent += 2; reformist_dissent += 1; revolutionaries_dissent += 3; agrarnians_dissent += 2;
+choose-if: spd_per >= 28
+unavailable-subtitle: We dont play big enough role in the Caversket to have much to concede from. 
+go-to: custom_sucess
+
+We conceded on a many major issues massively watering down our promices, that will shurely cost us some electorate, but we still managed to enter the goverment.
+
+@bribe
+on-arrival: state_corruption += 1; resources -= 2; left_dissent += 2; labor_dissent += 2; center_dissent += 2; reformist_dissent += 1; revolutionaries_dissent += 3; agrarnians_dissent += 2;
+choose-if: resources >= 2
+unavailable-subtitle: Not enough resources.
+go-to: custom_sucess
+
+After pulling some strings we manged to convice them to make a goverment with us. 
+
+
+@custom_failed_2
+
+Even though we work our best to make the coalition work, there are some underlying problem that we cannot resolve. 
+
+-@coalition: We must return to the drawing board. 
