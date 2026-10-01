@@ -66,23 +66,23 @@ Q.cen_seats = parseFloat(Q.cen_seats.toFixed(1));
 Q.lab_seats = parseFloat(Q.lab_seats.toFixed(1));
 Q.ref_seats = parseFloat(Q.ref_seats.toFixed(1));
 
-Q.balance_2 = Q.balance.toFixed(1);
-Q.income_2 = Q.income.toFixed(1);
-Q.expence_2 = Q.expence.toFixed(1);
-Q.reserve_2 = Q.reserve.toFixed(1);
-Q.debt_2 = Q.debt.toFixed(1);
-Q.vat_2 = Q.vat.toFixed(1);
-Q.corporate_2 = Q.corporate.toFixed(1);
-Q.income_low_2 = Q.income_low.toFixed(1);
-Q.income_high_2 = Q.income_high.toFixed(1);
-Q.tarrif_2 = Q.tarrif.toFixed(1);
-Q.other_i_2 = Q.other_i.toFixed(1);
-Q.welfare_e_2 = Q.welfare_e.toFixed(1);
-Q.administrative_2 = Q.administrative.toFixed(1);
-Q.internal_2 = Q.internal.toFixed(1);
-Q.military_2 = Q.military.toFixed(1);
-Q.projects_2 = Q.projects.toFixed(1);
-Q.other_e_2 = Q.other_e.toFixed(1);
+Q.balance_2 = parseFloat(Q.balance.toFixed(1));
+Q.income_2 = parseFloat(Q.income.toFixed(1));
+Q.expence_2 = parseFloat(Q.expence.toFixed(1));
+Q.reserve_2 = parseFloat(Q.reserve.toFixed(1));
+Q.debt_2 = parseFloat(Q.debt.toFixed(1));
+Q.vat_2 = parseFloat(Q.vat.toFixed(1));
+Q.corporate_2 = parseFloat(Q.corporate.toFixed(1));
+Q.income_low_2 = parseFloat(Q.income_low.toFixed(1));
+Q.income_high_2 = parseFloat(Q.income_high.toFixed(1));
+Q.tarrif_2 = parseFloat(Q.tarrif.toFixed(1));
+Q.other_i_2 = parseFloat(Q.other_i.toFixed(1));
+Q.welfare_e_2 = parseFloat(Q.welfare_e.toFixed(1));
+Q.administrative_2 = parseFloat(Q.administrative.toFixed(1));
+Q.internal_2 = parseFloat(Q.internal.toFixed(1));
+Q.military_2 = parseFloat(Q.military.toFixed(1));
+Q.projects_2 = parseFloat(Q.projects.toFixed(1));
+Q.other_e_2 = parseFloat(Q.other_e.toFixed(1));
 
 !}
 

@@ -24,7 +24,7 @@ Building class concusness and organisaing the people of Merkopia is a key repons
 subtitle: -1 resources
 choose-if: resources >= 1
 unavailable-subtitle: Not enough resources.
-on-arrival: workers_spd += 3; organisation_workers += 2; resources -= 1; labor_strength += 4; labor_dissent -= 6; organisation_workers += 1 if (union_spd_prec + labor_strength) >= 100; union_spd += 2; union_lef_id += 2;
+on-arrival: workers_spd += 3; organisation_workers += 2; resources -= 1; labor_strength += 4; labor_dissent -= 6; organisation_workers += 1 if (union_spd_prec + labor_strength) >= 100; union_spd += 200; union_lef_id += 2;
 
 We have supprted and increased organisaing among the workers. [? if (union_spd_prec + labor_strength) >= 100: The high strenth of the labor faction makes our organising much easier. ?]
 

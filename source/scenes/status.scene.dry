@@ -136,15 +136,13 @@ Radicalisation of the People: [+ radicalisation_disp_2 +]%
 
 = Coalition Making and Strategic Alliances 
 
-SOCIALIST ALLY -
+<span style="color: #d61818;">Socialist</span> Allies - [? if sapd_formed == 0 and asum_formed == 0 and spm_formed == 0 : <span style="color: #d61818;">Socialist</span> Unity Under the Party! ?][? if sapd_formed and kpm_ally : <span style="color: #940000;">KPM</span> ?][? if asum_formed and asum_ally : <span style="color: #dd5b00;">ASUM</span> ?][? if spm_formed and spm_ally : <span style="color: #ff1919;">SPM</span> ?]
 
-FVP ALLY -
-
-PPU ALLY - 
+Other Allies - [? if fvp_ally == 0 and ppu_ally == 0 : What did you expect? ?][? if fvp_ally : <span style="color: #ddd500;">FVP</span> ?][? if ppu_ally : <span style="color: #4b9fde;">PPU</span> ?]
 
 Reconciliation with the Liberal Parties: [? if liberal_reconciliation < 0 : <span style="color: #000000;">Better Dead than Red</span> ?][? if liberal_reconciliation < 6 and liberal_reconciliation >= 0 : <span style="color: #9e5c00;">Low</span> ?][? if liberal_reconciliation < 12 and liberal_reconciliation >= 6 : <span style="color: #999e00;">Warming Up</span> ?][? if liberal_reconciliation < 18 and liberal_reconciliation >= 12 : <span style="color: #6c9e00;">Mild Reconciliation</span> ?][? if liberal_reconciliation >= 18 : <span style="color: #159e00;">Full Reconciliation</span> ?]
 
-left batrayl - 
+[? if sapd_formed : Betrayl of the Left: [? if left_betray < 3 : <span style="color: #d61818;">Socialist</span> Unity ?][? if left_betray >= 3 and left_betray < 5 : Waring ?][? if left_betray >= 6 and left_betray < 8 : Dissilusoned ?][? if left_betray >= 8 : Full Revisionist ?] ?]
 
 = Electoral Promises 
 
