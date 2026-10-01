@@ -201,10 +201,8 @@ Q.grand_coalition_mirv = (Q.spd_mirv + Q.spm_mirv + Q.ddp_mirv + Q.z_mirv + Q.pp
 Q.liberal_coalition_mirv = (Q.z_mirv + Q.ddp_mirv + Q.dvp_mirv + Q.ppu_mirv + Q.bvp_mirv + Q.ltp_mirv).toFixed(1); 
 Q.center_right_coalition_mirv = (Q.z_mirv + Q.dvp_mirv + Q.ltp_mirv + Q.dnvp_mirv + Q.mtu_mirv).toFixed(1);
 Q.right_coalition_mirv = (Q.dvp_mirv + Q.ltp_mirv + Q.dnvp_mirv + Q.mtu_mirv + Q.nsdap_mirv).toFixed(1);
-Q.anti_democratic_coalition_mirv = (Q.sapd_mirv + Q.nsdap_mirv + Q.dnvp_mirv).toFixed(1);
-if (Q.liberal_reconciliation <= 12) {
-    Q.anti_democratic_coalition_mirv += Q.spd_mirv/2;
-}
+Q.anti_democratic_coalition_mirv = (Q.nsdap_mirv + Q.dnvp_mirv + Q.sapd_mirv);
+if (Q.liberal_reconciliation <= 12) {Q.anti_democratic_coalition_mirv = Q.anti_democratic_coalition_mirv + Q.spd_mirv/2;}
 Q.anti_democratic_coalition_mirv = (Q.anti_democratic_coalition_mirv).toFixed(1);
 
 Q.mirv_change_spd = (Q.mirv_change_spd != undefined ? parseFloat(Q.mirv_change_spd.toFixed(1)) : 0);
