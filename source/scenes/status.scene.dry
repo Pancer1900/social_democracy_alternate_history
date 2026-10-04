@@ -330,7 +330,7 @@ White collar workers and middle class: [+ organisation_middle : organisation +]
 
 Independent <span style="color: #d61818;">Socialist</span> unions - [+ union_lef_id_prec_d +]%
 
-<span style="color: #dc0100;">**[+ spd_name +]**</span> allinged unions - [+ union_spd_prec_d +]%
+<span style="color: #dc0100;">**[+ spd_name +]**</span> allinged unions - [+ union_spd_prec_d +]% [+ union_spd +]
 
 <span style="color: #ccc912;">Liberal</span> allinged unions - [+ union_lib_prec_d +]%
 

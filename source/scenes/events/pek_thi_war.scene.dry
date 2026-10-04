@@ -1,6 +1,6 @@
 title: War in Pekoria!
 subtitle: <span style="color: #40b3d7;">United Provinces of Perkoria</span> declares war on the <span style="color: #578b50;">Kingdom of Thrigal</span>
-on-arrival: trade_stability -= 0.01; global_eco -= 0.02; pek_thi_war = 1; global_trade -= 0.1;
+on-arrival: economic_growth -= 0.2; investment_forein -= 0.05; trade_stability -= 0.1; global_eco -= 0.05; pek_thi_war = 1;
 tags: event
 view-if: year = 1266 and month = 2
 priority: 2
