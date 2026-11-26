@@ -1,0 +1,27 @@
+title: Lockout strike in Gudyr!
+subtitle: Tentions in the city have lead to a massive strike in one of the city's main steel mills.
+on-arrival: {!
+Q.budget += Q.tax;
+!}
+tags: event
+view-if: year = 1270 and month = 4 
+priority: 2
+max-visits: 1
+go-to:strike
+
+WIP
+
+@strike
+
+Strike strenght: 
+
+-@distance: Distance ourselvs from the strike and 
+-@restraint: Officaly support the strike but call for negotaitions as to prevent confrotations.
+-@workers: Call for the Workers and Party associated unions to join in the strike!
+
+
+-@negotiate: Utlise our connections in the FVP to support the mediation of the strike.
+-@mediate: Mediate the events in the city to gather support for the strikers and the party.
+-@suppoet: Mobilise party reusorces to support the workers in Gudyr.
+-@paramiltary: Propare our paramitaries to defend the workers of Gudyr in a case of police confronation.
+-@general: Call for a general strike in the city and sourouding regions. 
